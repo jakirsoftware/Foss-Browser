@@ -194,6 +194,6 @@
     <string name="menu_desktopView">Vue bureau</string>
     <string name="menu_dayView">Vue Jour</string>
     <string name="menu_nightView">Vue nocturne</string>
-    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_userScript">Scripts JavaScript personnalisés</string>
     <!-- License changelog -->
 </resources>
