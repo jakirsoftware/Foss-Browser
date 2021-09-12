@@ -194,6 +194,6 @@
     <string name="menu_desktopView">Προβολή για υπολογιστή</string>
     <string name="menu_dayView">Προβολή ημέρας</string>
     <string name="menu_nightView">Νυχτερινή προβολή</string>
-    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_userScript">Προσαρμοσμένος κώδικας JavaScript</string>
     <!-- License changelog -->
 </resources>
