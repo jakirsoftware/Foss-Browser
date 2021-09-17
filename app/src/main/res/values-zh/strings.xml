@@ -192,5 +192,6 @@
     <string name="menu_desktopView">桌面端网页</string>
     <string name="menu_dayView">日间模式</string>
     <string name="menu_nightView">夜间模式</string>
+    <string name="setting_userScript">Custom JavaScript code</string>
     <!-- License changelog -->
 </resources>
