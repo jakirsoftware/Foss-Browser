@@ -1,4 +1,4 @@
-### v 8.3 (WIP)
+### v 8.3
 
 - fix: Swipe to reload not working sometimes #654
 - fix: Restoring bookmarks does not work properly #653
@@ -6,7 +6,6 @@
 - fix: gestures and text-edit-scrolling collide #633
 - fix: Toolbar hides, but reappears if page is refreshed #660
 - fix: minor fixes and UIredirects webview
-
 - new: save dektopMode, Javascript, domStorage also for history items
 - removed: PlayStore support
 - updated: translations
