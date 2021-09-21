@@ -194,6 +194,6 @@
     <string name="menu_desktopView">Vista \'desktop\'</string>
     <string name="menu_dayView">Modo diurno</string>
     <string name="menu_nightView">Modo noturno</string>
-    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_userScript">JavaScript personalizado</string>
     <!-- License changelog -->
 </resources>
