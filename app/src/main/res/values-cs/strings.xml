@@ -196,6 +196,6 @@
     <string name="menu_desktopView">PC zobrazení</string>
     <string name="menu_dayView">Denní přehled</string>
     <string name="menu_nightView">Noční oči</string>
-    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_userScript">Vlastní kód JavaScript</string>
     <!-- License changelog -->
 </resources>
