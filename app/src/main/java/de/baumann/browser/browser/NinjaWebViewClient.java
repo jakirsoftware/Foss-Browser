@@ -390,6 +390,7 @@ public class NinjaWebViewClient extends WebViewClient {
                     "  });", null);
 
             //Spoof screen resolution, color depth: set values like in Tor browser, random values for device memory, hardwareConcurrency, remove battery, network connection, keyboard, media devices info, prevent sendBeacon
+
             view.evaluateJavascript("" +
                     "Object.defineProperty(window, 'devicePixelRatio',{value:1});" +
                     "Object.defineProperty(window.screen, 'width',{value:1000});" +
@@ -406,8 +407,12 @@ public class NinjaWebViewClient extends WebViewClient {
                     "const hw=Math.pow(2,Math.floor(Math.random() * 4));Object.defineProperty(navigator, 'hardwareConcurrency',{value:hw});" +
                     "Object.defineProperty(navigator, 'connection',{value:null});" +
                     "Object.defineProperty(navigator, 'keyboard',{value:null});" +
-                    "Object.defineProperty(navigator, 'mediaDevices',{value:null});" +
-                    "Object.defineProperty(navigator, 'sendBeacon',{value:null});",null);
+                    "Object.defineProperty(navigator, 'sendBeacon',{value:null});", null);
+
+            if (!sp.getBoolean("sp_camera",false)) {
+                view.evaluateJavascript("" +
+                        "Object.defineProperty(navigator, 'mediaDevices',{value:null});", null);
+            }
         }
     }
 

@@ -1,5 +1,6 @@
 package de.baumann.browser.activity;
 
+import android.Manifest;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -14,6 +15,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -24,6 +26,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
 import android.os.Handler;
@@ -285,11 +289,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initTabDialog();
         initSearchPanel();
         initOverview();
-        dispatchIntent(getIntent());
-
-        if (sp.getBoolean("start_tabStart", false)){
+        if (sp.getBoolean("start_tabStart", false)){ //put showOverview first. May be closed again later depending on intent
             showOverview();
         }
+        dispatchIntent(getIntent());
     }
 
     @Override
@@ -323,6 +326,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void onResume() {
         super.onResume();
+
+        if (sp.getBoolean("sp_camera",false)){
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.CAMERA}, 1);
+            }
+        }
+
         if (sp.getInt("restart_changed", 1) == 1) {
             sp.edit().putInt("restart_changed", 0).apply();
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
@@ -508,16 +519,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
             addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true);
             getIntent().setAction("");
+            hideOverview();
         } else if (filePathCallback != null) {
             filePathCallback = null;
             getIntent().setAction("");
         } else if (url != null && Intent.ACTION_SEND.equals(action)) {
             addAlbum(getString(R.string.app_name), url, true);
             getIntent().setAction("");
+            hideOverview();
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(getIntent().getData()).toString();
             addAlbum(getString(R.string.app_name), data, true);
             getIntent().setAction("");
+            hideOverview();
         } else if (BrowserContainer.size() < 1) {
             addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
             getIntent().setAction("");
@@ -1291,7 +1305,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             okAction.run();
         } else {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-            builder.setMessage(R.string.toast_quit);
+            builder.setMessage(R.string.toast_quit_TAB);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> okAction.run());
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
@@ -1881,15 +1895,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
         GridItem item_03 = new GridItem(0, getString(R.string.menu_delete),  0);
         GridItem item_04 = new GridItem(0, getString(R.string.menu_edit),  0);
+        GridItem item_05 = new GridItem(0,getString(R.string.menu_share_link),0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
         if (overViewTab.equals(getString(R.string.album_title_bookmarks)) || overViewTab.equals(getString(R.string.album_title_home))) {
+            gridList.add(gridList.size(), item_05);
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
             gridList.add(gridList.size(), item_04);
         } else {
+            gridList.add(gridList.size(), item_05);
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
@@ -1905,13 +1922,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             AlertDialog dialogSubMenu;
             switch (position) {
                 case 0:
+                    shareLink("",url);
+                    break;
+                case 1:
                     addAlbum(getString(R.string.app_name), url, true);
                     hideOverview();
                     break;
-                case 1:
+                case 2:
                     addAlbum(getString(R.string.app_name), url, false);
                     break;
-                case 2:
+                case 3:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     builderSubMenu.setMessage(R.string.hint_database);
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog2, whichButton) -> {
@@ -1934,7 +1954,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialogSubMenu.show();
                     Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
                     break;
-                case 3:
+                case 4:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
 
