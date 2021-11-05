@@ -78,11 +78,23 @@
     <string name="setting_title_dom">Úložiště DOM</string>
     <string name="setting_title_dom_whitelist">Seznam povolených DOM</string>
     <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>
+    <string name="setting_title_profiles">Profiles</string>
+    <string name="setting_title_profiles_edit">Edit profiles</string>
+    <string name="setting_title_profiles_trustedList">Trusted websites</string>
+    <string name="setting_title_profiles_standardList">Standard websites</string>
+    <string name="setting_title_profiles_protectedList">Protected websites</string>
+    <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_set">Active profile</string>
     <!-- browser start -->
     <string name="setting_title_images">Obrázky</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Pokud je povoleno, všechny cookies budou smazány. Včetně cookies důvěryhodných webových stránek.</string>
     <string name="setting_title_whitelistCookie">Seznam povolených – Cookies</string>
+    <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_whitelistJS">Seznam povolených – JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
