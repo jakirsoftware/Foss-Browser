@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">Квант</string>
     <string name="setting_summary_search_engine_ecosia">Екозија</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Величина слова</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage allows the application to store page elements that could include user sensitive information. Disabling this prevents local storage from being used.</string>
     <string name="setting_title_save_data">Захтевај уштеду података</string>
     <!-- browser start -->
     <string name="setting_title_images">Слике</string>
     <string name="setting_title_cookie">Колачићи</string>
     <string name="setting_summary_cookie_delete">Ако је укључена опција, сви колачићи ће бити избрисани, чак и они са поузданих сајтова.</string>
-    <string name="setting_summary_cookie">Омогући колачиће. Колачићи су ситне текстуалне датотеке које се налазе на Вашем уређају. Њиме сајтови забележавају подешавања корисника (на пример, подешавања претраге). Међутим, могу се користити и за сакупљање приватних података. Колачићи трећих лица (који сакупљају податке у интерес рекламирања) су увек онемогућени.</string>
     <string name="setting_title_whitelistCookie">Бели списак колачића</string>
     <string name="setting_title_javascript">Џава-скрипт</string>
-    <string name="setting_summary_javascript">Омогући Џава-скрипт. Многим сајтовима је Џава-скрипт потребан за основне функције (отварање менија, учитавање и приказивање слика …). Међутим, такође представља опасност и њиме се могу вржити напади.</string>
     <string name="setting_title_whitelistJS">Бели списак Џава-скрипта</string>
     <string name="setting_title_adblock">Блокер реклама</string>
     <string name="setting_summary_adblock">Омогиући блокер реклама како би блокирао досадне рекламе. Сајтови се такође брже учитавају кад је омогућен.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Custom search engine</string>
     <string name="setting_title_userAgent">Custom user agent</string>
-    <string name="setting_enter_userAgent">Enter user agent</string>
     <string name="setting_title_fingerPrint">Fingerprint protection</string>
-    <string name="setting_title_whitelist">Exceptions</string>
-    <string name="setting_tab">Tab</string>
     <string name="setting_theme">Theme</string>
     <string name="setting_theme_system">System</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">Overview</string>
     <string name="setting_overView_onStart_title">Show on start</string>
     <string name="setting_gestures">Gestures</string>
-    <string name="setting_title_reopenLastTab">Reopen last tab</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Toolbar</string>
     <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">Close tab</string>
     <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Export bookmarks as HTML-file</string>
-    <string name="setting_title_import_bookmarks">Import bookmarks</string>
-    <string name="setting_title_export_appData">Export app data</string>
-    <string name="setting_title_import_appData">Import app data</string>
-    <string name="setting_summary_export_appData">Export whole database and your personal settings.</string>
     <string name="title_appData">App data</string>
     <string name="hint_database">This will delete current data. Proceed?</string>
     <string name="settings_data_restore">Restore</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Others</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Successfully added Domain</string>
     <string name="toast_copy_successful">Successfully copied</string>

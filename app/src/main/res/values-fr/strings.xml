@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Taille de la police</string>
     <string name="setting_title_dom">Stockage DOM</string>
     <string name="setting_title_dom_whitelist">Liste blanche DOM</string>
-    <string name="setting_summary_dom">Le stockage DOM permet à l\'application de stocker des éléments de page qui peuvent inclure des informations sensibles de l\'utilisateur. Désactiver ceci empêche l\'utilisation du stockage local.</string>
     <string name="setting_title_save_data">Demande \'Enregistrer les données\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Images</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Si cette option est activée, tous les cookies seront supprimés. Aussi les cookies de sites de confiance.</string>
-    <string name="setting_summary_cookie">Activez les cookies. Les cookies sont de petits fichiers texte, qui sont stockés sur votre appareil. Les sites Web les utilisent par exemple pour stocker les paramètres de l\'utilisateur (par exemple les paramètres de recherche). Les cookies de tiers (ils recueillent des données utilisateur pour la publicité) sont toujours désactivés.</string>
     <string name="setting_title_whitelistCookie">Cookie liste blanche</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Activer JavaScript. De nombreux sites Web ont besoin de JavaScript pour leurs fonctionnalités (menus, chargement et affichage des images, …). Mais elles constituent également un risque et peuvent être utilisées pour des attaques.</string>
     <string name="setting_title_whitelistJS">JavaScript liste blanche</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Activez AdBlock pour bloquer les pubs ennuyeuses. Les sites se chargent plus rapidement quand activé.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">Balayez vers le bas pour recharger</string>
     <string name="setting_title_searchEngine">Moteur de recherche personnalisé</string>
     <string name="setting_title_userAgent">Agent utilisateur personnalisé</string>
-    <string name="setting_enter_userAgent">Saisir l\'User-Agent</string>
     <string name="setting_title_fingerPrint">Protection contre l\'empreinte digitale</string>
-    <string name="setting_title_whitelist">Exceptions</string>
-    <string name="setting_tab">Onglet</string>
     <string name="setting_theme">Thème</string>
     <string name="setting_theme_system">Système</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">Vue d\'ensemble</string>
     <string name="setting_overView_onStart_title">Montrer au démarrage</string>
     <string name="setting_gestures">Gestes</string>
-    <string name="setting_title_reopenLastTab">Rouvrir dernier onglet</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barre d\'outils</string>
     <string name="setting_title_toolbar_buttons">Bouton de la barre d\'outils</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">Fermer l’onglet</string>
     <string name="setting_gesture_hint">Faites un clic long sur le bouton menu pour ouvrir la boîte de dialogue des paramètres rapides. Appuyez longuement sur l\'icône d\'accueil/signet/historique pour ouvrir le filtre de signets.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Exporter les signets en tant que fichier HTML</string>
-    <string name="setting_title_import_bookmarks">Importer des favoris</string>
-    <string name="setting_title_export_appData">Exporter les données de l\'application</string>
-    <string name="setting_title_import_appData">Importer les données de l\'application</string>
-    <string name="setting_summary_export_appData">Exportez toute la base de données et vos paramètres personnels.</string>
     <string name="title_appData">Données de l\'application</string>
     <string name="hint_database">Cela va supprimer les données actuelles. Continuer ?</string>
     <string name="settings_data_restore">Restaurer</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Autres</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Domaine ajouté avec succès</string>
     <string name="toast_copy_successful">Copié avec succès</string>

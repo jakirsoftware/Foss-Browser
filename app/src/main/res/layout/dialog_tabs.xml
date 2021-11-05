@@ -22,7 +22,7 @@
             android:ellipsize="end"
             android:includeFontPadding="false"
             android:maxLines="1"
-            android:text="Active Profile"
+            android:text="@string/setting_title_profiles_set"
             android:layout_centerVertical="true"
             android:textAppearance="?attr/textAppearanceBody1"
             android:textColor="@color/color_light"

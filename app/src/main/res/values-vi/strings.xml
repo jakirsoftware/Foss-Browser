@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Cỡ chữ</string>
     <string name="setting_title_dom">Bộ nhớ DOM</string>
     <string name="setting_title_dom_whitelist">DOM Whitelist</string>
-    <string name="setting_summary_dom">DOM Storage cho phép ứng dụng lưu trữ các phần tử trang có thể bao gồm thông tin nhạy cảm của người dùng. Tắt tính năng này sẽ ngăn không cho sử dụng bộ nhớ cục bộ.</string>
     <string name="setting_title_save_data">Yêu cầu \'Tiết kiệm dữ liệu\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Hình ảnh</string>
     <string name="setting_title_cookie">Cookie</string>
     <string name="setting_summary_cookie_delete">Nếu được bật, tất cả cookie sẽ bị xoá. Cũng sẽ xoá các cookie của các trang web được tin cậy.</string>
-    <string name="setting_summary_cookie">Bật Cookie. Cookie là các tệp văn bản nhỏ được lưu trữ trên thiết bị của bạn. Các trang web sử dụng chúng chẳng hạn để lưu trữ các cài đặt người dùng (ví dụ là cài đặt tìm kiếm). Nhưng chúng cũng có thể được sử dụng để thu thập thông tin cá nhân của người dùng. Các cookie bên thứ ba (chúng thu thập dữ liệu người dùng để quảng cáo) luôn được tắt.</string>
     <string name="setting_title_whitelistCookie">Danh sách trắng cookie</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Bật JavaScript. Nhiều trang web cần JavaScript để thực hiện chức năng của chúng (menu, tải và hiển thị hình ảnh,…). Nhưng chúng cũng là một rủi ro và có thể được sử dụng để thực hiện các cuộc tấn công.</string>
     <string name="setting_title_whitelistJS">Danh sách trắng JavaScript</string>
     <string name="setting_title_adblock">Chặn quảng cáo</string>
     <string name="setting_summary_adblock">Bật Chặn quảng cáo để chặn các quảng cáo gây phiền nhiễu. Các trang web cũng tải nhanh hơn khi được bật.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">Vuốt xuống để tải lại</string>
     <string name="setting_title_searchEngine">Công cụ tìm kiếm tuỳ chỉnh</string>
     <string name="setting_title_userAgent">Tác nhân người dùng tuỳ chỉnh</string>
-    <string name="setting_enter_userAgent">Nhập tác nhân người dùng</string>
     <string name="setting_title_fingerPrint">Bảo vệ vân tay</string>
-    <string name="setting_title_whitelist">Ngoại lệ</string>
-    <string name="setting_tab">Chuyển hướng</string>
     <string name="setting_theme">Chủ đề</string>
     <string name="setting_theme_system">Hệ thống</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">Tổng quan</string>
     <string name="setting_overView_onStart_title">Hiện khi khởi động</string>
     <string name="setting_gestures">Cử chỉ</string>
-    <string name="setting_title_reopenLastTab">Mở lại tab cuối</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Thanh công cụ</string>
     <string name="setting_title_toolbar_buttons">Nút trên thanh công cụ</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">Đóng tab</string>
     <string name="setting_gesture_hint">Nhấn giữ nút menu để mở hộp thoại cài đặt nhanh. Nhấn giữ biểu tượng trang chủ/dấu trang/lịch sử để mở bộ lọc dấu trang.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Xuất dấu trang dưới dạng tệp HTML</string>
-    <string name="setting_title_import_bookmarks">Nhập dấu trang</string>
-    <string name="setting_title_export_appData">Xuất dữ liệu ứng dụng</string>
-    <string name="setting_title_import_appData">Nhập dữ liệu ứng dụng</string>
-    <string name="setting_summary_export_appData">Xuất toàn bộ cơ sở dữ liệu và cài đặt cá nhân của bạn.</string>
     <string name="title_appData">Dữ liệu ứng dụng</string>
     <string name="hint_database">Việc này sẽ xoá dữ liệu hiện tại. Tiếp tục?</string>
     <string name="settings_data_restore">Khôi phục</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Khác</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Thêm Miền thành công</string>
     <string name="toast_copy_successful">Sao chép thành công</string>

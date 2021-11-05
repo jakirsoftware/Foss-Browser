@@ -53,9 +53,9 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
         assert settings_profile != null;
         settings_profile.setOnPreferenceClickListener(preference -> {
 
-            GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, "Trusted",  11);
-            GridItem item_02 = new GridItem(R.drawable.icon_profile_standard, "Standard",  11);
-            GridItem item_03 = new GridItem(R.drawable.icon_profile_protected,  "Protected",  11);
+            GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, getString(R.string.setting_title_profiles_trusted),  11);
+            GridItem item_02 = new GridItem(R.drawable.icon_profile_standard, getString(R.string.setting_title_profiles_standard),  11);
+            GridItem item_03 = new GridItem(R.drawable.icon_profile_protected,  getString(R.string.setting_title_profiles_protected),  11);
 
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             View dialogView = View.inflate(context, R.layout.dialog_menu, null);
@@ -67,7 +67,7 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
             cardView.setVisibility(View.GONE);
 
             TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
-            menuTitle.setText("Edit profile");
+            menuTitle.setText(getString(R.string.setting_title_profiles_edit));
 
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             GridView menu_grid = dialogView.findViewById(R.id.menu_grid);

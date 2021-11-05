@@ -990,6 +990,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
         builder.setView(dialogView);
 
+        TextView dialog_title = dialogView.findViewById(R.id.dialog_title);
+        dialog_title.setText(HelperUnit.domain(url));
+
         AlertDialog dialog = builder.create();
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);

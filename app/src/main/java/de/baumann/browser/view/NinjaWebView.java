@@ -170,9 +170,9 @@ public class NinjaWebView extends WebView implements AlbumController {
         if (listTrusted.isWhite(url)) {
             profile = "profileTrusted";
         } else if (listStandard.isWhite(url)) {
-            profile = "profileProtected";
-        } else if (listProtected.isWhite(url)) {
             profile = "profileStandard";
+        } else if (listProtected.isWhite(url)) {
+            profile = "profileProtected";
         }
 
         webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean(profile + "_saveData",true));

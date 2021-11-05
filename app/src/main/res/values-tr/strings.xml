@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Yazı boyutu</string>
     <string name="setting_title_dom">DOM Depolama</string>
     <string name="setting_title_dom_whitelist">DOM Beyaz Listesi</string>
-    <string name="setting_summary_dom">DOM Depolama, uygulamanın, kullanıcıya duyarlı bilgileri içerebilecek sayfa öğelerini depolamasına olanak tanır. Bunu devre dışı bırakmak, yerel depolamanın kullanılmasını engeller.</string>
     <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
     <!-- browser start -->
     <string name="setting_title_images">Görüntüler</string>
     <string name="setting_title_cookie">Çerezler</string>
     <string name="setting_summary_cookie_delete">Etkinleştirilirse, tüm çerezler silinir. Ayrıca güvenilir web sitelerinin çerezleri de silinir.</string>
-    <string name="setting_summary_cookie">Çerezleri etkinleştirin. Çerezler, cihazınızda depolanan küçük metin dosyalarıdır. Web siteleri bunları örneğin kullanıcı ayarlarını saklamak için kullanır (örneğin, arama ayarları). Ancak kişisel kullanıcı verilerini toplamak için de kullanılabilirler. Üçüncü taraf çerezleri (reklam için kullanıcı verilerini toplar) her zaman devre dışı bırakılır.</string>
     <string name="setting_title_whitelistCookie">Çerez beyaz listesi</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">JavaScript\'i etkinleştirin. Birçok web sitesinin işlevselliği için Javascript\'e ihtiyacı vardır (menüler, resimler yükleme ve görüntüleme, …). Ancak bunlar aynı zamanda bir risktir ve saldırılar için kullanılabilir.</string>
     <string name="setting_title_whitelistJS">JavaScript beyaz listesi</string>
     <string name="setting_title_adblock">Reklam Engelleyici</string>
     <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için Reklam Engelleyiciyi etkinleştirin. Siteler de etkinleştirildiğinde daha hızlı yüklenir.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">Yeniden yüklemek için aşağı kaydırın</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
-    <string name="setting_enter_userAgent">User-Agent giriniz</string>
     <string name="setting_title_fingerPrint">Parmak izi koruması</string>
-    <string name="setting_title_whitelist">İstisnalar</string>
-    <string name="setting_tab">Tab</string>
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_system">Sistem</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">Genel Bakış</string>
     <string name="setting_overView_onStart_title">Başlangıçta göster</string>
     <string name="setting_gestures">Hareketler</string>
-    <string name="setting_title_reopenLastTab">Son sekmeyi yeniden aç</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Araç çubuğu</string>
     <string name="setting_title_toolbar_buttons">Araç Çubuğu düğmesi</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">Sekmeyi kapat</string>
     <string name="setting_gesture_hint">Hızlı ayarlar iletişim kutusunu açmak için menü düğmesine uzun tıklayın. Yer imi filtresini açmak için ana sayfa/yer imi/geçmiş simgesine uzun basın.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Yer imlerini HTML olarak dışa aktar</string>
-    <string name="setting_title_import_bookmarks">Yer işaretlerini içe aktar</string>
-    <string name="setting_title_export_appData">Uygulama verilerini dışa aktar</string>
-    <string name="setting_title_import_appData">Uygulama verilerini içe aktar</string>
-    <string name="setting_summary_export_appData">Tüm veritabanını ve kişisel ayarlarınızı dışa aktarın.</string>
     <string name="title_appData">Uygulama verileri</string>
     <string name="hint_database">Bu, mevcut verileri siler. Devam edilsin mi?</string>
     <string name="settings_data_restore">Onarmak</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Diğer</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Başarıyla etki alanı eklendi</string>
     <string name="toast_copy_successful">Başarıyla kopyalandı</string>

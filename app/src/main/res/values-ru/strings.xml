@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Размер шрифта</string>
     <string name="setting_title_dom">Хранилище DOM</string>
     <string name="setting_title_dom_whitelist">Белый список DOM</string>
-    <string name="setting_summary_dom">DOM Storage позволяет приложению хранить элементы страниц, которые могут включать конфиденциальную информацию пользователя. Отключение этой опции предотвращает использование локального хранилища.</string>
     <string name="setting_title_save_data">Запрос \'Сохранить данные\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Изображения</string>
     <string name="setting_title_cookie">Куки</string>
     <string name="setting_summary_cookie_delete">Если включено, все cookies будут удалены. Также файлы cookie надежных веб-сайтов.</string>
-    <string name="setting_summary_cookie">Включить файлы cookie. Файлы cookie представляют собой небольшие текстовые файлы, которые хранятся на Вашем устройстве. Сайты используют их, например, для хранения пользовательских настроек (например, настроек поиска). Но они также могут использоваться для сбора личных данных пользователя. Сторонние файлы cookie (они собирают данные пользователя для рекламы) всегда отключены.</string>
     <string name="setting_title_whitelistCookie">Белый список куки</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Включить JavaScript. Многим сайтам нужен JavaScript для их функциональности (меню, загрузка и отображение изображений, …). Но они также представляют собой риск и могут быть использованы для атак.</string>
     <string name="setting_title_whitelistJS">Белый список JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Включите AdBlock, чтобы заблокировать раздражающую рекламу. Сайты загружаются быстрее при включении.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">Проведите вниз, чтобы перезагрузить</string>
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
-    <string name="setting_enter_userAgent">Введите агент пользователя</string>
     <string name="setting_title_fingerPrint">Защита отпечатков пальцев</string>
-    <string name="setting_title_whitelist">Исключения</string>
-    <string name="setting_tab">Вкладка</string>
     <string name="setting_theme">Тема</string>
     <string name="setting_theme_system">Система</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">Обзор</string>
     <string name="setting_overView_onStart_title">Показывать при запуске</string>
     <string name="setting_gestures">Жесты</string>
-    <string name="setting_title_reopenLastTab">Открыть последнюю вкладку</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Панель инструментов</string>
     <string name="setting_title_toolbar_buttons">Кнопки панели инструментов</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">Закрыть вкладку</string>
     <string name="setting_gesture_hint">Долгое нажатие на кнопку меню, чтобы открыть диалог быстрых настроек. Длительное нажатие на значке home/bookmark/history открывает фильтр закладок.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Экспортировать закладки в HTML-файл</string>
-    <string name="setting_title_import_bookmarks">Импортировать закладки</string>
-    <string name="setting_title_export_appData">Экспорт данных</string>
-    <string name="setting_title_import_appData">Импорт данных</string>
-    <string name="setting_summary_export_appData">Экспортировать всю базу данных и Ваши персональные настройки.</string>
     <string name="title_appData">Данные приложения</string>
     <string name="hint_database">Это удалит текущие данные. Продолжить?</string>
     <string name="settings_data_restore">Восстановить</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Другие</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Успешно добавлен домен</string>
     <string name="toast_copy_successful">Успешно скопировано</string>

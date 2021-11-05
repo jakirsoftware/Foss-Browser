@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">محرك Qwant</string>
     <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">حجم الخط</string>
     <string name="setting_title_dom">تخزين DOM</string>
     <string name="setting_title_dom_whitelist">القائمة البيضاء DOM</string>
-    <string name="setting_summary_dom">يسمح تخزين DOM للتطبيق بتخزين عناصر الصفحات التي يمكن أن تتضمن معلومات حساسة للمستخدم. تعطيل هذا يمنع التخزين المحلي من استخدامه.</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
     <!-- browser start -->
     <string name="setting_title_images">الصور</string>
     <string name="setting_title_cookie">الكعكات</string>
     <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع الكعكات، حتى الخاصة بالمواقع الموثوقة.</string>
-    <string name="setting_summary_cookie">مكّن الكعكات. الكعكات هي ملفات نصية صغيرة، يتم تخزينها على جهازك. تستخدمها المواقع لتخزين البيانات مثل إعدادات المستخدم (مثل إعدادات البحث). ولكن يمكن استخدامها أيضا لجمع بيانات المستخدم الشخصية. كعكات الطرف الثالث (تقوم بجمع بيانات المستخدم لتوجيه الإعلانات) تكون معطلة دائما.</string>
     <string name="setting_title_whitelistCookie">القائمة البيضاء للكعكات</string>
     <string name="setting_title_javascript">جافا سكريبت</string>
-    <string name="setting_summary_javascript">مكّن جافا سكريبت. العديد من المواقع تحتاج إلى جافا سكريبت لوظائفها (القوائم، تحميل وعرض الصور، …). ولكنها تشكل خطرا ويمكن استخدامها في مهاجمتك.</string>
     <string name="setting_title_whitelistJS">القائمة البيضاء لجافا سكربت</string>
     <string name="setting_title_adblock">مانع الاعلانات</string>
     <string name="setting_summary_adblock">مكن مانع الاعلانات لمنع الإعلانات المزعجة. تمكينه يسرع تحميل المواقع.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">اسحب لأسفل لإعادة التحميل</string>
     <string name="setting_title_searchEngine">محرك بحث مخصص</string>
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
-    <string name="setting_enter_userAgent">تعيين وكيل المستخدم</string>
     <string name="setting_title_fingerPrint">حماية بصمة الإصبع</string>
-    <string name="setting_title_whitelist">الاستثناءات</string>
-    <string name="setting_tab">مفتاح Tab</string>
     <string name="setting_theme">السمة</string>
     <string name="setting_theme_system">نظام</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">نظرة عامة</string>
     <string name="setting_overView_onStart_title">أَظهر عند البداية</string>
     <string name="setting_gestures">إيماءات</string>
-    <string name="setting_title_reopenLastTab">أعد فتح آخر تبويب</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">شريط الأدوات</string>
     <string name="setting_title_toolbar_buttons">أزرار شريط الأدوات</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">أغلق التبويب</string>
     <string name="setting_gesture_hint">انقر مطولاً على زر القائمة لفتح مربع حوار الإعدادات السريعة. اضغط مطولاً على أيقونة الصفحة الرئيسية/المرجعية/السجل لفتح مرشح الإشارات المرجعية.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">صدّر العلامات كملف HTML</string>
-    <string name="setting_title_import_bookmarks">استورد العلامات</string>
-    <string name="setting_title_export_appData">صدّر بيانات التطبيق</string>
-    <string name="setting_title_import_appData">استورد بيانات التطبيق</string>
-    <string name="setting_summary_export_appData">صدّر قاعدة البيانات بأكملها وإعداداتك الشخصية.</string>
     <string name="title_appData">بيانات التطبيق</string>
     <string name="hint_database">هذا سيحذف البيانات الحالية. أواصل؟</string>
     <string name="settings_data_restore">يعيد</string>
     <!-- Others setting -->
-    <string name="setting_title_others">أخرى</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">أضيف النطاق بنجاح</string>
     <string name="toast_copy_successful">نُسخ بنجاح</string>

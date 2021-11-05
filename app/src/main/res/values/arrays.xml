@@ -95,55 +95,10 @@
     </string-array>
 
     <!-- Font size -->
-    <string-array name="setting_entries_font">
-        <item>75</item>
-        <item>90</item>
-        <item>100</item>
-        <item>110</item>
-        <item>125</item>
-        <item>150</item>
-        <item>175</item>
-    </string-array>
-
-    <string-array name="setting_values_font">
-        <item>75</item>
-        <item>90</item>
-        <item>100</item>
-        <item>110</item>
-        <item>125</item>
-        <item>150</item>
-        <item>175</item>
-    </string-array>
 
     <!-- Backup -->
-    <string-array name="setting_entries_backup">
-        <item>@string/album_title_bookmarks</item>
-        <item>@string/setting_title_javascript</item>
-        <item>@string/setting_title_cookie</item>
-        <item>@string/setting_title_dom</item>
-    </string-array>
-
-    <string-array name="setting_values_backup">
-        <item>bookmark</item>
-        <item>java</item>
-        <item>cookie</item>
-        <item>dom</item>
-    </string-array>
 
     <!-- Restore -->
-    <string-array name="setting_entries_restore">
-        <item>@string/album_title_bookmarks</item>
-        <item>@string/setting_title_javascript</item>
-        <item>@string/setting_title_cookie</item>
-        <item>@string/setting_title_dom</item>
-    </string-array>
-
-    <string-array name="setting_values_restore">
-        <item>bookmark</item>
-        <item>java</item>
-        <item>cookie</item>
-        <item>dom</item>
-    </string-array>
 
     <!-- Start tab -->
     <string-array name="setting_entries_adBlock">
@@ -185,10 +140,10 @@
     </string-array>
 
     <string-array name="profileToStart_entries">
-        <item>Trusted</item>
-        <item>Standard</item>
-        <item>Protected</item>
-        <item>Custom</item>
+        <item>@string/setting_title_profiles_trusted</item>
+        <item>@string/setting_title_profiles_standard</item>
+        <item>@string/setting_title_profiles_protected</item>
+        <item>@string/setting_title_profiles_changed</item>
     </string-array>
 
     <string-array name="profileToStart_values">

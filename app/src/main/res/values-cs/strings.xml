@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Velikost písma</string>
     <string name="setting_title_dom">Úložiště DOM</string>
     <string name="setting_title_dom_whitelist">Seznam povolených DOM</string>
-    <string name="setting_summary_dom">Úložiště DOM umožňuje aplikaci ukládat prvky stránky, které mohou obsahovat citlivé informace uživatele. Zakázáním této funkce zabráníte používání místního úložiště.</string>
     <string name="setting_title_save_data">Požadavek „Ušetřit data“</string>
     <!-- browser start -->
     <string name="setting_title_images">Obrázky</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Pokud je povoleno, všechny cookies budou smazány. Včetně cookies důvěryhodných webových stránek.</string>
-    <string name="setting_summary_cookie">Povolit cookies. Cookies jsou malé textové soubory, které jsou uloženy ve vašem zařízení. Webové stránky je používají např. k uložení uživatelských nastavení (např. nastavení vyhledávání). Můžou však být použity ke sběru osobních uživatelských dat. Cookies třetích stran (ukládají uživatelská data pro zobrazení reklam) jsou vždy zakázány.</string>
     <string name="setting_title_whitelistCookie">Seznam povolených – Cookies</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Povolit JavaScript. Mnoho webových stránek potřebuje pro svou funkčnost JavaScript (nabídky, načítání a zobrazování obrázků, …). Je však také rizikem a může být použit k útokům.</string>
     <string name="setting_title_whitelistJS">Seznam povolených – JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Zapněte AdBlock pro blokování obtěžujících reklam. Stránky se budou načítat rychleji.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">Přejetím dolů znovu načtete</string>
     <string name="setting_title_searchEngine">Vlastní vyhledávač</string>
     <string name="setting_title_userAgent">Vlastní uživatelský agent</string>
-    <string name="setting_enter_userAgent">Vložte uživatelského agenta</string>
     <string name="setting_title_fingerPrint">Ochrana pomocí otisku prstu</string>
-    <string name="setting_title_whitelist">Výjimky</string>
-    <string name="setting_tab">Karta</string>
     <string name="setting_theme">Motiv</string>
     <string name="setting_theme_system">Systém</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">Přehled</string>
     <string name="setting_overView_onStart_title">Zobrazit při spuštění</string>
     <string name="setting_gestures">Gesta</string>
-    <string name="setting_title_reopenLastTab">Znovu otevřít poslední kartu</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Panel nástrojů</string>
     <string name="setting_title_toolbar_buttons">Tlačítka na panelu nástrojů</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">Zavřít kartu</string>
     <string name="setting_gesture_hint">Dlouhým kliknutím na tlačítko nabídky otevřete dialogové okno rychlého nastavení. Dlouhým stisknutím ikony domů/záložky/historie otevřete filtr záložek.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Exportovat záložky jako soubor HTML</string>
-    <string name="setting_title_import_bookmarks">Importovat záložky</string>
-    <string name="setting_title_export_appData">Exportovat data aplikace</string>
-    <string name="setting_title_import_appData">Importovat data aplikace</string>
-    <string name="setting_summary_export_appData">Exportovat celou databázi a vaše osobní nastavení.</string>
     <string name="title_appData">Data aplikace</string>
     <string name="hint_database">Tímto odstraníte aktuální data. Chcete pokračovat?</string>
     <string name="settings_data_restore">Obnovit</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Další</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Doména byla úspěšně přidána</string>
     <string name="toast_copy_successful">Úspěšně zkopírováno</string>

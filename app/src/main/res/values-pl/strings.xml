@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Rozmiar czcionki</string>
     <string name="setting_title_dom">Pamięć DOM</string>
     <string name="setting_title_dom_whitelist">Biała lista DOM</string>
-    <string name="setting_summary_dom">Pamięć DOM pozwala aplikacji na przechowywanie elementów strony, które mogą zawierać poufne informacje użytkownika. Wyłączenie tego uniemożliwia korzystanie z pamięci lokalnej.</string>
     <string name="setting_title_save_data">Wysyłaj żądanie \'Oszczędzaj dane\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Obrazy</string>
     <string name="setting_title_cookie">Pliki cookie</string>
     <string name="setting_summary_cookie_delete">Wszystkie ciasteczka zostaną usunięte, także te z witryn zaufanych.</string>
-    <string name="setting_summary_cookie">Włącz ciasteczka. Pliki cookie to małe pliki tekstowe, które są przechowywane na twoim urządzeniu. Witryny używają ich na przykład do przechowywania ustawień użytkownika (np. ustawienia wyszukiwania). Ale mogą być one również wykorzystywane do zbierania danych osobowych. Pliki cookie stron trzecich (zbierają dane użytkowników do reklamy) są zawsze wyłączone.</string>
     <string name="setting_title_whitelistCookie">Biała lista ciasteczek</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Zezwól na skrypty. Wiele witryn wykorzystuje je w ramach swojej funkcjonalności (rozwijane menu, ładowanie obrazków i elementów nawigacyjnych), jednak skrypty te podatne są na ataki.</string>
     <string name="setting_title_whitelistJS">Biała lista JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Zezwól na AdBlock do blokady irytujących reklam. Poprawia on prędkość ładowania witryn.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">Przesuń w dół aby odblokować</string>
     <string name="setting_title_searchEngine">Własna wyszukiwarka</string>
     <string name="setting_title_userAgent">Niestandardowy agent użytkownika</string>
-    <string name="setting_enter_userAgent">Wprowadź agenta użytkownika</string>
     <string name="setting_title_fingerPrint">Ochrona przed fingerprintingiem</string>
-    <string name="setting_title_whitelist">Wyjątki</string>
-    <string name="setting_tab">Karta</string>
     <string name="setting_theme">Motyw</string>
     <string name="setting_theme_system">Systemowy</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">Wszechgląd</string>
     <string name="setting_overView_onStart_title">Wysuwaj na starcie</string>
     <string name="setting_gestures">Gesty</string>
-    <string name="setting_title_reopenLastTab">Otwórz ostatnią kartę</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Pasek narzędziowy</string>
     <string name="setting_title_toolbar_buttons">Przyciski paska narzędzi</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">Zamknij aktywną kartę</string>
     <string name="setting_gesture_hint">Przytrzymaj przycisk menu, aby otworzyć okno szybkich ustawień. Przytrzymaj ikonę domową/zakładki/historii, aby otworzyć filtr zakładek.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Eksportuj zakładki jako plik HTML</string>
-    <string name="setting_title_import_bookmarks">Importuj zakładki</string>
-    <string name="setting_title_export_appData">Eksportuj dane aplikacji</string>
-    <string name="setting_title_import_appData">Importuj dane aplikacji</string>
-    <string name="setting_summary_export_appData">Eksportuj całą bazę danych i ustawienia osobiste.</string>
     <string name="title_appData">Dane aplikacji</string>
     <string name="hint_database">Spowoduje to usunięcie aktualnych danych. Kontynuować?</string>
     <string name="settings_data_restore">Przywróć</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Pozostałe</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Poprawnie dodano adres witryny</string>
     <string name="toast_copy_successful">Kopiowanie zakończone</string>

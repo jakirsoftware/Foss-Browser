@@ -75,22 +75,15 @@
     <string name="setting_summary_search_engine_qwant">کوانت</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">اندازه قلم</string>
     <string name="setting_title_dom">ذخیره سازی DOM</string>
     <string name="setting_title_dom_whitelist">لیست سفید DOM</string>
-    <string name="setting_summary_dom">DOM Storage به برنامه اجازه می دهد تا عناصر صفحه را که می تواند شامل اطلاعات حساس کاربر باشد ، ذخیره کند. غیرفعال کردن این امر از استفاده از حافظه محلی جلوگیری می کند.</string>
     <string name="setting_title_save_data">درخواست صرفه جویی در مصرف شبکه</string>
     <!-- browser start -->
     <string name="setting_title_images">عکس ها</string>
     <string name="setting_title_cookie">کوکی ها</string>
     <string name="setting_summary_cookie_delete">در صورت فعال سازی، تمامی کوکی ها حذف خواهد شد،حتی کوکی های سایت های مورد اعتماد</string>
-    <string name="setting_summary_cookie">         فعال سازی کوکی ها.کوکی ها فایل های متنی کم حجمی هستند که در سیستم ذخیره می شوند.وبسایت ها از آنها برای ذخیره سازی تنظیمات مورد استفاده کاربران ( به عنوان مثال تنظیمات بخش جستجو،وضعیت ورود کاربر به سایت )استفاده می نمایند.
-       امکان استفاده از آنها جهت جمع آوری اطلاعات کاربران برای تبلیعات نیز وجود دارد،اما این مورد به صورت پیشفرض غیر فعال شده است.
-    </string>
     <string name="setting_title_whitelistCookie">لیست سفید کوکی </string>
     <string name="setting_title_javascript">جاواسکریپت</string>
-    <string name="setting_summary_javascript">        فعال سازی جاوا اسکریپت.اکثر وبسایت ها جهت کارکرد صحیح نیاز به جاوا اسکریپت دارند.اما ریسک سوءاستفاده هکر ها از آن در حملات سایبری وجود دارد.
-    </string>
     <string name="setting_title_whitelistJS">لیست سفید جاوا اسکریپت</string>
     <string name="setting_title_adblock">مسدودسازی تبلیغات</string>
     <string name="setting_summary_adblock">با فعال سازی این گزینه، مانع نمایش تبلیغات آزار دهنده شوید،همچنین سرعت بارگذاری وبسایت ها را بهبود بخشید.</string>
@@ -121,10 +114,7 @@
     <string name="setting_title_reload">برای بستن انگشت خود را به پایین بکشید</string>
     <string name="setting_title_searchEngine">موتور جستجوی سفارشی</string>
     <string name="setting_title_userAgent">سفارشی سازی user-agent مرورگر </string>
-    <string name="setting_enter_userAgent">نماینده کاربری را وارد کنید</string>
     <string name="setting_title_fingerPrint">محافظت از اثر انگشت</string>
-    <string name="setting_title_whitelist">استثناها</string>
-    <string name="setting_tab">زبانه</string>
     <string name="setting_theme">زمینه</string>
     <string name="setting_theme_system">سیستم</string>
     <!-- App behavior -->
@@ -135,7 +125,6 @@
     <string name="setting_overView">صفحه پیشفرض</string>
     <string name="setting_overView_onStart_title">نمایش صفحه آغازین</string>
     <string name="setting_gestures">اشارات انگشت</string>
-    <string name="setting_title_reopenLastTab">بازکردن آخرین زبانه</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">نوار ابزار</string>
     <string name="setting_title_toolbar_buttons">گزینه های نوار ابزار</string>
@@ -157,16 +146,10 @@
         جهت باز کردن فیلتر نشانک ها بر روی آیکن صفحه اصلی/نشانک ها/تاریخجه لمس طولانی نمایید.
     </string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks"> HTML استخراج نشانک ها به عنوان فایل </string>
-    <string name="setting_title_import_bookmarks">وارد کردن نشانک ها</string>
-    <string name="setting_title_export_appData">استخراج داده برنامه</string>
-    <string name="setting_title_import_appData">وارد کردن داده برنامه</string>
-    <string name="setting_summary_export_appData">استخراج کل دیتابیس و تنظیمات شخصی</string>
     <string name="title_appData">داده برنامه</string>
     <string name="hint_database">داده جاری حذف خواهد شد،انجام شود؟</string>
     <string name="settings_data_restore">بازیابی</string>
     <!-- Others setting -->
-    <string name="setting_title_others">موارد دیگر</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">دامنه با موفقیت افزوده شد</string>
     <string name="toast_copy_successful">کپی با موفقیت انجام شد</string>

@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Betűméret</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_title_dom_whitelist">DOM engedélyezőlistája</string>
-    <string name="setting_summary_dom">A DOM Storage lehetővé teszi az alkalmazás számára olyan oldalelemek tárolását, amelyek felhasználói érzékeny információkat tartalmazhatnak. Ennek letiltása megakadályozza a helyi tárhely használatát.</string>
     <string name="setting_title_save_data">\'Save Data\' kérése</string>
     <!-- browser start -->
     <string name="setting_title_images">Képek</string>
     <string name="setting_title_cookie">Sütik</string>
     <string name="setting_summary_cookie_delete">Engedélyezve, az összes süti törlésre kerül. A megbízható weboldalakhoz tartozó sütik is.</string>
-    <string name="setting_summary_cookie">Sütik engedélyezése. A sütik kis szövegfájlok, amik az ön eszközén tárolódnak. A weboldalak például felhasználói beállítások tárolására használják (pl. keresési beállítások), de használhatók személyes felhasználói adatok gyűjtésére is. A harmadik féltől származó sütik (felhasználói adatokat gyűjtenek reklámozás céljából) mindig le vannak tiltva.</string>
     <string name="setting_title_whitelistCookie">Süti engedélylista</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">JavaScript engedélyezése. Számos weboldal működéséhez JavaScript szükséges (menük, képek betöltése és megjelenítése, …), de egyben kockázatot is jelentenek mert támadásokhoz is használhatók.</string>
     <string name="setting_title_whitelistJS">JavaScript engedélylista</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">AdBlock engedélyezése a bosszantó hirdetések blokkolására. A weboldalak is gyorsabban töltődnek be, ha engedélyezett.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">Elutasítás lefelé húzással</string>
     <string name="setting_title_searchEngine">Egyedi keresőmotor</string>
     <string name="setting_title_userAgent">Egyedi user agent</string>
-    <string name="setting_enter_userAgent">Adja meg a felhasználói ügynököt</string>
     <string name="setting_title_fingerPrint">Ujjlenyomat-védelem</string>
-    <string name="setting_title_whitelist">Kivételek</string>
-    <string name="setting_tab">Lap</string>
     <string name="setting_theme">Téma</string>
     <string name="setting_theme_system">Globális</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">Áttekintés</string>
     <string name="setting_overView_onStart_title">Mutassa indításkor</string>
     <string name="setting_gestures">Kézmozdulatok</string>
-    <string name="setting_title_reopenLastTab">Utolsó lap megnyitása</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Eszköztár</string>
     <string name="setting_title_toolbar_buttons">Eszköztár gomb</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">Lap bezárása</string>
     <string name="setting_gesture_hint">Hosszan kattintson a menü gombra a gyors beállítások párbeszédpanel megnyitásához. Hosszan nyomja meg a home / bookmark / history ikont a könyvjelzőszűrő megnyitásához.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Könyvjelzők exportálása HTML-fájlként</string>
-    <string name="setting_title_import_bookmarks">Könyvjelzők importálása</string>
-    <string name="setting_title_export_appData">Alkalmazásadatok exportálása</string>
-    <string name="setting_title_import_appData">Alkalmazásadatok importálása</string>
-    <string name="setting_summary_export_appData">A teljes adatbázis és a személyes beállítások exportálása.</string>
     <string name="title_appData">Alkalmazásadatok</string>
     <string name="hint_database">Ezzel törli az aktuális adatokat. Folytatja?</string>
     <string name="settings_data_restore">Visszaállítás</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Egyebek</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">A Domain sikeresen hozzáadva</string>
     <string name="toast_copy_successful">Sikeresen másolva</string>

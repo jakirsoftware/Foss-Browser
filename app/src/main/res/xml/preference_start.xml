@@ -11,33 +11,33 @@
         android:title="@string/setting_title_autofill"
         android:summary="@string/setting_summary_autofill"/>
 
-    <PreferenceCategory android:title="Profiles">
+    <PreferenceCategory android:title="@string/setting_title_profiles">
 
         <ListPreference
             android:key="profile_toStart"
             android:defaultValue="profileStandard"
-            android:title="Profile to start"
+            android:title="@string/setting_title_profiles_start"
             android:entries="@array/profileToStart_entries"
             android:entryValues="@array/profileToStart_values"/>
 
         <Preference
             android:key="settings_profile"
-            android:title="Edit profiles" />
+            android:title="@string/setting_title_profiles_edit" />
 
         <Preference
             android:key="edit_trusted"
             android:icon="@drawable/icon_profile_trusted"
-            android:title="Trusted websites"/>
+            android:title="@string/setting_title_profiles_trustedList"/>
 
         <Preference
             android:key="edit_standard"
             android:icon="@drawable/icon_profile_standard"
-            android:title="Standard websites"/>
+            android:title="@string/setting_title_profiles_standardList"/>
 
         <Preference
             android:key="edit_protected"
             android:icon="@drawable/icon_profile_protected"
-            android:title="Protected websites"/>
+            android:title="@string/setting_title_profiles_protectedList"/>
 
     </PreferenceCategory>
 

@@ -26,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="20dp"
                 android:layout_toStartOf="@+id/ib_settings"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
@@ -225,7 +225,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:ellipsize="end"
-                android:text="PopUp" />
+                android:text="@string/setting_title_javascript_popUp" />
 
             <com.google.android.material.chip.Chip
                 android:visibility="invisible"
@@ -237,7 +237,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="0dp"
                 android:ellipsize="end"
-                android:text="PopUp" />
+                android:text="@string/setting_title_javascript_popUp" />
 
         </LinearLayout>
 
@@ -249,11 +249,14 @@
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:ellipsize="end"
             android:includeFontPadding="false"
             android:maxLines="1"
-            android:text="Profile controll"
+            android:text="@string/setting_title_profiles"
             android:gravity="center_vertical"
             android:textAppearance="?attr/textAppearanceBody1"
             android:textStyle="bold" />
@@ -274,7 +277,7 @@
                 android:gravity="center_vertical"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:text="Profile"
+                android:text="@string/setting_title_profiles_start"
                 android:textAppearance="?attr/textAppearanceBody1" />
 
             <com.google.android.material.chip.Chip
@@ -341,7 +344,7 @@
                 android:gravity="center_vertical"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:text="Active profile"
+                android:text="@string/setting_title_profiles_set"
                 android:textAppearance="?attr/textAppearanceBody1" />
 
             <com.google.android.material.chip.Chip

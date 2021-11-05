@@ -75,19 +75,15 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Μέγεθος γραμματοσειράς</string>
     <string name="setting_title_dom">Αποθήκευση DOM</string>
     <string name="setting_title_dom_whitelist">Άσπρη Λίστα Dom</string>
-    <string name="setting_summary_dom">Ο χώρος αποθήκευσης DOM επιτρέπει στην εφαρμογή να αποθηκεύει στοιχεία σελίδων που θα μπορούσαν να περιλαμβάνουν ευαίσθητες πληροφορίες χρήστη. Η απενεργοποίηση αυτού αποτρέπει τη χρήση του τοπικού αποθηκευτικού χώρου.</string>
     <string name="setting_title_save_data">Αίτημα \'Αποθήκευση Δεδομένων\'</string>
     <!-- browser start -->
     <string name="setting_title_images">Εικόνες</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Αν ενεργοποιηθεί, όλα τα cookies θα διαγραφούν. Επίσης τα Cookies των αξιόπιστων ιστοσελίδων.</string>
-    <string name="setting_summary_cookie">Ενεργοποίηση Cookies. Τα cookies είναι μικρά αρχεία κειμένου, τα οποία αποθηκεύονται στη συσκευή σας. Οι ιστότοποι τα χρησιμοποιούν για παράδειγμα για την αποθήκευση των ρυθμίσεων χρήστη (για παράδειγμα ρυθμίσεις αναζήτησης). Αλλά θα μπορούσαν επίσης να χρησιμοποιηθούν για τη συλλογή προσωπικών δεδομένων χρηστών. Τα cookies τρίτων μερών (συλλέγουν δεδομένα χρηστών για διαφημίσεις) είναι πάντα απενεργοποιημένα.</string>
     <string name="setting_title_whitelistCookie">Λίστα επιτρεπόμενων cookie</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_summary_javascript">Ενεργοποίηση JavaScript. Πολλοί ιστότοποι χρειάζονται JavaScript για τη λειτουργικότητά τους (μενού, φόρτωση και εμφάνιση εικόνων, …). Αλλά είναι επίσης ένας κίνδυνος και μπορεί να χρησιμοποιηθεί για επιθέσεις.</string>
     <string name="setting_title_whitelistJS">Λίστα επιτρεπόμενων JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Ενεργοποιήστε το AdBlock για να αποκλείσετε ενοχλητικές διαφημίσεις. Οι ιστότοποι επίσης φορτώνουν γρηγορότερα όταν είναι ενεργοποιημένο.</string>
@@ -115,10 +111,7 @@
     <string name="setting_title_reload">Σύρετε προς τα κάτω για επαναφόρτωση</string>
     <string name="setting_title_searchEngine">Προσαρμοσμένη μηχανή αναζήτησης</string>
     <string name="setting_title_userAgent">Προσαρμοσμένος user agent</string>
-    <string name="setting_enter_userAgent">Προσαρμοσμένος user agent</string>
     <string name="setting_title_fingerPrint">Προστασία δακτυλικών αποτυπωμάτων</string>
-    <string name="setting_title_whitelist">Εξαιρέσεις</string>
-    <string name="setting_tab">Tab</string>
     <string name="setting_theme">Θέμα</string>
     <string name="setting_theme_system">Σύστημα</string>
     <!-- App behavior -->
@@ -129,7 +122,6 @@
     <string name="setting_overView">Επισκόπηση</string>
     <string name="setting_overView_onStart_title">Εμφάνιση κατά την έναρξη</string>
     <string name="setting_gestures">Χειρονομίες</string>
-    <string name="setting_title_reopenLastTab">Ανοίξτε ξανά την τελευταία καρτέλα</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Γραμμή Εργαλείων</string>
     <string name="setting_title_toolbar_buttons">Πλήκτρα γραμμής εργαλείων</string>
@@ -149,16 +141,10 @@
     <string name="setting_gesture_10">Κλείσιμο καρτέλας</string>
     <string name="setting_gesture_hint">Πατήστε παρατεταμένα το κουμπί μενού για να ανοίξετε το γρήγορο διάλογο ρυθμίσεων. Πατήστε παρατεταμένα το εικονίδιο αρχικής/σελιδοδείκτη/ιστορικού για να ανοίξετε το φίλτρο σελιδοδεικτών.</string>
     <!-- Data -->
-    <string name="setting_title_export_bookmarks">Εξαγωγή σελιδοδεικτών ως αρχείο HTML</string>
-    <string name="setting_title_import_bookmarks">Εισαγωγή σελιδοδεικτών</string>
-    <string name="setting_title_export_appData">Εξαγωγή δεδομένων εφαρμογής</string>
-    <string name="setting_title_import_appData">Εισαγωγή δεδομένων εφαρμογής</string>
-    <string name="setting_summary_export_appData">Εξαγωγή ολόκληρης της βάσης δεδομένων και των προσωπικών σας ρυθμίσεων.</string>
     <string name="title_appData">Δεδομένα εφαρμογής</string>
     <string name="hint_database">Αυτό θα διαγράψει τα τρέχοντα δεδομένα. Συνέχεια;</string>
     <string name="settings_data_restore">Επαναφορά</string>
     <!-- Others setting -->
-    <string name="setting_title_others">Άλλα</string>
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Ο Domain προστέθηκε με επιτυχία</string>
     <string name="toast_copy_successful">Αντιγράφτηκε με επιτυχία</string>

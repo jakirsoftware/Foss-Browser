@@ -65,7 +65,7 @@
         <CheckBoxPreference
             android:key="profileStandard_javascriptPopUp"
             android:defaultValue="true"
-            android:title="Javascript popups"/>
+            android:title="@string/setting_title_javascript_popUp"/>
 
     </PreferenceCategory>
 
