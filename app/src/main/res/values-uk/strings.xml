@@ -78,11 +78,23 @@
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_title_save_data">Request \'Save Data\'</string>
+    <string name="setting_title_profiles">Profiles</string>
+    <string name="setting_title_profiles_edit">Edit profiles</string>
+    <string name="setting_title_profiles_trustedList">Trusted websites</string>
+    <string name="setting_title_profiles_standardList">Standard websites</string>
+    <string name="setting_title_profiles_protectedList">Protected websites</string>
+    <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_set">Active profile</string>
     <!-- browser start -->
     <string name="setting_title_images">Зображення</string>
     <string name="setting_title_cookie">Куки</string>
     <string name="setting_summary_cookie_delete">Якщо увімкнено, всі cookies будуть видалені. Також файли cookie надійних веб-сайтів.</string>
     <string name="setting_title_whitelistCookie">Білий список куки</string>
+    <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_whitelistJS">Білий список JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
