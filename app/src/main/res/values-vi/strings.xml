@@ -78,11 +78,23 @@
     <string name="setting_title_dom">Bộ nhớ DOM</string>
     <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_title_save_data">Yêu cầu \'Tiết kiệm dữ liệu\'</string>
+    <string name="setting_title_profiles">Profiles</string>
+    <string name="setting_title_profiles_edit">Edit profiles</string>
+    <string name="setting_title_profiles_trustedList">Trusted websites</string>
+    <string name="setting_title_profiles_standardList">Standard websites</string>
+    <string name="setting_title_profiles_protectedList">Protected websites</string>
+    <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_set">Active profile</string>
     <!-- browser start -->
     <string name="setting_title_images">Hình ảnh</string>
     <string name="setting_title_cookie">Cookie</string>
     <string name="setting_summary_cookie_delete">Nếu được bật, tất cả cookie sẽ bị xoá. Cũng sẽ xoá các cookie của các trang web được tin cậy.</string>
     <string name="setting_title_whitelistCookie">Danh sách trắng cookie</string>
+    <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_whitelistJS">Danh sách trắng JavaScript</string>
     <string name="setting_title_adblock">Chặn quảng cáo</string>
