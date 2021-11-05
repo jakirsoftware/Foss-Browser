@@ -78,11 +78,23 @@
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_title_save_data">Захтевај уштеду података</string>
+    <string name="setting_title_profiles">Profiles</string>
+    <string name="setting_title_profiles_edit">Edit profiles</string>
+    <string name="setting_title_profiles_trustedList">Trusted websites</string>
+    <string name="setting_title_profiles_standardList">Standard websites</string>
+    <string name="setting_title_profiles_protectedList">Protected websites</string>
+    <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_set">Active profile</string>
     <!-- browser start -->
     <string name="setting_title_images">Слике</string>
     <string name="setting_title_cookie">Колачићи</string>
     <string name="setting_summary_cookie_delete">Ако је укључена опција, сви колачићи ће бити избрисани, чак и они са поузданих сајтова.</string>
     <string name="setting_title_whitelistCookie">Бели списак колачића</string>
+    <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">Џава-скрипт</string>
     <string name="setting_title_whitelistJS">Бели списак Џава-скрипта</string>
     <string name="setting_title_adblock">Блокер реклама</string>
