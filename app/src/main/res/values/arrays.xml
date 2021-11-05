@@ -184,4 +184,18 @@
         <item>https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts</item>
     </string-array>
 
+    <string-array name="profileToStart_entries">
+        <item>Trusted</item>
+        <item>Standard</item>
+        <item>Protected</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="profileToStart_values">
+        <item>profileTrusted</item>
+        <item>profileStandard</item>
+        <item>profileProtected</item>
+        <item>profileChanged</item>
+    </string-array>
+
 </resources>

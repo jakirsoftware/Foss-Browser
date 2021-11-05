@@ -47,11 +47,6 @@ public class NinjaWebViewClient extends WebViewClient {
     private final SharedPreferences sp;
     private final AdBlock adBlock;
 
-    private final boolean white;
-    private boolean enable;
-    public void enableAdBlock(boolean enable) {
-        this.enable = enable;
-    }
 
     public NinjaWebViewClient(NinjaWebView ninjaWebView) {
         super();
@@ -59,8 +54,6 @@ public class NinjaWebViewClient extends WebViewClient {
         this.context = ninjaWebView.getContext();
         this.sp = PreferenceManager.getDefaultSharedPreferences(context);
         this.adBlock = new AdBlock(this.context);
-        this.white = false;
-        this.enable = true;
     }
 
     @Override
@@ -75,21 +68,21 @@ public class NinjaWebViewClient extends WebViewClient {
         }
 
         if(sp.getBoolean("onPageFinished",false)) {
-            view.evaluateJavascript(sp.getString("sp_onPageFinished",""), null);
+            view.evaluateJavascript(Objects.requireNonNull(sp.getString("sp_onPageFinished", "")), null);
         }
 
-        if(sp.getBoolean("sp_savedata",true)) {
+        String profile = sp.getString("profile", "profileStandard");
+        if(sp.getBoolean(profile + "_saveData",true)) {
             view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
         }
-        SharedPreferences sp= PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
 
-        if (sp.getBoolean("saveHistory", true)) {
+        if (sp.getBoolean(profile + "_saveHistory", true)) {
             RecordAction action = new RecordAction(ninjaWebView.getContext());
             action.open(true);
             if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY)) {
                 action.deleteURL(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY);
             }
-            action.addHistory(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), System.currentTimeMillis(), 0,0,ninjaWebView.isDesktopMode(),ninjaWebView.getSettings().getJavaScriptEnabled(),ninjaWebView.getSettings().getDomStorageEnabled(),0));
+            action.addHistory(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), System.currentTimeMillis(), 0,0,ninjaWebView.isDesktopMode(),0));
             action.close();
         }
     }
@@ -101,7 +94,7 @@ public class NinjaWebViewClient extends WebViewClient {
         super.onPageStarted(view,url,favicon);
 
         if(sp.getBoolean("onPageStarted",false)) {
-            view.evaluateJavascript(sp.getString("sp_onPageStarted",""), null);
+            view.evaluateJavascript(Objects.requireNonNull(sp.getString("sp_onPageStarted", "")), null);
         }
 
         if(ninjaWebView.isFingerPrintProtection()) {
@@ -118,7 +111,7 @@ public class NinjaWebViewClient extends WebViewClient {
             //Prevent canvas fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com
             //
-            //The Javascript part below is taken from "Canvas Fingerprint Defender", Firefox plugin, Version 0.1.9, by ilGur
+            //The Profile_trusted part below is taken from "Canvas Fingerprint Defender", Firefox plugin, Version 0.1.9, by ilGur
             //The source code has been published originally under Mozilla Public License V2.0. You can obtain a copy of the license at https://mozilla.org/MPL/2.0/
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
@@ -180,7 +173,7 @@ public class NinjaWebViewClient extends WebViewClient {
             //Prevent WebGL fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com
             //
-            //The Javascript part below is taken from "WebGL Fingerprint Defender", Firefox plugin, Version 0.1.5, by ilGur
+            //The Profile_trusted part below is taken from "WebGL Fingerprint Defender", Firefox plugin, Version 0.1.5, by ilGur
             //The source code has been published originally under Mozilla Public License V2.0. You can obtain a copy of the license at https://mozilla.org/MPL/2.0/
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
@@ -288,7 +281,7 @@ public class NinjaWebViewClient extends WebViewClient {
             //Prevent AudioContext fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com
             //
-            //The Javascript part below is taken from "AudioContext Fingerprint Defender", Firefox plugin, Version 0.1.6, by ilGur
+            //The Profile_trusted part below is taken from "AudioContext Fingerprint Defender", Firefox plugin, Version 0.1.6, by ilGur
             //The source code has been published originally under Mozilla Public License V2.0. You can obtain a copy of the license at https://mozilla.org/MPL/2.0/
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
@@ -344,7 +337,7 @@ public class NinjaWebViewClient extends WebViewClient {
             //Prevent Font fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com
             //
-            //The Javascript part below is taken from "Font Fingerprint Defender", Firefox plugin, Version 0.1.3, by ilGur
+            //The Profile_trusted part below is taken from "Font Fingerprint Defender", Firefox plugin, Version 0.1.3, by ilGur
             //The source code has been published originally under Mozilla Public License V2.0. You can obtain a copy of the license at https://mozilla.org/MPL/2.0/
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
@@ -420,7 +413,7 @@ public class NinjaWebViewClient extends WebViewClient {
     public void onLoadResource(WebView view, String url) {
 
         if(sp.getBoolean("onLoadResource",false)) {
-            view.evaluateJavascript(sp.getString("sp_onLoadResource",""), null);
+            view.evaluateJavascript(Objects.requireNonNull(sp.getString("sp_onLoadResource", "")), null);
         }
 
         if(ninjaWebView.isFingerPrintProtection()) {
@@ -509,7 +502,8 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     @SuppressWarnings("deprecation")
     public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
-        if (enable && !white && adBlock.isAd(url)) {
+        String profile = sp.getString("profile","standard");
+        if (sp.getBoolean(profile + "_adBlock",false) && adBlock.isAd(url)) {
             return new WebResourceResponse(
                     BrowserUnit.MIME_TYPE_TEXT_PLAIN,
                     BrowserUnit.URL_ENCODING,
@@ -521,7 +515,8 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-        if (enable && !white && adBlock.isAd(request.getUrl().toString())) {
+        String profile = sp.getString("profile","standard");
+        if (sp.getBoolean(profile + "_adBlock",false) && adBlock.isAd(request.getUrl().toString())) {
             return new WebResourceResponse(
                     BrowserUnit.MIME_TYPE_TEXT_PLAIN,
                     BrowserUnit.URL_ENCODING,

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import de.baumann.browser.browser.Javascript;
+import de.baumann.browser.browser.Profile_trusted;
 import de.baumann.browser.R;
 
 public class WhitelistAdapter extends ArrayAdapter<String> {
@@ -50,7 +50,7 @@ public class WhitelistAdapter extends ArrayAdapter<String> {
 
         holder.domain.setText(list.get(position));
         holder.cancel.setOnClickListener(v -> {
-            Javascript Javascript = new Javascript(context);
+            Profile_trusted Javascript = new Profile_trusted(context);
             Javascript.removeDomain(list.get(position));
             list.remove(position);
             notifyDataSetChanged();

@@ -78,15 +78,15 @@
             android:label="@string/setting_label"
             android:theme="@style/AppTheme"/>
 
-        <activity android:name="de.baumann.browser.activity.Whitelist_Javascript"
+        <activity android:name="de.baumann.browser.activity.List_Trusted"
             android:label="@string/setting_title_whitelistJS"
             android:theme="@style/AppTheme"/>
 
-        <activity android:name="de.baumann.browser.activity.Whitelist_Cookie"
+        <activity android:name="de.baumann.browser.activity.List_Protected"
             android:label="@string/setting_title_whitelistCookie"
             android:theme="@style/AppTheme"/>
 
-        <activity android:name="de.baumann.browser.activity.Whitelist_Remote"
+        <activity android:name="de.baumann.browser.activity.List_Standard"
             android:label="@string/setting_title_dom_whitelist"
             android:theme="@style/AppTheme"/>
 
@@ -111,6 +111,10 @@
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_Filter"
+            android:label="@string/setting_filter"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name="de.baumann.browser.activity.Settings_Profile"
             android:label="@string/setting_filter"
             android:theme="@style/AppTheme"/>
 

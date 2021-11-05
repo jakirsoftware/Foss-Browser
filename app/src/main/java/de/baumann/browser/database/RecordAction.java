@@ -43,8 +43,6 @@ public class RecordAction {
                 || record.getURL() == null
                 || record.getURL().trim().isEmpty()
                 || record.getDesktopMode() == null
-                || record.getJavascript() == null
-                || record.getDomStorage() == null
                 || record.getTime() < 0L
                 || record.getOrdinal() < 0) {
             return false;
@@ -53,12 +51,12 @@ public class RecordAction {
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
 
-        // filename is used for desktop mode, javascript, and DOM content
+        // filename is used for desktop mode, javascript, and Profile_standard content
         // bit 4: 1 = Desktop Mode
         // bit 5: 0 = JavaScript (0 due backward compatibility)
-        // bit 6: 0 = DOM Content allowed (0 due to backward compatibility)
+        // bit 6: 0 = Profile_standard Content allowed (0 due to backward compatibility)
 
-        values.put(RecordUnit.COLUMN_FILENAME,  (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
+        values.put(RecordUnit.COLUMN_FILENAME,  (long) (record.getDesktopMode() ? 16 : 0));
         values.put(RecordUnit.COLUMN_ORDINAL, record.getOrdinal());
         database.insert(RecordUnit.TABLE_GRID, null, values);
         return true;
@@ -109,8 +107,6 @@ public class RecordAction {
                 || record.getURL() == null
                 || record.getURL().trim().isEmpty()
                 || record.getDesktopMode() == null
-                || record.getJavascript() == null
-                || record.getDomStorage() == null
                 || record.getTime() < 0L) {
             return;
         }
@@ -119,13 +115,13 @@ public class RecordAction {
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
 
-        // Bookmark time is used for color, desktop mode, javascript, and DOM content
+        // Bookmark time is used for color, desktop mode, javascript, and Profile_standard content
         // bit 0..3  icon color
         // bit 4: 1 = Desktop Mode
         // bit 5: 0 = JavaScript (0 due backward compatibility)
-        // bit 6: 0 = DOM Content allowed (0 due to backward compatibility)
+        // bit 6: 0 = Profile_standard Content allowed (0 due to backward compatibility)
 
-        values.put(RecordUnit.COLUMN_TIME, record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
+        values.put(RecordUnit.COLUMN_TIME, record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0));
         database.insert(RecordUnit.TABLE_BOOKMARK, null, values);
     }
 
@@ -188,7 +184,7 @@ public class RecordAction {
         ContentValues values = new ContentValues();
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
-        values.put(RecordUnit.COLUMN_TIME, record.getTime()+ (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64));
+        values.put(RecordUnit.COLUMN_TIME, record.getTime()+ (long) (record.getDesktopMode() ? 16 : 0));
         database.insert(RecordUnit.TABLE_HISTORY, null, values);
     }
 
@@ -317,19 +313,14 @@ public class RecordAction {
 
         if ((type==STARTSITE_ITEM)||(type==BOOKMARK_ITEM)){
             record.setDesktopMode((record.getTime()&16)==16);
-            record.setJavascript(!((record.getTime()&32)==32));
-            record.setDomStorage(!((record.getTime()&64)==64));
             if (type==BOOKMARK_ITEM){
                 record.setIconColor(record.getTime()&15);
             }
             record.setTime(0);  //time is no longer needed after extracting data
         } else if (type==HISTORY_ITEM){
             record.setDesktopMode((record.getTime()&16)==16);
-            record.setJavascript(!((record.getTime()&32)==32));
-            record.setDomStorage(!((record.getTime()&64)==64));
             record.setTime(record.getTime()&(~255));  //blank out lower 8bits of time
         }
-
         return record;
     }
 

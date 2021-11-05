@@ -120,7 +120,7 @@ public class HelperUnit {
                     if (BackupUnit.checkPermissionStorage(activity)) {
                         Uri source = Uri.parse(url);
                         DownloadManager.Request request = new DownloadManager.Request(source);
-                        request.addRequestHeader("Cookie", CookieManager.getInstance().getCookie(url));
+                        request.addRequestHeader("Profile_protected", CookieManager.getInstance().getCookie(url));
                         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED); //Notify client once download is completed!
                         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename1);
                         DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);

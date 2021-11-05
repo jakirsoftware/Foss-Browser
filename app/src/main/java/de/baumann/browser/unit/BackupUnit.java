@@ -51,9 +51,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import de.baumann.browser.R;
-import de.baumann.browser.browser.Cookie;
-import de.baumann.browser.browser.DOM;
-import de.baumann.browser.browser.Javascript;
+import de.baumann.browser.browser.Profile_protected;
+import de.baumann.browser.browser.Profile_standard;
+import de.baumann.browser.browser.Profile_trusted;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.view.NinjaToast;
@@ -205,20 +205,20 @@ public class BackupUnit {
     public static void importWhitelist (Context context, int i) {
         try {
             String filename;
-            Javascript js = null;
-            Cookie cookie = null;
-            DOM DOM = null;
+            Profile_trusted js = null;
+            Profile_protected cookie = null;
+            Profile_standard DOM = null;
             switch (i) {
                 case 1:
-                    js = new Javascript(context);
+                    js = new Profile_trusted(context);
                     filename = "export_java_list.txt";
                     break;
                 case 3:
-                    DOM = new DOM(context);
+                    DOM = new Profile_standard(context);
                     filename = "export_dom_list.txt";
                     break;
                 default:
-                    cookie = new Cookie(context);
+                    cookie = new Profile_protected(context);
                     filename = "export_cookie_list.txt";
                     break;
             }
@@ -278,7 +278,7 @@ public class BackupUnit {
                 String type = BOOKMARK_TYPE;
                 type = type.replace(BOOKMARK_TITLE, record.getTitle());
                 type = type.replace(BOOKMARK_URL, record.getURL());
-                type = type.replace(BOOKMARK_TIME, String.valueOf(record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getJavascript() ? 0 : 32) + (long) (record.getDomStorage() ? 0 : 64)));
+                type = type.replace(BOOKMARK_TIME, String.valueOf(record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0)));
                 writer.write(type);
                 writer.newLine();
             }
@@ -305,7 +305,7 @@ public class BackupUnit {
                 String title = getBookmarkTitle(line);
                 String url = getBookmarkURL(line);
                 long date = getBookmarkDate(line);
-                if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Javascript + 64 for DOM Content
+                if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Profile_trusted + 64 for Profile_standard Content
                 if (title.trim().isEmpty() || url.trim().isEmpty()) {
                     continue;
                 }
@@ -314,8 +314,6 @@ public class BackupUnit {
                 record.setURL(url);
                 record.setIconColor(date&15);
                 record.setDesktopMode((date&16)==16);
-                record.setJavascript(!((date&32)==32));
-                record.setDomStorage(!((date&64)==64));
 
                 if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
                     list.add(record);

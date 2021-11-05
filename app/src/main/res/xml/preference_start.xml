@@ -11,37 +11,41 @@
         android:title="@string/setting_title_autofill"
         android:summary="@string/setting_summary_autofill"/>
 
-    <CheckBoxPreference
-        android:key="saveHistory"
-        android:defaultValue="true"
-        android:title="@string/setting_title_history"/>
+    <PreferenceCategory android:title="Profiles">
 
-    <CheckBoxPreference
-        android:key="sp_images"
-        android:defaultValue="true"
-        android:title="@string/setting_title_images"/>
+        <ListPreference
+            android:key="profile_toStart"
+            android:defaultValue="profileStandard"
+            android:title="Profile to start"
+            android:entries="@array/profileToStart_entries"
+            android:entryValues="@array/profileToStart_values"/>
 
-    <CheckBoxPreference
-        android:key="sp_savedata"
-        android:defaultValue="false"
-        android:title="@string/setting_title_save_data"/>
+        <Preference
+            android:key="settings_profile"
+            android:title="Edit profiles" />
 
-    <CheckBoxPreference
-        android:key="sp_fingerPrintProtection"
-        android:defaultValue="false"
-        android:title="@string/setting_title_fingerPrint"/>
+        <Preference
+            android:key="edit_trusted"
+            android:icon="@drawable/icon_profile_trusted"
+            android:title="Trusted websites"/>
 
-    <CheckBoxPreference
-        android:key="sp_location"
-        android:defaultValue="false"
-        android:title="@string/setting_title_location"/>
+        <Preference
+            android:key="edit_standard"
+            android:icon="@drawable/icon_profile_standard"
+            android:title="Standard websites"/>
 
-    <CheckBoxPreference
-        android:key="sp_camera"
-        android:defaultValue="false"
-        android:title="@string/setting_title_camera"/>
+        <Preference
+            android:key="edit_protected"
+            android:icon="@drawable/icon_profile_protected"
+            android:title="Protected websites"/>
+
+    </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_adblock">
+
+        <Preference
+            android:key="sp_ad_block"
+            android:summary="@string/setting_summary_adblock"/>
 
         <ListPreference
             android:key="ab_hosts"
@@ -49,50 +53,6 @@
             android:title="@string/setting_title_adblockHost"
             android:entries="@array/setting_entries_adBlock"
             android:entryValues="@array/setting_values_adBlock"/>
-
-        <CheckBoxPreference
-            android:key="sp_ad_block"
-            android:defaultValue="true"
-            android:summary="@string/setting_summary_adblock"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_javascript">
-
-        <CheckBoxPreference
-            android:key="sp_javascript"
-            android:defaultValue="true"
-            android:summary="@string/setting_summary_javascript"/>
-
-        <Preference
-            android:key="start_java"
-            android:title="@string/setting_title_whitelistJS"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_cookie">
-
-        <CheckBoxPreference
-            android:key="sp_cookies"
-            android:defaultValue="true"
-            android:summary="@string/setting_summary_cookie"/>
-
-        <Preference
-            android:key="start_cookie"
-            android:title="@string/setting_title_whitelistCookie"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_dom">
-
-        <CheckBoxPreference
-            android:key="sp_remote"
-            android:defaultValue="true"
-            android:summary="@string/setting_summary_dom"/>
-
-        <Preference
-            android:key="start_remote"
-            android:title="@string/setting_title_dom_whitelist"/>
 
     </PreferenceCategory>
 

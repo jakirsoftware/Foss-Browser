@@ -5,12 +5,41 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.21875" />
+        <entry key="app/src/main/res/drawable/icon_popup.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_changed.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_protected.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_protected_light.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_save_data.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_standard.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_standard_light.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_trusted.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_trusted_light.xml" value="0.20625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1721014492753623" />
+        <entry key="app/src/main/res/layout/dialog_edit_title.xml" value="0.14492753623188406" />
+        <entry key="app/src/main/res/layout/dialog_menu.xml" value="0.1721014492753623" />
+        <entry key="app/src/main/res/layout/dialog_tabs.xml" value="0.1721014492753623" />
+        <entry key="app/src/main/res/layout/dialog_toggle.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_icon_left.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/menu/menu_bottom_overview.xml" value="0.19010416666666666" />
+        <entry key="app/src/main/res/menu/poupup_menu.xml" value="0.19010416666666666" />
+        <entry key="app/src/main/res/xml/preference_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/xml/preference_profile_data.xml" value="0.15942028985507245" />
+        <entry key="app/src/main/res/xml/preference_profile_default.xml" value="0.1480978260869565" />
+        <entry key="app/src/main/res/xml/preference_profile_protected.xml" value="0.13632246376811594" />
+        <entry key="app/src/main/res/xml/preference_start.xml" value="0.1480978260869565" />
+      </map>
+    </option>
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="org.jetbrains.annotations.Nullable" />
     <option name="myDefaultNotNull" value="androidx.annotation.RecentlyNonNull" />
     <option name="myNullables">
       <value>
-        <list size="12">
+        <list size="15">
           <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.Nullable" />
           <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nullable" />
           <item index="2" class="java.lang.String" itemvalue="javax.annotation.CheckForNull" />
@@ -23,12 +52,15 @@
           <item index="9" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableType" />
           <item index="10" class="java.lang.String" itemvalue="android.annotation.Nullable" />
           <item index="11" class="java.lang.String" itemvalue="com.android.annotations.Nullable" />
+          <item index="12" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.Nullable" />
+          <item index="13" class="java.lang.String" itemvalue="io.reactivex.annotations.Nullable" />
+          <item index="14" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.Nullable" />
         </list>
       </value>
     </option>
     <option name="myNotNulls">
       <value>
-        <list size="11">
+        <list size="15">
           <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.NotNull" />
           <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nonnull" />
           <item index="2" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.NonNull" />
@@ -40,6 +72,10 @@
           <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullType" />
           <item index="9" class="java.lang.String" itemvalue="android.annotation.NonNull" />
           <item index="10" class="java.lang.String" itemvalue="com.android.annotations.NonNull" />
+          <item index="11" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.NonNull" />
+          <item index="12" class="java.lang.String" itemvalue="io.reactivex.annotations.NonNull" />
+          <item index="13" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.NonNull" />
+          <item index="14" class="java.lang.String" itemvalue="lombok.NonNull" />
         </list>
       </value>
     </option>

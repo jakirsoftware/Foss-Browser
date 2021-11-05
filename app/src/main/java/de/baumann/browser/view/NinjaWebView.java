@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.os.Build;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 
@@ -18,6 +19,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ImageButton;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
@@ -27,8 +29,6 @@ import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
@@ -68,22 +68,23 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     private Context context;
     private boolean desktopMode;
-    private boolean fingerPrintProtection;
+    public boolean fingerPrintProtection;
     private boolean stopped;
-    private String oldDomain;
     private AlbumItem album;
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
     private NinjaDownloadListener downloadListener;
 
-    public Boolean isBackPressed;
+    private String profile;
+
+    public boolean isBackPressed;
     public void setIsBackPressed(Boolean isBackPressed) {
         this.isBackPressed = isBackPressed;
     }
 
-    private Javascript javaHosts;
-    private DOM DOMHosts;
-    private Cookie cookieHosts;
+    private Profile_trusted listTrusted;
+    private Profile_standard listStandard;
+    private Profile_protected listProtected;
     private Bitmap favicon;
     private SharedPreferences sp;
 
@@ -112,10 +113,9 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.fingerPrintProtection=sp.getBoolean("sp_fingerPrintProtection",false);
 
         this.stopped=false;
-        this.oldDomain="";
-        this.javaHosts = new Javascript(this.context);
-        this.DOMHosts = new DOM(this.context);
-        this.cookieHosts = new Cookie(this.context);
+        this.listTrusted = new Profile_trusted(this.context);
+        this.listStandard = new Profile_standard(this.context);
+        this.listProtected = new Profile_protected(this.context);
         this.album = new AlbumItem(this.context, this, this.browserController);
         this.webViewClient = new NinjaWebViewClient(this);
         this.webChromeClient = new NinjaWebChromeClient(this);
@@ -136,23 +136,22 @@ public class NinjaWebView extends WebView implements AlbumController {
 
         HelperUnit.initRendering(this, this.context);
         sp = PreferenceManager.getDefaultSharedPreferences(context);
+        profile = sp.getString("profile", "profileStandard");
+
         WebSettings webSettings = getSettings();
 
         String userAgent = getUserAgent(desktopMode);
+        webSettings.setUserAgentString(userAgent);
+
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             webSettings.setSafeBrowsingEnabled(true);
         }
 
-        webSettings.setUserAgentString(userAgent);
         webSettings.setSupportZoom(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
         webSettings.setSupportMultipleWindows(true);
-        webViewClient.enableAdBlock(sp.getBoolean("sp_ad_block", true));
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
-        webSettings.setBlockNetworkImage(!sp.getBoolean("sp_images", true));
-        webSettings.setGeolocationEnabled(sp.getBoolean("sp_location", false));
-        webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean("sp_savedata",true));
 
         if (sp.getBoolean("sp_autofill", true)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -168,54 +167,144 @@ public class NinjaWebView extends WebView implements AlbumController {
             }
         }
 
-        if (url != null) {
-            CookieManager manager = CookieManager.getInstance();
-            if (cookieHosts.isWhite(url) || sp.getBoolean("sp_cookies", true)) {
-                manager.setAcceptCookie(true);
-                manager.getCookie(url);
-            } else {
-                manager.setAcceptCookie(false);
-            }
-            String  domain="";
-            try {
-                domain = new URI(url).getHost();
-            } catch (URISyntaxException e) {
-                //do not change setting if staying within same domain
-                setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-                setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
-                e.printStackTrace();
-            }
-            if (oldDomain != null) {
-                //do not change setting if staying within same domain
-                if (!oldDomain.equals(domain)){
-                    setJavaScript(javaHosts.isWhite(url) || sp.getBoolean("sp_javascript", true));
-                    setDomStorage(DOMHosts.isWhite(url) || sp.getBoolean("sp_remote", true));
-                }
-            }
-            oldDomain=domain;
+        if (listTrusted.isWhite(url)) {
+            profile = "profileTrusted";
+        } else if (listStandard.isWhite(url)) {
+            profile = "profileProtected";
+        } else if (listProtected.isWhite(url)) {
+            profile = "profileStandard";
+        }
+
+        webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean(profile + "_saveData",true));
+        webSettings.setBlockNetworkImage(!sp.getBoolean(profile + "_images", true));
+        webSettings.setGeolocationEnabled(sp.getBoolean(profile + "_location", false));
+        fingerPrintProtection = sp.getBoolean(profile + "_fingerPrintProtection", false);
+        CookieManager manager = CookieManager.getInstance();
+
+        if (sp.getBoolean(profile + "_cookies", true)) {
+            manager.setAcceptCookie(true);
+            manager.getCookie(url);
+        } else {
+            manager.setAcceptCookie(false);
+        }
+
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(profile + "_javascript", true));
+        webSettings.setJavaScriptEnabled(sp.getBoolean(profile + "_javascript", true));
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(profile + "_javascriptPopUp", true));
+        webSettings.setDomStorageEnabled(sp.getBoolean(profile + "_dom", true));
+    }
+
+    public void setProfileIcon (ImageButton omniBox_tab) {
+        if (listTrusted.isWhite(this.getUrl())) {
+            omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_light);
+        } else if (listStandard.isWhite(this.getUrl())) {
+            omniBox_tab.setImageResource(R.drawable.icon_profile_standard_light);
+        } else if (listProtected.isWhite(this.getUrl())) {
+            omniBox_tab.setImageResource(R.drawable.icon_profile_protected_light);
+        } else if (profile.equals("profileTrusted")) {
+            omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_light);
+        } else if (profile.equals("profileStandard")) {
+            omniBox_tab.setImageResource(R.drawable.icon_profile_standard_light);
+        } else if (profile.equals("profileProtected")) {
+            omniBox_tab.setImageResource(R.drawable.icon_profile_protected_light);
+        } else {
+            omniBox_tab.setImageResource(R.drawable.icon_profile_changed_light);
         }
     }
 
-    public void setOldDomain(String url){
-        String  domain="";
-        try {
-            domain = new URI(url).getHost();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
+    public void setProfileChanged () {
+        sp.edit().putBoolean("profileChanged_saveData", sp.getBoolean(profile + "_saveData",true))
+                .putBoolean("profileChanged_images", sp.getBoolean(profile + "_images",true))
+                .putBoolean("profileChanged_adBlock", sp.getBoolean(profile + "_adBlock",true))
+                .putBoolean("profileChanged_location", sp.getBoolean(profile + "_location",true))
+                .putBoolean("profileChanged_fingerPrintProtection", sp.getBoolean(profile + "_fingerPrintProtection",true))
+                .putBoolean("profileChanged_cookies", sp.getBoolean(profile + "_cookies",true))
+                .putBoolean("profileChanged_javascript", sp.getBoolean(profile + "_javascript",true))
+                .putBoolean("profileChanged_javascriptPopUp", sp.getBoolean(profile + "_javascriptPopUp",true))
+                .putBoolean("profileChanged_saveHistory", sp.getBoolean(profile + "_saveHistory",true))
+                .putBoolean("profileChanged_camera", sp.getBoolean(profile + "_camera",true))
+                .putBoolean("profileChanged_dom", sp.getBoolean(profile + "_dom",true))
+                .putString("profile", "profileChanged").apply();
+    }
+
+    public void putBoolean (String string, AlertDialog dialog) {
+        switch (string) {
+            case "_images":
+                sp.edit().putBoolean("profileChanged_images", !sp.getBoolean("profileChanged_images", true)).apply();
+                break;
+            case "_javascript":
+                sp.edit().putBoolean("profileChanged_javascript", !sp.getBoolean("profileChanged_javascript", true)).apply();
+                break;
+            case "_javascriptPopUp":
+                sp.edit().putBoolean("profileChanged_javascriptPopUp", !sp.getBoolean("profileChanged_javascriptPopUp", true)).apply();
+                break;
+            case "_cookies":
+                sp.edit().putBoolean("profileChanged_cookies", !sp.getBoolean("profileChanged_cookies", true)).apply();
+                break;
+            case "_fingerPrintProtection":
+                sp.edit().putBoolean("profileChanged_fingerPrintProtection", !sp.getBoolean("profileChanged_fingerPrintProtection", true)).apply();
+                break;
+            case "_adBlock":
+                sp.edit().putBoolean("profileChanged_adBlock", !sp.getBoolean("profileChanged_adBlock", true)).apply();
+                break;
+            case "_saveData":
+                sp.edit().putBoolean("profileChanged_saveData", !sp.getBoolean("profileChanged_saveData", true)).apply();
+                break;
+            case "_saveHistory":
+                sp.edit().putBoolean("profileChanged_saveHistory", !sp.getBoolean("profileChanged_saveHistory", true)).apply();
+                break;
+            case "_location":
+                sp.edit().putBoolean("profileChanged_location", !sp.getBoolean("profileChanged_location", true)).apply();
+                break;
+            case "_camera":
+                sp.edit().putBoolean("profileChanged_camera", !sp.getBoolean("profileChanged_camera", true)).apply();
+                break;
+            case "_dom":
+                sp.edit().putBoolean("profileChanged_dom", !sp.getBoolean("profileChanged_dom", true)).apply();
+                break;
         }
-        oldDomain=domain;
+        dialog.cancel();
+        this.reload();
     }
 
-    public void setJavaScript(boolean value){
-        WebSettings webSettings = this.getSettings();
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(value);
-        webSettings.setJavaScriptEnabled(value);
+    public boolean getBoolean (String string) {
+
+        if (listTrusted.isWhite(this.getUrl())) {
+            profile = "profileTrusted";
+        } else if (listStandard.isWhite(this.getUrl())) {
+            profile = "profileProtected";
+        } else if (listProtected.isWhite(this.getUrl())) {
+            profile = "profileStandard";
+        }
+        switch (string) {
+            case "_images":
+                return sp.getBoolean(profile + "_images", true);
+            case "_javascript":
+                return sp.getBoolean(profile + "_javascript", true);
+            case "_javascriptPopUp":
+                return sp.getBoolean(profile + "_javascriptPopUp", true);
+            case "_cookies":
+                return sp.getBoolean(profile + "_cookies", true);
+            case "_fingerPrintProtection":
+                return sp.getBoolean(profile + "_fingerPrintProtection", true);
+            case "_adBlock":
+                return sp.getBoolean(profile + "_adBlock", true);
+            case "_saveData":
+                return sp.getBoolean(profile + "_saveData", true);
+            case "_saveHistory":
+                return sp.getBoolean(profile + "_saveHistory", true);
+            case "_location":
+                return sp.getBoolean(profile + "_location", true);
+            case "_camera":
+                return sp.getBoolean(profile + "_camera", true);
+            case "_dom":
+                return sp.getBoolean(profile + "_dom", true);
+            default:
+                return false;
+        }
     }
 
-    public void setDomStorage(boolean value){
-        WebSettings webSettings = this.getSettings();
-        webSettings.setDomStorageEnabled(value);
-    }
+
 
     private synchronized void initAlbum() {
         album.setAlbumTitle(context.getString(R.string.app_name));
@@ -228,7 +317,9 @@ public class NinjaWebView extends WebView implements AlbumController {
         //  Server-side detection for GlobalPrivacyControl
         requestHeaders.put("Sec-GPC","1");
         requestHeaders.put("X-Requested-With","com.duckduckgo.mobile.android");
-        if (sp.getBoolean("sp_savedata", false)) {
+
+        profile = sp.getString("profile", "profileStandard");
+        if (sp.getBoolean(profile + "_saveData", false)) {
             requestHeaders.put("Save-Data", "on");
         }
         return requestHeaders;
@@ -243,6 +334,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     @Override
     public synchronized void reload(){
         stopped=false;
+        this.initPreferences(this.getUrl());
         super.reload();
     }
 
@@ -376,18 +468,16 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public void toggleAllowFingerprint (boolean reload) {
-
-
         if (isFingerPrintProtection()) {
             fingerPrintProtection = false;
         } else if (!isFingerPrintProtection()) {
             fingerPrintProtection = true;
         }
-
         if (reload) {
             reload();
         }
     }
+
 
     public void resetFavicon(){this.favicon=null;}
 

@@ -4,7 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.GridView;
+import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -12,11 +18,20 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
 
-import de.baumann.browser.activity.Whitelist_Cookie;
-import de.baumann.browser.activity.Whitelist_Javascript;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
+
+import de.baumann.browser.activity.Settings_Profile;
+import de.baumann.browser.activity.List_Protected;
+import de.baumann.browser.activity.List_Trusted;
 import de.baumann.browser.R;
-import de.baumann.browser.activity.Whitelist_Remote;
+import de.baumann.browser.activity.List_Standard;
 import de.baumann.browser.browser.AdBlock;
+import de.baumann.browser.view.GridAdapter;
+import de.baumann.browser.view.GridItem;
 
 public class Fragment_settings_Start extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener{
 
@@ -27,31 +42,79 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
         Context context = getContext();
         assert context != null;
 
-        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_ui, false);
+        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_start, false);
         initSummary(getPreferenceScreen());
 
         Preference sp_ad_block = findPreference("sp_ad_block");
         assert sp_ad_block != null;
         sp_ad_block.setSummary(getString(R.string.setting_summary_adblock)+"\n\n"+AdBlock.getHostsDate(getContext()));
 
-        Preference start_java = findPreference("start_java");
-        assert start_java != null;
-        start_java.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Whitelist_Javascript.class);
+        Preference settings_profile = findPreference("settings_profile");
+        assert settings_profile != null;
+        settings_profile.setOnPreferenceClickListener(preference -> {
+
+            GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, "Trusted",  11);
+            GridItem item_02 = new GridItem(R.drawable.icon_profile_standard, "Standard",  11);
+            GridItem item_03 = new GridItem(R.drawable.icon_profile_protected,  "Protected",  11);
+
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            View dialogView = View.inflate(context, R.layout.dialog_menu, null);
+            builder.setView(dialogView);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
+            CardView cardView = dialogView.findViewById(R.id.cardView);
+            cardView.setVisibility(View.GONE);
+
+            TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
+            menuTitle.setText("Edit profile");
+
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
+            final List<GridItem> gridList = new LinkedList<>();
+            gridList.add(gridList.size(), item_01);
+            gridList.add(gridList.size(), item_02);
+            gridList.add(gridList.size(), item_03);
+            GridAdapter gridAdapter = new GridAdapter(context, gridList);
+            menu_grid.setAdapter(gridAdapter);
+            gridAdapter.notifyDataSetChanged();
+            menu_grid.setOnItemClickListener((parent, view, position, id) -> {
+                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+                switch (position) {
+                    case 0:
+                        sp.edit().putString("profile", "profileTrusted").apply();
+                        break;
+                    case 1:
+                        sp.edit().putString("profile", "profileStandard").apply();
+                        break;
+                    case 2:
+                        sp.edit().putString("profile", "profileProtected").apply();
+                        break;
+                }
+                Intent intent = new Intent(getActivity(), Settings_Profile.class);
+                requireActivity().startActivity(intent);
+            });
+            return false;
+        });
+
+        Preference edit_trusted = findPreference("edit_trusted");
+        assert edit_trusted != null;
+        edit_trusted.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), List_Trusted.class);
             requireActivity().startActivity(intent);
             return false;
         });
-        Preference start_cookie = findPreference("start_cookie");
-        assert start_cookie != null;
-        start_cookie.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Whitelist_Cookie.class);
+        Preference edit_standard = findPreference("edit_standard");
+        assert edit_standard != null;
+        edit_standard.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), List_Standard.class);
             requireActivity().startActivity(intent);
             return false;
         });
-        Preference start_remote = findPreference("start_remote");
-        assert start_remote != null;
-        start_remote.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Whitelist_Remote.class);
+        Preference edit_protected = findPreference("edit_protected");
+        assert edit_protected != null;
+        edit_protected.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity(), List_Protected.class);
             requireActivity().startActivity(intent);
             return false;
         });

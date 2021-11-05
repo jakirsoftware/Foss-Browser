@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <PreferenceCategory android:title="Data usage">
+
+        <CheckBoxPreference
+            android:key="profileTrusted_images"
+            android:defaultValue="true"
+            android:title="@string/setting_title_images"/>
+
+        <CheckBoxPreference
+            android:key="profileTrusted_adBlock"
+            android:defaultValue="true"
+            android:title="@string/setting_title_adblock"/>
+
+        <CheckBoxPreference
+            android:key="profileTrusted_saveData"
+            android:defaultValue="false"
+            android:title="@string/setting_title_save_data"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Privacy">
+
+        <CheckBoxPreference
+            android:key="profileTrusted_saveHistory"
+            android:defaultValue="true"
+            android:title="@string/setting_title_history"/>
+
+        <CheckBoxPreference
+            android:key="profileTrusted_location"
+            android:defaultValue="false"
+            android:title="@string/setting_title_location"/>
+
+        <CheckBoxPreference
+            android:key="profileTrusted_camera"
+            android:defaultValue="false"
+            android:title="@string/setting_title_camera"/>
+
+        <CheckBoxPreference
+            android:key="profileTrusted_fingerPrintProtection"
+            android:defaultValue="false"
+            android:title="@string/setting_title_fingerPrint"/>
+
+        <CheckBoxPreference
+            android:key="profileTrusted_cookies"
+            android:defaultValue="true"
+            android:title="@string/setting_title_cookie"/>
+
+        <CheckBoxPreference
+            android:key="profileTrusted_dom"
+            android:defaultValue="true"
+            android:title="@string/setting_title_dom"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Security">
+
+        <CheckBoxPreference
+            android:key="profileTrusted_javascript"
+            android:defaultValue="true"
+            android:title="@string/setting_title_javascript"/>
+
+        <CheckBoxPreference
+            android:key="profileTrusted_javascriptPopUp"
+            android:defaultValue="true"
+            android:title="Javascript popups"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

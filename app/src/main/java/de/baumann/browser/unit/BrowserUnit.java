@@ -162,7 +162,7 @@ public class BrowserUnit {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                     CookieManager cookieManager = CookieManager.getInstance();
                     String cookie = cookieManager.getCookie(url);
-                    request.addRequestHeader("Cookie", cookie);
+                    request.addRequestHeader("Profile_protected", cookie);
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                     request.setTitle(filename);
                     request.setMimeType(mimeType);
