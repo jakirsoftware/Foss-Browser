@@ -78,11 +78,23 @@
     <string name="setting_title_dom">DOM Depolama</string>
     <string name="setting_title_dom_whitelist">DOM Beyaz Listesi</string>
     <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
+    <string name="setting_title_profiles">Profiles</string>
+    <string name="setting_title_profiles_edit">Edit profiles</string>
+    <string name="setting_title_profiles_trustedList">Trusted websites</string>
+    <string name="setting_title_profiles_standardList">Standard websites</string>
+    <string name="setting_title_profiles_protectedList">Protected websites</string>
+    <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_set">Active profile</string>
     <!-- browser start -->
     <string name="setting_title_images">Görüntüler</string>
     <string name="setting_title_cookie">Çerezler</string>
     <string name="setting_summary_cookie_delete">Etkinleştirilirse, tüm çerezler silinir. Ayrıca güvenilir web sitelerinin çerezleri de silinir.</string>
     <string name="setting_title_whitelistCookie">Çerez beyaz listesi</string>
+    <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_whitelistJS">JavaScript beyaz listesi</string>
     <string name="setting_title_adblock">Reklam Engelleyici</string>
