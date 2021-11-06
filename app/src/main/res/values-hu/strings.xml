@@ -75,6 +75,7 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
+    <string name="setting_title_font">Font size</string>
     <string name="setting_title_dom">DOM Storage</string>
     <string name="setting_title_dom_whitelist">DOM engedélyezőlistája</string>
     <string name="setting_title_save_data">\'Save Data\' kérése</string>
@@ -89,6 +90,9 @@
     <string name="setting_title_profiles_protected">Protected</string>
     <string name="setting_title_profiles_changed">Custom</string>
     <string name="setting_title_profiles_set">Active profile</string>
+    <string name="setting_title_profiles_dataUsage">Data usage</string>
+    <string name="setting_title_profiles_privacy">Privacy</string>
+    <string name="setting_title_profiles_Security">Security</string>
     <!-- browser start -->
     <string name="setting_title_images">Képek</string>
     <string name="setting_title_cookie">Sütik</string>
