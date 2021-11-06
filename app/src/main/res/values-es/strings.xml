@@ -78,11 +78,23 @@
     <string name="setting_title_dom">Almacenamiento DOM</string>
     <string name="setting_title_dom_whitelist">Lista blanca de DOM</string>
     <string name="setting_title_save_data">Solicitar \"reducir datos\"</string>
+    <string name="setting_title_profiles">Profiles</string>
+    <string name="setting_title_profiles_edit">Edit profiles</string>
+    <string name="setting_title_profiles_trustedList">Trusted websites</string>
+    <string name="setting_title_profiles_standardList">Standard websites</string>
+    <string name="setting_title_profiles_protectedList">Protected websites</string>
+    <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_set">Active profile</string>
     <!-- browser start -->
     <string name="setting_title_images">Imágenes</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Si está activado, se borrarán todas las cookies. Incluyendo las de sitios web de confianza.</string>
     <string name="setting_title_whitelistCookie">Lista blanca de cookies</string>
+    <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_whitelistJS">Lista blanca de JavaScript</string>
     <string name="setting_title_adblock">Bloqueador de anuncios</string>

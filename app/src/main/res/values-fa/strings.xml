@@ -78,11 +78,23 @@
     <string name="setting_title_dom">ذخیره سازی DOM</string>
     <string name="setting_title_dom_whitelist">لیست سفید DOM</string>
     <string name="setting_title_save_data">درخواست صرفه جویی در مصرف شبکه</string>
+    <string name="setting_title_profiles">Profiles</string>
+    <string name="setting_title_profiles_edit">Edit profiles</string>
+    <string name="setting_title_profiles_trustedList">Trusted websites</string>
+    <string name="setting_title_profiles_standardList">Standard websites</string>
+    <string name="setting_title_profiles_protectedList">Protected websites</string>
+    <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_set">Active profile</string>
     <!-- browser start -->
     <string name="setting_title_images">عکس ها</string>
     <string name="setting_title_cookie">کوکی ها</string>
     <string name="setting_summary_cookie_delete">در صورت فعال سازی، تمامی کوکی ها حذف خواهد شد،حتی کوکی های سایت های مورد اعتماد</string>
     <string name="setting_title_whitelistCookie">لیست سفید کوکی </string>
+    <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">جاواسکریپت</string>
     <string name="setting_title_whitelistJS">لیست سفید جاوا اسکریپت</string>
     <string name="setting_title_adblock">مسدودسازی تبلیغات</string>

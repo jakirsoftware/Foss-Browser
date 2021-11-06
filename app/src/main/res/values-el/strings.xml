@@ -78,11 +78,23 @@
     <string name="setting_title_dom">Αποθήκευση DOM</string>
     <string name="setting_title_dom_whitelist">Άσπρη Λίστα Dom</string>
     <string name="setting_title_save_data">Αίτημα \'Αποθήκευση Δεδομένων\'</string>
+    <string name="setting_title_profiles">Profiles</string>
+    <string name="setting_title_profiles_edit">Edit profiles</string>
+    <string name="setting_title_profiles_trustedList">Trusted websites</string>
+    <string name="setting_title_profiles_standardList">Standard websites</string>
+    <string name="setting_title_profiles_protectedList">Protected websites</string>
+    <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_set">Active profile</string>
     <!-- browser start -->
     <string name="setting_title_images">Εικόνες</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Αν ενεργοποιηθεί, όλα τα cookies θα διαγραφούν. Επίσης τα Cookies των αξιόπιστων ιστοσελίδων.</string>
     <string name="setting_title_whitelistCookie">Λίστα επιτρεπόμενων cookie</string>
+    <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_whitelistJS">Λίστα επιτρεπόμενων JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
