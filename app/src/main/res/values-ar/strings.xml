@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">فتح معاينة التبويب</string>
     <string name="main_menu_new_tab">علامة تبويب جديدة (الخلفية)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">علامة تبويب جديدة (الواجهة)</string>
     <string name="main_omnibox_input_hint">ابحث أو أدخل رابطا</string>
     <string name="menu_open_with">افتح الرابط بواسطة…</string>
