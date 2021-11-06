@@ -26,7 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Übersicht öffnen</string>
     <string name="main_menu_new_tab">Neuer Tab (Hintergrund)</string>
-    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
+    <string name="main_menu_new_tabProfile">Neuer Tab (mit Profil …)</string>
     <string name="main_menu_new_tabOpen">Neuer Tab (Vordergrund)</string>
     <string name="main_omnibox_input_hint">Suchen oder URL eingeben</string>
     <string name="menu_open_with">Link öffnen mit …</string>
@@ -76,24 +76,24 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_title_dom">DOM-Speicher</string>
     <string name="setting_title_dom_whitelist">DOM-Ausnahmen</string>
     <string name="setting_title_save_data">\"Daten sparen\" verlangen</string>
-    <string name="setting_title_profiles">Profiles</string>
-    <string name="setting_title_profiles_edit">Edit profiles</string>
-    <string name="setting_title_profiles_trustedList">Trusted websites</string>
-    <string name="setting_title_profiles_standardList">Standard websites</string>
-    <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_start">Profile on new tabs</string>
-    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles">Profile</string>
+    <string name="setting_title_profiles_edit">Profile bearbeiten</string>
+    <string name="setting_title_profiles_trustedList">Vertrauenswürdige Internetseiten</string>
+    <string name="setting_title_profiles_standardList">Standard Internetseiten</string>
+    <string name="setting_title_profiles_protectedList">Geschützte Internetseiten</string>
+    <string name="setting_title_profiles_start">Profil für einem neuen Tab</string>
+    <string name="setting_title_profiles_trusted">Vertrauenswürdig</string>
     <string name="setting_title_profiles_standard">Standard</string>
-    <string name="setting_title_profiles_protected">Protected</string>
-    <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_set">Active profile</string>
-    <string name="setting_title_profiles_dataUsage">Data usage</string>
-    <string name="setting_title_profiles_privacy">Privacy</string>
-    <string name="setting_title_profiles_Security">Security</string>
+    <string name="setting_title_profiles_protected">Geschützt</string>
+    <string name="setting_title_profiles_changed">Eigenes Profil</string>
+    <string name="setting_title_profiles_set">Aktives Profil</string>
+    <string name="setting_title_profiles_dataUsage">Datennutzung</string>
+    <string name="setting_title_profiles_privacy">Privatsphäre</string>
+    <string name="setting_title_profiles_Security">Sicherheit</string>
     <!-- browser start -->
     <string name="setting_title_images">Bilder</string>
     <string name="setting_title_cookie">Cookies</string>
@@ -173,7 +173,7 @@
     <string name="toast_permission_sdCard">\"FOSS Browser\" braucht die Berechtigung \"Zugriff auf den Gerätespeicher\". Dies ist notwendig um Dateien herunterzuladen, Bildschirmfotos zu machen und deine Einstellungen zu sichern.</string>
     <string name="toast_restart">Du musst \"FOSS Browser\" neustarten, damit die Änderungen wirksam werden. Jetzt beenden?</string>
     <string name="toast_quit">Möchtest du \"FOSS Browser\" beenden?</string>
-    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
+    <string name="toast_quit_TAB">Tab schließen?</string>
     <string name="toast_downloadComplete">Download vollständig. Dateimanager öffnen?</string>
     <string name="toast_unsecured">Diese Website benutzt eine ungesicherte Verbindung (\"http\"). Möchtest du eine sichere Verbindung (\"https\") versuchen?</string>
     <string name="toast_backup">Daten sichern? Das überschreibt die alte Sicherung.</string>
@@ -200,7 +200,7 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="menu_dayView">Tages-Ansicht</string>
     <string name="menu_nightView">Nacht-Ansicht</string>
     <string name="setting_userScript">Individualisierter JavaScript-Code</string>
-    <string name="setting_title_camera">Allow camera usage</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="setting_title_camera">Kameranutzung erlauben</string>
+    <string name="hint_DRM_Media">DRM-geschützte Medienwiedergabe erlauben?</string>
     <!-- License changelog -->
 </resources>
