@@ -139,7 +139,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private AlertDialog dialog_tabPreview;
     private NinjaWebView ninjaWebView;
     private View customView;
-    private View dialog_tabPreview_view;
     private VideoView videoView;
     private ImageButton omniBox_tab;
     private KeyListener listener;
@@ -505,23 +504,23 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if ("".equals(action)) {
             Log.i(TAG, "resumed FOSS browser");
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
-            addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true);
+            addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true, false);
             getIntent().setAction("");
             hideOverview();
         } else if (filePathCallback != null) {
             filePathCallback = null;
             getIntent().setAction("");
         } else if (url != null && Intent.ACTION_SEND.equals(action)) {
-            addAlbum(getString(R.string.app_name), url, true);
+            addAlbum(getString(R.string.app_name), url, true, false);
             getIntent().setAction("");
             hideOverview();
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(getIntent().getData()).toString();
-            addAlbum(getString(R.string.app_name), data, true);
+            addAlbum(getString(R.string.app_name), data, true, false);
             getIntent().setAction("");
             hideOverview();
         } else if (BrowserContainer.size() < 1) {
-            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
+            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false);
             getIntent().setAction("");
         }
     }
@@ -562,7 +561,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     private void initTabDialog () {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        dialog_tabPreview_view = View.inflate(context, R.layout.dialog_tabs, null);
+        View dialog_tabPreview_view = View.inflate(context, R.layout.dialog_tabs, null);
         tab_container = dialog_tabPreview_view.findViewById(R.id.tab_container);
         builder.setView(dialog_tabPreview_view);
         dialog_tabPreview = builder.create();
@@ -716,7 +715,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 showOverview();
                 break;
             case "09":
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false);
                 break;
             case "10":
                 removeAlbum(currentAlbumController);
@@ -1169,10 +1168,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    private synchronized void addAlbum(String title, final String url, final boolean foreground) {
-
-        sp.edit().putString("profile", sp.getString("profile_toStart", "profileStandard")).apply();
-
+    private void setWebView (String title, final String url, final boolean foreground) {
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title, url);
@@ -1181,11 +1177,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         SwipeTouchListener swipeTouchListener;
         swipeTouchListener = new SwipeTouchListener(context) {
             public void onSwipeBottom() {
-
                 if (sp.getBoolean("sp_swipeToReload", true)) {
                     ninjaWebView.reload();
                 }
-
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (animation==null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
@@ -1207,7 +1201,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         };
 
         ninjaWebView.setOnTouchListener(swipeTouchListener);
-
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
                 if (sp.getBoolean("hideToolbar", true)) {
@@ -1255,10 +1248,55 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 ninjaWebView.reload();
             }
         }
-
         View albumView = ninjaWebView.getAlbumView();
         tab_container.addView(albumView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         updateOmniBox();
+    }
+
+    private synchronized void addAlbum(String title, final String url, final boolean foreground, final boolean profileDialog) {
+
+        sp.edit().putString("profile", sp.getString("profile_toStart", "profileStandard")).apply();
+
+        if (profileDialog) {
+            GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, getString(R.string.setting_title_profiles_trusted),  11);
+            GridItem item_02 = new GridItem(R.drawable.icon_profile_standard, getString(R.string.setting_title_profiles_standard),  11);
+            GridItem item_03 = new GridItem(R.drawable.icon_profile_protected,  getString(R.string.setting_title_profiles_protected),  11);
+
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            View dialogView = View.inflate(context, R.layout.dialog_menu, null);
+            builder.setView(dialogView);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            CardView cardView = dialogView.findViewById(R.id.cardView);
+            cardView.setVisibility(View.GONE);
+
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
+            final List<GridItem> gridList = new LinkedList<>();
+            gridList.add(gridList.size(), item_01);
+            gridList.add(gridList.size(), item_02);
+            gridList.add(gridList.size(), item_03);
+            GridAdapter gridAdapter = new GridAdapter(context, gridList);
+            menu_grid.setAdapter(gridAdapter);
+            gridAdapter.notifyDataSetChanged();
+            menu_grid.setOnItemClickListener((parent, view, position, id) -> {
+                switch (position) {
+                    case 0:
+                        sp.edit().putString("profile", "profileTrusted").apply();
+                        break;
+                    case 1:
+                        sp.edit().putString("profile", "profileStandard").apply();
+                        break;
+                    case 2:
+                        sp.edit().putString("profile", "profileProtected").apply();
+                        break;
+                }
+                dialog.cancel();
+                setWebView(title, url, foreground);
+            });
+        } else {
+            setWebView(title, url, foreground);
+        }
     }
 
     private void closeTabConfirmation(final Runnable okAction) {
@@ -1461,10 +1499,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         GridItem item_01 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
-        GridItem item_03 = new GridItem(0, getString(R.string.menu_share_link),  0);
-        GridItem item_04 = new GridItem(0, getString(R.string.menu_open_with),  0);
-        GridItem item_05 = new GridItem(0, getString(R.string.menu_save_as),  0);
-        GridItem item_06 = new GridItem(0, getString(R.string.menu_save_home),  0);
+        GridItem item_03 = new GridItem(0, getString(R.string.main_menu_new_tabProfile),  0);
+        GridItem item_04 = new GridItem(0, getString(R.string.menu_share_link),  0);
+        GridItem item_05 = new GridItem(0, getString(R.string.menu_open_with),  0);
+        GridItem item_06 = new GridItem(0, getString(R.string.menu_save_as),  0);
+        GridItem item_07 = new GridItem(0, getString(R.string.menu_save_home),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1474,6 +1513,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         gridList.add(gridList.size(), item_04);
         gridList.add(gridList.size(), item_05);
         gridList.add(gridList.size(), item_06);
+        gridList.add(gridList.size(), item_07);
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
         GridAdapter gridAdapter = new GridAdapter(context, gridList);
@@ -1483,27 +1523,30 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog.cancel();
             switch (position) {
                 case 0:
-                    addAlbum(getString(R.string.app_name), url, true);
+                    addAlbum(getString(R.string.app_name), url, true, false);
                     break;
                 case 1:
-                    addAlbum(getString(R.string.app_name), url, false);
+                    addAlbum(getString(R.string.app_name), url, false, false);
                     break;
                 case 2:
-                    shareLink("", url);
+                    addAlbum(getString(R.string.app_name), url, true, true);
                     break;
                 case 3:
+                    shareLink("", url);
+                    break;
+                case 4:
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(url));
                     Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
                     startActivity(chooser);
                     break;
-                case 4:
+                case 5:
                     if (url.startsWith("data:")) {
                         DataURIParser dataURIParser= new DataURIParser(url);
                         HelperUnit.saveDataURI(dialog, activity, dataURIParser);
                     } else HelperUnit.saveAs(dialog, activity, url);
                     break;
-                case 5:
+                case 6:
                     save_atHome(title, url);
                     break;
             }
@@ -1614,12 +1657,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         ImageButton overflow_settings = dialogView.findViewById(R.id.overflow_settings);
         overflow_settings.setOnClickListener(v -> {
-            dialog_overflow.cancel();
-            //Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
-            //startActivity(settings);
-
-            show_dialogFastToggle();
-
+            dialog_overflow.cancel();show_dialogFastToggle();
         });
 
         ImageButton overflow_reload = dialogView.findViewById(R.id.overflow_reload);
@@ -1663,7 +1701,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (position == 1) {
                 showOverview();
             } else if (position == 2) {
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true);
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, true);
             } else if (position == 0) {
                 ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
             } else if (position == 3) {
@@ -1850,23 +1888,26 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         GridItem item_01 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
-        GridItem item_03 = new GridItem(0, getString(R.string.menu_delete),  0);
-        GridItem item_04 = new GridItem(0, getString(R.string.menu_edit),  0);
-        GridItem item_05 = new GridItem(0,getString(R.string.menu_share_link),0);
+        GridItem item_03 = new GridItem(0, getString(R.string.main_menu_new_tabProfile),  0);
+        GridItem item_04 = new GridItem(0, getString(R.string.menu_share_link),  0);
+        GridItem item_05 = new GridItem(0, getString(R.string.menu_delete),  0);
+        GridItem item_06 = new GridItem(0,getString(R.string.menu_edit),0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
         if (overViewTab.equals(getString(R.string.album_title_bookmarks)) || overViewTab.equals(getString(R.string.album_title_home))) {
-            gridList.add(gridList.size(), item_05);
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
             gridList.add(gridList.size(), item_04);
-        } else {
             gridList.add(gridList.size(), item_05);
+            gridList.add(gridList.size(), item_06);
+        } else {
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
+            gridList.add(gridList.size(), item_04);
+            gridList.add(gridList.size(), item_05);
         }
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
@@ -1878,17 +1919,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             MaterialAlertDialogBuilder builderSubMenu;
             AlertDialog dialogSubMenu;
             switch (position) {
+
                 case 0:
-                    shareLink("",url);
-                    break;
-                case 1:
-                    addAlbum(getString(R.string.app_name), url, true);
+                    addAlbum(getString(R.string.app_name), url, true, true);
                     hideOverview();
                     break;
+                case 1:
+                    addAlbum(getString(R.string.app_name), url, false, true);
+                    break;
                 case 2:
-                    addAlbum(getString(R.string.app_name), url, false);
+                    addAlbum(getString(R.string.app_name), url, true, true);
                     break;
                 case 3:
+                    shareLink("",url);
+                    break;
+                case 4:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     builderSubMenu.setMessage(R.string.hint_database);
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog2, whichButton) -> {
@@ -1911,7 +1956,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialogSubMenu.show();
                     Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
                     break;
-                case 4:
+                case 5:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
 
