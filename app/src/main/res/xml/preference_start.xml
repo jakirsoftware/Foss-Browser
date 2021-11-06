@@ -5,6 +5,13 @@
     <Preference
         android:summary="@string/setting_gesture_hint"/>
 
+    <ListPreference
+        android:key="sp_fontSize"
+        android:defaultValue="100"
+        android:title="@string/setting_title_font"
+        android:entries="@array/setting_entries_font"
+        android:entryValues="@array/setting_values_font"/>
+
     <CheckBoxPreference
         android:key="sp_autofill"
         android:defaultValue="true"

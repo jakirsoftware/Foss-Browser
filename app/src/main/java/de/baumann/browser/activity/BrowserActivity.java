@@ -488,7 +488,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     public void showTabView () {
         HelperUnit.hideSoftKeyboard(omniBox_text, context);
         dialog_tabPreview.show();
-        setProfile(dialog_tabPreview, dialog_tabPreview_view);
     }
 
     private void printPDF () {
@@ -564,9 +563,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private void initTabDialog () {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         dialog_tabPreview_view = View.inflate(context, R.layout.dialog_tabs, null);
-
         tab_container = dialog_tabPreview_view.findViewById(R.id.tab_container);
-
         builder.setView(dialog_tabPreview_view);
         dialog_tabPreview = builder.create();
         Objects.requireNonNull(dialog_tabPreview.getWindow()).setGravity(Gravity.BOTTOM);
@@ -1947,6 +1944,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         builderFilter.setView(dialogViewFilter);
                         AlertDialog dialogFilter = builderFilter.create();
                         dialogFilter.show();
+                        CardView cardView = dialogViewFilter.findViewById(R.id.cardView);
+                        cardView.setVisibility(View.GONE);
                         Objects.requireNonNull(dialogFilter.getWindow()).setGravity(Gravity.BOTTOM);
                         GridView menu_grid2 = dialogViewFilter.findViewById(R.id.menu_grid);
                         final List<GridItem> gridList2 = new LinkedList<>();

@@ -2,7 +2,7 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     
-    <PreferenceCategory android:title="Data usage">
+    <PreferenceCategory android:title="@string/setting_title_profiles_dataUsage">
 
         <CheckBoxPreference
             android:key="profileProtected_images"
@@ -21,7 +21,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Privacy">
+    <PreferenceCategory android:title="@string/setting_title_profiles_privacy">
 
         <CheckBoxPreference
             android:key="profileProtected_saveHistory"
@@ -55,7 +55,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Security">
+    <PreferenceCategory android:title="@string/setting_title_profiles_Security">
 
         <CheckBoxPreference
             android:key="profileProtected_javascript"

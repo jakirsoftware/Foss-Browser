@@ -79,15 +79,15 @@
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.List_Trusted"
-            android:label="@string/setting_title_whitelistJS"
+            android:label="@string/setting_title_profiles_trustedList"
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.List_Protected"
-            android:label="@string/setting_title_whitelistCookie"
+            android:label="@string/setting_title_profiles_protectedList"
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.List_Standard"
-            android:label="@string/setting_title_dom_whitelist"
+            android:label="@string/setting_title_profiles_standardList"
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_Delete"

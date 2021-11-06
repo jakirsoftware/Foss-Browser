@@ -40,6 +40,27 @@
             android:title="@string/setting_title_userAgent" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_title_app">
+
+        <Preference
+            android:key="settings_ui"
+            android:title="@string/setting_title_ui"/>
+
+        <Preference
+            android:key="settings_filter"
+            android:title="@string/setting_filter"/>
+
+        <Preference
+            android:key="settings_gesture"
+            android:title="@string/setting_gestures"/>
+
+        <Preference
+            android:key="settings_data"
+            android:title="@string/setting_title_data"/>
+
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/setting_userScript">
 
         <de.baumann.browser.preferences.EditTextSwitchPreference
@@ -62,26 +83,6 @@
             android:key="sp_onLoadResource"
             app:editTextSwitchKey="onLoadResource"
             android:title="onLoadResource" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_app">
-
-        <Preference
-            android:key="settings_ui"
-            android:title="@string/setting_title_ui"/>
-
-        <Preference
-            android:key="settings_filter"
-            android:title="@string/setting_filter"/>
-
-        <Preference
-            android:key="settings_gesture"
-            android:title="@string/setting_gestures"/>
-
-        <Preference
-            android:key="settings_data"
-            android:title="@string/setting_title_data"/>
 
     </PreferenceCategory>
 

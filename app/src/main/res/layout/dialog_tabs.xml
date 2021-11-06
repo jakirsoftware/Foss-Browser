@@ -9,91 +9,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ContentDescription,Overdraw">
 
-    <RelativeLayout
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dialog_title"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_marginStart="20dp">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_toStartOf="@+id/chip_profile_changed"
-            android:ellipsize="end"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:text="@string/setting_title_profiles_set"
-            android:layout_centerVertical="true"
-            android:textAppearance="?attr/textAppearanceBody1"
-            android:textColor="@color/color_light"
-            android:textStyle="bold" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_profile_changed"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/chip_profile_trusted"
-            android:text=""
-            app:chipEndPadding="4dp"
-            app:chipIcon="@drawable/icon_profile_changed"
-            app:chipIconEnabled="true"
-            app:chipIconTint="@drawable/bg_chip_state_list"
-            app:chipStartPadding="4dp"
-            app:textEndPadding="0dp"
-            app:textStartPadding="0dp" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_profile_trusted"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/chip_profile_standard"
-            android:text=""
-            app:chipEndPadding="4dp"
-            app:chipIcon="@drawable/icon_profile_trusted"
-            app:chipIconEnabled="true"
-            app:chipIconTint="@drawable/bg_chip_state_list"
-            app:chipStartPadding="4dp"
-            app:textEndPadding="0dp"
-            app:textStartPadding="0dp" />
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:id="@+id/chip_profile_standard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/chip_profile_protected"
-            android:text=""
-            app:chipIcon="@drawable/icon_profile_standard"
-            app:chipIconTint="@drawable/bg_chip_state_list"
-            app:chipIconEnabled="true"
-            app:chipStartPadding="4dp"
-            app:chipEndPadding="4dp"
-            app:textEndPadding="0dp"
-            app:textStartPadding="0dp" />
-
-        <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:id="@+id/chip_profile_protected"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="12dp"
-            android:text=""
-            app:chipIcon="@drawable/icon_profile_protected"
-            app:chipIconTint="@drawable/bg_chip_state_list"
-            app:chipIconEnabled="true"
-            app:chipStartPadding="4dp"
-            app:chipEndPadding="4dp"
-            app:textEndPadding="0dp"
-            app:textStartPadding="0dp"
-            android:layout_alignParentEnd="true" />
-
-    </RelativeLayout>
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:text="@string/album_title_tab"
+        android:gravity="center_vertical"
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:textColor="@color/color_light"
+        android:textStyle="bold"/>
 
     <View
         android:layout_width="match_parent"

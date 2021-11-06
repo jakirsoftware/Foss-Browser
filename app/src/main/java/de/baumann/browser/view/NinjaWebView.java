@@ -272,9 +272,9 @@ public class NinjaWebView extends WebView implements AlbumController {
         if (listTrusted.isWhite(this.getUrl())) {
             profile = "profileTrusted";
         } else if (listStandard.isWhite(this.getUrl())) {
-            profile = "profileProtected";
-        } else if (listProtected.isWhite(this.getUrl())) {
             profile = "profileStandard";
+        } else if (listProtected.isWhite(this.getUrl())) {
+            profile = "profileProtected";
         }
         switch (string) {
             case "_images":
