@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Mở xem trước tab</string>
     <string name="main_menu_new_tab">Tab mới (nền)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Tab mới (ở trước)</string>
     <string name="main_omnibox_input_hint">Tìm kiếm hoặc nhập URL</string>
     <string name="menu_open_with">Mở liên kết bằng …</string>
