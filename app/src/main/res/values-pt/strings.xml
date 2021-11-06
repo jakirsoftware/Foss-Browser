@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Abrir pré-visualização</string>
     <string name="main_menu_new_tab">Novo separador (secundário)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Novo separador (principal)</string>
     <string name="main_omnibox_input_hint">Pesquise ou digite um endereço</string>
     <string name="menu_open_with">Abrir ligação com…</string>

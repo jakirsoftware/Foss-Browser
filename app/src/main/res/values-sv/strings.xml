@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Öppna flikförhandsgranskning</string>
     <string name="main_menu_new_tab">Ny flik (bakgrund)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Ny flik (förgrund)</string>
     <string name="main_omnibox_input_hint">Sök eller skriv URL</string>
     <string name="menu_open_with">Öppna länk med …</string>

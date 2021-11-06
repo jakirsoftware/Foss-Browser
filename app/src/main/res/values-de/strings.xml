@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Übersicht öffnen</string>
     <string name="main_menu_new_tab">Neuer Tab (Hintergrund)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Neuer Tab (Vordergrund)</string>
     <string name="main_omnibox_input_hint">Suchen oder URL eingeben</string>
     <string name="menu_open_with">Link öffnen mit …</string>

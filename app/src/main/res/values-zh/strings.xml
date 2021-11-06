@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">打开标签页预览</string>
     <string name="main_menu_new_tab">新标签页(后台)</string>
+    <string name="main_menu_new_tabProfile">新标签页(带配置文件 …)</string>
     <string name="main_menu_new_tabOpen">新标签页(前台)</string>
     <string name="main_omnibox_input_hint">搜索或输入网址</string>
     <string name="menu_open_with">用…打开链接</string>
@@ -75,30 +76,30 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">字体大小</string>
     <string name="setting_title_dom">DOM 存储</string>
     <string name="setting_title_dom_whitelist">DOM 白名单</string>
     <string name="setting_title_save_data">请求“保存数据”</string>
-    <string name="setting_title_profiles">Profiles</string>
-    <string name="setting_title_profiles_edit">Edit profiles</string>
-    <string name="setting_title_profiles_trustedList">Trusted websites</string>
-    <string name="setting_title_profiles_standardList">Standard websites</string>
-    <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_start">Profile on new tabs</string>
-    <string name="setting_title_profiles_trusted">Trusted</string>
-    <string name="setting_title_profiles_standard">Standard</string>
-    <string name="setting_title_profiles_protected">Protected</string>
-    <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_set">Active profile</string>
-    <string name="setting_title_profiles_dataUsage">Data usage</string>
-    <string name="setting_title_profiles_privacy">Privacy</string>
-    <string name="setting_title_profiles_Security">Security</string>
+    <string name="setting_title_profiles">配置文件</string>
+    <string name="setting_title_profiles_edit">编辑配置文件</string>
+    <string name="setting_title_profiles_trustedList">信任的网站</string>
+    <string name="setting_title_profiles_standardList">标准网站</string>
+    <string name="setting_title_profiles_protectedList">受保护的网站</string>
+    <string name="setting_title_profiles_start">新标签页上的配置文件</string>
+    <string name="setting_title_profiles_trusted">受信任</string>
+    <string name="setting_title_profiles_standard">标准</string>
+    <string name="setting_title_profiles_protected">受保护</string>
+    <string name="setting_title_profiles_changed">自定义</string>
+    <string name="setting_title_profiles_set">活动配置文件</string>
+    <string name="setting_title_profiles_dataUsage">数据使用量</string>
+    <string name="setting_title_profiles_privacy">隐私</string>
+    <string name="setting_title_profiles_Security">安全性</string>
     <!-- browser start -->
     <string name="setting_title_images">图像</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">如果启用，所有Cookies都将被删除。包括信任的网站。</string>
     <string name="setting_title_whitelistCookie">Cookie 白名单</string>
-    <string name="setting_title_javascript_popUp">Popups</string>
+    <string name="setting_title_javascript_popUp">弹窗</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_whitelistJS">JavaScript 白名单</string>
     <string name="setting_title_adblock">AdBlock</string>
@@ -172,7 +173,7 @@
     <string name="toast_permission_sdCard">\"FOSS浏览器\"需要“读写存储空间”权限。 这是下载文件，进行屏幕截图和备份您的数据所必要的。</string>
     <string name="toast_restart">您必须重启“FOSS浏览器”才能应用更改。现在关闭吗？</string>
     <string name="toast_quit">您想要退出“FOSS浏览器”吗？</string>
-    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
+    <string name="toast_quit_TAB">您想关闭标签页吗？</string>
     <string name="toast_downloadComplete">下载完成。打开文件管理器？</string>
     <string name="toast_unsecured">网站使用不安全的连接 (\"http://\")。尝试安全连接 (\"https://\")？</string>
     <string name="toast_backup">备份数据？这将覆盖旧的备份。</string>
@@ -196,7 +197,7 @@
     <string name="menu_dayView">日间模式</string>
     <string name="menu_nightView">夜间模式</string>
     <string name="setting_userScript">自定义 JavaScript 代码</string>
-    <string name="setting_title_camera">Allow camera usage</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="setting_title_camera">允许相机使用</string>
+    <string name="hint_DRM_Media">允许 DRM 保护的媒体播放？</string>
     <!-- License changelog -->
 </resources>

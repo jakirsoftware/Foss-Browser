@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Buka tinjauan tab</string>
     <string name="main_menu_new_tab">Tab baru (di latar belakang)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">New tab (foreground)</string>
     <string name="main_omnibox_input_hint">Cari atau ketik URL</string>
     <string name="menu_open_with">Buka tautan dengan …</string>

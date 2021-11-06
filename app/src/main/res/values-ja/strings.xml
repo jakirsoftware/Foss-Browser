@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">タブプレビューを開く</string>
     <string name="main_menu_new_tab">新規タブ (バックグラウンド)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">新規タブ (フォアグラウンド)</string>
     <string name="main_omnibox_input_hint">検索または URL を入力</string>
     <string name="menu_open_with">リンクを開く…</string>

@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Предпросмотр вкладок</string>
     <string name="main_menu_new_tab">Новая вкладка (фон)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Новая вкладка</string>
     <string name="main_omnibox_input_hint">Поиск или ввод URL-адреса</string>
     <string name="menu_open_with">Открыть ссылку с …</string>

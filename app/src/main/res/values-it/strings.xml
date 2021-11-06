@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Apri anteprima schede</string>
     <string name="main_menu_new_tab">Nuova scheda (secondo piano)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Nuova scheda (primo piano)</string>
     <string name="main_omnibox_input_hint">Cerca o inserisci URL</string>
     <string name="menu_open_with">Apri link con …</string>

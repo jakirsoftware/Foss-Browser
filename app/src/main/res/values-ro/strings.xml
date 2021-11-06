@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Previzualizare fereastră deschisă</string>
     <string name="main_menu_new_tab">Fereastră nouă (în fundal)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Fereastră nouă (vizualizare)</string>
     <string name="main_omnibox_input_hint">Căutaţi sau introduceţi URL-ul</string>
     <string name="menu_open_with">Deschideți linkul cu …</string>

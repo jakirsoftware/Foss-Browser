@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">زبانه ها</string>
     <string name="main_menu_new_tab">زبانه جدید (پیش زمینه)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">زبانه جدید (پس زمینه)</string>
     <string name="main_omnibox_input_hint">جستجو یا آدرس را وارد نمایید</string>
     <string name="menu_open_with">باز کردن لینک با…</string>

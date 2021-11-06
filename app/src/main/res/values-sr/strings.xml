@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Отвори претпреглед језичка</string>
     <string name="main_menu_new_tab">Нови језичак (у позадини)</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Нови језичак (у предњем плану)</string>
     <string name="main_omnibox_input_hint">Претражите или унесите адресу</string>
     <string name="menu_open_with">Отвори везу помоћу…</string>
