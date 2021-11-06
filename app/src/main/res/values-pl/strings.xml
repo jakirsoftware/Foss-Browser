@@ -26,6 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">Wysuń podgląd kart</string>
     <string name="main_menu_new_tab">Nowa karta w tle</string>
+    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Nowa karta priorytetowa</string>
     <string name="main_omnibox_input_hint">Wyszukaj lub wpisz adres</string>
     <string name="menu_open_with">Otwórz odnośnik w …</string>
