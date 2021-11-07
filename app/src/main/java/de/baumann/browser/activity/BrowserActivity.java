@@ -86,6 +86,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -207,6 +209,22 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     // Overrides
 
     @Override
+    public void onPause(){
+        //Save open Tabs in shared preferences
+        ArrayList<String> openTabs = new ArrayList<>();
+        for (int i=0; i<BrowserContainer.size();i++){
+            if (currentAlbumController == BrowserContainer.get(i)) {
+                openTabs.add(0,((NinjaWebView) (BrowserContainer.get(i))).getUrl());
+            }else{
+                openTabs.add(((NinjaWebView) (BrowserContainer.get(i))).getUrl());
+            }
+        }
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
+        sp.edit().putString("openTabs", TextUtils.join("‚‗‚", openTabs)).apply();
+        super.onPause();
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -290,6 +308,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             showOverview();
         }
         dispatchIntent(getIntent());
+
+        //restore open Tabs from shared preferences if app got killed
+        ArrayList<String> openTabs;
+        openTabs = new ArrayList<String>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
+        if (openTabs.size()>0) {
+            for (int counter = 0; counter < openTabs.size(); counter++) {
+                addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1,false);
+            }
+        }
+
+        if (BrowserContainer.size() < 1) {  //if still no open Tab open default page
+            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true,false);
+            getIntent().setAction("");
+        }
+
     }
 
     @Override
@@ -379,9 +412,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         }
         BrowserContainer.clear();
+
+        sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
+
         unregisterReceiver(downloadReceiver);
         ninjaWebView.getViewTreeObserver().removeOnGlobalLayoutListener(keyboardLayoutListener);
-        System.exit(0);
         super.onDestroy();
     }
 
@@ -519,9 +554,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             addAlbum(getString(R.string.app_name), data, true, false);
             getIntent().setAction("");
             hideOverview();
-        } else if (BrowserContainer.size() < 1) {
-            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false);
-            getIntent().setAction("");
         }
     }
 
@@ -985,7 +1017,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
         builder.setView(dialogView);
-
+        FaviconHelper.setFavicon(context, dialogView, ninjaWebView.getUrl(), R.id.menu_icon, R.drawable.icon_image_broken);
         TextView dialog_title = dialogView.findViewById(R.id.dialog_title);
         dialog_title.setText(HelperUnit.domain(url));
 
