@@ -8,11 +8,11 @@ import android.view.MenuItem;
 
 import java.util.Objects;
 
-import de.baumann.browser.fragment.Fragment_settings_Start;
+import de.baumann.browser.fragment.Fragment_settings_Privacy;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
 
-public class Settings_StartActivity extends AppCompatActivity {
+public class Settings_PrivacyActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class Settings_StartActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_frame, new Fragment_settings_Start())
+                .replace(R.id.content_frame, new Fragment_settings_Privacy())
                 .commit();
     }
 

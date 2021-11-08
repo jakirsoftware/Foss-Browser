@@ -4,39 +4,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.PopupMenu;
-import androidx.cardview.widget.CardView;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
-import androidx.preference.PreferenceManager;
-
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
 
 import de.baumann.browser.activity.Settings_Delete;
 import de.baumann.browser.activity.Settings_Backup;
 import de.baumann.browser.activity.Settings_Filter;
 import de.baumann.browser.activity.Settings_Gesture;
-import de.baumann.browser.activity.Settings_Profile;
-import de.baumann.browser.activity.Settings_StartActivity;
+import de.baumann.browser.activity.Settings_PrivacyActivity;
 import de.baumann.browser.activity.Settings_UI;
 import de.baumann.browser.R;
-import de.baumann.browser.unit.HelperUnit;
-import de.baumann.browser.view.GridAdapter;
-import de.baumann.browser.view.GridItem;
 
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -83,7 +64,7 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         Preference settings_start = findPreference("settings_start");
         assert settings_start != null;
         settings_start.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), Settings_StartActivity.class);
+            Intent intent = new Intent(getActivity(), Settings_PrivacyActivity.class);
             requireActivity().startActivity(intent);
             return false;
         });

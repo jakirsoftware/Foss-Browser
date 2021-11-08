@@ -33,12 +33,12 @@ import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.view.GridAdapter;
 import de.baumann.browser.view.GridItem;
 
-public class Fragment_settings_Start extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class Fragment_settings_Privacy extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener{
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 
-        setPreferencesFromResource(R.xml.preference_start, rootKey);
+        setPreferencesFromResource(R.xml.preference_privacy, rootKey);
         Context context = getContext();
         assert context != null;
         initSummary(getPreferenceScreen());

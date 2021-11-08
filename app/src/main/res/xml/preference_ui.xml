@@ -13,6 +13,13 @@
         android:entries="@array/setting_entries_theme"
         android:entryValues="@array/setting_values_theme"/>
 
+    <ListPreference
+        android:key="sp_fontSize"
+        android:defaultValue="100"
+        android:title="@string/setting_title_font"
+        android:entries="@array/setting_entries_font"
+        android:entryValues="@array/setting_values_font"/>
+
     <PreferenceCategory android:title="@string/setting_title_behavior">
 
         <CheckBoxPreference

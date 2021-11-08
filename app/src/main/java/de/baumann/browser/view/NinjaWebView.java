@@ -143,7 +143,6 @@ public class NinjaWebView extends WebView implements AlbumController {
 
         String userAgent = getUserAgent(desktopMode);
         webSettings.setUserAgentString(userAgent);
-
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             webSettings.setSafeBrowsingEnabled(true);
         }
@@ -211,6 +210,45 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
     }
 
+    public void setProfileDefaultValues() {
+        sp.edit()
+                .putBoolean("profileTrusted_saveData", true)
+                .putBoolean("profileTrusted_images", true)
+                .putBoolean("profileTrusted_adBlock", true)
+                .putBoolean("profileTrusted_location", false)
+                .putBoolean("profileTrusted_fingerPrintProtection", false)
+                .putBoolean("profileTrusted_cookies", true)
+                .putBoolean("profileTrusted_javascript", true)
+                .putBoolean("profileTrusted_javascriptPopUp", true)
+                .putBoolean("profileTrusted_saveHistory", true)
+                .putBoolean("profileTrusted_camera", false)
+                .putBoolean("profileTrusted_dom", true)
+
+                .putBoolean("profileStandard_saveData", true)
+                .putBoolean("profileStandard_images", true)
+                .putBoolean("profileStandard_adBlock", true)
+                .putBoolean("profileStandard_location", false)
+                .putBoolean("profileStandard_fingerPrintProtection", true)
+                .putBoolean("profileStandard_cookies", false)
+                .putBoolean("profileStandard_javascript", true)
+                .putBoolean("profileStandard_javascriptPopUp", false)
+                .putBoolean("profileStandard_saveHistory", true)
+                .putBoolean("profileStandard_camera", false)
+                .putBoolean("profileStandard_dom", false)
+
+                .putBoolean("profileProtected_saveData", true)
+                .putBoolean("profileProtected_images", true)
+                .putBoolean("profileProtected_adBlock", true)
+                .putBoolean("profileProtected_location", false)
+                .putBoolean("profileProtected_fingerPrintProtection", true)
+                .putBoolean("profileProtected_cookies", false)
+                .putBoolean("profileProtected_javascript", false)
+                .putBoolean("profileProtected_javascriptPopUp", false)
+                .putBoolean("profileProtected_saveHistory", true)
+                .putBoolean("profileProtected_camera", false)
+                .putBoolean("profileProtected_dom", false).apply();
+    }
+
     public void setProfileChanged () {
         sp.edit().putBoolean("profileChanged_saveData", sp.getBoolean(profile + "_saveData",true))
                 .putBoolean("profileChanged_images", sp.getBoolean(profile + "_images",true))
@@ -226,7 +264,7 @@ public class NinjaWebView extends WebView implements AlbumController {
                 .putString("profile", "profileChanged").apply();
     }
 
-    public void putBoolean (String string, AlertDialog dialog) {
+    public void putProfileBoolean (String string, AlertDialog dialog) {
         switch (string) {
             case "_images":
                 sp.edit().putBoolean("profileChanged_images", !sp.getBoolean("profileChanged_images", true)).apply();

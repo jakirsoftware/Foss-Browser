@@ -8,7 +8,7 @@
 
         <Preference
             android:key="settings_start"
-            android:title="@string/setting_title_start_control" />
+            android:title="@string/setting_title_profiles_privacy" />
 
         <Preference
             android:key="settings_clear"

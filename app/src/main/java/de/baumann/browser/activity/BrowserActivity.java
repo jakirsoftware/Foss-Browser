@@ -281,7 +281,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         new Profile_standard(context);
 
         downloadReceiver = new BroadcastReceiver() {
-
             @Override
             public void onReceive(Context context, Intent intent) {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
@@ -311,7 +310,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         //restore open Tabs from shared preferences if app got killed
         ArrayList<String> openTabs;
-        openTabs = new ArrayList<String>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
+        openTabs = new ArrayList<>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
         if (openTabs.size()>0) {
             for (int counter = 0; counter < openTabs.size(); counter++) {
                 addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1,false);
@@ -1062,77 +1061,77 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_image.setChecked(ninjaWebView.getBoolean("_images"));
         chip_image.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_images", dialog);
+            ninjaWebView.putProfileBoolean("_images", dialog);
         });
 
         Chip chip_javaScript = dialogView.findViewById(R.id.chip_javaScript);
         chip_javaScript.setChecked(ninjaWebView.getBoolean("_javascript"));
         chip_javaScript.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_javascript", dialog);
+            ninjaWebView.putProfileBoolean("_javascript", dialog);
         });
 
         Chip chip_javaScriptPopUp = dialogView.findViewById(R.id.chip_javaScriptPopUp);
         chip_javaScriptPopUp.setChecked(ninjaWebView.getBoolean("_javascriptPopUp"));
         chip_javaScriptPopUp.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_javascriptPopUp", dialog);
+            ninjaWebView.putProfileBoolean("_javascriptPopUp", dialog);
         });
 
         Chip chip_cookie = dialogView.findViewById(R.id.chip_cookie);
         chip_cookie.setChecked(ninjaWebView.getBoolean("_cookies"));
         chip_cookie.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_cookies", dialog);
+            ninjaWebView.putProfileBoolean("_cookies", dialog);
         });
 
         Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
         chip_fingerprint.setChecked(ninjaWebView.isFingerPrintProtection());
         chip_fingerprint.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_fingerPrintProtection", dialog);
+            ninjaWebView.putProfileBoolean("_fingerPrintProtection", dialog);
         });
 
         Chip chip_adBlock = dialogView.findViewById(R.id.chip_adBlock);
         chip_adBlock.setChecked(ninjaWebView.getBoolean("_adBlock"));
         chip_adBlock.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_adBlock", dialog);
+            ninjaWebView.putProfileBoolean("_adBlock", dialog);
         });
 
         Chip chip_saveData = dialogView.findViewById(R.id.chip_saveData);
         chip_saveData.setChecked(ninjaWebView.getBoolean("_saveData"));
         chip_saveData.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_saveData", dialog);
+            ninjaWebView.putProfileBoolean("_saveData", dialog);
         });
 
         Chip chip_history = dialogView.findViewById(R.id.chip_history);
         chip_history.setChecked(ninjaWebView.getBoolean("_saveHistory"));
         chip_history.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_saveHistory", dialog);
+            ninjaWebView.putProfileBoolean("_saveHistory", dialog);
         });
 
         Chip chip_location = dialogView.findViewById(R.id.chip_location);
         chip_location.setChecked(ninjaWebView.getBoolean("_location"));
         chip_location.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_location", dialog);
+            ninjaWebView.putProfileBoolean("_location", dialog);
         });
 
         Chip chip_camera = dialogView.findViewById(R.id.chip_camera);
         chip_camera.setChecked(ninjaWebView.getBoolean("_camera"));
         chip_camera.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_camera", dialog);
+            ninjaWebView.putProfileBoolean("_camera", dialog);
         });
 
         Chip chip_dom = dialogView.findViewById(R.id.chip_dom);
         chip_dom.setChecked(ninjaWebView.getBoolean("_dom"));
         chip_dom.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
-            ninjaWebView.putBoolean("_dom", dialog);
+            ninjaWebView.putProfileBoolean("_dom", dialog);
         });
 
         String text;
@@ -1190,6 +1189,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title, url);
+        if (sp.getBoolean("first_start", true)) {
+            ninjaWebView.setProfileDefaultValues();
+            sp.edit().putBoolean("first_start", false).apply();
+        }
         activity.registerForContextMenu(ninjaWebView);
 
         SwipeTouchListener swipeTouchListener;
