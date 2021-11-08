@@ -378,17 +378,17 @@
                 app:textStartPadding="0dp" />
 
             <com.google.android.material.chip.Chip
-                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:id="@+id/chip_profile_standard"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_profile_protected"
                 android:text=""
-                app:chipIcon="@drawable/icon_profile_standard"
-                app:chipIconTint="@drawable/bg_chip_state_list"
-                app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
                 app:chipEndPadding="4dp"
+                app:chipIcon="@drawable/icon_profile_standard"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@drawable/bg_chip_state_list"
+                app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp" />
 

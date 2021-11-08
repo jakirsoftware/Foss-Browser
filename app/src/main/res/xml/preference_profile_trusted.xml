@@ -16,7 +16,7 @@
 
         <CheckBoxPreference
             android:key="profileTrusted_saveData"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:title="@string/setting_title_save_data"/>
 
     </PreferenceCategory>
@@ -65,7 +65,7 @@
         <CheckBoxPreference
             android:key="profileTrusted_javascriptPopUp"
             android:defaultValue="true"
-            android:title="Javascript popups"/>
+            android:title="@string/setting_title_javascript_popUp"/>
 
     </PreferenceCategory>
 

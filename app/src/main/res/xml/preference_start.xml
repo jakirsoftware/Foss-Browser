@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     
     <Preference
         android:summary="@string/setting_gesture_hint"/>
@@ -60,6 +61,31 @@
             android:title="@string/setting_title_adblockHost"
             android:entries="@array/setting_entries_adBlock"
             android:entryValues="@array/setting_values_adBlock"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_userScript">
+
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_onPageStarted"
+            app:editTextSwitchKey="onPageStarted"
+            android:title="onPageStarted" />
+
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_onPageFinished"
+            app:editTextSwitchKey="onPageFinished"
+            android:title="onPageFinished" />
+
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_onLoadResource"
+            app:editTextSwitchKey="onLoadResource"
+            android:title="onLoadResource" />
 
     </PreferenceCategory>
 

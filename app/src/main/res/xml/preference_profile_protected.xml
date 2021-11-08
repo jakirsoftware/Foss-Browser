@@ -16,7 +16,7 @@
 
         <CheckBoxPreference
             android:key="profileProtected_saveData"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:title="@string/setting_title_save_data"/>
 
     </PreferenceCategory>
@@ -40,17 +40,17 @@
 
         <CheckBoxPreference
             android:key="profileProtected_fingerPrintProtection"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:title="@string/setting_title_fingerPrint"/>
 
         <CheckBoxPreference
             android:key="profileProtected_cookies"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:title="@string/setting_title_cookie"/>
 
         <CheckBoxPreference
             android:key="profileProtected_dom"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:title="@string/setting_title_dom"/>
 
     </PreferenceCategory>
@@ -59,13 +59,13 @@
 
         <CheckBoxPreference
             android:key="profileProtected_javascript"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:title="@string/setting_title_javascript"/>
 
         <CheckBoxPreference
             android:key="profileProtected_javascriptPopUp"
-            android:defaultValue="true"
-            android:title="Javascript popups"/>
+            android:defaultValue="false"
+            android:title="@string/setting_title_javascript_popUp"/>
 
     </PreferenceCategory>
 

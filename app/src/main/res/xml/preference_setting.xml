@@ -3,7 +3,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory android:title="@string/setting_title_browser">
+    <PreferenceCategory android:title="@string/setting_title_browser"
+        app:initialExpandedChildrenCount="4">
 
         <Preference
             android:key="settings_start"
@@ -58,31 +59,6 @@
         <Preference
             android:key="settings_data"
             android:title="@string/setting_title_data"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_userScript">
-
-        <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
-            android:key="sp_onPageStarted"
-            app:editTextSwitchKey="onPageStarted"
-            android:title="onPageStarted" />
-
-        <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
-            android:key="sp_onPageFinished"
-            app:editTextSwitchKey="onPageFinished"
-            android:title="onPageFinished" />
-
-        <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
-            android:key="sp_onLoadResource"
-            app:editTextSwitchKey="onLoadResource"
-            android:title="onLoadResource" />
 
     </PreferenceCategory>
 

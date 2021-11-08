@@ -22,8 +22,8 @@ public class Fragment_settings_Profile extends PreferenceFragmentCompat {
 
         switch (Objects.requireNonNull(profile)) {
             case "profileStandard":
-                setPreferencesFromResource(R.xml.preference_profile_default, rootKey);
-                PreferenceManager.setDefaultValues(context, R.xml.preference_profile_default, false);
+                setPreferencesFromResource(R.xml.preference_profile_standard, rootKey);
+                PreferenceManager.setDefaultValues(context, R.xml.preference_profile_standard, false);
                 break;
             case "profileTrusted":
                 setPreferencesFromResource(R.xml.preference_profile_trusted, rootKey);

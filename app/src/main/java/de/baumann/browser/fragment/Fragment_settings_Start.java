@@ -41,8 +41,6 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
         setPreferencesFromResource(R.xml.preference_start, rootKey);
         Context context = getContext();
         assert context != null;
-
-        PreferenceManager.setDefaultValues(getContext(), R.xml.preference_start, false);
         initSummary(getPreferenceScreen());
 
         Preference sp_ad_block = findPreference("sp_ad_block");
@@ -138,11 +136,10 @@ public class Fragment_settings_Start extends PreferenceFragmentCompat implements
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password"))
-            {
+            if (p.getTitle().toString().toLowerCase().contains("password")) {
                 p.setSummary("******");
             } else {
-                p.setSummary(editTextPref.getText());
+                if (p.getSummaryProvider()==null)   p.setSummary(editTextPref.getText());
             }
         }
     }

@@ -179,20 +179,18 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean(profile + "_saveData",true));
         webSettings.setBlockNetworkImage(!sp.getBoolean(profile + "_images", true));
         webSettings.setGeolocationEnabled(sp.getBoolean(profile + "_location", false));
+        webSettings.setJavaScriptEnabled(sp.getBoolean(profile + "_javascript", true));
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(profile + "_javascriptPopUp", false));
+        webSettings.setDomStorageEnabled(sp.getBoolean(profile + "_dom", false));
         fingerPrintProtection = sp.getBoolean(profile + "_fingerPrintProtection", false);
         CookieManager manager = CookieManager.getInstance();
 
-        if (sp.getBoolean(profile + "_cookies", true)) {
+        if (sp.getBoolean(profile + "_cookies", false)) {
             manager.setAcceptCookie(true);
             manager.getCookie(url);
         } else {
             manager.setAcceptCookie(false);
         }
-
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(profile + "_javascript", true));
-        webSettings.setJavaScriptEnabled(sp.getBoolean(profile + "_javascript", true));
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(profile + "_javascriptPopUp", true));
-        webSettings.setDomStorageEnabled(sp.getBoolean(profile + "_dom", true));
     }
 
     public void setProfileIcon (ImageButton omniBox_tab) {
@@ -217,14 +215,14 @@ public class NinjaWebView extends WebView implements AlbumController {
         sp.edit().putBoolean("profileChanged_saveData", sp.getBoolean(profile + "_saveData",true))
                 .putBoolean("profileChanged_images", sp.getBoolean(profile + "_images",true))
                 .putBoolean("profileChanged_adBlock", sp.getBoolean(profile + "_adBlock",true))
-                .putBoolean("profileChanged_location", sp.getBoolean(profile + "_location",true))
+                .putBoolean("profileChanged_location", sp.getBoolean(profile + "_location",false))
                 .putBoolean("profileChanged_fingerPrintProtection", sp.getBoolean(profile + "_fingerPrintProtection",true))
-                .putBoolean("profileChanged_cookies", sp.getBoolean(profile + "_cookies",true))
+                .putBoolean("profileChanged_cookies", sp.getBoolean(profile + "_cookies",false))
                 .putBoolean("profileChanged_javascript", sp.getBoolean(profile + "_javascript",true))
-                .putBoolean("profileChanged_javascriptPopUp", sp.getBoolean(profile + "_javascriptPopUp",true))
+                .putBoolean("profileChanged_javascriptPopUp", sp.getBoolean(profile + "_javascriptPopUp",false))
                 .putBoolean("profileChanged_saveHistory", sp.getBoolean(profile + "_saveHistory",true))
-                .putBoolean("profileChanged_camera", sp.getBoolean(profile + "_camera",true))
-                .putBoolean("profileChanged_dom", sp.getBoolean(profile + "_dom",true))
+                .putBoolean("profileChanged_camera", sp.getBoolean(profile + "_camera",false))
+                .putBoolean("profileChanged_dom", sp.getBoolean(profile + "_dom",false))
                 .putString("profile", "profileChanged").apply();
     }
 
@@ -237,10 +235,10 @@ public class NinjaWebView extends WebView implements AlbumController {
                 sp.edit().putBoolean("profileChanged_javascript", !sp.getBoolean("profileChanged_javascript", true)).apply();
                 break;
             case "_javascriptPopUp":
-                sp.edit().putBoolean("profileChanged_javascriptPopUp", !sp.getBoolean("profileChanged_javascriptPopUp", true)).apply();
+                sp.edit().putBoolean("profileChanged_javascriptPopUp", !sp.getBoolean("profileChanged_javascriptPopUp", false)).apply();
                 break;
             case "_cookies":
-                sp.edit().putBoolean("profileChanged_cookies", !sp.getBoolean("profileChanged_cookies", true)).apply();
+                sp.edit().putBoolean("profileChanged_cookies", !sp.getBoolean("profileChanged_cookies", false)).apply();
                 break;
             case "_fingerPrintProtection":
                 sp.edit().putBoolean("profileChanged_fingerPrintProtection", !sp.getBoolean("profileChanged_fingerPrintProtection", true)).apply();
@@ -255,13 +253,13 @@ public class NinjaWebView extends WebView implements AlbumController {
                 sp.edit().putBoolean("profileChanged_saveHistory", !sp.getBoolean("profileChanged_saveHistory", true)).apply();
                 break;
             case "_location":
-                sp.edit().putBoolean("profileChanged_location", !sp.getBoolean("profileChanged_location", true)).apply();
+                sp.edit().putBoolean("profileChanged_location", !sp.getBoolean("profileChanged_location", false)).apply();
                 break;
             case "_camera":
-                sp.edit().putBoolean("profileChanged_camera", !sp.getBoolean("profileChanged_camera", true)).apply();
+                sp.edit().putBoolean("profileChanged_camera", !sp.getBoolean("profileChanged_camera", false)).apply();
                 break;
             case "_dom":
-                sp.edit().putBoolean("profileChanged_dom", !sp.getBoolean("profileChanged_dom", true)).apply();
+                sp.edit().putBoolean("profileChanged_dom", !sp.getBoolean("profileChanged_dom", false)).apply();
                 break;
         }
         dialog.cancel();
@@ -283,9 +281,9 @@ public class NinjaWebView extends WebView implements AlbumController {
             case "_javascript":
                 return sp.getBoolean(profile + "_javascript", true);
             case "_javascriptPopUp":
-                return sp.getBoolean(profile + "_javascriptPopUp", true);
+                return sp.getBoolean(profile + "_javascriptPopUp", false);
             case "_cookies":
-                return sp.getBoolean(profile + "_cookies", true);
+                return sp.getBoolean(profile + "_cookies", false);
             case "_fingerPrintProtection":
                 return sp.getBoolean(profile + "_fingerPrintProtection", true);
             case "_adBlock":
@@ -295,11 +293,11 @@ public class NinjaWebView extends WebView implements AlbumController {
             case "_saveHistory":
                 return sp.getBoolean(profile + "_saveHistory", true);
             case "_location":
-                return sp.getBoolean(profile + "_location", true);
+                return sp.getBoolean(profile + "_location", false);
             case "_camera":
-                return sp.getBoolean(profile + "_camera", true);
+                return sp.getBoolean(profile + "_camera", false);
             case "_dom":
-                return sp.getBoolean(profile + "_dom", true);
+                return sp.getBoolean(profile + "_dom", false);
             default:
                 return false;
         }

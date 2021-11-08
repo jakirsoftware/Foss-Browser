@@ -22,13 +22,13 @@
 
         <CheckBoxPreference
             android:defaultValue="true"
-            android:key="sp_close_browser_confirm"
-            android:title="@string/setting_title_confirm_exit"/>
+            android:key="sp_swipeToReload"
+            android:title="@string/setting_title_reload"/>
 
         <CheckBoxPreference
             android:defaultValue="true"
-            android:key="sp_swipeToReload"
-            android:title="@string/setting_title_reload"/>
+            android:key="sp_close_browser_confirm"
+            android:title="@string/setting_title_confirm_exit"/>
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -45,7 +45,7 @@
             android:key="start_tab"
             app:listSwitchKey="start_tabStart"
             app:listSwitchKeyDefaultValue="false"
-            android:defaultValue="0"
+            android:defaultValue="3"
             android:title="@string/setting_overView_onStart_title"
             android:entries="@array/setting_entries_tab"
             android:entryValues="@array/setting_values_tab" />

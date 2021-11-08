@@ -177,15 +177,15 @@ public class BackupUnit {
         switch (i) {
             case 1:
                 list = action.listDomains(RecordUnit.TABLE_JAVASCRIPT);
-                filename = "export_java_list.txt";
+                filename = "list_trusted.txt";
                 break;
             case 3:
                 list = action.listDomains(RecordUnit.TABLE_REMOTE);
-                filename = "export_dom_list.txt";
+                filename = "list_standard.txt";
                 break;
             default:
                 list = action.listDomains(RecordUnit.TABLE_COOKIE);
-                filename = "export_cookie_list.txt";
+                filename = "list_protected.txt";
                 break;
         }
         action.close();
@@ -211,15 +211,15 @@ public class BackupUnit {
             switch (i) {
                 case 1:
                     js = new Profile_trusted(context);
-                    filename = "export_java_list.txt";
+                    filename = "list_trusted.txt";
                     break;
                 case 3:
                     DOM = new Profile_standard(context);
-                    filename = "export_dom_list.txt";
+                    filename = "list_standard.txt";
                     break;
                 default:
                     cookie = new Profile_protected(context);
-                    filename = "export_cookie_list.txt";
+                    filename = "list_protected.txt";
                     break;
             }
             File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//" + filename);

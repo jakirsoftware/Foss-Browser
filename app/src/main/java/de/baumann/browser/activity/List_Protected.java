@@ -44,7 +44,7 @@ public class List_Protected extends AppCompatActivity {
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         HelperUnit.initTheme(this);
-        setContentView(R.layout.activity_settings_whitelist);
+        setContentView(R.layout.activity_settings_profile_list);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

@@ -237,7 +237,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         sp.edit().putInt("restart_changed", 0).apply();
         sp.edit().putBoolean("pdf_create", false).apply();
 
-        switch (Objects.requireNonNull(sp.getString("start_tab", "0"))) {
+        switch (Objects.requireNonNull(sp.getString("start_tab", "3"))) {
             case "3":
                 overViewTab = getString(R.string.album_title_bookmarks);
                 break;
@@ -263,8 +263,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     .putString("setting_gesture_nav_down", "05")
                     .putString("setting_gesture_nav_left", "03")
                     .putString("setting_gesture_nav_right", "02")
-                    .putBoolean("sp_autofill", true)
-                    .putBoolean("sp_location", false).apply();
+                    .putBoolean("sp_autofill", true).apply();
         }
         contentFrame = findViewById(R.id.main_content);
         contentFrame.getViewTreeObserver().addOnGlobalLayoutListener(keyboardLayoutListener);
@@ -304,7 +303,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initTabDialog();
         initSearchPanel();
         initOverview();
-        if (sp.getBoolean("start_tabStart", false)){ //put showOverview first. May be closed again later depending on intent
+        if (sp.getBoolean("start_tabStart", false)){
+            //put showOverview first. May be closed again later depending on intent
             showOverview();
         }
         dispatchIntent(getIntent());
@@ -322,7 +322,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true,false);
             getIntent().setAction("");
         }
-
     }
 
     @Override
@@ -389,14 +388,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public void onDestroy() {
-
-        if (sp.getBoolean("sp_clear_quit", false)) {
-
-            boolean clearCache = sp.getBoolean("sp_clear_cache", false);
+        if (sp.getBoolean("sp_clear_quit", true)) {
+            boolean clearCache = sp.getBoolean("sp_clear_cache", true);
             boolean clearCookie = sp.getBoolean("sp_clear_cookie", false);
             boolean clearHistory = sp.getBoolean("sp_clear_history", false);
-            boolean clearIndexedDB = sp.getBoolean("sp_clearIndexedDB", false);
-
+            boolean clearIndexedDB = sp.getBoolean("sp_clearIndexedDB", true);
             if (clearCache) {
                 BrowserUnit.clearCache(this);
             }
@@ -449,29 +445,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public synchronized void showAlbum(AlbumController controller) {
-
         if (sp.getBoolean("hideToolbar", true)) {
             ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
             animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
             animation.start();
         }
-
         View av = (View) controller;
-
         if (currentAlbumController != null) {
             currentAlbumController.deactivate();
         }
-
         currentAlbumController = controller;
         currentAlbumController.activate();
-
         contentFrame.removeAllViews();
         contentFrame.addView(av);
-
         updateOmniBox();
-
         HelperUnit.initRendering(ninjaWebView, context);
-
         if (searchPanel.getVisibility() == View.VISIBLE) {
             searchOnSite = false;
             searchBox.setText("");
@@ -555,40 +543,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             getIntent().setAction("");
             hideOverview();
         }
-    }
-
-    private void setProfile (Dialog dialog, View dialogView) {
-        Chip chip_profile_trusted = dialog.findViewById(R.id.chip_profile_trusted);
-        chip_profile_trusted.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileTrusted"));
-        chip_profile_trusted.setOnClickListener(v -> {
-            sp.edit().putString("profile", "profileTrusted").apply();
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-
-        Chip chip_profile_standard = dialogView.findViewById(R.id.chip_profile_standard);
-        chip_profile_standard.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileStandard"));
-        chip_profile_standard.setOnClickListener(v -> {
-            sp.edit().putString("profile", "profileStandard").apply();
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-
-        Chip chip_profile_protected = dialogView.findViewById(R.id.chip_profile_protected);
-        chip_profile_protected.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileProtected"));
-        chip_profile_protected.setOnClickListener(v -> {
-            sp.edit().putString("profile", "profileProtected").apply();
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-
-        Chip chip_profile_changed = dialogView.findViewById(R.id.chip_profile_changed);
-        chip_profile_changed.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileChanged"));
-        chip_profile_changed.setOnClickListener(v -> {
-            sp.edit().putString("profile", "profileChanged").apply();
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
     }
 
     private void initTabDialog () {
@@ -1068,7 +1022,39 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.reload();
             dialog.cancel();
         });
-        setProfile(dialog, dialogView);
+
+        Chip chip_profile_trusted = dialog.findViewById(R.id.chip_profile_trusted);
+        assert chip_profile_trusted != null;
+        chip_profile_trusted.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileTrusted"));
+        chip_profile_trusted.setOnClickListener(v -> {
+            sp.edit().putString("profile", "profileTrusted").apply();
+            ninjaWebView.reload();
+            dialog.cancel();
+        });
+
+        Chip chip_profile_standard = dialogView.findViewById(R.id.chip_profile_standard);
+        chip_profile_standard.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileStandard"));
+        chip_profile_standard.setOnClickListener(v -> {
+            sp.edit().putString("profile", "profileStandard").apply();
+            ninjaWebView.reload();
+            dialog.cancel();
+        });
+
+        Chip chip_profile_protected = dialogView.findViewById(R.id.chip_profile_protected);
+        chip_profile_protected.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileProtected"));
+        chip_profile_protected.setOnClickListener(v -> {
+            sp.edit().putString("profile", "profileProtected").apply();
+            ninjaWebView.reload();
+            dialog.cancel();
+        });
+
+        Chip chip_profile_changed = dialogView.findViewById(R.id.chip_profile_changed);
+        chip_profile_changed.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileChanged"));
+        chip_profile_changed.setOnClickListener(v -> {
+            sp.edit().putString("profile", "profileChanged").apply();
+            ninjaWebView.reload();
+            dialog.cancel();
+        });
 
         // CheckBox
 
@@ -1299,9 +1285,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             View dialogView = View.inflate(context, R.layout.dialog_menu, null);
             builder.setView(dialogView);
             AlertDialog dialog = builder.create();
+            FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon, R.drawable.icon_link);
+            TextView dialog_title = dialogView.findViewById(R.id.menuTitle);
+            dialog_title.setText(url);
             dialog.show();
-            CardView cardView = dialogView.findViewById(R.id.cardView);
-            cardView.setVisibility(View.GONE);
 
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
@@ -1742,7 +1729,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (position == 1) {
                 showOverview();
             } else if (position == 2) {
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, true);
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false);
             } else if (position == 0) {
                 ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
             } else if (position == 3) {
@@ -1960,16 +1947,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             MaterialAlertDialogBuilder builderSubMenu;
             AlertDialog dialogSubMenu;
             switch (position) {
-
                 case 0:
-                    addAlbum(getString(R.string.app_name), url, true, true);
+                    addAlbum(getString(R.string.app_name), url, true, false);
                     hideOverview();
                     break;
                 case 1:
-                    addAlbum(getString(R.string.app_name), url, false, true);
+                    addAlbum(getString(R.string.app_name), url, false, false);
                     break;
                 case 2:
                     addAlbum(getString(R.string.app_name), url, true, true);
+                    hideOverview();
                     break;
                 case 3:
                     shareLink("",url);

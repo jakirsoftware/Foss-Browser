@@ -9,7 +9,6 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
-import androidx.preference.PreferenceManager;
 
 import de.baumann.browser.R;
 
@@ -21,7 +20,6 @@ public class Fragment_settings_UI extends PreferenceFragmentCompat implements Sh
         setPreferencesFromResource(R.xml.preference_ui, rootKey);
         Context context = getContext();
         assert context != null;
-        PreferenceManager.setDefaultValues(context, R.xml.preference_ui, false);
         initSummary(getPreferenceScreen());
     }
 
