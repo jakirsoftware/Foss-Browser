@@ -408,7 +408,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         BrowserContainer.clear();
 
-        sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
+        ninjaWebView.restoreTabs();  //clear open tabs in preferences
+        //sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
 
         unregisterReceiver(downloadReceiver);
         ninjaWebView.getViewTreeObserver().removeOnGlobalLayoutListener(keyboardLayoutListener);
@@ -1132,6 +1133,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_dom.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_dom", dialog);
+        });
+
+        Chip chip_saveTabs = dialogView.findViewById(R.id.chip_saveTabs);
+        chip_saveTabs.setChecked(ninjaWebView.getBoolean("_saveTabs"));
+        chip_saveTabs.setOnClickListener(v -> {
+            ninjaWebView.setProfileChanged();
+            ninjaWebView.putProfileBoolean("_saveTabs", dialog);
         });
 
         String text;

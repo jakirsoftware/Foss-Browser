@@ -228,7 +228,7 @@
                 android:text="@string/setting_title_javascript_popUp" />
 
             <com.google.android.material.chip.Chip
-                android:visibility="invisible"
+                android:id="@+id/chip_saveTabs"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
@@ -237,7 +237,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="0dp"
                 android:ellipsize="end"
-                android:text="@string/setting_title_javascript_popUp" />
+                android:text="@string/setting_title_restoreTabs" />
 
         </LinearLayout>
 

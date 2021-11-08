@@ -13,6 +13,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
@@ -223,6 +224,7 @@ public class NinjaWebView extends WebView implements AlbumController {
                 .putBoolean("profileTrusted_saveHistory", true)
                 .putBoolean("profileTrusted_camera", false)
                 .putBoolean("profileTrusted_dom", true)
+                .putBoolean("profileTrusted_saveTabs", true)
 
                 .putBoolean("profileStandard_saveData", true)
                 .putBoolean("profileStandard_images", true)
@@ -235,6 +237,7 @@ public class NinjaWebView extends WebView implements AlbumController {
                 .putBoolean("profileStandard_saveHistory", true)
                 .putBoolean("profileStandard_camera", false)
                 .putBoolean("profileStandard_dom", false)
+                .putBoolean("profileTrusted_saveTabs", false)
 
                 .putBoolean("profileProtected_saveData", true)
                 .putBoolean("profileProtected_images", true)
@@ -246,7 +249,8 @@ public class NinjaWebView extends WebView implements AlbumController {
                 .putBoolean("profileProtected_javascriptPopUp", false)
                 .putBoolean("profileProtected_saveHistory", true)
                 .putBoolean("profileProtected_camera", false)
-                .putBoolean("profileProtected_dom", false).apply();
+                .putBoolean("profileProtected_dom", false)
+                .putBoolean("profileTrusted_saveTabs", false).apply();
     }
 
     public void setProfileChanged () {
@@ -261,6 +265,7 @@ public class NinjaWebView extends WebView implements AlbumController {
                 .putBoolean("profileChanged_saveHistory", sp.getBoolean(profile + "_saveHistory",true))
                 .putBoolean("profileChanged_camera", sp.getBoolean(profile + "_camera",false))
                 .putBoolean("profileChanged_dom", sp.getBoolean(profile + "_dom",false))
+                .putBoolean("profileChanged_dom", sp.getBoolean(profile + "__saveTabs",false))
                 .putString("profile", "profileChanged").apply();
     }
 
@@ -299,6 +304,9 @@ public class NinjaWebView extends WebView implements AlbumController {
             case "_dom":
                 sp.edit().putBoolean("profileChanged_dom", !sp.getBoolean("profileChanged_dom", false)).apply();
                 break;
+            case "_saveTabs":
+                sp.edit().putBoolean("profileChanged_saveTabs", !sp.getBoolean("profileChanged_saveTabs", false)).apply();
+                break;
         }
         dialog.cancel();
         this.reload();
@@ -336,12 +344,18 @@ public class NinjaWebView extends WebView implements AlbumController {
                 return sp.getBoolean(profile + "_camera", false);
             case "_dom":
                 return sp.getBoolean(profile + "_dom", false);
+            case "_saveTabs":
+                return sp.getBoolean(profile + "_saveTabs", false);
             default:
                 return false;
         }
     }
 
-
+    public synchronized void restoreTabs() {
+        if (!sp.getBoolean(profile + "_saveTabs", false)) {
+            sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
+        }
+    }
 
     private synchronized void initAlbum() {
         album.setAlbumTitle(context.getString(R.string.app_name));

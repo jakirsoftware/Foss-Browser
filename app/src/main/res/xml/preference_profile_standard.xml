@@ -29,6 +29,11 @@
             android:title="@string/setting_title_history"/>
 
         <CheckBoxPreference
+            android:key="profileStandard_saveTabs"
+            android:defaultValue="false"
+            android:title="@string/setting_title_restoreTabs"/>
+
+        <CheckBoxPreference
             android:key="profileStandard_location"
             android:defaultValue="false"
             android:title="@string/setting_title_location"/>
