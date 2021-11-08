@@ -200,6 +200,7 @@
     <string name="menu_nightView">viễn cảnh buổi đêm</string>
     <string name="setting_userScript">Custom JavaScript code</string>
     <string name="setting_title_camera">Allow camera usage</string>
+    <string name="setting_title_restoreTabs">Restore tabs on restart</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->
 </resources>
