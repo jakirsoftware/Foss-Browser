@@ -71,6 +71,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     public boolean fingerPrintProtection;
     private boolean stopped;
     private AlbumItem album;
+    private AlbumController predecessor=null;
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
     private NinjaDownloadListener downloadListener;
@@ -532,5 +533,11 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public String getProfile() {
         return profile;
+    }
+
+    public AlbumController getPredecessor(){ return predecessor;}
+
+    public void setPredecessor(AlbumController predecessor) {
+        this.predecessor = predecessor;
     }
 }
