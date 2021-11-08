@@ -201,6 +201,7 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="menu_nightView">Nacht-Ansicht</string>
     <string name="setting_userScript">Individualisierter JavaScript-Code</string>
     <string name="setting_title_camera">Kameranutzung erlauben</string>
+    <string name="setting_title_restoreTabs">Restore tabs on restart</string>
     <string name="hint_DRM_Media">DRM-geschützte Medienwiedergabe erlauben?</string>
     <!-- License changelog -->
 </resources>
