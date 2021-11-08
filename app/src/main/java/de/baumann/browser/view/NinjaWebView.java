@@ -71,6 +71,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     public boolean fingerPrintProtection;
     private boolean stopped;
     private AlbumItem album;
+    private AlbumController predecessor=null;
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
     private NinjaDownloadListener downloadListener;
@@ -331,6 +332,11 @@ public class NinjaWebView extends WebView implements AlbumController {
         super.stopLoading();
     }
 
+    public synchronized void reloadWithoutInit(){  //needed for camera usage without deactivating "save_data"
+        stopped=false;
+        super.reload();
+    }
+
     @Override
     public synchronized void reload(){
         stopped=false;
@@ -524,4 +530,14 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public void setStopped(boolean stopped){this.stopped=stopped;}
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public AlbumController getPredecessor(){ return predecessor;}
+
+    public void setPredecessor(AlbumController predecessor) {
+        this.predecessor = predecessor;
+    }
 }

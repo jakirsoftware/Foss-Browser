@@ -192,10 +192,12 @@ public class FaviconHelper extends SQLiteOpenHelper {
         ImageView faviconView = view.findViewById(id);
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(url);
-        if (bitmap != null){
-            faviconView.setImageBitmap(bitmap);
-        }else {
-            faviconView.setImageResource(idImage);
+        if (faviconView !=null) {
+            if (bitmap != null) {
+                faviconView.setImageBitmap(bitmap);
+            } else {
+                faviconView.setImageResource(idImage);
+            }
         }
     }
 }

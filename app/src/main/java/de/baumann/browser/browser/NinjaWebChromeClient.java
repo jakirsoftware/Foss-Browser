@@ -96,10 +96,10 @@ public class NinjaWebChromeClient extends WebChromeClient {
         String[] resources = request.getResources();
         for (String resource : resources) {
             if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)) {
-                if (sp.getBoolean("sp_camera", false)) {
+                if (sp.getBoolean(ninjaWebView.getProfile()+"_camera", false)) {
                     if (ninjaWebView.getSettings().getMediaPlaybackRequiresUserGesture()) {
                         ninjaWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);  //fix conflict with save data option. Temporarily switch off setMediaPlaybackRequiresUserGesture
-                        ninjaWebView.reload();
+                        ninjaWebView.reloadWithoutInit();
                     }
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         request.grant(request.getResources());

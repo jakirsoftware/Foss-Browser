@@ -111,7 +111,7 @@ public class NinjaWebViewClient extends WebViewClient {
             //Prevent canvas fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com
             //
-            //The Profile_trusted part below is taken from "Canvas Fingerprint Defender", Firefox plugin, Version 0.1.9, by ilGur
+            //The Javascript part below is taken from "Canvas Fingerprint Defender", Firefox plugin, Version 0.1.9, by ilGur
             //The source code has been published originally under Mozilla Public License V2.0. You can obtain a copy of the license at https://mozilla.org/MPL/2.0/
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
@@ -173,7 +173,7 @@ public class NinjaWebViewClient extends WebViewClient {
             //Prevent WebGL fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com
             //
-            //The Profile_trusted part below is taken from "WebGL Fingerprint Defender", Firefox plugin, Version 0.1.5, by ilGur
+            //The Javascript part below is taken from "WebGL Fingerprint Defender", Firefox plugin, Version 0.1.5, by ilGur
             //The source code has been published originally under Mozilla Public License V2.0. You can obtain a copy of the license at https://mozilla.org/MPL/2.0/
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
@@ -281,7 +281,7 @@ public class NinjaWebViewClient extends WebViewClient {
             //Prevent AudioContext fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com
             //
-            //The Profile_trusted part below is taken from "AudioContext Fingerprint Defender", Firefox plugin, Version 0.1.6, by ilGur
+            //The Javascript part below is taken from "AudioContext Fingerprint Defender", Firefox plugin, Version 0.1.6, by ilGur
             //The source code has been published originally under Mozilla Public License V2.0. You can obtain a copy of the license at https://mozilla.org/MPL/2.0/
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
@@ -337,7 +337,7 @@ public class NinjaWebViewClient extends WebViewClient {
             //Prevent Font fingerprinting by randomizing
             //can be tested e.g. at https://webbrowsertools.com
             //
-            //The Profile_trusted part below is taken from "Font Fingerprint Defender", Firefox plugin, Version 0.1.3, by ilGur
+            //The Javascript part below is taken from "Font Fingerprint Defender", Firefox plugin, Version 0.1.3, by ilGur
             //The source code has been published originally under Mozilla Public License V2.0. You can obtain a copy of the license at https://mozilla.org/MPL/2.0/
             //The author has given explicit written permission to use his code under GPL V3 in this project.
 
