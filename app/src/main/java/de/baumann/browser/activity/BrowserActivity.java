@@ -145,6 +145,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private ImageButton omniBox_tab;
     private KeyListener listener;
     private BadgeDrawable badgeDrawable;
+    private CircularProgressIndicator progressBar;
 
     // Layouts
 
@@ -571,9 +572,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_text.setKeyListener(null); // Disable input
         omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
         omniBox_overview = findViewById(R.id.omnibox_overview);
+        progressBar = findViewById(R.id.main_progress_bar);
         omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
-
 
         bottomAppBar = findViewById(R.id.bottomAppBar);
         bottomAppBar.setTitle("Foss Browser");
@@ -1383,6 +1384,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
             String profile = sp.getString("profile", "profileStandard");
             assert profile != null;
+            omniBox_tab.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
 
             if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
                 omniBox_text.setText(url);
@@ -1417,10 +1420,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public synchronized void updateProgress(int progress) {
-        CircularProgressIndicator progressBar = findViewById(R.id.main_progress_bar);
         progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
         progressBar.setProgressCompat(progress, true);
         if (progress != BrowserUnit.LOADING_STOPPED) updateOmniBox();
+
         if (progress < BrowserUnit.PROGRESS_MAX) {
             progressBar.setVisibility(View.VISIBLE);
             omniBox_tab.setVisibility(View.INVISIBLE);
