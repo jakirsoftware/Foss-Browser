@@ -410,7 +410,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         BrowserContainer.clear();
 
-        if (sp.getBoolean("sp_reloadTabs", false)) {
+        if (!sp.getBoolean("sp_reloadTabs", false)) {
             sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
         }
 
@@ -1198,16 +1198,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             sp.edit().putBoolean("first_start", false).apply();
         }
         activity.registerForContextMenu(ninjaWebView);
-
-        if (ninjaWebView.restoreTabs()) {
-            ArrayList<String> openTabs;
-            openTabs = new ArrayList<>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
-            if (openTabs.size()>0) {
-                for (int counter = 0; counter < openTabs.size(); counter++) {
-                    addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1,false);
-                }
-            }
-        }
 
         SwipeTouchListener swipeTouchListener;
         swipeTouchListener = new SwipeTouchListener(context) {

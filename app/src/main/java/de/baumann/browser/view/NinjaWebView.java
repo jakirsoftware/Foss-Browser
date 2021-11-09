@@ -341,10 +341,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
     }
 
-    public synchronized boolean restoreTabs() {
-        return sp.getBoolean(profile + "_saveTabs", false);
-    }
-
     private synchronized void initAlbum() {
         album.setAlbumTitle(context.getString(R.string.app_name));
         album.setBrowserController(browserController);
