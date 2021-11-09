@@ -11,6 +11,7 @@
         <entry key="../../../../../layout/custom_preview.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/icon_adblock.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_camera.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_close.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_cookie.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_dom.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_fingerprint.xml" value="0.20625" />

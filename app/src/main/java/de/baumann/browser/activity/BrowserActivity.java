@@ -1728,7 +1728,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         // Tab
 
-        GridItem item_01 = new GridItem(R.drawable.icon_profile_protected, getString(R.string.menu_openFav),  0);
+        GridItem item_01 = new GridItem(0, getString(R.string.menu_openFav),  0);
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
         GridItem item_03 = new GridItem(0, getString(R.string.main_menu_new_tabProfile),  0);
         GridItem item_04 = new GridItem(0, getString(R.string.menu_closeTab),  0);
