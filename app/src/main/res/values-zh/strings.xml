@@ -198,11 +198,11 @@
     <string name="menu_nightView">夜间模式</string>
     <string name="setting_userScript">自定义 JavaScript 代码</string>
     <string name="setting_title_camera">允许相机使用</string>
-    <string name="setting_title_tabsReload">Reload tabs</string>
-    <string name="setting_title_tabsRestore">Restore tabs</string>
-    <string name="setting_title_userInterface">User interface</string>
-    <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
-    <string name="setting_summery_tabsRestore">Restore tabs, whenn FOSS Browser gets killed by the system.</string>
+    <string name="setting_title_tabsReload">重新加载标签页</string>
+    <string name="setting_title_tabsRestore">恢复标签页</string>
+    <string name="setting_title_userInterface">用户界面</string>
+    <string name="setting_summary_tabsReload">启动 FOSS 浏览器时重新加载上次打开的标签</string>
+    <string name="setting_summery_tabsRestore">当 FOSS 浏览器被系统杀死时，还原标签页。</string>
     <string name="hint_DRM_Media">允许 DRM 保护的媒体播放？</string>
     <!-- License changelog -->
 </resources>
