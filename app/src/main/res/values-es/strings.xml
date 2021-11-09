@@ -200,8 +200,11 @@
     <string name="menu_nightView">Vista nocturna</string>
     <string name="setting_userScript">Código JavaScript personalizado</string>
     <string name="setting_title_camera">Permitir uso de cámara</string>
-    <string name="setting_title_restoreTabs">Restore tabs on restart</string>
-    <string name="setting_title_restoreTabs_killed">Restore tabs on system close</string>
+    <string name="setting_title_tabsReload">Reload tabs</string>
+    <string name="setting_title_tabsRestore">Restore tabs</string>
+    <string name="setting_title_userInterface">User interface</string>
+    <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
+    <string name="setting_summery_tabsRestore">Restore tabs, whenn FOSS Browser gets killed by the system.</string>
     <string name="hint_DRM_Media">¿Desea permitir reproducción multimedia protegida por DRM?</string>
     <!-- License changelog -->
 </resources>
