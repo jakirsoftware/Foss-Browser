@@ -202,6 +202,8 @@
     <string name="menu_nightView">Noční zobrazení</string>
     <string name="setting_userScript">Vlastní kód JavaScript</string>
     <string name="setting_title_camera">Povolit používání kamery</string>
+    <string name="setting_title_restoreTabs">Restore tabs on restart</string>
+    <string name="setting_title_restoreTabs_killed">Restore tabs on system close</string>
     <string name="hint_DRM_Media">Povolit přehrávání médií chráněných DRM?</string>
     <!-- License changelog -->
 </resources>

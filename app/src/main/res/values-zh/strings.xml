@@ -198,6 +198,8 @@
     <string name="menu_nightView">夜间模式</string>
     <string name="setting_userScript">自定义 JavaScript 代码</string>
     <string name="setting_title_camera">允许相机使用</string>
+    <string name="setting_title_restoreTabs">Restore tabs on restart</string>
+    <string name="setting_title_restoreTabs_killed">Restore tabs on system close</string>
     <string name="hint_DRM_Media">允许 DRM 保护的媒体播放？</string>
     <!-- License changelog -->
 </resources>
