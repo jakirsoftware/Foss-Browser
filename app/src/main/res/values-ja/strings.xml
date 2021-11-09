@@ -26,7 +26,7 @@
     <!-- Menu -->
     <string name="main_menu_tabPreview">タブプレビューを開く</string>
     <string name="main_menu_new_tab">新規タブ (バックグラウンド)</string>
-    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
+    <string name="main_menu_new_tabProfile">新規タブ (プロファイル …)</string>
     <string name="main_menu_new_tabOpen">新規タブ (フォアグラウンド)</string>
     <string name="main_omnibox_input_hint">検索または URL を入力</string>
     <string name="menu_open_with">リンクを開く…</string>
@@ -76,30 +76,30 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">MetaGer</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">フォントサイズ</string>
     <string name="setting_title_dom">ウェブストレージ</string>
     <string name="setting_title_dom_whitelist">DOM ホワイトリスト</string>
     <string name="setting_title_save_data">「データを保存」のリクエスト</string>
-    <string name="setting_title_profiles">Profiles</string>
-    <string name="setting_title_profiles_edit">Edit profiles</string>
-    <string name="setting_title_profiles_trustedList">Trusted websites</string>
-    <string name="setting_title_profiles_standardList">Standard websites</string>
-    <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_start">Profile on new tabs</string>
-    <string name="setting_title_profiles_trusted">Trusted</string>
-    <string name="setting_title_profiles_standard">Standard</string>
-    <string name="setting_title_profiles_protected">Protected</string>
-    <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_set">Active profile</string>
-    <string name="setting_title_profiles_dataUsage">Data usage</string>
-    <string name="setting_title_profiles_privacy">Privacy</string>
-    <string name="setting_title_profiles_Security">Security</string>
+    <string name="setting_title_profiles">プロファイル</string>
+    <string name="setting_title_profiles_edit">プロファイルの編集</string>
+    <string name="setting_title_profiles_trustedList">信頼できるウェブサイト</string>
+    <string name="setting_title_profiles_standardList">標準のウェブサイト</string>
+    <string name="setting_title_profiles_protectedList">保護されたウェブサイト</string>
+    <string name="setting_title_profiles_start">新規タブのプロファイル</string>
+    <string name="setting_title_profiles_trusted">信頼済み</string>
+    <string name="setting_title_profiles_standard">標準</string>
+    <string name="setting_title_profiles_protected">保護済み</string>
+    <string name="setting_title_profiles_changed">カスタム</string>
+    <string name="setting_title_profiles_set">有効なプロファイル</string>
+    <string name="setting_title_profiles_dataUsage">データ使用量</string>
+    <string name="setting_title_profiles_privacy">プライバシー</string>
+    <string name="setting_title_profiles_Security">セキュリティ</string>
     <!-- browser start -->
     <string name="setting_title_images">画像</string>
     <string name="setting_title_cookie">クッキー</string>
     <string name="setting_summary_cookie_delete">有効にすると、信頼できる Web サイトも含め全てのクッキーが削除されます。</string>
     <string name="setting_title_whitelistCookie">クッキーホワイトリスト</string>
-    <string name="setting_title_javascript_popUp">Popups</string>
+    <string name="setting_title_javascript_popUp">ポップアップ</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_whitelistJS">JavaScript ホワイトリスト</string>
     <string name="setting_title_adblock">AdBlock</string>
@@ -154,7 +154,7 @@
     <string name="setting_gesture_06">左のタブに移動</string>
     <string name="setting_gesture_07">右のタブに移動</string>
     <string name="setting_gesture_08">一覧画面を表示</string>
-    <string name="setting_gesture_09">新しいタブを開く</string>
+    <string name="setting_gesture_09">新規タブを開く</string>
     <string name="setting_gesture_10">タブを閉じる</string>
     <string name="setting_gesture_hint">メニューボタンを長押しすると、高速設定ダイアログが開きます。ホーム/ブックマーク/履歴アイコンを長押しすると、ブックマークフィルタが開きます。</string>
     <!-- Data -->
@@ -173,7 +173,7 @@
     <string name="toast_permission_sdCard">\"FOSS Browser\" は \"ストレージの読み書き\" の権限が必要です。これはファイルダウンロード、スクリーンショット取得、バックアップファイル作成に必要です。</string>
     <string name="toast_restart">変更を適用するには \"FOSS Browser\" を再起動する必要があります。今すぐ閉じますか?</string>
     <string name="toast_quit">\"FOSS Browser\" を終了しますか?</string>
-    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
+    <string name="toast_quit_TAB">タブを閉じますか?</string>
     <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
     <string name="toast_unsecured">ウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
     <string name="toast_backup">データをバックアップしますか? これにより古いバックアップは上書きされます。</string>
@@ -199,9 +199,9 @@
     <string name="menu_dayView">明るい時での表示</string>
     <string name="menu_nightView">暗い時での表示</string>
     <string name="setting_userScript">カスタム JavaScript コード</string>
-    <string name="setting_title_camera">Allow camera usage</string>
-    <string name="setting_title_restoreTabs">Restore tabs on restart</string>
-    <string name="setting_title_restoreTabs_killed">Restore tabs on system close</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="setting_title_camera">カメラの使用を許可</string>
+    <string name="setting_title_restoreTabs">再起動時にタブを復元</string>
+    <string name="setting_title_restoreTabs_killed">システム終了時にタブを復元</string>
+    <string name="hint_DRM_Media">DRM 保護のメディア再生を許可しますか?</string>
     <!-- License changelog -->
 </resources>
