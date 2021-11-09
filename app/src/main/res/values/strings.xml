@@ -102,6 +102,7 @@
     <string name="setting_title_profiles_standardList">Standard websites</string>
     <string name="setting_title_profiles_protectedList">Protected websites</string>
     <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Trusted</string>
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Protected</string>
@@ -227,15 +228,7 @@
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Add</string>
 
-
-
-    <!-- Dialog help -->
-
-
-    <!-- Dialog changelog -->
-
     <string name="changelog_dialog">
-
         Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
         &lt;b>On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b>&lt;br>&lt;br>
