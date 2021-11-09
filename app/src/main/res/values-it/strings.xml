@@ -199,6 +199,7 @@
     <string name="setting_userScript">Codice JavaScript personalizzato</string>
     <string name="setting_title_camera">Consenti l\'utilizzo della fotocamera</string>
     <string name="setting_title_restoreTabs">Restore tabs on restart</string>
+    <string name="setting_title_restoreTabs_killed">Restore tabs on system close</string>
     <string name="hint_DRM_Media">Consentire la riproduzione di supporti protetti da DRM?</string>
     <!-- License changelog -->
 </resources>
