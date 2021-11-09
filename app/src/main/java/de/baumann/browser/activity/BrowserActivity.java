@@ -309,7 +309,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dispatchIntent(getIntent());
 
         //restore open Tabs from shared preferences if app got killed
-        if (sp.getBoolean("sp_restoreTabs", false)) {
+        if (sp.getBoolean("sp_restoreTabs", false) || sp.getBoolean("sp_reloadTabs", false)) {
             ArrayList<String> openTabs;
             openTabs = new ArrayList<>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
             if (openTabs.size()>0) {
@@ -410,7 +410,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         BrowserContainer.clear();
 
-        sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
+        if (sp.getBoolean("sp_reloadTabs", false)) {
+            sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
+        }
 
         unregisterReceiver(downloadReceiver);
         ninjaWebView.getViewTreeObserver().removeOnGlobalLayoutListener(keyboardLayoutListener);
@@ -1134,13 +1136,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_dom.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_dom", dialog);
-        });
-
-        Chip chip_saveTabs = dialogView.findViewById(R.id.chip_saveTabs);
-        chip_saveTabs.setChecked(ninjaWebView.getBoolean("_saveTabs"));
-        chip_saveTabs.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_saveTabs", dialog);
         });
 
         String text;

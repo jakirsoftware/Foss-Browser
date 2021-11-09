@@ -6,20 +6,6 @@
     <Preference
         android:summary="@string/setting_gesture_hint"/>
 
-    <ListPreference
-        android:key="sp_theme"
-        android:defaultValue="1"
-        android:title="@string/setting_theme"
-        android:entries="@array/setting_entries_theme"
-        android:entryValues="@array/setting_values_theme"/>
-
-    <ListPreference
-        android:key="sp_fontSize"
-        android:defaultValue="100"
-        android:title="@string/setting_title_font"
-        android:entries="@array/setting_entries_font"
-        android:entryValues="@array/setting_values_font"/>
-
     <PreferenceCategory android:title="@string/setting_title_behavior">
 
         <CheckBoxPreference
@@ -42,9 +28,35 @@
             android:key="sp_close_tab_confirm"
             android:title="@string/setting_title_confirm_tab_close"/>
 
+        <CheckBoxPreference
+            android:key="sp_reloadTabs"
+            android:defaultValue="false"
+            android:title="@string/setting_title_tabsReload"
+            android:summary="@string/setting_summary_tabsReload"/>
+
+        <CheckBoxPreference
+            android:key="sp_restoreTabs"
+            android:defaultValue="false"
+            android:title="@string/setting_title_tabsRestore"
+            android:summary="@string/setting_summery_tabsRestore"/>
+
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/setting_overView">
+    <PreferenceCategory android:title="@string/setting_title_userInterface">
+
+        <ListPreference
+            android:key="sp_theme"
+            android:defaultValue="1"
+            android:title="@string/setting_theme"
+            android:entries="@array/setting_entries_theme"
+            android:entryValues="@array/setting_values_theme"/>
+
+        <ListPreference
+            android:key="sp_fontSize"
+            android:defaultValue="100"
+            android:title="@string/setting_title_font"
+            android:entries="@array/setting_entries_font"
+            android:entryValues="@array/setting_values_font"/>
 
         <de.baumann.browser.preferences.ListSwitchPreference
             android:selectable="true"

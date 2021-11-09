@@ -272,7 +272,7 @@
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_saveTabs"
+                android:visibility="invisible"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
@@ -281,8 +281,8 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="0dp"
                 android:ellipsize="end"
-                android:text="@string/setting_title_restoreTabs"
-                app:chipIcon="@drawable/icon_restore"
+                android:text="@string/setting_title_javascript"
+                app:chipIcon="@drawable/icon_java"
                 app:chipIconEnabled="true"
                 app:chipIconSize="20dp"
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
