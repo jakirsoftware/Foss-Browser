@@ -18,7 +18,7 @@ public class Fragment_settings_Profile extends PreferenceFragmentCompat {
         assert context != null;
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        String profile = sp.getString("profile", "profileStandard");
+        String profile = sp.getString("profileToEdit", "profileStandard");
 
         switch (Objects.requireNonNull(profile)) {
             case "profileStandard":
