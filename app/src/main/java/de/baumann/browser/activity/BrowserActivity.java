@@ -1366,7 +1366,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         } else {
             closeTabConfirmation(() -> {
-                AlbumController predecessor=null;
+                AlbumController predecessor;
                 if (controller==currentAlbumController){
                     predecessor=((NinjaWebView) controller).getPredecessor();
                 } else predecessor=currentAlbumController;  //if not the current TAB is being closed return to current TAB
@@ -1728,17 +1728,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         // Tab
 
-        GridItem item_01 = new GridItem(0, getString(R.string.main_menu_tabPreview), 0);
+        GridItem item_01 = new GridItem(R.drawable.icon_profile_protected, getString(R.string.menu_openFav),  0);
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tabOpen),  0);
-        GridItem item_03 = new GridItem(0, getString(R.string.menu_openFav),  0);
+        GridItem item_03 = new GridItem(0, getString(R.string.main_menu_new_tabProfile),  0);
         GridItem item_04 = new GridItem(0, getString(R.string.menu_closeTab),  0);
         GridItem item_05 = new GridItem(0, getString(R.string.menu_quit),  0);
 
         final List<GridItem> gridList_tab = new LinkedList<>();
 
-        gridList_tab.add(gridList_tab.size(), item_03);
         gridList_tab.add(gridList_tab.size(), item_01);
         gridList_tab.add(gridList_tab.size(), item_02);
+        gridList_tab.add(gridList_tab.size(), item_03);
         gridList_tab.add(gridList_tab.size(), item_04);
         gridList_tab.add(gridList_tab.size(), item_05);
 
@@ -1748,12 +1748,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         menu_grid_tab.setOnItemClickListener((parent, view14, position, id) -> {
             dialog_overflow.cancel();
-            if (position == 1) {
-                showOverview();
-            } else if (position == 2) {
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false);
-            } else if (position == 0) {
+            if (position == 0) {
                 ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
+            } else if (position == 1) {
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false);
+            } else if (position == 2) {
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, true);
             } else if (position == 3) {
                 removeAlbum(currentAlbumController);
             } else if (position == 4) {

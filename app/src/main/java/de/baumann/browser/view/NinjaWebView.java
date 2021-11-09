@@ -13,7 +13,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 
-import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
@@ -352,11 +351,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public synchronized boolean restoreTabs() {
-        if (sp.getBoolean(profile + "_saveTabs", false)) {
-            return true;
-        } else {
-            return false;
-        }
+        return sp.getBoolean(profile + "_saveTabs", false);
     }
 
     private synchronized void initAlbum() {
