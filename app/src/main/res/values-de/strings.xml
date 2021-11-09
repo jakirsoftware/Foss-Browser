@@ -201,8 +201,11 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="menu_nightView">Nacht-Ansicht</string>
     <string name="setting_userScript">Individualisierter JavaScript-Code</string>
     <string name="setting_title_camera">Kameranutzung erlauben</string>
-    <string name="setting_title_restoreTabs">Tabs beim Start wiederherstellen</string>
-    <string name="setting_title_restoreTabs_killed">Tabs wiederherstellen, wenn vom System beendet</string>
+    <string name="setting_title_tabsReload">Reload tabs</string>
+    <string name="setting_title_tabsRestore">Restore tabs</string>
+    <string name="setting_title_userInterface">User interface</string>
+    <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
+    <string name="setting_summery_tabsRestore">Restore tabs, whenn FOSS Browser gets killed by the system.</string>
     <string name="hint_DRM_Media">DRM-geschützte Medienwiedergabe erlauben?</string>
     <!-- License changelog -->
 </resources>
