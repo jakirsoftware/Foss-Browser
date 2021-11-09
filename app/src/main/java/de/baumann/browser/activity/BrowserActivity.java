@@ -309,11 +309,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dispatchIntent(getIntent());
 
         //restore open Tabs from shared preferences if app got killed
-        ArrayList<String> openTabs;
-        openTabs = new ArrayList<>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
-        if (openTabs.size()>0) {
-            for (int counter = 0; counter < openTabs.size(); counter++) {
-                addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1,false);
+        if (sp.getBoolean("sp_restoreTabs", false)) {
+            ArrayList<String> openTabs;
+            openTabs = new ArrayList<>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
+            if (openTabs.size()>0) {
+                for (int counter = 0; counter < openTabs.size(); counter++) {
+                    addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1,false);
+                }
             }
         }
 
@@ -408,8 +410,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         BrowserContainer.clear();
 
-        ninjaWebView.restoreTabs();  //clear open tabs in preferences
-        //sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
+        sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
 
         unregisterReceiver(downloadReceiver);
         ninjaWebView.getViewTreeObserver().removeOnGlobalLayoutListener(keyboardLayoutListener);
@@ -1202,6 +1203,16 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             sp.edit().putBoolean("first_start", false).apply();
         }
         activity.registerForContextMenu(ninjaWebView);
+
+        if (ninjaWebView.restoreTabs()) {
+            ArrayList<String> openTabs;
+            openTabs = new ArrayList<>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
+            if (openTabs.size()>0) {
+                for (int counter = 0; counter < openTabs.size(); counter++) {
+                    addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1,false);
+                }
+            }
+        }
 
         SwipeTouchListener swipeTouchListener;
         swipeTouchListener = new SwipeTouchListener(context) {

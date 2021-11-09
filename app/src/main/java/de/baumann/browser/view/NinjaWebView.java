@@ -351,9 +351,11 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
     }
 
-    public synchronized void restoreTabs() {
-        if (!sp.getBoolean(profile + "_saveTabs", false)) {
-            sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
+    public synchronized boolean restoreTabs() {
+        if (sp.getBoolean(profile + "_saveTabs", false)) {
+            return true;
+        } else {
+            return false;
         }
     }
 

@@ -12,6 +12,11 @@
         android:title="@string/setting_title_autofill"
         android:summary="@string/setting_summary_autofill"/>
 
+    <CheckBoxPreference
+        android:key="sp_restoreTabs"
+        android:defaultValue="false"
+        android:title="@string/setting_title_restoreTabs_killed"/>
+
     <PreferenceCategory android:title="@string/setting_title_profiles">
 
         <ListPreference

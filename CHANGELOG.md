@@ -1,3 +1,9 @@
+### v 8.4 (WIP)
+
+- new: profiles instead of whitelists
+- new: restore tabs on restart (optional) (thanks to @woheller69)
+- updated: setting screens
+
 ### v 8.3
 
 - fix: Swipe to reload not working sometimes #654
