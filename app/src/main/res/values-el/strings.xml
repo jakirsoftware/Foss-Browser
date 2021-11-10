@@ -86,11 +86,13 @@
     <string name="setting_title_profiles_standardList">Τυπικές ιστοσελίδες</string>
     <string name="setting_title_profiles_protectedList">Προστατευμένες ιστοσελίδες</string>
     <string name="setting_title_profiles_start">Προφίλ σε νέες καρτέλες</string>
+    <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Αξιόπιστο</string>
     <string name="setting_title_profiles_standard">Κανονικό</string>
     <string name="setting_title_profiles_protected">Προστατευμένο</string>
     <string name="setting_title_profiles_changed">Προσαρμοσμένο</string>
     <string name="setting_title_profiles_set">Ενεργό προφίλ</string>
+    <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">Χρήση δεδομένων</string>
     <string name="setting_title_profiles_privacy">Απόρρητο</string>
     <string name="setting_title_profiles_Security">Ασφάλεια</string>
@@ -181,17 +183,15 @@
     <string name="whitelist_menu_clear">Εκκαθάριση</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Προσθήκη</string>
-    <!-- Dialog help -->
-    <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Η γλώσσα σας δεν υποστηρίζεται ακόμη; Θέλετε να μεταφράσετε το \"FOSS Browser\"; Ή να κάνετε βελτιώσεις στις υπάρχουσες μεταφράσεις; Μη διστάσετε να εγγραφείτε στο Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Στην ακόλουθη ιστοσελίδα έχετε πρόσβαση σε όλες τις σημαντικές πληροφορίες σχετικά με τον \"FOSS Browser\". Διαβάστε επίσης το διάλογο βοήθειας εντός της εφαρμογής&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Ιστοσελίδα Project:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Αρχείο καταγραφής αλλαγών:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
         \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;Άδεια:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Απόρρητο:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <string name="menu_mobileView">Προβολή κινητού</string>
@@ -204,7 +204,7 @@
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>
     <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
-    <string name="setting_summery_tabsRestore">Restore tabs, whenn FOSS Browser gets killed by the system.</string>
+    <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
     <string name="hint_DRM_Media">Να επιτρέπεται η προστατευμένη αναπαραγωγή πολυμέσων DRM;</string>
     <!-- License changelog -->
 </resources>
