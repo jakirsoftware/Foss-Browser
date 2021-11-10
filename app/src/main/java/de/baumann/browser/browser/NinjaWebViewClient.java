@@ -402,9 +402,9 @@ public class NinjaWebViewClient extends WebViewClient {
                     "Object.defineProperty(navigator, 'keyboard',{value:null});" +
                     "Object.defineProperty(navigator, 'sendBeacon',{value:null});", null);
 
-            if (!sp.getBoolean("sp_camera",false)) {
+            if (!sp.getBoolean(ninjaWebView.getProfile()+"_camera", false)) {
                 view.evaluateJavascript("" +
-                        "Object.defineProperty(navigator, 'mediaDevices',{value:null});", null);
+                    "Object.defineProperty(navigator, 'mediaDevices',{value:null});", null);
             }
         }
     }
