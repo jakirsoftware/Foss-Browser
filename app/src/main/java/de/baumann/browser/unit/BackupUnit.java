@@ -197,7 +197,10 @@ public class BackupUnit {
                 writer.newLine();
             }
             writer.close();
-            file.getAbsolutePath();
+            String wasSuccessful = file.getAbsolutePath();
+            if (wasSuccessful.isEmpty()) {
+                System.out.println("was not successful.");
+            }
         } catch (Exception ignored) {
         }
     }
@@ -283,7 +286,10 @@ public class BackupUnit {
                 writer.newLine();
             }
             writer.close();
-            file.getAbsolutePath();
+            String wasSuccessful = file.getAbsolutePath();
+            if (wasSuccessful.isEmpty()) {
+                System.out.println("was not successful.");
+            }
         } catch (Exception ignored) {
         }
     }

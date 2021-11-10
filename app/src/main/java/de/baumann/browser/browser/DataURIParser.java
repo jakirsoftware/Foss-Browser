@@ -37,6 +37,5 @@ public class DataURIParser {
         filename= fileType +"."+ suffix;
         //Log.d("DataURIParse", filename);
         imagedata = Base64.decode(data,Base64.DEFAULT);
-
     }
 }

@@ -545,19 +545,7 @@ public class NinjaWebView extends WebView implements AlbumController {
             reload();
         }
     }
-
-    public void toggleAllowFingerprint (boolean reload) {
-        if (isFingerPrintProtection()) {
-            fingerPrintProtection = false;
-        } else if (!isFingerPrintProtection()) {
-            fingerPrintProtection = true;
-        }
-        if (reload) {
-            reload();
-        }
-    }
-
-
+    
     public void resetFavicon(){this.favicon=null;}
 
     public void setFavicon(Bitmap favicon) {

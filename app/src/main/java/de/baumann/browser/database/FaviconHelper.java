@@ -20,8 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import de.baumann.browser.R;
-
 public class FaviconHelper extends SQLiteOpenHelper {
     // Database Version
     private static final int DATABASE_VERSION = 1;
@@ -79,12 +77,6 @@ public class FaviconHelper extends SQLiteOpenHelper {
         database.close();
     }
 
-    public synchronized void deleteAllFavicons() throws SQLiteException {
-        SQLiteDatabase database = this.getWritableDatabase();
-        database.delete(TABLE_FAVICON, null, null);
-        database.close();
-    }
-
     public synchronized Bitmap getFavicon(String url){
         if (url==null) return null;
         String domain=getDomain(url);
@@ -129,21 +121,6 @@ public class FaviconHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    public synchronized int getNumFavicons(){
-        SQLiteDatabase database = this.getReadableDatabase();
-
-        Cursor cursor;
-        cursor = database.query(TABLE_FAVICON,
-                new String[]{DOMAIN,
-                        IMAGE},
-                null, null, null, null, null);
-
-        int result=cursor.getCount();
-        cursor.close();
-        database.close();
-        return result;
-    }
-
     public void cleanUpFaviconDB(Context context){
         List<String> faviconURLs=getAllFaviconDomains();
         RecordAction action = new RecordAction(context);
@@ -182,10 +159,6 @@ public class FaviconHelper extends SQLiteOpenHelper {
             e.printStackTrace();
             return null;
         }
-    }
-
-    public static Bitmap createEmptyFavicon(){
-        return Bitmap.createBitmap(32, 32, Bitmap.Config.ARGB_8888);
     }
 
     public static void setFavicon(Context context, View view, String url, int id, int idImage) {

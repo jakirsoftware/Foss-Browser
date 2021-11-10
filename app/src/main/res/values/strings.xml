@@ -28,7 +28,6 @@
     <string name="color_grey">Grey</string>
 
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Open tab preview</string>
     <string name="main_menu_new_tab">New tab (background)</string>
     <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">New tab (foreground)</string>
@@ -76,7 +75,6 @@
 
     <!-- browser setting -->
     <string name="setting_title_browser">Browser Settings</string>
-    <string name="setting_title_start_control">Start Control</string>
 
     <string name="setting_title_search_engine">Search Engine</string>
     <string name="setting_summary_search_engine_google">Google</string>
@@ -92,7 +90,6 @@
 
     <string name="setting_title_font">Font size</string>
     <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
 
     <string name="setting_title_save_data">Request \'Save Data\'</string>
 
@@ -101,13 +98,11 @@
     <string name="setting_title_profiles_trustedList">Trusted websites</string>
     <string name="setting_title_profiles_standardList">Standard websites</string>
     <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_start">Profile on new tabs</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Trusted</string>
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Protected</string>
     <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_set">Active profile</string>
     <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">Data usage</string>
     <string name="setting_title_profiles_privacy">Privacy</string>
@@ -117,11 +112,9 @@
     <string name="setting_title_images">Images</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>
-    <string name="setting_title_whitelistCookie">Cookie whitelist</string>
 
     <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_title_whitelistJS">JavaScript whitelist</string>
 
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
@@ -175,7 +168,6 @@
 
     <string name="setting_title_confirm_tab_close">Confirm tab close</string>
 
-    <string name="setting_overView">Overview</string>
     <string name="setting_overView_onStart_title">Show on start</string>
 
     <string name="setting_gestures">Gestures</string>

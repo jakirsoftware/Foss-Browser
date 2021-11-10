@@ -12,7 +12,6 @@ import androidx.preference.PreferenceManager;
 import java.util.Objects;
 
 import de.baumann.browser.R;
-import de.baumann.browser.fragment.Fragment_settings_Filter;
 import de.baumann.browser.fragment.Fragment_settings_Profile;
 import de.baumann.browser.unit.HelperUnit;
 
