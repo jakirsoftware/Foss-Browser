@@ -35,7 +35,7 @@ public class Settings_Profile extends AppCompatActivity {
                 .commit();
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        String profile = sp.getString("profile", "profileStandard");
+        String profile = sp.getString("profileToEdit", "profileStandard");
 
         switch (Objects.requireNonNull(profile)) {
             case "profileStandard":
