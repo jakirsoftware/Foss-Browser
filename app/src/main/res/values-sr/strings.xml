@@ -24,7 +24,6 @@
     <string name="color_brown">Браон</string>
     <string name="color_grey">Сива</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Отвори претпреглед језичка</string>
     <string name="main_menu_new_tab">Нови језичак (у позадини)</string>
     <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Нови језичак (у предњем плану)</string>
@@ -64,7 +63,6 @@
     <string name="setting_label">Подешавања</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Подешавања прегледача</string>
-    <string name="setting_title_start_control">Подешавања покретања</string>
     <string name="setting_title_search_engine">Претраживач</string>
     <string name="setting_summary_search_engine_google">Гугл</string>
     <string name="setting_summary_search_engine_duckduckgo">Дакдакго</string>
@@ -78,20 +76,17 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Font size</string>
     <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_title_save_data">Захтевај уштеду података</string>
     <string name="setting_title_profiles">Profiles</string>
     <string name="setting_title_profiles_edit">Edit profiles</string>
     <string name="setting_title_profiles_trustedList">Trusted websites</string>
     <string name="setting_title_profiles_standardList">Standard websites</string>
     <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_start">Profile on new tabs</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Trusted</string>
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Protected</string>
     <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_set">Active profile</string>
     <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">Data usage</string>
     <string name="setting_title_profiles_privacy">Privacy</string>
@@ -100,10 +95,8 @@
     <string name="setting_title_images">Слике</string>
     <string name="setting_title_cookie">Колачићи</string>
     <string name="setting_summary_cookie_delete">Ако је укључена опција, сви колачићи ће бити избрисани, чак и они са поузданих сајтова.</string>
-    <string name="setting_title_whitelistCookie">Бели списак колачића</string>
     <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">Џава-скрипт</string>
-    <string name="setting_title_whitelistJS">Бели списак Џава-скрипта</string>
     <string name="setting_title_adblock">Блокер реклама</string>
     <string name="setting_summary_adblock">Омогиући блокер реклама како би блокирао досадне рекламе. Сајтови се такође брже учитавају кад је омогућен.</string>
     <string name="setting_title_adblockHost">Blocked content</string>
@@ -138,7 +131,6 @@
     <string name="setting_title_behavior">Behavior</string>
     <string name="setting_title_confirm_exit">Confirm browser exit</string>
     <string name="setting_title_confirm_tab_close">Confirm tab close</string>
-    <string name="setting_overView">Overview</string>
     <string name="setting_overView_onStart_title">Show on start</string>
     <string name="setting_gestures">Gestures</string>
     <!-- gestures -->
