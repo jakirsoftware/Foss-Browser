@@ -24,7 +24,6 @@
     <string name="color_brown">بنّي</string>
     <string name="color_grey">رمادي</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">فتح معاينة التبويب</string>
     <string name="main_menu_new_tab">علامة تبويب جديدة (الخلفية)</string>
     <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">علامة تبويب جديدة (الواجهة)</string>
@@ -64,7 +63,6 @@
     <string name="setting_label">الاعدادات</string>
     <!-- browser setting -->
     <string name="setting_title_browser">إعدادات المتصفح</string>
-    <string name="setting_title_start_control">التحكم في بدأ التشغيل</string>
     <string name="setting_title_search_engine">محرك البحث</string>
     <string name="setting_summary_search_engine_google">غوغل</string>
     <string name="setting_summary_search_engine_duckduckgo">محرك DuckDuckGo</string>
@@ -78,20 +76,17 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Font size</string>
     <string name="setting_title_dom">تخزين DOM</string>
-    <string name="setting_title_dom_whitelist">القائمة البيضاء DOM</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
     <string name="setting_title_profiles">Profiles</string>
     <string name="setting_title_profiles_edit">Edit profiles</string>
     <string name="setting_title_profiles_trustedList">Trusted websites</string>
     <string name="setting_title_profiles_standardList">Standard websites</string>
     <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_start">Profile on new tabs</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Trusted</string>
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Protected</string>
     <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_set">Active profile</string>
     <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">Data usage</string>
     <string name="setting_title_profiles_privacy">Privacy</string>
@@ -100,10 +95,8 @@
     <string name="setting_title_images">الصور</string>
     <string name="setting_title_cookie">الكعكات</string>
     <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع الكعكات، حتى الخاصة بالمواقع الموثوقة.</string>
-    <string name="setting_title_whitelistCookie">القائمة البيضاء للكعكات</string>
     <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">جافا سكريبت</string>
-    <string name="setting_title_whitelistJS">القائمة البيضاء لجافا سكربت</string>
     <string name="setting_title_adblock">مانع الاعلانات</string>
     <string name="setting_summary_adblock">مكن مانع الاعلانات لمنع الإعلانات المزعجة. تمكينه يسرع تحميل المواقع.</string>
     <string name="setting_title_adblockHost">المحتوى المحظور</string>
@@ -138,7 +131,6 @@
     <string name="setting_title_behavior">السلوك</string>
     <string name="setting_title_confirm_exit">تأكيد خروج المتصفح</string>
     <string name="setting_title_confirm_tab_close">أكّد خروج التبويب</string>
-    <string name="setting_overView">نظرة عامة</string>
     <string name="setting_overView_onStart_title">أَظهر عند البداية</string>
     <string name="setting_gestures">إيماءات</string>
     <!-- gestures -->
