@@ -80,13 +80,16 @@ public class Fragment_settings_Privacy extends PreferenceFragmentCompat implemen
                 SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
                 switch (position) {
                     case 0:
-                        sp.edit().putString("profile", "profileTrusted").apply();
+                        sp.edit().putString("profileToEdit", "profileTrusted").apply();
+                        dialog.cancel();
                         break;
                     case 1:
-                        sp.edit().putString("profile", "profileStandard").apply();
+                        sp.edit().putString("profileToEdit", "profileStandard").apply();
+                        dialog.cancel();
                         break;
                     case 2:
-                        sp.edit().putString("profile", "profileProtected").apply();
+                        sp.edit().putString("profileToEdit", "profileProtected").apply();
+                        dialog.cancel();
                         break;
                 }
                 Intent intent = new Intent(getActivity(), Settings_Profile.class);

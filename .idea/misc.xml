@@ -38,12 +38,13 @@
         <entry key="app/src/main/res/layout/dialog_edit_title.xml" value="0.14492753623188406" />
         <entry key="app/src/main/res/layout/dialog_menu.xml" value="0.1721014492753623" />
         <entry key="app/src/main/res/layout/dialog_tabs.xml" value="0.1721014492753623" />
-        <entry key="app/src/main/res/layout/dialog_toggle.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/dialog_toggle.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_icon_left.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/menu/menu_bottom_overview.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/menu/poupup_menu.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/xml/preference_backup.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/xml/preference_delete.xml" value="0.18840579710144928" />
+        <entry key="app/src/main/res/xml/preference_privacy.xml" value="0.8104838709677419" />
         <entry key="app/src/main/res/xml/preference_profile.xml" value="0.1" />
         <entry key="app/src/main/res/xml/preference_profile_data.xml" value="0.15942028985507245" />
         <entry key="app/src/main/res/xml/preference_profile_default.xml" value="0.1" />

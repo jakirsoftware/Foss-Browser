@@ -22,6 +22,7 @@
             android:layout_height="?attr/actionBarSize">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dialog_titleProfile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
@@ -32,7 +33,6 @@
                 android:gravity="center_vertical"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:text="@string/setting_label"
                 android:textAppearance="?attr/textAppearanceBody1"
                 android:textStyle="bold" />
 
@@ -55,6 +55,77 @@
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/icon_refresh"
                 android:background="?attr/actionBarItemBackground" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_profile_changed"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text=""
+                app:chipEndPadding="4dp"
+                app:chipIcon="@drawable/icon_profile_changed"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@drawable/bg_chip_state_list"
+                app:chipStartPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_profile_trusted"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chip_profile_changed"
+                android:text=""
+                app:chipEndPadding="4dp"
+                app:chipIcon="@drawable/icon_profile_trusted"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@drawable/bg_chip_state_list"
+                app:chipStartPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_profile_standard"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chip_profile_trusted"
+                android:text=""
+                app:chipEndPadding="4dp"
+                app:chipIcon="@drawable/icon_profile_standard"
+                app:chipIconEnabled="true"
+                app:chipIconTint="@drawable/bg_chip_state_list"
+                app:chipStartPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:id="@+id/chip_profile_protected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chip_profile_standard"
+                android:layout_marginEnd="12dp"
+                android:text=""
+                app:chipIcon="@drawable/icon_profile_protected"
+                app:chipIconTint="@drawable/bg_chip_state_list"
+                app:chipIconEnabled="true"
+                app:chipStartPadding="4dp"
+                app:chipEndPadding="4dp"
+                app:textEndPadding="0dp"
+                app:textStartPadding="0dp" />
 
         </RelativeLayout>
 
@@ -237,7 +308,7 @@
             android:orientation="horizontal"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp" >
+            android:layout_marginBottom="15dp" >
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_javaScript"
@@ -294,39 +365,55 @@
             android:layout_height="1dp"
             android:background="@color/color_hint" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:ellipsize="end"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:text="@string/setting_title_profiles"
-            android:gravity="center_vertical"
-            android:textAppearance="?attr/textAppearanceBody1"
-            android:textStyle="bold" />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeightSmall"
-            android:layout_marginStart="20dp">
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/dialog_title"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@+id/chip_setProfileTrusted"
-                android:ellipsize="end"
-                android:gravity="center_vertical"
-                android:includeFontPadding="false"
-                android:maxLines="1"
-                android:text="@string/setting_title_profiles_start"
-                android:textAppearance="?attr/textAppearanceBody1" />
+                android:layout_toStartOf="@+id/chip_setProfileTrusted">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dialog_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@+id/cardView"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:textStyle="bold" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@android:color/transparent"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/menu_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:contentDescription="@null"
+                        android:scaleType="fitCenter" />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_setProfileTrusted"
@@ -376,88 +463,6 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="?android:attr/listPreferredItemHeightSmall"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="10dp">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_marginEnd="10dp"
-                android:layout_toStartOf="@+id/chip_profile_changed"
-                android:ellipsize="end"
-                android:gravity="center_vertical"
-                android:includeFontPadding="false"
-                android:maxLines="1"
-                android:text="@string/setting_title_profiles_set"
-                android:textAppearance="?attr/textAppearanceBody1" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_profile_changed"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@+id/chip_profile_trusted"
-                android:text=""
-                app:chipEndPadding="4dp"
-                app:chipIcon="@drawable/icon_profile_changed"
-                app:chipIconEnabled="true"
-                app:chipIconTint="@drawable/bg_chip_state_list"
-                app:chipStartPadding="4dp"
-                app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_profile_trusted"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@+id/chip_profile_standard"
-                android:text=""
-                app:chipEndPadding="4dp"
-                app:chipIcon="@drawable/icon_profile_trusted"
-                app:chipIconEnabled="true"
-                app:chipIconTint="@drawable/bg_chip_state_list"
-                app:chipStartPadding="4dp"
-                app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_profile_standard"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toStartOf="@+id/chip_profile_protected"
-                android:text=""
-                app:chipEndPadding="4dp"
-                app:chipIcon="@drawable/icon_profile_standard"
-                app:chipIconEnabled="true"
-                app:chipIconTint="@drawable/bg_chip_state_list"
-                app:chipStartPadding="4dp"
-                app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
-
-            <com.google.android.material.chip.Chip
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:id="@+id/chip_profile_protected"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
-                android:text=""
-                app:chipIcon="@drawable/icon_profile_protected"
-                app:chipIconTint="@drawable/bg_chip_state_list"
-                app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
-                app:chipEndPadding="4dp"
-                app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:layout_alignParentEnd="true" />
-
-        </RelativeLayout>
-
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -465,7 +470,7 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
             android:orientation="horizontal"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"

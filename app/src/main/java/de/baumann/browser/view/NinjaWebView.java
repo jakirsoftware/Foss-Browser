@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.os.Build;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
 
@@ -20,6 +19,9 @@ import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import com.google.android.material.chip.Chip;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
@@ -138,7 +140,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         HelperUnit.initRendering(this, this.context);
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         profile = sp.getString("profile", "profileStandard");
-
+        String profileOriginal = profile;
         WebSettings webSettings = getSettings();
 
         String userAgent = getUserAgent(desktopMode);
@@ -183,13 +185,13 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setDomStorageEnabled(sp.getBoolean(profile + "_dom", false));
         fingerPrintProtection = sp.getBoolean(profile + "_fingerPrintProtection", false);
         CookieManager manager = CookieManager.getInstance();
-
         if (sp.getBoolean(profile + "_cookies", false)) {
             manager.setAcceptCookie(true);
             manager.getCookie(url);
         } else {
             manager.setAcceptCookie(false);
         }
+        profile = profileOriginal;
     }
 
     public void setProfileIcon (ImageButton omniBox_tab) {
@@ -264,7 +266,8 @@ public class NinjaWebView extends WebView implements AlbumController {
                 .putString("profile", "profileChanged").apply();
     }
 
-    public void putProfileBoolean (String string, AlertDialog dialog) {
+    public void putProfileBoolean (String string, TextView dialog_titleProfile,
+                                   Chip chip_profile_trusted, Chip chip_profile_standard, Chip chip_profile_protected, Chip chip_profile_changed) {
         switch (string) {
             case "_images":
                 sp.edit().putBoolean("profileChanged_images", !sp.getBoolean("profileChanged_images", true)).apply();
@@ -300,19 +303,43 @@ public class NinjaWebView extends WebView implements AlbumController {
                 sp.edit().putBoolean("profileChanged_dom", !sp.getBoolean("profileChanged_dom", false)).apply();
                 break;
         }
-        dialog.cancel();
-        this.reload();
+        this.initPreferences("");
+
+        String textTitle;
+        switch (Objects.requireNonNull(profile)) {
+            case "profileTrusted":
+                chip_profile_trusted.setChecked(true);
+                chip_profile_standard.setChecked(false);
+                chip_profile_protected.setChecked(false);
+                chip_profile_changed.setChecked(false);
+                textTitle = this.context.getString(R.string.setting_title_profiles_active) + ": " + this.context.getString(R.string.setting_title_profiles_trusted);
+                break;
+            case "profileStandard":
+                chip_profile_trusted.setChecked(false);
+                chip_profile_standard.setChecked(true);
+                chip_profile_protected.setChecked(false);
+                chip_profile_changed.setChecked(false);
+                textTitle = this.context.getString(R.string.setting_title_profiles_active) + ": " + this.context.getString(R.string.setting_title_profiles_standard);
+                break;
+            case "profileProtected":
+                chip_profile_trusted.setChecked(false);
+                chip_profile_standard.setChecked(false);
+                chip_profile_protected.setChecked(true);
+                chip_profile_changed.setChecked(false);
+                textTitle = this.context.getString(R.string.setting_title_profiles_active) + ": " + this.context.getString(R.string.setting_title_profiles_protected);
+                break;
+            default:
+                chip_profile_trusted.setChecked(false);
+                chip_profile_standard.setChecked(false);
+                chip_profile_protected.setChecked(false);
+                chip_profile_changed.setChecked(true);
+                textTitle = this.context.getString(R.string.setting_title_profiles_active) + ": " + this.context.getString(R.string.setting_title_profiles_changed);
+                break;
+        }
+        dialog_titleProfile.setText(textTitle);
     }
 
     public boolean getBoolean (String string) {
-
-        if (listTrusted.isWhite(this.getUrl())) {
-            profile = "profileTrusted";
-        } else if (listStandard.isWhite(this.getUrl())) {
-            profile = "profileStandard";
-        } else if (listProtected.isWhite(this.getUrl())) {
-            profile = "profileProtected";
-        }
         switch (string) {
             case "_images":
                 return sp.getBoolean(profile + "_images", true);

@@ -39,16 +39,13 @@ public class Settings_Profile extends AppCompatActivity {
 
         switch (Objects.requireNonNull(profile)) {
             case "profileStandard":
-                setTitle("Standard");
+                setTitle(getString(R.string.setting_title_profiles_standard));
                 break;
             case "profileTrusted":
-                setTitle("Trusted");
+                setTitle(getString(R.string.setting_title_profiles_trusted));
                 break;
             case "profileProtected":
-                setTitle("Protected");
-                break;
-            case "profileSaveData":
-                setTitle("Save data");
+                setTitle(getString(R.string.setting_title_profiles_protected));
                 break;
         }
     }
