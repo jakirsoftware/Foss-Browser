@@ -86,11 +86,13 @@
     <string name="setting_title_profiles_standardList">Standard websites</string>
     <string name="setting_title_profiles_protectedList">Protected websites</string>
     <string name="setting_title_profiles_start">Profile on new tabs</string>
+    <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Trusted</string>
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Protected</string>
     <string name="setting_title_profiles_changed">Custom</string>
     <string name="setting_title_profiles_set">Active profile</string>
+    <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">Data usage</string>
     <string name="setting_title_profiles_privacy">Privacy</string>
     <string name="setting_title_profiles_Security">Security</string>
@@ -181,17 +183,15 @@
     <string name="whitelist_menu_clear">Effacer</string>
     <string name="whitelist_edit_hint">Domaine</string>
     <string name="whitelist_add">Ajouté</string>
-    <!-- Dialog help -->
-    <!-- Dialog changelog -->
-    <string name="changelog_dialog">        Votre langue n\'est pas encore prise en charge ? Vous voulez traduire FOSS Browser? Ou apportez des améliorations aux traductions existantes ? N\'hésitez pas à nous rejoindre sur Crowdin : https://crowdin. om/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;Sur les sites suivants, vous avez accès à toutes les informations importantes sur \"Navigateur FOSS\". Veuillez également lire la boîte de dialogue d\'aide dans l\'application.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Site du projet :&lt;/i&gt; https://github. om/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG. d&lt;br&gt;
-        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs. d&lt;br&gt;
-        \u25AA &lt;i&gt;Licence :&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE. d&lt;br&gt;
-        \u25AA &lt;i&gt;Confidentialité :&lt;/i&gt; https://github. om/scoute-dich/browser/blob/master/PRIVACY.md
+        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
+        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
     </string>
     <string name="menu_mobileView">Vue mobile</string>
@@ -204,7 +204,7 @@
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>
     <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
-    <string name="setting_summery_tabsRestore">Restore tabs, whenn FOSS Browser gets killed by the system.</string>
+    <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <!-- License changelog -->
 </resources>
