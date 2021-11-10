@@ -24,7 +24,6 @@
     <string name="color_brown">Marrone</string>
     <string name="color_grey">Grigio</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Apri anteprima schede</string>
     <string name="main_menu_new_tab">Nuova scheda (secondo piano)</string>
     <string name="main_menu_new_tabProfile">Nuova scheda (con profilo …)</string>
     <string name="main_menu_new_tabOpen">Nuova scheda (primo piano)</string>
@@ -64,7 +63,6 @@
     <string name="setting_label">Impostazioni</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Impostazioni browser</string>
-    <string name="setting_title_start_control">Opzioni iniziali</string>
     <string name="setting_title_search_engine">Motore di ricerca</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -78,20 +76,17 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Dimensione testo</string>
     <string name="setting_title_dom">Archivio DOM</string>
-    <string name="setting_title_dom_whitelist">Whitelist DOM</string>
     <string name="setting_title_save_data">Richiedi \'Salva dati\'</string>
     <string name="setting_title_profiles">Profili</string>
     <string name="setting_title_profiles_edit">Modifica profili</string>
     <string name="setting_title_profiles_trustedList">Siti web attendibili</string>
     <string name="setting_title_profiles_standardList">Siti web standard</string>
     <string name="setting_title_profiles_protectedList">Siti web protetti</string>
-    <string name="setting_title_profiles_start">Profilo su nuove schede</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Affidabile</string>
     <string name="setting_title_profiles_standard">Predefinito</string>
     <string name="setting_title_profiles_protected">Protetto</string>
     <string name="setting_title_profiles_changed">Personalizzato</string>
-    <string name="setting_title_profiles_set">Profilo Attivo</string>
     <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">Utilizzo dati</string>
     <string name="setting_title_profiles_privacy">Privacy</string>
@@ -100,10 +95,8 @@
     <string name="setting_title_images">Immagini</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Se attivata, tutti i cookie verranno eliminati. Anche i cookie di siti web di fiducia.</string>
-    <string name="setting_title_whitelistCookie">Whitelist cookie</string>
     <string name="setting_title_javascript_popUp">Popup</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_title_whitelistJS">Whitelist javaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Abilita AdBlock per bloccare gli annunci fastidiosi. I siti si caricano anche più velocemente quando il blocco è abilitato.</string>
     <string name="setting_title_adblockHost">Contenuto bloccato</string>
@@ -138,7 +131,6 @@
     <string name="setting_title_behavior">Comportamento</string>
     <string name="setting_title_confirm_exit">Conferma l\'uscita dal browser</string>
     <string name="setting_title_confirm_tab_close">Confermare la chiusura delle schede</string>
-    <string name="setting_overView">Panoramica</string>
     <string name="setting_overView_onStart_title">Mostra all\'avvio</string>
     <string name="setting_gestures">Gesti</string>
     <!-- gestures -->
