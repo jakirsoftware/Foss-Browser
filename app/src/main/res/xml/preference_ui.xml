@@ -38,7 +38,7 @@
             android:key="sp_restoreTabs"
             android:defaultValue="false"
             android:title="@string/setting_title_tabsRestore"
-            android:summary="@string/setting_summery_tabsRestore"/>
+            android:summary="@string/setting_summary_tabsRestore"/>
 
     </PreferenceCategory>
 

@@ -1317,10 +1317,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     private synchronized void addAlbum(String title, final String url, final boolean foreground, final boolean profileDialog, String profile) {
 
-      //restoreProfile
-        if (profile.equals("")) {
-            sp.edit().putString("profile", sp.getString("profile_toStart", "profileStandard")).apply();
-        } else sp.edit().putString("profile", profile).apply();
+        //restoreProfile from shared preferences if app got killed
+        if (sp.getBoolean("sp_restoreTabs", false) || sp.getBoolean("sp_reloadTabs", false)) {
+            if (profile.equals("")) {
+                sp.edit().putString("profile", sp.getString("profile_toStart", "profileStandard")).apply();
+            } else sp.edit().putString("profile", profile).apply();
+        }
 
         if (profileDialog) {
             GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, getString(R.string.setting_title_profiles_trusted),  11);
