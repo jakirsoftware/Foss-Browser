@@ -24,7 +24,6 @@
     <string name="color_brown">Καφέ</string>
     <string name="color_grey">Γκρι</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Άνοιγμα προεπισκόπησης καρτέλας</string>
     <string name="main_menu_new_tab">Νέα καρτέλα (παρασκήνιο)</string>
     <string name="main_menu_new_tabProfile">Νέα καρτέλα (με προφίλ …)</string>
     <string name="main_menu_new_tabOpen">Νέα καρτέλα (προσκήνιο)</string>
@@ -64,7 +63,6 @@
     <string name="setting_label">Ρυθμίσεις</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Ρυθμίσεις Περιηγητή</string>
-    <string name="setting_title_start_control">Έναρξη Ελέγχου</string>
     <string name="setting_title_search_engine">Μηχανή Αναζήτησης</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -78,20 +76,17 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Μέγεθος γραμματοσειράς</string>
     <string name="setting_title_dom">Αποθήκευση DOM</string>
-    <string name="setting_title_dom_whitelist">Άσπρη Λίστα Dom</string>
     <string name="setting_title_save_data">Αίτημα \'Αποθήκευση Δεδομένων\'</string>
     <string name="setting_title_profiles">Προφίλ</string>
     <string name="setting_title_profiles_edit">Επεξεργασία προφίλ</string>
     <string name="setting_title_profiles_trustedList">Αξιόπιστες ιστοσελίδες</string>
     <string name="setting_title_profiles_standardList">Τυπικές ιστοσελίδες</string>
     <string name="setting_title_profiles_protectedList">Προστατευμένες ιστοσελίδες</string>
-    <string name="setting_title_profiles_start">Προφίλ σε νέες καρτέλες</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Αξιόπιστο</string>
     <string name="setting_title_profiles_standard">Κανονικό</string>
     <string name="setting_title_profiles_protected">Προστατευμένο</string>
     <string name="setting_title_profiles_changed">Προσαρμοσμένο</string>
-    <string name="setting_title_profiles_set">Ενεργό προφίλ</string>
     <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">Χρήση δεδομένων</string>
     <string name="setting_title_profiles_privacy">Απόρρητο</string>
@@ -100,10 +95,8 @@
     <string name="setting_title_images">Εικόνες</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Αν ενεργοποιηθεί, όλα τα cookies θα διαγραφούν. Επίσης τα Cookies των αξιόπιστων ιστοσελίδων.</string>
-    <string name="setting_title_whitelistCookie">Λίστα επιτρεπόμενων cookie</string>
     <string name="setting_title_javascript_popUp">Αναδυόμενα</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_title_whitelistJS">Λίστα επιτρεπόμενων JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Ενεργοποιήστε το AdBlock για να αποκλείσετε ενοχλητικές διαφημίσεις. Οι ιστότοποι επίσης φορτώνουν γρηγορότερα όταν είναι ενεργοποιημένο.</string>
     <string name="setting_title_adblockHost">Αποκλεισμένο περιεχόμενο</string>
@@ -138,7 +131,6 @@
     <string name="setting_title_behavior">Συμπεριφορά</string>
     <string name="setting_title_confirm_exit">Επιβεβαίωση εξόδου προγράμματος περιήγησης</string>
     <string name="setting_title_confirm_tab_close">Επιβεβαίωση κλεισίματος καρτέλας</string>
-    <string name="setting_overView">Επισκόπηση</string>
     <string name="setting_overView_onStart_title">Εμφάνιση κατά την έναρξη</string>
     <string name="setting_gestures">Χειρονομίες</string>
     <!-- gestures -->

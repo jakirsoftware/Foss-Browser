@@ -24,7 +24,6 @@
     <string name="color_brown">Braun</string>
     <string name="color_grey">Grau</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Übersicht öffnen</string>
     <string name="main_menu_new_tab">Neuer Tab (Hintergrund)</string>
     <string name="main_menu_new_tabProfile">Neuer Tab (mit Profil …)</string>
     <string name="main_menu_new_tabOpen">Neuer Tab (Vordergrund)</string>
@@ -64,7 +63,6 @@
     <string name="setting_label">Einstellungen</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Browser-Einstellungen</string>
-    <string name="setting_title_start_control">Start-Einstellungen</string>
     <string name="setting_title_search_engine">Suchmaschine</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -78,20 +76,17 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Schriftgröße</string>
     <string name="setting_title_dom">DOM-Speicher</string>
-    <string name="setting_title_dom_whitelist">DOM-Ausnahmen</string>
     <string name="setting_title_save_data">\"Daten sparen\" verlangen</string>
     <string name="setting_title_profiles">Profile</string>
     <string name="setting_title_profiles_edit">Profile bearbeiten</string>
     <string name="setting_title_profiles_trustedList">Vertrauenswürdige Internetseiten</string>
     <string name="setting_title_profiles_standardList">Standard Internetseiten</string>
     <string name="setting_title_profiles_protectedList">Geschützte Internetseiten</string>
-    <string name="setting_title_profiles_start">Profil für einem neuen Tab</string>
     <string name="setting_title_profiles_startApp">Profile bei App-Start</string>
     <string name="setting_title_profiles_trusted">Vertrauenswürdig</string>
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Geschützt</string>
     <string name="setting_title_profiles_changed">Eigenes Profil</string>
-    <string name="setting_title_profiles_set">Aktives Profil</string>
     <string name="setting_title_profiles_active">Pofil</string>
     <string name="setting_title_profiles_dataUsage">Datennutzung</string>
     <string name="setting_title_profiles_privacy">Privatsphäre</string>
@@ -100,10 +95,8 @@
     <string name="setting_title_images">Bilder</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Falls aktiviert, werden alle Cookies gelöscht. Auch die von vertrauenswürdigen Websites.</string>
-    <string name="setting_title_whitelistCookie">Cookie Ausnahmen</string>
     <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_title_whitelistJS">JavaScript Ausnahmen</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Aktiviere AdBlock, um lästige Werbung zu blockieren. Websites laden auch schneller, falls eingeschaltet.</string>
     <string name="setting_title_adblockHost">Blockierter Inhalt</string>
@@ -138,7 +131,6 @@
     <string name="setting_title_behavior">Verhalten</string>
     <string name="setting_title_confirm_exit">Verlassen des Browsers bestätigen</string>
     <string name="setting_title_confirm_tab_close">Schließen des Tabs bestätigen</string>
-    <string name="setting_overView">Übersicht</string>
     <string name="setting_overView_onStart_title">Beim Start anzeigen</string>
     <string name="setting_gestures">Gesten</string>
     <!-- gestures -->

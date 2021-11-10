@@ -24,7 +24,6 @@
     <string name="color_brown">棕色</string>
     <string name="color_grey">灰色</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">打开标签页预览</string>
     <string name="main_menu_new_tab">新标签页(后台)</string>
     <string name="main_menu_new_tabProfile">新标签页(带配置文件 …)</string>
     <string name="main_menu_new_tabOpen">新标签页(前台)</string>
@@ -64,7 +63,6 @@
     <string name="setting_label">设置</string>
     <!-- browser setting -->
     <string name="setting_title_browser">浏览器设置</string>
-    <string name="setting_title_start_control">控制</string>
     <string name="setting_title_search_engine">搜索引擎</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -78,20 +76,17 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">字体大小</string>
     <string name="setting_title_dom">DOM 存储</string>
-    <string name="setting_title_dom_whitelist">DOM 白名单</string>
     <string name="setting_title_save_data">请求“保存数据”</string>
     <string name="setting_title_profiles">配置文件</string>
     <string name="setting_title_profiles_edit">编辑配置文件</string>
     <string name="setting_title_profiles_trustedList">信任的网站</string>
     <string name="setting_title_profiles_standardList">标准网站</string>
     <string name="setting_title_profiles_protectedList">受保护的网站</string>
-    <string name="setting_title_profiles_start">新标签页上的配置文件</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">受信任</string>
     <string name="setting_title_profiles_standard">标准</string>
     <string name="setting_title_profiles_protected">受保护</string>
     <string name="setting_title_profiles_changed">自定义</string>
-    <string name="setting_title_profiles_set">活动配置文件</string>
     <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">数据使用量</string>
     <string name="setting_title_profiles_privacy">隐私</string>
@@ -100,10 +95,8 @@
     <string name="setting_title_images">图像</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">如果启用，所有Cookies都将被删除。包括信任的网站。</string>
-    <string name="setting_title_whitelistCookie">Cookie 白名单</string>
     <string name="setting_title_javascript_popUp">弹窗</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_title_whitelistJS">JavaScript 白名单</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">启用AdBlock可阻止烦人的广告。网站的加载速度也会更快。</string>
     <string name="setting_title_adblockHost">屏蔽的内容</string>
@@ -138,7 +131,6 @@
     <string name="setting_title_behavior">行为</string>
     <string name="setting_title_confirm_exit">确认退出浏览器</string>
     <string name="setting_title_confirm_tab_close">确认关闭标签页</string>
-    <string name="setting_overView">概览</string>
     <string name="setting_overView_onStart_title">启动时显示</string>
     <string name="setting_gestures">手势</string>
     <!-- gestures -->

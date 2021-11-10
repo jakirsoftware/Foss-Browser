@@ -24,7 +24,6 @@
     <string name="color_brown">قهوه ای</string>
     <string name="color_grey">خاکستری</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">زبانه ها</string>
     <string name="main_menu_new_tab">زبانه جدید (پیش زمینه)</string>
     <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">زبانه جدید (پس زمینه)</string>
@@ -64,7 +63,6 @@
     <string name="setting_label">تنظیمات</string>
     <!-- browser setting -->
     <string name="setting_title_browser">تنظیمات مرورگر</string>
-    <string name="setting_title_start_control">تنظیمات پیشرفته</string>
     <string name="setting_title_search_engine">موتور جستجو</string>
     <string name="setting_summary_search_engine_google">گوگل</string>
     <string name="setting_summary_search_engine_duckduckgo">داک‌داک‌گو</string>
@@ -78,20 +76,17 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Font size</string>
     <string name="setting_title_dom">ذخیره سازی DOM</string>
-    <string name="setting_title_dom_whitelist">لیست سفید DOM</string>
     <string name="setting_title_save_data">درخواست صرفه جویی در مصرف شبکه</string>
     <string name="setting_title_profiles">Profiles</string>
     <string name="setting_title_profiles_edit">Edit profiles</string>
     <string name="setting_title_profiles_trustedList">Trusted websites</string>
     <string name="setting_title_profiles_standardList">Standard websites</string>
     <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_start">Profile on new tabs</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Trusted</string>
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Protected</string>
     <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_set">Active profile</string>
     <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">Data usage</string>
     <string name="setting_title_profiles_privacy">Privacy</string>
@@ -100,10 +95,8 @@
     <string name="setting_title_images">عکس ها</string>
     <string name="setting_title_cookie">کوکی ها</string>
     <string name="setting_summary_cookie_delete">در صورت فعال سازی، تمامی کوکی ها حذف خواهد شد،حتی کوکی های سایت های مورد اعتماد</string>
-    <string name="setting_title_whitelistCookie">لیست سفید کوکی </string>
     <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">جاواسکریپت</string>
-    <string name="setting_title_whitelistJS">لیست سفید جاوا اسکریپت</string>
     <string name="setting_title_adblock">مسدودسازی تبلیغات</string>
     <string name="setting_summary_adblock">با فعال سازی این گزینه، مانع نمایش تبلیغات آزار دهنده شوید،همچنین سرعت بارگذاری وبسایت ها را بهبود بخشید.</string>
     <string name="setting_title_adblockHost">محتوای مسدود شده</string>
@@ -141,7 +134,6 @@
     <string name="setting_title_behavior">رفتارها</string>
     <string name="setting_title_confirm_exit">تاییدیه خروج از مرورگر</string>
     <string name="setting_title_confirm_tab_close">تاییدیه بستن زبانه</string>
-    <string name="setting_overView">صفحه پیشفرض</string>
     <string name="setting_overView_onStart_title">نمایش صفحه آغازین</string>
     <string name="setting_gestures">اشارات انگشت</string>
     <!-- gestures -->
