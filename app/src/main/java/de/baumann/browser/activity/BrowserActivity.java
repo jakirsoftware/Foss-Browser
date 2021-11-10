@@ -222,6 +222,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().putString("openTabs", TextUtils.join("‚‗‚", openTabs)).apply();
+
+        //Save profile of open Tabs in shared preferences
+        ArrayList<String> openTabsProfile = new ArrayList<>();
+        for (int i=0; i<BrowserContainer.size();i++){
+            if (currentAlbumController == BrowserContainer.get(i)) {
+                openTabsProfile.add(0,((NinjaWebView) (BrowserContainer.get(i))).getProfile());
+            }else{
+                openTabsProfile.add(((NinjaWebView) (BrowserContainer.get(i))).getProfile());
+            }
+        }
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
+        sp.edit().putString("openTabsProfile", TextUtils.join("‚‗‚", openTabsProfile)).apply();
+
         super.onPause();
     }
 
@@ -313,17 +326,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         //restore open Tabs from shared preferences if app got killed
         if (sp.getBoolean("sp_restoreTabs", false) || sp.getBoolean("sp_reloadTabs", false)) {
+            String saveDefaultProfile = sp.getString("profile", "profileStandard");
             ArrayList<String> openTabs;
+            ArrayList<String> openTabsProfile;
             openTabs = new ArrayList<>(Arrays.asList(TextUtils.split(sp.getString("openTabs", ""), "‚‗‚")));
+            openTabsProfile = new ArrayList<>(Arrays.asList(TextUtils.split(sp.getString("openTabsProfile", ""), "‚‗‚")));
             if (openTabs.size()>0) {
                 for (int counter = 0; counter < openTabs.size(); counter++) {
-                    addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1,false);
+                    addAlbum(getString(R.string.app_name), openTabs.get(counter), BrowserContainer.size() < 1,false,openTabsProfile.get(counter));
                 }
             }
+            sp.edit().putString("profile",saveDefaultProfile).apply();
         }
 
         if (BrowserContainer.size() < 1) {  //if still no open Tab open default page
-            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true,false);
+            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true,false,"");
             getIntent().setAction("");
         }
     }
@@ -415,6 +432,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         if (!sp.getBoolean("sp_reloadTabs", false)) {
             sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
+            sp.edit().putString("openTabsProfile","").apply();
         }
 
         unregisterReceiver(downloadReceiver);
@@ -533,19 +551,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if ("".equals(action)) {
             Log.i(TAG, "resumed FOSS browser");
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
-            addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true, false);
+            addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true, false,"");
             getIntent().setAction("");
             hideOverview();
         } else if (filePathCallback != null) {
             filePathCallback = null;
             getIntent().setAction("");
         } else if (url != null && Intent.ACTION_SEND.equals(action)) {
-            addAlbum(getString(R.string.app_name), url, true, false);
+            addAlbum(getString(R.string.app_name), url, true, false,"");
             getIntent().setAction("");
             hideOverview();
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(getIntent().getData()).toString();
-            addAlbum(getString(R.string.app_name), data, true, false);
+            addAlbum(getString(R.string.app_name), data, true, false,"");
             getIntent().setAction("");
             hideOverview();
         }
@@ -707,7 +725,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 showOverview();
                 break;
             case "09":
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false);
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false,"");
                 break;
             case "10":
                 removeAlbum(currentAlbumController);
@@ -1297,7 +1315,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         updateOmniBox();
     }
 
-    private synchronized void addAlbum(String title, final String url, final boolean foreground, final boolean profileDialog) {
+    private synchronized void addAlbum(String title, final String url, final boolean foreground, final boolean profileDialog, String profile) {
+
+      //restoreProfile
+        if (profile.equals("")) {
+            sp.edit().putString("profile", sp.getString("profile_toStart", "profileStandard")).apply();
+        } else sp.edit().putString("profile", profile).apply();
 
         if (profileDialog) {
             GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, getString(R.string.setting_title_profiles_trusted),  11);
@@ -1576,13 +1599,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog.cancel();
             switch (position) {
                 case 0:
-                    addAlbum(getString(R.string.app_name), url, true, false);
+                    addAlbum(getString(R.string.app_name), url, true, false,"");
                     break;
                 case 1:
-                    addAlbum(getString(R.string.app_name), url, false, false);
+                    addAlbum(getString(R.string.app_name), url, false, false,"");
                     break;
                 case 2:
-                    addAlbum(getString(R.string.app_name), url, true, true);
+                    addAlbum(getString(R.string.app_name), url, true, true,"");
                     break;
                 case 3:
                     shareLink("", url);
@@ -1754,9 +1777,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (position == 0) {
                 ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
             } else if (position == 1) {
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false);
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false,"");
             } else if (position == 2) {
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, true);
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, true,"");
             } else if (position == 3) {
                 removeAlbum(currentAlbumController);
             } else if (position == 4) {
@@ -1973,14 +1996,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             AlertDialog dialogSubMenu;
             switch (position) {
                 case 0:
-                    addAlbum(getString(R.string.app_name), url, true, false);
+                    addAlbum(getString(R.string.app_name), url, true, false,"");
                     hideOverview();
                     break;
                 case 1:
-                    addAlbum(getString(R.string.app_name), url, false, false);
+                    addAlbum(getString(R.string.app_name), url, false, false,"");
                     break;
                 case 2:
-                    addAlbum(getString(R.string.app_name), url, true, true);
+                    addAlbum(getString(R.string.app_name), url, true, true,"");
                     hideOverview();
                     break;
                 case 3:
