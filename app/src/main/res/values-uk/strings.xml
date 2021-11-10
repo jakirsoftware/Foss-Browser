@@ -24,7 +24,6 @@
     <string name="color_brown">Коричневий</string>
     <string name="color_grey">Grey</string>
     <!-- Menu -->
-    <string name="main_menu_tabPreview">Попередній перегляд вкладок</string>
     <string name="main_menu_new_tab">Нова вкладка (фон)</string>
     <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
     <string name="main_menu_new_tabOpen">Нова вкладка</string>
@@ -64,7 +63,6 @@
     <string name="setting_label">Налаштування</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Налаштування браузера</string>
-    <string name="setting_title_start_control">Управління запуском</string>
     <string name="setting_title_search_engine">Пошукова система</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -78,20 +76,17 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Font size</string>
     <string name="setting_title_dom">DOM Storage</string>
-    <string name="setting_title_dom_whitelist">DOM Whitelist</string>
     <string name="setting_title_save_data">Request \'Save Data\'</string>
     <string name="setting_title_profiles">Profiles</string>
     <string name="setting_title_profiles_edit">Edit profiles</string>
     <string name="setting_title_profiles_trustedList">Trusted websites</string>
     <string name="setting_title_profiles_standardList">Standard websites</string>
     <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_start">Profile on new tabs</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Trusted</string>
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Protected</string>
     <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_set">Active profile</string>
     <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">Data usage</string>
     <string name="setting_title_profiles_privacy">Privacy</string>
@@ -100,10 +95,8 @@
     <string name="setting_title_images">Зображення</string>
     <string name="setting_title_cookie">Куки</string>
     <string name="setting_summary_cookie_delete">Якщо увімкнено, всі cookies будуть видалені. Також файли cookie надійних веб-сайтів.</string>
-    <string name="setting_title_whitelistCookie">Білий список куки</string>
     <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_title_whitelistJS">Білий список JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Увімкніть AdBlock, щоб заблокувати дратівливу рекламу. Сайти завантажуються швидше при включенні.</string>
     <string name="setting_title_adblockHost">Blocked content</string>
@@ -138,7 +131,6 @@
     <string name="setting_title_behavior">Behavior</string>
     <string name="setting_title_confirm_exit">Підтвердити вихід з браузера</string>
     <string name="setting_title_confirm_tab_close">Підтвердити закриття вкладки</string>
-    <string name="setting_overView">Огляд</string>
     <string name="setting_overView_onStart_title">Показувати при запуску</string>
     <string name="setting_gestures">Жести</string>
     <!-- gestures -->
