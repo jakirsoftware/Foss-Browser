@@ -274,7 +274,7 @@ public class BackupUnit {
         action.open(false);
         List<Record> list = action.listBookmark(context, false, 0);
         action.close();
-        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_bookmark_list.html");
+        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//list_bookmarks.html");
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file, false));
             for (Record record : list) {
@@ -295,7 +295,7 @@ public class BackupUnit {
     }
 
     public static void importBookmarks(Context context) {
-        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//export_bookmark_list.html");
+        File file = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//list_bookmarks.html");
         List<Record> list = new ArrayList<>();
         try {
             BrowserUnit.clearBookmark(context);

@@ -1229,9 +1229,25 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView = new NinjaWebView(context);
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title, url);
-        if (sp.getBoolean("first_start", true)) {
+        if (sp.getBoolean("first_start_84", true)) {
+            sp.edit().putBoolean("first_start_84", false).apply();
+
+            MaterialAlertDialogBuilder builderR = new MaterialAlertDialogBuilder(context);
+            builderR.setTitle(R.string.app_update);
+            builderR.setIcon(R.drawable.icon_alert);
+            builderR.setMessage(R.string.app_update_84);
+            builderR.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builderR.create();
+            dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+
             ninjaWebView.setProfileDefaultValues();
-            sp.edit().putBoolean("first_start", false).apply();
+            Profile_trusted profile_trusted = new Profile_trusted(context);
+            Profile_standard profile_standard = new Profile_standard(context);
+            Profile_protected profile_protected = new Profile_protected(context);
+            profile_trusted.clearDomains();
+            profile_standard.clearDomains();
+            profile_protected.clearDomains();
         }
         activity.registerForContextMenu(ninjaWebView);
 
@@ -1318,11 +1334,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private synchronized void addAlbum(String title, final String url, final boolean foreground, final boolean profileDialog, String profile) {
 
         //restoreProfile from shared preferences if app got killed
-        if (sp.getBoolean("sp_restoreTabs", false) || sp.getBoolean("sp_reloadTabs", false)) {
-            if (profile.equals("")) {
-                sp.edit().putString("profile", sp.getString("profile_toStart", "profileStandard")).apply();
-            } else sp.edit().putString("profile", profile).apply();
-        }
+        if (!profile.equals("")) sp.edit().putString("profile", profile).apply();
+
 
         if (profileDialog) {
             GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, getString(R.string.setting_title_profiles_trusted),  11);
