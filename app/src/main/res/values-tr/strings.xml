@@ -6,6 +6,8 @@
     <string name="app_cancel">İptal et</string>
     <string name="app_done">Tamam</string>
     <string name="app_error">Hata</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">Liste boş</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için Reklam Engelleyiciyi etkinleştirin. Siteler de etkinleştirildiğinde daha hızlı yüklenir.</string>
     <string name="setting_title_adblockHost">Engelli içerik</string>
     <string name="setting_title_location">Konum</string>
-    <string name="setting_summary_location">Web sitelerinin konumunuza erişmesine izin verin. Bazı web siteleri (navigasyon için Google Haritalar gibi) bunun etkinleştirilmesi gerekir.</string>
     <string name="setting_title_history">Geçmiş</string>
     <string name="setting_title_autofill">Form verisi</string>
     <string name="setting_summary_autofill">Form verilerinin kaydedilmesini (Android Nougat ve altı) veya otomatik doldurma hizmetini (Android Oreo ve üstü) etkinleştirin.</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
     <string name="toast_invalid_domain">Geçersiz etki alanı</string>
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
-    <string name="toast_permission_sdCard">\"FOSS Tarayıcı\" nın \"deponuzu okuma ve yazma\" iznine ihtiyacı var. Bu, dosyaları indirmek, ekran görüntüleri almak ve verilerinizin yedeğini almak için gereklidir.</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
