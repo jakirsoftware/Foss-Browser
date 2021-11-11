@@ -6,6 +6,8 @@
     <string name="app_cancel">Άκυρο</string>
     <string name="app_done">Ολοκληρώθηκε</string>
     <string name="app_error">Σφάλμα</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">Η λίστα είναι κενή</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">Ενεργοποιήστε το AdBlock για να αποκλείσετε ενοχλητικές διαφημίσεις. Οι ιστότοποι επίσης φορτώνουν γρηγορότερα όταν είναι ενεργοποιημένο.</string>
     <string name="setting_title_adblockHost">Αποκλεισμένο περιεχόμενο</string>
     <string name="setting_title_location">Τοποθεσία</string>
-    <string name="setting_summary_location">Να επιτρέπεται σε ιστότοπους η πρόσβαση στην τοποθεσία σας. Ορισμένες ιστοσελίδες (όπως οι χάρτες Google για πλοήγηση) χρειάζονται αυτήν την επιλογή.</string>
     <string name="setting_title_history">Ιστορικό</string>
     <string name="setting_title_autofill">Δεδομένα Φόρμας</string>
     <string name="setting_summary_autofill">Ενεργοποιήστε την αποθήκευση δεδομένων φόρμας (Android Nougat και κάτω) ή την υπηρεσία αυτόματης συμπλήρωσης (Android Oreo και παραπάνω).</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">Δεν έχετε εισάγει τίποτα</string>
     <string name="toast_invalid_domain">Μη έγκυρο domain</string>
     <string name="toast_webview_forward">Αδυναμία φόρτωσης επόμενης ιστοσελίδας</string>
-    <string name="toast_permission_sdCard">Ο \"FOSS Browser\" χρειάζεται την άδεια να \"διαβάζει και γράφει στον αποθηκευτικό σας χώρο\". Αυτό είναι απαραίτητο για τη λήψη αρχείων, τη λήψη στιγμιότυπων οθόνης και την δημιουργία αντιγράφων ασφαλείας των δεδομένων σας.</string>
     <string name="toast_restart">Πρέπει να επανεκκινήσετε το \"FOSS Browser\" για να εφαρμόσετε τις αλλαγές. Κλείσιμο τώρα;</string>
     <string name="toast_quit">Θέλετε να κλείσετε το \"FOSS Browser\";</string>
     <string name="toast_quit_TAB">Θέλετε να κλείσετε την καρτέλα;</string>
@@ -194,6 +194,7 @@
     <string name="menu_nightView">Νυχτερινή προβολή</string>
     <string name="setting_userScript">Προσαρμοσμένος κώδικας JavaScript</string>
     <string name="setting_title_camera">Να επιτρέπεται η χρήση κάμερας</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">Reload tabs</string>
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>

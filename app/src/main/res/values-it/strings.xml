@@ -6,6 +6,8 @@
     <string name="app_cancel">Annulla</string>
     <string name="app_done">Fatti</string>
     <string name="app_error">Error</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">Elenco vuoto</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">Abilita AdBlock per bloccare gli annunci fastidiosi. I siti si caricano anche più velocemente quando il blocco è abilitato.</string>
     <string name="setting_title_adblockHost">Contenuto bloccato</string>
     <string name="setting_title_location">Posizione</string>
-    <string name="setting_summary_location">Consenti ai siti web di accedere alla tua posizione. Alcuni siti web (come Google Maps per la navigazione) ne hanno bisogno.</string>
     <string name="setting_title_history">Cronologia</string>
     <string name="setting_title_autofill">Dati del Modulo</string>
     <string name="setting_summary_autofill">Abilita il salvataggio dei dati del modulo (Android Nougat e sotto) o servizio di riempimento automatico (Android Oreo e oltre).</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">Non hai inserito nulla</string>
     <string name="toast_invalid_domain">Dominio non valido</string>
     <string name="toast_webview_forward">Non è possibile caricare il sito successivo</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" ha bisogno del permesso di \"leggere e scrivere nella memoria\". Quest\'autorizzazione è necessaria per scaricare i file, catturare una schermata e fare backup dei tuoi dati.</string>
     <string name="toast_restart">Per applicare le modifiche è necessario riavviare \"FOSS Browser\". Chiudere ora?</string>
     <string name="toast_quit">Vuoi uscire da \"FOSS Browser\"?</string>
     <string name="toast_quit_TAB">Vuoi chiudere la scheda?</string>
@@ -194,6 +194,7 @@
     <string name="menu_nightView">Vista notturna</string>
     <string name="setting_userScript">Codice JavaScript personalizzato</string>
     <string name="setting_title_camera">Consenti l\'utilizzo della fotocamera</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">Reload tabs</string>
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>

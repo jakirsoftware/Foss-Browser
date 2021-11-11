@@ -6,6 +6,8 @@
     <string name="app_cancel">Cancelar</string>
     <string name="app_done">Feito</string>
     <string name="app_error">Erro</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">Lista está vazia</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">Ativar AdBlock para bloquear os anúncios. Se ativa, os sites são carregados mais rapidamente.</string>
     <string name="setting_title_adblockHost">Conteúdo bloqueado</string>
     <string name="setting_title_location">Localização</string>
-    <string name="setting_summary_location">Permitir que os sites acedam a sua localização. Alguns sites (como Google Maps) precisam desta funcionalidade.</string>
     <string name="setting_title_history">Histórico</string>
     <string name="setting_title_autofill">Dados do formulário</string>
     <string name="setting_summary_autofill">Permite guardar dados dos formulário (Android Nougat e abaixo) ou o serviço de preenchimento automático (Android Oreo e superior).</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">Não introduziu dados</string>
     <string name="toast_invalid_domain">Domínio inválido</string>
     <string name="toast_webview_forward">Não foi possível carregar o site</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" precisa da permissão para \"ler e escrever no seu armazenamento\". Esta permissão é necessária para descarregar ficheiros, obter capturas de ecrã e para criar backups.</string>
     <string name="toast_restart">Tem que reiniciar a aplicação para aplicar as alterações. Fechar agora?</string>
     <string name="toast_quit">Deseja sair da aplicação?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
@@ -194,6 +194,7 @@
     <string name="menu_nightView">Modo noturno</string>
     <string name="setting_userScript">JavaScript personalizado</string>
     <string name="setting_title_camera">Allow camera usage</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">Reload tabs</string>
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>

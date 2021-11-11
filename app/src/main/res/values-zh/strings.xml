@@ -6,6 +6,8 @@
     <string name="app_cancel">取消</string>
     <string name="app_done">完成</string>
     <string name="app_error">错误</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">更新通知</string>
     <string name="app_update_84">通过这次更新，“FOSS浏览器”引入了隐私控制配置文件。请在设置中查看。为了其正常工作，所有的白名单都会被删除。</string>
     <string name="list_empty">列表为空</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">启用AdBlock可阻止烦人的广告。网站的加载速度也会更快。</string>
     <string name="setting_title_adblockHost">屏蔽的内容</string>
     <string name="setting_title_location">地理位置</string>
-    <string name="setting_summary_location">允许网站访问您的位置。有些网站 (如谷歌地图导航) 需要启用此功能。</string>
     <string name="setting_title_history">历史记录</string>
     <string name="setting_title_autofill">表单数据</string>
     <string name="setting_summary_autofill">启用表单数据保存（Android 7及以下版本）或自动填充服务（Android 8及以上版本）。</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">您没有输入任何内容</string>
     <string name="toast_invalid_domain">无效域名</string>
     <string name="toast_webview_forward">无法加载下一个网站</string>
-    <string name="toast_permission_sdCard">\"FOSS浏览器\"需要“读写存储空间”权限。 这是下载文件，进行屏幕截图和备份您的数据所必要的。</string>
     <string name="toast_restart">您必须重启“FOSS浏览器”才能应用更改。现在关闭吗？</string>
     <string name="toast_quit">您想要退出“FOSS浏览器”吗？</string>
     <string name="toast_quit_TAB">您想关闭标签页吗？</string>
@@ -192,6 +192,7 @@
     <string name="menu_nightView">夜间模式</string>
     <string name="setting_userScript">自定义 JavaScript 代码</string>
     <string name="setting_title_camera">允许相机使用</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">重新加载标签页</string>
     <string name="setting_title_tabsRestore">恢复标签页</string>
     <string name="setting_title_userInterface">用户界面</string>

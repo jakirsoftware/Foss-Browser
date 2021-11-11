@@ -6,6 +6,8 @@
     <string name="app_cancel">لغو</string>
     <string name="app_done">انجام شد</string>
     <string name="app_error">خطا</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">لیست خالی می باشد</string>
@@ -103,9 +105,6 @@
     <string name="setting_summary_adblock">با فعال سازی این گزینه، مانع نمایش تبلیغات آزار دهنده شوید،همچنین سرعت بارگذاری وبسایت ها را بهبود بخشید.</string>
     <string name="setting_title_adblockHost">محتوای مسدود شده</string>
     <string name="setting_title_location">مکان جاری</string>
-    <string name="setting_summary_location">به وبسایت ها مجوز دسترسی به مکان جاری شما را می دهد.
-        بعضی از وبسایت ها مانند مسیریابی در نقشه نیاز به فعال بودن این گزینه دارند.
-    </string>
     <string name="setting_title_history">تاریخچه</string>
     <string name="setting_title_autofill">داده‌‌ی فرم</string>
     <string name="setting_summary_autofill">ذخیره داده های فرم (Android Nougat و پایین تر) یا سرویس تکمیل خودکار (Android Oreo و بالاتر) را فعال کنید.</string>
@@ -171,9 +170,6 @@
     <string name="toast_input_empty">فیلد خالی می باشد</string>
     <string name="toast_invalid_domain">دامنه نامعتبر</string>
     <string name="toast_webview_forward">خطا در بارگذاری صفحه بعدی</string>
-    <string name="toast_permission_sdCard">    مرورگر نیاز به مجوز    \"خواندن و نوشتن فایل ها در حافظه\"
-        جهت انجام اسکرین شات،بارگذاری فایل،پشتیبان گیری از داده ها دارد.
-    </string>
     <string name="toast_restart">جهت اعمال تغییرات نیاز به راه اندازی مجدد  \"FOSS Browser\" می باشد،انجام شود؟</string>
     <string name="toast_quit">آیا مایل به خروج از \"FOSS Browser\" هستید؟</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
@@ -202,6 +198,7 @@
     <string name="menu_nightView">دید شب</string>
     <string name="setting_userScript">فایل‌های جاوا اسکریپت سفارشی</string>
     <string name="setting_title_camera">Allow camera usage</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">Reload tabs</string>
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>
