@@ -72,6 +72,8 @@ import static android.content.Context.DOWNLOAD_SERVICE;
 public class HelperUnit {
 
     private static final int REQUEST_CODE_ASK_PERMISSIONS_1 = 1234;
+    private static final int REQUEST_CODE_ASK_PERMISSIONS_2 = 12345;
+    private static final int REQUEST_CODE_ASK_PERMISSIONS_3 = 123456;
     private static SharedPreferences sp;
 
     public static void grantPermissionsLoc(final Activity activity) {
@@ -81,6 +83,36 @@ public class HelperUnit {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
                 builder.setMessage(R.string.setting_summary_location);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS_1));
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            }
+        }
+    }
+
+    public static void grantPermissionsCamera (final Activity activity) {
+        if (android.os.Build.VERSION.SDK_INT >= 23) {
+            int camera = activity.checkSelfPermission(Manifest.permission.CAMERA);
+            if (camera != PackageManager.PERMISSION_GRANTED) {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+                builder.setMessage(R.string.setting_title_camera);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_ASK_PERMISSIONS_2));
+                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            }
+        }
+    }
+
+    public static void grantPermissionsMic (final Activity activity) {
+        if (android.os.Build.VERSION.SDK_INT >= 23) {
+            int mic = activity.checkSelfPermission(Manifest.permission.RECORD_AUDIO);
+            if (mic != PackageManager.PERMISSION_GRANTED) {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+                builder.setMessage(R.string.setting_title_microphone);
+                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_CODE_ASK_PERMISSIONS_3));
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
                 AlertDialog dialog = builder.create();
                 dialog.show();
