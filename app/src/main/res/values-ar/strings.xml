@@ -6,6 +6,8 @@
     <string name="app_cancel">إلغاء</string>
     <string name="app_done">تـم</string>
     <string name="app_error">خطأ</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">القائمة فارغة</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">مكن مانع الاعلانات لمنع الإعلانات المزعجة. تمكينه يسرع تحميل المواقع.</string>
     <string name="setting_title_adblockHost">المحتوى المحظور</string>
     <string name="setting_title_location">الموقع</string>
-    <string name="setting_summary_location">اسمح للمواقع الوصول إلى موقعك. بعض المواقع (مثل خرائط غوغل) تحتاج لهذا.</string>
     <string name="setting_title_history">التأريخ</string>
     <string name="setting_title_autofill">إستمارة المعلومات</string>
     <string name="setting_summary_autofill">تمكين حفظ بيانات النموذج (أندرويد نوجات وما دونها) أو خدمة التعبئة التلقائية (أندرويد أوريو وما فوق).</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">لم تُدخل أي شيء</string>
     <string name="toast_invalid_domain">نطاق غير سليم</string>
     <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>
-    <string name="toast_permission_sdCard">يحتاج المتصفح الحر \"FOSS Browse\" إذن \"القراءة والكتابة على التخزين خاصتك\". هذا مطلوب لتحميل الملفات، التقاط لقطات الشاشة وعمل نسخ احتياطية من بياناتك.</string>
     <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>
     <string name="toast_quit">أتريد إنهاء المتصفح الحر\"FOSS Browser\"؟</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
