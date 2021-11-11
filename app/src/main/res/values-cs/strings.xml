@@ -6,6 +6,8 @@
     <string name="app_cancel">Zrušit</string>
     <string name="app_done">Hotovo</string>
     <string name="app_error">Chyba</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">Seznam je prázdný</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">Zapněte AdBlock pro blokování obtěžujících reklam. Stránky se budou načítat rychleji.</string>
     <string name="setting_title_adblockHost">Blokovaný obsah</string>
     <string name="setting_title_location">Poloha</string>
-    <string name="setting_summary_location">Povolit webům přístup k vaší poloze. Některé weby (jako Mapy Google pro navigaci) jej potřebují mít zapnutý.</string>
     <string name="setting_title_history">Historie</string>
     <string name="setting_title_autofill">Data formulářů</string>
     <string name="setting_summary_autofill">Povolte ukládání dat formuláře (Android Nougat a nižší) nebo službu automatického vyplňování (Android Oreo a vyšší).</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">Nic jste nevložili</string>
     <string name="toast_invalid_domain">Neplatná doména</string>
     <string name="toast_webview_forward">Nelze načíst další stránku</string>
-    <string name="toast_permission_sdCard">„FOSS Browser“ vyžaduje oprávnění „čtení a zápis do vašeho úložiště“. Toto je zapotřebí ke stahování souborů, pořizování snímků obrazovky a vytváření záloh vašich dat.</string>
     <string name="toast_restart">Pro provedení změn musíte restartovat aplikaci „FOSS Browser“. Ukončit nyní?</string>
     <string name="toast_quit">Opravdu chcete ukončit aplikaci „FOSS Browser“?</string>
     <string name="toast_quit_TAB">Chcete zavřít KARTU?</string>
