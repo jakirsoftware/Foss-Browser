@@ -6,6 +6,8 @@
     <string name="app_cancel">Mégse</string>
     <string name="app_done">Kész</string>
     <string name="app_error">Hiba</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">A lista üres</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">AdBlock engedélyezése a bosszantó hirdetések blokkolására. A weboldalak is gyorsabban töltődnek be, ha engedélyezett.</string>
     <string name="setting_title_adblockHost">Blokkolt tartalom</string>
     <string name="setting_title_location">Tartózkodási hely</string>
-    <string name="setting_summary_location">Megengedi a weboldalaknak, hogy hozzáférjenek a tartózkodási helyéhez. Néhány weboldal számára (mint a Google Térkép navigáció) engedélyezni kell.</string>
     <string name="setting_title_history">Előzmények</string>
     <string name="setting_title_autofill">Űrlapadatok</string>
     <string name="setting_summary_autofill">Engedélyezze az űrlapadatok (Android Nougat és újabb) vagy az automatikus kitöltési szolgáltatás (Android Oreo és újabb) mentését.</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">Nem írt be semmit</string>
     <string name="toast_invalid_domain">Érvénytelen domain</string>
     <string name="toast_webview_forward">Nem tölthető be a következő oldal</string>
-    <string name="toast_permission_sdCard">A \"FOSS Browser\"-nek \"tárhely olvasása és írása\" engedélyre van szüksége. Ez szükséges a fájlok letöltéséhez, képernyőképek készítéséhez és az adatok biztonsági másolatának készítéséhez.</string>
     <string name="toast_restart">A változások alkalmazásához újra kell indítania a \"FOSS Browser\"-t. Bezárja most?</string>
     <string name="toast_quit">Ki akar lépni a \"FOSS Browser\"-ből?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
@@ -194,6 +194,7 @@
     <string name="menu_nightView">Éjszakai nézet</string>
     <string name="setting_userScript">Custom JavaScript code</string>
     <string name="setting_title_camera">Allow camera usage</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">Reload tabs</string>
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>
