@@ -34,37 +34,43 @@ import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
 
 
 public class CompleteAdapter extends BaseAdapter implements Filterable {
+
     private class CompleteFilter extends Filter {
         @Override
-        protected synchronized FilterResults performFiltering(CharSequence prefix) {
+        protected FilterResults performFiltering(CharSequence prefix) {
             if (prefix == null) {
                 return new FilterResults();
-            }
-
-            resultList.clear();
-            for (CompleteItem item : originalList) {
-                if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) || item.getURL().contains(prefix)) {
-                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) ) {
-                        item.setIndex(item.getTitle().indexOf(prefix.toString()));
-                    } else if (item.getURL().contains(prefix)) {
-                        item.setIndex(item.getURL().indexOf(prefix.toString()));
+            } else {
+                resultList.clear();
+                for (CompleteItem item : originalList) {
+                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) || item.getURL().contains(prefix)) {
+                        if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) ) {
+                            item.setIndex(item.getTitle().indexOf(prefix.toString()));
+                        } else if (item.getURL().contains(prefix)) {
+                            item.setIndex(item.getURL().indexOf(prefix.toString()));
+                        }
+                        resultList.add(item);
                     }
-                    resultList.add(item);
                 }
+
+                Collections.sort(resultList, (first, second) -> Integer.compare(first.getIndex(), second.getIndex()));
+
+                FilterResults results = new FilterResults();
+                results.values = resultList;
+                results.count = resultList.size();
+
+                return results;
             }
-
-            Collections.sort(resultList, (first, second) -> Integer.compare(first.getIndex(), second.getIndex()));
-
-            FilterResults results = new FilterResults();
-            results.values = resultList;
-            results.count = resultList.size();
-
-            return results;
         }
 
         @Override
-        protected synchronized void publishResults (CharSequence constraint, FilterResults results) {
-            notifyDataSetChanged();
+        protected void publishResults (CharSequence constraint, FilterResults results) {
+            if (results != null && results.count > 0) {
+                notifyDataSetChanged();
+            } else {
+                //Logs.e("Tried to invalidate");
+                notifyDataSetInvalidated();
+            }
         }
     }
 
@@ -202,20 +208,15 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
 
-        if (item.getType()==STARTSITE_ITEM) {  //Item from start page
-            holder.iconView.setImageResource(R.drawable.icon_web_light);
-        } else if (item.getType()==HISTORY_ITEM){  //Item from history
-            holder.iconView.setImageResource(R.drawable.icon_history_light);
-        } else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
+        if (item.getType()==STARTSITE_ITEM) holder.iconView.setImageResource(R.drawable.icon_web_light);
+        else if (item.getType()==HISTORY_ITEM) holder.iconView.setImageResource(R.drawable.icon_history_light);
+        else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(item.url);
 
-        if (bitmap != null) {
-            holder.favicon.setImageBitmap(bitmap);
-        } else {
-            holder.favicon.setImageResource(R.drawable.icon_image_broken_light);
-        }
+        if (bitmap != null) holder.favicon.setImageBitmap(bitmap);
+        else holder.favicon.setImageResource(R.drawable.icon_image_broken_light);
 
         holder.iconView.setVisibility(View.VISIBLE);
         holder.cardView.setVisibility(View.VISIBLE);
