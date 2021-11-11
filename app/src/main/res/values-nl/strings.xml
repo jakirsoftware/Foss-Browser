@@ -6,6 +6,8 @@
     <string name="app_cancel">Annuleren</string>
     <string name="app_done">Done</string>
     <string name="app_error">Error</string>
+    <string name="app_update">Update notification</string>
+    <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">List is empty</string>
     <string name="album_title_bookmarks">Bladwijzers</string>
     <string name="album_title_history">Geschiedenis</string>

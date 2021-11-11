@@ -6,6 +6,8 @@
     <string name="app_cancel">中止</string>
     <string name="app_done">完了</string>
     <string name="app_error">エラー</string>
+    <string name="app_update">アップデート通知</string>
+    <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">リストが空です</string>
     <string name="album_title_bookmarks">ブックマーク</string>
     <string name="album_title_history">履歴</string>
@@ -82,12 +84,12 @@
     <string name="setting_title_profiles_trustedList">信頼できるウェブサイト</string>
     <string name="setting_title_profiles_standardList">標準のウェブサイト</string>
     <string name="setting_title_profiles_protectedList">保護されたウェブサイト</string>
-    <string name="setting_title_profiles_startApp">Profile on app start</string>
+    <string name="setting_title_profiles_startApp">アプリ起動時のプロファイル</string>
     <string name="setting_title_profiles_trusted">信頼済み</string>
     <string name="setting_title_profiles_standard">標準</string>
     <string name="setting_title_profiles_protected">保護済み</string>
     <string name="setting_title_profiles_changed">カスタム</string>
-    <string name="setting_title_profiles_active">Profile</string>
+    <string name="setting_title_profiles_active">プロファイル</string>
     <string name="setting_title_profiles_dataUsage">データ使用量</string>
     <string name="setting_title_profiles_privacy">プライバシー</string>
     <string name="setting_title_profiles_Security">セキュリティ</string>
@@ -196,7 +198,7 @@
     <string name="setting_title_tabsRestore">タブを復元</string>
     <string name="setting_title_userInterface">ユーザーインターフェース</string>
     <string name="setting_summary_tabsReload">FOSS Browser を起動する時に、最後に開いたタブを再読み込みします。</string>
-    <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
+    <string name="setting_summary_tabsRestore">FOSS Browser のプロセスがシステムによって終了された時、タブを復元します。</string>
     <string name="hint_DRM_Media">DRM 保護のメディア再生を許可しますか?</string>
     <!-- License changelog -->
 </resources>
