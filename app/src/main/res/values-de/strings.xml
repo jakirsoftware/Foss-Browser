@@ -195,6 +195,7 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="menu_nightView">Nacht-Ansicht</string>
     <string name="setting_userScript">Individualisierter JavaScript-Code</string>
     <string name="setting_title_camera">Kameranutzung erlauben</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">Tabs neu laden</string>
     <string name="setting_title_tabsRestore">Tabs wiederherstellen</string>
     <string name="setting_title_userInterface">Benutzeroberfläche</string>
