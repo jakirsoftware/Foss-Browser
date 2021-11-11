@@ -6,6 +6,8 @@
     <string name="app_cancel">Abbrechen</string>
     <string name="app_done">Fertig</string>
     <string name="app_error">Fehler</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">Liste ist leer</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">Aktiviere AdBlock, um lästige Werbung zu blockieren. Websites laden auch schneller, falls eingeschaltet.</string>
     <string name="setting_title_adblockHost">Blockierter Inhalt</string>
     <string name="setting_title_location">Standortbestimmung</string>
-    <string name="setting_summary_location">Websites gestatten, auf den Standort zuzugreifen. Einige Websites (wie für Navigation Google Maps) benötigen dies um richtig zu funktionieren.</string>
     <string name="setting_title_history">Verlauf</string>
     <string name="setting_title_autofill">Formulardaten</string>
     <string name="setting_summary_autofill">Aktiviere das Speichern von Formulardaten (Android Nougat und älter) oder den Autofill-Service (Android Oreo und neuer).</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">Du hast nichts eingegeben</string>
     <string name="toast_invalid_domain">Ungültige Domain</string>
     <string name="toast_webview_forward">Kann die nächste Seite nicht laden.</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" braucht die Berechtigung \"Zugriff auf den Gerätespeicher\". Dies ist notwendig um Dateien herunterzuladen, Bildschirmfotos zu machen und deine Einstellungen zu sichern.</string>
     <string name="toast_restart">Du musst \"FOSS Browser\" neustarten, damit die Änderungen wirksam werden. Jetzt beenden?</string>
     <string name="toast_quit">Möchtest du \"FOSS Browser\" beenden?</string>
     <string name="toast_quit_TAB">Tab schließen?</string>
