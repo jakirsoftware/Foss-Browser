@@ -6,6 +6,8 @@
     <string name="app_cancel">Cancelar</string>
     <string name="app_done">Listo</string>
     <string name="app_error">Error</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">La lista está vacía</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">Activar para bloquear anuncios molestos. También provocará que los sitios se carguen más rápido.</string>
     <string name="setting_title_adblockHost">Contenido bloqueado</string>
     <string name="setting_title_location">Ubicación</string>
-    <string name="setting_summary_location">Permitir a los sitios web acceder a su ubicación. Algunos sitios web (como Google maps para la navegación) necesitan esto habilitado.</string>
     <string name="setting_title_history">Historial</string>
     <string name="setting_title_autofill">Datos de Formulario</string>
     <string name="setting_summary_autofill">Habilitar el guardado de datos de formulario (Android Nougat y más abajo) o servicio de autorelleno (Android Oreo y superior).</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">No ha introducido nada</string>
     <string name="toast_invalid_domain">Dominio no válido</string>
     <string name="toast_webview_forward">No se puede cargar el sitio</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" necesita el permiso para \"leer y escribir en su almacenamiento\". Esto es necesario para descargar archivos, tomar capturas de pantalla y hacer copias de seguridad de sus datos.</string>
     <string name="toast_restart">Debe reiniciar \"Navegador FOSS\" para aplicar cambios. ¿Cerrar ahora?</string>
     <string name="toast_quit">¿Desea salir de \"Navegador FOSS\"?</string>
     <string name="toast_quit_TAB">¿Desea cerrar la pestaña?</string>
