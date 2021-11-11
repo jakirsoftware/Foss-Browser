@@ -39,7 +39,7 @@
             android:icon="@drawable/icon_camera"/>
 
         <CheckBoxPreference
-            android:key="profileProtected_microphone"
+            android:key="profileTrusted_microphone"
             android:defaultValue="false"
             android:title="@string/setting_title_microphone"
             android:icon="@drawable/icon_microphone"/>
