@@ -13,7 +13,10 @@
         <entry key="app/src/main/res/drawable/icon_camera.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_close.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_cookie.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_datasave.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_delete.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_dom.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_dots.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_fingerprint.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_image_broken.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_info.xml" value="0.20625" />

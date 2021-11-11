@@ -1,7 +1,8 @@
 ### v 8.4 (WIP)
 
 - new: profiles instead of whitelists
-- new: restore tabs on restart (optional) (thanks to @woheller69)
+- new: restore tabs on restart (optional)
+- new: restore tabs when killed by system (optional) (thanks to @woheller69)
 - updated: setting screens
 
 ### v 8.3

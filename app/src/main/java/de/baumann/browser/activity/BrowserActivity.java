@@ -499,6 +499,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
         omniBox_text.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+        omniBox_text.setLongClickable(true);
         omniBox_text.setDropDownWidth(context.getResources().getDisplayMetrics().widthPixels);
         omniBox_text.setOnItemClickListener((parent, view, position, id) -> {
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
@@ -1560,7 +1561,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         contentFrame.requestFocus();
     }
 
-    private void showContextMenuLink (final String title, final String url, int type) {
+    public void showContextMenuLink (final String title, final String url, int type) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);

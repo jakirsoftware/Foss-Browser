@@ -1,5 +1,7 @@
 package de.baumann.browser.view;
 
+import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
@@ -10,6 +12,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
@@ -20,6 +23,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import de.baumann.browser.activity.BrowserActivity;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.R;
@@ -32,7 +36,7 @@ import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
 public class CompleteAdapter extends BaseAdapter implements Filterable {
     private class CompleteFilter extends Filter {
         @Override
-        protected FilterResults performFiltering(CharSequence prefix) {
+        protected synchronized FilterResults performFiltering(CharSequence prefix) {
             if (prefix == null) {
                 return new FilterResults();
             }
@@ -59,7 +63,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         }
 
         @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
+        protected synchronized void publishResults (CharSequence constraint, FilterResults results) {
             notifyDataSetChanged();
         }
     }
@@ -198,18 +202,18 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
 
-        if (item.getType()==STARTSITE_ITEM){  //Item from start page
+        if (item.getType()==STARTSITE_ITEM) {  //Item from start page
             holder.iconView.setImageResource(R.drawable.icon_web_light);
-        }else if (item.getType()==HISTORY_ITEM){  //Item from history
+        } else if (item.getType()==HISTORY_ITEM){  //Item from history
             holder.iconView.setImageResource(R.drawable.icon_history_light);
-        }else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
+        } else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(item.url);
 
-        if (bitmap != null){
+        if (bitmap != null) {
             holder.favicon.setImageBitmap(bitmap);
-        }else {
+        } else {
             holder.favicon.setImageResource(R.drawable.icon_image_broken_light);
         }
 

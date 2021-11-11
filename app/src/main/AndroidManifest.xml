@@ -62,9 +62,6 @@
                 <action android:name="android.intent.action.WEB_SEARCH" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER"/>
-                <action android:name="sc_startPage" />
-                <action android:name="sc_bookmark" />
-                <action android:name="sc_history" />
             </intent-filter>
 
             <meta-data
@@ -115,7 +112,7 @@
             android:theme="@style/AppTheme"/>
 
         <activity android:name="de.baumann.browser.activity.Settings_Profile"
-            android:label="@string/setting_filter"
+            android:label="@string/setting_title_profiles_edit"
             android:theme="@style/AppTheme"/>
 
     </application>
