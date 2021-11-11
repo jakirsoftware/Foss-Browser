@@ -27,12 +27,6 @@
     <PreferenceCategory android:title="@string/setting_title_profiles_privacy">
 
         <CheckBoxPreference
-            android:key="profileProtected_saveHistory"
-            android:defaultValue="true"
-            android:title="@string/setting_title_history"
-            android:icon="@drawable/icon_history"/>
-
-        <CheckBoxPreference
             android:key="profileProtected_location"
             android:defaultValue="false"
             android:title="@string/setting_title_location"
@@ -43,6 +37,18 @@
             android:defaultValue="false"
             android:title="@string/setting_title_camera"
             android:icon="@drawable/icon_camera"/>
+
+        <CheckBoxPreference
+            android:key="profileProtected_microphone"
+            android:defaultValue="false"
+            android:title="@string/setting_title_microphone"
+            android:icon="@drawable/icon_microphone"/>
+
+        <CheckBoxPreference
+            android:key="profileProtected_saveHistory"
+            android:defaultValue="true"
+            android:title="@string/setting_title_history"
+            android:icon="@drawable/icon_history"/>
 
         <CheckBoxPreference
             android:key="profileProtected_fingerPrintProtection"

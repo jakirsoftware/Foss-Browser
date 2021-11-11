@@ -22,6 +22,8 @@
         <entry key="app/src/main/res/drawable/icon_info.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_java.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_location.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_menu_share.xml" value="0.20307692307692307" />
+        <entry key="app/src/main/res/drawable/icon_microphone.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_popup.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_changed.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_protected.xml" value="0.20625" />

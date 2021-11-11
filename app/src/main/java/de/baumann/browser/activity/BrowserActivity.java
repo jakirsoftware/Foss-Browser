@@ -1159,6 +1159,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
         });
 
+        Chip chip_microphone = dialogView.findViewById(R.id.chip_microphone);
+        chip_microphone.setChecked(ninjaWebView.getBoolean("_microphone"));
+        chip_microphone.setOnClickListener(v -> {
+            ninjaWebView.setProfileChanged();
+            ninjaWebView.putProfileBoolean("_microphone",
+                    dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+        });
+
         Chip chip_camera = dialogView.findViewById(R.id.chip_camera);
         chip_camera.setChecked(ninjaWebView.getBoolean("_camera"));
         chip_camera.setOnClickListener(v -> {

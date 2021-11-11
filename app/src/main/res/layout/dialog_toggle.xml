@@ -195,21 +195,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp" >
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_history"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="end"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="5dp"
-                android:ellipsize="end"
-                android:text="@string/setting_title_history"
-                app:chipIcon="@drawable/icon_history"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"
-                app:chipIconTint="@drawable/bg_chip_state_list"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_location"
@@ -218,7 +203,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_gravity="end"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="0dp"
                 android:layout_marginEnd="5dp"
                 android:ellipsize="end"
                 android:text="@string/setting_title_location"
@@ -235,10 +220,27 @@
                 android:layout_weight="1"
                 android:layout_gravity="end"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="0dp"
+                android:layout_marginEnd="5dp"
                 android:ellipsize="end"
                 android:text="@string/setting_title_camera"
                 app:chipIcon="@drawable/icon_camera"
+                app:chipIconEnabled="true"
+                app:chipIconSize="20dp"
+                app:chipIconTint="@drawable/bg_chip_state_list"/>
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_microphone"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="0dp"
+                android:ellipsize="end"
+                android:text="@string/setting_title_microphone"
+                app:chipIcon="@drawable/icon_microphone"
                 app:chipIconEnabled="true"
                 app:chipIconSize="20dp"
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
@@ -253,13 +255,30 @@
             android:layout_marginEnd="20dp" >
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip_Fingerprint"
+                android:id="@+id/chip_history"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_gravity="end"
                 android:layout_marginStart="0dp"
+                android:layout_marginEnd="5dp"
+                android:ellipsize="end"
+                android:text="@string/setting_title_history"
+                app:chipIcon="@drawable/icon_history"
+                app:chipIconEnabled="true"
+                app:chipIconSize="20dp"
+                app:chipIconTint="@drawable/bg_chip_state_list"/>
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_Fingerprint"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:ellipsize="end"
                 android:text="@string/setting_title_fingerPrint"
@@ -276,26 +295,10 @@
                 android:layout_weight="1"
                 android:layout_gravity="end"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="0dp"
                 android:ellipsize="end"
                 android:text="@string/setting_title_cookie"
                 app:chipIcon="@drawable/icon_cookie"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"
-                app:chipIconTint="@drawable/bg_chip_state_list"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_dom"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_gravity="end"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="0dp"
-                android:ellipsize="end"
-                android:text="@string/setting_title_dom"
-                app:chipIcon="@drawable/icon_dom"
                 app:chipIconEnabled="true"
                 app:chipIconSize="20dp"
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
@@ -343,7 +346,7 @@
                 app:chipIconTint="@drawable/bg_chip_state_list"/>
 
             <com.google.android.material.chip.Chip
-                android:visibility="invisible"
+                android:id="@+id/chip_dom"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
@@ -352,8 +355,8 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="0dp"
                 android:ellipsize="end"
-                android:text="@string/setting_title_javascript"
-                app:chipIcon="@drawable/icon_java"
+                android:text="@string/setting_title_dom"
+                app:chipIcon="@drawable/icon_dom"
                 app:chipIconEnabled="true"
                 app:chipIconSize="20dp"
                 app:chipIconTint="@drawable/bg_chip_state_list"/>

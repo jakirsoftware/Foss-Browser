@@ -102,6 +102,10 @@ public class NinjaWebChromeClient extends WebChromeClient {
                     }
                     request.grant(request.getResources());
                 }
+            } else if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)){
+                if (sp.getBoolean(ninjaWebView.getProfile()+"_microphone", false)) {
+                    request.grant(request.getResources());
+                }
             } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
                 builder.setMessage(R.string.hint_DRM_Media);
@@ -111,6 +115,7 @@ public class NinjaWebChromeClient extends WebChromeClient {
                 dialog.show();
             }
         }
+
     }
 
     @Override
