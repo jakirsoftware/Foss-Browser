@@ -194,6 +194,7 @@
     <string name="menu_nightView">viễn cảnh buổi đêm</string>
     <string name="setting_userScript">Custom JavaScript code</string>
     <string name="setting_title_camera">Allow camera usage</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">Reload tabs</string>
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>
