@@ -6,10 +6,10 @@
     <string name="app_cancel">Abbrechen</string>
     <string name="app_done">Fertig</string>
     <string name="app_error">Fehler</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
-    <string name="app_update">Update notification</string>
-    <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
+    <string name="app_warning">Warnung</string>
+    <string name="app_permission">Um diese Funktion nutzen zu können, müssen Sie die Berechtigung erteilen. Danach starten Sie die App neu.</string>
+    <string name="app_update">Update Benachrichtigung</string>
+    <string name="app_update_84">Mit diesem Update führt \"FOSS Browser\" Profile für die Privatspäre ein. Bitte überprüfen Sie dies in den Einstellungen. Um richtig zu funktionieren, werden alle Ihre Whitelisten gelöscht.</string>
     <string name="list_empty">Liste ist leer</string>
     <string name="album_title_bookmarks">Lesezeichen</string>
     <string name="album_title_history">Verlauf</string>
@@ -195,7 +195,7 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="menu_nightView">Nacht-Ansicht</string>
     <string name="setting_userScript">Individualisierter JavaScript-Code</string>
     <string name="setting_title_camera">Kameranutzung erlauben</string>
-    <string name="setting_title_microphone">Allow microphone usage</string>
+    <string name="setting_title_microphone">Mikrofonzugriff erlauben</string>
     <string name="setting_title_tabsReload">Tabs neu laden</string>
     <string name="setting_title_tabsRestore">Tabs wiederherstellen</string>
     <string name="setting_title_userInterface">Benutzeroberfläche</string>
