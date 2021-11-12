@@ -85,7 +85,9 @@ public class BackupUnit {
 
     public static void requestPermission(Activity activity) {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-        builder.setMessage(R.string.toast_permission_sdCard);
+        builder.setIcon(R.drawable.icon_alert);
+        builder.setTitle(R.string.app_warning);
+        builder.setMessage(R.string.app_permission);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             dialog.cancel();
             if (SDK_INT >= Build.VERSION_CODES.R) {

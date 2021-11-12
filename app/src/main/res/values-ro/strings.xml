@@ -6,6 +6,8 @@
     <string name="app_cancel">Anulează</string>
     <string name="app_done">Gata</string>
     <string name="app_error">Eroare</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">Lista este goală</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
     <string name="setting_title_adblockHost">Blocked content</string>
     <string name="setting_title_location">Location</string>
-    <string name="setting_summary_location">Allow websites to access your location. Some websites (like Google maps for navigation) need this enabled.</string>
     <string name="setting_title_history">History</string>
     <string name="setting_title_autofill">Form Data</string>
     <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">You haven\'t input anything</string>
     <string name="toast_invalid_domain">Invalid domain</string>
     <string name="toast_webview_forward">Can\'t load next site</string>
-    <string name="toast_permission_sdCard">\"FOSS Browser\" needs the permission to \"read and write on your storage\". This is needed to download files, taking screenshots and making backups of your data.</string>
     <string name="toast_restart">You must restart \"FOSS Browser\" to apply changes. Close now?</string>
     <string name="toast_quit">Do you want to quit \"FOSS Browser\"?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
@@ -194,6 +194,7 @@
     <string name="menu_nightView">Night view</string>
     <string name="setting_userScript">Custom JavaScript code</string>
     <string name="setting_title_camera">Allow camera usage</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">Reload tabs</string>
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>

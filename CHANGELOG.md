@@ -1,5 +1,10 @@
 ### v 8.4 (WIP)
 
+- new: camera use
+- new: microphone use
+- new: webRTC support
+- new: DRM protected video playback
+- new: support of encrypted backups
 - new: profiles instead of whitelists
 - new: restore tabs on restart (optional)
 - new: restore tabs when killed by system (optional) (thanks to @woheller69)

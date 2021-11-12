@@ -6,6 +6,8 @@
     <string name="app_cancel">Hủy</string>
     <string name="app_done">Xong</string>
     <string name="app_error">Lỗi</string>
+    <string name="app_warning">Warning</string>
+    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
     <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
     <string name="list_empty">Danh sách trống</string>
@@ -103,7 +105,6 @@
     <string name="setting_summary_adblock">Bật Chặn quảng cáo để chặn các quảng cáo gây phiền nhiễu. Các trang web cũng tải nhanh hơn khi được bật.</string>
     <string name="setting_title_adblockHost">Nội dung đã chặn</string>
     <string name="setting_title_location">Vị trí</string>
-    <string name="setting_summary_location">Cho phép các trang web truy cập vị trí của bạn. Một số trang web (như Google Maps để điều hướng) cần tuỳ chọn này được bật.</string>
     <string name="setting_title_history">Lịch sử</string>
     <string name="setting_title_autofill">Dữ liệu mẫu</string>
     <string name="setting_summary_autofill">Bật tính năng lưu dữ liệu biểu mẫu (Android Nougat trở xuống) hoặc dịch vụ tự động điền (Android Oreo trở lên).</string>
@@ -166,7 +167,6 @@
     <string name="toast_input_empty">Bạn chưa nhập gì cả</string>
     <string name="toast_invalid_domain">Miền không hợp lệ</string>
     <string name="toast_webview_forward">Không thể tải trang tiếp theo</string>
-    <string name="toast_permission_sdCard">\"Trình duyệt FOSS\" cần quyền \"đọc và ghi lên bộ nhớ\". Quyền này là cần thiết để tải các tệp xuống, chụp ảnh màn hình và tạo các bản sao lưu dữ liệu của bạn.</string>
     <string name="toast_restart">Bạn phải khởi động lại \"Trình duyệt FOSS\" để áp dụng các thay đổi. Đóng ngay?</string>
     <string name="toast_quit">Bạn có muốn thoát \"Trình duyệt FOSS\" không?</string>
     <string name="toast_quit_TAB">Do you want to close the TAB?</string>
@@ -194,6 +194,7 @@
     <string name="menu_nightView">viễn cảnh buổi đêm</string>
     <string name="setting_userScript">Custom JavaScript code</string>
     <string name="setting_title_camera">Allow camera usage</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
     <string name="setting_title_tabsReload">Reload tabs</string>
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>
