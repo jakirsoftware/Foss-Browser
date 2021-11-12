@@ -30,7 +30,6 @@ import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
 
 
 public class CompleteAdapter extends BaseAdapter implements Filterable {
-
     private class CompleteFilter extends Filter {
         @Override
         protected FilterResults performFiltering(CharSequence prefix) {
@@ -46,17 +45,13 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                     } else if (item.getURL().contains(prefix)) {
                         item.setIndex(item.getURL().indexOf(prefix.toString()));
                     }
-                    resultList.add(item);
                     workList.add(item);
                 }
             }
 
-            Collections.sort(resultList, (first, second) -> Integer.compare(first.getIndex(), second.getIndex()));
             Collections.sort(workList, (first, second) -> Integer.compare(first.getIndex(), second.getIndex()));
 
             FilterResults results = new FilterResults();
-            results.values = resultList;
-            results.count = resultList.size();
             results.values = workList;
             results.count =workList.size();
 
@@ -64,7 +59,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         }
 
         @Override
-        protected void publishResults (CharSequence constraint, FilterResults results) {
+        protected void publishResults(CharSequence constraint, FilterResults results) {
             if (results != null && results.count > 0) {
                 // The API returned at least one result, update the data.
                 resultList = (List<CompleteItem>) results.values;
@@ -210,15 +205,20 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
 
-        if (item.getType()==STARTSITE_ITEM) holder.iconView.setImageResource(R.drawable.icon_web_light);
-        else if (item.getType()==HISTORY_ITEM) holder.iconView.setImageResource(R.drawable.icon_history_light);
-        else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);
+        if (item.getType()==STARTSITE_ITEM) {  //Item from start page
+            holder.iconView.setImageResource(R.drawable.icon_web_light);
+        } else if (item.getType()==HISTORY_ITEM){  //Item from history
+            holder.iconView.setImageResource(R.drawable.icon_history_light);
+        } else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(item.url);
 
-        if (bitmap != null) holder.favicon.setImageBitmap(bitmap);
-        else holder.favicon.setImageResource(R.drawable.icon_image_broken_light);
+        if (bitmap != null) {
+            holder.favicon.setImageBitmap(bitmap);
+        } else {
+            holder.favicon.setImageResource(R.drawable.icon_image_broken_light);
+        }
 
         holder.iconView.setVisibility(View.VISIBLE);
         holder.cardView.setVisibility(View.VISIBLE);
