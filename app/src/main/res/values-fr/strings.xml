@@ -6,10 +6,10 @@
     <string name="app_cancel">Annuler</string>
     <string name="app_done">Fait</string>
     <string name="app_error">Erreur</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
-    <string name="app_update">Update notification</string>
-    <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
+    <string name="app_warning">Attention</string>
+    <string name="app_permission">Pour utiliser cette fonctionnalité, vous devez accorder l\'autorisation. Après cela, redémarrez l\'application.</string>
+    <string name="app_update">Notification de mise à jour</string>
+    <string name="app_update_84">Avec cette mise à jour \"Le navigateur FOSS\" introduit des profils de contrôle de la vie privée. Veuillez vérifier cela dans les paramètres. Pour fonctionner correctement, tous vos blanchiseurs sont supprimés.</string>
     <string name="list_empty">Liste vide</string>
     <string name="album_title_bookmarks">Signets</string>
     <string name="album_title_history">Historique</string>
@@ -29,7 +29,7 @@
     <string name="color_grey">Gris</string>
     <!-- Menu -->
     <string name="main_menu_new_tab">Nouvel onglet (arrière-plan)</string>
-    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
+    <string name="main_menu_new_tabProfile">Nouvel onglet (avec profil …)</string>
     <string name="main_menu_new_tabOpen">Nouvel onglet (premier plan)</string>
     <string name="main_omnibox_input_hint">Rechercher ou taper une URL</string>
     <string name="menu_open_with">Ouvrir le lien avec …</string>
@@ -78,13 +78,13 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">Taille de police</string>
     <string name="setting_title_dom">Stockage DOM</string>
     <string name="setting_title_save_data">Demande \'Enregistrer les données\'</string>
-    <string name="setting_title_profiles">Profiles</string>
-    <string name="setting_title_profiles_edit">Edit profiles</string>
-    <string name="setting_title_profiles_trustedList">Trusted websites</string>
-    <string name="setting_title_profiles_standardList">Standard websites</string>
+    <string name="setting_title_profiles">Profils</string>
+    <string name="setting_title_profiles_edit">Modifier les Profils</string>
+    <string name="setting_title_profiles_trustedList">Sites Web de confiance</string>
+    <string name="setting_title_profiles_standardList">Sites Web standard</string>
     <string name="setting_title_profiles_protectedList">Protected websites</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Trusted</string>
