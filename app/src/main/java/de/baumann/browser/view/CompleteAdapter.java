@@ -1,7 +1,5 @@
 package de.baumann.browser.view;
 
-import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
@@ -12,7 +10,6 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
@@ -23,7 +20,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import de.baumann.browser.activity.BrowserActivity;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.R;
@@ -40,35 +36,41 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         protected FilterResults performFiltering(CharSequence prefix) {
             if (prefix == null) {
                 return new FilterResults();
-            } else {
-                resultList.clear();
-                for (CompleteItem item : originalList) {
-                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) || item.getURL().contains(prefix)) {
-                        if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) ) {
-                            item.setIndex(item.getTitle().indexOf(prefix.toString()));
-                        } else if (item.getURL().contains(prefix)) {
-                            item.setIndex(item.getURL().indexOf(prefix.toString()));
-                        }
-                        resultList.add(item);
-                    }
-                }
-
-                Collections.sort(resultList, (first, second) -> Integer.compare(first.getIndex(), second.getIndex()));
-
-                FilterResults results = new FilterResults();
-                results.values = resultList;
-                results.count = resultList.size();
-
-                return results;
             }
+
+            List<CompleteItem> workList = new ArrayList<>();
+            for (CompleteItem item : originalList) {
+                if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) || item.getURL().contains(prefix)) {
+                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) ) {
+                        item.setIndex(item.getTitle().indexOf(prefix.toString()));
+                    } else if (item.getURL().contains(prefix)) {
+                        item.setIndex(item.getURL().indexOf(prefix.toString()));
+                    }
+                    resultList.add(item);
+                    workList.add(item);
+                }
+            }
+
+            Collections.sort(resultList, (first, second) -> Integer.compare(first.getIndex(), second.getIndex()));
+            Collections.sort(workList, (first, second) -> Integer.compare(first.getIndex(), second.getIndex()));
+
+            FilterResults results = new FilterResults();
+            results.values = resultList;
+            results.count = resultList.size();
+            results.values = workList;
+            results.count =workList.size();
+
+            return results;
         }
 
         @Override
         protected void publishResults (CharSequence constraint, FilterResults results) {
             if (results != null && results.count > 0) {
+                // The API returned at least one result, update the data.
+                resultList = (List<CompleteItem>) results.values;
                 notifyDataSetChanged();
             } else {
-                //Logs.e("Tried to invalidate");
+                // The API did not return any results, invalidate the data set.
                 notifyDataSetInvalidated();
             }
         }
@@ -137,7 +139,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
     private final Context context;
     private final int layoutResId;
     private final List<CompleteItem> originalList;
-    private final List<CompleteItem> resultList;
+    private List<CompleteItem> resultList;
     private final CompleteFilter filter = new CompleteFilter();
 
     public CompleteAdapter(Context context, int layoutResId, List<Record> recordList) {
