@@ -6,8 +6,8 @@
     <string name="app_cancel">中止</string>
     <string name="app_done">完了</string>
     <string name="app_error">エラー</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
+    <string name="app_warning">警告</string>
+    <string name="app_permission">この機能を使うにはマイクの権限を与えなければいけません。その後アプリを再起動して下さい。</string>
     <string name="app_update">アップデート通知</string>
     <string name="app_update_84">この \"FOSS Browser\" のアップデートでプライバシー制御のためのプロファイルが導入されます。設定で確認して下さい。正しく動作させるために、あなたの全てのホワイトリストは削除されます。</string>
     <string name="list_empty">リストが空です</string>
@@ -194,7 +194,7 @@
     <string name="menu_nightView">暗い時での表示</string>
     <string name="setting_userScript">カスタム JavaScript コード</string>
     <string name="setting_title_camera">カメラの使用を許可</string>
-    <string name="setting_title_microphone">Allow microphone usage</string>
+    <string name="setting_title_microphone">マイクの使用を許可</string>
     <string name="setting_title_tabsReload">タブを再読み込み</string>
     <string name="setting_title_tabsRestore">タブを復元</string>
     <string name="setting_title_userInterface">ユーザーインターフェース</string>
