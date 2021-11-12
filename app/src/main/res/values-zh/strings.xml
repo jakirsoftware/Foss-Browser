@@ -6,8 +6,8 @@
     <string name="app_cancel">取消</string>
     <string name="app_done">完成</string>
     <string name="app_error">错误</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
+    <string name="app_warning">警告</string>
+    <string name="app_permission">要使用此功能，您必须授予权限，然后重启应用程序。</string>
     <string name="app_update">更新通知</string>
     <string name="app_update_84">通过这次更新，“FOSS浏览器”引入了隐私控制配置文件。请在设置中查看。为了其正常工作，所有的白名单都会被删除。</string>
     <string name="list_empty">列表为空</string>
@@ -192,7 +192,7 @@
     <string name="menu_nightView">夜间模式</string>
     <string name="setting_userScript">自定义 JavaScript 代码</string>
     <string name="setting_title_camera">允许相机使用</string>
-    <string name="setting_title_microphone">Allow microphone usage</string>
+    <string name="setting_title_microphone">允许访问麦克风</string>
     <string name="setting_title_tabsReload">重新加载标签页</string>
     <string name="setting_title_tabsRestore">恢复标签页</string>
     <string name="setting_title_userInterface">用户界面</string>
