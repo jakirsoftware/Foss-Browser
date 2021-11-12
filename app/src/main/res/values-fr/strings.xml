@@ -85,21 +85,21 @@
     <string name="setting_title_profiles_edit">Modifier les Profils</string>
     <string name="setting_title_profiles_trustedList">Sites Web de confiance</string>
     <string name="setting_title_profiles_standardList">Sites Web standard</string>
-    <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_startApp">Profile on app start</string>
-    <string name="setting_title_profiles_trusted">Trusted</string>
+    <string name="setting_title_profiles_protectedList">Sites Web protégés</string>
+    <string name="setting_title_profiles_startApp">Profil au démarrage de l\'application</string>
+    <string name="setting_title_profiles_trusted">De confiance</string>
     <string name="setting_title_profiles_standard">Standard</string>
-    <string name="setting_title_profiles_protected">Protected</string>
-    <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_active">Profile</string>
-    <string name="setting_title_profiles_dataUsage">Data usage</string>
-    <string name="setting_title_profiles_privacy">Privacy</string>
-    <string name="setting_title_profiles_Security">Security</string>
+    <string name="setting_title_profiles_protected">Protégé</string>
+    <string name="setting_title_profiles_changed">Personnalisé</string>
+    <string name="setting_title_profiles_active">Profil</string>
+    <string name="setting_title_profiles_dataUsage">Utilisation des données</string>
+    <string name="setting_title_profiles_privacy">Vie privée</string>
+    <string name="setting_title_profiles_Security">Sécurité</string>
     <!-- browser start -->
     <string name="setting_title_images">Images</string>
     <string name="setting_title_cookie">Cookies</string>
     <string name="setting_summary_cookie_delete">Si cette option est activée, tous les cookies seront supprimés. Aussi les cookies de sites de confiance.</string>
-    <string name="setting_title_javascript_popUp">Popups</string>
+    <string name="setting_title_javascript_popUp">Fenêtre contextuelle</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Activez AdBlock pour bloquer les pubs ennuyeuses. Les sites se chargent plus rapidement quand activé.</string>
@@ -169,7 +169,7 @@
     <string name="toast_webview_forward">Impossible de charger le site</string>
     <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>
     <string name="toast_quit">Voulez-vous quitter \"FOSS Browser\"?</string>
-    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
+    <string name="toast_quit_TAB">Voulez-vous fermer le TAB?</string>
     <string name="toast_downloadComplete">Téléchargement fini. Ouvrir le gestionnaire de fichiers?</string>
     <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée (\"http\"). Essayez une connexion sécurisée (\"https\")?</string>
     <string name="toast_backup">Données de sauvegarde? Cela écrasera l\'ancienne sauvegarde.</string>
@@ -177,7 +177,7 @@
     <string name="whitelist_menu_clear">Effacer</string>
     <string name="whitelist_edit_hint">Domaine</string>
     <string name="whitelist_add">Ajouté</string>
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Votre langue n\'est pas encore supportée ? Vous voulez traduire FOSS Browser ? Ou apporter des améliorations aux traductions existantes ? N\'hésitez pas à nous rejoindre sur Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
@@ -193,13 +193,13 @@
     <string name="menu_dayView">Vue Jour</string>
     <string name="menu_nightView">Vue nocturne</string>
     <string name="setting_userScript">Scripts JavaScript personnalisés</string>
-    <string name="setting_title_camera">Allow camera usage</string>
-    <string name="setting_title_microphone">Allow microphone usage</string>
-    <string name="setting_title_tabsReload">Reload tabs</string>
-    <string name="setting_title_tabsRestore">Restore tabs</string>
-    <string name="setting_title_userInterface">User interface</string>
-    <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
-    <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="setting_title_camera">Autoriser l\'utilisation de la caméra</string>
+    <string name="setting_title_microphone">Autoriser l\'utilisation du microphone</string>
+    <string name="setting_title_tabsReload">Recharger les onglets</string>
+    <string name="setting_title_tabsRestore">Restaurer l\'onglet</string>
+    <string name="setting_title_userInterface">Interface utilisateur</string>
+    <string name="setting_summary_tabsReload">Recharger les derniers onglets ouverts, lors du démarrage de FOSS Browser.</string>
+    <string name="setting_summary_tabsRestore">Restaurer les onglets, quand le navigateur FOSS est tué par le système.</string>
+    <string name="hint_DRM_Media">Autoriser la lecture des médias protégés par le DRM ?</string>
     <!-- License changelog -->
 </resources>
