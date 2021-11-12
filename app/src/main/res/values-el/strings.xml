@@ -6,10 +6,10 @@
     <string name="app_cancel">Άκυρο</string>
     <string name="app_done">Ολοκληρώθηκε</string>
     <string name="app_error">Σφάλμα</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
-    <string name="app_update">Update notification</string>
-    <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
+    <string name="app_warning">Προειδοποίηση</string>
+    <string name="app_permission">Για να χρησιμοποιήσετε αυτή τη λειτουργία πρέπει να δώσετε άδεια. Μετά από αυτό επανεκκινήστε την εφαρμογή.</string>
+    <string name="app_update">Ειδοποίηση ενημέρωσης</string>
+    <string name="app_update_84">Με αυτή την ενημέρωση το \"FOSS Browser\" εισάγει προφίλ για τον έλεγχο της ιδιωτικότητας. Παρακαλούμε ελέγξτε το στις ρυθμίσεις. Για να λειτουργήσει σωστά, όλες οι λευκές λίστες σας διαγράφονται.</string>
     <string name="list_empty">Η λίστα είναι κενή</string>
     <string name="album_title_bookmarks">Σελιδοδείκτες</string>
     <string name="album_title_history">Ιστορικό</string>
@@ -86,12 +86,12 @@
     <string name="setting_title_profiles_trustedList">Αξιόπιστες ιστοσελίδες</string>
     <string name="setting_title_profiles_standardList">Τυπικές ιστοσελίδες</string>
     <string name="setting_title_profiles_protectedList">Προστατευμένες ιστοσελίδες</string>
-    <string name="setting_title_profiles_startApp">Profile on app start</string>
+    <string name="setting_title_profiles_startApp">Προφίλ κατά την έναρξη της εφαρμογής</string>
     <string name="setting_title_profiles_trusted">Αξιόπιστο</string>
     <string name="setting_title_profiles_standard">Κανονικό</string>
     <string name="setting_title_profiles_protected">Προστατευμένο</string>
     <string name="setting_title_profiles_changed">Προσαρμοσμένο</string>
-    <string name="setting_title_profiles_active">Profile</string>
+    <string name="setting_title_profiles_active">Προφίλ</string>
     <string name="setting_title_profiles_dataUsage">Χρήση δεδομένων</string>
     <string name="setting_title_profiles_privacy">Απόρρητο</string>
     <string name="setting_title_profiles_Security">Ασφάλεια</string>
@@ -177,7 +177,7 @@
     <string name="whitelist_menu_clear">Εκκαθάριση</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Προσθήκη</string>
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">Η γλώσσα σας δεν υποστηρίζεται ακόμα; Θέλετε να μεταφράσετε το FOSS Browser; Ή να κάνετε βελτιώσεις στις υπάρχουσες μεταφράσεις; Μη διστάσετε να γίνετε μέλος μας στο Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
         &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
@@ -185,21 +185,19 @@
         \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
         \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
         \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-
-    </string>
+        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md    </string>
     <string name="menu_mobileView">Προβολή κινητού</string>
     <string name="menu_desktopView">Προβολή για υπολογιστή</string>
     <string name="menu_dayView">Προβολή ημέρας</string>
     <string name="menu_nightView">Νυχτερινή προβολή</string>
     <string name="setting_userScript">Προσαρμοσμένος κώδικας JavaScript</string>
     <string name="setting_title_camera">Να επιτρέπεται η χρήση κάμερας</string>
-    <string name="setting_title_microphone">Allow microphone usage</string>
-    <string name="setting_title_tabsReload">Reload tabs</string>
-    <string name="setting_title_tabsRestore">Restore tabs</string>
-    <string name="setting_title_userInterface">User interface</string>
-    <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
-    <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
+    <string name="setting_title_microphone">Επιτρέψτε τη χρήση μικροφώνου</string>
+    <string name="setting_title_tabsReload">Επαναφόρτωση καρτελών</string>
+    <string name="setting_title_tabsRestore">Επαναφορά καρτελών</string>
+    <string name="setting_title_userInterface">Διεπαφή χρήστη</string>
+    <string name="setting_summary_tabsReload">Επαναφόρτωση των τελευταίων ανοιχτών καρτελών, κατά την εκκίνηση του FOSS Browser.</string>
+    <string name="setting_summary_tabsRestore">Επαναφορά καρτελών, όταν το FOSS Browser τερματιστεί από το σύστημα.</string>
     <string name="hint_DRM_Media">Να επιτρέπεται η προστατευμένη αναπαραγωγή πολυμέσων DRM;</string>
     <!-- License changelog -->
 </resources>
