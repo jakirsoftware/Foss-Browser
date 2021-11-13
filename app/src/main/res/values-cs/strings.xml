@@ -203,5 +203,6 @@
     <string name="setting_summary_tabsReload">Znovu načíst naposledy otevřené karty při spuštění aplikace FOSS Browser.</string>
     <string name="setting_summary_tabsRestore">Obnovit karty při ukončení aplikace FOSS Browser systémem.</string>
     <string name="hint_DRM_Media">Povolit přehrávání médií chráněných DRM?</string>
+    <string name="menu_reload">Reload</string>
     <!-- License changelog -->
 </resources>

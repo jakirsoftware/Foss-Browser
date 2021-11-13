@@ -201,5 +201,6 @@
     <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
     <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
     <string name="hint_DRM_Media">¿Desea permitir reproducción multimedia protegida por DRM?</string>
+    <string name="menu_reload">Reload</string>
     <!-- License changelog -->
 </resources>
