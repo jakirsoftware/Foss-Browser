@@ -199,5 +199,6 @@
     <string name="setting_summary_tabsReload">Επαναφόρτωση των τελευταίων ανοιχτών καρτελών, κατά την εκκίνηση του FOSS Browser.</string>
     <string name="setting_summary_tabsRestore">Επαναφορά καρτελών, όταν το FOSS Browser τερματιστεί από το σύστημα.</string>
     <string name="hint_DRM_Media">Να επιτρέπεται η προστατευμένη αναπαραγωγή πολυμέσων DRM;</string>
+    <string name="menu_reload">Reload</string>
     <!-- License changelog -->
 </resources>
