@@ -746,6 +746,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             case "15":
                 save_atHome(ninjaWebView.getTitle(), ninjaWebView.getUrl());
                 break;
+            case "16":
+                ninjaWebView.reload();
+                break;
         }
     }
 
