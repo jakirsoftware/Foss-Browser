@@ -201,5 +201,6 @@
     <string name="setting_summary_tabsReload">重新加载最后打开的标签，当启动FOSS浏览器时。</string>
     <string name="setting_summary_tabsRestore">恢复标签，当FOSS浏览器被系统杀死时。</string>
     <string name="hint_DRM_Media">允许受DRM保护的媒体播放？</string>
+    <string name="menu_reload">Reload</string>
     <!-- License changelog -->
 </resources>
