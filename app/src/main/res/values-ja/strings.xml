@@ -201,6 +201,6 @@
     <string name="setting_summary_tabsReload">FOSS Browser を起動する時に、最後に開いたタブを再読み込みします。</string>
     <string name="setting_summary_tabsRestore">FOSS Browser のプロセスがシステムによって終了された時、タブを復元します。</string>
     <string name="hint_DRM_Media">DRM 保護のメディア再生を許可しますか?</string>
-    <string name="menu_reload">Reload</string>
+    <string name="menu_reload">再読込</string>
     <!-- License changelog -->
 </resources>
