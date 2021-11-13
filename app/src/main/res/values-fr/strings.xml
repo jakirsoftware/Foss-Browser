@@ -201,5 +201,6 @@
     <string name="setting_summary_tabsReload">Recharger les derniers onglets ouverts, lors du démarrage de FOSS Browser.</string>
     <string name="setting_summary_tabsRestore">Restaurer les onglets, quand le navigateur FOSS est tué par le système.</string>
     <string name="hint_DRM_Media">Autoriser la lecture des médias protégés par le DRM ?</string>
+    <string name="menu_reload">Reload</string>
     <!-- License changelog -->
 </resources>
