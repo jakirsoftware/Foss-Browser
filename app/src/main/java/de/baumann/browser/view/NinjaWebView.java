@@ -107,15 +107,14 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public NinjaWebView(Context context) {
-        super(context); // Cannot create a dialog, the WebView context is not an activity
+        super(context);
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
+        String profile = sp.getString("profile","standard");
         this.context = context;
         this.foreground = false;
         this.desktopMode=false;
         this.isBackPressed = false;
-
-        sp = PreferenceManager.getDefaultSharedPreferences(context);
-        this.fingerPrintProtection=sp.getBoolean("sp_fingerPrintProtection",false);
-
+        this.fingerPrintProtection=sp.getBoolean(profile + "_fingerPrintProtection",false);
         this.stopped=false;
         this.listTrusted = new Profile_trusted(this.context);
         this.listStandard = new Profile_standard(this.context);
