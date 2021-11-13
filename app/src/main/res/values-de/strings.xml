@@ -202,5 +202,6 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="setting_summary_tabsReload">Die letzten geöffneten Tabs neu laden, wenn FOSS Browser gestartet wird.</string>
     <string name="setting_summary_tabsRestore">Tabs wiederherstellen, wenn FOSS Browser vom System beendet wird.</string>
     <string name="hint_DRM_Media">DRM-geschützte Medienwiedergabe erlauben?</string>
+    <string name="menu_reload">Reload</string>
     <!-- License changelog -->
 </resources>
