@@ -111,6 +111,8 @@ public class NinjaWebChromeClient extends WebChromeClient {
                 }
             } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
+                builder.setIcon(R.drawable.icon_alert);
+                builder.setTitle(R.string.app_warning);
                 builder.setMessage(R.string.hint_DRM_Media);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> request.grant(request.getResources()));
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> request.deny());

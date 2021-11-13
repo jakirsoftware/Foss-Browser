@@ -563,6 +563,8 @@ public class NinjaWebViewClient extends WebViewClient {
         }
         String text = message + " - " + context.getString(R.string.dialog_content_ssl_error);
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        builder.setIcon(R.drawable.icon_alert);
+        builder.setTitle(R.string.app_warning);
         builder.setMessage(text);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> handler.proceed());
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());

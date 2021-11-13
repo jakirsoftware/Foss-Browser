@@ -1464,15 +1464,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else {
                 omniBox_tab.setImageResource(R.drawable.icon_alert);
                 omniBox_tab.setOnClickListener(v -> {
-                    MaterialAlertDialogBuilder builderR = new MaterialAlertDialogBuilder(context);
-                    builderR.setMessage(R.string.toast_unsecured);
-                    builderR.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> ninjaWebView.loadUrl(url.replace("http://", "https://")));
-                    builderR.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                    builder.setIcon(R.drawable.icon_alert);
+                    builder.setTitle(R.string.app_warning);
+                    builder.setMessage(R.string.toast_unsecured);
+                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> ninjaWebView.loadUrl(url.replace("http://", "https://")));
+                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
                         dialog.cancel();
                         omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                         omniBox_tab.setOnClickListener(v2 -> showTabView());
                     });
-                    AlertDialog dialog = builderR.create();
+                    AlertDialog dialog = builder.create();
                     dialog.show();
                     Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                 });
