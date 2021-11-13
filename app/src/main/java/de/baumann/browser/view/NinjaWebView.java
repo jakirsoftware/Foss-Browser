@@ -72,6 +72,10 @@ public class NinjaWebView extends WebView implements AlbumController {
     private Context context;
     private boolean desktopMode;
     public boolean fingerPrintProtection;
+    public boolean history;
+    public boolean adBlock;
+    public boolean saveData;
+    public boolean camera;
     private boolean stopped;
     private AlbumItem album;
     private AlbumController predecessor=null;
@@ -114,7 +118,12 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.foreground = false;
         this.desktopMode=false;
         this.isBackPressed = false;
-        this.fingerPrintProtection=sp.getBoolean(profile + "_fingerPrintProtection",false);
+        this.fingerPrintProtection=sp.getBoolean(profile + "_fingerPrintProtection",true);
+        this.history=sp.getBoolean(profile + "_history",true);
+        this.adBlock=sp.getBoolean(profile + "_adBlock",false);
+        this.saveData=sp.getBoolean(profile + "_saveData",false);
+        this.camera=sp.getBoolean(profile + "_camera",false);
+
         this.stopped=false;
         this.listTrusted = new Profile_trusted(this.context);
         this.listStandard = new Profile_standard(this.context);
@@ -183,7 +192,11 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setJavaScriptEnabled(sp.getBoolean(profile + "_javascript", true));
         webSettings.setJavaScriptCanOpenWindowsAutomatically(sp.getBoolean(profile + "_javascriptPopUp", false));
         webSettings.setDomStorageEnabled(sp.getBoolean(profile + "_dom", false));
-        fingerPrintProtection = sp.getBoolean(profile + "_fingerPrintProtection", false);
+        fingerPrintProtection = sp.getBoolean(profile + "_fingerPrintProtection", true);
+        history = sp.getBoolean(profile + "_saveHistory", true);
+        adBlock = sp.getBoolean(profile + "_adBlock", true);
+        saveData = sp.getBoolean(profile + "_saveData", true);
+        camera = sp.getBoolean(profile + "_camera", true);
         CookieManager manager = CookieManager.getInstance();
         if (sp.getBoolean(profile + "_cookies", false)) {
             manager.setAcceptCookie(true);
@@ -195,20 +208,20 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public void setProfileIcon (ImageButton omniBox_tab) {
-        if (listTrusted.isWhite(this.getUrl())) {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_light);
-        } else if (listStandard.isWhite(this.getUrl())) {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_standard_light);
-        } else if (listProtected.isWhite(this.getUrl())) {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_protected_light);
-        } else if (profile.equals("profileTrusted")) {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_light);
-        } else if (profile.equals("profileStandard")) {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_standard_light);
-        } else if (profile.equals("profileProtected")) {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_protected_light);
+        String url = this.getUrl();
+        assert url != null;
+        if (listTrusted.isWhite(url) || profile.equals("profileTrusted")) {
+            if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_red);
+            else omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_light);
+        } else if (listStandard.isWhite(this.getUrl()) || profile.equals("profileStandard")) {
+            if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_standard_red);
+            else omniBox_tab.setImageResource(R.drawable.icon_profile_standard_light);
+        } else if (listProtected.isWhite(this.getUrl()) || profile.equals("profileProtected")) {
+            if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_protected_red);
+            else omniBox_tab.setImageResource(R.drawable.icon_profile_protected_light);
         } else {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_changed_light);
+            if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_changed_red);
+            else omniBox_tab.setImageResource(R.drawable.icon_profile_changed_light);
         }
     }
 
@@ -503,6 +516,18 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public boolean isFingerPrintProtection() {
         return fingerPrintProtection;
+    }
+    public boolean isHistory() {
+        return history;
+    }
+    public boolean isAdBlock() {
+        return adBlock;
+    }
+    public boolean isSaveData() {
+        return saveData;
+    }
+    public boolean isCamera() {
+        return camera;
     }
 
     public String getUserAgent(boolean desktopMode){

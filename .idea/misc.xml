@@ -9,7 +9,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.21875" />
+        <entry key="app/src/main/res/drawable/Icon_alert.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_adblock.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_alert.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_camera.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_close.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_cookie.xml" value="0.20625" />
@@ -26,13 +28,17 @@
         <entry key="app/src/main/res/drawable/icon_microphone.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_popup.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_changed.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_changed_red.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_protected.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_protected_light.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_protected_red.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_save_data.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_standard.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_standard_light.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_standard_red.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_trusted.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_trusted_light.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_profile_trusted_red.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_restore.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_savedata.xml" value="0.20625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1721014492753623" />

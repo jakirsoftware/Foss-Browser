@@ -864,7 +864,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     return true;
                 });
             } else if (menuItem.getItemId() == R.id.page_4) {
-
                 PopupMenu popup = new PopupMenu(this, bottom_navigation.findViewById(R.id.page_2));
                 if (overViewTab.equals(getString(R.string.album_title_home))) {
                     popup.inflate(R.menu.menu_list_start);
@@ -876,6 +875,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 popup.setOnMenuItemClickListener(item -> {
                     if (item.getItemId() == R.id.menu_delete) {
                         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                        builder.setIcon(R.drawable.icon_alert);
+                        builder.setTitle(R.string.app_warning);
                         builder.setMessage(R.string.hint_database);
                         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                             if (overViewTab.equals(getString(R.string.album_title_home))) {
@@ -1451,6 +1452,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             assert profile != null;
             omniBox_tab.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
+            ninjaWebView.setProfileIcon(omniBox_tab);
 
             if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
                 omniBox_text.setText(url);
@@ -1458,14 +1460,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_text.setText(ninjaWebView.getTitle());
             }
             if (url.startsWith("https://")) {
-                ninjaWebView.setProfileIcon(omniBox_tab);
                 omniBox_tab.setOnClickListener(v -> showTabView());
             } else if (url.contains("about:blank")){
-                omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                 omniBox_tab.setOnClickListener(v -> showTabView());
                 omniBox_text.setText("");
             } else {
-                omniBox_tab.setImageResource(R.drawable.icon_alert);
                 omniBox_tab.setOnClickListener(v -> {
                     MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                     builder.setIcon(R.drawable.icon_alert);
@@ -1474,7 +1473,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> ninjaWebView.loadUrl(url.replace("http://", "https://")));
                     builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> {
                         dialog.cancel();
-                        omniBox_tab.setImageResource(R.drawable.icon_menu_light);
                         omniBox_tab.setOnClickListener(v2 -> showTabView());
                     });
                     AlertDialog dialog = builder.create();
@@ -2040,6 +2038,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     break;
                 case 4:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
+                    builderSubMenu.setIcon(R.drawable.icon_alert);
+                    builderSubMenu.setTitle(R.string.app_warning);
                     builderSubMenu.setMessage(R.string.hint_database);
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog2, whichButton) -> {
                         Record record = recordList.get(location);

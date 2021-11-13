@@ -69,8 +69,6 @@ public class BackupUnit {
     private static final String BOOKMARK_TITLE = "{title}";
     private static final String BOOKMARK_URL = "{url}";
     private static final String BOOKMARK_TIME = "{time}";
-
-
     public static final int PERMISSION_REQUEST_CODE = 123;
 
     public static boolean checkPermissionStorage (Context context) {

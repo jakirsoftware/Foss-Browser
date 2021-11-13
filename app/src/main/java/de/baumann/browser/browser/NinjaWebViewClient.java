@@ -71,12 +71,11 @@ public class NinjaWebViewClient extends WebViewClient {
             view.evaluateJavascript(Objects.requireNonNull(sp.getString("sp_onPageFinished", "")), null);
         }
 
-        String profile = sp.getString("profile", "profileStandard");
-        if(sp.getBoolean(profile + "_saveData",true)) {
+        if(ninjaWebView.isSaveData()) {
             view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
         }
 
-        if (sp.getBoolean(profile + "_saveHistory", true)) {
+        if (ninjaWebView.isHistory()) {
             RecordAction action = new RecordAction(ninjaWebView.getContext());
             action.open(true);
             if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY)) {
@@ -402,7 +401,7 @@ public class NinjaWebViewClient extends WebViewClient {
                     "Object.defineProperty(navigator, 'keyboard',{value:null});" +
                     "Object.defineProperty(navigator, 'sendBeacon',{value:null});", null);
 
-            if (!sp.getBoolean(ninjaWebView.getProfile()+"_camera", false)) {
+            if (!ninjaWebView.isCamera()) {
                 view.evaluateJavascript("" +
                     "Object.defineProperty(navigator, 'mediaDevices',{value:null});", null);
             }
@@ -502,8 +501,7 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     @SuppressWarnings("deprecation")
     public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
-        String profile = sp.getString("profile","standard");
-        if (sp.getBoolean(profile + "_adBlock",false) && adBlock.isAd(url)) {
+        if (ninjaWebView.isAdBlock() && adBlock.isAd(url)) {
             return new WebResourceResponse(
                     BrowserUnit.MIME_TYPE_TEXT_PLAIN,
                     BrowserUnit.URL_ENCODING,
@@ -515,8 +513,7 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-        String profile = sp.getString("profile","standard");
-        if (sp.getBoolean(profile + "_adBlock",false) && adBlock.isAd(request.getUrl().toString())) {
+        if (ninjaWebView.isAdBlock() && adBlock.isAd(request.getUrl().toString())) {
             return new WebResourceResponse(
                     BrowserUnit.MIME_TYPE_TEXT_PLAIN,
                     BrowserUnit.URL_ENCODING,

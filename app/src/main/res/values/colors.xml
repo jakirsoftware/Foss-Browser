@@ -7,6 +7,7 @@
     <color name="secondaryColor">#7cb342</color>
 
     <color name="color_light">#fafafa</color>
+    <color name="color_red">#FF5722</color>
     <color name="color_hint">#BDBDBD</color>
 
 </resources>
