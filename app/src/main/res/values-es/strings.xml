@@ -6,10 +6,10 @@
     <string name="app_cancel">Cancelar</string>
     <string name="app_done">Listo</string>
     <string name="app_error">Error</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
-    <string name="app_update">Update notification</string>
-    <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
+    <string name="app_warning">Advertencia</string>
+    <string name="app_permission">Para utilizar esta función debes conceder el permiso. Después de eso, reinicie la aplicación.</string>
+    <string name="app_update">Notificación de actualización</string>
+    <string name="app_update_84">Con esta actualización \"FOSS Browser\" introduce perfiles para el control de la privacidad. Por favor, comprueba esto en la configuración. Para que funcione correctamente, se eliminan todas tus listas blancas.</string>
     <string name="list_empty">La lista está vacía</string>
     <string name="album_title_bookmarks">Marcadores</string>
     <string name="album_title_history">Historial</string>
@@ -29,7 +29,7 @@
     <string name="color_grey">Gris</string>
     <!-- Menu -->
     <string name="main_menu_new_tab">Nueva pestaña (de fondo)</string>
-    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
+    <string name="main_menu_new_tabProfile">Nueva pestaña (con perfil...)</string>
     <string name="main_menu_new_tabOpen">Nueva pestaña (primer plano)</string>
     <string name="main_omnibox_input_hint">Buscar o escribir URL</string>
     <string name="menu_open_with">Abrir enlace con …</string>
@@ -78,23 +78,23 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">Tamaño de letra</string>
     <string name="setting_title_dom">Almacenamiento DOM</string>
     <string name="setting_title_save_data">Solicitar \"reducir datos\"</string>
-    <string name="setting_title_profiles">Profiles</string>
-    <string name="setting_title_profiles_edit">Edit profiles</string>
-    <string name="setting_title_profiles_trustedList">Trusted websites</string>
-    <string name="setting_title_profiles_standardList">Standard websites</string>
-    <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_startApp">Profile on app start</string>
-    <string name="setting_title_profiles_trusted">Trusted</string>
-    <string name="setting_title_profiles_standard">Standard</string>
-    <string name="setting_title_profiles_protected">Protected</string>
-    <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_active">Profile</string>
-    <string name="setting_title_profiles_dataUsage">Data usage</string>
-    <string name="setting_title_profiles_privacy">Privacy</string>
-    <string name="setting_title_profiles_Security">Security</string>
+    <string name="setting_title_profiles">Perfiles</string>
+    <string name="setting_title_profiles_edit">Editar perfil</string>
+    <string name="setting_title_profiles_trustedList">Sitios web de confianza</string>
+    <string name="setting_title_profiles_standardList">Sitios web estándar</string>
+    <string name="setting_title_profiles_protectedList">Sitios web protegidos</string>
+    <string name="setting_title_profiles_startApp">Perfil al iniciar la aplicación</string>
+    <string name="setting_title_profiles_trusted">De confianza</string>
+    <string name="setting_title_profiles_standard">Estándar</string>
+    <string name="setting_title_profiles_protected">Protegido</string>
+    <string name="setting_title_profiles_changed">Personalizado</string>
+    <string name="setting_title_profiles_active">Perfil</string>
+    <string name="setting_title_profiles_dataUsage">Uso de datos</string>
+    <string name="setting_title_profiles_privacy">Privacidad</string>
+    <string name="setting_title_profiles_Security">Seguridad</string>
     <!-- browser start -->
     <string name="setting_title_images">Imágenes</string>
     <string name="setting_title_cookie">Cookies</string>
@@ -177,30 +177,30 @@
     <string name="whitelist_menu_clear">Limpiar</string>
     <string name="whitelist_edit_hint">Dominio</string>
     <string name="whitelist_add">Añadir</string>
-    <string name="changelog_dialog">        Your language isn\'t supported yet? You want to translate FOSS Browser? Or make improvements to existing translations? Feel free to join us on Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        ¿Su idioma aún no es compatible? ¿Quieres traducir FOSS Browser? ¿O hacer mejoras en las traducciones existentes? No dudes en unirte a nosotros en Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        En los siguientes sitios tienes acceso a toda la información importante sobre \"FOSS Browser\". Por favor, lea también el diálogo de ayuda dentro de la aplicación.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
+        \N - Sitio del proyecto:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \N - Registro de cambios:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
         \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
-        \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
-        \u25AA &lt;i&gt;Privacy:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
+        \N - Licencia:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
+        \N - Privacidad:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
 
-    </string>
+Traducción realizada con la versión gratuita del traductor www.DeepL.com/Translator    </string>
     <string name="menu_mobileView">Vista móvil</string>
     <string name="menu_desktopView">Vista escritorio</string>
     <string name="menu_dayView">Vista día</string>
     <string name="menu_nightView">Vista nocturna</string>
     <string name="setting_userScript">Código JavaScript personalizado</string>
     <string name="setting_title_camera">Permitir uso de cámara</string>
-    <string name="setting_title_microphone">Allow microphone usage</string>
-    <string name="setting_title_tabsReload">Reload tabs</string>
-    <string name="setting_title_tabsRestore">Restore tabs</string>
-    <string name="setting_title_userInterface">User interface</string>
-    <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
-    <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
+    <string name="setting_title_microphone">Permitir el uso del micrófono</string>
+    <string name="setting_title_tabsReload">Recarga de pestañas</string>
+    <string name="setting_title_tabsRestore">Restaurar pestañas</string>
+    <string name="setting_title_userInterface">Interfaz de usuario</string>
+    <string name="setting_summary_tabsReload">Recarga de las últimas pestañas abiertas, al iniciar el navegador FOSS.</string>
+    <string name="setting_summary_tabsRestore">Restaurar pestañas, cuando el navegador FOSS es eliminado por el sistema.</string>
     <string name="hint_DRM_Media">¿Desea permitir reproducción multimedia protegida por DRM?</string>
-    <string name="menu_reload">Reload</string>
+    <string name="menu_reload">Recargar</string>
     <!-- License changelog -->
 </resources>

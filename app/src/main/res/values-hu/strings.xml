@@ -202,6 +202,6 @@ Translated with www.DeepL.com/Translator (free version)    </string>
     <string name="setting_summary_tabsReload">Utoljára megnyitott lapok újratöltése a FOSS Browser indításakor.</string>
     <string name="setting_summary_tabsRestore">A lapok visszaállítása, ha a FOSS Browser-t megöli a rendszer.</string>
     <string name="hint_DRM_Media">DRM-védett média lejátszásának engedélyezése?</string>
-    <string name="menu_reload">Reload</string>
+    <string name="menu_reload">Újratöltés</string>
     <!-- License changelog -->
 </resources>
