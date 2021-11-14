@@ -120,7 +120,6 @@ public class NinjaWebChromeClient extends WebChromeClient {
                 dialog.show();
             }
         }
-
     }
 
     @Override

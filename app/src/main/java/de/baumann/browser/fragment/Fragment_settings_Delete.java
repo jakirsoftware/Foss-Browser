@@ -29,6 +29,8 @@ public class Fragment_settings_Delete extends PreferenceFragmentCompat {
         sp_deleteDatabase.setOnPreferenceClickListener(preference -> {
             final SharedPreferences sp = getPreferenceScreen().getSharedPreferences();
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+            builder.setIcon(R.drawable.icon_alert);
+            builder.setTitle(R.string.app_warning);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 dialog.cancel();
