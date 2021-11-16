@@ -660,7 +660,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 String url = ninjaWebView.getUrl();
                 ninjaWebView.stopLoading();
                 omniBox_text.setKeyListener(listener);
-                if (url==null || url.contains("about:blank")) {
+                if (url==null || url.isEmpty()) {
                     omniBox_text.setText("");
                 } else {
                     omniBox_text.setText(url);
@@ -1316,8 +1316,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
-        if (url.isEmpty() || url.equals("about:blank")) {
-            ninjaWebView.loadData("about:blank","","");
+        if (url.isEmpty()) {
+            ninjaWebView.loadUrl("about:blank");
         } else {
             ninjaWebView.loadUrl(url);
         }
@@ -1461,7 +1461,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
             if (url.startsWith("https://")) {
                 omniBox_tab.setOnClickListener(v -> showTabView());
-            } else if (url.contains("about:blank")){
+            } else if (url.isEmpty()){
                 omniBox_tab.setOnClickListener(v -> showTabView());
                 omniBox_text.setText("");
             } else {
