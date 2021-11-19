@@ -1,4 +1,4 @@
-### v 8.4 (WIP)
+### v 8.4
 
 - new: camera use (thanks to @woheller69)
 - new: microphone use

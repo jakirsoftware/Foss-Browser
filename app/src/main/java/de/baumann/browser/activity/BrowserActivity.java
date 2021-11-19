@@ -1444,8 +1444,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
         omniBox_text.clearFocus();
         ninjaWebView = (NinjaWebView) currentAlbumController;
-
         String url = ninjaWebView.getUrl();
+
         if (url != null) {
 
             String profile = sp.getString("profile", "profileStandard");
@@ -1453,6 +1453,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             omniBox_tab.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             ninjaWebView.setProfileIcon(omniBox_tab);
+            ninjaWebView.initPreferences(url);
 
             if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
                 omniBox_text.setText(url);
