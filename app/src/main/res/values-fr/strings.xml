@@ -34,7 +34,7 @@
     <string name="main_omnibox_input_hint">Rechercher ou taper une URL</string>
     <string name="menu_open_with">Ouvrir le lien avec …</string>
     <string name="menu_quit">Quitter</string>
-    <string name="menu_openFav">Ouvrir les favoris</string>
+    <string name="menu_openFav">Ouvrir l\'Accueil</string>
     <string name="menu_delete">Effacer</string>
     <string name="menu_edit">Editer</string>
     <string name="menu_closeTab">Fermer l\'onglet</string>
