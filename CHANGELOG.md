@@ -2,8 +2,7 @@
 
 - fix: camera issue #729
 - fix: profile icon in toolbar #728
-- new: translations
-- new: FOSS Browser in context menu of marked text
+- new: FOSS Browser in context menu of marked text #723
 - updated: translations
 
 ### v 8.4

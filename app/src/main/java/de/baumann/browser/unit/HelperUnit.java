@@ -77,53 +77,47 @@ public class HelperUnit {
     private static SharedPreferences sp;
 
     public static void grantPermissionsLoc(final Activity activity) {
-        if (android.os.Build.VERSION.SDK_INT >= 23) {
-            int hasACCESS_FINE_LOCATION = activity.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
-            if (hasACCESS_FINE_LOCATION != PackageManager.PERMISSION_GRANTED) {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-                builder.setIcon(R.drawable.icon_alert);
-                builder.setTitle(R.string.setting_title_location);
-                builder.setMessage(R.string.app_permission);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS_1));
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                AlertDialog dialog = builder.create();
-                dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            }
+        int hasACCESS_FINE_LOCATION = activity.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+        if (hasACCESS_FINE_LOCATION != PackageManager.PERMISSION_GRANTED) {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+            builder.setIcon(R.drawable.icon_alert);
+            builder.setTitle(R.string.setting_title_location);
+            builder.setMessage(R.string.app_permission);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_ASK_PERMISSIONS_1));
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
 
     public static void grantPermissionsCamera (final Activity activity) {
-        if (android.os.Build.VERSION.SDK_INT >= 23) {
-            int camera = activity.checkSelfPermission(Manifest.permission.CAMERA);
-            if (camera != PackageManager.PERMISSION_GRANTED) {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-                builder.setIcon(R.drawable.icon_alert);
-                builder.setTitle(R.string.setting_title_camera);
-                builder.setMessage(R.string.app_permission);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_ASK_PERMISSIONS_2));
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                AlertDialog dialog = builder.create();
-                dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            }
+        int camera = activity.checkSelfPermission(Manifest.permission.CAMERA);
+        if (camera != PackageManager.PERMISSION_GRANTED) {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+            builder.setIcon(R.drawable.icon_alert);
+            builder.setTitle(R.string.setting_title_camera);
+            builder.setMessage(R.string.app_permission);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_ASK_PERMISSIONS_2));
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
 
     public static void grantPermissionsMic (final Activity activity) {
-        if (android.os.Build.VERSION.SDK_INT >= 23) {
-            int mic = activity.checkSelfPermission(Manifest.permission.RECORD_AUDIO);
-            if (mic != PackageManager.PERMISSION_GRANTED) {
-                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-                builder.setIcon(R.drawable.icon_alert);
-                builder.setTitle(R.string.setting_title_microphone);
-                builder.setMessage(R.string.app_permission);
-                builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_CODE_ASK_PERMISSIONS_3));
-                builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-                AlertDialog dialog = builder.create();
-                dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            }
+        int mic = activity.checkSelfPermission(Manifest.permission.RECORD_AUDIO);
+        if (mic != PackageManager.PERMISSION_GRANTED) {
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
+            builder.setIcon(R.drawable.icon_alert);
+            builder.setTitle(R.string.setting_title_microphone);
+            builder.setMessage(R.string.app_permission);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> activity.requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_CODE_ASK_PERMISSIONS_3));
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
 

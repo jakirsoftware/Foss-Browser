@@ -1457,19 +1457,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         if (url != null) {
 
-            String profile = sp.getString("profile", "profileStandard");
-            assert profile != null;
             omniBox_tab.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             ninjaWebView.setProfileIcon(omniBox_tab);
             //ninjaWebView.initPreferences(url);
-            CookieManager manager = CookieManager.getInstance();
-            if (sp.getBoolean(profile + "_cookies", false)) {
-                manager.setAcceptCookie(true);
-                manager.getCookie(url);
-            } else {
-                manager.setAcceptCookie(false);
-            }
 
             if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
                 omniBox_text.setText(url);
