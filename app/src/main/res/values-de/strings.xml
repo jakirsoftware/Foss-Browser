@@ -91,7 +91,7 @@
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Geschützt</string>
     <string name="setting_title_profiles_changed">Eigenes Profil</string>
-    <string name="setting_title_profiles_active">Pofil</string>
+    <string name="setting_title_profiles_active">Profil</string>
     <string name="setting_title_profiles_dataUsage">Datennutzung</string>
     <string name="setting_title_profiles_privacy">Privatsphäre</string>
     <string name="setting_title_profiles_Security">Sicherheit</string>
