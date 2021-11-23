@@ -70,6 +70,7 @@ import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
+import android.webkit.CookieManager;
 import android.webkit.ValueCallback;
 import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
@@ -1462,6 +1463,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             progressBar.setVisibility(View.GONE);
             ninjaWebView.setProfileIcon(omniBox_tab);
             //ninjaWebView.initPreferences(url);
+            CookieManager manager = CookieManager.getInstance();
+            if (sp.getBoolean(profile + "_cookies", false)) {
+                manager.setAcceptCookie(true);
+                manager.getCookie(url);
+            } else {
+                manager.setAcceptCookie(false);
+            }
 
             if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
                 omniBox_text.setText(url);
