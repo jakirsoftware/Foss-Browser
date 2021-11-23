@@ -1,15 +1,17 @@
 package de.baumann.browser.unit;
 
 public class RecordUnit {
-    public static final String TABLE_HISTORY = "HISTORY";
-    public static final String TABLE_WHITELIST = "WHITELIST";
-    public static final String TABLE_JAVASCRIPT = "JAVASCRIPT";
-    public static final String TABLE_COOKIE = "COOKIE";
-    public static final String TABLE_REMOTE = "REMOTE";
-    public static final String TABLE_GRID = "GRID";
-    public static final String TABLE_TAB = "TAB";
 
+    public static final String TABLE_START = "GRID";
     public static final String TABLE_BOOKMARK = "BOOKAMRK";
+    public static final String TABLE_HISTORY = "HISTORY";
+
+    public static final String TABLE_TRUSTED = "JAVASCRIPT";
+    public static final String TABLE_PROTECTED = "COOKIE";
+    public static final String TABLE_STANDARD = "REMOTE";
+
+    public static final String TABLE_WHITELIST = "WHITELIST";
+    public static final String TABLE_TAB = "TAB";
 
     public static final String COLUMN_TITLE = "TITLE";
     public static final String COLUMN_URL = "URL";
@@ -48,26 +50,26 @@ public class RecordUnit {
             + " " + COLUMN_DOMAIN + " text"
             + ")";
 
-    public static final String CREATE_JAVASCRIPT = "CREATE TABLE "
-            + TABLE_JAVASCRIPT
+    public static final String CREATE_TRUSTED = "CREATE TABLE "
+            + TABLE_TRUSTED
             + " ("
             + " " + COLUMN_DOMAIN + " text"
             + ")";
 
-    public static final String CREATE_COOKIE = "CREATE TABLE "
-            + TABLE_COOKIE
+    public static final String CREATE_PROTECTED = "CREATE TABLE "
+            + TABLE_PROTECTED
             + " ("
             + " " + COLUMN_DOMAIN + " text"
             + ")";
 
-    public static final String CREATE_REMOTE = "CREATE TABLE "
-            + TABLE_REMOTE
+    public static final String CREATE_STANDARD = "CREATE TABLE "
+            + TABLE_STANDARD
             + " ("
             + " " + COLUMN_DOMAIN + " text"
             + ")";
 
-    public static final String CREATE_GRID = "CREATE TABLE "
-            + TABLE_GRID
+    public static final String CREATE_START = "CREATE TABLE "
+            + TABLE_START
             + " ("
             + " " + COLUMN_TITLE + " text,"
             + " " + COLUMN_URL + " text,"

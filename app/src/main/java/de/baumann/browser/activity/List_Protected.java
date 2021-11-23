@@ -23,7 +23,7 @@ import android.widget.ListView;
 import java.util.List;
 import java.util.Objects;
 
-import de.baumann.browser.browser.Profile_protected;
+import de.baumann.browser.browser.List_protected;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
@@ -36,7 +36,7 @@ public class List_Protected extends AppCompatActivity {
 
     private WhitelistAdapter adapter;
     private List<String> list;
-    private Profile_protected cookie;
+    private List_protected cookie;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,11 +49,11 @@ public class List_Protected extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        cookie = new Profile_protected(List_Protected.this);
+        cookie = new List_protected(List_Protected.this);
 
         RecordAction action = new RecordAction(this);
         action.open(false);
-        list = action.listDomains(RecordUnit.TABLE_COOKIE);
+        list = action.listDomains(RecordUnit.TABLE_PROTECTED);
         action.close();
 
         ListView listView = findViewById(R.id.whitelist);
@@ -88,10 +88,10 @@ public class List_Protected extends AppCompatActivity {
             } else {
                 RecordAction action1 = new RecordAction(List_Protected.this);
                 action1.open(true);
-                if (action1.checkDomain(domain, RecordUnit.TABLE_COOKIE)) {
+                if (action1.checkDomain(domain, RecordUnit.TABLE_PROTECTED)) {
                     NinjaToast.show(List_Protected.this, R.string.toast_domain_already_exists);
                 } else {
-                    Profile_protected cookie = new Profile_protected(List_Protected.this);
+                    List_protected cookie = new List_protected(List_Protected.this);
                     cookie.addDomain(domain.trim());
                     list.add(0, domain.trim());
                     adapter.notifyDataSetChanged();
@@ -119,7 +119,7 @@ public class List_Protected extends AppCompatActivity {
             builder.setTitle(R.string.app_warning);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                Profile_protected cookie = new Profile_protected(List_Protected.this);
+                List_protected cookie = new List_protected(List_Protected.this);
                 cookie.clearDomains();
                 list.clear();
                 adapter.notifyDataSetChanged();

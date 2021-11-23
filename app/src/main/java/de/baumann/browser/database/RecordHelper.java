@@ -18,11 +18,11 @@ class RecordHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase database) {
         database.execSQL(RecordUnit.CREATE_HISTORY);
         database.execSQL(RecordUnit.CREATE_WHITELIST);
-        database.execSQL(RecordUnit.CREATE_JAVASCRIPT);
-        database.execSQL(RecordUnit.CREATE_COOKIE);
-        database.execSQL(RecordUnit.CREATE_GRID);
+        database.execSQL(RecordUnit.CREATE_TRUSTED);
+        database.execSQL(RecordUnit.CREATE_PROTECTED);
+        database.execSQL(RecordUnit.CREATE_START);
         database.execSQL(RecordUnit.CREATE_BOOKMARK);
-        database.execSQL(RecordUnit.CREATE_REMOTE);
+        database.execSQL(RecordUnit.CREATE_STANDARD);
         database.execSQL(RecordUnit.CREATE_TAB);
     }
 
@@ -33,7 +33,7 @@ class RecordHelper extends SQLiteOpenHelper {
             case 1:
                 database.execSQL(RecordUnit.CREATE_BOOKMARK);
             case 2:
-                database.execSQL(RecordUnit.CREATE_REMOTE);
+                database.execSQL(RecordUnit.CREATE_STANDARD);
             case 3:
                 database.execSQL(RecordUnit.CREATE_TAB);
                 // we want all updates, so no break statement here...

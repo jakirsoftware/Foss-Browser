@@ -51,9 +51,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import de.baumann.browser.R;
-import de.baumann.browser.browser.Profile_protected;
-import de.baumann.browser.browser.Profile_standard;
-import de.baumann.browser.browser.Profile_trusted;
+import de.baumann.browser.browser.List_protected;
+import de.baumann.browser.browser.List_standard;
+import de.baumann.browser.browser.List_trusted;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.view.NinjaToast;
@@ -176,15 +176,15 @@ public class BackupUnit {
         action.open(false);
         switch (i) {
             case 1:
-                list = action.listDomains(RecordUnit.TABLE_JAVASCRIPT);
+                list = action.listDomains(RecordUnit.TABLE_TRUSTED);
                 filename = "list_trusted.txt";
                 break;
             case 3:
-                list = action.listDomains(RecordUnit.TABLE_REMOTE);
+                list = action.listDomains(RecordUnit.TABLE_STANDARD);
                 filename = "list_standard.txt";
                 break;
             default:
-                list = action.listDomains(RecordUnit.TABLE_COOKIE);
+                list = action.listDomains(RecordUnit.TABLE_PROTECTED);
                 filename = "list_protected.txt";
                 break;
         }
@@ -208,20 +208,20 @@ public class BackupUnit {
     public static void importWhitelist (Context context, int i) {
         try {
             String filename;
-            Profile_trusted js = null;
-            Profile_protected cookie = null;
-            Profile_standard DOM = null;
+            List_trusted js = null;
+            List_protected cookie = null;
+            List_standard DOM = null;
             switch (i) {
                 case 1:
-                    js = new Profile_trusted(context);
+                    js = new List_trusted(context);
                     filename = "list_trusted.txt";
                     break;
                 case 3:
-                    DOM = new Profile_standard(context);
+                    DOM = new List_standard(context);
                     filename = "list_standard.txt";
                     break;
                 default:
-                    cookie = new Profile_protected(context);
+                    cookie = new List_protected(context);
                     filename = "list_protected.txt";
                     break;
             }
@@ -246,17 +246,17 @@ public class BackupUnit {
             while ((line = reader.readLine()) != null) {
                 switch (i) {
                     case 1:
-                        if (!action.checkDomain(line, RecordUnit.TABLE_JAVASCRIPT)) {
+                        if (!action.checkDomain(line, RecordUnit.TABLE_TRUSTED)) {
                             js.addDomain(line);
                         }
                         break;
                     case 3:
-                        if (!action.checkDomain(line, RecordUnit.TABLE_REMOTE)) {
+                        if (!action.checkDomain(line, RecordUnit.TABLE_STANDARD)) {
                             DOM.addDomain(line);
                         }
                         break;
                     default:
-                        if (!action.checkDomain(line, RecordUnit.TABLE_COOKIE)) {
+                        if (!action.checkDomain(line, RecordUnit.TABLE_PROTECTED)) {
                             cookie.addDomain(line);
                         }
                         break;
@@ -311,7 +311,7 @@ public class BackupUnit {
                 String title = getBookmarkTitle(line);
                 String url = getBookmarkURL(line);
                 long date = getBookmarkDate(line);
-                if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for Profile_trusted + 64 for Profile_standard Content
+                if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for List_trusted + 64 for List_standard Content
                 if (title.trim().isEmpty() || url.trim().isEmpty()) {
                     continue;
                 }

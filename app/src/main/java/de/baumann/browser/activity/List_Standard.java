@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Objects;
 
 import de.baumann.browser.R;
-import de.baumann.browser.browser.Profile_standard;
+import de.baumann.browser.browser.List_standard;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
@@ -35,7 +35,7 @@ public class List_Standard extends AppCompatActivity {
 
     private WhitelistAdapter adapter;
     private List<String> list;
-    private Profile_standard DOM;
+    private List_standard DOM;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,11 +48,11 @@ public class List_Standard extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        DOM = new Profile_standard(List_Standard.this);
+        DOM = new List_standard(List_Standard.this);
 
         RecordAction action = new RecordAction(this);
         action.open(false);
-        list = action.listDomains(RecordUnit.TABLE_REMOTE);
+        list = action.listDomains(RecordUnit.TABLE_STANDARD);
         action.close();
 
         ListView listView = findViewById(R.id.whitelist);
@@ -87,7 +87,7 @@ public class List_Standard extends AppCompatActivity {
             } else {
                 RecordAction action1 = new RecordAction(List_Standard.this);
                 action1.open(true);
-                if (action1.checkDomain(domain, RecordUnit.TABLE_REMOTE)) {
+                if (action1.checkDomain(domain, RecordUnit.TABLE_STANDARD)) {
                     NinjaToast.show(List_Standard.this, R.string.toast_domain_already_exists);
                 } else {
                     DOM.addDomain(domain.trim());
@@ -117,7 +117,7 @@ public class List_Standard extends AppCompatActivity {
             builder.setTitle(R.string.app_warning);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                Profile_standard DOM = new Profile_standard(List_Standard.this);
+                List_standard DOM = new List_standard(List_Standard.this);
                 DOM.clearDomains();
                 list.clear();
                 adapter.notifyDataSetChanged();

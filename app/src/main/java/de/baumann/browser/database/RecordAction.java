@@ -51,14 +51,14 @@ public class RecordAction {
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
 
-        // filename is used for desktop mode, javascript, and Profile_standard content
+        // filename is used for desktop mode, javascript, and List_standard content
         // bit 4: 1 = Desktop Mode
         // bit 5: 0 = JavaScript (0 due backward compatibility)
-        // bit 6: 0 = Profile_standard Content allowed (0 due to backward compatibility)
+        // bit 6: 0 = List_standard Content allowed (0 due to backward compatibility)
 
         values.put(RecordUnit.COLUMN_FILENAME,  (long) (record.getDesktopMode() ? 16 : 0));
         values.put(RecordUnit.COLUMN_ORDINAL, record.getOrdinal());
-        database.insert(RecordUnit.TABLE_GRID, null, values);
+        database.insert(RecordUnit.TABLE_START, null, values);
         return true;
     }
 
@@ -70,7 +70,7 @@ public class RecordAction {
 
         Cursor cursor;
         cursor = database.query(
-                RecordUnit.TABLE_GRID,
+                RecordUnit.TABLE_START,
                 new String[] {
                         RecordUnit.COLUMN_TITLE,
                         RecordUnit.COLUMN_URL,
@@ -115,11 +115,11 @@ public class RecordAction {
         values.put(RecordUnit.COLUMN_TITLE, record.getTitle().trim());
         values.put(RecordUnit.COLUMN_URL, record.getURL().trim());
 
-        // Bookmark time is used for color, desktop mode, javascript, and Profile_standard content
+        // Bookmark time is used for color, desktop mode, javascript, and List_standard content
         // bit 0..3  icon color
         // bit 4: 1 = Desktop Mode
         // bit 5: 0 = JavaScript (0 due backward compatibility)
-        // bit 6: 0 = Profile_standard Content allowed (0 due to backward compatibility)
+        // bit 6: 0 = List_standard Content allowed (0 due to backward compatibility)
 
         values.put(RecordUnit.COLUMN_TIME, record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0));
         database.insert(RecordUnit.TABLE_BOOKMARK, null, values);

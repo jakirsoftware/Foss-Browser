@@ -90,9 +90,9 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.isBackPressed = isBackPressed;
     }
 
-    private Profile_trusted listTrusted;
-    private Profile_standard listStandard;
-    private Profile_protected listProtected;
+    private List_trusted listTrusted;
+    private List_standard listStandard;
+    private List_protected listProtected;
     private Bitmap favicon;
     private SharedPreferences sp;
 
@@ -125,9 +125,9 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.camera=sp.getBoolean(profile + "_camera",false);
 
         this.stopped=false;
-        this.listTrusted = new Profile_trusted(this.context);
-        this.listStandard = new Profile_standard(this.context);
-        this.listProtected = new Profile_protected(this.context);
+        this.listTrusted = new List_trusted(this.context);
+        this.listStandard = new List_standard(this.context);
+        this.listProtected = new List_protected(this.context);
         this.album = new AlbumItem(this.context, this, this.browserController);
         this.webViewClient = new NinjaWebViewClient(this);
         this.webChromeClient = new NinjaWebChromeClient(this);
@@ -210,18 +210,34 @@ public class NinjaWebView extends WebView implements AlbumController {
     public void setProfileIcon (ImageButton omniBox_tab) {
         String url = this.getUrl();
         assert url != null;
-        if (listTrusted.isWhite(url) || profile.equals("profileTrusted")) {
+        switch (profile) {
+            case "profileTrusted":
+                if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_red);
+                else omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_light);
+                break;
+            case "profileStandard":
+                if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_standard_red);
+                else omniBox_tab.setImageResource(R.drawable.icon_profile_standard_light);
+                break;
+            case "profileProtected":
+                if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_protected_red);
+                else omniBox_tab.setImageResource(R.drawable.icon_profile_protected_light);
+                break;
+            default:
+                if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_changed_red);
+                else omniBox_tab.setImageResource(R.drawable.icon_profile_changed_light);
+                break;
+        }
+
+        if (listTrusted.isWhite(url)) {
             if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_red);
             else omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_light);
-        } else if (listStandard.isWhite(this.getUrl()) || profile.equals("profileStandard")) {
+        } else if (listStandard.isWhite(url)) {
             if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_standard_red);
             else omniBox_tab.setImageResource(R.drawable.icon_profile_standard_light);
-        } else if (listProtected.isWhite(this.getUrl()) || profile.equals("profileProtected")) {
+        } else if (listProtected.isWhite(url)) {
             if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_protected_red);
             else omniBox_tab.setImageResource(R.drawable.icon_profile_protected_light);
-        } else {
-            if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_changed_red);
-            else omniBox_tab.setImageResource(R.drawable.icon_profile_changed_light);
         }
     }
 

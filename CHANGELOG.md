@@ -1,5 +1,6 @@
 ### v 8.5 (WIP)
 
+- fix: camera issue #729
 - new: translations
 - new: FOSS Browser in context menu of marked text
 - updated: translations

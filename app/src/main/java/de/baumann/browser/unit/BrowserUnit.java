@@ -162,7 +162,7 @@ public class BrowserUnit {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                     CookieManager cookieManager = CookieManager.getInstance();
                     String cookie = cookieManager.getCookie(url);
-                    request.addRequestHeader("Profile_protected", cookie);
+                    request.addRequestHeader("List_protected", cookie);
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                     request.setTitle(filename);
                     request.setMimeType(mimeType);
@@ -190,7 +190,7 @@ public class BrowserUnit {
     public static void clearHome(Context context) {
         RecordAction action = new RecordAction(context);
         action.open(true);
-        action.clearTable(RecordUnit.TABLE_GRID);
+        action.clearTable(RecordUnit.TABLE_START);
         action.close();
     }
 

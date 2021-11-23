@@ -99,10 +99,10 @@ import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BrowserContainer;
 import de.baumann.browser.browser.BrowserController;
-import de.baumann.browser.browser.Profile_protected;
-import de.baumann.browser.browser.Profile_standard;
+import de.baumann.browser.browser.List_protected;
+import de.baumann.browser.browser.List_standard;
 import de.baumann.browser.browser.DataURIParser;
-import de.baumann.browser.browser.Profile_trusted;
+import de.baumann.browser.browser.List_trusted;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
@@ -168,9 +168,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private Activity activity;
     private Context context;
     private SharedPreferences sp;
-    private Profile_trusted listTrusted;
-    private Profile_standard listStandard;
-    private Profile_protected listProtected;
+    private List_trusted listTrusted;
+    private List_standard listStandard;
+    private List_protected listProtected;
     private ObjectAnimator animation;
     private long newIcon;
     private boolean filter;
@@ -294,9 +294,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         new AdBlock(context);
-        new Profile_trusted(context);
-        new Profile_protected(context);
-        new Profile_standard(context);
+        new List_trusted(context);
+        new List_protected(context);
+        new List_standard(context);
 
         downloadReceiver = new BroadcastReceiver() {
             @Override
@@ -999,9 +999,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     private void show_dialogFastToggle() {
 
-        listTrusted = new Profile_trusted(context);
-        listStandard = new Profile_standard(context);
-        listProtected = new Profile_protected(context);
+        listTrusted = new List_trusted(context);
+        listStandard = new List_standard(context);
+        listProtected = new List_protected(context);
         ninjaWebView = (NinjaWebView) currentAlbumController;
         String url = ninjaWebView.getUrl();
         assert url != null;
@@ -1264,9 +1264,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
             ninjaWebView.setProfileDefaultValues();
-            Profile_trusted profile_trusted = new Profile_trusted(context);
-            Profile_standard profile_standard = new Profile_standard(context);
-            Profile_protected profile_protected = new Profile_protected(context);
+            List_trusted profile_trusted = new List_trusted(context);
+            List_standard profile_standard = new List_standard(context);
+            List_protected profile_protected = new List_protected(context);
             profile_trusted.clearDomains();
             profile_standard.clearDomains();
             profile_protected.clearDomains();
@@ -1505,13 +1505,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
         progressBar.setProgressCompat(progress, true);
         if (progress != BrowserUnit.LOADING_STOPPED) updateOmniBox();
-
         if (progress < BrowserUnit.PROGRESS_MAX) {
             progressBar.setVisibility(View.VISIBLE);
             omniBox_tab.setVisibility(View.INVISIBLE);
-        } else {
-            progressBar.setVisibility(View.GONE);
-            omniBox_tab.setVisibility(View.VISIBLE);
         }
     }
 
@@ -2063,7 +2059,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         RecordAction action = new RecordAction(context);
                         action.open(true);
                         if (overViewTab.equals(getString(R.string.album_title_home))) {
-                            action.deleteURL(record.getURL(), RecordUnit.TABLE_GRID);
+                            action.deleteURL(record.getURL(), RecordUnit.TABLE_START);
                         } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
                             action.deleteURL(record.getURL(), RecordUnit.TABLE_BOOKMARK);
                         } else if (overViewTab.equals(getString(R.string.album_title_history))) {
@@ -2148,7 +2144,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         } else {
                             RecordAction action = new RecordAction(context);
                             action.open(true);
-                            action.deleteURL(url, RecordUnit.TABLE_GRID);
+                            action.deleteURL(url, RecordUnit.TABLE_START);
                             int counter = sp.getInt("counter", 0);
                             counter = counter + 1;
                             sp.edit().putInt("counter", counter).apply();
@@ -2173,7 +2169,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         RecordAction action = new RecordAction(context);
         action.open(true);
-        if (action.checkUrl(url, RecordUnit.TABLE_GRID)) {
+        if (action.checkUrl(url, RecordUnit.TABLE_START)) {
             NinjaToast.show(this, R.string.app_error);
         } else {
             int counter = sp.getInt("counter", 0);
