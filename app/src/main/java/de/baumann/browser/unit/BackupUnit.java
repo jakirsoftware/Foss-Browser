@@ -124,16 +124,16 @@ public class BackupUnit {
             //Background work here
             switch (i) {
                 case 1:
-                    exportWhitelist(context, 1);
+                    exportList(context, 1);
                     break;
                 case 3:
-                    exportWhitelist(context, 3);
+                    exportList(context, 3);
                     break;
                 case 4:
                     exportBookmarks(context);
                     break;
                 default:
-                    exportWhitelist(context, 2);
+                    exportList(context, 2);
                     break;
             }
             handler.post(() -> {
@@ -150,16 +150,16 @@ public class BackupUnit {
             //Background work here
             switch (i) {
                 case 1:
-                    importWhitelist(context, 1);
+                    importList(context, 1);
                     break;
                 case 3:
-                    importWhitelist(context, 3);
+                    importList(context, 3);
                     break;
                 case 4:
                     importBookmarks(context);
                     break;
                 default:
-                    importWhitelist(context, 2);
+                    importList(context, 2);
                     break;
             }
             handler.post(() -> {
@@ -169,7 +169,7 @@ public class BackupUnit {
         });
     }
 
-    public static void exportWhitelist(Context context, int i) {
+    public static void exportList (Context context, int i) {
         RecordAction action = new RecordAction(context);
         List<String> list;
         String filename;
@@ -205,7 +205,7 @@ public class BackupUnit {
         }
     }
 
-    public static void importWhitelist (Context context, int i) {
+    public static void importList (Context context, int i) {
         try {
             String filename;
             List_trusted js = null;

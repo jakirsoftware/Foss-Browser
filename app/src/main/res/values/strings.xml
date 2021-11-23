@@ -248,6 +248,7 @@
     <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <string name="menu_reload">Reload</string>
+    <string name="profile_overwritten">Overwritten by …</string>
 
     <!-- License changelog -->
 
