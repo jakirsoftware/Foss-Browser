@@ -1,3 +1,9 @@
+### v 8.5 (WIP)
+
+- new: translations
+- new: FOSS Browser in context menu of marked text
+- updated: translations
+
 ### v 8.4
 
 - new: camera use (thanks to @woheller69)

@@ -22,6 +22,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.PopupMenu;
@@ -545,12 +546,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         sp.edit().putBoolean("pdf_create", true).apply();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void dispatchIntent(Intent intent) {
         String action = intent.getAction();
         String url = intent.getStringExtra(Intent.EXTRA_TEXT);
 
         if ("".equals(action)) {
             Log.i(TAG, "resumed FOSS browser");
+        } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_PROCESS_TEXT)) {
+            CharSequence text = getIntent().getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
+            assert text != null;
+            addAlbum(null, text.toString(), true, false,"");
+            getIntent().setAction("");
+            hideOverview();
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
             addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true, false,"");
             getIntent().setAction("");
@@ -2095,6 +2103,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         builderFilter.setView(dialogViewFilter);
                         AlertDialog dialogFilter = builderFilter.create();
                         dialogFilter.show();
+                        TextView menuTitleFilter = dialogViewFilter.findViewById(R.id.menuTitle);
+                        menuTitleFilter.setText(R.string.menu_filter);
                         CardView cardView = dialogViewFilter.findViewById(R.id.cardView);
                         cardView.setVisibility(View.GONE);
                         Objects.requireNonNull(dialogFilter.getWindow()).setGravity(Gravity.BOTTOM);
@@ -2176,7 +2186,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         builder.setView(dialogView);
         AlertDialog dialog = builder.create();
         dialog.show();
-
+        
+        TextView menuTitleFilter = dialogView.findViewById(R.id.menuTitle);
+        menuTitleFilter.setText(R.string.menu_filter);
         CardView cardView = dialogView.findViewById(R.id.cardView);
         cardView.setVisibility(View.GONE);
 
