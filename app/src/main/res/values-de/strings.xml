@@ -204,5 +204,6 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="hint_DRM_Media">DRM-geschützte Medienwiedergabe erlauben?</string>
     <string name="menu_reload">Neu laden</string>
     <string name="profile_overwritten">Overwritten by …</string>
+    <string name="profile_warning">Overwritten by:</string>
     <!-- License changelog -->
 </resources>
