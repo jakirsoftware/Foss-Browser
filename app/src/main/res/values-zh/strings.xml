@@ -200,5 +200,6 @@
     <string name="setting_summary_tabsRestore">当 FOSS 浏览器被系统杀死时，还原标签页。</string>
     <string name="hint_DRM_Media">允许 DRM 保护的媒体播放？</string>
     <string name="menu_reload">重载</string>
+    <string name="profile_overwritten">覆盖实施者…</string>
     <!-- License changelog -->
 </resources>

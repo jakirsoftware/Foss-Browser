@@ -200,5 +200,6 @@
     <string name="setting_summary_tabsRestore">Przywracanie zakładek, gdy FOSS Browser zostanie zabity przez system.</string>
     <string name="hint_DRM_Media">Zezwolić na odtwarzanie mediów chronionych DRM?</string>
     <string name="menu_reload">Reload</string>
+    <string name="profile_overwritten">Overwritten by …</string>
     <!-- License changelog -->
 </resources>
