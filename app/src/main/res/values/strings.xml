@@ -249,6 +249,7 @@
     <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
     <string name="menu_reload">Reload</string>
     <string name="profile_overwritten">Overwritten by …</string>
+    <string name="profile_warning">Overwritten by:</string>
 
     <!-- License changelog -->
 

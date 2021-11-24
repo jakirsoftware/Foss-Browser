@@ -15,11 +15,12 @@
         android:orientation="vertical"
         tools:ignore="ContentDescription"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/dialog_titleProfile"
@@ -28,6 +29,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
                 android:layout_toStartOf="@+id/ib_settings"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
@@ -38,23 +40,39 @@
 
             <ImageButton
                 android:id="@+id/ib_settings"
-                android:layout_centerInParent="true"
-                android:layout_toStartOf="@+id/ib_reload"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/icon_settings"
-                android:background="?attr/actionBarItemBackground" />
+                android:layout_toStartOf="@+id/ib_reload"
+                android:background="?attr/actionBarItemBackground"
+                android:src="@drawable/icon_settings" />
 
             <ImageButton
                 android:id="@+id/ib_reload"
-                android:layout_centerInParent="true"
+                android:layout_alignParentTop="true"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="20dp"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/icon_refresh"
                 android:background="?attr/actionBarItemBackground" />
+
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dialog_warning"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_below="@+id/dialog_titleProfile"
+                android:layout_toStartOf="@+id/ib_settings"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:visibility="gone"/>
 
         </RelativeLayout>
 

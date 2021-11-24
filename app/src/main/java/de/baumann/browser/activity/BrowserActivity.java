@@ -1017,6 +1017,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         TextView dialog_title = dialogView.findViewById(R.id.dialog_title);
         dialog_title.setText(HelperUnit.domain(url));
+
+        TextView dialog_warning = dialogView.findViewById(R.id.dialog_warning);
+        String warning = getString(R.string.profile_warning) + " " + HelperUnit.domain(url);
+        dialog_warning.setText(warning);
+        if (listTrusted.isWhite(url) || listStandard.isWhite(url) || listProtected.isWhite(url)) {
+            dialog_warning.setVisibility(View.VISIBLE);
+        }
+
         TextView dialog_titleProfile = dialogView.findViewById(R.id.dialog_titleProfile);
         ninjaWebView.putProfileBoolean("",
                 dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);

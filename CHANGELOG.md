@@ -2,6 +2,7 @@
 
 - fix: camera issue #729
 - fix: profile icon in toolbar #728
+- fix: cookie settings when switching tab
 - new: FOSS Browser in context menu of marked text #723
 - updated: translations
 
