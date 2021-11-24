@@ -200,6 +200,6 @@
     <string name="setting_summary_tabsRestore">Επαναφορά καρτελών, όταν το FOSS Browser τερματιστεί από το σύστημα.</string>
     <string name="hint_DRM_Media">Να επιτρέπεται η προστατευμένη αναπαραγωγή πολυμέσων DRM;</string>
     <string name="menu_reload">Επαναφόρτωση</string>
-    <string name="profile_warning">Overwritten by:</string>
+    <string name="profile_warning">Αντικαταστάθηκε από:</string>
     <!-- License changelog -->
 </resources>
