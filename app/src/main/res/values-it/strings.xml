@@ -201,5 +201,6 @@
     <string name="hint_DRM_Media">Consentire la riproduzione di supporti protetti da DRM?</string>
     <string name="menu_reload">Ricarica</string>
     <string name="profile_overwritten">Overwritten by …</string>
+    <string name="profile_warning">Overwritten by:</string>
     <!-- License changelog -->
 </resources>
