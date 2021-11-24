@@ -200,6 +200,6 @@
     <string name="setting_summary_tabsRestore">Ripristinare le schede, quando FOSS Browser viene ucciso dal sistema.</string>
     <string name="hint_DRM_Media">Consentire la riproduzione di supporti protetti da DRM?</string>
     <string name="menu_reload">Ricarica</string>
-    <string name="profile_warning">Overwritten by:</string>
+    <string name="profile_warning">Sovrascritto da:</string>
     <!-- License changelog -->
 </resources>
