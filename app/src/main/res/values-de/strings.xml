@@ -203,7 +203,6 @@ Bitte lies auch den Hilfedialog in der Anwendung.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
     <string name="setting_summary_tabsRestore">Tabs wiederherstellen, wenn FOSS Browser vom System beendet wird.</string>
     <string name="hint_DRM_Media">DRM-geschützte Medienwiedergabe erlauben?</string>
     <string name="menu_reload">Neu laden</string>
-    <string name="profile_overwritten">Overwritten by …</string>
-    <string name="profile_warning">Overwritten by:</string>
+    <string name="profile_warning">Überschrieben von:</string>
     <!-- License changelog -->
 </resources>
