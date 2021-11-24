@@ -6,11 +6,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
 import android.os.Build;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.preference.PreferenceManager;
+import androidx.webkit.WebSettingsCompat;
+import androidx.webkit.WebViewFeature;
 
 import android.util.AttributeSet;
 import android.view.*;
@@ -30,7 +35,6 @@ import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
-import de.baumann.browser.unit.HelperUnit;
 
 import java.util.HashMap;
 import java.util.List;
@@ -71,6 +75,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     private Context context;
     private boolean desktopMode;
+    private boolean nightMode;
     public boolean fingerPrintProtection;
     public boolean history;
     public boolean adBlock;
@@ -117,6 +122,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.context = context;
         this.foreground = false;
         this.desktopMode=false;
+        this.nightMode=false;
         this.isBackPressed = false;
         this.fingerPrintProtection=sp.getBoolean(profile + "_fingerPrintProtection",true);
         this.history=sp.getBoolean(profile + "_history",true);
@@ -146,7 +152,6 @@ public class NinjaWebView extends WebView implements AlbumController {
     @TargetApi(Build.VERSION_CODES.O)
     public synchronized void initPreferences(String url) {
 
-        HelperUnit.initRendering(this, this.context);
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         profile = sp.getString("profile", "profileStandard");
         String profileOriginal = profile;
@@ -157,7 +162,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         if (android.os.Build.VERSION.SDK_INT >= 26) {
             webSettings.setSafeBrowsingEnabled(true);
         }
-
         webSettings.setSupportZoom(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
@@ -544,6 +548,9 @@ public class NinjaWebView extends WebView implements AlbumController {
     public boolean isDesktopMode() {
         return desktopMode;
     }
+    public boolean isNightMode() {
+        return nightMode;
+    }
 
     public boolean isFingerPrintProtection() {
         return fingerPrintProtection;
@@ -598,18 +605,48 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public void toggleDesktopMode(boolean reload) {
-
         desktopMode=!desktopMode;
         String newUserAgent=getUserAgent(desktopMode);
         getSettings().setUserAgentString(newUserAgent);
         getSettings().setUseWideViewPort(desktopMode);
         getSettings().setSupportZoom(desktopMode);
         getSettings().setLoadWithOverviewMode(desktopMode);
+        if (reload) reload();
+    }
 
-        if (reload) {
-            reload();
+    public void toggleNightMode() {
+        nightMode=!nightMode;
+        if (nightMode) {
+            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+                WebSettingsCompat.setForceDark(this.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
+            } else {
+                Paint paint = new Paint();
+                ColorMatrix matrix = new ColorMatrix();
+                matrix.set(NEGATIVE_COLOR);
+                ColorMatrix gcm = new ColorMatrix();
+                gcm.setSaturation(0);
+                ColorMatrix concat = new ColorMatrix();
+                concat.setConcat(matrix, gcm);
+                ColorMatrixColorFilter filter = new ColorMatrixColorFilter(concat);
+                paint.setColorFilter(filter);
+                // maybe sometime LAYER_TYPE_NONE would better?
+                this.setLayerType(View.LAYER_TYPE_HARDWARE, paint);
+            }
+        } else {
+            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+                WebSettingsCompat.setForceDark(this.getSettings(), WebSettingsCompat.FORCE_DARK_OFF);
+            } else {
+                this.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+            }
         }
     }
+
+    private static final float[] NEGATIVE_COLOR = {
+            -1.0f, 0, 0, 0, 255, // Red
+            0, -1.0f, 0, 0, 255, // Green
+            0, 0, -1.0f, 0, 255, // Blue
+            0, 0, 0, 1.0f, 0     // Alpha
+    };
     
     public void resetFavicon(){this.favicon=null;}
 

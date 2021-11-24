@@ -28,17 +28,12 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Paint;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
-import androidx.webkit.WebSettingsCompat;
-import androidx.webkit.WebViewFeature;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -49,7 +44,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
-import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -230,13 +224,6 @@ public class HelperUnit {
         }
     }
 
-    private static final float[] NEGATIVE_COLOR = {
-            -1.0f, 0, 0, 0, 255, // Red
-            0, -1.0f, 0, 0, 255, // Green
-            0, 0, -1.0f, 0, 255, // Blue
-            0, 0, 0, 1.0f, 0     // Alpha
-    };
-
     public static void initTheme(Context context) {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         switch (Objects.requireNonNull(sp.getString("sp_theme", "1"))) {
@@ -249,33 +236,6 @@ public class HelperUnit {
             default:
                 context.setTheme(R.style.AppTheme);
                 break;
-        }
-    }
-
-    public static void initRendering(WebView webView, Context context) {
-        sp = PreferenceManager.getDefaultSharedPreferences(context);
-        if (sp.getBoolean("sp_invert", false)) {
-            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
-                WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
-            } else {
-                Paint paint = new Paint();
-                ColorMatrix matrix = new ColorMatrix();
-                matrix.set(NEGATIVE_COLOR);
-                ColorMatrix gcm = new ColorMatrix();
-                gcm.setSaturation(0);
-                ColorMatrix concat = new ColorMatrix();
-                concat.setConcat(matrix, gcm);
-                ColorMatrixColorFilter filter = new ColorMatrixColorFilter(concat);
-                paint.setColorFilter(filter);
-                // maybe sometime LAYER_TYPE_NONE would better?
-                webView.setLayerType(View.LAYER_TYPE_HARDWARE, paint);
-            }
-        } else {
-            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
-                WebSettingsCompat.setForceDark(webView.getSettings(), WebSettingsCompat.FORCE_DARK_OFF);
-            } else {
-                webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-            }
         }
     }
 

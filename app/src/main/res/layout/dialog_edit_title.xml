@@ -94,6 +94,16 @@
             android:background="?attr/actionBarItemBackground" />
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/edit_bookmark_nightMode"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="end"
+            android:text="@string/menu_nightView" />
+
+        <com.google.android.material.chip.Chip
             android:id="@+id/edit_bookmark_desktopMode"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_height="wrap_content"

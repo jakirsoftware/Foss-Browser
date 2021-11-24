@@ -484,7 +484,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         contentFrame.removeAllViews();
         contentFrame.addView(av);
         updateOmniBox();
-        HelperUnit.initRendering(ninjaWebView, context);
         if (searchPanel.getVisibility() == View.VISIBLE) {
             searchOnSite = false;
             searchBox.setText("");
@@ -508,6 +507,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (record.getURL().equals(url)){
                     if ((record.getType()==BOOKMARK_ITEM)||(record.getType()==STARTSITE_ITEM)||(record.getType()== HISTORY_ITEM) ) {
                         if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                        if (record.getNightMode() == ninjaWebView.isNightMode()) ninjaWebView.toggleNightMode();
                         break;
                     }
                 }
@@ -796,7 +796,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
 
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-                    if ((list.get(position).getDesktopMode()) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode()) ninjaWebView.toggleNightMode();
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
@@ -830,7 +831,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-                    if ((list.get(position).getDesktopMode()) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode()) ninjaWebView.toggleNightMode();
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
@@ -862,7 +864,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-                    if ((list.get(position).getDesktopMode()) != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode()) ninjaWebView.toggleNightMode();
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
                 });
@@ -1204,7 +1207,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         String text;
-        if (sp.getBoolean("sp_invert", false)){
+        if (ninjaWebView.isNightMode()){
             text = getString(R.string.menu_dayView);
         } else {
             text = getString(R.string.menu_nightView);
@@ -1212,13 +1215,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Chip chip_toggleNightView = dialogView.findViewById(R.id.chip_toggleNightView);
         chip_toggleNightView.setText(text);
         chip_toggleNightView.setOnClickListener(v -> {
-            if (sp.getBoolean("sp_invert", false)) {
-                sp.edit().putBoolean("sp_invert", false).apply();
-            } else {
-                sp.edit().putBoolean("sp_invert", true).apply();
-            }
+            ninjaWebView.toggleNightMode();
             dialog.cancel();
-            HelperUnit.initRendering(ninjaWebView, context);
         });
 
         String textDesktopMode;
@@ -1232,7 +1230,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_toggleDesktop.setOnClickListener(v -> {
             ninjaWebView.toggleDesktopMode(true);
             dialog.cancel();
-            HelperUnit.initRendering(ninjaWebView, context);
         });
 
         ImageButton ib_reload = dialogView.findViewById(R.id.ib_reload);
@@ -1693,7 +1690,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else {
 
             long value= 11;  //default red icon
-            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 0,  0,2,ninjaWebView.isDesktopMode(),value));
+            action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 0,  0,2,ninjaWebView.isDesktopMode(),ninjaWebView.isNightMode(),value));
 
             NinjaToast.show(this, R.string.app_done);
         }
@@ -1905,7 +1902,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         else item_34 = new GridItem(0,getString((R.string.menu_desktopView)),0);
 
         GridItem item_35;
-        if (sp.getBoolean("sp_invert", false)) item_35 = new GridItem(0,getString((R.string.menu_dayView)),0);
+        if (ninjaWebView.isNightMode()) item_35 = new GridItem(0,getString((R.string.menu_dayView)),0);
         else item_35 = new GridItem(0,getString((R.string.menu_nightView)),0);
 
         final List<GridItem> gridList_other = new LinkedList<>();
@@ -1926,12 +1923,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (position == 1) {
                 ninjaWebView.toggleDesktopMode(true);
             } else if (position == 2) {
-                if (sp.getBoolean("sp_invert", false)) {
-                    sp.edit().putBoolean("sp_invert", false).apply();
-                } else {
-                    sp.edit().putBoolean("sp_invert", true).apply();
-                }
-                HelperUnit.initRendering(ninjaWebView, context);
+                ninjaWebView.toggleNightMode();
             } else if (position == 3) {
                 startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
             } else if (position == 4) {
@@ -2079,13 +2071,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     TextInputLayout edit_title_layout = dialogViewSubMenu.findViewById(R.id.edit_title_layout);
                     TextInputLayout edit_userName_layout = dialogViewSubMenu.findViewById(R.id.edit_userName_layout);
                     TextInputLayout edit_PW_layout = dialogViewSubMenu.findViewById(R.id.edit_PW_layout);
-                    ImageView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
-                    if (!overViewTab.equals(getString(R.string.album_title_bookmarks))) {
-                        ib_icon.setVisibility(View.GONE);
-                    }
-                    Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
-                    chip_desktopMode.setVisibility(View.VISIBLE);
-
                     edit_title_layout.setVisibility(View.VISIBLE);
                     edit_userName_layout.setVisibility(View.GONE);
                     edit_PW_layout.setVisibility(View.GONE);
@@ -2099,6 +2084,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     edit_URL.setVisibility(View.VISIBLE);
                     edit_URL.setText(url);
 
+                    Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
+                    chip_desktopMode.setChecked(recordList.get(location).getDesktopMode());
+                    Chip chip_nightMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_nightMode);
+                    chip_nightMode.setChecked(!recordList.get(location).getNightMode());
+
+                    ImageView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
+                    if (!overViewTab.equals(getString(R.string.album_title_bookmarks))) {
+                        ib_icon.setVisibility(View.GONE);
+                    }
                     ib_icon.setOnClickListener(v -> {
                         MaterialAlertDialogBuilder builderFilter = new MaterialAlertDialogBuilder(context);
                         View dialogViewFilter = View.inflate(context, R.layout.dialog_menu, null);
@@ -2122,11 +2116,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             dialogFilter.cancel();
                         });
                     });
-
-                    chip_desktopMode.setChecked(recordList.get(location).getDesktopMode());
-
                     newIcon=recordList.get(location).getIconColor();
-
                     HelperUnit.setFilterIcons(ib_icon, newIcon);
 
                     builderSubMenu.setView(dialogViewSubMenu);
@@ -2136,7 +2126,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             RecordAction action = new RecordAction(context);
                             action.open(true);
                             action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
-                            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, 0, BOOKMARK_ITEM, chip_desktopMode.isChecked(),newIcon));
+                            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, 0, BOOKMARK_ITEM, chip_desktopMode.isChecked(),chip_nightMode.isChecked(),newIcon));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_2);
                         } else {
@@ -2146,7 +2136,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             int counter = sp.getInt("counter", 0);
                             counter = counter + 1;
                             sp.edit().putInt("counter", counter).apply();
-                            action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, counter, STARTSITE_ITEM,chip_desktopMode.isChecked(),0));
+                            action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, counter, STARTSITE_ITEM,chip_desktopMode.isChecked(),chip_nightMode.isChecked(),0));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_1);
                         }
@@ -2173,7 +2163,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             int counter = sp.getInt("counter", 0);
             counter = counter + 1;
             sp.edit().putInt("counter", counter).apply();
-            if (action.addStartSite(new Record(title, url, 0, counter,1,ninjaWebView.isDesktopMode(),0))) {
+            if (action.addStartSite(new Record(title, url, 0, counter,1,ninjaWebView.isDesktopMode(),ninjaWebView.isNightMode(),0))) {
                 NinjaToast.show(this, R.string.app_done);
             } else {
                 NinjaToast.show(this, R.string.app_error);

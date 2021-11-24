@@ -3,6 +3,7 @@ package de.baumann.browser.database;
 public class Record {
 
     private Boolean isDesktopMode;
+    private Boolean isNightMode;
     private long iconColor;
     private String title;
 
@@ -11,6 +12,8 @@ public class Record {
 
     public Boolean getDesktopMode() {return isDesktopMode; }
     public void setDesktopMode(Boolean desktopMode) {isDesktopMode = desktopMode; }
+    public Boolean getNightMode() {return isNightMode; }
+    public void setNightMode(Boolean desktopMode) {isNightMode = desktopMode; }
 
     public String getTitle() {
         return title;
@@ -56,13 +59,14 @@ public class Record {
         this.iconColor = 0L;
     }
 
-    public Record(String title, String url, long time, int ordinal, int type, Boolean DesktopMode, long iconColor) {
+    public Record(String title, String url, long time, int ordinal, int type, Boolean DesktopMode, Boolean NightMode, long iconColor) {
         this.title = title;
         this.url = url;
         this.time = time;
         this.ordinal = ordinal;
         this.type = type;
         this.isDesktopMode = DesktopMode;
+        this.isNightMode = NightMode;
         this.iconColor = iconColor;
     }
 }

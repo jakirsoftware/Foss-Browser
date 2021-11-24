@@ -58,14 +58,11 @@
                 android:src="@drawable/icon_refresh"
                 android:background="?attr/actionBarItemBackground" />
 
-
-
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/dialog_warning"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:layout_below="@+id/dialog_titleProfile"
                 android:layout_toStartOf="@+id/ib_settings"
                 android:ellipsize="end"
