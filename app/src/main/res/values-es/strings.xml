@@ -203,5 +203,6 @@ Traducción realizada con la versión gratuita del traductor www.DeepL.com/Trans
     <string name="hint_DRM_Media">¿Desea permitir reproducción multimedia protegida por DRM?</string>
     <string name="menu_reload">Recargar</string>
     <string name="profile_overwritten">Overwritten by …</string>
+    <string name="profile_warning">Overwritten by:</string>
     <!-- License changelog -->
 </resources>
