@@ -17,13 +17,11 @@ class RecordHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase database) {
         database.execSQL(RecordUnit.CREATE_HISTORY);
-        database.execSQL(RecordUnit.CREATE_WHITELIST);
         database.execSQL(RecordUnit.CREATE_TRUSTED);
         database.execSQL(RecordUnit.CREATE_PROTECTED);
         database.execSQL(RecordUnit.CREATE_START);
         database.execSQL(RecordUnit.CREATE_BOOKMARK);
         database.execSQL(RecordUnit.CREATE_STANDARD);
-        database.execSQL(RecordUnit.CREATE_TAB);
     }
 
     // UPGRADE ATTENTION!!!
@@ -35,7 +33,7 @@ class RecordHelper extends SQLiteOpenHelper {
             case 2:
                 database.execSQL(RecordUnit.CREATE_STANDARD);
             case 3:
-                database.execSQL(RecordUnit.CREATE_TAB);
+                // database.execSQL(RecordUnit.CREATE_TAB);
                 // we want all updates, so no break statement here...
         }
     }

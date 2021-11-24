@@ -2,6 +2,19 @@ package de.baumann.browser.unit;
 
 public class RecordUnit {
 
+    /*
+
+    Since FOSS Browser switched from whitelists to profiles to manage privacy settings,
+    there is a lot of legacy code concerning the database.
+
+    old whitelist -> new profile
+
+    "JAVASCRIPT" whitelist -> Trusted websites
+    "REMOTE" whitelist -> Standard websites
+    "TABLE_PROTECTED" whitelist -> Protected websites
+
+    */
+
     public static final String TABLE_START = "GRID";
     public static final String TABLE_BOOKMARK = "BOOKAMRK";
     public static final String TABLE_HISTORY = "HISTORY";
@@ -9,9 +22,6 @@ public class RecordUnit {
     public static final String TABLE_TRUSTED = "JAVASCRIPT";
     public static final String TABLE_PROTECTED = "COOKIE";
     public static final String TABLE_STANDARD = "REMOTE";
-
-    public static final String TABLE_WHITELIST = "WHITELIST";
-    public static final String TABLE_TAB = "TAB";
 
     public static final String COLUMN_TITLE = "TITLE";
     public static final String COLUMN_URL = "URL";
@@ -34,20 +44,6 @@ public class RecordUnit {
             + " " + COLUMN_TITLE + " text,"
             + " " + COLUMN_URL + " text,"
             + " " + COLUMN_TIME + " integer"
-            + ")";
-
-    public static final String CREATE_TAB = "CREATE TABLE "
-            + TABLE_TAB
-            + " ("
-            + " " + COLUMN_TITLE + " text,"
-            + " " + COLUMN_URL + " text,"
-            + " " + COLUMN_TIME + " integer"
-            + ")";
-
-    public static final String CREATE_WHITELIST = "CREATE TABLE "
-            + TABLE_WHITELIST
-            + " ("
-            + " " + COLUMN_DOMAIN + " text"
             + ")";
 
     public static final String CREATE_TRUSTED = "CREATE TABLE "
