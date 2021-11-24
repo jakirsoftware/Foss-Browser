@@ -1460,7 +1460,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             omniBox_tab.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             ninjaWebView.setProfileIcon(omniBox_tab);
-            //ninjaWebView.initPreferences(url);
+            ninjaWebView.initCookieManager(url);
 
             if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) {
                 omniBox_text.setText(url);

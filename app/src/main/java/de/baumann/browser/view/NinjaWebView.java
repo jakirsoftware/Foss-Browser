@@ -197,6 +197,21 @@ public class NinjaWebView extends WebView implements AlbumController {
         adBlock = sp.getBoolean(profile + "_adBlock", true);
         saveData = sp.getBoolean(profile + "_saveData", true);
         camera = sp.getBoolean(profile + "_camera", true);
+        initCookieManager(url);
+        profile = profileOriginal;
+    }
+
+    public synchronized void initCookieManager(String url) {
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
+        profile = sp.getString("profile", "profileStandard");
+        String profileOriginal = profile;
+        if (listTrusted.isWhite(url)) {
+            profile = "profileTrusted";
+        } else if (listStandard.isWhite(url)) {
+            profile = "profileStandard";
+        } else if (listProtected.isWhite(url)) {
+            profile = "profileProtected";
+        }
         CookieManager manager = CookieManager.getInstance();
         if (sp.getBoolean(profile + "_cookies", false)) {
             manager.setAcceptCookie(true);
