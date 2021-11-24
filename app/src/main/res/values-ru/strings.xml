@@ -202,7 +202,6 @@
     <string name="setting_summary_tabsRestore">Восстановление вкладок, когда FOSS Browser будет убит системой.</string>
     <string name="hint_DRM_Media">Разрешить воспроизведение медиафайлов, защищенных DRM?</string>
     <string name="menu_reload">Перезагрузка</string>
-    <string name="profile_overwritten">Overwritten by …</string>
     <string name="profile_warning">Overwritten by:</string>
     <!-- License changelog -->
 </resources>

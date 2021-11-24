@@ -202,7 +202,6 @@
     <string name="setting_summary_tabsRestore">Restaurer les onglets, quand le navigateur FOSS est tué par le système.</string>
     <string name="hint_DRM_Media">Autoriser la lecture des médias protégés par le DRM ?</string>
     <string name="menu_reload">Recharger</string>
-    <string name="profile_overwritten">Overwritten by …</string>
     <string name="profile_warning">Overwritten by:</string>
     <!-- License changelog -->
 </resources>
