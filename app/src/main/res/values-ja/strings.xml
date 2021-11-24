@@ -202,6 +202,6 @@
     <string name="setting_summary_tabsRestore">FOSS Browser のプロセスがシステムによって終了された時、タブを復元します。</string>
     <string name="hint_DRM_Media">DRM 保護のメディア再生を許可しますか?</string>
     <string name="menu_reload">再読込</string>
-    <string name="profile_warning">Overwritten by:</string>
+    <string name="profile_warning">上書き者：</string>
     <!-- License changelog -->
 </resources>
