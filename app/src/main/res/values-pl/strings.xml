@@ -201,5 +201,6 @@
     <string name="hint_DRM_Media">Zezwolić na odtwarzanie mediów chronionych DRM?</string>
     <string name="menu_reload">Reload</string>
     <string name="profile_overwritten">Overwritten by …</string>
+    <string name="profile_warning">Overwritten by:</string>
     <!-- License changelog -->
 </resources>

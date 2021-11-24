@@ -201,5 +201,6 @@
     <string name="hint_DRM_Media">允许 DRM 保护的媒体播放？</string>
     <string name="menu_reload">重载</string>
     <string name="profile_overwritten">覆盖实施者…</string>
+    <string name="profile_warning">Overwritten by:</string>
     <!-- License changelog -->
 </resources>
