@@ -4,6 +4,8 @@
 - fix: profile icon in toolbar #728
 - fix: cookie settings when switching tab
 - new: FOSS Browser in context menu of marked text #723
+- new: remember night mode per site #669
+- new: adding "copy link" button to download dialog #733
 - updated: translations
 
 ### v 8.4

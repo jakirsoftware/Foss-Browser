@@ -3,6 +3,7 @@ package de.baumann.browser.unit;
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ShortcutManager;
 import android.net.Uri;
@@ -28,6 +29,7 @@ import java.util.regex.Pattern;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
+import de.baumann.browser.view.NinjaToast;
 
 public class BrowserUnit {
 
@@ -180,6 +182,12 @@ public class BrowserUnit {
             Toast.makeText(context, context.getString(R.string.app_error)+e.toString().substring(e.toString().indexOf(":")),Toast.LENGTH_LONG).show();
             e.printStackTrace();
             }
+        });
+        builder.setNeutralButton(R.string.menu_shareClipboard, (dialog, whichButton) -> {
+            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, url);
+            context.startActivity(Intent.createChooser(sharingIntent, (context.getString(R.string.menu_share_link))));
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
