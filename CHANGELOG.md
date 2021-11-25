@@ -1,4 +1,4 @@
-### v 8.4.1
+### v 8.5 (WIP)
 
 - fix: camera issue #729
 - fix: profile icon in toolbar #728
