@@ -281,7 +281,7 @@ public class BackupUnit {
                 String type = BOOKMARK_TYPE;
                 type = type.replace(BOOKMARK_TITLE, record.getTitle());
                 type = type.replace(BOOKMARK_URL, record.getURL());
-                type = type.replace(BOOKMARK_TIME, String.valueOf(record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0)));
+                type = type.replace(BOOKMARK_TIME, String.valueOf(record.getIconColor() + (long) (record.getDesktopMode() ? 16 : 0) + (long) (record.getNightMode() ? 32 : 0)));
                 writer.write(type);
                 writer.newLine();
             }
@@ -320,6 +320,7 @@ public class BackupUnit {
                 record.setURL(url);
                 record.setIconColor(date&15);
                 record.setDesktopMode((date&16)==16);
+                record.setNightMode(!((date&32)==32));
 
                 if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
                     list.add(record);
