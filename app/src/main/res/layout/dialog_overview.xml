@@ -4,11 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/colorSurface">
 
     <ListView
         android:layout_above="@+id/bottom_navigation"
-        android:layout_marginTop="8dp"
+        android:paddingTop="8dp"
         android:id="@+id/list_overView"
         android:stackFromBottom="true"
         android:fastScrollEnabled="true"

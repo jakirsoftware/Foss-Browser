@@ -55,13 +55,13 @@ class AlbumItem {
     }
 
     public void activate() {
-        albumTitle.setTextColor(ContextCompat.getColor(context, R.color.primaryColor));
+        albumTitle.setTextColor(ContextCompat.getColor(context, R.color.md_theme_dark_secondary));
         albumClose.setImageResource(R.drawable.icon_close_enabled);
         albumView.setOnClickListener(v -> browserController.hideTabView());
     }
 
     void deactivate() {
-        albumTitle.setTextColor(ContextCompat.getColor(context, R.color.color_light));
+        albumTitle.setTextColor(ContextCompat.getColor(context, R.color.md_theme_light_surface));
         albumClose.setImageResource(R.drawable.icon_close_light);
         albumView.setOnClickListener(v -> browserController.showAlbum(albumController));
     }

@@ -10,6 +10,7 @@
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.21875" />
         <entry key="app/src/main/res/drawable/Icon_alert.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/bg_chip_state_list.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/circle_lime_big.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/circle_lime_big_2.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/circle_orange_big.xml" value="0.20307692307692307" />
@@ -21,6 +22,8 @@
         <entry key="app/src/main/res/drawable/icon_alert.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_camera.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_close.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_close_enabled.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_close_light.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/icon_cookie.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_datasave.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_delete.xml" value="0.20625" />
@@ -48,16 +51,21 @@
         <entry key="app/src/main/res/drawable/icon_profile_trusted_red.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_restore.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_savedata.xml" value="0.20625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1721014492753623" />
+        <entry key="app/src/main/res/drawable/zz.xml" value="0.20625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_settings_backup.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_settings_delete.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_settings_profile_list.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_settings_whitelist.xml" value="0.18840579710144928" />
-        <entry key="app/src/main/res/layout/dialog_edit_title.xml" value="0.14492753623188406" />
-        <entry key="app/src/main/res/layout/dialog_menu.xml" value="0.1721014492753623" />
-        <entry key="app/src/main/res/layout/dialog_tabs.xml" value="0.1721014492753623" />
-        <entry key="app/src/main/res/layout/dialog_toggle.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/item_icon_left.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/dialog_edit_extension.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_edit_title.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_menu_overflow.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_overview.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_tabs.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_toggle.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_icon_left.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_icon_right.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_bottom_overview.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/menu/poupup_menu.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/xml/preference_backup.xml" value="0.18840579710144928" />

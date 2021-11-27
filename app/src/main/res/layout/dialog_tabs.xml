@@ -1,45 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout android:layout_width="wrap_content"
+<ScrollView
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@color/primaryDarkColor"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="ContentDescription,Overdraw">
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:background="@color/md_theme_dark_background"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/dialog_title"
+    <LinearLayout
+        android:id="@+id/tab_container"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="8dp"
-        android:ellipsize="end"
-        android:includeFontPadding="false"
-        android:maxLines="1"
-        android:text="@string/album_title_tab"
-        android:gravity="center_vertical"
-        android:textAppearance="?attr/textAppearanceBody1"
-        android:textColor="@color/color_light"
-        android:textStyle="bold"/>
+        android:layout_height="wrap_content"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/color_hint" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp">
-
-        <LinearLayout
-            android:id="@+id/tab_container"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    </ScrollView>
-
-</LinearLayout>
+</ScrollView>

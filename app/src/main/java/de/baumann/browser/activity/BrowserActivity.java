@@ -76,6 +76,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
@@ -242,6 +243,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        Window window = this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(this.getResources().getColor(R.color.md_theme_dark_background));
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         context = BrowserActivity.this;
@@ -589,7 +596,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 dialog_tabPreview.hide());
     }
 
-    @SuppressLint({"ClickableViewAccessibility", "UnsafeExperimentalUsageError"})
+    @SuppressLint({"ClickableViewAccessibility", "UnsafeExperimentalUsageError", "UnsafeOptInUsageError"})
     private void initOmniBox() {
 
         omniBox = findViewById(R.id.omniBox);
@@ -609,7 +616,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         badgeDrawable = BadgeDrawable.create(context);
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
         badgeDrawable.setNumber(BrowserContainer.size());
-        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.primaryColor));
+        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.md_theme_dark_secondary));
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
 
         ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);
@@ -1212,7 +1219,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else {
             text = getString(R.string.menu_nightView);
         }
-        Chip chip_toggleNightView = dialogView.findViewById(R.id.chip_toggleNightView);
+        Button chip_toggleNightView = dialogView.findViewById(R.id.chip_toggleNightView);
         chip_toggleNightView.setText(text);
         chip_toggleNightView.setOnClickListener(v -> {
             ninjaWebView.toggleNightMode();
@@ -1225,7 +1232,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         } else {
             textDesktopMode = getString(R.string.menu_desktopView);
         }
-        Chip chip_toggleDesktop = dialogView.findViewById(R.id.chip_toggleDesktop);
+        Button chip_toggleDesktop = dialogView.findViewById(R.id.chip_toggleDesktop);
         chip_toggleDesktop.setText(textDesktopMode);
         chip_toggleDesktop.setOnClickListener(v -> {
             ninjaWebView.toggleDesktopMode(true);

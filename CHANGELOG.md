@@ -7,6 +7,7 @@
 - new: remember night mode per site #669
 - new: adding "copy link" button to download dialog #733
 - updated: translations
+- updated: build libraries
 
 ### v 8.4
 

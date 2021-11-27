@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:ignore="ContentDescription"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/colorSurface">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +26,7 @@
             android:maxLines="1"
             android:text="@string/app_name"
             android:gravity="center_vertical"
-            android:textAppearance="?attr/textAppearanceBody1"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
@@ -78,7 +79,7 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <View
         android:layout_width="match_parent"
