@@ -7,8 +7,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:ignore="ContentDescription"
-    android:background="?attr/colorSurface" >
+    tools:ignore="ContentDescription" >
 
     <LinearLayout
         android:layout_width="match_parent"

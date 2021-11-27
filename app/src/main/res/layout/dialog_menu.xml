@@ -7,8 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="locale"
     android:orientation="vertical"
-    tools:ignore="ContentDescription"
-    android:background="?attr/colorSurface">
+    tools:ignore="ContentDescription">
 
     <RelativeLayout
         android:layout_width="match_parent"
