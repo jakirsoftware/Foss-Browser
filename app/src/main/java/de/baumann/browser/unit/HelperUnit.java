@@ -59,7 +59,6 @@ import java.util.Objects;
 
 import de.baumann.browser.R;
 import de.baumann.browser.browser.DataURIParser;
-import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 

@@ -15,7 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -49,7 +49,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
                 }
             }
 
-            Collections.sort(workList, (first, second) -> Integer.compare(first.getIndex(), second.getIndex()));
+            workList.sort(Comparator.comparingInt(CompleteItem::getIndex));
 
             FilterResults results = new FilterResults();
             results.values = workList;

@@ -46,7 +46,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
@@ -331,7 +331,7 @@ public class BackupUnit {
                 }
             }
             reader.close();
-            Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
+            list.sort(Comparator.comparing(Record::getTitle));
             for (Record record : list) {
                 action.addBookmark(record);
             }

@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "de.baumann.browser"
-        minSdkVersion 23
+        minSdkVersion 24
         targetSdkVersion 31
         versionCode 120
         versionName "8.4.1"

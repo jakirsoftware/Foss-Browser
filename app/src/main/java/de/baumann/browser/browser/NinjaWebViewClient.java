@@ -1,7 +1,6 @@
 package de.baumann.browser.browser;
 
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,7 +8,6 @@ import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.net.http.SslError;
-import android.os.Build;
 import android.os.Message;
 
 import androidx.appcompat.app.AlertDialog;
@@ -446,15 +444,8 @@ public class NinjaWebViewClient extends WebViewClient {
         view.evaluateJavascript("if (navigator.doNotTrack === null) { Object.defineProperty(navigator, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
         view.evaluateJavascript("if (window.doNotTrack === undefined) { Object.defineProperty(window, 'doNotTrack', { value: 1, writable: false,configurable: false});} else {try { window.doNotTrack = 1;} catch (e) { console.error('doNotTrack is not writable: ', e); }};",null);
         view.evaluateJavascript("if (navigator.msDoNotTrack === undefined) { Object.defineProperty(navigator, 'msDoNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.msDoNotTrack = 1;} catch (e) { console.error('msDoNotTrack is not writable: ', e); }};",null);
-}
-
-    @Override
-    public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        final Uri uri = Uri.parse(url);
-        return handleUri(uri);
     }
 
-    @TargetApi(Build.VERSION_CODES.N)
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
@@ -558,9 +549,6 @@ public class NinjaWebViewClient extends WebViewClient {
                 break;
             case SslError.SSL_DATE_INVALID:
                 message = "\"Certificate date is invalid.\"";
-                break;
-            case SslError.SSL_INVALID:
-                message = "\"Certificate is invalid.\"";
                 break;
             default:
                 message = "\"Certificate is invalid.\"";

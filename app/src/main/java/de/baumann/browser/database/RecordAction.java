@@ -11,6 +11,7 @@ import androidx.preference.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -163,8 +164,8 @@ public class RecordAction {
         cursor.close();
 
         if (sortBy.equals("time")){  //ignore desktop mode, JavaScript, and remote content when sorting colors
-            Collections.sort(list, (first, second) -> first.getTitle().compareTo(second.getTitle()));
-            Collections.sort(list,(first, second) -> Long.compare(first.getIconColor(), second.getIconColor()));
+            list.sort(Comparator.comparing(Record::getTitle));
+            list.sort(Comparator.comparingLong(Record::getIconColor));
         }
         Collections.reverse(list);
         return list;

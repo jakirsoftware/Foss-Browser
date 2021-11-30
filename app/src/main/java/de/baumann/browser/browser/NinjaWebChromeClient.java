@@ -1,8 +1,6 @@
 package de.baumann.browser.browser;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
@@ -44,27 +42,6 @@ public class NinjaWebChromeClient extends WebChromeClient {
         ninjaWebView.updateFavicon(view.getUrl());
     }
 
-    @Override
-    public boolean onCreateWindow(WebView view, boolean dialog, boolean userGesture, android.os.Message resultMsg) {
-
-        Context context = view.getContext();
-        WebView newWebView = new WebView(context);
-        view.addView(newWebView);
-        WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
-        transport.setWebView(newWebView);
-        resultMsg.sendToTarget();
-
-        newWebView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-                browserIntent.setData(Uri.parse(url));
-                context.startActivity(browserIntent);
-                return true;
-            }
-        });
-        return true;
-    }
 
     @Override
     public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {

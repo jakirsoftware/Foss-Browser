@@ -48,6 +48,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputLayout;
@@ -249,11 +250,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.setStatusBarColor(this.getResources().getColor(R.color.md_theme_light_onBackground));
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         context = BrowserActivity.this;
         activity = BrowserActivity.this;
+        int color = ContextCompat.getColor(context, R.color.md_theme_light_onBackground);
+        window.setStatusBarColor(color);
         HelperUnit.initTheme(context);
 
         sp = PreferenceManager.getDefaultSharedPreferences(context);
@@ -625,7 +627,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         badgeDrawable = BadgeDrawable.create(context);
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
         badgeDrawable.setNumber(BrowserContainer.size());
-        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.md_theme_light_secondaryContainer));
+        int color = ContextCompat.getColor(context, R.color.md_theme_light_secondaryContainer);
+        badgeDrawable.setBackgroundColor(color);
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
 
         ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);
@@ -797,7 +800,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         bottomSheetDialog_OverView.setContentView(dialogView);
 
-        BottomNavigationView.OnNavigationItemSelectedListener navListener = menuItem -> {
+        NavigationBarView.OnItemSelectedListener navListener = menuItem -> {
             if (menuItem.getItemId() == R.id.page_1) {
                 omniBox_overview.setImageResource(R.drawable.icon_web_light);
                 overViewTab = getString(R.string.album_title_home);
@@ -957,7 +960,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         };
 
         bottom_navigation = dialogView.findViewById(R.id.bottom_navigation);
-        bottom_navigation.setOnNavigationItemSelectedListener(navListener);
+        bottom_navigation.setOnItemSelectedListener(navListener);
         bottom_navigation.findViewById(R.id.page_2).setOnLongClickListener(v -> {
             show_dialogFilter();
             return true;
