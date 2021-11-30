@@ -98,8 +98,7 @@
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="10dp"
             android:ellipsize="end"
             android:text="@string/menu_nightView" />
 
@@ -108,8 +107,7 @@
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginStart="10dp"
             android:ellipsize="end"
             android:text="@string/menu_desktopView" />
 

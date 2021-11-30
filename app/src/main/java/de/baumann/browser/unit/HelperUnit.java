@@ -28,6 +28,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
@@ -58,6 +59,7 @@ import java.util.Objects;
 
 import de.baumann.browser.R;
 import de.baumann.browser.browser.DataURIParser;
+import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 
@@ -81,6 +83,8 @@ public class HelperUnit {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
+            ImageView imageView = dialog.findViewById(android.R.id.icon);
+            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -96,6 +100,8 @@ public class HelperUnit {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
+            ImageView imageView = dialog.findViewById(android.R.id.icon);
+            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -111,6 +117,8 @@ public class HelperUnit {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
+            ImageView imageView = dialog.findViewById(android.R.id.icon);
+            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -134,6 +142,8 @@ public class HelperUnit {
 
             builder.setView(dialogView);
             builder.setTitle(R.string.menu_save_as);
+            builder.setMessage(url);
+            builder.setIcon(R.drawable.icon_info);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
                 String title = editTitle.getText().toString().trim();
@@ -313,6 +323,8 @@ public class HelperUnit {
 
         builder.setView(dialogView);
         builder.setTitle(R.string.menu_save_as);
+        builder.setMessage(dataUriParser.toString());
+        builder.setIcon(R.drawable.icon_info);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
             String title = editTitle.getText().toString().trim();

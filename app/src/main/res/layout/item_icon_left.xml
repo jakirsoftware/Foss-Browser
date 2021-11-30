@@ -32,26 +32,27 @@
         android:maxLines="1"
         android:ellipsize="end"/>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.Material3.CardView.Outlined"
+        android:backgroundTint="@color/md_theme_light_inverseOnSurface"
         android:id="@+id/cardView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_gravity="center"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="@android:color/transparent"
+        android:layout_marginEnd="15dp"
         app:cardCornerRadius="2dp"
-        app:cardElevation="0dp"
         android:visibility="gone">
 
         <ImageView
+            android:padding="2dp"
             android:id="@+id/record_item_favicon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_centerInParent="true"
             android:contentDescription="@null"
             android:scaleType="fitCenter" />
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/record_item_title"

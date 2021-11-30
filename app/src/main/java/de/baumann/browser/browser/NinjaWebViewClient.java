@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
@@ -526,18 +527,22 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public void onFormResubmission(WebView view, @NonNull final Message doNotResend, final Message resend) {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        builder.setTitle(R.string.app_warning);
+        builder.setIcon(R.drawable.icon_alert);
         builder.setMessage(R.string.dialog_content_resubmission);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> resend.sendToTarget());
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
         dialog.show();
         dialog.setOnCancelListener(dialog1 -> doNotResend.sendToTarget());
+        ImageView imageView = dialog.findViewById(android.R.id.icon);
+        if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
     @Override
     public void onReceivedSslError(WebView view, final SslErrorHandler handler, SslError error) {
-        String message = "\"SSL Certificate error.\"";
+        String message;
         switch (error.getPrimaryError()) {
             case SslError.SSL_UNTRUSTED:
                 message = "\"Certificate authority is not trusted.\"";
@@ -557,6 +562,9 @@ public class NinjaWebViewClient extends WebViewClient {
             case SslError.SSL_INVALID:
                 message = "\"Certificate is invalid.\"";
                 break;
+            default:
+                message = "\"Certificate is invalid.\"";
+                break;
         }
         String text = message + " - " + context.getString(R.string.dialog_content_ssl_error);
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
@@ -568,6 +576,8 @@ public class NinjaWebViewClient extends WebViewClient {
         AlertDialog dialog = builder.create();
         dialog.show();
         dialog.setOnCancelListener(dialog1 -> handler.cancel());
+        ImageView imageView = dialog.findViewById(android.R.id.icon);
+        if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
@@ -590,6 +600,7 @@ public class NinjaWebViewClient extends WebViewClient {
 
         builder.setView(dialogView);
         builder.setTitle("HttpAuthRequest");
+        builder.setIcon(R.drawable.icon_alert);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             String user = pass_userNameET.getText().toString().trim();
             String pass = pass_userPWET.getText().toString().trim();
@@ -601,6 +612,8 @@ public class NinjaWebViewClient extends WebViewClient {
         AlertDialog dialog = builder.create();
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        ImageView imageView = dialog.findViewById(android.R.id.icon);
+        if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
         dialog.setOnCancelListener(dialog1 -> {
             handler.cancel();
             dialog1.cancel();

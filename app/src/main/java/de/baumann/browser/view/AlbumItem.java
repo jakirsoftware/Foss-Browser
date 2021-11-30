@@ -55,7 +55,7 @@ class AlbumItem {
     }
 
     public void activate() {
-        albumTitle.setTextColor(ContextCompat.getColor(context, R.color.md_theme_dark_secondary));
+        albumTitle.setTextColor(ContextCompat.getColor(context, R.color.md_theme_light_secondaryContainer));
         albumClose.setImageResource(R.drawable.icon_close_enabled);
         albumView.setOnClickListener(v -> browserController.hideTabView());
     }

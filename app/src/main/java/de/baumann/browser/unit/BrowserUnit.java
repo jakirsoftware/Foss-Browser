@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ShortcutManager;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -16,6 +17,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -29,7 +31,6 @@ import java.util.regex.Pattern;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
-import de.baumann.browser.view.NinjaToast;
 
 public class BrowserUnit {
 
@@ -148,7 +149,9 @@ public class BrowserUnit {
 
         String text = context.getString(R.string.dialog_title_download) + " - " + URLUtil.guessFileName(url, contentDisposition, mimeType);
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        builder.setTitle(R.string.app_warning);
         builder.setMessage(text);
+        builder.setIcon(R.drawable.icon_alert);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             try {
                 Activity activity = (Activity) context;
@@ -183,7 +186,7 @@ public class BrowserUnit {
             e.printStackTrace();
             }
         });
-        builder.setNeutralButton(R.string.menu_shareClipboard, (dialog, whichButton) -> {
+        builder.setNeutralButton(R.string.menu_share_link, (dialog, whichButton) -> {
             Intent sharingIntent = new Intent(Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
             sharingIntent.putExtra(Intent.EXTRA_TEXT, url);
@@ -192,6 +195,8 @@ public class BrowserUnit {
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
         dialog.show();
+        ImageView imageView = dialog.findViewById(android.R.id.icon);
+        if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 

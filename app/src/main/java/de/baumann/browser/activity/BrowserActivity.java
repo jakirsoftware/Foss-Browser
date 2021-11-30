@@ -17,6 +17,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -248,7 +249,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.setStatusBarColor(this.getResources().getColor(R.color.md_theme_dark_background));
+        window.setStatusBarColor(this.getResources().getColor(R.color.md_theme_light_onBackground));
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         context = BrowserActivity.this;
@@ -308,6 +309,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             @Override
             public void onReceive(Context context, Intent intent) {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+                builder.setTitle(R.string.menu_download);
+                builder.setIcon(R.drawable.icon_info);
                 builder.setMessage(R.string.toast_downloadComplete);
                 builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS)));
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
@@ -395,16 +398,22 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (sp.getInt("restart_changed", 1) == 1) {
             sp.edit().putInt("restart_changed", 0).apply();
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            builder.setTitle(R.string.app_warning);
+            builder.setIcon(R.drawable.icon_alert);
             builder.setMessage(R.string.toast_restart);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> finish());
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
+            ImageView imageView = dialog.findViewById(android.R.id.icon);
+            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
         if (sp.getBoolean("pdf_create", false)) {
             sp.edit().putBoolean("pdf_create", false).apply();
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            builder.setTitle(R.string.menu_download);
+            builder.setIcon(R.drawable.icon_info);
             builder.setMessage(R.string.toast_downloadComplete);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS)));
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
@@ -616,7 +625,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         badgeDrawable = BadgeDrawable.create(context);
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
         badgeDrawable.setNumber(BrowserContainer.size());
-        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.md_theme_dark_secondary));
+        badgeDrawable.setBackgroundColor(getResources().getColor(R.color.md_theme_light_secondaryContainer));
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
 
         ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);
@@ -911,6 +920,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
                         AlertDialog dialog = builder.create();
                         dialog.show();
+                        ImageView imageView = dialog.findViewById(android.R.id.icon);
+                        if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
                         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                     } else if (item.getItemId() == R.id.menu_sortName) {
                         if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
@@ -1239,7 +1250,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog.cancel();
         });
 
-        ImageButton ib_reload = dialogView.findViewById(R.id.ib_reload);
+        Button ib_reload = dialogView.findViewById(R.id.ib_reload);
         ib_reload.setOnClickListener(view -> {
             if (ninjaWebView != null) {
                 dialog.cancel();
@@ -1247,7 +1258,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
 
-        ImageButton ib_settings = dialogView.findViewById(R.id.ib_settings);
+        Button ib_settings = dialogView.findViewById(R.id.ib_settings);
         ib_settings.setOnClickListener(view -> {
             if (ninjaWebView != null) {
                 dialog.cancel();
@@ -1265,13 +1276,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (sp.getBoolean("first_start_84", true)) {
             sp.edit().putBoolean("first_start_84", false).apply();
 
-            MaterialAlertDialogBuilder builderR = new MaterialAlertDialogBuilder(context);
-            builderR.setTitle(R.string.app_update);
-            builderR.setIcon(R.drawable.icon_alert);
-            builderR.setMessage(R.string.app_update_84);
-            builderR.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> dialog.cancel());
-            AlertDialog dialog = builderR.create();
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            builder.setTitle(R.string.app_update);
+            builder.setIcon(R.drawable.icon_alert);
+            builder.setMessage(R.string.app_update_84);
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
             dialog.show();
+            ImageView imageView = dialog.findViewById(android.R.id.icon);
+            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
             ninjaWebView.setProfileDefaultValues();
@@ -1418,11 +1431,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             okAction.run();
         } else {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            builder.setTitle(R.string.app_warning);
+            builder.setIcon(R.drawable.icon_alert);
             builder.setMessage(R.string.toast_quit_TAB);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> okAction.run());
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
+            ImageView imageView = dialog.findViewById(android.R.id.icon);
+            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -1457,7 +1474,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
     }
 
-    @SuppressLint("UnsafeExperimentalUsageError")
+    @SuppressLint({"UnsafeExperimentalUsageError", "UnsafeOptInUsageError"})
     private void updateOmniBox() {
 
         badgeDrawable.setNumber(BrowserContainer.size());
@@ -1496,6 +1513,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     });
                     AlertDialog dialog = builder.create();
                     dialog.show();
+                    ImageView imageView = dialog.findViewById(android.R.id.icon);
+                    if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
                     Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                 });
             }
@@ -1736,6 +1755,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             finish();
         } else {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            builder.setTitle(R.string.app_warning);
+            builder.setIcon(R.drawable.icon_alert);
             builder.setMessage(R.string.toast_quit);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 FaviconHelper db=new FaviconHelper(context);
@@ -1744,6 +1765,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
+            ImageView imageView = dialog.findViewById(android.R.id.icon);
+            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -1773,12 +1796,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             overflow_title.setText(title);
         }
 
-        ImageButton overflow_settings = dialogView.findViewById(R.id.overflow_settings);
+        Button overflow_settings = dialogView.findViewById(R.id.overflow_settings);
         overflow_settings.setOnClickListener(v -> {
             dialog_overflow.cancel();show_dialogFastToggle();
         });
 
-        ImageButton overflow_reload = dialogView.findViewById(R.id.overflow_reload);
+        Button overflow_reload = dialogView.findViewById(R.id.overflow_reload);
         overflow_reload.setOnClickListener(v -> {
             dialog_overflow.cancel();
             ninjaWebView.reload();
@@ -2069,6 +2092,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog2, whichButton) -> builderSubMenu.setCancelable(true));
                     dialogSubMenu = builderSubMenu.create();
                     dialogSubMenu.show();
+                    ImageView imageView = dialogSubMenu.findViewById(android.R.id.icon);
+                    if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
                     Objects.requireNonNull(dialogSubMenu.getWindow()).setGravity(Gravity.BOTTOM);
                     break;
                 case 5:

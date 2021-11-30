@@ -5,9 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
 import android.net.Uri;
+import android.view.Gravity;
 import android.view.View;
 import android.webkit.*;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
@@ -118,6 +121,9 @@ public class NinjaWebChromeClient extends WebChromeClient {
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> request.deny());
                 AlertDialog dialog = builder.create();
                 dialog.show();
+                ImageView imageView = dialog.findViewById(android.R.id.icon);
+                if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
+                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             }
         }
     }

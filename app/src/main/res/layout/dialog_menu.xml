@@ -29,34 +29,32 @@
             android:textAppearance="?attr/textAppearanceTitleMedium"
             android:textStyle="bold" />
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            style="@style/Widget.Material3.CardView.Outlined"
+            android:backgroundTint="@color/md_theme_light_inverseOnSurface"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
-            android:layout_marginEnd="8dp"
-            android:backgroundTint="@android:color/transparent"
+            android:layout_marginEnd="15dp"
             app:cardCornerRadius="2dp"
             app:cardElevation="0dp">
 
             <ImageView
                 android:id="@+id/menu_icon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_centerInParent="true"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@null"
+                android:padding="2dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:scaleType="fitCenter" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </RelativeLayout>
 
-    <View
+    <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/color_hint" />
+        android:layout_height="wrap_content"/>
 
     <GridView
         android:id="@+id/menu_grid"

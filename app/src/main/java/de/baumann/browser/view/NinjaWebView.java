@@ -544,14 +544,12 @@ public class NinjaWebView extends WebView implements AlbumController {
     public boolean isLoadFinish() {
         return getProgress() >= BrowserUnit.PROGRESS_MAX;
     }
-
     public boolean isDesktopMode() {
         return desktopMode;
     }
     public boolean isNightMode() {
         return nightMode;
     }
-
     public boolean isFingerPrintProtection() {
         return fingerPrintProtection;
     }

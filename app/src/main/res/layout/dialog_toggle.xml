@@ -13,24 +13,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:ignore="ContentDescription"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="20dp">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/dialog_titleProfile"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="5dp"
-                android:layout_toStartOf="@+id/ib_settings"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
                 android:includeFontPadding="false"
@@ -38,33 +37,13 @@
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/ib_settings"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="16dp"
-                android:layout_toStartOf="@+id/ib_reload"
-                android:background="?attr/actionBarItemBackground"
-                android:src="@drawable/icon_settings" />
-
-            <ImageButton
-                android:id="@+id/ib_reload"
-                android:layout_alignParentTop="true"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="20dp"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/icon_refresh"
-                android:background="?attr/actionBarItemBackground" />
-
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/dialog_warning"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_below="@+id/dialog_titleProfile"
-                android:layout_toStartOf="@+id/ib_settings"
                 android:ellipsize="end"
                 android:gravity="center_vertical"
                 android:includeFontPadding="false"
@@ -75,11 +54,11 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_horizontal">
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_profile_changed"
@@ -87,13 +66,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:text=""
-                app:chipEndPadding="4dp"
                 app:chipIcon="@drawable/icon_profile_changed"
                 app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
+                app:textStartPadding="0dp"
+                android:elevation="0dp"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_profile_trusted"
@@ -101,13 +78,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/chip_profile_changed"
-                android:text=""
-                app:chipEndPadding="4dp"
                 app:chipIcon="@drawable/icon_profile_trusted"
                 app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
+                app:textStartPadding="0dp"
+                android:elevation="0dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_profile_standard"
@@ -115,28 +90,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/chip_profile_trusted"
-                android:text=""
-                app:chipEndPadding="4dp"
                 app:chipIcon="@drawable/icon_profile_standard"
                 app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
+                app:textStartPadding="0dp"
+                android:elevation="0dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_profile_protected"
                 style="@style/Widget.Material3.Chip.Suggestion.Elevated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
                 android:layout_toEndOf="@+id/chip_profile_standard"
-                android:text=""
-                app:chipEndPadding="4dp"
                 app:chipIcon="@drawable/icon_profile_protected"
                 app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
+                app:textStartPadding="0dp"
+                android:elevation="0dp" />
 
         </RelativeLayout>
 
@@ -313,7 +283,7 @@
             android:orientation="horizontal"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="15dp" >
+            android:layout_marginBottom="10dp" >
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_javaScript"
@@ -362,17 +332,12 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/color_hint" />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeightSmall"
             android:layout_marginStart="20dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp">
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -384,7 +349,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginEnd="15dp"
                     android:layout_toEndOf="@+id/cardView"
                     android:ellipsize="end"
                     android:gravity="center_vertical"
@@ -393,27 +358,25 @@
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/cardView"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    style="@style/Widget.Material3.CardView.Outlined"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="8dp"
-                    android:backgroundTint="@android:color/transparent"
-                    app:cardCornerRadius="2dp"
-                    app:cardElevation="0dp">
+                    android:layout_marginEnd="15dp"
+                    android:backgroundTint="@color/md_theme_light_inverseOnSurface"
+                    app:cardCornerRadius="2dp">
 
                     <ImageView
                         android:id="@+id/menu_icon"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:contentDescription="@null"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:padding="2dp"
                         android:scaleType="fitCenter" />
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
             </RelativeLayout>
 
@@ -423,13 +386,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_setProfileStandard"
-                android:text=""
-                app:chipEndPadding="4dp"
                 app:chipIcon="@drawable/icon_profile_trusted"
                 app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
+                app:textStartPadding="0dp"
+                android:elevation="0dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_setProfileStandard"
@@ -437,13 +398,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_setProfileProtected"
-                android:text=""
-                app:chipEndPadding="4dp"
                 app:chipIcon="@drawable/icon_profile_standard"
                 app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
+                app:textStartPadding="0dp"
+                android:elevation="0dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_setProfileProtected"
@@ -451,29 +410,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="12dp"
-                android:text=""
-                app:chipEndPadding="4dp"
                 app:chipIcon="@drawable/icon_profile_protected"
                 app:chipIconEnabled="true"
-                app:chipStartPadding="4dp"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp" />
+                app:textStartPadding="0dp"
+                android:elevation="0dp" />
 
         </RelativeLayout>
 
-        <View
+        <com.google.android.material.divider.MaterialDivider
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/color_hint" />
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="?android:attr/listPreferredItemHeightSmall"
             android:orientation="horizontal"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="15dp" >
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp" >
 
             <Button
                 android:id="@+id/chip_toggleNightView"
@@ -482,8 +438,6 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_gravity="start"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="5dp"
                 android:ellipsize="end"
                 android:text="@string/menu_nightView"
                 android:maxLines="1" />
@@ -495,11 +449,23 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_gravity="start"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="0dp"
                 android:ellipsize="end"
                 android:text="@string/menu_desktopView"
                 android:maxLines="1" />
+
+            <Button
+                android:id="@+id/ib_settings"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/icon_settings"/>
+
+            <Button
+                android:id="@+id/ib_reload"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/icon_refresh" />
 
         </LinearLayout>
 
