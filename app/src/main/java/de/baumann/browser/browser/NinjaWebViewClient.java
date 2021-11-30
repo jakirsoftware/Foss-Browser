@@ -491,19 +491,6 @@ public class NinjaWebViewClient extends WebViewClient {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
-    public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
-        if (ninjaWebView.isAdBlock() && adBlock.isAd(url)) {
-            return new WebResourceResponse(
-                    BrowserUnit.MIME_TYPE_TEXT_PLAIN,
-                    BrowserUnit.URL_ENCODING,
-                    new ByteArrayInputStream("".getBytes())
-            );
-        }
-        return super.shouldInterceptRequest(view, url);
-    }
-
-    @Override
     public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
         if (ninjaWebView.isAdBlock() && adBlock.isAd(request.getUrl().toString())) {
             return new WebResourceResponse(
