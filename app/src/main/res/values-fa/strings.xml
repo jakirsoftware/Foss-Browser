@@ -130,6 +130,8 @@
     <string name="setting_title_fingerPrint">محافظت از اثر انگشت</string>
     <string name="setting_theme">زمینه</string>
     <string name="setting_theme_system">سیستم</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">پنهان سازی نوار ابزار</string>
     <string name="setting_title_behavior">رفتارها</string>

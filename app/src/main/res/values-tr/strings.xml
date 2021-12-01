@@ -129,6 +129,8 @@
     <string name="setting_title_fingerPrint">Parmak izi koruması</string>
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_system">Sistem</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_title_behavior">Davranış</string>

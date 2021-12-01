@@ -129,6 +129,8 @@
     <string name="setting_title_fingerPrint">Bảo vệ vân tay</string>
     <string name="setting_theme">Chủ đề</string>
     <string name="setting_theme_system">Hệ thống</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ẩn thanh công cụ</string>
     <string name="setting_title_behavior">Hành vi</string>
