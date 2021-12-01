@@ -7,7 +7,7 @@
     <string name="app_done">Fait</string>
     <string name="app_error">Erreur</string>
     <string name="app_warning">Attention</string>
-    <string name="app_permission">Pour utiliser cette fonctionnalité, vous devez accorder l\'autorisation. Après cela, redémarrez l\'application.</string>
+    <string name="app_permission">Pour utiliser cette fonctionnalité, vous devez accorder la permission. Après cela, redémarrez l\'application.</string>
     <string name="app_update">Notification de mise à jour</string>
     <string name="app_update_84">Avec cette mise à jour, le \"FOSS Browser\" introduit les profils de contrôle de la vie privée. Vous trouverez cela dans les paramètres. Afin de fonctionner correctement, toutes vos listes blanches seront supprimées.</string>
     <string name="list_empty">Liste vide</string>
@@ -20,7 +20,7 @@
     <string name="color_pink">Rose</string>
     <string name="color_purple">Violet</string>
     <string name="color_blue">Bleu</string>
-    <string name="color_teal">Bleu-vert foncé</string>
+    <string name="color_teal">Bleu sarcelle</string>
     <string name="color_green">Vert</string>
     <string name="color_lime">Citron vert</string>
     <string name="color_yellow">Jaune</string>
@@ -145,7 +145,7 @@
     <string name="setting_gesture_right">Balayer à droite</string>
     <string name="setting_gesture_01">Rien</string>
     <string name="setting_gesture_02">Avancer dans l\'historique</string>
-    <string name="setting_gesture_03">Retour dans l\'historique</string>
+    <string name="setting_gesture_03">Reculer dans l\'historique</string>
     <string name="setting_gesture_04">Défilement vers le haut</string>
     <string name="setting_gesture_05">Défilement vers le bas</string>
     <string name="setting_gesture_06">Basculer vers l’onglet gauche</string>
@@ -166,7 +166,7 @@
     <string name="toast_domain_already_exists">Le domaine existe déjà</string>
     <string name="toast_input_empty">Vous n\'avez rien saisi</string>
     <string name="toast_invalid_domain">Domaine non valide</string>
-    <string name="toast_webview_forward">Impossible de charger le site</string>
+    <string name="toast_webview_forward">Impossible de charger le site suivant</string>
     <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>
     <string name="toast_quit">Voulez-vous quitter \"FOSS Browser\"?</string>
     <string name="toast_quit_TAB">Voulez-vous fermer l\'onglet?</string>
@@ -177,11 +177,11 @@
     <string name="whitelist_menu_clear">Effacer</string>
     <string name="whitelist_edit_hint">Domaine</string>
     <string name="whitelist_add">Ajouter</string>
-    <string name="changelog_dialog">        Votre langue n\'est pas encore supportée ? Vous voulez traduire FOSS Browser ? Ou apporter des améliorations aux traductions existantes ? N\'hésitez pas à nous rejoindre sur Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="changelog_dialog">        Votre langue n\'est pas encore prise en charge ? Vous voulez traduire FOSS Browser, ou apporter des améliorations aux traductions existantes ? N\'hésitez pas à nous rejoindre sur Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Vous trouverez toutes les informations importantes à propos de \"FOSS Browser\" sur les sites suivants. Merci de lire également la page d\'aide de l\'application.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Site du projet:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
         \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
         \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
         \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
@@ -198,7 +198,7 @@
     <string name="setting_title_tabsReload">Recharger les onglets</string>
     <string name="setting_title_tabsRestore">Restaurer les onglets</string>
     <string name="setting_title_userInterface">Interface utilisateur</string>
-    <string name="setting_summary_tabsReload">Recharger les derniers onglets ouverts, lors du démarrage de FOSS Browser.</string>
+    <string name="setting_summary_tabsReload">Recharger les derniers onglets ouverts lors du démarrage de FOSS Browser.</string>
     <string name="setting_summary_tabsRestore">Restaurer les onglets quand FOSS Browser est tué par le système.</string>
     <string name="hint_DRM_Media">Autoriser la lecture des médias protégés par le DRM ?</string>
     <string name="menu_reload">Recharger</string>
