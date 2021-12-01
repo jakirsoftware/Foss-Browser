@@ -129,6 +129,8 @@
     <string name="setting_title_fingerPrint">Protection contre l\'empreinte digitale</string>
     <string name="setting_theme">Thème</string>
     <string name="setting_theme_system">Système</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Cacher la barre d\'outils</string>
     <string name="setting_title_behavior">Comportement</string>
