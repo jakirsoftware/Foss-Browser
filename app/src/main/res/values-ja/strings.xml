@@ -129,6 +129,8 @@
     <string name="setting_title_fingerPrint">指紋の保護</string>
     <string name="setting_theme">テーマ</string>
     <string name="setting_theme_system">システム</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">ツールバーを隠す</string>
     <string name="setting_title_behavior">動作</string>
