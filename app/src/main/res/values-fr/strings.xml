@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">Navigateur FOSS</string>
+    <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
     <string name="app_cancel">Annuler</string>
     <string name="app_done">Fait</string>
     <string name="app_error">Erreur</string>
     <string name="app_warning">Attention</string>
-    <string name="app_permission">Pour utiliser cette fonctionnalité, vous devez accorder l\'autorisation. Après cela, redémarrez l\'application.</string>
+    <string name="app_permission">Pour utiliser cette fonctionnalité, vous devez accorder la permission. Après cela, redémarrez l\'application.</string>
     <string name="app_update">Notification de mise à jour</string>
-    <string name="app_update_84">Avec cette mise à jour \"Le navigateur FOSS\" introduit des profils de contrôle de la vie privée. Veuillez vérifier cela dans les paramètres. Pour fonctionner correctement, tous vos blanchiseurs sont supprimés.</string>
+    <string name="app_update_84">Avec cette mise à jour, le \"FOSS Browser\" introduit les profils de contrôle de la vie privée. Vous trouverez cela dans les paramètres. Afin de fonctionner correctement, toutes vos listes blanches seront supprimées.</string>
     <string name="list_empty">Liste vide</string>
     <string name="album_title_bookmarks">Signets</string>
     <string name="album_title_history">Historique</string>
@@ -20,7 +20,7 @@
     <string name="color_pink">Rose</string>
     <string name="color_purple">Violet</string>
     <string name="color_blue">Bleu</string>
-    <string name="color_teal">Bleu-vert foncé</string>
+    <string name="color_teal">Bleu sarcelle</string>
     <string name="color_green">Vert</string>
     <string name="color_lime">Citron vert</string>
     <string name="color_yellow">Jaune</string>
@@ -31,20 +31,20 @@
     <string name="main_menu_new_tab">Nouvel onglet (arrière-plan)</string>
     <string name="main_menu_new_tabProfile">Nouvel onglet (avec profil …)</string>
     <string name="main_menu_new_tabOpen">Nouvel onglet (premier plan)</string>
-    <string name="main_omnibox_input_hint">Rechercher ou taper une URL</string>
+    <string name="main_omnibox_input_hint">Rechercher ou saisir une URL</string>
     <string name="menu_open_with">Ouvrir le lien avec …</string>
     <string name="menu_quit">Quitter</string>
     <string name="menu_openFav">Ouvrir l\'Accueil</string>
     <string name="menu_delete">Effacer</string>
-    <string name="menu_edit">Editer</string>
+    <string name="menu_edit">Éditer</string>
     <string name="menu_closeTab">Fermer l\'onglet</string>
     <string name="menu_download">Ouvrir les téléchargements</string>
-    <string name="menu_fav">Définir comme site de démarrage</string>
-    <string name="menu_sc">Raccourci sur l\'écran d\'accueil</string>
+    <string name="menu_fav">Marquer comme favori</string>
+    <string name="menu_sc">Créer un raccourci sur l\'écran d\'accueil</string>
     <string name="menu_sort">Trier par …</string>
     <string name="menu_filter">Filtrer par …</string>
     <string name="menu_share_link">Partager le lien</string>
-    <string name="menu_save_home">Enregistrer à l\'Accueil</string>
+    <string name="menu_save_home">Enregistrer sur l\'Accueil</string>
     <string name="menu_save_bookmark">Enregistrer comme signet</string>
     <string name="menu_save_as">Enregistrer sous …</string>
     <string name="menu_save_pdf">Enregistrer en PDF</string>
@@ -57,14 +57,14 @@
     <string name="dialog_extension_hint">Extension (par exemple: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Nom d\'utilisateur</string>
     <string name="dialog_sign_in_password">Mot de passe</string>
-    <string name="dialog_title_download">Télécharger le fichier</string>
-    <string name="dialog_content_resubmission">Remettre vos données à nouveau?</string>
-    <string name="dialog_content_ssl_error">Le certificat du site n\'est pas fiable. Continuez quand même?</string>
+    <string name="dialog_title_download">Télécharger le fichier?</string>
+    <string name="dialog_content_resubmission">Soumettre vos données à nouveau?</string>
+    <string name="dialog_content_ssl_error">Le certificat de ce site n\'est pas fiable. Continuez quand même?</string>
     <string name="dialog_sortName">Trier par nom</string>
     <string name="dialog_sortIcon">Trier par icône</string>
     <string name="dialog_sortDate">Trier par date</string>
     <!-- Settings -->
-    <string name="setting_label">Réglages</string>
+    <string name="setting_label">Paramètres</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Paramètres du navigateur</string>
     <string name="setting_title_search_engine">Moteur de recherche</string>
@@ -74,7 +74,7 @@
     <string name="setting_summary_search_engine_bing">Bing</string>
     <string name="setting_summary_search_engine_baidu">Baidu</string>
     <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
-    <string name="setting_summary_search_engine_searx">Chercher</string>
+    <string name="setting_summary_search_engine_searx">SearX</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
@@ -87,7 +87,7 @@
     <string name="setting_title_profiles_standardList">Sites Web standard</string>
     <string name="setting_title_profiles_protectedList">Sites Web protégés</string>
     <string name="setting_title_profiles_startApp">Profil au démarrage de l\'application</string>
-    <string name="setting_title_profiles_trusted">De confiance</string>
+    <string name="setting_title_profiles_trusted">Approuvé</string>
     <string name="setting_title_profiles_standard">Standard</string>
     <string name="setting_title_profiles_protected">Protégé</string>
     <string name="setting_title_profiles_changed">Personnalisé</string>
@@ -98,24 +98,24 @@
     <!-- browser start -->
     <string name="setting_title_images">Images</string>
     <string name="setting_title_cookie">Cookies</string>
-    <string name="setting_summary_cookie_delete">Si cette option est activée, tous les cookies seront supprimés. Aussi les cookies de sites de confiance.</string>
-    <string name="setting_title_javascript_popUp">Fenêtre contextuelle</string>
+    <string name="setting_summary_cookie_delete">Si cette option est activée, tous les cookies seront supprimés, y compris les cookies de sites de confiance.</string>
+    <string name="setting_title_javascript_popUp">Fenêtres contextuelles</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
-    <string name="setting_summary_adblock">Activez AdBlock pour bloquer les pubs ennuyeuses. Les sites se chargent plus rapidement quand activé.</string>
+    <string name="setting_summary_adblock">Activez AdBlock pour bloquer les publicités embêtantes. Les sites chargent aussi plus rapidement une fois activé.</string>
     <string name="setting_title_adblockHost">Contenu bloqué</string>
     <string name="setting_title_location">Localisation</string>
     <string name="setting_title_history">Historique</string>
     <string name="setting_title_autofill">Données de formulaire</string>
-    <string name="setting_summary_autofill">Activer l\'enregistrement des données du formulaire (Android Nougat et ci-dessous) ou le service de remplissage automatique (Android Oreo et au-delà).</string>
+    <string name="setting_summary_autofill">Activer l\'enregistrement des données du formulaire (Android Nougat et en-dessous) ou le service de remplissage automatique (Android Oreo et au-dessus).</string>
     <!-- browser clear -->
     <string name="data_summary">Tous les fichiers seront exportés vers le répertoire \"Documents/browser_backup/\" de votre carte SD.</string>
-    <string name="clear_title_quit">Effacer à la fermeture</string>
+    <string name="clear_title_quit">Effacer à la fermeture de l\'application</string>
     <string name="clear_title_cache">Vider le cache</string>
     <string name="clear_title_cookie">Effacer les cookies</string>
     <string name="clear_title_history">Effacer l’historique</string>
     <string name="localData">Effacer les données stockées sur l\'appareil</string>
-    <string name="clear_title_deleteDatabase">Supprimer base de données</string>
+    <string name="clear_title_deleteDatabase">Supprimer la base de données</string>
     <string name="clear_summary_deleteDatabase">Supprimer toute la base de données (Page d\'accueil, signets, historique et toutes les listes blanches).</string>
     <!-- App setting -->
     <string name="setting_title_app">Paramètres</string>
@@ -130,28 +130,28 @@
     <string name="setting_theme">Thème</string>
     <string name="setting_theme_system">Système</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Cacher barre d\'outils</string>
+    <string name="setting_title_hideToolbar">Cacher la barre d\'outils</string>
     <string name="setting_title_behavior">Comportement</string>
     <string name="setting_title_confirm_exit">Confirmer pour quitter</string>
-    <string name="setting_title_confirm_tab_close">Confirmer fermeture onglet</string>
+    <string name="setting_title_confirm_tab_close">Confirmer la fermeture de l\'onglet</string>
     <string name="setting_overView_onStart_title">Montrer au démarrage</string>
     <string name="setting_gestures">Gestes</string>
     <!-- gestures -->
     <string name="setting_title_toolbar">Barre d\'outils</string>
     <string name="setting_title_toolbar_buttons">Bouton de la barre d\'outils</string>
-    <string name="setting_gesture_up">Balayez vers le haut</string>
-    <string name="setting_gesture_down">Balayez vers le bas</string>
-    <string name="setting_gesture_left">Balayez à gauche</string>
+    <string name="setting_gesture_up">Balayer vers le haut</string>
+    <string name="setting_gesture_down">Balayer vers le bas</string>
+    <string name="setting_gesture_left">Balayer à gauche</string>
     <string name="setting_gesture_right">Balayer à droite</string>
     <string name="setting_gesture_01">Rien</string>
-    <string name="setting_gesture_02">Depuis l\'historique</string>
-    <string name="setting_gesture_03">Retour dans l\'historique</string>
+    <string name="setting_gesture_02">Avancer dans l\'historique</string>
+    <string name="setting_gesture_03">Reculer dans l\'historique</string>
     <string name="setting_gesture_04">Défilement vers le haut</string>
     <string name="setting_gesture_05">Défilement vers le bas</string>
     <string name="setting_gesture_06">Basculer vers l’onglet gauche</string>
     <string name="setting_gesture_07">Basculer vers l’onglet droit</string>
-    <string name="setting_gesture_08">Voir vue d’ensemble</string>
-    <string name="setting_gesture_09">Ouvrir nouvel onglet</string>
+    <string name="setting_gesture_08">Voir la vue d’ensemble</string>
+    <string name="setting_gesture_09">Ouvrir un nouvel onglet</string>
     <string name="setting_gesture_10">Fermer l’onglet</string>
     <string name="setting_gesture_hint">Faites un clic long sur le bouton menu pour ouvrir la boîte de dialogue des paramètres rapides. Appuyez longuement sur l\'icône d\'accueil/signet/historique pour ouvrir le filtre de signets.</string>
     <!-- Data -->
@@ -164,24 +164,24 @@
     <string name="toast_copy_successful">Copié avec succès</string>
     <string name="toast_delete_successful">Supprimé avec succès</string>
     <string name="toast_domain_already_exists">Le domaine existe déjà</string>
-    <string name="toast_input_empty">Vous n\'avez rien entré.</string>
+    <string name="toast_input_empty">Vous n\'avez rien saisi</string>
     <string name="toast_invalid_domain">Domaine non valide</string>
-    <string name="toast_webview_forward">Impossible de charger le site</string>
+    <string name="toast_webview_forward">Impossible de charger le site suivant</string>
     <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>
     <string name="toast_quit">Voulez-vous quitter \"FOSS Browser\"?</string>
-    <string name="toast_quit_TAB">Voulez-vous fermer le TAB?</string>
-    <string name="toast_downloadComplete">Téléchargement fini. Ouvrir le gestionnaire de fichiers?</string>
-    <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée (\"http\"). Essayez une connexion sécurisée (\"https\")?</string>
-    <string name="toast_backup">Données de sauvegarde? Cela écrasera l\'ancienne sauvegarde.</string>
+    <string name="toast_quit_TAB">Voulez-vous fermer l\'onglet?</string>
+    <string name="toast_downloadComplete">Téléchargement terminé. Ouvrir le gestionnaire de fichiers?</string>
+    <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée (\"http\"). Essayez une connexion sécurisée (\"https\") ?</string>
+    <string name="toast_backup">Sauvegarder les données ? Cela écrasera l\'ancienne sauvegarde.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Effacer</string>
     <string name="whitelist_edit_hint">Domaine</string>
-    <string name="whitelist_add">Ajouté</string>
-    <string name="changelog_dialog">        Votre langue n\'est pas encore supportée ? Vous voulez traduire FOSS Browser ? Ou apporter des améliorations aux traductions existantes ? N\'hésitez pas à nous rejoindre sur Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
+    <string name="whitelist_add">Ajouter</string>
+    <string name="changelog_dialog">        Votre langue n\'est pas encore prise en charge ? Vous voulez traduire FOSS Browser, ou apporter des améliorations aux traductions existantes ? N\'hésitez pas à nous rejoindre sur Crowdin: https://crowdin.com/project/foss-browser.&lt;br&gt;&lt;br&gt;
 
-        &lt;b&gt;On the following sites you have access to all important information about \"FOSS Browser\". Please read also the help dialog within the app.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Vous trouverez toutes les informations importantes à propos de \"FOSS Browser\" sur les sites suivants. Merci de lire également la page d\'aide de l\'application.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
 
-        \u25AA &lt;i&gt;Project site:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
+        \u25AA &lt;i&gt;Site du projet:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
         \u25AA &lt;i&gt;Changelog:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md&lt;br&gt;
         \u25AA &lt;i&gt;FAQ:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
         \u25AA &lt;i&gt;License:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
@@ -196,12 +196,12 @@
     <string name="setting_title_camera">Autoriser l\'utilisation de la caméra</string>
     <string name="setting_title_microphone">Autoriser l\'utilisation du microphone</string>
     <string name="setting_title_tabsReload">Recharger les onglets</string>
-    <string name="setting_title_tabsRestore">Restaurer l\'onglet</string>
+    <string name="setting_title_tabsRestore">Restaurer les onglets</string>
     <string name="setting_title_userInterface">Interface utilisateur</string>
-    <string name="setting_summary_tabsReload">Recharger les derniers onglets ouverts, lors du démarrage de FOSS Browser.</string>
-    <string name="setting_summary_tabsRestore">Restaurer les onglets, quand le navigateur FOSS est tué par le système.</string>
+    <string name="setting_summary_tabsReload">Recharger les derniers onglets ouverts lors du démarrage de FOSS Browser.</string>
+    <string name="setting_summary_tabsRestore">Restaurer les onglets quand FOSS Browser est tué par le système.</string>
     <string name="hint_DRM_Media">Autoriser la lecture des médias protégés par le DRM ?</string>
     <string name="menu_reload">Recharger</string>
-    <string name="profile_warning">Overwritten by:</string>
+    <string name="profile_warning">Écrasé par:</string>
     <!-- License changelog -->
 </resources>
