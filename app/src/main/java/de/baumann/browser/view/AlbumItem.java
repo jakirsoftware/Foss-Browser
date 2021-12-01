@@ -66,9 +66,6 @@ class AlbumItem {
                 albumClose.setImageResource(R.drawable.icon_close_enabled_dark);
                 break;
             case "4":
-                albumTitle.setTextColor(ContextCompat.getColor(context, R.color.material_dynamic_primary50));
-                albumClose.setImageResource(R.drawable.icon_close_enabled_dynamic);
-                break;
             case "5":
                 albumTitle.setTextColor(ContextCompat.getColor(context, R.color.material_dynamic_primary50));
                 albumClose.setImageResource(R.drawable.icon_close_enabled_dynamic);

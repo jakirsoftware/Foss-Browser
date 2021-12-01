@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ShortcutManager;
-import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -17,7 +16,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;

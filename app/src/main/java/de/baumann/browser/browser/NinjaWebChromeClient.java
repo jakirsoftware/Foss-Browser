@@ -5,12 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.*;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
