@@ -82,8 +82,6 @@ public class HelperUnit {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            ImageView imageView = dialog.findViewById(android.R.id.icon);
-            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -99,8 +97,6 @@ public class HelperUnit {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            ImageView imageView = dialog.findViewById(android.R.id.icon);
-            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -116,8 +112,6 @@ public class HelperUnit {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            ImageView imageView = dialog.findViewById(android.R.id.icon);
-            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -141,8 +135,8 @@ public class HelperUnit {
 
             builder.setView(dialogView);
             builder.setTitle(R.string.menu_save_as);
-            builder.setMessage(url);
             builder.setIcon(R.drawable.icon_info);
+            builder.setMessage(url);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
                 String title = editTitle.getText().toString().trim();
@@ -241,6 +235,12 @@ public class HelperUnit {
                 break;
             case "3":
                 context.setTheme(R.style.AppTheme_night);
+                break;
+            case "4":
+                context.setTheme(R.style.AppTheme_wallpaper);
+                break;
+            case "5":
+                context.setTheme(R.style.AppTheme_OLED);
                 break;
             default:
                 context.setTheme(R.style.AppTheme);

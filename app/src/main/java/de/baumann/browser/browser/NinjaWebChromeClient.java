@@ -119,8 +119,6 @@ public class NinjaWebChromeClient extends WebChromeClient {
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> request.deny());
                 AlertDialog dialog = builder.create();
                 dialog.show();
-                ImageView imageView = dialog.findViewById(android.R.id.icon);
-                if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
                 Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
             }
         }

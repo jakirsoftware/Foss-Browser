@@ -35,7 +35,6 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     app:indicatorSize="24dp"
-                    app:indicatorColor="@color/md_theme_light_secondaryContainer"
                     android:layout_gravity="center_vertical|center_horizontal"/>
 
                 <ImageButton

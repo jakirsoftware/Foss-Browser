@@ -513,8 +513,6 @@ public class NinjaWebViewClient extends WebViewClient {
         AlertDialog dialog = builder.create();
         dialog.show();
         dialog.setOnCancelListener(dialog1 -> doNotResend.sendToTarget());
-        ImageView imageView = dialog.findViewById(android.R.id.icon);
-        if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
@@ -551,8 +549,6 @@ public class NinjaWebViewClient extends WebViewClient {
         AlertDialog dialog = builder.create();
         dialog.show();
         dialog.setOnCancelListener(dialog1 -> handler.cancel());
-        ImageView imageView = dialog.findViewById(android.R.id.icon);
-        if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
@@ -576,6 +572,7 @@ public class NinjaWebViewClient extends WebViewClient {
         builder.setView(dialogView);
         builder.setTitle("HttpAuthRequest");
         builder.setIcon(R.drawable.icon_alert);
+        builder.setMessage(view.getUrl());
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             String user = pass_userNameET.getText().toString().trim();
             String pass = pass_userPWET.getText().toString().trim();

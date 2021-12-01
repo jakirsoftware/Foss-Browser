@@ -29,6 +29,38 @@
         <item name="colorPrimaryInverse">@color/md_theme_light_primaryInverse</item>
     </style>
 
+    <style name="AppTheme_wallpaper" parent="Theme.Material3.DynamicColors.DayNight" />
+
+    <style name="AppTheme_OLED" parent="Theme.Material3.Dark">
+        <item name="elevationOverlayColor">#000000</item>
+        <item name="colorPrimary">#ffffff</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="colorPrimaryContainer">#000000</item>
+        <item name="colorOnPrimaryContainer">#ffffff</item>
+        <item name="colorSecondary">#ffffff</item>
+        <item name="colorOnSecondary">#000000</item>
+        <item name="colorSecondaryContainer">#000000</item>
+        <item name="colorOnSecondaryContainer">#ffffff</item>
+        <item name="colorTertiary">#ffffff</item>
+        <item name="colorOnTertiary">#000000</item>
+        <item name="colorTertiaryContainer">#000000</item>
+        <item name="colorOnTertiaryContainer">#ffffff</item>
+        <item name="colorError">@color/md_theme_dark_error</item>
+        <item name="colorErrorContainer">@color/md_theme_dark_errorContainer</item>
+        <item name="colorOnError">@color/md_theme_dark_onError</item>
+        <item name="colorOnErrorContainer">@color/md_theme_dark_onErrorContainer</item>
+        <item name="android:colorBackground">#000000</item>
+        <item name="colorOnBackground">#ffffff</item>
+        <item name="colorSurface">#000000</item>
+        <item name="colorOnSurface">#ffffff</item>
+        <item name="colorSurfaceVariant">#000000</item>
+        <item name="colorOnSurfaceVariant">#ffffff</item>
+        <item name="colorOutline">#ffffff</item>
+        <item name="colorOnSurfaceInverse">#000000</item>
+        <item name="colorSurfaceInverse">#ffffff</item>
+        <item name="colorPrimaryInverse">#ffffff</item>
+    </style>
+
     <style name="AppTheme_day" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
@@ -38,7 +70,7 @@
         <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
         <item name="colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
         <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
-        <item name="colorTertiary">@color/md_theme_light_tertiary</item>
+        <item name="colorTertiary">#000000</item>
         <item name="colorOnTertiary">@color/md_theme_light_onTertiary</item>
         <item name="colorTertiaryContainer">@color/md_theme_light_tertiaryContainer</item>
         <item name="colorOnTertiaryContainer">@color/md_theme_light_onTertiaryContainer</item>

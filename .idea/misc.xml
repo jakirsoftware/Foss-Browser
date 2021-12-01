@@ -22,10 +22,13 @@
         <entry key="app/src/main/res/drawable/icon_alert.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_arrow_down_gest.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_arrow_up_gest.xml" value="0.10260416666666666" />
+        <entry key="app/src/main/res/drawable/icon_bookmark.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_bookmark_light.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/icon_camera.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_close.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_close_enabled.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_close_enabled_dark.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_close_enabled_dynamic.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_close_light.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/icon_cookie.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_datasave.xml" value="0.20625" />
@@ -62,6 +65,7 @@
         <entry key="app/src/main/res/drawable/icon_web_light.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/zz.xml" value="0.20625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_settings.xml" value="0.17346014492753623" />
         <entry key="app/src/main/res/layout/activity_settings_backup.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_settings_delete.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_settings_profile_list.xml" value="0.18840579710144928" />

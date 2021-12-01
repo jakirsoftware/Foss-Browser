@@ -62,51 +62,47 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_profile_changed"
-                style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 app:chipIcon="@drawable/icon_profile_changed"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:elevation="0dp"/>
+                app:textStartPadding="0dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_profile_trusted"
-                style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/chip_profile_changed"
                 app:chipIcon="@drawable/icon_profile_trusted"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:elevation="0dp" />
+                app:textStartPadding="0dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_profile_standard"
-                style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/chip_profile_trusted"
                 app:chipIcon="@drawable/icon_profile_standard"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:elevation="0dp" />
+                app:textStartPadding="0dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_profile_protected"
-                style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/chip_profile_standard"
                 app:chipIcon="@drawable/icon_profile_protected"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:elevation="0dp" />
+                app:textStartPadding="0dp" />
 
         </RelativeLayout>
 
@@ -382,39 +378,36 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_setProfileTrusted"
-                style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_setProfileStandard"
                 app:chipIcon="@drawable/icon_profile_trusted"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:elevation="0dp" />
+                app:textStartPadding="0dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_setProfileStandard"
-                style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toStartOf="@+id/chip_setProfileProtected"
                 app:chipIcon="@drawable/icon_profile_standard"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:elevation="0dp" />
+                app:textStartPadding="0dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_setProfileProtected"
-                style="@style/Widget.Material3.Chip.Suggestion.Elevated"
+                style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 app:chipIcon="@drawable/icon_profile_protected"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
-                app:textStartPadding="0dp"
-                android:elevation="0dp" />
+                app:textStartPadding="0dp" />
 
         </RelativeLayout>
 

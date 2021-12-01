@@ -17,6 +17,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -47,6 +48,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.chip.Chip;
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
@@ -246,17 +248,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
 
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.md_theme_light_onBackground));
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-        context = BrowserActivity.this;
         activity = BrowserActivity.this;
-        int color = ContextCompat.getColor(context, R.color.md_theme_light_onBackground);
-        window.setStatusBarColor(color);
+        context = BrowserActivity.this;
+        window.setStatusBarColor(ContextCompat.getColor(context, R.color.md_theme_light_onBackground));
         HelperUnit.initTheme(context);
+        DynamicColors.applyToActivitiesIfAvailable(activity.getApplication());
 
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit()
@@ -407,8 +411,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            ImageView imageView = dialog.findViewById(android.R.id.icon);
-            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
         if (sp.getBoolean("pdf_create", false)) {
@@ -627,8 +629,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         badgeDrawable = BadgeDrawable.create(context);
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
         badgeDrawable.setNumber(BrowserContainer.size());
-        int color = ContextCompat.getColor(context, R.color.md_theme_light_secondaryContainer);
-        badgeDrawable.setBackgroundColor(color);
+
+        switch (Objects.requireNonNull(sp.getString("sp_theme", "1"))) {
+            case "3":
+                badgeDrawable.setBackgroundColor(ContextCompat.getColor(context, R.color.md_theme_dark_primary));
+                break;
+            case "4":
+                badgeDrawable.setBackgroundColor(ContextCompat.getColor(context, R.color.material_dynamic_primary50));
+                break;
+            case "5":
+                badgeDrawable.setBackgroundColor(Color.WHITE);
+                break;
+            default:
+                badgeDrawable.setBackgroundColor(ContextCompat.getColor(context, R.color.md_theme_light_primary));
+                break;
+        }
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
 
         ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);
@@ -923,8 +938,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
                         AlertDialog dialog = builder.create();
                         dialog.show();
-                        ImageView imageView = dialog.findViewById(android.R.id.icon);
-                        if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
                         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                     } else if (item.getItemId() == R.id.menu_sortName) {
                         if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
@@ -1286,8 +1299,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            ImageView imageView = dialog.findViewById(android.R.id.icon);
-            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
             ninjaWebView.setProfileDefaultValues();
@@ -1441,8 +1452,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            ImageView imageView = dialog.findViewById(android.R.id.icon);
-            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -1516,8 +1525,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     });
                     AlertDialog dialog = builder.create();
                     dialog.show();
-                    ImageView imageView = dialog.findViewById(android.R.id.icon);
-                    if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
                     Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
                 });
             }
@@ -1768,8 +1775,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            ImageView imageView = dialog.findViewById(android.R.id.icon);
-            if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         }
     }
@@ -2156,6 +2161,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                     builderSubMenu.setView(dialogViewSubMenu);
                     builderSubMenu.setTitle(getString(R.string.menu_edit));
+                    builderSubMenu.setIcon(R.drawable.icon_info);
+                    builderSubMenu.setMessage(url);
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog3, whichButton) -> {
                         if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
                             RecordAction action = new RecordAction(context);

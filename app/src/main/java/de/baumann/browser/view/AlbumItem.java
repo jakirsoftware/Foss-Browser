@@ -2,12 +2,16 @@ package de.baumann.browser.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
+
+import java.util.Objects;
 
 import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BrowserController;
@@ -55,8 +59,25 @@ class AlbumItem {
     }
 
     public void activate() {
-        albumTitle.setTextColor(ContextCompat.getColor(context, R.color.md_theme_light_secondaryContainer));
-        albumClose.setImageResource(R.drawable.icon_close_enabled);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        switch (Objects.requireNonNull(sp.getString("sp_theme", "1"))) {
+            case "3":
+                albumTitle.setTextColor(ContextCompat.getColor(context, R.color.md_theme_dark_primary));
+                albumClose.setImageResource(R.drawable.icon_close_enabled_dark);
+                break;
+            case "4":
+                albumTitle.setTextColor(ContextCompat.getColor(context, R.color.material_dynamic_primary50));
+                albumClose.setImageResource(R.drawable.icon_close_enabled_dynamic);
+                break;
+            case "5":
+                albumTitle.setTextColor(ContextCompat.getColor(context, R.color.material_dynamic_primary50));
+                albumClose.setImageResource(R.drawable.icon_close_enabled_dynamic);
+                break;
+            default:
+                albumTitle.setTextColor(ContextCompat.getColor(context, R.color.md_theme_light_primary));
+                albumClose.setImageResource(R.drawable.icon_close_enabled);
+                break;
+        }
         albumView.setOnClickListener(v -> browserController.hideTabView());
     }
 
