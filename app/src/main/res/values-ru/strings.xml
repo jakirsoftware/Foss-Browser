@@ -129,6 +129,8 @@
     <string name="setting_title_fingerPrint">Защита отпечатков пальцев</string>
     <string name="setting_theme">Тема</string>
     <string name="setting_theme_system">Система</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Скрыть панель инструментов</string>
     <string name="setting_title_behavior">Поведение</string>

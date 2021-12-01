@@ -129,6 +129,8 @@
     <string name="setting_title_fingerPrint">Ochrana pomocí otisku prstu</string>
     <string name="setting_theme">Motiv</string>
     <string name="setting_theme_system">Systém</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Podle tapety</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Skrýt Panel nástrojů</string>
     <string name="setting_title_behavior">Chování</string>

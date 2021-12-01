@@ -129,6 +129,8 @@
     <string name="setting_title_fingerPrint">指纹保护</string>
     <string name="setting_theme">主题</string>
     <string name="setting_theme_system">系統</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_title_behavior">行为</string>
