@@ -130,7 +130,7 @@
     <string name="setting_theme">主题</string>
     <string name="setting_theme_system">系統</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">Wallpaper based</string>
+    <string name="setting_theme_wallpaper">基于壁纸</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">隐藏工具栏</string>
     <string name="setting_title_behavior">行为</string>
@@ -202,6 +202,6 @@
     <string name="setting_summary_tabsRestore">当 FOSS 浏览器被系统杀死时，还原标签页。</string>
     <string name="hint_DRM_Media">允许 DRM 保护的媒体播放？</string>
     <string name="menu_reload">重载</string>
-    <string name="profile_warning">覆盖</string>
+    <string name="profile_warning">由下列配置文件覆盖：</string>
     <!-- License changelog -->
 </resources>
