@@ -117,7 +117,7 @@ public class NinjaWebChromeClient extends WebChromeClient {
                 builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> request.deny());
                 AlertDialog dialog = builder.create();
                 dialog.show();
-                Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+                HelperUnit.setupDialog(ninjaWebView.getContext(), dialog);
             }
         }
     }

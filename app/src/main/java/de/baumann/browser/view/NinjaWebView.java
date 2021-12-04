@@ -232,31 +232,31 @@ public class NinjaWebView extends WebView implements AlbumController {
         switch (profile) {
             case "profileTrusted":
                 if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_red);
-                else omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_light);
+                else omniBox_tab.setImageResource(R.drawable.icon_profile_trusted);
                 break;
             case "profileStandard":
                 if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_standard_red);
-                else omniBox_tab.setImageResource(R.drawable.icon_profile_standard_light);
+                else omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
                 break;
             case "profileProtected":
                 if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_protected_red);
-                else omniBox_tab.setImageResource(R.drawable.icon_profile_protected_light);
+                else omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
                 break;
             default:
                 if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_changed_red);
-                else omniBox_tab.setImageResource(R.drawable.icon_profile_changed_light);
+                else omniBox_tab.setImageResource(R.drawable.icon_profile_changed);
                 break;
         }
 
         if (listTrusted.isWhite(url)) {
             if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_red);
-            else omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_light);
+            else omniBox_tab.setImageResource(R.drawable.icon_profile_trusted);
         } else if (listStandard.isWhite(url)) {
             if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_standard_red);
-            else omniBox_tab.setImageResource(R.drawable.icon_profile_standard_light);
+            else omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
         } else if (listProtected.isWhite(url)) {
             if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_protected_red);
-            else omniBox_tab.setImageResource(R.drawable.icon_profile_protected_light);
+            else omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
         }
     }
 

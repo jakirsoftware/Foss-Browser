@@ -4,9 +4,13 @@
 - fix: profile icon in toolbar #728
 - fix: cookie settings when switching tab
 - new: Material You Design #726
+- new: OLED dark theme Feature #742
 - new: FOSS Browser in context menu of marked text #723
 - new: remember night mode per site #669
 - new: adding "copy link" button to download dialog #733
+- new: remember night mode, when opening new tabs
+- new: gesture: open start site
+- new: keep screen on
 - improved: set favicons (thanks to @woheller69)
 - updated: translations
 - updated: build libraries

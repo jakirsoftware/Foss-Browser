@@ -21,13 +21,16 @@ package de.baumann.browser.unit;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.DownloadManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
@@ -39,6 +42,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.os.Environment;
 import android.os.Handler;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -81,7 +85,7 @@ public class HelperUnit {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            HelperUnit.setupDialog(activity, dialog);
         }
     }
 
@@ -96,7 +100,7 @@ public class HelperUnit {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            HelperUnit.setupDialog(activity, dialog);
         }
     }
 
@@ -111,7 +115,7 @@ public class HelperUnit {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            HelperUnit.setupDialog(activity, dialog);
         }
     }
 
@@ -134,7 +138,7 @@ public class HelperUnit {
 
             builder.setView(dialogView);
             builder.setTitle(R.string.menu_save_as);
-            builder.setIcon(R.drawable.icon_info);
+            builder.setIcon(R.drawable.icon_alert);
             builder.setMessage(url);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
@@ -165,10 +169,9 @@ public class HelperUnit {
                 hideSoftKeyboard(editExtension, activity);
                 dialogToCancel.cancel();
             });
-
             AlertDialog dialog = builder.create();
             dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            HelperUnit.setupDialog(activity, dialog);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -322,7 +325,7 @@ public class HelperUnit {
         builder.setView(dialogView);
         builder.setTitle(R.string.menu_save_as);
         builder.setMessage(dataUriParser.toString());
-        builder.setIcon(R.drawable.icon_info);
+        builder.setIcon(R.drawable.icon_alert);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
             String title = editTitle.getText().toString().trim();
@@ -350,7 +353,7 @@ public class HelperUnit {
 
         AlertDialog dialog = builder.create();
         dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        HelperUnit.setupDialog(activity, dialog);
     }
 
     public static void showSoftKeyboard(View view, Activity context){
@@ -368,5 +371,40 @@ public class HelperUnit {
         assert view != null;
         InputMethodManager imm =(InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public static void setupDialog (Context context, Dialog dialog){
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(R.attr.colorError, typedValue, true);
+        int color = typedValue.data;
+        ImageView imageView = dialog.findViewById(android.R.id.icon);
+        if (imageView != null) imageView.setColorFilter(color, PorterDuff.Mode.SRC_IN);
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+    }
+
+    public static void triggerRebirth(Context context) {
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
+        sp.edit().putInt("restart_changed", 0).apply();
+        sp.edit().putBoolean("restoreOnRestart", true).apply();
+
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        builder.setTitle(R.string.app_warning);
+        builder.setIcon(R.drawable.icon_alert);
+        builder.setMessage(R.string.toast_restart);
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+
+            PackageManager packageManager = context.getPackageManager();
+            Intent intent = packageManager.getLaunchIntentForPackage(context.getPackageName());
+            assert intent != null;
+            ComponentName componentName = intent.getComponent();
+            Intent mainIntent = Intent.makeRestartActivityTask(componentName);
+            context.startActivity(mainIntent);
+            System.exit(0);
+
+        });
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        HelperUnit.setupDialog(context, dialog);
     }
 }

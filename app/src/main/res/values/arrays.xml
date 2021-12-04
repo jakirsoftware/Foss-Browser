@@ -49,6 +49,7 @@
         <item>@string/menu_save_bookmark</item>
         <item>@string/menu_save_home</item>
         <item>@string/menu_reload</item>
+        <item>@string/menu_openFav</item>
     </string-array>
 
     <string-array name="setting_values_gestures">
@@ -68,6 +69,7 @@
         <item>14</item>
         <item>15</item>
         <item>16</item>
+        <item>17</item>
     </string-array>
 
     <!-- Start tab -->

@@ -36,6 +36,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BackupUnit;
+import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaToast;
 
 import static android.os.Environment.DIRECTORY_DOCUMENTS;
@@ -99,7 +100,8 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
                     builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
                     AlertDialog dialog = builder.create();
                     dialog.show();
-                    Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+                    HelperUnit.setupDialog(context, dialog);
+
                 });
 
         Button ib_restore = activity.findViewById(R.id.ib_restore);
@@ -136,7 +138,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            HelperUnit.setupDialog(context, dialog);
         });
     }
 

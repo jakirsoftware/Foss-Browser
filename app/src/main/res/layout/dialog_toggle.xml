@@ -23,7 +23,6 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/dialog_titleProfile"
-
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
@@ -48,6 +47,7 @@
                 android:gravity="center_vertical"
                 android:includeFontPadding="false"
                 android:maxLines="1"
+                android:textColor="?attr/colorError"
                 android:visibility="gone"/>
 
         </RelativeLayout>

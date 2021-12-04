@@ -106,7 +106,7 @@ public class BackupUnit {
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());AlertDialog dialog = builder.create();
         dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        HelperUnit.setupDialog(activity, dialog);
     }
 
     public static void makeBackupDir () {

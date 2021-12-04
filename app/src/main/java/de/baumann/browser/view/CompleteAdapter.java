@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -187,10 +186,8 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
         if (view == null) {
             view = LayoutInflater.from(context).inflate(layoutResId, null, false);
-            view.setBackgroundColor(ContextCompat.getColor(context, R.color.md_theme_light_onBackground));
             holder = new Holder();
             holder.titleView = view.findViewById(R.id.record_item_title);
-            holder.titleView.setTextColor(ContextCompat.getColor(context, R.color.md_theme_light_surface));
             holder.urlView = view.findViewById(R.id.record_item_time);
             holder.iconView = view.findViewById(R.id.record_item_icon);
             holder.favicon=view.findViewById(R.id.record_item_favicon);
@@ -206,10 +203,10 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.urlView.setText(item.url);
 
         if (item.getType()==STARTSITE_ITEM) {  //Item from start page
-            holder.iconView.setImageResource(R.drawable.icon_web_light);
+            holder.iconView.setImageResource(R.drawable.icon_web);
         } else if (item.getType()==HISTORY_ITEM){  //Item from history
-            holder.iconView.setImageResource(R.drawable.icon_history_light);
-        } else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark_light);  //Item from bookmarks
+            holder.iconView.setImageResource(R.drawable.icon_history);
+        } else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark);  //Item from bookmarks
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(item.url);

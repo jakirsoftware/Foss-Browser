@@ -36,6 +36,7 @@ import de.baumann.browser.R;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
+import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.NinjaWebView;
 
@@ -513,7 +514,7 @@ public class NinjaWebViewClient extends WebViewClient {
         AlertDialog dialog = builder.create();
         dialog.show();
         dialog.setOnCancelListener(dialog1 -> doNotResend.sendToTarget());
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        HelperUnit.setupDialog(context, dialog);
     }
 
     @Override
@@ -549,7 +550,7 @@ public class NinjaWebViewClient extends WebViewClient {
         AlertDialog dialog = builder.create();
         dialog.show();
         dialog.setOnCancelListener(dialog1 -> handler.cancel());
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        HelperUnit.setupDialog(context, dialog);
     }
 
     @Override
@@ -583,9 +584,7 @@ public class NinjaWebViewClient extends WebViewClient {
 
         AlertDialog dialog = builder.create();
         dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-        ImageView imageView = dialog.findViewById(android.R.id.icon);
-        if (imageView != null) imageView.setColorFilter(R.color.design_default_color_error, PorterDuff.Mode.DST_IN);
+        HelperUnit.setupDialog(context, dialog);
         dialog.setOnCancelListener(dialog1 -> {
             handler.cancel();
             dialog1.cancel();

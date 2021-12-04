@@ -193,7 +193,7 @@ public class BrowserUnit {
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
         dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        HelperUnit.setupDialog(context, dialog);
     }
 
     public static void clearHome(Context context) {

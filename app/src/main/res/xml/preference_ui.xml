@@ -16,6 +16,11 @@
             android:title="@string/setting_title_reload"/>
 
         <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="sp_screenOn"
+            android:title="@string/setting_title_screenOn"/>
+
+        <CheckBoxPreference
             android:defaultValue="true"
             android:key="sp_close_browser_confirm"
             android:title="@string/setting_title_confirm_exit"/>
@@ -33,7 +38,7 @@
 
         <CheckBoxPreference
             android:key="sp_restoreTabs"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:title="@string/setting_title_tabsRestore"
             android:summary="@string/setting_summary_tabsRestore"/>
 

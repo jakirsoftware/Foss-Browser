@@ -1,9 +1,9 @@
 package de.baumann.browser.fragment;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Gravity;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -11,9 +11,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
-import java.util.Objects;
-
 import de.baumann.browser.R;
+import de.baumann.browser.unit.HelperUnit;
 
 public class Fragment_settings_Delete extends PreferenceFragmentCompat {
 
@@ -23,6 +22,8 @@ public class Fragment_settings_Delete extends PreferenceFragmentCompat {
         setPreferencesFromResource(R.xml.preference_delete, rootKey);
         Activity activity = getActivity();
         assert activity != null;
+        Context context = getContext();
+        assert context != null;
 
         Preference sp_deleteDatabase = findPreference("sp_deleteDatabase");
         assert sp_deleteDatabase != null;
@@ -42,7 +43,7 @@ public class Fragment_settings_Delete extends PreferenceFragmentCompat {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            HelperUnit.setupDialog(context, dialog);
             return false;
         });
     }

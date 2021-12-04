@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/md_theme_light_onBackground">
+        style="@style/Widget.Material3.AppBarLayout">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:indeterminate="true"
+                    app:indicatorColor="?attr/colorSecondary"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     app:indicatorSize="24dp"
@@ -46,22 +47,22 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="10dp"
                     android:background="?attr/actionBarItemBackground"
-                    android:src="@drawable/icon_menu_light" />
+                    android:src="@drawable/icon_profile_standard" />
 
                 <ImageButton
                     android:id="@+id/omnibox_overflow"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:scaleY="1.2"
-                    android:scaleX="1.2"
+                    android:scaleY="1.0"
+                    android:scaleX="1.0"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="15dp"
                     android:background="?attr/actionBarItemBackground"
-                    android:src="@drawable/icon_overflow_light" />
+                    android:src="@drawable/icon_overflow" />
 
                 <ImageButton
                     android:id="@+id/omnibox_overview"
@@ -69,10 +70,10 @@
                     android:layout_height="match_parent"
                     android:layout_toStartOf="@id/omnibox_overflow"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:background="?attr/actionBarItemBackground"
-                    android:src="@drawable/icon_web_light" />
+                    android:src="@drawable/icon_web" />
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/omniBox_input"
@@ -82,13 +83,11 @@
                     android:layout_centerInParent="true"
                     android:layout_toEndOf="@id/omniBox_tab"
                     android:layout_toStartOf="@id/omnibox_overview"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:hint="@string/main_omnibox_input_hint"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textStyle="bold"
-                    android:textColor="@color/md_theme_light_surface"
-                    android:textColorHint="@color/md_theme_light_surfaceVariant"
                     android:background="@android:color/transparent"
                     android:completionThreshold="1"
                     android:imeOptions="actionGo"
@@ -111,7 +110,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/icon_close_light"
+                    android:src="@drawable/icon_close"
                     android:background="?attr/actionBarItemBackground"/>
 
                 <ImageButton android:id="@+id/searchBox_down"
@@ -143,8 +142,6 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:hint="@string/search_hint"
-                    android:textColor="@color/md_theme_light_surface"
-                    android:textColorHint="@color/md_theme_light_surfaceVariant"
                     android:background="@android:color/transparent"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:imeOptions="actionDone"
