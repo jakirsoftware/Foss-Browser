@@ -204,6 +204,8 @@
     <string name="setting_summary_tabsRestore">Restaurer les onglets quand FOSS Browser est tué par le système.</string>
     <string name="hint_DRM_Media">Autoriser la lecture des médias protégés par le DRM ?</string>
     <string name="menu_reload">Recharger</string>
+    <string name="menu_restart">Restart and reload tabs</string>
     <string name="profile_warning">Écrasé par:</string>
+    <string name="setting_title_screenOn">Keep screen on</string>
     <!-- License changelog -->
 </resources>
