@@ -250,6 +250,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         activity = BrowserActivity.this;
         context = BrowserActivity.this;
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
 
         if (getSupportActionBar() != null) getSupportActionBar().hide();Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -261,7 +262,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         DynamicColors.applyToActivitiesIfAvailable(activity.getApplication());
 
-        sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit()
                 .putInt("restart_changed", 0)
                 .putBoolean("pdf_create", false)
