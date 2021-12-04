@@ -130,7 +130,7 @@
     <string name="setting_theme">Θέμα</string>
     <string name="setting_theme_system">Σύστημα</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">Wallpaper based</string>
+    <string name="setting_theme_wallpaper">Βασισμένο στην Ταπετσαρία</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Απόκρυψη γραμμής εργαλείων</string>
     <string name="setting_title_behavior">Συμπεριφορά</string>
