@@ -205,6 +205,8 @@ Translated with www.DeepL.com/Translator (free version)    </string>
     <string name="setting_summary_tabsRestore">A lapok visszaállítása, ha a FOSS Browser-t megöli a rendszer.</string>
     <string name="hint_DRM_Media">DRM-védett média lejátszásának engedélyezése?</string>
     <string name="menu_reload">Újratöltés</string>
+    <string name="menu_restart">Restart and reload tabs</string>
     <string name="profile_warning">Felülírva:</string>
+    <string name="setting_title_screenOn">Keep screen on</string>
     <!-- License changelog -->
 </resources>
