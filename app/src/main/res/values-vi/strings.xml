@@ -204,6 +204,8 @@
     <string name="setting_summary_tabsRestore">Khôi phục các tab, khi Trình duyệt FOSS bị hệ thống dừng.</string>
     <string name="hint_DRM_Media">Cho phép phát phương tiện có DRM bảo vệ?</string>
     <string name="menu_reload">Tải lại</string>
+    <string name="menu_restart">Restart and reload tabs</string>
     <string name="profile_warning">Bị ghi đè bởi:</string>
+    <string name="setting_title_screenOn">Keep screen on</string>
     <!-- License changelog -->
 </resources>
