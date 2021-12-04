@@ -6,10 +6,10 @@
     <string name="app_cancel">Hủy</string>
     <string name="app_done">Xong</string>
     <string name="app_error">Lỗi</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
-    <string name="app_update">Update notification</string>
-    <string name="app_update_84">With this update \"FOSS Browser\" introduces profiles for privacy control. Please check this in settings. In order to work properly, all your whitelists get deleted.</string>
+    <string name="app_warning">Cảnh báo</string>
+    <string name="app_permission">Để sử dụng tính năng này bạn phải cấp quyền. Sau đó, khởi động lại ứng dụng.</string>
+    <string name="app_update">Thông báo cập nhật</string>
+    <string name="app_update_84">Với bản cập nhật này \"Trình duyệt FOSS\" giới thiệu các cấu hình để kiểm soát sự riêng tư. Vui lòng kiểm tra tính năng này trong cài đặt. Để hoạt động đúng, tất cả danh sách cho phép của bạn bị xoá.</string>
     <string name="list_empty">Danh sách trống</string>
     <string name="album_title_bookmarks">Dấu trang</string>
     <string name="album_title_history">Lịch sử</string>
