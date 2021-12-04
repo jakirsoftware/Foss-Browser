@@ -188,9 +188,7 @@
         \u25AA &lt;i&gt;GYIK:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;
         \u25AA &lt;i&gt;Licenc:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;
         \u25AA &lt;i&gt;Adatvédelem:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/PRIVACY.md
-      
-
-Translated with www.DeepL.com/Translator (free version)    </string>
+    </string>
     <string name="menu_mobileView">Mobil nézet</string>
     <string name="menu_desktopView">Asztali nézet</string>
     <string name="menu_dayView">Napi nézet</string>
@@ -199,7 +197,7 @@ Translated with www.DeepL.com/Translator (free version)    </string>
     <string name="setting_title_camera">Kamera használatának engedélyezése</string>
     <string name="setting_title_microphone">Mikrofonhasználat engedélyezése</string>
     <string name="setting_title_tabsReload">Lapok újratöltése</string>
-    <string name="setting_title_tabsRestore">Visszaállítás lapok</string>
+    <string name="setting_title_tabsRestore">Lapok visszaállítása</string>
     <string name="setting_title_userInterface">Felhasználói felület</string>
     <string name="setting_summary_tabsReload">Utoljára megnyitott lapok újratöltése a FOSS Browser indításakor.</string>
     <string name="setting_summary_tabsRestore">A lapok visszaállítása, ha a FOSS Browser-t megöli a rendszer.</string>
@@ -207,6 +205,6 @@ Translated with www.DeepL.com/Translator (free version)    </string>
     <string name="menu_reload">Újratöltés</string>
     <string name="menu_restart">Újraindítás és a lapok újratöltése</string>
     <string name="profile_warning">Felülírva:</string>
-    <string name="setting_title_screenOn">Keep screen on</string>
+    <string name="setting_title_screenOn">Kijelző ébrentartása</string>
     <!-- License changelog -->
 </resources>
