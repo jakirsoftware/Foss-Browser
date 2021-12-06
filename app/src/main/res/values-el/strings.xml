@@ -202,8 +202,8 @@
     <string name="setting_summary_tabsRestore">Επαναφορά καρτελών, όταν το FOSS Browser τερματιστεί από το σύστημα.</string>
     <string name="hint_DRM_Media">Να επιτρέπεται η προστατευμένη αναπαραγωγή πολυμέσων DRM;</string>
     <string name="menu_reload">Επαναφόρτωση</string>
-    <string name="menu_restart">Restart and reload tabs</string>
+    <string name="menu_restart">Επανεκκίνηση και επαναφόρτωση καρτελών</string>
     <string name="profile_warning">Αντικαταστάθηκε από:</string>
-    <string name="setting_title_screenOn">Keep screen on</string>
+    <string name="setting_title_screenOn">Κρατήστε την οθόνη ανοιχτή</string>
     <!-- License changelog -->
 </resources>
