@@ -4,6 +4,8 @@
 - fix: profile icon in toolbar #728
 - fix: cookie settings when switching tab
 - fix: stay at night mode, when openeing bookmark
+- fix: close open tabs window after making selection #746
+- new: restart and reload tabs
 - new: Material You Design #726
 - new: OLED dark theme Feature #742
 - new: FOSS Browser in context menu of marked text #723

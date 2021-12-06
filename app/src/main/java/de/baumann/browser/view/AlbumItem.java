@@ -51,14 +51,16 @@ class AlbumItem {
     public void activate() {
         albumTitle.setChecked(true);
         albumTitle.setOnClickListener(view -> {
-            browserController.hideTabView();
             albumTitle.setChecked(true);
+            browserController.hideTabView();
         });
     }
 
     void deactivate() {
         albumTitle.setChecked(false);
-        albumTitle.setOnClickListener(v ->
-                browserController.showAlbum(albumController));
+        albumTitle.setOnClickListener(view -> {
+            browserController.showAlbum(albumController);
+            browserController.hideTabView();
+        });
     }
 }
