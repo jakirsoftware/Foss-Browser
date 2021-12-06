@@ -130,7 +130,7 @@
     <string name="setting_theme">Motyw</string>
     <string name="setting_theme_system">Systemowy</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">Wallpaper based</string>
+    <string name="setting_theme_wallpaper">Na podstawie tapety</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Ukryj dolny panel</string>
     <string name="setting_title_behavior">Zachowanie</string>
@@ -202,8 +202,8 @@
     <string name="setting_summary_tabsRestore">Przywracanie zakładek, gdy FOSS Browser zostanie zabity przez system.</string>
     <string name="hint_DRM_Media">Zezwolić na odtwarzanie mediów chronionych DRM?</string>
     <string name="menu_reload">Reload</string>
-    <string name="menu_restart">Restart and reload tabs</string>
+    <string name="menu_restart">Uruchom ponownie i załaduj ponownie karty</string>
     <string name="profile_warning">Nadpisane przez:</string>
-    <string name="setting_title_screenOn">Keep screen on</string>
+    <string name="setting_title_screenOn">Nie wyłączaj ekranu</string>
     <!-- License changelog -->
 </resources>
