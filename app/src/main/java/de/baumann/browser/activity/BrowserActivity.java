@@ -218,29 +218,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @Override
     public void onPause(){
         //Save open Tabs in shared preferences
-        ArrayList<String> openTabs = new ArrayList<>();
-        for (int i=0; i<BrowserContainer.size();i++){
-            if (currentAlbumController == BrowserContainer.get(i)) {
-                openTabs.add(0,((NinjaWebView) (BrowserContainer.get(i))).getUrl());
-            }else{
-                openTabs.add(((NinjaWebView) (BrowserContainer.get(i))).getUrl());
-            }
-        }
-        sp = PreferenceManager.getDefaultSharedPreferences(context);
-        sp.edit().putString("openTabs", TextUtils.join("‚‗‚", openTabs)).apply();
-
-        //Save profile of open Tabs in shared preferences
-        ArrayList<String> openTabsProfile = new ArrayList<>();
-        for (int i=0; i<BrowserContainer.size();i++){
-            if (currentAlbumController == BrowserContainer.get(i)) {
-                openTabsProfile.add(0,((NinjaWebView) (BrowserContainer.get(i))).getProfile());
-            }else{
-                openTabsProfile.add(((NinjaWebView) (BrowserContainer.get(i))).getProfile());
-            }
-        }
-        sp = PreferenceManager.getDefaultSharedPreferences(context);
-        sp.edit().putString("openTabsProfile", TextUtils.join("‚‗‚", openTabsProfile)).apply();
-
+        saveOpenedTabs();
         super.onPause();
     }
 
@@ -404,6 +382,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         if (sp.getInt("restart_changed", 1) == 1) {
+            saveOpenedTabs();
             HelperUnit.triggerRebirth(context);
         }
         if (sp.getBoolean("pdf_create", false)) {
@@ -444,7 +423,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         BrowserContainer.clear();
 
-        if (!sp.getBoolean("sp_reloadTabs", false)) {
+        if (!sp.getBoolean("sp_reloadTabs", false) || sp.getInt("restart_changed", 1) == 1) {
             sp.edit().putString("openTabs", "").apply();   //clear open tabs in preferences
             sp.edit().putString("openTabsProfile","").apply();
         }
@@ -1964,6 +1943,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
                 startActivity(settings);
             } else if (position == 5) {
+                saveOpenedTabs();
                 HelperUnit.triggerRebirth(context);
             }
         });
@@ -2011,6 +1991,31 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             @Override
             public void onTabReselected(TabLayout.Tab tab) {}
         });
+    }
+
+    private void saveOpenedTabs () {
+        ArrayList<String> openTabs = new ArrayList<>();
+        for (int i=0; i<BrowserContainer.size();i++){
+            if (currentAlbumController == BrowserContainer.get(i)) {
+                openTabs.add(0,((NinjaWebView) (BrowserContainer.get(i))).getUrl());
+            }else{
+                openTabs.add(((NinjaWebView) (BrowserContainer.get(i))).getUrl());
+            }
+        }
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
+        sp.edit().putString("openTabs", TextUtils.join("‚‗‚", openTabs)).apply();
+
+        //Save profile of open Tabs in shared preferences
+        ArrayList<String> openTabsProfile = new ArrayList<>();
+        for (int i=0; i<BrowserContainer.size();i++){
+            if (currentAlbumController == BrowserContainer.get(i)) {
+                openTabsProfile.add(0,((NinjaWebView) (BrowserContainer.get(i))).getProfile());
+            }else{
+                openTabsProfile.add(((NinjaWebView) (BrowserContainer.get(i))).getProfile());
+            }
+        }
+        sp = PreferenceManager.getDefaultSharedPreferences(context);
+        sp.edit().putString("openTabsProfile", TextUtils.join("‚‗‚", openTabsProfile)).apply();
     }
 
     private void showContextMenuList (final String title, final String url,
