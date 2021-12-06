@@ -204,6 +204,8 @@ Traduzido com a versão gratuita do tradutor - www.DeepL.com/Translator    </str
     <string name="setting_summary_tabsRestore">Restaurar separadores, quando o FOSS Browser é morto pelo sistema.</string>
     <string name="hint_DRM_Media">Permitir a reprodução de mídia protegida por DRM?</string>
     <string name="menu_reload">Recarregar</string>
+    <string name="menu_restart">Restart and reload tabs</string>
     <string name="profile_warning">Sobrescrito por:</string>
+    <string name="setting_title_screenOn">Keep screen on</string>
     <!-- License changelog -->
 </resources>

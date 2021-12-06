@@ -130,7 +130,7 @@
     <string name="setting_theme">テーマ</string>
     <string name="setting_theme_system">システム</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">Wallpaper based</string>
+    <string name="setting_theme_wallpaper">壁紙ベース</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">ツールバーを隠す</string>
     <string name="setting_title_behavior">動作</string>
@@ -204,6 +204,8 @@
     <string name="setting_summary_tabsRestore">FOSS Browser のプロセスがシステムによって終了された時、タブを復元します。</string>
     <string name="hint_DRM_Media">DRM 保護のメディア再生を許可しますか?</string>
     <string name="menu_reload">再読込</string>
+    <string name="menu_restart">再起動してタブを再読込</string>
     <string name="profile_warning">上書き者：</string>
+    <string name="setting_title_screenOn">画面を消灯しない</string>
     <!-- License changelog -->
 </resources>
