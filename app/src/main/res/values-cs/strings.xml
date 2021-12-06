@@ -206,8 +206,8 @@
     <string name="setting_summary_tabsRestore">Obnovit karty při ukončení aplikace FOSS Browser systémem.</string>
     <string name="hint_DRM_Media">Povolit přehrávání médií chráněných DRM?</string>
     <string name="menu_reload">Obnovit</string>
-    <string name="menu_restart">Restart and reload tabs</string>
+    <string name="menu_restart">Restartování a opětovné načtení karet</string>
     <string name="profile_warning">Přepsáno:</string>
-    <string name="setting_title_screenOn">Keep screen on</string>
+    <string name="setting_title_screenOn">Nechat obrazovku zapnutou</string>
     <!-- License changelog -->
 </resources>
