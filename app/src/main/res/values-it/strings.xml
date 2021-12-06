@@ -130,7 +130,7 @@
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_system">Sistema</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">Wallpaper based</string>
+    <string name="setting_theme_wallpaper">Basato sullo sfondo</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Nascondi barra degli strumenti</string>
     <string name="setting_title_behavior">Comportamento</string>
@@ -202,8 +202,8 @@
     <string name="setting_summary_tabsRestore">Ripristinare le schede, quando FOSS Browser viene ucciso dal sistema.</string>
     <string name="hint_DRM_Media">Consentire la riproduzione di supporti protetti da DRM?</string>
     <string name="menu_reload">Ricarica</string>
-    <string name="menu_restart">Restart and reload tabs</string>
+    <string name="menu_restart">Riavvia e ricarica le schede</string>
     <string name="profile_warning">Sovrascritto da:</string>
-    <string name="setting_title_screenOn">Keep screen on</string>
+    <string name="setting_title_screenOn">Mantieni il display acceso</string>
     <!-- License changelog -->
 </resources>
