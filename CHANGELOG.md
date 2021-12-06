@@ -3,6 +3,7 @@
 - fix: camera issue #729
 - fix: profile icon in toolbar #728
 - fix: cookie settings when switching tab
+- fix: stay at night mode, when openeing bookmark
 - new: Material You Design #726
 - new: OLED dark theme Feature #742
 - new: FOSS Browser in context menu of marked text #723

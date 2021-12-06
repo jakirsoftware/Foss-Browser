@@ -519,7 +519,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (record.getURL().equals(url)){
                     if ((record.getType()==BOOKMARK_ITEM)||(record.getType()==STARTSITE_ITEM)||(record.getType()== HISTORY_ITEM) ) {
                         if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                        if (record.getNightMode() == ninjaWebView.isNightMode()) {
+                        if (record.getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
                             ninjaWebView.toggleNightMode();
                             isNightMode = ninjaWebView.isNightMode();
                         }
@@ -816,7 +816,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                 listView.setOnItemClickListener((parent, view, position, id) -> {
                     if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode()) {
+                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
                         ninjaWebView.toggleNightMode();
                         isNightMode = ninjaWebView.isNightMode();
                     }
@@ -854,7 +854,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
                     if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode()) {
+                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
                         ninjaWebView.toggleNightMode();
                         isNightMode = ninjaWebView.isNightMode();
                     }
@@ -890,7 +890,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
                 listView.setOnItemClickListener((parent, view, position, id) -> {
                     if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode()) {
+                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
                         ninjaWebView.toggleNightMode();
                         isNightMode = ninjaWebView.isNightMode();
                     }
