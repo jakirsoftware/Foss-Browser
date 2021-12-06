@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="?attr/colorSurface">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ListView
         android:layout_above="@+id/bottom_navigation"
@@ -14,7 +13,6 @@
         android:stackFromBottom="true"
         android:fastScrollEnabled="true"
         android:divider="@null"
-        android:dividerHeight="0dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
