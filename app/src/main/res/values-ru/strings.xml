@@ -130,7 +130,7 @@
     <string name="setting_theme">Тема</string>
     <string name="setting_theme_system">Система</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">Wallpaper based</string>
+    <string name="setting_theme_wallpaper">На основе обоев</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Скрыть панель инструментов</string>
     <string name="setting_title_behavior">Поведение</string>
@@ -204,8 +204,8 @@
     <string name="setting_summary_tabsRestore">Восстановление вкладок, когда FOSS Browser будет убит системой.</string>
     <string name="hint_DRM_Media">Разрешить воспроизведение медиафайлов, защищенных DRM?</string>
     <string name="menu_reload">Перезагрузка</string>
-    <string name="menu_restart">Restart and reload tabs</string>
+    <string name="menu_restart">Перезапуск и перезагрузка вкладок</string>
     <string name="profile_warning">Перезаписано:</string>
-    <string name="setting_title_screenOn">Keep screen on</string>
+    <string name="setting_title_screenOn">Держите экран включенным</string>
     <!-- License changelog -->
 </resources>
