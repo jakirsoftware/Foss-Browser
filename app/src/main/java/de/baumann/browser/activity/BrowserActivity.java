@@ -67,6 +67,7 @@ import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.OrientationEventListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -90,6 +91,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import java.util.ArrayList;
@@ -179,6 +181,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private long newIcon;
     private boolean filter;
     private boolean isNightMode;
+    private boolean orientationChanged;
     private long filterBy;
 
     private boolean searchOnSite;
@@ -241,6 +244,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         DynamicColors.applyToActivitiesIfAvailable(activity.getApplication());
 
+        OrientationEventListener mOrientationListener = new OrientationEventListener(getApplicationContext()) {
+            @Override
+            public void onOrientationChanged(int orientation) {
+                orientationChanged = true;
+            }
+        };
+        if (mOrientationListener.canDetectOrientation()) mOrientationListener.enable();
+
         sp.edit()
                 .putInt("restart_changed", 0)
                 .putBoolean("pdf_create", false)
@@ -260,9 +271,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         setContentView(R.layout.activity_main);
 
         if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
-            if (Locale.getDefault().getCountry().equals("CN")) {
-                sp.edit().putString("sp_search_engine", "2").apply();
-            }
             sp.edit().putString("saved_key_ok", "yes")
                     .putString("setting_gesture_tb_up", "08")
                     .putString("setting_gesture_tb_down", "01")
@@ -1510,6 +1518,19 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         }
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (!orientationChanged) {
+            saveOpenedTabs();
+            HelperUnit.triggerRebirth(context);
+        } else {
+            orientationChanged = false;
+        }
+    }
+
+
 
     @Override
     public synchronized void updateProgress(int progress) {
