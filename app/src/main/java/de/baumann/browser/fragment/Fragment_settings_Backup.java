@@ -108,7 +108,7 @@ public class Fragment_settings_Backup extends PreferenceFragmentCompat {
         ib_restore.setOnClickListener(v -> {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             builder.setIcon(R.drawable.icon_alert);
-            builder.setTitle(R.string.app_warning);
+            builder.setTitle(R.string.menu_delete);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 if (!BackupUnit.checkPermissionStorage(context)) {

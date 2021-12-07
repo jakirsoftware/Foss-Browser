@@ -388,11 +388,10 @@ public class HelperUnit {
         sp.edit().putBoolean("restoreOnRestart", true).apply();
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        builder.setTitle(R.string.app_warning);
+        builder.setTitle(R.string.menu_restart);
         builder.setIcon(R.drawable.icon_alert);
         builder.setMessage(R.string.toast_restart);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-
             PackageManager packageManager = context.getPackageManager();
             Intent intent = packageManager.getLaunchIntentForPackage(context.getPackageName());
             assert intent != null;
@@ -400,7 +399,6 @@ public class HelperUnit {
             Intent mainIntent = Intent.makeRestartActivityTask(componentName);
             context.startActivity(mainIntent);
             System.exit(0);
-
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();

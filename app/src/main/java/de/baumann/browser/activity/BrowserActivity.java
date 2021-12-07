@@ -903,7 +903,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     if (item.getItemId() == R.id.menu_delete) {
                         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                         builder.setIcon(R.drawable.icon_alert);
-                        builder.setTitle(R.string.app_warning);
+                        builder.setTitle(R.string.menu_delete);
                         builder.setMessage(R.string.hint_database);
                         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                             if (overViewTab.equals(getString(R.string.album_title_home))) {
@@ -1433,7 +1433,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             okAction.run();
         } else {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-            builder.setTitle(R.string.app_warning);
+            builder.setTitle(R.string.menu_closeTab);
             builder.setIcon(R.drawable.icon_alert);
             builder.setMessage(R.string.toast_quit_TAB);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> okAction.run());
@@ -1761,7 +1761,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             finish();
         } else {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-            builder.setTitle(R.string.app_warning);
+            builder.setTitle(R.string.setting_title_confirm_exit);
             builder.setIcon(R.drawable.icon_alert);
             builder.setMessage(R.string.toast_quit);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
@@ -2105,7 +2105,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 case 4:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     builderSubMenu.setIcon(R.drawable.icon_alert);
-                    builderSubMenu.setTitle(R.string.app_warning);
+                    builderSubMenu.setTitle(R.string.menu_delete);
                     builderSubMenu.setMessage(R.string.hint_database);
                     builderSubMenu.setPositiveButton(R.string.app_ok, (dialog2, whichButton) -> {
                         Record record = recordList.get(location);

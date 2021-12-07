@@ -125,7 +125,7 @@ public class List_Trusted extends AppCompatActivity {
         } else if (menuItem.getItemId() == R.id.menu_clear) {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
             builder.setIcon(R.drawable.icon_alert);
-            builder.setTitle(R.string.app_warning);
+            builder.setTitle(R.string.menu_delete);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
                 List_trusted javaScript = new List_trusted(List_Trusted.this);
