@@ -1,0 +1,19 @@
+v 8.5.2
+
+- fix: camera issue #729
+- fix: profile icon in toolbar #728
+- fix: cookie settings when switching tab
+- fix: stay at night mode, when openeing bookmark
+- fix: close open tabs window after making selection #746
+- new: restart and reload tabs
+- new: Material You Design #726
+- new: OLED dark theme Feature #742
+- new: FOSS Browser in context menu of marked text #723
+- new: remember night mode per site #669
+- new: adding "copy link" button to download dialog #733
+- new: remember night mode, when opening new tabs
+- new: gesture: open start site
+- new: keep screen on
+- improved: set favicons (thanks to @woheller69)
+- updated: translations
+- updated: build libraries
