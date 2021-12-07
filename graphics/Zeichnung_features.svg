@@ -7,7 +7,7 @@
    viewBox="0 0 270.93333 132.29167"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="Zeichnung_features.svg"
    inkscape:export-filename="/home/juergen/Android/Apps/Zeichnung_features.png"
    inkscape:export-xdpi="95.999992"
@@ -28,9 +28,9 @@
      showgrid="true"
      units="px"
      width="1024px"
-     inkscape:zoom="0.66016473"
-     inkscape:cx="452.15987"
-     inkscape:cy="247.66546"
+     inkscape:zoom="0.46680696"
+     inkscape:cx="358.8207"
+     inkscape:cy="227.07459"
      inkscape:window-width="1366"
      inkscape:window-height="699"
      inkscape:window-x="0"
@@ -48,12 +48,15 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="opacity:1;fill:#353535;fill-opacity:1;stroke-width:0.370781"
+       style="opacity:1;fill:#474a00;fill-opacity:1;stroke-width:0.370781"
        id="rect24715"
        width="272.1618"
        height="135.40401"
        x="0.41707471"
-       y="-0.51103324" />
+       y="-0.51103324"
+       inkscape:export-filename="/home/juergen/Android/StudioProjects/browser/graphics/Zeichnung_features.png"
+       inkscape:export-xdpi="95.999992"
+       inkscape:export-ydpi="95.999992" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:23.8125px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -76,10 +79,21 @@
          x="16.431778"
          y="83.991425"
          id="tspan825">free and open source software</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.8479px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="16.633865"
+       y="97.930031"
+       id="text29431"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:10.8479px;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed,  Bold Condensed';fill:#fafafa;fill-opacity:1;stroke-width:0.264583"
+         x="16.633865"
+         y="97.930031"
+         id="tspan29429">your privacy.  your data.</tspan></text>
     <g
        inkscape:label="Ebene 1"
        id="layer1-5"
-       transform="matrix(14.482987,0,0,14.482987,-1199.3815,-2066.2499)">
+       transform="matrix(16.896818,0,0,16.896818,-1429.2645,-2422.972)">
       <g
          id="g23199"
          transform="translate(0.308877,0.46658)"
@@ -901,21 +915,10 @@
       <path
          d="m 98.075339,147.89558 c 0.02117,-0.17463 0.03704,-0.34925 0.03704,-0.52917 0,-0.17991 -0.01587,-0.35454 -0.03704,-0.52916 h 0.894292 c 0.04233,0.16933 0.06879,0.3466 0.06879,0.52916 0,0.18256 -0.02646,0.35984 -0.06879,0.52917 m -1.362604,1.47108 c 0.15875,-0.29369 0.280458,-0.61119 0.365125,-0.94191 h 0.78052 c -0.254,0.43656 -0.658812,0.77522 -1.145645,0.94191 m -0.06615,-1.47108 h -1.23825 c -0.02646,-0.17463 -0.04233,-0.34925 -0.04233,-0.52917 0,-0.17991 0.01588,-0.35719 0.04233,-0.52916 h 1.23825 c 0.02381,0.17197 0.04233,0.34925 0.04233,0.52916 0,0.17992 -0.01852,0.35454 -0.04233,0.52917 m -0.619124,1.57692 c -0.219604,-0.3175 -0.396875,-0.6694 -0.505354,-1.04775 h 1.010708 c -0.108479,0.37835 -0.28575,0.73025 -0.505354,1.04775 m -1.058334,-3.16442 h -0.772583 c 0.251354,-0.43921 0.658813,-0.77788 1.143,-0.94192 -0.15875,0.29369 -0.277812,0.61119 -0.370417,0.94192 m -0.772583,2.11667 h 0.772583 c 0.09261,0.33072 0.211667,0.64822 0.370417,0.94191 -0.484187,-0.16669 -0.891646,-0.50535 -1.143,-0.94191 m -0.216958,-0.52917 c -0.04233,-0.16933 -0.06879,-0.34661 -0.06879,-0.52917 0,-0.18256 0.02646,-0.35983 0.06879,-0.52916 h 0.894291 c -0.02117,0.17462 -0.03704,0.34925 -0.03704,0.52916 0,0.17992 0.01587,0.35454 0.03704,0.52917 m 1.153583,-2.6379 c 0.219604,0.3175 0.396875,0.67204 0.505354,1.0504 h -1.010708 c 0.108479,-0.37836 0.28575,-0.7329 0.505354,-1.0504 m 1.830916,1.0504 h -0.78052 c -0.08467,-0.33073 -0.206375,-0.64823 -0.365125,-0.94192 0.486833,0.16669 0.891645,0.50271 1.145645,0.94192 m -1.830916,-1.5875 c -1.463146,0 -2.645834,1.19062 -2.645834,2.64583 a 2.6458333,2.6458333 0 0 0 2.645834,2.64584 2.6458333,2.6458333 0 0 0 2.645833,-2.64584 2.6458333,2.6458333 0 0 0 -2.645833,-2.64583 z"
          id="path864"
-         style="fill:#7cb342;fill-opacity:1;stroke-width:0.264583"
+         style="fill:#afb42b;fill-opacity:1;stroke-width:0.264583"
          inkscape:export-filename="/home/juergen/Android/Apps/path864.png"
          inkscape:export-xdpi="1199.9963"
          inkscape:export-ydpi="1199.9963" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.8479px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="16.633865"
-       y="97.930031"
-       id="text29431"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:10.8479px;font-family:'Fira Sans Condensed';-inkscape-font-specification:'Fira Sans Condensed,  Bold Condensed';fill:#fafafa;fill-opacity:1;stroke-width:0.264583"
-         x="16.633865"
-         y="97.930031"
-         id="tspan29429">your privacy.  your data.</tspan></text>
   </g>
 </svg>
