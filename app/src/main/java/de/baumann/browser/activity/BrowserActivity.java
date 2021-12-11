@@ -603,6 +603,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
         omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
+        omniBox_tab.setOnLongClickListener(view -> {
+            show_dialogFastToggle();
+            return false;
+        });
         omniBox_overview = findViewById(R.id.omnibox_overview);
 
         list_search = findViewById(R.id.list_search);
