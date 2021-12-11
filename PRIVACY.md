@@ -8,8 +8,11 @@ FOSS Browser software requires certain functionalities and permissions to be ena
 
 For the software to function efficiently the following permissions are required:
 
-- location (disabled by default))
-- storage (to download files and make screenshots)
+- location (disabled by default)
+- camera (WebRTC support: for example video conferences)
+- microphone (WebRTC support: for example audio conferences)
+- storage (to make and restore backups)
+- sensors (detect screen orientation/UI mode)
 - internet access (Yeah, it's internet browser)
 
 These permissions can be disabled if you don't require the service they provide. <hr>
