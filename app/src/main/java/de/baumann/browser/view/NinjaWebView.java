@@ -5,6 +5,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
@@ -13,11 +14,13 @@ import android.os.Build;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
@@ -27,7 +30,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.chip.Chip;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
@@ -226,37 +231,30 @@ public class NinjaWebView extends WebView implements AlbumController {
         profile = profileOriginal;
     }
 
-    public void setProfileIcon (ImageButton omniBox_tab) {
+    public void setProfileIcon (FloatingActionButton omniBox_tab) {
         String url = this.getUrl();
         assert url != null;
         switch (profile) {
             case "profileTrusted":
-                if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_red);
-                else omniBox_tab.setImageResource(R.drawable.icon_profile_trusted);
+                omniBox_tab.setImageResource(R.drawable.icon_profile_trusted);
                 break;
             case "profileStandard":
-                if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_standard_red);
-                else omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
+                omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
                 break;
             case "profileProtected":
-                if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_protected_red);
-                else omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
+                omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
                 break;
             default:
-                if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_changed_red);
-                else omniBox_tab.setImageResource(R.drawable.icon_profile_changed);
+                omniBox_tab.setImageResource(R.drawable.icon_profile_changed);
                 break;
         }
 
         if (listTrusted.isWhite(url)) {
-            if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_trusted_red);
-            else omniBox_tab.setImageResource(R.drawable.icon_profile_trusted);
+            omniBox_tab.setImageResource(R.drawable.icon_profile_trusted);
         } else if (listStandard.isWhite(url)) {
-            if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_standard_red);
-            else omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
+            omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
         } else if (listProtected.isWhite(url)) {
-            if (url.startsWith("http:")) omniBox_tab.setImageResource(R.drawable.icon_profile_protected_red);
-            else omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
+            omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
         }
     }
 
@@ -515,9 +513,6 @@ public class NinjaWebView extends WebView implements AlbumController {
             browserController.updateProgress(progress);
         } else if (foreground) {
             browserController.updateProgress(BrowserUnit.LOADING_STOPPED);
-        }
-        if (isLoadFinish() && !stopped) {
-            browserController.updateAutoComplete();
         }
     }
 

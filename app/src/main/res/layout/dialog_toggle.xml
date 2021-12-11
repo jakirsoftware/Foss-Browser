@@ -126,8 +126,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_images"
                 app:chipIcon="@drawable/icon_image"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_adBlock"
@@ -141,8 +140,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_adblock"
                 app:chipIcon="@drawable/icon_adblock"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_saveData"
@@ -156,8 +154,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_save_data"
                 app:chipIcon="@drawable/icon_savedata"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
         </LinearLayout>
 
@@ -182,8 +179,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_location"
                 app:chipIcon="@drawable/icon_location"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_camera"
@@ -197,8 +193,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_camera"
                 app:chipIcon="@drawable/icon_camera"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
 
             <com.google.android.material.chip.Chip
@@ -213,8 +208,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_microphone"
                 app:chipIcon="@drawable/icon_microphone"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
         </LinearLayout>
 
@@ -237,8 +231,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_history"
                 app:chipIcon="@drawable/icon_history"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
 
             <com.google.android.material.chip.Chip
@@ -253,8 +246,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_fingerPrint"
                 app:chipIcon="@drawable/icon_fingerprint"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_cookie"
@@ -268,8 +260,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_cookie"
                 app:chipIcon="@drawable/icon_cookie"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
         </LinearLayout>
 
@@ -293,8 +284,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_javascript"
                 app:chipIcon="@drawable/icon_java"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_javaScriptPopUp"
@@ -308,8 +298,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_javascript_popUp"
                 app:chipIcon="@drawable/icon_popup"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_dom"
@@ -323,8 +312,7 @@
                 android:ellipsize="end"
                 android:text="@string/setting_title_dom"
                 app:chipIcon="@drawable/icon_dom"
-                app:chipIconEnabled="true"
-                app:chipIconSize="20dp"/>
+                app:chipIconEnabled="true"/>
 
         </LinearLayout>
 

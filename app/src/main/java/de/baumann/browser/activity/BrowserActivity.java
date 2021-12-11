@@ -19,6 +19,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -50,9 +51,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.color.DynamicColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.progressindicator.CircularProgressIndicator;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,7 +73,6 @@ import android.view.MotionEvent;
 import android.view.OrientationEventListener;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
@@ -80,7 +82,6 @@ import android.webkit.WebBackForwardList;
 import android.webkit.WebChromeClient;
 import android.webkit.WebStorage;
 import android.webkit.WebView;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -91,14 +92,12 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 import de.baumann.browser.browser.AdBlock;
@@ -116,10 +115,10 @@ import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
-import de.baumann.browser.view.CompleteAdapter;
 import de.baumann.browser.view.GridAdapter;
 
 import de.baumann.browser.view.GridItem;
+import de.baumann.browser.view.CompleteAdapter;
 import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
 import de.baumann.browser.view.RecordAdapter;
@@ -140,7 +139,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private RecordAdapter adapter;
     private RelativeLayout omniBox;
     private ImageButton omniBox_overview;
-    private AutoCompleteTextView omniBox_text;
+    private TextInputEditText omniBox_text;
 
     // Views
 
@@ -150,10 +149,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private NinjaWebView ninjaWebView;
     private View customView;
     private VideoView videoView;
-    private ImageButton omniBox_tab;
+    private FloatingActionButton omniBox_tab;
     private KeyListener listener;
     private BadgeDrawable badgeDrawable;
-    private CircularProgressIndicator progressBar;
+    private LinearProgressIndicator progressBar;
 
     // Layouts
 
@@ -161,10 +160,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private FrameLayout contentFrame;
     private LinearLayout tab_container;
     private FrameLayout fullscreenHolder;
+    private ListView list_search;
+    private Button omnibox_close;
 
     // Others
 
-    private int mLastContentHeight = 0;
     private BottomNavigationView bottom_navigation;
     private BottomAppBar bottomAppBar;
 
@@ -204,18 +204,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             onHideCustomView();
         }
     }
-
-    private final ViewTreeObserver.OnGlobalLayoutListener keyboardLayoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
-        @Override public void onGlobalLayout() {
-            int currentContentHeight = findViewById(Window.ID_ANDROID_CONTENT).getHeight();
-            if (mLastContentHeight > currentContentHeight + 100) {
-                mLastContentHeight = currentContentHeight;
-            } else if (currentContentHeight > mLastContentHeight + 100) {
-                mLastContentHeight = currentContentHeight;
-                omniBox_text.clearFocus();
-            }
-        }
-    };
 
     // Overrides
 
@@ -283,7 +271,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     .putBoolean("sp_autofill", true).apply();
         }
         contentFrame = findViewById(R.id.main_content);
-        contentFrame.getViewTreeObserver().addOnGlobalLayoutListener(keyboardLayoutListener);
 
         // Calculate ActionBar height
         TypedValue tv = new TypedValue();
@@ -314,8 +301,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
         registerReceiver(downloadReceiver, filter);
-
-        mLastContentHeight = findViewById(Window.ID_ANDROID_CONTENT).getHeight();
 
         initOmniBox();
         initTabDialog();
@@ -438,7 +423,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         unregisterReceiver(downloadReceiver);
-        ninjaWebView.getViewTreeObserver().removeOnGlobalLayoutListener(keyboardLayoutListener);
         super.onDestroy();
     }
 
@@ -451,6 +435,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 hideOverview();
                 if (fullscreenHolder != null || customView != null || videoView != null) {
                     Log.v(TAG, "FOSS Browser in fullscreen mode");
+                } else if (list_search.getVisibility() == View.VISIBLE) {
+                    omnibox_close.performClick();
                 } else if (searchPanel.getVisibility() == View.VISIBLE) {
                     searchOnSite = false;
                     searchBox.setText("");
@@ -493,19 +479,20 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
     }
 
-    @Override
-    public void updateAutoComplete() {
+    public void initSearch() {
+        NinjaToast.show(this, R.string.main_omnibox_input_hint);
         RecordAction action = new RecordAction(this);
         List<Record> list = action.listEntries(activity);
         CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
-        omniBox_text.setAdapter(adapter);
+        list_search.setAdapter(adapter);
+        list_search.setTextFilterEnabled(true);
         adapter.notifyDataSetChanged();
-        omniBox_text.setDropDownWidth(context.getResources().getDisplayMetrics().widthPixels);
-        omniBox_text.setOnItemClickListener((parent, view, position, id) -> {
+        list_search.setOnItemClickListener((parent, view, position, id) -> {
+            omniBox_text.clearFocus();
             String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
             for (Record record:list){
                 if (record.getURL().equals(url)){
-                    if ((record.getType()==BOOKMARK_ITEM)||(record.getType()==STARTSITE_ITEM)||(record.getType()== HISTORY_ITEM) ) {
+                    if ((record.getType()==BOOKMARK_ITEM)||(record.getType()==STARTSITE_ITEM)) {
                         if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         if (record.getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
                             ninjaWebView.toggleNightMode();
@@ -516,6 +503,22 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 }
             }
             ninjaWebView.loadUrl(url);
+        });
+        list_search.setOnItemLongClickListener((adapterView, view, i, l) -> {
+            String title = ((TextView) view.findViewById(R.id.record_item_title)).getText().toString();
+            String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
+            showContextMenuLink(title, url, SRC_ANCHOR_TYPE);
+            omnibox_close.performClick();
+            return true;
+        });
+        omniBox_text.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s);
+            }
         });
     }
 
@@ -602,6 +605,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_tab.setOnClickListener(v -> showTabView());
         omniBox_overview = findViewById(R.id.omnibox_overview);
 
+        list_search = findViewById(R.id.list_search);
+        omnibox_close = findViewById(R.id.omnibox_close);
+        omnibox_close.setOnClickListener(view -> omniBox_text.clearFocus());
+
         progressBar = findViewById(R.id.main_progress_bar);
         bottomAppBar = findViewById(R.id.bottomAppBar);
 
@@ -612,11 +619,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         badgeDrawable = BadgeDrawable.create(context);
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
+        badgeDrawable.setVerticalOffset(20);
+        badgeDrawable.setHorizontalOffset(20);
         badgeDrawable.setNumber(BrowserContainer.size());
         badgeDrawable.setBackgroundColor(color);
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
 
-        ImageButton omnibox_overflow = findViewById(R.id.omnibox_overflow);
+        Button omnibox_overflow = findViewById(R.id.omnibox_overflow);
         omnibox_overflow.setOnClickListener(v -> showOverflow());
         omnibox_overflow.setOnLongClickListener(v -> {
             show_dialogFastToggle();
@@ -669,6 +678,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
         omniBox_text.setOnFocusChangeListener((v, hasFocus) -> {
             if (omniBox_text.hasFocus()) {
+                omnibox_close.setVisibility(View.VISIBLE);
+                list_search.setVisibility(View.VISIBLE);
+                omnibox_overflow.setVisibility(View.GONE);
+                omniBox_overview.setVisibility(View.GONE);
+                omniBox_tab.setVisibility(View.GONE);
                 String url = ninjaWebView.getUrl();
                 ninjaWebView.stopLoading();
                 omniBox_text.setKeyListener(listener);
@@ -677,9 +691,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 } else {
                     omniBox_text.setText(url);
                 }
-                updateAutoComplete();
+                initSearch();
                 omniBox_text.selectAll();
             } else {
+                HelperUnit.hideSoftKeyboard(omniBox_text, context);
+                omnibox_close.setVisibility(View.GONE);
+                list_search.setVisibility(View.GONE);
+                omnibox_overflow.setVisibility(View.VISIBLE);
+                omniBox_overview.setVisibility(View.VISIBLE);
+                omniBox_tab.setVisibility(View.VISIBLE);
                 omniBox_text.setKeyListener(null);
                 omniBox_text.setEllipsize(TextUtils.TruncateAt.END);
                 omniBox_text.setText(ninjaWebView.getTitle());
@@ -803,10 +823,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
 
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-                    if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
-                        ninjaWebView.toggleNightMode();
-                        isNightMode = ninjaWebView.isNightMode();
+                    if (list.get(position).getType()==BOOKMARK_ITEM||list.get(position).getType()==STARTSITE_ITEM) {
+                        if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                        if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
+                            ninjaWebView.toggleNightMode();
+                            isNightMode = ninjaWebView.isNightMode();
+                        }
                     }
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
@@ -841,10 +863,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.notifyDataSetChanged();
                 filter = false;
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-                    if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
-                        ninjaWebView.toggleNightMode();
-                        isNightMode = ninjaWebView.isNightMode();
+                    if (list.get(position).getType()==BOOKMARK_ITEM||list.get(position).getType()==STARTSITE_ITEM) {
+                        if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                        if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
+                            ninjaWebView.toggleNightMode();
+                            isNightMode = ninjaWebView.isNightMode();
+                        }
                     }
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
@@ -877,10 +901,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 listView.setOnItemClickListener((parent, view, position, id) -> {
-                    if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
-                    if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
-                        ninjaWebView.toggleNightMode();
-                        isNightMode = ninjaWebView.isNightMode();
+                    if (list.get(position).getType()==BOOKMARK_ITEM||list.get(position).getType()==STARTSITE_ITEM) {
+                        if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
+                        if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
+                            ninjaWebView.toggleNightMode();
+                            isNightMode = ninjaWebView.isNightMode();
+                        }
                     }
                     ninjaWebView.loadUrl(list.get(position).getURL());
                     hideOverview();
@@ -986,9 +1012,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private void initSearchPanel() {
         searchPanel = findViewById(R.id.searchBox);
         searchBox = findViewById(R.id.searchBox_input);
-        ImageView searchUp = findViewById(R.id.searchBox_up);
-        ImageView searchDown = findViewById(R.id.searchBox_down);
-        ImageView searchCancel = findViewById(R.id.searchBox_cancel);
+        Button searchUp = findViewById(R.id.searchBox_up);
+        Button searchDown = findViewById(R.id.searchBox_down);
+        Button searchCancel = findViewById(R.id.searchBox_cancel);
         searchBox.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
@@ -1498,7 +1524,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         if (url != null) {
 
-            omniBox_tab.setVisibility(View.VISIBLE);
             progressBar.setVisibility(View.GONE);
             ninjaWebView.setProfileIcon(omniBox_tab);
             ninjaWebView.initCookieManager(url);
@@ -1514,6 +1539,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 omniBox_tab.setOnClickListener(v -> showTabView());
                 omniBox_text.setText("");
             } else {
+                omniBox_tab.setImageResource(R.drawable.icon_alert);
                 omniBox_tab.setOnClickListener(v -> {
                     MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
                     builder.setIcon(R.drawable.icon_alert);
@@ -1552,7 +1578,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (progress != BrowserUnit.LOADING_STOPPED) updateOmniBox();
         if (progress < BrowserUnit.PROGRESS_MAX) {
             progressBar.setVisibility(View.VISIBLE);
-            omniBox_tab.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -1777,10 +1802,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             builder.setTitle(R.string.setting_title_confirm_exit);
             builder.setIcon(R.drawable.icon_alert);
             builder.setMessage(R.string.toast_quit);
-            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-                //FaviconHelper db=new FaviconHelper(context);
-                //db.cleanUpFaviconDB(context);
-                finish();});
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> finish());
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();

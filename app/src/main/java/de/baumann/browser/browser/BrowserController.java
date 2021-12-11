@@ -6,7 +6,6 @@ import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 
 public interface BrowserController {
-    void updateAutoComplete();
     void updateProgress(int progress);
     void showAlbum(AlbumController albumController);
     void removeAlbum(AlbumController albumController);

@@ -1,5 +1,9 @@
 package de.baumann.browser.view;
 
+import static de.baumann.browser.database.RecordAction.BOOKMARK_ITEM;
+import static de.baumann.browser.database.RecordAction.HISTORY_ITEM;
+import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
@@ -19,13 +23,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import de.baumann.browser.R;
 import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
-import de.baumann.browser.R;
-
-import static de.baumann.browser.database.RecordAction.BOOKMARK_ITEM;
-import static de.baumann.browser.database.RecordAction.HISTORY_ITEM;
-import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
 
 
 public class CompleteAdapter extends BaseAdapter implements Filterable {
@@ -59,7 +59,8 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            if (results != null && results.count > 0) {
+            count = results.count;
+            if (results.count > 0) {
                 // The API returned at least one result, update the data.
                 resultList = (List<CompleteItem>) results.values;
                 notifyDataSetChanged();
@@ -135,6 +136,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
     private final List<CompleteItem> originalList;
     private List<CompleteItem> resultList;
     private final CompleteFilter filter = new CompleteFilter();
+    private int count;
 
     public CompleteAdapter(Context context, int layoutResId, List<Record> recordList) {
         this.context = context;
@@ -161,7 +163,11 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
     @Override
     public int getCount() {
-        return resultList.size();
+        if (count > 0) {
+            return resultList.size();
+        } else {
+            return 0;
+        }
     }
 
     @Override
