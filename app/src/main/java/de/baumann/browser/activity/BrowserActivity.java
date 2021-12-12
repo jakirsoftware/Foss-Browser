@@ -19,7 +19,6 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -129,7 +128,6 @@ import static android.webkit.WebView.HitTestResult.IMAGE_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
 import static android.webkit.WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE;
 import static de.baumann.browser.database.RecordAction.BOOKMARK_ITEM;
-import static de.baumann.browser.database.RecordAction.HISTORY_ITEM;
 import static de.baumann.browser.database.RecordAction.STARTSITE_ITEM;
 
 public class BrowserActivity extends AppCompatActivity implements BrowserController {
@@ -1265,30 +1263,40 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             chip_dom.setEnabled(false);
         }
 
-        String text;
-        if (ninjaWebView.isNightMode()){
-            text = getString(R.string.menu_dayView);
-        } else {
-            text = getString(R.string.menu_nightView);
-        }
-        Button chip_toggleNightView = dialogView.findViewById(R.id.chip_toggleNightView);
-        chip_toggleNightView.setText(text);
+        Chip chip_toggleNightView = dialogView.findViewById(R.id.chip_toggleNightView);
+        chip_toggleNightView.setChecked(ninjaWebView.isNightMode());
         chip_toggleNightView.setOnClickListener(v -> {
+            NinjaToast.show(context, R.string.menu_nightView);
             ninjaWebView.toggleNightMode();
             isNightMode = ninjaWebView.isNightMode();
             dialog.cancel();
         });
 
-        String textDesktopMode;
-        if (ninjaWebView.isDesktopMode()){
-            textDesktopMode = getString(R.string.menu_mobileView);
-        } else {
-            textDesktopMode = getString(R.string.menu_desktopView);
-        }
-        Button chip_toggleDesktop = dialogView.findViewById(R.id.chip_toggleDesktop);
-        chip_toggleDesktop.setText(textDesktopMode);
+        Chip chip_toggleDesktop = dialogView.findViewById(R.id.chip_toggleDesktop);
+        chip_toggleDesktop.setChecked(ninjaWebView.isDesktopMode());
         chip_toggleDesktop.setOnClickListener(v -> {
+            NinjaToast.show(context, R.string.menu_desktopView);
             ninjaWebView.toggleDesktopMode(true);
+            dialog.cancel();
+        });
+
+        Chip chip_toggleScreenOn = dialogView.findViewById(R.id.chip_toggleScreenOn);
+        chip_toggleScreenOn.setChecked(sp.getBoolean("sp_screenOn", false));
+        chip_toggleScreenOn.setOnClickListener(v -> {
+            NinjaToast.show(context, R.string.setting_title_screenOn);
+            sp.edit().putBoolean("sp_screenOn", !sp.getBoolean("sp_screenOn", false)).apply();
+            saveOpenedTabs();
+            HelperUnit.triggerRebirth(context);
+            dialog.cancel();
+        });
+
+        Chip chip_toggleAudioBackground = dialogView.findViewById(R.id.chip_toggleAudioBackground);
+        chip_toggleAudioBackground.setChecked(sp.getBoolean("sp_audioBackground", false));
+        chip_toggleAudioBackground.setOnClickListener(v -> {
+            NinjaToast.show(context, R.string.setting_title_audioBackground);
+            sp.edit().putBoolean("sp_audioBackground", !sp.getBoolean("sp_audioBackground", false)).apply();
+            saveOpenedTabs();
+            HelperUnit.triggerRebirth(context);
             dialog.cancel();
         });
 

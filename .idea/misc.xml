@@ -22,6 +22,7 @@
         <entry key="app/src/main/res/drawable/icon_alert.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_arrow_down_gest.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_arrow_up_gest.xml" value="0.10260416666666666" />
+        <entry key="app/src/main/res/drawable/icon_audio.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/drawable/icon_bookmark.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_bookmark_light.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/icon_camera.xml" value="0.20625" />
@@ -33,6 +34,7 @@
         <entry key="app/src/main/res/drawable/icon_cookie.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_datasave.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_delete.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_desktop.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/drawable/icon_dom.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_dots.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_fingerprint.xml" value="0.20625" />
@@ -50,6 +52,7 @@
         <entry key="app/src/main/res/drawable/icon_menu_save.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_menu_share.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_microphone.xml" value="0.20307692307692307" />
+        <entry key="app/src/main/res/drawable/icon_night.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/drawable/icon_overflow.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_overflow_light.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/icon_popup.xml" value="0.20625" />
@@ -69,6 +72,7 @@
         <entry key="app/src/main/res/drawable/icon_refresh.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_restore.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_savedata.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_screen.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/drawable/icon_settings.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_tab.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_web.xml" value="0.20625" />
