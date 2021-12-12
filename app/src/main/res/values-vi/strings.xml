@@ -6,6 +6,7 @@
     <string name="app_cancel">Hủy</string>
     <string name="app_done">Xong</string>
     <string name="app_error">Lỗi</string>
+    <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Cảnh báo</string>
     <string name="app_permission">Để sử dụng tính năng này bạn phải cấp quyền. Sau đó, khởi động lại ứng dụng.</string>
     <string name="app_update">Thông báo cập nhật</string>
