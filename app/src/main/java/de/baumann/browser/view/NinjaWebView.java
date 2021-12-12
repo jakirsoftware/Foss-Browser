@@ -456,7 +456,11 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     @Override
     protected void onWindowVisibilityChanged(int visibility) {
-        if (visibility != View.GONE) super.onWindowVisibilityChanged(View.VISIBLE);
+        if (sp.getBoolean("sp_audioBackground", false)) {
+            if (visibility != View.GONE) super.onWindowVisibilityChanged(View.VISIBLE);
+        } else {
+            super.onWindowVisibilityChanged(visibility);
+        }
     }
 
     @Override
