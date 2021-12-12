@@ -208,5 +208,6 @@
     <string name="menu_restart">Перезапуск и перезагрузка вкладок</string>
     <string name="profile_warning">Перезаписано:</string>
     <string name="setting_title_screenOn">Держите экран включенным</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>
