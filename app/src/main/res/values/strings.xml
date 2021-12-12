@@ -254,6 +254,7 @@
     <string name="menu_restart">Restart and reload tabs</string>
     <string name="profile_warning">Overwritten by:</string>
     <string name="setting_title_screenOn">Keep screen on</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
 
     <!-- License changelog -->
 

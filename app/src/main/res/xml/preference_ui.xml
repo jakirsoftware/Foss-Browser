@@ -8,27 +8,32 @@
         <CheckBoxPreference
             android:key="hideToolbar"
             android:defaultValue="true"
-            android:title="@string/setting_title_hideToolbar"/>
+            android:summary="@string/setting_title_hideToolbar"/>
 
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="sp_swipeToReload"
-            android:title="@string/setting_title_reload"/>
+            android:summary="@string/setting_title_reload"/>
 
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="sp_screenOn"
-            android:title="@string/setting_title_screenOn"/>
+            android:summary="@string/setting_title_screenOn"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="sp_audioBackground"
+            android:summary="@string/setting_title_audioBackground"/>
 
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="sp_close_browser_confirm"
-            android:title="@string/setting_title_confirm_exit"/>
+            android:summary="@string/setting_title_confirm_exit"/>
 
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="sp_close_tab_confirm"
-            android:title="@string/setting_title_confirm_tab_close"/>
+            android:summary="@string/setting_title_confirm_tab_close"/>
 
         <CheckBoxPreference
             android:key="sp_reloadTabs"

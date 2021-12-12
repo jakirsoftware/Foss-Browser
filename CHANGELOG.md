@@ -1,5 +1,6 @@
 ### v 8.6 (WIP)
 
+- new: play audio on background
 - new: Option to keep screen awake
 - updated: Privacy Policy
 - improved: MaterialYou theme
