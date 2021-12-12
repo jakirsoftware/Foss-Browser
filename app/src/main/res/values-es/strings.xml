@@ -208,5 +208,6 @@ Traducción realizada con la versión gratuita del traductor www.DeepL.com/Trans
     <string name="menu_restart">Reiniciar y recargar pestañas</string>
     <string name="profile_warning">Escrito por:</string>
     <string name="setting_title_screenOn">Mantener pantalla encendida</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>
