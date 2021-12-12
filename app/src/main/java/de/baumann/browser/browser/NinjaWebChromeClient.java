@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.provider.Settings;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.*;
@@ -19,6 +20,7 @@ import java.util.Objects;
 
 import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
+import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
 
 public class NinjaWebChromeClient extends WebChromeClient {
@@ -53,10 +55,15 @@ public class NinjaWebChromeClient extends WebChromeClient {
         newWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-                browserIntent.setData(request.getUrl());
-                context.startActivity(browserIntent);
-                return true;
+                try {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                    browserIntent.setData(request.getUrl());
+                    context.startActivity(browserIntent);
+                    return true;
+                } catch (Exception e) {
+                    NinjaToast.show(context, R.string.app_error_activity);
+                    return true;
+                }
             }
         });
         return true;
