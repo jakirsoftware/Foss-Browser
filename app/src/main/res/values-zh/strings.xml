@@ -206,5 +206,6 @@
     <string name="menu_restart">重新启动并重新加载标签</string>
     <string name="profile_warning">由下列配置文件覆盖：</string>
     <string name="setting_title_screenOn">保持屏幕开启</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>

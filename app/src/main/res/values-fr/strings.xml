@@ -208,5 +208,6 @@
     <string name="menu_restart">Redémarrer et recharger les onglets</string>
     <string name="profile_warning">Écrasé par:</string>
     <string name="setting_title_screenOn">Garder l\'écran allumé</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>

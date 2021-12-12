@@ -208,5 +208,6 @@ Traduzido com a versão gratuita do tradutor - www.DeepL.com/Translator    </str
     <string name="menu_restart">Reiniciar e recarregar abas</string>
     <string name="profile_warning">Sobrescrito por:</string>
     <string name="setting_title_screenOn">Manter ecrã ligado</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>

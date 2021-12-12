@@ -6,7 +6,7 @@
     <string name="app_cancel">中止</string>
     <string name="app_done">完了</string>
     <string name="app_error">エラー</string>
-    <string name="app_error_activity">No app installed to open this url.</string>
+    <string name="app_error_activity">この URL を開くアプリがインストールされていません</string>
     <string name="app_warning">警告</string>
     <string name="app_permission">この機能を使うにはマイクの権限を与えなければいけません。その後アプリを再起動して下さい。</string>
     <string name="app_update">アップデート通知</string>
@@ -208,5 +208,6 @@
     <string name="menu_restart">再起動してタブを再読込</string>
     <string name="profile_warning">上書き者：</string>
     <string name="setting_title_screenOn">画面を消灯しない</string>
+    <string name="setting_title_audioBackground">バックグラウンドで音声を再生</string>
     <!-- License changelog -->
 </resources>

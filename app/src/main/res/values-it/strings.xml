@@ -206,5 +206,6 @@
     <string name="menu_restart">Riavvia e ricarica le schede</string>
     <string name="profile_warning">Sovrascritto da:</string>
     <string name="setting_title_screenOn">Mantieni il display acceso</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>

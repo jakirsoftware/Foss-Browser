@@ -207,5 +207,6 @@
     <string name="menu_restart">Újraindítás és a lapok újratöltése</string>
     <string name="profile_warning">Felülírva:</string>
     <string name="setting_title_screenOn">Kijelző ébrentartása</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>

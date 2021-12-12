@@ -206,5 +206,6 @@
     <string name="menu_restart">Uruchom ponownie i załaduj ponownie karty</string>
     <string name="profile_warning">Nadpisane przez:</string>
     <string name="setting_title_screenOn">Nie wyłączaj ekranu</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>
