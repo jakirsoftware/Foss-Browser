@@ -6,6 +6,7 @@
     <string name="app_cancel">Cancelar</string>
     <string name="app_done">Listo</string>
     <string name="app_error">Error</string>
+    <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Advertencia</string>
     <string name="app_permission">Para utilizar esta función debes conceder el permiso. Después de eso, reinicie la aplicación.</string>
     <string name="app_update">Notificación de actualización</string>
