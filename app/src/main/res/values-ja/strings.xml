@@ -6,6 +6,7 @@
     <string name="app_cancel">中止</string>
     <string name="app_done">完了</string>
     <string name="app_error">エラー</string>
+    <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">警告</string>
     <string name="app_permission">この機能を使うにはマイクの権限を与えなければいけません。その後アプリを再起動して下さい。</string>
     <string name="app_update">アップデート通知</string>

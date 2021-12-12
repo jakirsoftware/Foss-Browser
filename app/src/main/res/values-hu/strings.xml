@@ -6,6 +6,7 @@
     <string name="app_cancel">Mégse</string>
     <string name="app_done">Kész</string>
     <string name="app_error">Hiba</string>
+    <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Figyelmeztetés</string>
     <string name="app_permission">A funkció használatához engedélyt kell adnia. Ezt követően indítsa újra az alkalmazást.</string>
     <string name="app_update">Frissítési értesítés</string>

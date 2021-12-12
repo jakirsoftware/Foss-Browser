@@ -6,6 +6,7 @@
     <string name="app_cancel">取消</string>
     <string name="app_done">完成</string>
     <string name="app_error">错误</string>
+    <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">警告</string>
     <string name="app_permission">要使用此功能，您必须授予权限，然后重启应用程序。</string>
     <string name="app_update">更新通知</string>
