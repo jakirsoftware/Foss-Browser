@@ -6,6 +6,7 @@
     <string name="app_cancel">Zrušit</string>
     <string name="app_done">Hotovo</string>
     <string name="app_error">Chyba</string>
+    <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Varování</string>
     <string name="app_permission">Chcete-li použít tuto funkci, musíte udělit oprávnění. Poté aplikaci restartujte.</string>
     <string name="app_update">Oznámení o aktualizaci</string>
