@@ -210,5 +210,6 @@
     <string name="menu_restart">Restartování a opětovné načtení karet</string>
     <string name="profile_warning">Přepsáno:</string>
     <string name="setting_title_screenOn">Nechat obrazovku zapnutou</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>
