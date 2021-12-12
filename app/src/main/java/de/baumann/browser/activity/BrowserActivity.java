@@ -480,7 +480,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void initSearch() {
-        NinjaToast.show(this, R.string.main_omnibox_input_hint);
+        NinjaToast.show(context, R.string.main_omnibox_input_hint);
         RecordAction action = new RecordAction(this);
         List<Record> list = action.listEntries(activity);
         CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);

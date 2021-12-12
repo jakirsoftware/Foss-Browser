@@ -30,7 +30,6 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="5dp"
                 android:ellipsize="end"
-                android:gravity="center_vertical"
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
@@ -320,7 +319,7 @@
             android:layout_width="match_parent"
             android:layout_height="?android:attr/listPreferredItemHeightSmall"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="20dp">
 
             <RelativeLayout
@@ -333,7 +332,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_toEndOf="@+id/cardView"
                     android:ellipsize="end"
                     android:gravity="center_vertical"
@@ -349,7 +348,7 @@
                     android:layout_height="25dp"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginEnd="10dp"
                     android:backgroundTint="@color/md_theme_light_inverseOnSurface"
                     app:cardCornerRadius="2dp">
 

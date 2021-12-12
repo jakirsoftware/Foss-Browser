@@ -1,3 +1,11 @@
+### v 8.6 (WIP)
+
+- new: Option to keep screen awake
+- updated: Privacy Policy
+- improved: MaterialYou theme
+- improved: search in history, bookmarks, ...
+- improved: close open tabs dialog after making selection
+
 ### v 8.5.1
 
 - fix: camera issue #729
