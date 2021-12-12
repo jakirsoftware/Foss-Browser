@@ -206,5 +206,6 @@
     <string name="menu_restart">Επανεκκίνηση και επαναφόρτωση καρτελών</string>
     <string name="profile_warning">Αντικαταστάθηκε από:</string>
     <string name="setting_title_screenOn">Κρατήστε την οθόνη ανοιχτή</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>
