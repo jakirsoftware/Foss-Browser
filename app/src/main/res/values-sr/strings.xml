@@ -6,6 +6,7 @@
     <string name="app_cancel">Откажи</string>
     <string name="app_done">Готово</string>
     <string name="app_error">Грешка</string>
+    <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Warning</string>
     <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="app_update">Update notification</string>
