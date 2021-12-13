@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">PDF として保存</string>
     <string name="menu_shareClipboard">クリップボードにコピー</string>
     <string name="menu_other_searchSite">サイト内の検索</string>
-    <string name="menu_other_info">\"FOSS Browser\" について</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">タイトル:</string>
     <string name="dialog_URL_hint">URL:</string>
