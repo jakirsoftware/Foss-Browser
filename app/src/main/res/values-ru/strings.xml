@@ -9,8 +9,6 @@
     <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Предупреждение</string>
     <string name="app_permission">Для использования этой функции необходимо предоставить разрешение. После этого перезапустите приложение.</string>
-    <string name="app_update">Уведомление об обновлении</string>
-    <string name="app_update_84">В этом обновлении \"FOSS Browser\" вводит профили для контроля конфиденциальности. Пожалуйста, проверьте это в настройках. Для корректной работы все ваши белые списки будут удалены.</string>
     <string name="list_empty">Список пуст</string>
     <string name="album_title_bookmarks">Закладки</string>
     <string name="album_title_history">История</string>

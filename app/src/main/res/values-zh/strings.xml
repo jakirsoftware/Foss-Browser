@@ -9,8 +9,6 @@
     <string name="app_error_activity">未安装用于打开此 url 的程序</string>
     <string name="app_warning">警告</string>
     <string name="app_permission">要使用此功能，您必须授予权限，然后重启应用程序。</string>
-    <string name="app_update">更新通知</string>
-    <string name="app_update_84">通过这次更新，“FOSS浏览器”引入了隐私控制配置文件。请在设置中查看。为了其正常工作，所有的白名单都会被删除。</string>
     <string name="list_empty">列表为空</string>
     <string name="album_title_bookmarks">书签</string>
     <string name="album_title_history">历史记录</string>

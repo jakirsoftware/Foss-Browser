@@ -9,8 +9,6 @@
     <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Cảnh báo</string>
     <string name="app_permission">Để sử dụng tính năng này bạn phải cấp quyền. Sau đó, khởi động lại ứng dụng.</string>
-    <string name="app_update">Thông báo cập nhật</string>
-    <string name="app_update_84">Với bản cập nhật này \"Trình duyệt FOSS\" giới thiệu các cấu hình để kiểm soát sự riêng tư. Vui lòng kiểm tra tính năng này trong cài đặt. Để hoạt động đúng, tất cả danh sách cho phép của bạn bị xoá.</string>
     <string name="list_empty">Danh sách trống</string>
     <string name="album_title_bookmarks">Dấu trang</string>
     <string name="album_title_history">Lịch sử</string>

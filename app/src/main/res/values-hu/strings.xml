@@ -9,8 +9,6 @@
     <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Figyelmeztetés</string>
     <string name="app_permission">A funkció használatához engedélyt kell adnia. Ezt követően indítsa újra az alkalmazást.</string>
-    <string name="app_update">Frissítési értesítés</string>
-    <string name="app_update_84">Ezzel a frissítéssel a \"FOSS Browser\" profilokat vezet be az adatvédelmi ellenőrzéshez. Kérjük, ellenőrizze ezt a beállításokban. A megfelelő működés érdekében az összes fehér lista törlésre kerül.</string>
     <string name="list_empty">A lista üres</string>
     <string name="album_title_bookmarks">Könyvjelzők</string>
     <string name="album_title_history">Előzmények</string>

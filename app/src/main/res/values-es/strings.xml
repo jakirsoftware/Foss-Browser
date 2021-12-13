@@ -9,8 +9,6 @@
     <string name="app_error_activity">Ninguna aplicación instalada para abrir esta URL.</string>
     <string name="app_warning">Advertencia</string>
     <string name="app_permission">Para utilizar esta función debes conceder el permiso. Después de eso, reinicie la aplicación.</string>
-    <string name="app_update">Notificación de actualización</string>
-    <string name="app_update_84">Con esta actualización \"FOSS Browser\" introduce perfiles para el control de la privacidad. Por favor, comprueba esto en la configuración. Para que funcione correctamente, se eliminan todas tus listas blancas.</string>
     <string name="list_empty">La lista está vacía</string>
     <string name="album_title_bookmarks">Marcadores</string>
     <string name="album_title_history">Historial</string>

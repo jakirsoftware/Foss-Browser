@@ -9,8 +9,6 @@
     <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Attenzione</string>
     <string name="app_permission">Per utilizzare questa funzionalità è necessario concedere il permesso. Dopo aver riavviato l\'app.</string>
-    <string name="app_update">Notifica di aggiornamento</string>
-    <string name="app_update_84">Con questo aggiornamento \"FOSS Browser\" introduce i profili per il controllo della privacy. Si prega di controllare questo nelle impostazioni. Per funzionare correttamente, tutte le tue whitelist vengono cancellate.</string>
     <string name="list_empty">Elenco vuoto</string>
     <string name="album_title_bookmarks">Segnalibri</string>
     <string name="album_title_history">Cronologia</string>
