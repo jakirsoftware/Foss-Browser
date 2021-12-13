@@ -25,10 +25,8 @@ import java.util.List;
 import java.util.Objects;
 
 import de.baumann.browser.activity.Settings_Profile;
-import de.baumann.browser.activity.List_Protected;
-import de.baumann.browser.activity.List_Trusted;
+import de.baumann.browser.activity.ProfilesList;
 import de.baumann.browser.R;
-import de.baumann.browser.activity.List_Standard;
 import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.view.GridAdapter;
 import de.baumann.browser.view.GridItem;
@@ -42,6 +40,7 @@ public class Fragment_settings_Privacy extends PreferenceFragmentCompat implemen
         Context context = getContext();
         assert context != null;
         initSummary(getPreferenceScreen());
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
 
         Preference sp_ad_block = findPreference("sp_ad_block");
         assert sp_ad_block != null;
@@ -77,7 +76,6 @@ public class Fragment_settings_Privacy extends PreferenceFragmentCompat implemen
             menu_grid.setAdapter(gridAdapter);
             gridAdapter.notifyDataSetChanged();
             menu_grid.setOnItemClickListener((parent, view, position, id) -> {
-                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
                 switch (position) {
                     case 0:
                         sp.edit().putString("profileToEdit", "profileTrusted").apply();
@@ -101,21 +99,24 @@ public class Fragment_settings_Privacy extends PreferenceFragmentCompat implemen
         Preference edit_trusted = findPreference("edit_trusted");
         assert edit_trusted != null;
         edit_trusted.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), List_Trusted.class);
+            sp.edit().putString("listToLoad", "trusted").apply();
+            Intent intent = new Intent(getActivity(), ProfilesList.class);
             requireActivity().startActivity(intent);
             return false;
         });
         Preference edit_standard = findPreference("edit_standard");
         assert edit_standard != null;
         edit_standard.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), List_Standard.class);
+            sp.edit().putString("listToLoad", "standard").apply();
+            Intent intent = new Intent(getActivity(), ProfilesList.class);
             requireActivity().startActivity(intent);
             return false;
         });
         Preference edit_protected = findPreference("edit_protected");
         assert edit_protected != null;
         edit_protected.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity(), List_Protected.class);
+            sp.edit().putString("listToLoad", "protected").apply();
+            Intent intent = new Intent(getActivity(), ProfilesList.class);
             requireActivity().startActivity(intent);
             return false;
         });
