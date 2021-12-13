@@ -9,8 +9,6 @@
     <string name="app_error_activity">Pro otevření této URL není nainstalována žádná aplikace.</string>
     <string name="app_warning">Varování</string>
     <string name="app_permission">Chcete-li použít tuto funkci, musíte udělit oprávnění. Poté aplikaci restartujte.</string>
-    <string name="app_update">Oznámení o aktualizaci</string>
-    <string name="app_update_84">V této aktualizaci zavádí \"FOSS Browser\" profily pro kontrolu soukromí. Zkontrolujte to prosím v nastavení. Pro správnou funkci se odstraní všechny vaše seznamy povolených.</string>
     <string name="list_empty">Seznam je prázdný</string>
     <string name="album_title_bookmarks">Záložky</string>
     <string name="album_title_history">Historie</string>
