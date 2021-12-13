@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">Simpan sebagai PDF</string>
     <string name="menu_shareClipboard">Salin ke papan klip</string>
     <string name="menu_other_searchSite">Cari di situs</string>
-    <string name="menu_other_info">Tentang \"Browser FOSS\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Judul:</string>
     <string name="dialog_URL_hint">URL:</string>
