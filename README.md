@@ -2,10 +2,17 @@
 
 "FOSS Browser" is a fully **f**ree (as in freedom) **o**pen **s**ource Android **s**oftware. FOSS Browser doesn't show ads and doesn't track you. The intention is to provide a simple and light weight but powerful and privacy friendly browser with a modern user interface. _Your privacy - your data._
 
-<a href="https://f-droid.org/packages/de.baumann.browser/" target="_blank">
-<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80"/></a>
+----
 
 [Releases](https://github.com/scoute-dich/browser/releases) | [Changelog](https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md) | [Privacy](https://github.com/scoute-dich/browser/blob/master/PRIVACY.md) | [License](https://github.com/scoute-dich/browser/blob/master/LICENSE.md) | [Code of conduct](https://github.com/scoute-dich/browser/blob/master/CODE_OF_CONDUCT.md) | [Contributing](https://github.com/scoute-dich/browser/blob/master/CONTRIBUTING.md) | [XDA - Link](http://forum.xda-developers.com/android/apps-games/app-browser-t3500091) | [Help translating on Crowdin](https://crowdin.com/project/foss-browser)
+
+
+
+<a href="https://f-droid.org/packages/de.baumann.browser/" target="_blank">
+<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="50"/></a>
+
+[![Donate](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NP6TGYDYP9SHY)
+[![Crowdin](https://badges.crowdin.net/foss-browser/localized.svg)](https://crowdin.com/project/foss-browser)
 
 ----
 ### UI/Handling
