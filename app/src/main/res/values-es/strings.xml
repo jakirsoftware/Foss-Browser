@@ -6,7 +6,7 @@
     <string name="app_cancel">Cancelar</string>
     <string name="app_done">Listo</string>
     <string name="app_error">Error</string>
-    <string name="app_error_activity">No app installed to open this url.</string>
+    <string name="app_error_activity">Ninguna aplicación instalada para abrir esta URL.</string>
     <string name="app_warning">Advertencia</string>
     <string name="app_permission">Para utilizar esta función debes conceder el permiso. Después de eso, reinicie la aplicación.</string>
     <string name="app_update">Notificación de actualización</string>
@@ -210,6 +210,6 @@
     <string name="menu_restart">Reiniciar y recargar pestañas</string>
     <string name="profile_warning">Escrito por:</string>
     <string name="setting_title_screenOn">Mantener pantalla encendida</string>
-    <string name="setting_title_audioBackground">Play audio on background</string>
+    <string name="setting_title_audioBackground">Reproducir audio en segundo plano</string>
     <!-- License changelog -->
 </resources>
