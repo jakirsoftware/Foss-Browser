@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">PDF olarak kaydet</string>
     <string name="menu_shareClipboard">Panoya kopyala</string>
     <string name="menu_other_searchSite">Sitede ara</string>
-    <string name="menu_other_info">\"Foss Browser\" hakkında</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Başlık:</string>
     <string name="dialog_URL_hint">URL:</string>
