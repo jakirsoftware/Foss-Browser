@@ -11,7 +11,6 @@ import androidx.preference.PreferenceManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import android.view.Gravity;
 import android.widget.Button;
 
 import androidx.preference.PreferenceFragmentCompat;

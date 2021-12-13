@@ -13,7 +13,6 @@ import android.os.Environment;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 import android.util.Log;
-import android.view.Gravity;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
 import android.widget.Toast;

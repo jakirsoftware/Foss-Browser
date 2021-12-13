@@ -13,7 +13,7 @@ android {
         applicationId "de.baumann.browser"
         minSdkVersion 24
         targetSdkVersion 31
-        versionCode 124
+        versionCode 125
         versionName "8.6"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true

@@ -121,7 +121,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    public void cleanUpFaviconDB(Context context){
+    public void cleanUpFaviconDB (Context context){
         List<String> faviconURLs=getAllFaviconDomains();
         RecordAction action = new RecordAction(context);
         List<Record> allEntries = action.listEntries((Activity)context);

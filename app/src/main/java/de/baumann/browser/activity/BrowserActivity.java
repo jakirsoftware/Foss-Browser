@@ -99,7 +99,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BrowserContainer;
 import de.baumann.browser.browser.BrowserController;
@@ -220,6 +219,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         context = BrowserActivity.this;
         sp = PreferenceManager.getDefaultSharedPreferences(context);
 
+        if (sp.getBoolean("first_start_84", true)) {
+            sp.edit().putBoolean("first_start_84", false).apply();
+            ninjaWebView.setProfileDefaultValues();
+        }
+
         if (getSupportActionBar() != null) getSupportActionBar().hide();Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -276,11 +280,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             int actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
             contentFrame.setPadding(0,0,0,actionBarHeight);
         }
-
-        new AdBlock(context);
-        new List_trusted(context);
-        new List_protected(context);
-        new List_standard(context);
 
         downloadReceiver = new BroadcastReceiver() {
             @Override
@@ -1818,15 +1817,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         TextView overflow_title = dialogView.findViewById(R.id.overflow_title);
         assert title != null;
-        if (title.isEmpty()) {
-            overflow_title.setText(url);
-        } else {
-            overflow_title.setText(title);
-        }
+        if (title.isEmpty()) overflow_title.setText(url);
+        else overflow_title.setText(title);
 
         Button overflow_settings = dialogView.findViewById(R.id.overflow_settings);
         overflow_settings.setOnClickListener(v -> {
-            dialog_overflow.cancel();show_dialogFastToggle();
+            dialog_overflow.cancel();
+            show_dialogFastToggle();
         });
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);
