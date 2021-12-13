@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">Save as PDF</string>
     <string name="menu_shareClipboard">Copy to clipboard</string>
     <string name="menu_other_searchSite">Search on site</string>
-    <string name="menu_other_info">About \"FOSS Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Title:</string>
     <string name="dialog_URL_hint">Url:</string>
