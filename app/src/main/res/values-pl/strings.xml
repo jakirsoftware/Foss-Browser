@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">Zapisz jako PDF</string>
     <string name="menu_shareClipboard">Kopiuj do schowka</string>
     <string name="menu_other_searchSite">Wyszukaj na stronie</string>
-    <string name="menu_other_info">Informacje</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Tytuł:</string>
     <string name="dialog_URL_hint">Adres URL:</string>
