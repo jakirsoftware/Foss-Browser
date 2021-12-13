@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">Opslaan als PDF-bestand</string>
     <string name="menu_shareClipboard">Kopiëren naar klembord</string>
     <string name="menu_other_searchSite">Website doorzoeken</string>
-    <string name="menu_other_info">Over \"FOSS Browser\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Titel:</string>
     <string name="dialog_URL_hint">URL:</string>

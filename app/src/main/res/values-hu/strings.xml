@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">Mentés PDF-ként</string>
     <string name="menu_shareClipboard">Másolás a vágólapra</string>
     <string name="menu_other_searchSite">Keresés az oldalon</string>
-    <string name="menu_other_info">A \"FOSS Browser\" névjegye</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Cím:</string>
     <string name="dialog_URL_hint">URL:</string>

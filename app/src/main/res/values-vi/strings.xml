@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">Lưu dưới dạng PDF</string>
     <string name="menu_shareClipboard">Sao chép vào bộ nhớ tạm</string>
     <string name="menu_other_searchSite">Tìm kiếm trên trang</string>
-    <string name="menu_other_info">Giới thiệu về \"Trình duyệt FOSS\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Tiêu đề:</string>
     <string name="dialog_URL_hint">URL:</string>

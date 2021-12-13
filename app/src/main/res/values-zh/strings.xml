@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">保存为 PDF</string>
     <string name="menu_shareClipboard">复制到剪切板</string>
     <string name="menu_other_searchSite">页面内搜索</string>
-    <string name="menu_other_info">关于 \"FOSS浏览器\"</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">标题:</string>
     <string name="dialog_URL_hint">URL：</string>
