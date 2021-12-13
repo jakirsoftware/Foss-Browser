@@ -9,8 +9,6 @@
     <string name="app_error_activity">この URL を開くアプリがインストールされていません</string>
     <string name="app_warning">警告</string>
     <string name="app_permission">この機能を使うにはマイクの権限を与えなければいけません。その後アプリを再起動して下さい。</string>
-    <string name="app_update">アップデート通知</string>
-    <string name="app_update_84">この \"FOSS Browser\" のアップデートでプライバシー制御のためのプロファイルが導入されます。設定で確認して下さい。正しく動作させるために、あなたの全てのホワイトリストは削除されます。</string>
     <string name="list_empty">リストが空です</string>
     <string name="album_title_bookmarks">ブックマーク</string>
     <string name="album_title_history">履歴</string>
