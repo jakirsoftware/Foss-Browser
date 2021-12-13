@@ -9,8 +9,6 @@
     <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Προειδοποίηση</string>
     <string name="app_permission">Για να χρησιμοποιήσετε αυτή τη λειτουργία πρέπει να δώσετε άδεια. Μετά από αυτό επανεκκινήστε την εφαρμογή.</string>
-    <string name="app_update">Ειδοποίηση ενημέρωσης</string>
-    <string name="app_update_84">Με αυτή την ενημέρωση το \"FOSS Browser\" εισάγει προφίλ για τον έλεγχο της ιδιωτικότητας. Παρακαλούμε ελέγξτε το στις ρυθμίσεις. Για να λειτουργήσει σωστά, όλες οι λευκές λίστες σας διαγράφονται.</string>
     <string name="list_empty">Η λίστα είναι κενή</string>
     <string name="album_title_bookmarks">Σελιδοδείκτες</string>
     <string name="album_title_history">Ιστορικό</string>
