@@ -180,19 +180,6 @@
     <string name="whitelist_menu_clear">清除</string>
     <string name="whitelist_edit_hint">域名</string>
     <string name="whitelist_add">添加</string>
-    <string name="changelog_dialog">        您的语言还不支持？您想要翻译 FOSS 浏览器吗？ 或者改进现有的翻译？随时可以在 Crowdin 加入我们：https://crowdin.com/project/foss-browser。&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;在下面的网站上您可以访问关于“ FOSS浏览器”的所有重要信息。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;项目网站：&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;翻译：&lt;/i&gt; https://crowdin.com/project/foss-browser/members&lt;br&gt;
-        \u25AA &lt;i&gt;贡献者：&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;\u25AA &lt;i&gt;许可证：&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE。 d&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;您可以在以下网站上捐赠。&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-        https://www.paypal.com/donate/?cmd=_s-xclick&amp;hosted_button_id=NP6TGYDYP9SHY
-
-
-    </string>
     <string name="menu_mobileView">移动设备视图</string>
     <string name="menu_desktopView">桌面端网页</string>
     <string name="menu_dayView">日间模式</string>

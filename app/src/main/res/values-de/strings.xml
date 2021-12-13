@@ -180,16 +180,6 @@
     <string name="whitelist_menu_clear">Löschen</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Hinzufügen</string>
-    <string name="changelog_dialog">Deine Sprache wird noch nicht unterstützt? Du möchtest FOSS Browser übersetzen? Oder eine bestehende Übersetzung verbessern? Zögere nicht, uns auf Crowdin beizutreten: https://crowdin.com/project/foss-browser&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Auf den folgenden Seiten findest du weitere Informationen über \"FOSS Browser\".&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-
-        \u25AA &lt;i&gt;Projekt Seite:&lt;/i&gt; https://github.com/scoute-dich/Browser&lt;br&gt;
-        \u25AA &lt;i&gt;Übersetzer:&lt;/i&gt; https://crowdin.com/project/foss-browser/members&lt;br&gt;
-        \u25AA &lt;i&gt;Beteiligte:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/FAQs.md&lt;br&gt;\u25AA &lt;i&gt;Lizenz:&lt;/i&gt; https://github.com/scoute-dich/browser/blob/master/LICENSE.md&lt;br&gt;&lt;br&gt;
-
-        &lt;b&gt;Auf der folgenden Seite kannst du spendenn.&lt;/b&gt;&lt;br&gt;&lt;br&gt;
-        https://www.paypal.com/donate/?cmd=_s-xclick&amp;hosted_button_id=NP6TGYDYP9SHY    </string>
     <string name="menu_mobileView">Mobile-Ansicht</string>
     <string name="menu_desktopView">Desktop-Ansicht</string>
     <string name="menu_dayView">Tages-Ansicht</string>
