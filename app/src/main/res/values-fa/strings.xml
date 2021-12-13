@@ -51,7 +51,6 @@
     <string name="menu_save_pdf">ذخیره به عنوان PDF</string>
     <string name="menu_shareClipboard">کپی در حافظه</string>
     <string name="menu_other_searchSite">جستجو در صفحه </string>
-    <string name="menu_other_info">درباره مرورگر FOSS </string>
     <!-- Dialog -->
     <string name="dialog_title_hint">عنوان:</string>
     <string name="dialog_URL_hint">URL:</string>
