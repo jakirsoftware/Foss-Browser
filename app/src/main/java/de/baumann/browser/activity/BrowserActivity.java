@@ -478,7 +478,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void initSearch() {
-        NinjaToast.show(context, R.string.main_omnibox_input_hint);
         RecordAction action = new RecordAction(this);
         List<Record> list = action.listEntries(activity);
         CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
@@ -1295,8 +1294,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_toggleAudioBackground.setOnClickListener(v -> {
             NinjaToast.show(context, R.string.setting_title_audioBackground);
             sp.edit().putBoolean("sp_audioBackground", !sp.getBoolean("sp_audioBackground", false)).apply();
-            saveOpenedTabs();
-            HelperUnit.triggerRebirth(context);
             dialog.cancel();
         });
 

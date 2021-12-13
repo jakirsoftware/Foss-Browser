@@ -1,5 +1,7 @@
 package de.baumann.browser.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -66,15 +68,12 @@ public class Settings_Activity extends AppCompatActivity {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
         } else if (menuItem.getItemId() == R.id.menu_info) {
-            SpannableString s= new SpannableString(Html.fromHtml(getString(R.string.changelog_dialog),Html.FROM_HTML_MODE_LEGACY));
-            Linkify.addLinks(s, Linkify.WEB_URLS);
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
-            builder.setTitle(getString(R.string.menu_other_info)+"\t V"+ BuildConfig.VERSION_NAME);
-            builder.setMessage(s);
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            ((TextView) Objects.requireNonNull(dialog.findViewById(android.R.id.message))).setMovementMethod(LinkMovementMethod.getInstance());
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            String url = "https://github.com/scoute-dich/browser/blob/master/README.md";
+            Uri webpage = Uri.parse(url);
+            Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
         }
         return true;
     }
