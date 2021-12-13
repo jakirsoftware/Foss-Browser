@@ -329,7 +329,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         if (BrowserContainer.size() < 1) {  //if still no open Tab open default page
-            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true,false,"");
+            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true,false,"");
             getIntent().setAction("");
         }
     }
@@ -759,7 +759,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 showOverview();
                 break;
             case "09":
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false,"");
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true, false,"");
                 break;
             case "10":
                 removeAlbum(currentAlbumController);
@@ -783,7 +783,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 ninjaWebView.reload();
                 break;
             case "17":
-                ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
+                ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")));
                 break;
         }
     }
@@ -1478,7 +1478,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if(!sp.getBoolean("sp_reopenLastTab", false)) {
                 doubleTapsQuit();
             }else{
-                ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
+                ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")));
                 hideOverview();
             }
         } else {
@@ -1864,11 +1864,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         menu_grid_tab.setOnItemClickListener((parent, view14, position, id) -> {
             dialog_overflow.cancel();
             if (position == 0) {
-                ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")));
+                ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")));
             } else if (position == 1) {
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, false,"");
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true, false,"");
             } else if (position == 2) {
-                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser")), true, true,"");
+                addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true, true,"");
             } else if (position == 3) {
                 ninjaWebView.reload();
             } else if (position == 4) {

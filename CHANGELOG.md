@@ -1,4 +1,4 @@
-### v 8.6 (WIP)
+### v 8.6
 
 - new: play audio on background
 - new: Quick toggle to keep screen on
