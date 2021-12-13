@@ -5,7 +5,6 @@
     android:layout_height="?android:attr/listPreferredItemHeightSmall"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:minHeight="?android:attr/listPreferredItemHeightSmall"
-    android:background="?attr/selectableItemBackground"
     android:paddingStart="20dp"
     android:paddingEnd="20dp">
 
