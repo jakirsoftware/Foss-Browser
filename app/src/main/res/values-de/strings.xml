@@ -9,8 +9,6 @@
     <string name="app_error_activity">Keine App installiert, um diese Url zu öffnen.</string>
     <string name="app_warning">Warnung</string>
     <string name="app_permission">Um diese Funktion nutzen zu können, müssen Sie die Berechtigung erteilen. Danach starten Sie die App neu.</string>
-    <string name="app_update">Update Benachrichtigung</string>
-    <string name="app_update_84">Mit diesem Update führt \"FOSS Browser\" Profile für die Privatspäre ein. Bitte überprüfen Sie dies in den Einstellungen. Um richtig zu funktionieren, werden alle Ihre Whitelisten gelöscht.</string>
     <string name="list_empty">Liste ist leer</string>
     <string name="album_title_bookmarks">Lesezeichen</string>
     <string name="album_title_history">Verlauf</string>
