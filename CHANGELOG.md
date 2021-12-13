@@ -4,6 +4,7 @@
 - new: Quick toggle to keep screen on
 - new: Option to keep screen awake
 - updated: Privacy Policy
+- updated: translations
 - improved: MaterialYou theme
 - improved: search in history, bookmarks, ...
 - improved: close open tabs dialog after making selection

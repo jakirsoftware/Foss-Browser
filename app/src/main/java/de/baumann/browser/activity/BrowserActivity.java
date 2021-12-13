@@ -1325,26 +1325,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title, url);
-        if (sp.getBoolean("first_start_84", true)) {
-            sp.edit().putBoolean("first_start_84", false).apply();
-
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-            builder.setTitle(R.string.app_update);
-            builder.setIcon(R.drawable.icon_alert);
-            builder.setMessage(R.string.app_update_84);
-            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> dialog.cancel());
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            HelperUnit.setupDialog(context, dialog);
-
-            ninjaWebView.setProfileDefaultValues();
-            List_trusted profile_trusted = new List_trusted(context);
-            List_standard profile_standard = new List_standard(context);
-            List_protected profile_protected = new List_protected(context);
-            profile_trusted.clearDomains();
-            profile_standard.clearDomains();
-            profile_protected.clearDomains();
-        }
         activity.registerForContextMenu(ninjaWebView);
 
         SwipeTouchListener swipeTouchListener;
