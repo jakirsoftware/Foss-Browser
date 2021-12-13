@@ -9,8 +9,6 @@
     <string name="app_error_activity">No app installed to open this url.</string>
     <string name="app_warning">Attention</string>
     <string name="app_permission">Pour utiliser cette fonctionnalité, vous devez accorder la permission. Après cela, redémarrez l\'application.</string>
-    <string name="app_update">Notification de mise à jour</string>
-    <string name="app_update_84">Avec cette mise à jour, le \"FOSS Browser\" introduit les profils de contrôle de la vie privée. Vous trouverez cela dans les paramètres. Afin de fonctionner correctement, toutes vos listes blanches seront supprimées.</string>
     <string name="list_empty">Liste vide</string>
     <string name="album_title_bookmarks">Signets</string>
     <string name="album_title_history">Historique</string>
