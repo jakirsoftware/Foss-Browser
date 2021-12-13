@@ -4,7 +4,7 @@
 
 ----
 
-[Releases](https://github.com/scoute-dich/browser/releases) | [Changelog](https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md) | [Privacy](https://github.com/scoute-dich/browser/blob/master/PRIVACY.md) | [License](https://github.com/scoute-dich/browser/blob/master/LICENSE.md) | [Code of conduct](https://github.com/scoute-dich/browser/blob/master/CODE_OF_CONDUCT.md) | [Contributing](https://github.com/scoute-dich/browser/blob/master/CONTRIBUTING.md) | [XDA - Link](http://forum.xda-developers.com/android/apps-games/app-browser-t3500091) | [Help translating on Crowdin](https://crowdin.com/project/foss-browser)
+[Releases](https://github.com/scoute-dich/browser/releases) | [Changelog](https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md) | [Privacy](https://github.com/scoute-dich/browser/blob/master/PRIVACY.md) | [License](https://github.com/scoute-dich/browser/blob/master/LICENSE.md) | [Code of conduct](https://github.com/scoute-dich/browser/blob/master/CODE_OF_CONDUCT.md) | [Contributing](https://github.com/scoute-dich/browser/blob/master/CONTRIBUTING.md) | [XDA](http://forum.xda-developers.com/android/apps-games/app-browser-t3500091) | [Help translating on Crowdin](https://crowdin.com/project/foss-browser)
 
 <a href="https://f-droid.org/packages/de.baumann.browser/" target="_blank">
 <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="50"/></a>
@@ -22,7 +22,7 @@ FOSS Browser uses the latest [Material You](https://m3.material.io/) design libr
 
 FOSS Browser uses profiles to protect your privacy. For each profile you can enable or disable: AdBlock, JavaScript, cookies, fingerprint protection and much more. Profiles can also be saved for domains ("github.com" ⇒ Trusted website). This saved domains always overwrite the current profile. So, for example, "github.com" will always open with the trusted profile, even if you are browsing in the protected mode.
 
-More privacy features:
+_More privacy features:_
 
 - Build in AdBlock, which updates automatically. You can decide which content to block.
 - Third-part-cookies can not be enabled.
