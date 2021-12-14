@@ -1,43 +1,46 @@
-"FOSS Browser" ist eine komplett freie (wie in Freiheit)/quelloffene Software für Android. FOSS Browser zeigt keine Werbung und sammelt keine Daten. Das Ziel ist ein einfacher und kleiner, aber funktionsreicher und datenschutzfreundlicher Browser mit einer modernen Benutzeroberfläche. Deine Privatsphäre - deine Daten!
+"FOSS Browser" ist ein komplett freier (wie in Freiheit), quelloffener Browser für Android: datenschutzfreundlich mit einer modernen Benutzeroberfläche. Your privacy - your data.
 
 <b>Projektseite mit weiteren Informationen: https://github.com/scoute-dich/browser/</b>
 
 -------------------------------------------------
-<b>SICHERHEIT/DATEN</b>
+<b>UI/Handling</b>
 -------------------------------------------------
 
-• komplett quelloffen
-• keine Tracker
-• keine unnötigen Berechtigungen
-• Cookies von Drittanbietern deaktiviert
-• aktiviere/deaktiviere Cookies, Javascript, Standort, Verlauf und mehr
-• erweiterte Einstellungen für Javascript, Cookies und DOM-Speicher (Lesezeichen-/Domain basierend)
-• do not track me / GPC (Globale Privatsphärenkontrolle)
-• Schutz vor Browser-Fingerprinting
-• AdBlocker
-• Daten beim Verlassen löschen (optional)
+FOSS Browser uses the latest Material You design libraries. Following system day/night mode and a wallpaper based theme are just two features of this new library. The UI is optimized for one-hand-use. All UI-elements are at the bottom of the screen.
+
 
 -------------------------------------------------
-<b>UI/HANDHABUNG</b>
+<b>Privacy</b>
 -------------------------------------------------
 
-• für Einhand-Benutzung optimiert (Toolbar unten)
-• Tabkontrolle (wechseln, öffnen, schließen beliebig vieler Tabs)
-• Material Design
-• Toolbar beim browsen ausblenden (optional)
-• Navigations-Knopf (bei ausgeblendeter Toolbar, optional)
-• Schnelleinstellungen für die wichtigsten Dinge
-• Gestensteuerung (Toolbar und Toolbarknöpfe)
-• Wechsel zwischen Mobiler- und Desktopansicht
-• Wechsel zwischen Tag- Und Nachtansciht
+FOSS Browser uses profiles to protect your privacy. For each profile you can enable or disable: AdBlock, JavaScript, cookies, fingerprint protection and much more. Profiles can also be saved for domains ("github.com" ⇒ Trusted website). This saved domains always overwrite the current profile. So, for example, "github.com" will always open with the trusted profile, even if you are browsing in the protected mode.
+
+More privacy features:
+
+• Build in AdBlock, which updates automatically. You can decide which content to block.
+• Third-part-cookies can not be enabled.
+• Enable or disable Android-autofill.
+• Delete browser data (on app exit).
+• Choose between different search engines (or set a custom one).
+• FOSS Browser itself doesn't collect any data
+
 
 -------------------------------------------------
-<b>NICE TO HAVE</b>
+<b>Bookmarks filter</b>
 -------------------------------------------------
 
-• Daten sichern
-• kleine Größe
-• auf der Seite suchen
-• Websuche (über geteilten Text)
-• PDF speichern
-• Links in anderen Anwendungen öffnen (z.B. YouTube)
+Organize your bookmarks with filters. You can set custom names for each filter. Long press the bookmark icon in the toolbar to get fast access to your favorite bookmarks.
+
+
+-------------------------------------------------
+<b>Gestures</b>
+-------------------------------------------------
+
+You can assign over ten different gestures to the toolbar and the toolbar buttons. Each in four directions. So you have up to eight different gestures to control FOSS Browser. Supported is for example: load last website, switch tab, reload, open bookmarks, ... and many more.
+
+
+-------------------------------------------------
+<b>Backups</b>
+-------------------------------------------------
+
+Backup all your important data (bookmarks, history, trusted websites and so on) on your SD-card. You can also back up FOSS Browser settings.

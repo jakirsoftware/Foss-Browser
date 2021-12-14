@@ -1,1 +1,1 @@
-Ein kleiner Webbrowser, basierend auf Androids WebView. Entwickelt um deine Privatsphäre zu schützen.
+"FOSS Browser" ist ein komplett freier (wie in Freiheit), quelloffener Browser für Android: datenschutzfreundlich mit einer modernen Benutzeroberfläche. Your privacy - your data.
