@@ -6,7 +6,7 @@
     <string name="app_cancel">Άκυρο</string>
     <string name="app_done">Ολοκληρώθηκε</string>
     <string name="app_error">Σφάλμα</string>
-    <string name="app_error_activity">No app installed to open this url.</string>
+    <string name="app_error_activity">Δεν έχει εγκατασταθεί εφαρμογή για να ανοίξει αυτό το url.</string>
     <string name="app_warning">Προειδοποίηση</string>
     <string name="app_permission">Για να χρησιμοποιήσετε αυτή τη λειτουργία πρέπει να δώσετε άδεια. Μετά από αυτό επανεκκινήστε την εφαρμογή.</string>
     <string name="list_empty">Η λίστα είναι κενή</string>
@@ -194,6 +194,6 @@
     <string name="menu_restart">Επανεκκίνηση και επαναφόρτωση καρτελών</string>
     <string name="profile_warning">Αντικαταστάθηκε από:</string>
     <string name="setting_title_screenOn">Κρατήστε την οθόνη ανοιχτή</string>
-    <string name="setting_title_audioBackground">Play audio on background</string>
+    <string name="setting_title_audioBackground">Αναπαραγωγή ήχου στο φόντο</string>
     <!-- License changelog -->
 </resources>
