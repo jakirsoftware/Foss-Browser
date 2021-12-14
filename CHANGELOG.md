@@ -1,3 +1,9 @@
+### v 8.7
+
+- fix: dark theme in settings activities
+- updated: F-Droid (screenshots, description)
+- updated: translations
+
 ### v 8.6
 
 - new: play audio on background
