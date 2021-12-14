@@ -192,7 +192,7 @@
     <string name="hint_DRM_Media">DRM 保護のメディア再生を許可しますか?</string>
     <string name="menu_reload">再読込</string>
     <string name="menu_restart">再起動してタブを再読込</string>
-    <string name="profile_warning">上書き者：</string>
+    <string name="profile_warning">上書き:</string>
     <string name="setting_title_screenOn">画面を消灯しない</string>
     <string name="setting_title_audioBackground">バックグラウンドで音声を再生</string>
     <!-- License changelog -->
