@@ -6,7 +6,7 @@
     <string name="app_cancel">Mégse</string>
     <string name="app_done">Kész</string>
     <string name="app_error">Hiba</string>
-    <string name="app_error_activity">No app installed to open this url.</string>
+    <string name="app_error_activity">Nincs telepített alkalmazás az url megnyitásához.</string>
     <string name="app_warning">Figyelmeztetés</string>
     <string name="app_permission">A funkció használatához engedélyt kell adnia. Ezt követően indítsa újra az alkalmazást.</string>
     <string name="list_empty">A lista üres</string>
@@ -194,6 +194,6 @@
     <string name="menu_restart">Újraindítás és a lapok újratöltése</string>
     <string name="profile_warning">Felülírva:</string>
     <string name="setting_title_screenOn">Kijelző ébrentartása</string>
-    <string name="setting_title_audioBackground">Play audio on background</string>
+    <string name="setting_title_audioBackground">Hang lejátszása a háttérben</string>
     <!-- License changelog -->
 </resources>
