@@ -6,7 +6,7 @@
     <string name="app_cancel">Anuluj</string>
     <string name="app_done">Gotowe</string>
     <string name="app_error">Błąd</string>
-    <string name="app_error_activity">No app installed to open this url.</string>
+    <string name="app_error_activity">Nie ma zainstalowanej aplikacji do otwarcia tego adresu url.</string>
     <string name="app_warning">Ostrzeżenie</string>
     <string name="app_permission">Aby korzystać z tej funkcji musisz udzielić pozwolenia. Po tym należy ponownie uruchomić aplikację.</string>
     <string name="list_empty">Lista jest pusta</string>
@@ -194,6 +194,6 @@
     <string name="menu_restart">Uruchom ponownie i załaduj ponownie karty</string>
     <string name="profile_warning">Nadpisane przez:</string>
     <string name="setting_title_screenOn">Nie wyłączaj ekranu</string>
-    <string name="setting_title_audioBackground">Play audio on background</string>
+    <string name="setting_title_audioBackground">Odtwarzanie dźwięku w tle</string>
     <!-- License changelog -->
 </resources>
