@@ -2,7 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorSurface"
     android:fitsSystemWindows="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -41,17 +41,15 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="20dp" >
+                    android:layout_margin="20dp" >
 
                     <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button"
                         android:id="@+id/ib_backup"
                         android:layout_height="wrap_content"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_gravity="start"
-                        android:layout_marginEnd="4dp"
+                        android:layout_marginEnd="10dp"
                         android:text="@string/setting_title_data"
                         android:textAllCaps="true"
                         android:ellipsize="end"
@@ -59,12 +57,12 @@
                         android:maxLines="1"/>
 
                     <com.google.android.material.button.MaterialButton
+                        style="@style/Widget.Material3.Button"
                         android:id="@+id/ib_restore"
                         android:layout_height="wrap_content"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_gravity="end"
-                        android:layout_marginStart="4dp"
+                        android:layout_marginStart="10dp"
                         android:text="@string/settings_data_restore"
                         android:textAllCaps="true"
                         android:ellipsize="end"

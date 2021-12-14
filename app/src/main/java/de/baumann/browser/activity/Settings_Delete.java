@@ -3,6 +3,7 @@ package de.baumann.browser.activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import androidx.appcompat.app.AlertDialog;
@@ -53,6 +54,8 @@ public class Settings_Delete extends AppCompatActivity {
         Button button = findViewById(R.id.whitelist_add);
         button.setOnClickListener(v -> {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+            builder.setIcon(R.drawable.icon_alert);
+            builder.setTitle(R.string.menu_delete);
             builder.setMessage(R.string.hint_database);
             builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
@@ -79,7 +82,7 @@ public class Settings_Delete extends AppCompatActivity {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            HelperUnit.setupDialog(this, dialog);
         });
     }
 

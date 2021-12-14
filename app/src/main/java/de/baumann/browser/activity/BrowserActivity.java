@@ -231,7 +231,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (sp.getBoolean("sp_screenOn", false)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         HelperUnit.initTheme(context);
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         DynamicColors.applyToActivitiesIfAvailable(activity.getApplication());
 
         OrientationEventListener mOrientationListener = new OrientationEventListener(getApplicationContext()) {
