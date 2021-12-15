@@ -150,8 +150,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_gravity="center"
                     android:layout_marginEnd="10dp"
-                    app:icon="@drawable/icon_close"
-                    android:background="?attr/actionBarItemBackground"/>
+                    app:icon="@drawable/icon_close"/>
 
                 <Button android:id="@+id/searchBox_down"
                     style="@style/Widget.Material3.Button.IconButton"
@@ -159,8 +158,7 @@
                     android:layout_height="match_parent"
                     android:layout_toStartOf="@id/searchBox_cancel"
                     android:layout_gravity="center"
-                    app:icon="@drawable/icon_arrow_down_gest"
-                    android:background="?attr/actionBarItemBackground"/>
+                    app:icon="@drawable/icon_arrow_down_gest"/>
 
                 <Button android:id="@+id/searchBox_up"
                     style="@style/Widget.Material3.Button.IconButton"
@@ -168,8 +166,7 @@
                     android:layout_height="match_parent"
                     android:layout_toStartOf="@id/searchBox_down"
                     android:layout_gravity="center"
-                    app:icon="@drawable/icon_arrow_up_gest"
-                    android:background="?attr/actionBarItemBackground"/>
+                    app:icon="@drawable/icon_arrow_up_gest"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/searchBox_input"

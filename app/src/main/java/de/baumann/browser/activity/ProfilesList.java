@@ -20,7 +20,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.List;
@@ -34,12 +33,12 @@ import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
-import de.baumann.browser.view.WhitelistAdapter;
+import de.baumann.browser.view.ProfilesListAdapter;
 import de.baumann.browser.view.NinjaToast;
 
 public class ProfilesList extends AppCompatActivity {
 
-    private WhitelistAdapter adapter;
+    private ProfilesListAdapter adapter;
     private List<String> list;
     private List_protected listProtected;
     private List_standard listStandard;
@@ -105,26 +104,37 @@ public class ProfilesList extends AppCompatActivity {
         listView.setEmptyView(findViewById(R.id.whitelist_empty));
 
         //noinspection NullableProblems
-        adapter = new WhitelistAdapter(this, list){
+        adapter = new ProfilesListAdapter(this, list){
             @Override
             public View getView (final int position, View convertView, @NonNull ViewGroup parent) {
                 View v = super.getView(position, convertView, parent);
-                ImageButton whitelist_item_cancel = v.findViewById(R.id.whitelist_item_cancel);
+                Button whitelist_item_cancel = v.findViewById(R.id.whitelist_item_cancel);
                 whitelist_item_cancel.setOnClickListener(v1 -> {
-                    switch (listToLoad) {
-                        case "protected":
-                            listProtected.removeDomain(list.get(position));
-                            break;
-                        case "standard":
-                            listStandard.removeDomain(list.get(position));
-                            break;
-                        case "trusted":
-                            listTrusted.removeDomain(list.get(position));
-                            break;
-                    }
-                    list.remove(position);
-                    notifyDataSetChanged();
-                    NinjaToast.show(ProfilesList.this, R.string.toast_delete_successful);
+                    MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ProfilesList.this);
+                    builder.setIcon(R.drawable.icon_alert);
+                    builder.setTitle(R.string.menu_delete);
+                    builder.setMessage(R.string.hint_database);
+                    builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+
+                        switch (listToLoad) {
+                            case "protected":
+                                listProtected.removeDomain(list.get(position));
+                                break;
+                            case "standard":
+                                listStandard.removeDomain(list.get(position));
+                                break;
+                            case "trusted":
+                                listTrusted.removeDomain(list.get(position));
+                                break;
+                        }
+                        list.remove(position);
+                        notifyDataSetChanged();
+                        NinjaToast.show(ProfilesList.this, R.string.toast_delete_successful);
+                    });
+                    builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                    HelperUnit.setupDialog(ProfilesList.this, dialog);
                 });
                 return v;
             }
