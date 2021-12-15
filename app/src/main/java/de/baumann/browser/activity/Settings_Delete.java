@@ -3,7 +3,6 @@ package de.baumann.browser.activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.google.android.material.color.DynamicColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import androidx.appcompat.app.AlertDialog;
@@ -13,7 +12,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;

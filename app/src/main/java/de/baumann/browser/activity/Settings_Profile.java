@@ -12,8 +12,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
-import com.google.android.material.color.DynamicColors;
-
 import java.util.Objects;
 
 import de.baumann.browser.R;

@@ -10,8 +10,6 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.google.android.material.color.DynamicColors;
-
 import java.util.Objects;
 
 import de.baumann.browser.fragment.Fragment_settings_Privacy;
