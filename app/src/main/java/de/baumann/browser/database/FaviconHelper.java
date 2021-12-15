@@ -56,7 +56,7 @@ public class FaviconHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public synchronized void addFavicon( String url, Bitmap bitmap) throws SQLiteException {
+    public synchronized void addFavicon(Context context, String url, Bitmap bitmap) throws SQLiteException {
         String domain= Objects.requireNonNull(getDomain(url)).trim();
         if (bitmap == null) return;
         SQLiteDatabase database = this.getWritableDatabase();
@@ -69,6 +69,9 @@ public class FaviconHelper extends SQLiteOpenHelper {
         values.put(IMAGE,     byteImage);
         database.insert(TABLE_FAVICON, null, values );
         database.close();
+
+
+        cleanUpFaviconDB(context);
     }
 
     public synchronized void deleteFavicon( String domain) throws SQLiteException {
