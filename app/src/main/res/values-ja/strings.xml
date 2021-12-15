@@ -139,9 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">ツールバー</string>
     <string name="setting_title_toolbar_buttons">ツールバーのボタン</string>
-    <string name="setting_title_longPress">Long press</string>
-    <string name="setting_title_tabButton">Tab button / menu button</string>
-    <string name="setting_title_overViewButton">Overview</string>
+    <string name="setting_title_longPress">長押し</string>
+    <string name="setting_title_tabButton">タブボタン/メニューボタン</string>
+    <string name="setting_title_overViewButton">一覧画面</string>
     <string name="setting_gesture_up">上スワイプ</string>
     <string name="setting_gesture_down">下スワイプ</string>
     <string name="setting_gesture_left">左スワイプ</string>
@@ -156,7 +156,7 @@
     <string name="setting_gesture_08">一覧画面を表示</string>
     <string name="setting_gesture_09">新規タブを開く</string>
     <string name="setting_gesture_10">タブを閉じる</string>
-    <string name="setting_gesture_11">Show fast toggle</string>
+    <string name="setting_gesture_11">高速表示トグル</string>
     <!-- Data -->
     <string name="title_appData">アプリデータ</string>
     <string name="hint_database">現在のデータを削除します。続行しますか?</string>
