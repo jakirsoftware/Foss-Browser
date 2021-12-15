@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Thanh công cụ</string>
     <string name="setting_title_toolbar_buttons">Nút trên thanh công cụ</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Vuốt lên</string>
     <string name="setting_gesture_down">Vuốt xuống</string>
     <string name="setting_gesture_left">Vuốt sang trái</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Hiện tổng quan</string>
     <string name="setting_gesture_09">Mở tab mới</string>
     <string name="setting_gesture_10">Đóng tab</string>
-    <string name="setting_gesture_hint">Nhấn giữ nút menu để mở hộp thoại cài đặt nhanh. Nhấn giữ biểu tượng trang chủ/dấu trang/lịch sử để mở bộ lọc dấu trang.</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
     <!-- Data -->
     <string name="title_appData">Dữ liệu ứng dụng</string>
     <string name="hint_database">Việc này sẽ xoá dữ liệu hiện tại. Tiếp tục?</string>
