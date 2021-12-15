@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra degli Strumenti</string>
     <string name="setting_title_toolbar_buttons">Pulsanti barra strumenti</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Scorri verso l\'alto</string>
     <string name="setting_gesture_down">Scorri verso il basso</string>
     <string name="setting_gesture_left">Scorri a sinistra</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Mostra panoramica</string>
     <string name="setting_gesture_09">Apri una nuova scheda</string>
     <string name="setting_gesture_10">Chiudi scheda</string>
-    <string name="setting_gesture_hint">Fare clic sul pulsante menu per aprire la finestra di dialogo delle impostazioni rapide. Premere a lungo l\'icona Home/segnalibro/cronologia per aprire il filtro dei segnalibri.</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
     <!-- Data -->
     <string name="title_appData">Dati app</string>
     <string name="hint_database">Questo eliminerà i dati correnti. Procedere?</string>
