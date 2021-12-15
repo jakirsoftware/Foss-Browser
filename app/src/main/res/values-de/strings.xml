@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Toolbar</string>
     <string name="setting_title_toolbar_buttons">Toolbar-Buttons</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Nach oben wischen</string>
     <string name="setting_gesture_down">Nach unten wischen</string>
     <string name="setting_gesture_left">Nach links wischen</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Übersicht zeigen</string>
     <string name="setting_gesture_09">Neuen Tab öffnen</string>
     <string name="setting_gesture_10">Tab schließen</string>
-    <string name="setting_gesture_hint">Klicke lange auf die Menü-Taste, um den Schnelleinstellungsdialog zu öffnen. Drücke lange das Startseiten-/Lesezeichen-/Verlaufs-Symbol, um den Lesezeichen-Filter zu öffnen.</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
     <!-- Data -->
     <string name="title_appData">App-Daten</string>
     <string name="hint_database">Aktuelle Daten werden gelöscht. Fortfahren?</string>
