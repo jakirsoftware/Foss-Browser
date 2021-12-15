@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Pasek narzędziowy</string>
     <string name="setting_title_toolbar_buttons">Przyciski paska narzędzi</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Pociagniecie w górę</string>
     <string name="setting_gesture_down">Pociągnięcie w doł</string>
     <string name="setting_gesture_left">Przesunięcie w lewo</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Pokaż Wszechgląd</string>
     <string name="setting_gesture_09">Otwórz nową kartę</string>
     <string name="setting_gesture_10">Zamknij aktywną kartę</string>
-    <string name="setting_gesture_hint">Przytrzymaj przycisk menu, aby otworzyć okno szybkich ustawień. Przytrzymaj ikonę domową/zakładki/historii, aby otworzyć filtr zakładek.</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
     <!-- Data -->
     <string name="title_appData">Dane aplikacji</string>
     <string name="hint_database">Spowoduje to usunięcie aktualnych danych. Kontynuować?</string>
