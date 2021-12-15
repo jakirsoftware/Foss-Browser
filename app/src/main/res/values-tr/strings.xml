@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Araç çubuğu</string>
     <string name="setting_title_toolbar_buttons">Araç Çubuğu düğmesi</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Yukarı kaydır</string>
     <string name="setting_gesture_down">Aşağı kaydır</string>
     <string name="setting_gesture_left">Sola kaydır</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Genel bakışı göster</string>
     <string name="setting_gesture_09">Yeni sekme aç</string>
     <string name="setting_gesture_10">Sekmeyi kapat</string>
-    <string name="setting_gesture_hint">Hızlı ayarlar iletişim kutusunu açmak için menü düğmesine uzun tıklayın. Yer imi filtresini açmak için ana sayfa/yer imi/geçmiş simgesine uzun basın.</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
     <!-- Data -->
     <string name="title_appData">Uygulama verileri</string>
     <string name="hint_database">Bu, mevcut verileri siler. Devam edilsin mi?</string>

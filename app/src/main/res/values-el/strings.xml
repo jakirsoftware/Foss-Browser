@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Γραμμή Εργαλείων</string>
     <string name="setting_title_toolbar_buttons">Πλήκτρα γραμμής εργαλείων</string>
+    <string name="setting_title_longPress">Πιέστε και κρατήστε</string>
+    <string name="setting_title_tabButton">Κουμπί καρτέλας / κουμπί μενού</string>
+    <string name="setting_title_overViewButton">Επισκόπηση</string>
     <string name="setting_gesture_up">Σύρετε προς τα επάνω</string>
     <string name="setting_gesture_down">Σύρετε προς τα κάτω</string>
     <string name="setting_gesture_left">Σάρωση προς τα αριστερά</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Εμφάνιση επισκόπησης</string>
     <string name="setting_gesture_09">Άνοιγμα νέας καρτέλας</string>
     <string name="setting_gesture_10">Κλείσιμο καρτέλας</string>
-    <string name="setting_gesture_hint">Πατήστε παρατεταμένα το κουμπί μενού για να ανοίξετε το γρήγορο διάλογο ρυθμίσεων. Πατήστε παρατεταμένα το εικονίδιο αρχικής/σελιδοδείκτη/ιστορικού για να ανοίξετε το φίλτρο σελιδοδεικτών.</string>
+    <string name="setting_gesture_11">Εμφάνιση γρήγορης εναλλαγής</string>
     <!-- Data -->
     <string name="title_appData">Δεδομένα εφαρμογής</string>
     <string name="hint_database">Αυτό θα διαγράψει τα τρέχοντα δεδομένα. Συνέχεια;</string>

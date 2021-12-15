@@ -140,6 +140,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">نوار ابزار</string>
     <string name="setting_title_toolbar_buttons">گزینه های نوار ابزار</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">کشیدن به بالا</string>
     <string name="setting_gesture_down">کشیدن به پایین</string>
     <string name="setting_gesture_left">کشیدن به چپ</string>
@@ -154,9 +157,7 @@
     <string name="setting_gesture_08">نمایش صفحه پیش فرض</string>
     <string name="setting_gesture_09">باز کردن زبانه جدید</string>
     <string name="setting_gesture_10">بستن زبانه</string>
-    <string name="setting_gesture_hint">         .جهت نمایش پنجره تنظیمات سریع روی دکمه منو لمس طولانی نمایید
-        جهت باز کردن فیلتر نشانک ها بر روی آیکن صفحه اصلی/نشانک ها/تاریخجه لمس طولانی نمایید.
-    </string>
+    <string name="setting_gesture_11">Show fast toggle</string>
     <!-- Data -->
     <string name="title_appData">داده برنامه</string>
     <string name="hint_database">داده جاری حذف خواهد شد،انجام شود؟</string>

@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Panel nástrojů</string>
     <string name="setting_title_toolbar_buttons">Tlačítka na panelu nástrojů</string>
+    <string name="setting_title_longPress">Dlouhé stisknutí</string>
+    <string name="setting_title_tabButton">Tlačítko záložky / menu</string>
+    <string name="setting_title_overViewButton">Přehled</string>
     <string name="setting_gesture_up">Přejetí nahoru</string>
     <string name="setting_gesture_down">Přejetí dolů</string>
     <string name="setting_gesture_left">Přejetí vlevo</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Zobrazit přehled</string>
     <string name="setting_gesture_09">Otevřít novou kartu</string>
     <string name="setting_gesture_10">Zavřít kartu</string>
-    <string name="setting_gesture_hint">Dlouhým kliknutím na tlačítko nabídky otevřete dialogové okno rychlého nastavení. Dlouhým stisknutím ikony domů/záložky/historie otevřete filtr záložek.</string>
+    <string name="setting_gesture_11">Zobrazit rychlé přepínání</string>
     <!-- Data -->
     <string name="title_appData">Data aplikace</string>
     <string name="hint_database">Tímto odstraníte aktuální data. Chcete pokračovat?</string>

@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">工具栏</string>
     <string name="setting_title_toolbar_buttons">工具栏按钮</string>
+    <string name="setting_title_longPress">长按</string>
+    <string name="setting_title_tabButton">标签按钮/菜单按钮</string>
+    <string name="setting_title_overViewButton">概览</string>
     <string name="setting_gesture_up">向上滑动</string>
     <string name="setting_gesture_down">向下滑动</string>
     <string name="setting_gesture_left">向左滑动</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">显示概览</string>
     <string name="setting_gesture_09">打开新标签页</string>
     <string name="setting_gesture_10">关闭标签页</string>
-    <string name="setting_gesture_hint">长按菜单按钮打开快速设置对话框。长按主页/书签/历史图标打开书签过滤器。</string>
+    <string name="setting_gesture_11">显示快速切换</string>
     <!-- Data -->
     <string name="title_appData">应用数据</string>
     <string name="hint_database">这将删除当前数据。是否继续？</string>

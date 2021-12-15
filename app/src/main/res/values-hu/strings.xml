@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Eszköztár</string>
     <string name="setting_title_toolbar_buttons">Eszköztár gomb</string>
+    <string name="setting_title_longPress">Hosszú érintés</string>
+    <string name="setting_title_tabButton">Tab gomb / menü gomb</string>
+    <string name="setting_title_overViewButton">Áttekintés</string>
     <string name="setting_gesture_up">Csúsztatás felfelé</string>
     <string name="setting_gesture_down">Csúsztatás lefelé</string>
     <string name="setting_gesture_left">Csúsztatás balra</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Áttekintés mutatása</string>
     <string name="setting_gesture_09">Új lap megnyitása</string>
     <string name="setting_gesture_10">Lap bezárása</string>
-    <string name="setting_gesture_hint">Hosszan kattintson a menü gombra a gyors beállítások párbeszédpanel megnyitásához. Hosszan nyomja meg a home / bookmark / history ikont a könyvjelzőszűrő megnyitásához.</string>
+    <string name="setting_gesture_11">Gyors kapcsoló megjelenítése</string>
     <!-- Data -->
     <string name="title_appData">Alkalmazásadatok</string>
     <string name="hint_database">Ezzel törli az aktuális adatokat. Folytatja?</string>

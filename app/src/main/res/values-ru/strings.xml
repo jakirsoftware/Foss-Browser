@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Панель инструментов</string>
     <string name="setting_title_toolbar_buttons">Кнопки панели инструментов</string>
+    <string name="setting_title_longPress">Удержание нажатия</string>
+    <string name="setting_title_tabButton">Кнопка вкладки / кнопка меню</string>
+    <string name="setting_title_overViewButton">Обзор</string>
     <string name="setting_gesture_up">Свайп вверх</string>
     <string name="setting_gesture_down">Свайп вниз</string>
     <string name="setting_gesture_left">Свайп влево</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Показать обзор</string>
     <string name="setting_gesture_09">Открыть новую вкладку</string>
     <string name="setting_gesture_10">Закрыть вкладку</string>
-    <string name="setting_gesture_hint">Долгое нажатие на кнопку меню, чтобы открыть диалог быстрых настроек. Длительное нажатие на значке home/bookmark/history открывает фильтр закладок.</string>
+    <string name="setting_gesture_11">Показать быстрый тумблер</string>
     <!-- Data -->
     <string name="title_appData">Данные приложения</string>
     <string name="hint_database">Это удалит текущие данные. Продолжить?</string>

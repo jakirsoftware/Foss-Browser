@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra de ferramentas</string>
     <string name="setting_title_toolbar_buttons">Botões da barra de ferramentas</string>
+    <string name="setting_title_longPress">Pressão longa</string>
+    <string name="setting_title_tabButton">Botão Tab / botão de menu</string>
+    <string name="setting_title_overViewButton">Vista global</string>
     <string name="setting_gesture_up">Deslizar para cima</string>
     <string name="setting_gesture_down">Deslizar para baixo</string>
     <string name="setting_gesture_left">Deslizar à esquerda</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Mostrar Vista global</string>
     <string name="setting_gesture_09">Abrir novo separador</string>
     <string name="setting_gesture_10">Fechar separador</string>
-    <string name="setting_gesture_hint">Toque longo no botão de menu para abrir o diálogo de definições rápidas. Toque longo no ícone início/marcador/histórico para abrir o filtro de marcadores.</string>
+    <string name="setting_gesture_11">Mostrar alternância rápida</string>
     <!-- Data -->
     <string name="title_appData">Dados da aplicação</string>
     <string name="hint_database">Isto irá apagar os dados atuais. Continuar?</string>
