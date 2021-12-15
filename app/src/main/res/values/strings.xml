@@ -176,6 +176,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Toolbar</string>
     <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Swipe up</string>
     <string name="setting_gesture_down">Swipe down</string>
     <string name="setting_gesture_left">Swipe left</string>
@@ -190,7 +193,7 @@
     <string name="setting_gesture_08">Show overview</string>
     <string name="setting_gesture_09">Open new tab</string>
     <string name="setting_gesture_10">Close tab</string>
-    <string name="setting_gesture_hint">Long click the menu button to open fast settings dialog. Long press the home/bookmark/history icon to open the bookmark filter.</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
 
     <!-- Data -->
     <string name="title_appData">App data</string>

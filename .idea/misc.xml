@@ -101,6 +101,8 @@
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20625" />
         <entry key="app/src/main/res/xml/preference_backup.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/xml/preference_delete.xml" value="0.18840579710144928" />
+        <entry key="app/src/main/res/xml/preference_filter.xml" value="0.8346774193548387" />
+        <entry key="app/src/main/res/xml/preference_gesture.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/xml/preference_privacy.xml" value="0.8104838709677419" />
         <entry key="app/src/main/res/xml/preference_profile.xml" value="0.1" />
         <entry key="app/src/main/res/xml/preference_profile_data.xml" value="0.15942028985507245" />

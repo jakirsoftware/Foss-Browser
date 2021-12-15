@@ -2,6 +2,26 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <PreferenceCategory android:title="@string/setting_title_longPress">
+
+        <ListPreference
+            android:title="@string/setting_title_overViewButton"
+            android:icon="@drawable/icon_bookmark"
+            android:key="setting_gesture_overViewButton"
+            android:defaultValue="18"
+            android:entries="@array/setting_entries_gestures"
+            android:entryValues="@array/setting_values_gestures" />
+
+        <ListPreference
+            android:title="@string/setting_title_tabButton"
+            android:icon="@drawable/icon_profile_standard"
+            android:key="setting_gesture_tabButton"
+            android:defaultValue="19"
+            android:entries="@array/setting_entries_gestures"
+            android:entryValues="@array/setting_values_gestures" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/setting_title_toolbar">
 
         <ListPreference

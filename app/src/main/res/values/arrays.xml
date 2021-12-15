@@ -50,6 +50,8 @@
         <item>@string/menu_save_home</item>
         <item>@string/menu_reload</item>
         <item>@string/menu_openFav</item>
+        <item>@string/menu_filter</item>
+        <item>@string/setting_gesture_11</item>
     </string-array>
 
     <string-array name="setting_values_gestures">
@@ -70,6 +72,8 @@
         <item>15</item>
         <item>16</item>
         <item>17</item>
+        <item>18</item>
+        <item>19</item>
     </string-array>
 
     <!-- Start tab -->

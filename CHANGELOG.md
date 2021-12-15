@@ -1,19 +1,20 @@
 ### v 8.7
 
 - fix: dark theme in settings activities
-- updated: F-Droid (screenshots, description)
-- updated: translations
-
-### v 8.6
-
 - new: play audio on background
 - new: Quick toggle to keep screen on
 - new: Option to keep screen awake
+- new: gesture settings for long pressing
+- updated: F-Droid (screenshots, description)
 - updated: Privacy Policy
 - updated: translations
 - improved: MaterialYou theme
 - improved: search in history, bookmarks, ...
 - improved: close open tabs dialog after making selection
+
+### v 8.6
+
+- skipped -
 
 ### v 8.5.1
 

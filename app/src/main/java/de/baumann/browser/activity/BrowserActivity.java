@@ -219,9 +219,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         context = BrowserActivity.this;
         sp = PreferenceManager.getDefaultSharedPreferences(context);
 
-        if (sp.getBoolean("first_start_84", true)) {
-            sp.edit().putBoolean("first_start_84", false).apply();
-            ninjaWebView.setProfileDefaultValues();
+        if (sp.getBoolean("first_start_87", true)) {
+            sp.edit().putBoolean("first_start_87", false)
+                    .putString("setting_gesture_tabButton", "19")
+                    .putString("setting_gesture_overViewButton", "18")
+                    .apply();
         }
 
         if (getSupportActionBar() != null) getSupportActionBar().hide();Window window = this.getWindow();
@@ -258,19 +260,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
         }
         setContentView(R.layout.activity_main);
-
-        if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
-            sp.edit().putString("saved_key_ok", "yes")
-                    .putString("setting_gesture_tb_up", "08")
-                    .putString("setting_gesture_tb_down", "01")
-                    .putString("setting_gesture_tb_left", "07")
-                    .putString("setting_gesture_tb_right", "06")
-                    .putString("setting_gesture_nav_up", "04")
-                    .putString("setting_gesture_nav_down", "05")
-                    .putString("setting_gesture_nav_left", "03")
-                    .putString("setting_gesture_nav_right", "02")
-                    .putBoolean("sp_autofill", true).apply();
-        }
         contentFrame = findViewById(R.id.main_content);
 
         // Calculate ActionBar height
@@ -302,6 +291,24 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initTabDialog();
         initSearchPanel();
         initOverview();
+
+        if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
+            sp.edit().putString("saved_key_ok", "yes")
+                    .putString("setting_gesture_tb_up", "08")
+                    .putString("setting_gesture_tb_down", "01")
+                    .putString("setting_gesture_tb_left", "07")
+                    .putString("setting_gesture_tb_right", "06")
+                    .putString("setting_gesture_nav_up", "04")
+                    .putString("setting_gesture_nav_down", "05")
+                    .putString("setting_gesture_nav_left", "03")
+                    .putString("setting_gesture_nav_right", "02")
+                    .putString("setting_gesture_nav_left", "03")
+                    .putString("setting_gesture_tabButton", "19")
+                    .putString("setting_gesture_overViewButton", "18")
+                    .putBoolean("sp_autofill", true).apply();
+            ninjaWebView.setProfileDefaultValues();
+        }
+
         if (sp.getBoolean("start_tabStart", false)){
             //put showOverview first. May be closed again later depending on intent
             showOverview();
@@ -326,7 +333,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             sp.edit().putBoolean("restoreOnRestart", false).apply();
         }
 
-        if (BrowserContainer.size() < 1) {  //if still no open Tab open default page
+        //if still no open Tab open default page
+        if (BrowserContainer.size() < 1) {
             addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true,false,"");
             getIntent().setAction("");
         }
@@ -519,7 +527,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     private void showOverview() {
         initOverview();
-        bottomSheetDialog_OverView.show();
+        if (!bottomSheetDialog_OverView.isShowing()) bottomSheetDialog_OverView.show();
     }
 
     public void hideOverview () {
@@ -599,7 +607,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_tab = findViewById(R.id.omniBox_tab);
         omniBox_tab.setOnClickListener(v -> showTabView());
         omniBox_tab.setOnLongClickListener(view -> {
-            show_dialogFastToggle();
+            performGesture("setting_gesture_tabButton");
             return false;
         });
         omniBox_overview = findViewById(R.id.omnibox_overview);
@@ -627,7 +635,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Button omnibox_overflow = findViewById(R.id.omnibox_overflow);
         omnibox_overflow.setOnClickListener(v -> showOverflow());
         omnibox_overflow.setOnLongClickListener(v -> {
-            show_dialogFastToggle();
+            performGesture("setting_gesture_tabButton");
             return false;
         });
         omnibox_overflow.setOnTouchListener(new SwipeTouchListener(context) {
@@ -707,9 +715,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
         omniBox_overview.setOnClickListener(v -> showOverview());
         omniBox_overview.setOnLongClickListener(v -> {
-            bottom_navigation.setSelectedItemId(R.id.page_2);
-            showOverview();
-            show_dialogFilter();
+            performGesture("setting_gesture_overViewButton");
             return false;
         });
     }
@@ -782,6 +788,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
             case "17":
                 ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")));
+                break;
+            case "18":
+                show_dialogFilter();
+                break;
+            case "19":
+                show_dialogFastToggle();
                 break;
         }
     }
@@ -961,7 +973,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         sp.edit().putString("sort_startSite", "ordinal").apply();
                         bottom_navigation.setSelectedItemId(R.id.page_1);
                     } else if (item.getItemId() == R.id.menu_filter) {
-                        show_dialogFilter();
+                        performGesture("18");
                     }
                     return true;
                 });
@@ -2258,6 +2270,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void show_dialogFilter() {
+
+        bottom_navigation.setSelectedItemId(R.id.page_2);
+        showOverview();
+
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
         builder.setView(dialogView);
