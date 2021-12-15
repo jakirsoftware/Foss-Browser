@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">شريط الأدوات</string>
     <string name="setting_title_toolbar_buttons">أزرار شريط الأدوات</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">مرر لأعلى</string>
     <string name="setting_gesture_down">مرر لأسفل</string>
     <string name="setting_gesture_left">مرر لليسار</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">أظهر نظرة عامة</string>
     <string name="setting_gesture_09">افتح تبويبا جديدا</string>
     <string name="setting_gesture_10">أغلق التبويب</string>
-    <string name="setting_gesture_hint">انقر مطولاً على زر القائمة لفتح مربع حوار الإعدادات السريعة. اضغط مطولاً على أيقونة الصفحة الرئيسية/المرجعية/السجل لفتح مرشح الإشارات المرجعية.</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
     <!-- Data -->
     <string name="title_appData">بيانات التطبيق</string>
     <string name="hint_database">هذا سيحذف البيانات الحالية. أواصل؟</string>
