@@ -790,6 +790,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 ninjaWebView.loadUrl(Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")));
                 break;
             case "18":
+                bottom_navigation.setSelectedItemId(R.id.page_2);
+                showOverview();
                 show_dialogFilter();
                 break;
             case "19":
@@ -973,7 +975,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         sp.edit().putString("sort_startSite", "ordinal").apply();
                         bottom_navigation.setSelectedItemId(R.id.page_1);
                     } else if (item.getItemId() == R.id.menu_filter) {
-                        performGesture("18");
+                        show_dialogFilter();
                     }
                     return true;
                 });
@@ -2270,10 +2272,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void show_dialogFilter() {
-
-        bottom_navigation.setSelectedItemId(R.id.page_2);
-        showOverview();
-
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
         builder.setView(dialogView);
