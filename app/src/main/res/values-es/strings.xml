@@ -139,9 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Barra de herramientas</string>
     <string name="setting_title_toolbar_buttons">Barra de herramientas</string>
-    <string name="setting_title_longPress">Long press</string>
-    <string name="setting_title_tabButton">Tab button / menu button</string>
-    <string name="setting_title_overViewButton">Overview</string>
+    <string name="setting_title_longPress">Dejar pulsado</string>
+    <string name="setting_title_tabButton">Botón de pestaña / botón de menú</string>
+    <string name="setting_title_overViewButton">Vista general</string>
     <string name="setting_gesture_up">Deslizar hacia arriba</string>
     <string name="setting_gesture_down">Deslizar hacia abajo</string>
     <string name="setting_gesture_left">Deslizar a la izquierda</string>
@@ -156,7 +156,7 @@
     <string name="setting_gesture_08">Mostrar vista general</string>
     <string name="setting_gesture_09">Abrir nueva pestaña</string>
     <string name="setting_gesture_10">Cerrar pestaña</string>
-    <string name="setting_gesture_11">Show fast toggle</string>
+    <string name="setting_gesture_11">Mostrar la alternancia rápida</string>
     <!-- Data -->
     <string name="title_appData">Datos de la aplicación</string>
     <string name="hint_database">Esto eliminará los datos actuales. ¿Proceder?</string>
