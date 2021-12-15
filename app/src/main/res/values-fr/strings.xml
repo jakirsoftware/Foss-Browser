@@ -139,6 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Barre d\'outils</string>
     <string name="setting_title_toolbar_buttons">Bouton de la barre d\'outils</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Balayer vers le haut</string>
     <string name="setting_gesture_down">Balayer vers le bas</string>
     <string name="setting_gesture_left">Balayer à gauche</string>
@@ -153,7 +156,7 @@
     <string name="setting_gesture_08">Voir la vue d’ensemble</string>
     <string name="setting_gesture_09">Ouvrir un nouvel onglet</string>
     <string name="setting_gesture_10">Fermer l’onglet</string>
-    <string name="setting_gesture_hint">Faites un clic long sur le bouton menu pour ouvrir la boîte de dialogue des paramètres rapides. Appuyez longuement sur l\'icône d\'accueil/signet/historique pour ouvrir le filtre de signets.</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
     <!-- Data -->
     <string name="title_appData">Données de l\'application</string>
     <string name="hint_database">Cela va supprimer les données actuelles. Continuer ?</string>
