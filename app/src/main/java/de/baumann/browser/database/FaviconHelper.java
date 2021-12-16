@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,6 +21,11 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import de.baumann.browser.R;
+import de.baumann.browser.view.NinjaToast;
 
 public class FaviconHelper extends SQLiteOpenHelper {
     // Database Version
@@ -62,15 +69,12 @@ public class FaviconHelper extends SQLiteOpenHelper {
         SQLiteDatabase database = this.getWritableDatabase();
         //first delete existing Favicon for domain if available
         database.delete(TABLE_FAVICON, DOMAIN + " = ?", new String[]{domain.trim()});
-
         byte[] byteImage= convertBytes(bitmap);
         ContentValues values = new  ContentValues();
         values.put(DOMAIN,     domain);
         values.put(IMAGE,     byteImage);
         database.insert(TABLE_FAVICON, null, values );
         database.close();
-
-
         cleanUpFaviconDB(context);
     }
 
@@ -125,24 +129,29 @@ public class FaviconHelper extends SQLiteOpenHelper {
     }
 
     public void cleanUpFaviconDB (Context context){
-        List<String> faviconURLs=getAllFaviconDomains();
-        RecordAction action = new RecordAction(context);
-        List<Record> allEntries = action.listEntries((Activity)context);
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+        executor.execute(() -> {
+            //Background work here
+            List<String> faviconURLs=getAllFaviconDomains();
+            RecordAction action = new RecordAction(context);
+            List<Record> allEntries = action.listEntries((Activity)context);
 
-        for(String faviconURL:faviconURLs){
-            boolean found=false;
-            for(Record entry:allEntries){
-                if(Objects.equals(getDomain(entry.getURL()), faviconURL)){
-                    found=true;
-                    break;
+            for(String faviconURL:faviconURLs){
+                boolean found=false;
+                for(Record entry:allEntries){
+                    if(Objects.equals(getDomain(entry.getURL()), faviconURL)){
+                        found=true;
+                        break;
+                    }
+                }
+                //If there is no entry in StartSite, Bookmarks, or History using this Favicon -> delete it
+                if(!found) {
+                    deleteFavicon(faviconURL);
+                    Log.d("Favicon delete", faviconURL);
                 }
             }
-            //If there is no entry in StartSite, Bookmarks, or History using this Favicon -> delete it
-            if(!found) {
-                deleteFavicon(faviconURL);
-                Log.d("Favicon delete", faviconURL);
-            }
-        }
+        });
     }
 
     public static byte[] convertBytes(Bitmap bitmap) {
