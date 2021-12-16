@@ -9,8 +9,6 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,8 +22,6 @@ import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import de.baumann.browser.R;
-import de.baumann.browser.view.NinjaToast;
 
 public class FaviconHelper extends SQLiteOpenHelper {
     // Database Version
@@ -130,13 +126,11 @@ public class FaviconHelper extends SQLiteOpenHelper {
 
     public void cleanUpFaviconDB (Context context){
         ExecutorService executor = Executors.newSingleThreadExecutor();
-        Handler handler = new Handler(Looper.getMainLooper());
         executor.execute(() -> {
             //Background work here
             List<String> faviconURLs=getAllFaviconDomains();
             RecordAction action = new RecordAction(context);
             List<Record> allEntries = action.listEntries((Activity)context);
-
             for(String faviconURL:faviconURLs){
                 boolean found=false;
                 for(Record entry:allEntries){
