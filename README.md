@@ -39,7 +39,7 @@ Organize your bookmarks with filters. You can set custom names for each filter. 
 ----
 ### Gestures
 
-You can assign over ten different gestures to the toolbar and the toolbar buttons. Each in four directions. So you have up to eight different gestures to control FOSS Browser. Supported is for example: load last website, switch tab, reload, open bookmarks, ... and many more.
+You can assign nearly twenty different gestures to the toolbar and the toolbar buttons. Each in four directions. You can also trigger events by long pressing the toolbar buttons. So you have up to ten different gestures to control FOSS Browser. Supported is for example: load last website, switch tab, reload, open bookmarks, ... and many more.
 
 ----
 ### Backups
