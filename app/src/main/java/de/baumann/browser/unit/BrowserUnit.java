@@ -276,6 +276,7 @@ public class BrowserUnit {
                     .setSmallIcon(R.drawable.icon_web)
                     .setContentTitle(activity.getString(R.string.main_menu_new_tab))
                     .setContentText(url)
+                    .setAutoCancel(true)
                     .setDefaults(DEFAULT_SOUND | DEFAULT_VIBRATE) //Important for heads-up notification
                     .setPriority(Notification.PRIORITY_MAX) //Important for heads-up notification
                     .setContentIntent(pendingIntent); //Set the intent that will fire when the user taps the notification
