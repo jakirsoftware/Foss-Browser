@@ -1,6 +1,10 @@
 package de.baumann.browser.unit;
 
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
+import static android.content.Context.NOTIFICATION_SERVICE;
+
+import static androidx.core.app.NotificationCompat.DEFAULT_SOUND;
+import static androidx.core.app.NotificationCompat.DEFAULT_VIBRATE;
 
 import android.app.Activity;
 import android.app.DownloadManager;
@@ -257,43 +261,34 @@ public class BrowserUnit {
         if (sp.getBoolean("sp_tabBackground", false) &&
                 !Objects.equals(intent.getPackage(), "de.baumann.browser")) {
 
-            activity.moveTaskToBack (true);
-
             Intent intentP = new Intent(activity, BrowserActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(activity, 0, intentP, FLAG_IMMUTABLE);
 
-            // Create an explicit intent for an Activity in your app
-            final String CHANNEL_ID = "zzzzz";
-            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(activity);
-            // Create the NotificationChannel, but only on API 26+ because
-            // the NotificationChannel class is new and not in the support library
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                CharSequence name = activity.getString(R.string.app_name);
-                String description = activity.getString(R.string.app_name);
-                int importance = NotificationManager.IMPORTANCE_HIGH;
-                NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+                String name = "Name";
+                String description = "description";
+                int importance = NotificationManager.IMPORTANCE_HIGH; //Important for heads-up notification
+                NotificationChannel channel = new NotificationChannel("1", name, importance);
                 channel.setDescription(description);
-                // Register the channel with the system; you can't change the importance
-                // or other notification behaviors after this
+                channel.setShowBadge(true);
+                channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+                NotificationManager notificationManager = activity.getSystemService(NotificationManager.class);
                 notificationManager.createNotificationChannel(channel);
             }
-            NinjaToast.show(activity, R.string.main_menu_new_tab);
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(activity, "Links in background")
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(activity, "1")
                     .setSmallIcon(R.drawable.icon_web)
                     .setContentTitle(activity.getString(R.string.main_menu_new_tab))
                     .setContentText(url)
-                    .setPriority(NotificationCompat.PRIORITY_HIGH)
-                    .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-                    // Set the intent that will fire when the user taps the notification
-                    .setContentIntent(pendingIntent)
-                    .setSilent(true)
-                    .setAutoCancel(true)
-                    //IMPORTANT: CHANNEL_ID
-                    .setChannelId(CHANNEL_ID);
+                    .setDefaults(DEFAULT_SOUND | DEFAULT_VIBRATE) //Important for heads-up notification
+                    .setPriority(Notification.PRIORITY_MAX) //Important for heads-up notification
+                    .setContentIntent(pendingIntent); //Set the intent that will fire when the user taps the notification
 
-            // notificationId is a unique int for each notification that you must define
-            notificationManager.notify(0, builder.build());
+            Notification buildNotification = mBuilder.build();
+            NotificationManager mNotifyMgr = (NotificationManager) activity.getSystemService(NOTIFICATION_SERVICE);
+            mNotifyMgr.notify(1, buildNotification);
+
+            activity.moveTaskToBack (true);
         }
     }
 
