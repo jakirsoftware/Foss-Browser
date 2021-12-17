@@ -22,7 +22,6 @@ import android.os.Environment;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.preference.PreferenceManager;
 import android.util.Log;
 import android.webkit.CookieManager;
@@ -41,7 +40,6 @@ import de.baumann.browser.activity.BrowserActivity;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
-import de.baumann.browser.view.NinjaToast;
 
 public class BrowserUnit {
 
@@ -70,7 +68,6 @@ public class BrowserUnit {
     private static final String URL_SCHEME_HTTP = "http://";
     private static final String URL_SCHEME_FTP = "ftp://";
     private static final String URL_SCHEME_INTENT = "intent://";
-    private static final String CHANNEL_ID = "FOSS Browser";
 
     public static boolean isURL(String url) {
 
@@ -258,15 +255,14 @@ public class BrowserUnit {
 
     public static void openInBackground (Activity activity, Intent intent, String url) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
-        if (sp.getBoolean("sp_tabBackground", false) &&
-                !Objects.equals(intent.getPackage(), "de.baumann.browser")) {
+        if (sp.getBoolean("sp_tabBackground", false) && !Objects.equals(intent.getPackage(), "de.baumann.browser")) {
 
             Intent intentP = new Intent(activity, BrowserActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(activity, 0, intentP, FLAG_IMMUTABLE);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                String name = "Name";
-                String description = "description";
+                String name = "Opened Link";
+                String description = "url of links opened in the background -> click to open";
                 int importance = NotificationManager.IMPORTANCE_HIGH; //Important for heads-up notification
                 NotificationChannel channel = new NotificationChannel("1", name, importance);
                 channel.setDescription(description);
