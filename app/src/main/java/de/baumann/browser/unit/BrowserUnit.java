@@ -252,13 +252,15 @@ public class BrowserUnit {
         }
     }
 
-    public static void openInBackground (Activity activity, String url) {
+    public static void openInBackground (Activity activity, Intent intent, String url) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
-        if (sp.getBoolean("sp_tabBackground", false)) {
+        if (sp.getBoolean("sp_tabBackground", false) &&
+                !Objects.equals(intent.getPackage(), "de.baumann.browser")) {
+
             activity.moveTaskToBack (true);
 
-            Intent intent = new Intent(activity, BrowserActivity.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(activity, 0, intent, FLAG_IMMUTABLE);
+            Intent intentP = new Intent(activity, BrowserActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(activity, 0, intentP, FLAG_IMMUTABLE);
 
             // Create an explicit intent for an Activity in your app
             final String CHANNEL_ID = "zzzzz";

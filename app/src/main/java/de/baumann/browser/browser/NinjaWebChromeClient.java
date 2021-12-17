@@ -56,6 +56,7 @@ public class NinjaWebChromeClient extends WebChromeClient {
                 try {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                     browserIntent.setData(request.getUrl());
+                    browserIntent.setPackage("de.baumann.browser");
                     context.startActivity(browserIntent);
                     return true;
                 } catch (Exception e) {

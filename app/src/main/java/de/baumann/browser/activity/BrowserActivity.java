@@ -567,12 +567,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             addAlbum(null, text.toString(), true, false,"");
             getIntent().setAction("");
             hideOverview();
-            BrowserUnit.openInBackground(activity, text.toString());
+            BrowserUnit.openInBackground(activity, intent, text.toString());
         } else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
             addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true, false,"");
             getIntent().setAction("");
             hideOverview();
-            BrowserUnit.openInBackground(activity, intent.getStringExtra(SearchManager.QUERY));
+            BrowserUnit.openInBackground(activity, intent, intent.getStringExtra(SearchManager.QUERY));
         } else if (filePathCallback != null) {
             filePathCallback = null;
             getIntent().setAction("");
@@ -580,13 +580,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             addAlbum(getString(R.string.app_name), url, true, false,"");
             getIntent().setAction("");
             hideOverview();
-            BrowserUnit.openInBackground(activity, url);
+            BrowserUnit.openInBackground(activity, intent, url);
         } else if (Intent.ACTION_VIEW.equals(action)) {
             String data = Objects.requireNonNull(getIntent().getData()).toString();
             addAlbum(getString(R.string.app_name), data, true, false,"");
             getIntent().setAction("");
             hideOverview();
-            BrowserUnit.openInBackground(activity, data);
+            BrowserUnit.openInBackground(activity, intent, data);
         }
     }
 
