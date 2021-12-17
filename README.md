@@ -1,5 +1,6 @@
 <img src="https://github.com/scoute-dich/browser/blob/master/graphics/featuresGrafic.png" /></a>
 
+
 "FOSS Browser" is a fully free (as in freedom) open source Android browser: privacy-friendly with a modern user interface. _- Your privacy - your data._
 
 ----
