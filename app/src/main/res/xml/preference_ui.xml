@@ -26,6 +26,11 @@
             android:summary="@string/setting_title_audioBackground"/>
 
         <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="sp_tabBackground"
+            android:summary="@string/main_menu_new_tab"/>
+
+        <CheckBoxPreference
             android:defaultValue="true"
             android:key="sp_close_browser_confirm"
             android:summary="@string/setting_title_confirm_exit"/>

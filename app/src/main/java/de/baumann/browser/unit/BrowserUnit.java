@@ -1,7 +1,13 @@
 package de.baumann.browser.unit;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
 import android.app.Activity;
 import android.app.DownloadManager;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +17,8 @@ import android.os.Build;
 import android.os.Environment;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.preference.PreferenceManager;
 import android.util.Log;
 import android.webkit.CookieManager;
@@ -25,9 +33,11 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
+import de.baumann.browser.activity.BrowserActivity;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.R;
+import de.baumann.browser.view.NinjaToast;
 
 public class BrowserUnit {
 
@@ -56,6 +66,7 @@ public class BrowserUnit {
     private static final String URL_SCHEME_HTTP = "http://";
     private static final String URL_SCHEME_FTP = "ftp://";
     private static final String URL_SCHEME_INTENT = "intent://";
+    private static final String CHANNEL_ID = "FOSS Browser";
 
     public static boolean isURL(String url) {
 
@@ -238,6 +249,49 @@ public class BrowserUnit {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
             Objects.requireNonNull(shortcutManager).removeAllDynamicShortcuts();
+        }
+    }
+
+    public static void openInBackground (Activity activity, String url) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
+        if (sp.getBoolean("sp_tabBackground", false)) {
+            activity.moveTaskToBack (true);
+
+            Intent intent = new Intent(activity, BrowserActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(activity, 0, intent, FLAG_IMMUTABLE);
+
+            // Create an explicit intent for an Activity in your app
+            final String CHANNEL_ID = "zzzzz";
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(activity);
+            // Create the NotificationChannel, but only on API 26+ because
+            // the NotificationChannel class is new and not in the support library
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                CharSequence name = activity.getString(R.string.app_name);
+                String description = activity.getString(R.string.app_name);
+                int importance = NotificationManager.IMPORTANCE_HIGH;
+                NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+                channel.setDescription(description);
+                // Register the channel with the system; you can't change the importance
+                // or other notification behaviors after this
+                notificationManager.createNotificationChannel(channel);
+            }
+            NinjaToast.show(activity, R.string.main_menu_new_tab);
+
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(activity, "Links in background")
+                    .setSmallIcon(R.drawable.icon_web)
+                    .setContentTitle(activity.getString(R.string.main_menu_new_tab))
+                    .setContentText(url)
+                    .setPriority(NotificationCompat.PRIORITY_HIGH)
+                    .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                    // Set the intent that will fire when the user taps the notification
+                    .setContentIntent(pendingIntent)
+                    .setSilent(true)
+                    .setAutoCancel(true)
+                    //IMPORTANT: CHANNEL_ID
+                    .setChannelId(CHANNEL_ID);
+
+            // notificationId is a unique int for each notification that you must define
+            notificationManager.notify(0, builder.build());
         }
     }
 

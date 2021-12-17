@@ -1,10 +1,11 @@
-### v 8.7
+### v 8.7 (WIP)
 
 - fix: dark theme in settings activities
 - new: play audio on background
 - new: Quick toggle to keep screen on
 - new: Option to keep screen awake
 - new: gesture settings for long pressing
+- new: open links in background
 - updated: F-Droid (screenshots, description)
 - updated: Privacy Policy
 - updated: translations
