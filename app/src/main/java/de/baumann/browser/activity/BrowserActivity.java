@@ -2050,6 +2050,22 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             @Override
             public void onTabReselected(TabLayout.Tab tab) {}
         });
+        menu_grid_tab.setOnTouchListener(new SwipeTouchListener(context) {
+            public void onSwipeRight() { tabLayout.selectTab(tab_other); }
+            public void onSwipeLeft() { tabLayout.selectTab(tab_share); }
+        });
+        menu_grid_share.setOnTouchListener(new SwipeTouchListener(context) {
+            public void onSwipeRight() { tabLayout.selectTab(tab_tab); }
+            public void onSwipeLeft() { tabLayout.selectTab(tab_save); }
+        });
+        menu_grid_save.setOnTouchListener(new SwipeTouchListener(context) {
+            public void onSwipeRight() { tabLayout.selectTab(tab_share); }
+            public void onSwipeLeft() { tabLayout.selectTab(tab_other); }
+        });
+        menu_grid_other.setOnTouchListener(new SwipeTouchListener(context) {
+            public void onSwipeRight() { tabLayout.selectTab(tab_save); }
+            public void onSwipeLeft() { tabLayout.selectTab(tab_tab); }
+        });
     }
 
     private void saveOpenedTabs () {
