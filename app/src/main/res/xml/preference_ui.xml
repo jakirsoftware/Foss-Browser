@@ -16,11 +16,13 @@
             android:summary="@string/setting_title_reload"/>
 
         <CheckBoxPreference
+            android:icon="@drawable/icon_screen"
             android:defaultValue="false"
             android:key="sp_screenOn"
             android:summary="@string/setting_title_screenOn"/>
 
         <CheckBoxPreference
+            android:icon="@drawable/icon_audio"
             android:defaultValue="false"
             android:key="sp_audioBackground"
             android:summary="@string/setting_title_audioBackground"/>

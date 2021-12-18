@@ -5,6 +5,7 @@
 - new: Quick toggle to keep screen on
 - new: gesture settings for long pressing
 - new: open links in background
+- new: swipe through menu
 - updated: F-Droid (screenshots, description)
 - updated: Privacy Policy
 - updated: translations
