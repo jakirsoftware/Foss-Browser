@@ -1,6 +1,7 @@
-### v 8.7 (WIP)
+### v 8.7
 
 - fix: dark theme in settings activities
+- fix: night mode (webView)
 - new: play audio on background
 - new: Quick toggle to keep screen on
 - new: gesture settings for long pressing
@@ -8,7 +9,7 @@
 - new: swipe through menu
 - updated: F-Droid (screenshots, description)
 - updated: Privacy Policy
-- updated: translations
+- updated: translations (17 languages supported!)
 - improved: MaterialYou theme
 - improved: search in history, bookmarks, ...
 - improved: close open tabs dialog after making selection
