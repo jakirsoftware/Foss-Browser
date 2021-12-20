@@ -1,3 +1,5 @@
+
+
 ## Settings (Main screen)
 
 This is the settings main screen.
