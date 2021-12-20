@@ -4,4 +4,4 @@
 
 #### Content
 
-[Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/settings_main.md) | Privacy | Delete | Bahaviour/UI | Bookmark filter | Gesture | Backup
+[Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/settings_main.md) | [Privacy](https://github.com/scoute-dich/browser/blob/master/wiki/settings_privacy.md) | Delete | Bahaviour/UI | Bookmark filter | Gesture | Backup
