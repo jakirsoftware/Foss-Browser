@@ -44,4 +44,4 @@ FOSS Browser cames with a build in AdBlocker. AdBlock hosts are taken from [Stev
 
 ### 6: Custom javaScript code
 
-This is an advanced feature. If you don't know what it meens, it should better be emty.
+This is an advanced feature. If you don't know what it meens, it should better be emty and disabled.
