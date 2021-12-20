@@ -12,7 +12,7 @@ Here you can enter the url of your startsite. The url entered here will be loade
 
 ### 2: Search engine
 
-Decide between several search engines. If the prefered search engine isn't supported you can also set a custom one in the advanced settings.
+Decide between several search engines. If the prefered search engine isn't supported, you can also set a custom one in the advanced settings.
 
 ----
 
