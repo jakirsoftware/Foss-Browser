@@ -172,7 +172,7 @@
     <string name="toast_webview_forward">Не удается загрузить следующий сайт</string>
     <string name="toast_restart">Чтобы применить изменения, необходимо перезапустить \"FOSS Browser\". Закрыть сейчас?</string>
     <string name="toast_quit">Хотите выйти из \"FOSS Browser\"?</string>
-    <string name="toast_quit_TAB">Вы хотите закрыть TAB?</string>
+    <string name="toast_quit_TAB">Вы хотите закрыть ВКЛАДКУ?</string>
     <string name="toast_downloadComplete">Загрузка завершена. Открыть файловый менеджер?</string>
     <string name="toast_unsecured">Сайт использует незащищенное соединение (\"http\"). Попробовать безопасное соединение (\"https\")?</string>
     <string name="toast_backup">Сохранить данные? Это перезапишет старую резервную копию.</string>
@@ -191,7 +191,7 @@
     <string name="setting_title_tabsRestore">Восстановить вкладки</string>
     <string name="setting_title_userInterface">Пользовательский интерфейс</string>
     <string name="setting_summary_tabsReload">Перезагрузка последних открытых вкладок при запуске FOSS Browser.</string>
-    <string name="setting_summary_tabsRestore">Восстановление вкладок, когда FOSS Browser будет убит системой.</string>
+    <string name="setting_summary_tabsRestore">Восстановить вкладки при завершении FOSS Browser системой.</string>
     <string name="hint_DRM_Media">Разрешить воспроизведение медиафайлов, защищенных DRM?</string>
     <string name="menu_reload">Перезагрузка</string>
     <string name="menu_restart">Перезапуск и перезагрузка вкладок</string>
