@@ -2,9 +2,7 @@
 
 ![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_main.png)
 
-From here you can open settings for:
-
-Privacy | Delete | Bahaviour/UI | Bookmark filter | Gesture | Backup.
+From here you can open settings for: Privacy | Delete | Bahaviour/UI | Bookmark filter | Gesture | Backup.
 
 ----
 
