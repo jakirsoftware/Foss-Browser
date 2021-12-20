@@ -1,29 +1,47 @@
 ## Privacy settings
 
-![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_main.png)
+![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_privacy.png)
 
-From here you can open settings for: Privacy | Delete | Bahaviour/UI | Bookmark filter | Gesture | Backup.
-
-----
-
-### 1: Favorite
-
-Here you can enter the url of your startsite. The url entered here will be loaded on app start. If you leave this empty, FOSS Browser opens a blank site on start.
+From here you can open settings for: Edit profiles | Profile lists
 
 ----
 
-### 2: Search engine
+### 1: Form data
 
-Decide between several search engines. If the prefered search engine isn't supported, you can also set a custom one in the advanced settings.
+Enable this to save filled out form data on devices running Android Nougat or below. Saving form data is not longer possible since Android Oreo. Instead you can use Androids autofill service. You need a password manager which supports autofill service. You can find several on [F-Droid](https://search.f-droid.org/?q=password&lang=en).
 
 ----
 
-### 3: Advanced
+### 2: Profile on app start
 
-__Custom search engine:__ If your prefered search engine is not listed in the settings (2), you can enter here a custom one. If you make a search with your browser the url looks like:
+FOSS Browser has three profiles: trusted, standard and protected. Here you can deicide which profile to load on every app start. For more information about profile settings look here: Edit profiles.
 
-`http://blahblah.com?search=%s`
+----
 
-where your browser replaces the %s with the content of the search box. You can nearly use all search fields (on nearly any website) to get such a url. These urls can be set as a custom search engine.
+### 3: Edit profiles
 
-__Custom user agent:__ Custom UserAgent allows to change your browser's user-agent. This can for example be used to load websites in desktop view by default. Here you can find a list with actual examples: [Latest user agents for Web Browsers & Operating Systems](https://www.whatismybrowser.com/guides/the-latest-user-agent/).
+Here you can edit the settings of the three profiles. ⇒ Edit profiles.
+
+----
+
+### 4: Profile lists
+
+Profiles can be saved for domains ("github.com" ⇒ Trusted website). This saved domains always overwrite the current profile. So, for example, "github.com" will always open with the trusted profile, even if you are browsing in the protected mode. ⇒ Profile lists
+
+----
+
+### 5: Blocked content
+
+FOSS Browser cames with a build in AdBlocker. AdBlock hosts are taken from [Steven Black - AbBlock hosts](https://github.com/StevenBlack/hosts). This hosts are updated regulary. In the settings you can see the date of the last update of the master host file. Here you can decide, which content to block:
+
+- Unified hosts = (adware + malware)
+- fakenews
+- gambling
+- porn
+- social: this can also break content from facebook and other social media platforms
+
+----
+
+### 6: Custom javaScript code
+
+This is an advanced feature. If you don't know what it meens, it should better be emty.
