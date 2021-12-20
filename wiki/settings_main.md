@@ -1,4 +1,4 @@
-
+<img src="https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_main.png" /></a>
 
 ## Settings (Main screen)
 
