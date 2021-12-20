@@ -59,6 +59,7 @@ public class Settings_Activity extends AppCompatActivity {
             String url = "https://github.com/scoute-dich/browser/blob/master/README.md";
             Uri webpage = Uri.parse(url);
             Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+            intent.setPackage("de.baumann.browser");
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }

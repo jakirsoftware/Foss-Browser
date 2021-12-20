@@ -1727,6 +1727,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 case 4:
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(url));
+                    intent.setPackage("de.baumann.browser");
                     Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
                     startActivity(chooser);
                     break;
@@ -1957,6 +1958,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (position == 2) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
+                intent.setPackage("de.baumann.browser");
                 Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
                 startActivity(chooser);
             }
