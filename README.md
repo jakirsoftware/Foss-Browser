@@ -4,7 +4,7 @@
 
 ----
 
-[Wiki](https://github.com/scoute-dich/browser/wiki) | [FAQs](https://github.com/scoute-dich/browser/blob/master/FAQs.md) | [Releases](https://github.com/scoute-dich/browser/releases) | [Changelog](https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md) | [Privacy Policy](https://github.com/scoute-dich/browser/blob/master/PRIVACY.md) | [License](https://github.com/scoute-dich/browser/blob/master/LICENSE.md) | [Code of conduct](https://github.com/scoute-dich/browser/blob/master/CODE_OF_CONDUCT.md) | [Contributing](https://github.com/scoute-dich/browser/blob/master/CONTRIBUTING.md) | [XDA](http://forum.xda-developers.com/android/apps-games/app-browser-t3500091) | [Help translating](https://crowdin.com/project/foss-browser)
+[Wiki](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md) | [FAQs](https://github.com/scoute-dich/browser/blob/master/FAQs.md) | [Releases](https://github.com/scoute-dich/browser/releases) | [Changelog](https://github.com/scoute-dich/browser/blob/master/CHANGELOG.md) | [Privacy Policy](https://github.com/scoute-dich/browser/blob/master/PRIVACY.md) | [License](https://github.com/scoute-dich/browser/blob/master/LICENSE.md) | [Code of conduct](https://github.com/scoute-dich/browser/blob/master/CODE_OF_CONDUCT.md) | [Contributing](https://github.com/scoute-dich/browser/blob/master/CONTRIBUTING.md) | [XDA](http://forum.xda-developers.com/android/apps-games/app-browser-t3500091) | [Help translating](https://crowdin.com/project/foss-browser)
 
 <a href="https://f-droid.org/packages/de.baumann.browser/" target="_blank">
 <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="50"/></a>
