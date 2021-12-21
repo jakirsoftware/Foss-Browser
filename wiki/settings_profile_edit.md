@@ -6,8 +6,18 @@ Here you can edit the three profiles trusted, standard and protected. The settin
 
 ----
 
-### 1: Favorite
+### 1: Data usage
 
-Here you can enter the URL of your start site. The URL entered here will be loaded on app start. If you leave this empty, FOSS Browser opens a blank site on start.
+...
 
 ----
+
+### 2: Privacy
+
+...
+
+----
+
+### 3: Security
+
+...
