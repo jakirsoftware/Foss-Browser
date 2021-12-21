@@ -1,7 +1,5 @@
 ## Privacy settings
 
-_![Wiki start](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)_
-
 From here, you can open settings for: [Edit profiles](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_edit.md) | [Profile list](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_list.md)
 
 ![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_privacy.png)
@@ -47,3 +45,7 @@ FOSS Browser comes with a build in AdBlock. AdBlock's hosts are taken from [Stev
 ### Custom JavaScript code
 
 This is an advanced feature. If you don't know what it means, it should better be empty and disabled.
+
+----
+
+![go back](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)
