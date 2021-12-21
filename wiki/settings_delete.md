@@ -4,15 +4,25 @@
 
 ----
 
-### 1: Add domain
+### 1: Clear on application exit
+
+If you enable this, FOSS Browser will delete all the below selected data when it gets closed.
 
 
 ----
 
-### 2: Delete domain
+### 2: Clear on device stored data
 
+FOSS Browser uses Androids system webview to render websites. This webview saves data on your device (indexed databases, decoder statistics, webdata, ...). Enabling this will delete the whole data webview collects.
 
 ----
 
-### 3: Delete whole list
+### 3: Clear cookies
 
+Enabling this will delete all cookies. Also, the cookies of trusted websites.
+
+----
+
+### 4: Clear database
+
+This will delete FOSS Browsers database: all your overview entries (Start site, bookmarks, history) and all [profile lists](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_list.md).
