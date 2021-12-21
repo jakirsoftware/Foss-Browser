@@ -42,6 +42,6 @@ FOSS Browser comes with a build in AdBlock. AdBlock's hosts are taken from [Stev
 
 ----
 
-### 6: Custom JavaScript code
+### Custom JavaScript code
 
 This is an advanced feature. If you don't know what it means, it should better be empty and disabled.
