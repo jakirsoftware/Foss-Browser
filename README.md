@@ -52,4 +52,4 @@ You can assign nearly twenty different gestures to the toolbar and the toolbar b
 ----
 ### Backups
 
-Backup all your important data (bookmarks, history, trusted websites and so on) on your SD-card. You can also back up FOSS Browser settings.
+Backup all your important data (bookmarks, history, trusted websites and so on) on your SD-card. You can also back up FOSS Browser settings. Backups can even be restored on a fresh install or an other device (if you copy the backup files to the new device).
