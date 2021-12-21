@@ -21,7 +21,6 @@ FOSS browser is laced with a variety of rich features that makes it an amazing a
 - Data Saving
 - Advanced gesture control for toolbar and navigation button
 - Search on site
-- Screenshots of the whole website
 - Share/save a webpage as PDF
 
 Aside from the features above, FOSS Browser is designed with all the basic features of a browser. 
