@@ -2,7 +2,7 @@
 
 ![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_privacy.png)
 
-From here, you can open settings for: Edit profiles | Profile lists
+From here, you can open settings for: [Edit profiles](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_edit.md) | Profile lists
 
 ----
 
@@ -14,13 +14,13 @@ Enable this to save filled out form data on devices running Android Nougat or be
 
 ### 2: Profile on app start
 
-FOSS Browser has three profiles: trusted, standard and protected. Here, you can decide which profile to load on every app start. For more information about profile settings, look here: Edit profiles.
+FOSS Browser has three profiles: trusted, standard and protected. Here, you can decide which profile to load on every app start. For more information about profile settings, look here ⇒ [Edit profiles](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_edit.md).
 
 ----
 
 ### 3: Edit profiles
 
-Here you can edit the settings of the three profiles. ⇒ Edit profiles.
+Here you can edit the settings of the three profiles. ⇒ [Edit profiles](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_edit.md).
 
 ----
 
