@@ -34,3 +34,7 @@ This will delete FOSS Browsers database: all your overview entries (Start site, 
 ### 5: Delete
 
 Clicking this button delets all above checked items once.
+
+----
+
+![go back](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)
