@@ -1,7 +1,5 @@
 ## Delete
 
-![go back](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)
-
 ![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_delete.png)
 
 ----
