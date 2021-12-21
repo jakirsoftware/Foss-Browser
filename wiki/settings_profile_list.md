@@ -1,8 +1,10 @@
 ## Profiles list
 
-![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_profile_list.png)
+_![Wiki start](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)_
 
 FOSS Browser uses profiles to protect your privacy. This profiles can also be saved for domains ("github.com" ⇒ Trusted website). This saved domains always overwrite the current profile. So, for example, "github.com" will always open with the trusted profile, even if you are browsing in the protected mode. Here you can edit trusted, standard and protected domains.
+
+![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_profile_list.png)
 
 ----
 
