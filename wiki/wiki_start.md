@@ -1,4 +1,5 @@
-<img src="https://github.com/scoute-dich/browser/blob/master/graphics/featuresGrafic.png" /></a>
+![FOSS Browser logo](https://github.com/scoute-dich/browser/blob/master/graphics/featuresGrafic.png)
+
 
 ## Welcome to the FOSS Browser wiki!
 
