@@ -319,6 +319,17 @@ public class BrowserUnit {
         final File WebDataJournal_file = new File(data, WebDataJournal);
 
         BrowserUnit.deleteDir(blob_storage_file);
+        BrowserUnit.deleteDir(databases_file);
+        BrowserUnit.deleteDir(indexedDB_file);
+        BrowserUnit.deleteDir(localStorage_file);
+        BrowserUnit.deleteDir(serviceWorker_file);
+        BrowserUnit.deleteDir(sessionStorage_file);
+        BrowserUnit.deleteDir(shared_proto_db_file);
+        BrowserUnit.deleteDir(VideoDecodeStats_file);
+        BrowserUnit.deleteDir(QuotaManager_file);
+        BrowserUnit.deleteDir(QuotaManager_journal_file);
+        BrowserUnit.deleteDir(webData_file);
+        BrowserUnit.deleteDir(WebDataJournal_file);
     }
 
     public static boolean deleteDir(File dir) {
