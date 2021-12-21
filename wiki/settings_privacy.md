@@ -2,7 +2,7 @@
 
 ![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_privacy.png)
 
-From here, you can open settings for: [Edit profiles](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_edit.md) | Profile lists
+From here, you can open settings for: [Edit profiles](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_edit.md) | [Profile list](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_list.md)
 
 ----
 
@@ -26,7 +26,7 @@ Here you can edit the settings of the three profiles. ⇒ [Edit profiles](https:
 
 ### 4: Profile lists
 
-Profiles can be saved for domains ("github.com" ⇒ Trusted website). This saved domains always overwrite the current profile. So, for example, "github.com" will always open with the trusted profile, even if you are browsing in the protected mode. ⇒ Profile lists
+Profiles can be saved for domains ("github.com" ⇒ Trusted website). This saved domains always overwrite the current profile. So, for example, "github.com" will always open with the trusted profile, even if you are browsing in the protected mode. ⇒ [Profile list](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_list.md)
 
 ----
 
