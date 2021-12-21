@@ -1,8 +1,10 @@
 ## Edit profiles
 
-![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_profile_edit.png)
+_![Wiki start](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)_
 
 Here you can edit the three profiles trusted, standard and protected. The settings are organized in three categories: Data usage, Privacy, Security.
+
+![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_profile_edit.png)
 
 ----
 
