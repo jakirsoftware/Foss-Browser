@@ -1,7 +1,5 @@
 ## Edit profiles
 
-_![Wiki start](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)_
-
 Here you can edit the three profiles trusted, standard and protected. The settings are organized in three categories: Data usage, Privacy, Security.
 
 ![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_profile_edit.png)
@@ -32,3 +30,7 @@ Here you can edit the three profiles trusted, standard and protected. The settin
 
 - __JavaScript:__ JavaScript is a core technology for the worldwide web. Most websites will not work properly, if you disable JavaScript. JavaScript is used to display images, videos, menus and so on. But of course, JavaScript can also be used to perform malware code.
 - __Popups:__ Disabling this prevents websites from opening new popup windows.
+
+----
+
+![go back](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)
