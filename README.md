@@ -37,7 +37,7 @@ _More privacy features:_
 - Enable or disable Android-autofill.
 - Delete browser data (on app exit).
 - Choose between different search engines (or set a custom one).
-- FOSS Browser itself doesn't collect any data: [Privacy](https://github.com/scoute-dich/browser/blob/master/PRIVACY.md)
+- FOSS Browser itself doesn't collect any data: [Privacy policy](https://github.com/scoute-dich/browser/blob/master/PRIVACY.md)
 
 ----
 ### Bookmarks filter
