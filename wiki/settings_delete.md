@@ -1,5 +1,7 @@
 ## Delete
 
+_![Wiki start](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)_
+
 ![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_delete.png)
 
 ----
@@ -13,7 +15,7 @@ If you enable this, FOSS Browser will delete all the below selected data when it
 
 ### 2: Clear on device stored data
 
-FOSS Browser uses Androids system webview to render websites. This webview saves data on your device (indexed databases, decoder statistics, webdata, ...). Enabling this will delete the whole data webview collects.
+FOSS Browser uses Androids system webview to render websites. This webview saves data on your device (indexed databases, decoder statistics, webdata, ...). Enabling this will delete nearly the whole data webview collects. Some data, like cookies won't be deleted.
 
 ----
 
