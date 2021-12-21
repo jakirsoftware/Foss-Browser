@@ -16,12 +16,15 @@ Here you can edit the three profiles trusted, standard and protected. The settin
 
 ### 2: Privacy
 
-_Location:_ <br>
-_Allow camera usage:_ <br>
-_Allow microphone usage:_ <br>
-_History:_ <br>
-_Fingerprint protection:_ <br>
-_Cookies:_ <br>
+- _Location:_ <br>
+- _Allow camera usage:_ <br>
+- _Allow microphone usage:_ <br>
+- _History:_ <br>
+- _Fingerprint protection:_ <br>
+- _Cookies:_ Cookies are small blocks of data created by a website and placed on the user's computer or other device by the user’s web browser. <br>
+
+Cookies serve useful and sometimes essential functions on the web. They enable web servers to store stateful information (such as items added in the shopping cart in an online store) on the user’s device or to track the user's browsing activity (including clicking particular buttons, logging in, or recording which pages were visited in the past).[1] They can also be used to save for subsequent use information that the user previously entered into form fields, such as names, addresses, passwords, and payment card numbers. Tracking cookies, and especially third-party tracking cookies (which are disabled in FOSS BRowser), are commonly used as ways to get records of individuals' browsing histories — a potential privacy concern. Disabling cookies can protect your privacy.
+
 _DOM Storage:_ <br>
 
 ----
