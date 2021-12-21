@@ -1,8 +1,10 @@
 ## Privacy settings
 
-![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_privacy.png)
+_![Wiki start](https://github.com/scoute-dich/browser/blob/master/wiki/wiki_start.md)_
 
 From here, you can open settings for: [Edit profiles](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_edit.md) | [Profile list](https://github.com/scoute-dich/browser/blob/master/wiki/settings_profile_list.md)
+
+![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_privacy.png)
 
 ----
 
