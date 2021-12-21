@@ -1,8 +1,8 @@
 ## Edit profiles
 
-![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_main.png)
+![Settings (Main screen)](https://github.com/scoute-dich/browser/blob/master/wiki/screenshots/settings_profile_edit.png)
 
-From here you can open settings for: [Privacy](https://github.com/scoute-dich/browser/blob/master/wiki/settings_privacy.md) | Delete | Behavior/UI | Bookmark filter | Gesture | Backup.
+Here you can edit the three profiles trusted, standard and protected. The settings are organized in three cotegories: Data usage, Privacy, Security.
 
 ----
 
