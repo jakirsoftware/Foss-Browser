@@ -1,3 +1,8 @@
+### v 8.8 (WIP)
+
+- new: Wiki integrated in settings
+
+
 ### v 8.7
 
 - fix: dark theme in settings activities
