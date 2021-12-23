@@ -18,6 +18,7 @@ import java.util.Objects;
 
 import de.baumann.browser.fragment.Fragment_settings;
 import de.baumann.browser.R;
+import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 
 public class Settings_Activity extends AppCompatActivity {
@@ -56,13 +57,11 @@ public class Settings_Activity extends AppCompatActivity {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
         } else if (menuItem.getItemId() == R.id.menu_info) {
-            String url = "https://github.com/scoute-dich/browser/blob/master/README.md";
-            Uri webpage = Uri.parse(url);
-            Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-            intent.setPackage("de.baumann.browser");
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            }
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/blob/master/README.md");
+            BrowserUnit.intentURL(this, webpage);
+        } else if (menuItem.getItemId() == R.id.menu_help) {
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Settings-(Main-screen)");
+            BrowserUnit.intentURL(this, webpage);
         }
         return true;
     }

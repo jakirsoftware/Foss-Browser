@@ -1725,11 +1725,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     shareLink("", url);
                     break;
                 case 4:
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(url));
-                    intent.setPackage("de.baumann.browser");
-                    Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
-                    startActivity(chooser);
+                    BrowserUnit.intentURL(context, Uri.parse(url));
                     break;
                 case 5:
                     if (url.startsWith("data:")) {
@@ -1956,11 +1952,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 Objects.requireNonNull(clipboard).setPrimaryClip(clip);
                 NinjaToast.show(this, R.string.toast_copy_successful);
             } else if (position == 2) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                intent.setPackage("de.baumann.browser");
-                Intent chooser = Intent.createChooser(intent, getString(R.string.menu_open_with));
-                startActivity(chooser);
+                BrowserUnit.intentURL(context, Uri.parse(url));
             }
         });
 

@@ -38,6 +38,7 @@
         <entry key="app/src/main/res/drawable/icon_dom.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_dots.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_fingerprint.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_help.xml" value="0.19427083333333334" />
         <entry key="app/src/main/res/drawable/icon_history.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_history_light.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/icon_image.xml" value="0.20625" />
@@ -96,7 +97,11 @@
         <entry key="app/src/main/res/layout/item_icon_right.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_tab.xml" value="0.1539855072463768" />
         <entry key="app/src/main/res/menu/menu_bottom_overview.xml" value="0.19010416666666666" />
+        <entry key="app/src/main/res/menu/menu_help.xml" value="0.178125" />
+        <entry key="app/src/main/res/menu/menu_list_bookmark.xml" value="0.178125" />
+        <entry key="app/src/main/res/menu/menu_list_start.xml" value="0.178125" />
         <entry key="app/src/main/res/menu/menu_settings.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu_whitelist.xml" value="0.178125" />
         <entry key="app/src/main/res/menu/poupup_menu.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20625" />
         <entry key="app/src/main/res/xml/preference_backup.xml" value="0.18840579710144928" />

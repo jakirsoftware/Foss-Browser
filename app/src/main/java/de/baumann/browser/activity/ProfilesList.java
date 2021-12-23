@@ -1,6 +1,7 @@
 package de.baumann.browser.activity;
 
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -178,7 +179,7 @@ public class ProfilesList extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_whitelist, menu);
+        getMenuInflater().inflate(R.menu.menu_profile_list, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -211,6 +212,9 @@ public class ProfilesList extends AppCompatActivity {
             AlertDialog dialog = builder.create();
             dialog.show();
             HelperUnit.setupDialog(this, dialog);
+        } else if (menuItem.getItemId() == R.id.menu_help) {
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Profile-list");
+            BrowserUnit.intentURL(this, webpage);
         }
         return true;
     }

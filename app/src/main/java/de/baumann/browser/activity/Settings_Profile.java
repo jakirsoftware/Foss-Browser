@@ -1,7 +1,9 @@
 package de.baumann.browser.activity;
 
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,6 +18,7 @@ import java.util.Objects;
 
 import de.baumann.browser.R;
 import de.baumann.browser.fragment.Fragment_settings_Profile;
+import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 
 public class Settings_Profile extends AppCompatActivity {
@@ -59,9 +62,18 @@ public class Settings_Profile extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_help, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
+        } if (menuItem.getItemId() == R.id.menu_help) {
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Edit-profiles");
+            BrowserUnit.intentURL(this, webpage);
         }
         return true;
     }

@@ -253,6 +253,14 @@ public class BrowserUnit {
         }
     }
 
+    public static void intentURL (Context context, Uri uri) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+        browserIntent.setData(uri);
+        browserIntent.setPackage("de.baumann.browser");
+        Intent chooser = Intent.createChooser(browserIntent, context.getString(R.string.menu_open_with));
+        context.startActivity(chooser);
+    }
+
     public static void openInBackground (Activity activity, Intent intent, String url) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
         if (sp.getBoolean("sp_tabBackground", false) && !Objects.equals(intent.getPackage(), "de.baumann.browser")) {

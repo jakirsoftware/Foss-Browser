@@ -1,6 +1,7 @@
 package de.baumann.browser.activity;
 
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -12,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
@@ -85,9 +87,18 @@ public class Settings_Delete extends AppCompatActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_help, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == android.R.id.home) {
             finish();
+        } if (menuItem.getItemId() == R.id.menu_help) {
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Delete");
+            BrowserUnit.intentURL(this, webpage);
         }
         return true;
     }

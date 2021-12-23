@@ -10,9 +10,9 @@
         android:icon="@drawable/icon_help"
         app:showAsAction="always" />
 
-    <item android:id="@+id/menu_info"
-        android:title="Info"
-        android:icon="@drawable/icon_alert"
-        app:showAsAction="always" />
+    <item android:id="@+id/menu_clear"
+        android:title="@string/whitelist_menu_clear"
+        android:icon="@drawable/icon_delete"
+        app:showAsAction="always"/>
 
 </menu>
