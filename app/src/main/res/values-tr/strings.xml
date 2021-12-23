@@ -6,9 +6,9 @@
     <string name="app_cancel">İptal et</string>
     <string name="app_done">Tamam</string>
     <string name="app_error">Hata</string>
-    <string name="app_error_activity">No app installed to open this url.</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
+    <string name="app_error_activity">Bu web adresini açmak için yüklü herhangi bir uygulama mevcut değildir.</string>
+    <string name="app_warning">Uyarı</string>
+    <string name="app_permission">Bu özelliği kullanmak için izin vermelisiniz. Daha sonra uygulamayı yeniden başlatın.</string>
     <string name="list_empty">Liste boş</string>
     <string name="album_title_bookmarks">Yer imleri</string>
     <string name="album_title_history">Geçmiş</string>
@@ -28,7 +28,7 @@
     <string name="color_grey">Gri</string>
     <!-- Menu -->
     <string name="main_menu_new_tab">Yeni sekme (arka plan)</string>
-    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
+    <string name="main_menu_new_tabProfile">Yeni sekme (profil ile …)</string>
     <string name="main_menu_new_tabOpen">Yeni sekme (ön plan)</string>
     <string name="main_omnibox_input_hint">Arayın veya URL girin</string>
     <string name="menu_open_with">Bağlantıyı aç…</string>
@@ -76,28 +76,28 @@
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">Yazı boyutu</string>
     <string name="setting_title_dom">DOM Depolama</string>
     <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
-    <string name="setting_title_profiles">Profiles</string>
-    <string name="setting_title_profiles_edit">Edit profiles</string>
-    <string name="setting_title_profiles_trustedList">Trusted websites</string>
-    <string name="setting_title_profiles_standardList">Standard websites</string>
-    <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_startApp">Profile on app start</string>
-    <string name="setting_title_profiles_trusted">Trusted</string>
-    <string name="setting_title_profiles_standard">Standard</string>
-    <string name="setting_title_profiles_protected">Protected</string>
-    <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_active">Profile</string>
-    <string name="setting_title_profiles_dataUsage">Data usage</string>
-    <string name="setting_title_profiles_privacy">Privacy</string>
-    <string name="setting_title_profiles_Security">Security</string>
+    <string name="setting_title_profiles">Profiller</string>
+    <string name="setting_title_profiles_edit">Profilleri Düzenle</string>
+    <string name="setting_title_profiles_trustedList">Güvenilen web siteleri</string>
+    <string name="setting_title_profiles_standardList">Standart web siteleri</string>
+    <string name="setting_title_profiles_protectedList">Korumalı web siteleri</string>
+    <string name="setting_title_profiles_startApp">Uygulama başlangıcında ki profil</string>
+    <string name="setting_title_profiles_trusted">Güvenilir</string>
+    <string name="setting_title_profiles_standard">Standart</string>
+    <string name="setting_title_profiles_protected">Korumalı</string>
+    <string name="setting_title_profiles_changed">Özel</string>
+    <string name="setting_title_profiles_active">Profil</string>
+    <string name="setting_title_profiles_dataUsage">Veri kullanımı</string>
+    <string name="setting_title_profiles_privacy">Gizlilik</string>
+    <string name="setting_title_profiles_Security">Güvenlik</string>
     <!-- browser start -->
     <string name="setting_title_images">Görüntüler</string>
     <string name="setting_title_cookie">Çerezler</string>
     <string name="setting_summary_cookie_delete">Etkinleştirilirse, tüm çerezler silinir. Ayrıca güvenilir web sitelerinin çerezleri de silinir.</string>
-    <string name="setting_title_javascript_popUp">Popups</string>
+    <string name="setting_title_javascript_popUp">Açılır pencereler</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_adblock">Reklam Engelleyici</string>
     <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için Reklam Engelleyiciyi etkinleştirin. Siteler de etkinleştirildiğinde daha hızlı yüklenir.</string>
@@ -128,7 +128,7 @@
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_system">Sistem</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">Wallpaper based</string>
+    <string name="setting_theme_wallpaper">Duvar kağıdı tabanlı</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_title_behavior">Davranış</string>
@@ -139,9 +139,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">Araç çubuğu</string>
     <string name="setting_title_toolbar_buttons">Araç Çubuğu düğmesi</string>
-    <string name="setting_title_longPress">Long press</string>
-    <string name="setting_title_tabButton">Tab button / menu button</string>
-    <string name="setting_title_overViewButton">Overview</string>
+    <string name="setting_title_longPress">Uzun basma</string>
+    <string name="setting_title_tabButton">Sekme düğmesi / menü düğmesi</string>
+    <string name="setting_title_overViewButton">Genel Bakış</string>
     <string name="setting_gesture_up">Yukarı kaydır</string>
     <string name="setting_gesture_down">Aşağı kaydır</string>
     <string name="setting_gesture_left">Sola kaydır</string>
@@ -156,7 +156,7 @@
     <string name="setting_gesture_08">Genel bakışı göster</string>
     <string name="setting_gesture_09">Yeni sekme aç</string>
     <string name="setting_gesture_10">Sekmeyi kapat</string>
-    <string name="setting_gesture_11">Show fast toggle</string>
+    <string name="setting_gesture_11">Hızlı geçişi göster</string>
     <!-- Data -->
     <string name="title_appData">Uygulama verileri</string>
     <string name="hint_database">Bu, mevcut verileri siler. Devam edilsin mi?</string>
@@ -172,7 +172,7 @@
     <string name="toast_webview_forward">Bir sonraki site yüklenemiyor</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
-    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
+    <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
     <string name="toast_backup">Veri yedeklensin mi? Bu eski yedeklemenin üzerine yazacaktır.</string>
@@ -184,17 +184,17 @@
     <string name="menu_desktopView">Masaüstü görünümü</string>
     <string name="menu_dayView">Gün görünümü</string>
     <string name="menu_nightView">gece görüşü</string>
-    <string name="setting_userScript">Custom JavaScript code</string>
-    <string name="setting_title_camera">Allow camera usage</string>
-    <string name="setting_title_microphone">Allow microphone usage</string>
-    <string name="setting_title_tabsReload">Reload tabs</string>
-    <string name="setting_title_tabsRestore">Restore tabs</string>
-    <string name="setting_title_userInterface">User interface</string>
-    <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
-    <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
-    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
-    <string name="menu_reload">Reload</string>
-    <string name="menu_restart">Restart and reload tabs</string>
+    <string name="setting_userScript">Özel JavaScript kodu</string>
+    <string name="setting_title_camera">Kamera kullanımına izin ver</string>
+    <string name="setting_title_microphone">Mikrofon kullanımına izin ver</string>
+    <string name="setting_title_tabsReload">Sekmeleri yeniden yükle</string>
+    <string name="setting_title_tabsRestore">Sekmeleri geri yükle</string>
+    <string name="setting_title_userInterface">Kullanıcı arayüzü</string>
+    <string name="setting_summary_tabsReload">FOSS Tarayıcısını başlatırken son açılan sekmeleri yeniden yükleyin.</string>
+    <string name="setting_summary_tabsRestore">FOSS Tarayıcı sistem tarafından durdurulduğunda sekmeleri geri yükleyin.</string>
+    <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
+    <string name="menu_reload">Yeniden yükle</string>
+    <string name="menu_restart">Sekmeleri yeniden başlat ve yeniden yükle</string>
     <string name="profile_warning">Overwritten by:</string>
     <string name="setting_title_screenOn">Keep screen on</string>
     <string name="setting_title_audioBackground">Play audio on background</string>
