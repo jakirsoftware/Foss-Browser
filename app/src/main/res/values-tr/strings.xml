@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Internet tarayıcısı</string>
+    <string name="app_name">FOSS internet tarayıcısı</string>
     <string name="app_ok">Tamam</string>
     <string name="app_cancel">İptal et</string>
     <string name="app_done">Tamamlandı</string>
@@ -84,7 +84,7 @@
     <string name="setting_title_profiles_trustedList">Güvenilen web siteleri</string>
     <string name="setting_title_profiles_standardList">Standart web siteleri</string>
     <string name="setting_title_profiles_protectedList">Korumalı web siteleri</string>
-    <string name="setting_title_profiles_startApp">Uygulama başlangıcında ki profil</string>
+    <string name="setting_title_profiles_startApp">Uygulama açılışında ki profil</string>
     <string name="setting_title_profiles_trusted">Güvenilir</string>
     <string name="setting_title_profiles_standard">Standart</string>
     <string name="setting_title_profiles_protected">Korumalı</string>
@@ -100,14 +100,14 @@
     <string name="setting_title_javascript_popUp">Açılır pencereler</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_adblock">Reklam Engelleyici</string>
-    <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için reklam engelleyiciyi etkinleştirin. Siteler bu özellik etkinleştirildiğinde ayrıca daha hızlı yüklenir.</string>
+    <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için reklam engelleyiciyi etkinleştirin. Bu özellik etkinleştirildiğinde siteler ayrıca daha hızlı yüklenir.</string>
     <string name="setting_title_adblockHost">Engellenen içerik</string>
     <string name="setting_title_location">Konum</string>
     <string name="setting_title_history">Geçmiş</string>
     <string name="setting_title_autofill">Form verisi</string>
     <string name="setting_summary_autofill">Form verilerinin kaydedilmesini (Android Nougat ve daha eski sürümlerde) veya otomatik doldurma hizmetini (Android Oreo ve daha yeni sürümlerde) etkinleştirin.</string>
     <!-- browser clear -->
-    <string name="data_summary">Tüm dosyalar SD hafıza kartınızın \"Documents/browser_backup/\" dizinine aktarılacaktır.</string>
+    <string name="data_summary">Tüm dosyalar hafıza kartınızın \"Belgeler/webtarayıcı_yedek/\" dizinine aktarılacaktır.</string>
     <string name="clear_title_quit">Uygulama çıkışında temizle</string>
     <string name="clear_title_cache">Önbelleği Temizle</string>
     <string name="clear_title_cookie">Çerezleri Temizle</string>
@@ -132,7 +132,7 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_title_behavior">Davranış</string>
-    <string name="setting_title_confirm_exit">Tarayıcı çıkışını onayla</string>
+    <string name="setting_title_confirm_exit">Tarayıcıdan çıkmayı onayla</string>
     <string name="setting_title_confirm_tab_close">Sekme kapatmayı onayla</string>
     <string name="setting_overView_onStart_title">Başlangıçta göster</string>
     <string name="setting_gestures">Hareketler</string>
@@ -147,7 +147,7 @@
     <string name="setting_gesture_left">Sola kaydır</string>
     <string name="setting_gesture_right">Sağa kaydır</string>
     <string name="setting_gesture_01">Hiçbir şey</string>
-    <string name="setting_gesture_02">Geçmişte ilerle</string>
+    <string name="setting_gesture_02">Geçmişte ileriye git</string>
     <string name="setting_gesture_03">Geçmişte geriye git</string>
     <string name="setting_gesture_04">Yukarı kaydır</string>
     <string name="setting_gesture_05">Aşağı kaydır</string>
@@ -170,8 +170,8 @@
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
     <string name="toast_invalid_domain">Geçersiz alan alanı</string>
     <string name="toast_webview_forward">Sonraki web sitesi yüklenemiyor</string>
-    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
-    <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
+    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS web tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
+    <string name="toast_quit">\"FOSS web tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı türü (\"http\") kullanıyor. Güvenli bir bağlantı türü (\"https\") denensin mi?</string>
@@ -182,19 +182,19 @@
     <string name="whitelist_add">Ekle</string>
     <string name="menu_mobileView">Mobil görünüm</string>
     <string name="menu_desktopView">Masaüstü görünümü</string>
-    <string name="menu_dayView">Gündüz görüşü</string>
-    <string name="menu_nightView">Gece görüşü</string>
+    <string name="menu_dayView">Gündüz görünümü</string>
+    <string name="menu_nightView">Gece görünümü</string>
     <string name="setting_userScript">Özel JavaScript kodu</string>
     <string name="setting_title_camera">Kamera kullanımına izin ver</string>
     <string name="setting_title_microphone">Mikrofon kullanımına izin ver</string>
     <string name="setting_title_tabsReload">Sekmeleri yeniden yükle</string>
     <string name="setting_title_tabsRestore">Sekmeleri geri yükle</string>
     <string name="setting_title_userInterface">Kullanıcı arayüzü</string>
-    <string name="setting_summary_tabsReload">FOSS Tarayıcısını başlatırken son açılan sekmeleri yeniden yükleyin.</string>
-    <string name="setting_summary_tabsRestore">FOSS Tarayıcı sistem tarafından durdurulduğunda sekmeleri geri yükleyin.</string>
+    <string name="setting_summary_tabsReload">FOSS web tarayıcısını başlatırken son açılan sekmeleri yeniden yükleyin.</string>
+    <string name="setting_summary_tabsRestore">FOSS web tarayıcısı sistem tarafından durdurulduğunda sekmeleri geri yükleyin.</string>
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
     <string name="menu_reload">Yeniden yükle</string>
-    <string name="menu_restart">Sekmeleri yeniden başlat ve yeniden yükle</string>
+    <string name="menu_restart">Sekmeleri yeniden başlat ve yükle</string>
     <string name="profile_warning">Üzerine yazılan:</string>
     <string name="setting_title_screenOn">Ekranı açık tut</string>
     <string name="setting_title_audioBackground">Sesi arka planda oynat</string>
