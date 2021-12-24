@@ -52,6 +52,10 @@
         <item>@string/menu_openFav</item>
         <item>@string/menu_filter</item>
         <item>@string/setting_gesture_11</item>
+        <item>@string/menu_nightView</item>
+        <item>@string/menu_desktopView</item>
+        <item>@string/setting_title_screenOn</item>
+        <item>@string/setting_title_audioBackground</item>
     </string-array>
 
     <string-array name="setting_values_gestures">
@@ -74,6 +78,10 @@
         <item>17</item>
         <item>18</item>
         <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
     </string-array>
 
     <!-- Start tab -->

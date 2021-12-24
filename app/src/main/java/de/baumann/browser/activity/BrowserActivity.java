@@ -19,6 +19,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -207,6 +208,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     public void onPause(){
         //Save open Tabs in shared preferences
         saveOpenedTabs();
+        if (!sp.getBoolean("sp_audioBackground", false)) {
+            ((AudioManager)getSystemService(Context.AUDIO_SERVICE)).requestAudioFocus(
+                focusChange -> {}, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+        }
         super.onPause();
     }
 
@@ -497,8 +502,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     if ((record.getType()==BOOKMARK_ITEM)||(record.getType()==STARTSITE_ITEM)) {
                         if (record.getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         if (record.getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
-                            ninjaWebView.toggleNightMode();
-                            isNightMode = ninjaWebView.isNightMode();
+                            performGesture("20");
                         }
                         break;
                     }
@@ -800,6 +804,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             case "19":
                 show_dialogFastToggle();
                 break;
+            case "20":
+                ninjaWebView.toggleNightMode();
+                isNightMode = ninjaWebView.isNightMode();
+                break;
+            case "21":
+                ninjaWebView.toggleDesktopMode(true);
+                break;
+            case "22":
+                sp.edit().putBoolean("sp_audioBackground", !sp.getBoolean("sp_audioBackground", false)).apply();
+                break;
+            case "23":
+                sp.edit().putBoolean("sp_screenOn", !sp.getBoolean("sp_screenOn", false)).apply();
+                saveOpenedTabs();
+                HelperUnit.triggerRebirth(context);
+                break;
         }
     }
 
@@ -842,8 +861,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     if (list.get(position).getType()==BOOKMARK_ITEM||list.get(position).getType()==STARTSITE_ITEM) {
                         if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
-                            ninjaWebView.toggleNightMode();
-                            isNightMode = ninjaWebView.isNightMode();
+                            performGesture("20");
                         }
                     }
                     ninjaWebView.loadUrl(list.get(position).getURL());
@@ -882,8 +900,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     if (list.get(position).getType()==BOOKMARK_ITEM||list.get(position).getType()==STARTSITE_ITEM) {
                         if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
-                            ninjaWebView.toggleNightMode();
-                            isNightMode = ninjaWebView.isNightMode();
+                            performGesture("20");
                         }
                     }
                     ninjaWebView.loadUrl(list.get(position).getURL());
@@ -920,8 +937,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     if (list.get(position).getType()==BOOKMARK_ITEM||list.get(position).getType()==STARTSITE_ITEM) {
                         if (list.get(position).getDesktopMode() != ninjaWebView.isDesktopMode()) ninjaWebView.toggleDesktopMode(false);
                         if (list.get(position).getNightMode() == ninjaWebView.isNightMode() && !isNightMode) {
-                            ninjaWebView.toggleNightMode();
-                            isNightMode = ninjaWebView.isNightMode();
+                            performGesture("20");
                         }
                     }
                     ninjaWebView.loadUrl(list.get(position).getURL());
@@ -1281,8 +1297,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_toggleNightView.setChecked(ninjaWebView.isNightMode());
         chip_toggleNightView.setOnClickListener(v -> {
             NinjaToast.show(context, R.string.menu_nightView);
-            ninjaWebView.toggleNightMode();
-            isNightMode = ninjaWebView.isNightMode();
+            performGesture("20");
             dialog.cancel();
         });
 
@@ -1298,9 +1313,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         chip_toggleScreenOn.setChecked(sp.getBoolean("sp_screenOn", false));
         chip_toggleScreenOn.setOnClickListener(v -> {
             NinjaToast.show(context, R.string.setting_title_screenOn);
-            sp.edit().putBoolean("sp_screenOn", !sp.getBoolean("sp_screenOn", false)).apply();
-            saveOpenedTabs();
-            HelperUnit.triggerRebirth(context);
+            performGesture("23");
             dialog.cancel();
         });
 
@@ -1335,8 +1348,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         ninjaWebView = new NinjaWebView(context);
 
         if (isNightMode) {
-            ninjaWebView.toggleNightMode();
-            isNightMode = ninjaWebView.isNightMode();
+            performGesture("20");
         }
         ninjaWebView.setBrowserController(this);
         ninjaWebView.setAlbumTitle(title, url);
@@ -1988,8 +2000,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (position == 1) {
                 ninjaWebView.toggleDesktopMode(true);
             } else if (position == 2) {
-                ninjaWebView.toggleNightMode();
-                isNightMode = ninjaWebView.isNightMode();
+                performGesture("20");
             } else if (position == 3) {
                 startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
             } else if (position == 4) {
