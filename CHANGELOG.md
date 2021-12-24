@@ -1,8 +1,10 @@
 ### v 8.8 (WIP)
 
 - new: Wiki integrated in settings
+- new: gestures
 - fix: mailto not working
-
+- fix: button "reload " is hidden #803
+- fix: play audio in background #800
 
 ### v 8.7
 

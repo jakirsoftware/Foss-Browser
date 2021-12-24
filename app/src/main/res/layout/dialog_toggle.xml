@@ -346,8 +346,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
             android:gravity="center">
 
             <com.google.android.material.chip.Chip
@@ -394,26 +394,35 @@
                 app:textEndPadding="0dp"
                 app:textStartPadding="0dp" />
 
+            <Button
+                android:id="@+id/ib_reload"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chip_profile_protected"
+                app:icon="@drawable/icon_refresh" />
+
         </RelativeLayout>
 
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="?android:attr/listPreferredItemHeightSmall"
-            android:orientation="horizontal"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp" >
+            android:gravity="center">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_toggleNightView"
                 style="@style/Widget.Material3.Chip.Suggestion"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
                 app:chipIcon="@drawable/icon_night"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
@@ -422,8 +431,9 @@
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_toggleDesktop"
                 style="@style/Widget.Material3.Chip.Suggestion"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chip_toggleNightView"
                 app:chipIcon="@drawable/icon_desktop"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
@@ -432,8 +442,9 @@
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_toggleScreenOn"
                 style="@style/Widget.Material3.Chip.Suggestion"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chip_toggleDesktop"
                 app:chipIcon="@drawable/icon_screen"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
@@ -442,8 +453,9 @@
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip_toggleAudioBackground"
                 style="@style/Widget.Material3.Chip.Suggestion"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chip_toggleScreenOn"
                 app:chipIcon="@drawable/icon_audio"
                 app:chipIconEnabled="true"
                 app:textEndPadding="0dp"
@@ -454,16 +466,10 @@
                 style="@style/Widget.Material3.Button.IconButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:icon="@drawable/icon_settings"/>
+                android:layout_toEndOf="@+id/chip_toggleAudioBackground"
+                app:icon="@drawable/icon_settings" />
 
-            <Button
-                android:id="@+id/ib_reload"
-                style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:icon="@drawable/icon_refresh" />
-
-        </LinearLayout>
+        </RelativeLayout>
 
     </LinearLayout>
 
