@@ -445,14 +445,11 @@ public class NinjaWebViewClient extends WebViewClient {
         view.evaluateJavascript("if (navigator.msDoNotTrack === undefined) { Object.defineProperty(navigator, 'msDoNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.msDoNotTrack = 1;} catch (e) { console.error('msDoNotTrack is not writable: ', e); }};",null);
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
-        return handleUri(uri);
-    }
 
-    @SuppressLint("QueryPermissionsNeeded")
-    private boolean handleUri(final Uri uri) {
         if (ninjaWebView.isBackPressed){
             return false;
         } else {
@@ -462,12 +459,11 @@ public class NinjaWebViewClient extends WebViewClient {
                 ninjaWebView.initPreferences(url);
                 ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
                 return true;
-            }
-
-            if (url.startsWith("intent:")) {
+            } else if (url.startsWith("intent:")) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
                 Intent chooser = Intent.createChooser(intent, context.getString(R.string.menu_open_with));
+                context.startActivity(chooser);
                 if (intent.resolveActivity(context.getPackageManager()) != null) {
                     context.startActivity(chooser);
                 } else {
@@ -484,6 +480,13 @@ public class NinjaWebViewClient extends WebViewClient {
                         return false;
                     }
                 }
+            } else if (url.startsWith("tel:")) {
+                Intent tel = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
+                context.startActivity(tel);
+                return true;
+            } else if (url.contains("mailto:")) {
+                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                return true;
             }
             return true;
         }

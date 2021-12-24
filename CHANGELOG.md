@@ -1,6 +1,7 @@
 ### v 8.8 (WIP)
 
 - new: Wiki integrated in settings
+- fix: mailto not working
 
 
 ### v 8.7
