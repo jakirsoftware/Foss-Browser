@@ -118,9 +118,9 @@
     <!-- App setting -->
     <string name="setting_title_app">Uygulama Ayarları</string>
     <string name="setting_title_ui">Davranış/Kullanıcı Arayüzü</string>
-    <string name="setting_title_data">Yedekle</string>
+    <string name="setting_title_data">Yedek</string>
     <string name="setting_filter">Yer imi süzgeci</string>
-    <string name="setting_title_fav">Favorilere Ekle</string>
+    <string name="setting_title_fav">Favori</string>
     <string name="setting_title_reload">Yeniden yüklemek için aşağı kaydırın</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
@@ -141,7 +141,7 @@
     <string name="setting_title_toolbar_buttons">Araç çubuğu düğmeleri</string>
     <string name="setting_title_longPress">Uzun dokunma</string>
     <string name="setting_title_tabButton">Sekme düğmesi / menü düğmesi</string>
-    <string name="setting_title_overViewButton">Genel Bakış</string>
+    <string name="setting_title_overViewButton">Genel bakış</string>
     <string name="setting_gesture_up">Yukarı kaydır</string>
     <string name="setting_gesture_down">Aşağı kaydır</string>
     <string name="setting_gesture_left">Sola kaydır</string>
@@ -166,12 +166,12 @@
     <string name="toast_add_whitelist_successful">Alan adı başarıyla eklendi</string>
     <string name="toast_copy_successful">Başarıyla kopyalandı</string>
     <string name="toast_delete_successful">Başarıyla silindi</string>
-    <string name="toast_domain_already_exists">Alan alanı zaten mevcut</string>
+    <string name="toast_domain_already_exists">Alan adı zaten mevcut</string>
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
-    <string name="toast_invalid_domain">Geçersiz alan alanı</string>
-    <string name="toast_webview_forward">Sonraki web sitesi yüklenemiyor</string>
-    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS web tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
-    <string name="toast_quit">\"FOSS web tarayıcı\"sından çıkmak istiyor musunuz?</string>
+    <string name="toast_invalid_domain">Geçersiz alan adı</string>
+    <string name="toast_webview_forward">Sonraki site yüklenemiyor</string>
+    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
+    <string name="toast_quit">\"FOSS tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı türü (\"http\") kullanıyor. Güvenli bir bağlantı türü (\"https\") denensin mi?</string>
@@ -190,8 +190,8 @@
     <string name="setting_title_tabsReload">Sekmeleri yeniden yükle</string>
     <string name="setting_title_tabsRestore">Sekmeleri geri yükle</string>
     <string name="setting_title_userInterface">Kullanıcı arayüzü</string>
-    <string name="setting_summary_tabsReload">FOSS web tarayıcısını başlatırken son açılan sekmeleri yeniden yükleyin.</string>
-    <string name="setting_summary_tabsRestore">FOSS web tarayıcısı sistem tarafından durdurulduğunda sekmeleri geri yükleyin.</string>
+    <string name="setting_summary_tabsReload">FOSS tarayıcısını başlatırken, son açılan sekmeleri yeniden yükleyin.</string>
+    <string name="setting_summary_tabsRestore">FOSS tarayıcısı sistem tarafından durdurulduğunda, sekmeleri geri yükleyin.</string>
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
     <string name="menu_reload">Yeniden yükle</string>
     <string name="menu_restart">Sekmeleri yeniden başlat ve yükle</string>
