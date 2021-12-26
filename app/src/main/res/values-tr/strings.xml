@@ -190,7 +190,7 @@
     <string name="setting_title_tabsReload">Sekmeleri yeniden yükle</string>
     <string name="setting_title_tabsRestore">Sekmeleri geri yükle</string>
     <string name="setting_title_userInterface">Kullanıcı arayüzü</string>
-    <string name="setting_summary_tabsReload">FOSS Tarayıcısı açılırken, son açılan sekmeleri yeniden yükle.</string>
+    <string name="setting_summary_tabsReload">FOSS Tarayıcısı başlarken, son açılan sekmeleri yeniden yükle.</string>
     <string name="setting_summary_tabsRestore">FOSS Tarayıcısı sistem tarafından durdurulduğunda, sekmeleri geri yükle.</string>
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
     <string name="menu_reload">Yeniden yükle</string>
