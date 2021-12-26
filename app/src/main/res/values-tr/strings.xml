@@ -4,9 +4,9 @@
     <string name="app_name">FOSS Tarayıcı</string>
     <string name="app_ok">Tamam</string>
     <string name="app_cancel">İptal et</string>
-    <string name="app_done">Tamamlandı</string>
+    <string name="app_done">Tamam</string>
     <string name="app_error">Hata</string>
-    <string name="app_error_activity">Bu URL açmak için yüklü bir uygulama yok.</string>
+    <string name="app_error_activity">Bu URL açmak için kurulu bir uygulama yok.</string>
     <string name="app_warning">Uyarı</string>
     <string name="app_permission">Bu özelliği kullanmak için izin vermelisiniz. Daha sonra uygulamayı yeniden başlatın.</string>
     <string name="list_empty">Liste boş</string>
@@ -81,13 +81,13 @@
     <string name="setting_title_save_data">\'Verileri Kaydet\' isteğinde bulun</string>
     <string name="setting_title_profiles">Profiller</string>
     <string name="setting_title_profiles_edit">Profilleri düzenle</string>
-    <string name="setting_title_profiles_trustedList">Güvenilen web siteleri</string>
+    <string name="setting_title_profiles_trustedList">Güvenilir web siteleri</string>
     <string name="setting_title_profiles_standardList">Standart web siteleri</string>
-    <string name="setting_title_profiles_protectedList">Korunan web siteleri</string>
-    <string name="setting_title_profiles_startApp">Uygulama açılışında ki profil</string>
+    <string name="setting_title_profiles_protectedList">Korunulan web siteleri</string>
+    <string name="setting_title_profiles_startApp">Uygulama başlangıcında profil</string>
     <string name="setting_title_profiles_trusted">Güvenilir</string>
     <string name="setting_title_profiles_standard">Standart</string>
-    <string name="setting_title_profiles_protected">Korunan</string>
+    <string name="setting_title_profiles_protected">Korunulan</string>
     <string name="setting_title_profiles_changed">Özel</string>
     <string name="setting_title_profiles_active">Profil</string>
     <string name="setting_title_profiles_dataUsage">Veri kullanımı</string>
@@ -114,7 +114,7 @@
     <string name="clear_title_history">Geçmişi Temizle</string>
     <string name="localData">Cihazda depolanan verileri temizle</string>
     <string name="clear_title_deleteDatabase">Veritabanını sil</string>
-    <string name="clear_summary_deleteDatabase">Tüm veritabanını silin (Başlangıç sayfası, yer imleri, geçmiş ve güvenilir adres listeleri).</string>
+    <string name="clear_summary_deleteDatabase">Tüm veritabanını sil (Başlangıç sayfası, yer imleri, geçmiş ve beyaz listeler).</string>
     <!-- App setting -->
     <string name="setting_title_app">Uygulama Ayarları</string>
     <string name="setting_title_ui">Davranış/Kullanıcı Arayüzü</string>
@@ -123,7 +123,7 @@
     <string name="setting_title_fav">Sık kullanılan</string>
     <string name="setting_title_reload">Yeniden yüklemek için aşağı kaydırın</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
-    <string name="setting_title_userAgent">Özel kullanıcı vekili</string>
+    <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
     <string name="setting_title_fingerPrint">Parmak izi koruması</string>
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_system">Sistem</string>
