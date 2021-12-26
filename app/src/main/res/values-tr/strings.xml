@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Internet tarayıcısı</string>
+    <string name="app_name">FOSS Tarayıcı</string>
     <string name="app_ok">Tamam</string>
     <string name="app_cancel">İptal et</string>
     <string name="app_done">Tamamlandı</string>
     <string name="app_error">Hata</string>
-    <string name="app_error_activity">Bu web adresini açmak için yüklü bir uygulama yok.</string>
+    <string name="app_error_activity">Bu URL açmak için yüklü bir uygulama yok.</string>
     <string name="app_warning">Uyarı</string>
     <string name="app_permission">Bu özelliği kullanmak için izin vermelisiniz. Daha sonra uygulamayı yeniden başlatın.</string>
     <string name="list_empty">Liste boş</string>
@@ -30,8 +30,8 @@
     <string name="main_menu_new_tab">Yeni sekme (arka plan)</string>
     <string name="main_menu_new_tabProfile">Yeni sekme (profil ile …)</string>
     <string name="main_menu_new_tabOpen">Yeni sekme (ön plan)</string>
-    <string name="main_omnibox_input_hint">Arayın veya web adresini girin</string>
-    <string name="menu_open_with">Bağlantıyı şununla aç…</string>
+    <string name="main_omnibox_input_hint">Arayın veya URL girin</string>
+    <string name="menu_open_with">Bağlantıyı şununla aç …</string>
     <string name="menu_quit">Çıkış yap</string>
     <string name="menu_openFav">Sık kullanılanı aç</string>
     <string name="menu_delete">Sil</string>
@@ -40,26 +40,26 @@
     <string name="menu_download">İndirilenleri aç</string>
     <string name="menu_fav">Sık kullanılan olarak kaydet</string>
     <string name="menu_sc">Ana ekrana kısayol oluştur</string>
-    <string name="menu_sort">Sırala …</string>
+    <string name="menu_sort">… göre sırala</string>
     <string name="menu_filter">Filtrele …</string>
     <string name="menu_share_link">Bağlantıyı paylaş</string>
     <string name="menu_save_home">Ana sayfaya kaydet</string>
     <string name="menu_save_bookmark">Yer imi olarak kaydet</string>
-    <string name="menu_save_as">Kaydet …</string>
+    <string name="menu_save_as">… olarak kaydet</string>
     <string name="menu_save_pdf">PDF olarak kaydet</string>
     <string name="menu_shareClipboard">Panoya kopyala</string>
     <string name="menu_other_searchSite">Sitede ara</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Başlık:</string>
-    <string name="dialog_URL_hint">Web adresi:</string>
+    <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">Uzantı (örneğin: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Kullanıcı adı</string>
     <string name="dialog_sign_in_password">Şifre</string>
     <string name="dialog_title_download">Dosya indirilsin mi?</string>
     <string name="dialog_content_resubmission">Verileriniz yeniden gönderilsin mi?</string>
-    <string name="dialog_content_ssl_error">Web sitesinin sertifikası güvenilir değil. Yine de devam edilsin mi?</string>
+    <string name="dialog_content_ssl_error">Sitenin sertifikası güvenilir değil. Yine de devam edilsin mi?</string>
     <string name="dialog_sortName">İsme göre sırala</string>
-    <string name="dialog_sortIcon">Simgeye göre sırala</string>
+    <string name="dialog_sortIcon">İkona göre sırala</string>
     <string name="dialog_sortDate">Tarihe göre sırala</string>
     <!-- Settings -->
     <string name="setting_label">Ayarlar</string>
@@ -80,10 +80,10 @@
     <string name="setting_title_dom">DOM Depolama</string>
     <string name="setting_title_save_data">\'Verileri Kaydet\' isteğinde bulunun</string>
     <string name="setting_title_profiles">Profiller</string>
-    <string name="setting_title_profiles_edit">Profilleri Düzenle</string>
+    <string name="setting_title_profiles_edit">Profilleri düzenle</string>
     <string name="setting_title_profiles_trustedList">Güvenilen web siteleri</string>
     <string name="setting_title_profiles_standardList">Standart web siteleri</string>
-    <string name="setting_title_profiles_protectedList">Korumalı web siteleri</string>
+    <string name="setting_title_profiles_protectedList">Korunan web siteleri</string>
     <string name="setting_title_profiles_startApp">Uygulama açılışında ki profil</string>
     <string name="setting_title_profiles_trusted">Güvenilir</string>
     <string name="setting_title_profiles_standard">Standart</string>
@@ -107,23 +107,23 @@
     <string name="setting_title_autofill">Form verisi</string>
     <string name="setting_summary_autofill">Form verilerinin kaydedilmesini (Android Nougat ve daha eski sürümlerde) veya otomatik doldurma hizmetini (Android Oreo ve daha yeni sürümlerde) etkinleştirin.</string>
     <!-- browser clear -->
-    <string name="data_summary">Tüm dosyalar hafıza kartınızın \"Belgeler/webtarayıcı_yedek/\" dizinine aktarılacaktır.</string>
+    <string name="data_summary">Tüm dosyalar SD kartınızın \"Belgeler/tarayıcı_yedek/\" dizinine aktarılacaktır.</string>
     <string name="clear_title_quit">Uygulama çıkışında temizle</string>
     <string name="clear_title_cache">Önbelleği Temizle</string>
     <string name="clear_title_cookie">Çerezleri Temizle</string>
     <string name="clear_title_history">Geçmişi Temizle</string>
     <string name="localData">Cihazda depolanan verileri temizle</string>
     <string name="clear_title_deleteDatabase">Veritabanını sil</string>
-    <string name="clear_summary_deleteDatabase">Tüm veritabanını silin (Başlangıç sayfası, yer imleri, geçmiş ve tüm izin verilen websiteleri).</string>
+    <string name="clear_summary_deleteDatabase">Tüm veritabanını silin (Başlangıç sayfası, yer imleri, geçmiş ve güvenilir adres listeleri).</string>
     <!-- App setting -->
     <string name="setting_title_app">Uygulama Ayarları</string>
     <string name="setting_title_ui">Davranış/Kullanıcı Arayüzü</string>
     <string name="setting_title_data">Yedek</string>
     <string name="setting_filter">Yer imi süzgeci</string>
-    <string name="setting_title_fav">Favori</string>
+    <string name="setting_title_fav">Sık kullanılan</string>
     <string name="setting_title_reload">Yeniden yüklemek için aşağı kaydırın</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
-    <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
+    <string name="setting_title_userAgent">Özel kullanıcı vekili</string>
     <string name="setting_title_fingerPrint">Parmak izi koruması</string>
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_system">Sistem</string>
@@ -149,8 +149,8 @@
     <string name="setting_gesture_01">Hiçbir şey</string>
     <string name="setting_gesture_02">Geçmişte ileriye git</string>
     <string name="setting_gesture_03">Geçmişte geriye git</string>
-    <string name="setting_gesture_04">Yukarı kaydır</string>
-    <string name="setting_gesture_05">Aşağı kaydır</string>
+    <string name="setting_gesture_04">Sayfanın başına git</string>
+    <string name="setting_gesture_05">Sayfanın sonuna git</string>
     <string name="setting_gesture_06">Sol sekmeye geç</string>
     <string name="setting_gesture_07">Sağ sekmeye geç</string>
     <string name="setting_gesture_08">Genel bakışı göster</string>
@@ -170,8 +170,8 @@
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
     <string name="toast_invalid_domain">Geçersiz alan adı</string>
     <string name="toast_webview_forward">Sonraki site yüklenemiyor</string>
-    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
-    <string name="toast_quit">\"FOSS tarayıcı\"sından çıkmak istiyor musunuz?</string>
+    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
+    <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı türü (\"http\") kullanıyor. Güvenli bir bağlantı türü (\"https\") denensin mi?</string>
@@ -190,8 +190,8 @@
     <string name="setting_title_tabsReload">Sekmeleri yeniden yükle</string>
     <string name="setting_title_tabsRestore">Sekmeleri geri yükle</string>
     <string name="setting_title_userInterface">Kullanıcı arayüzü</string>
-    <string name="setting_summary_tabsReload">FOSS tarayıcısını başlatırken, son açılan sekmeleri yeniden yükleyin.</string>
-    <string name="setting_summary_tabsRestore">FOSS tarayıcısı sistem tarafından durdurulduğunda, sekmeleri geri yükleyin.</string>
+    <string name="setting_summary_tabsReload">FOSS Tarayıcısını başlatırken, son açılan sekmeleri yeniden yükleyin.</string>
+    <string name="setting_summary_tabsRestore">FOSS Tarayıcısı sistem tarafından durdurulduğunda, sekmeleri geri yükleyin.</string>
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
     <string name="menu_reload">Yeniden yükle</string>
     <string name="menu_restart">Sekmeleri yeniden başlat ve yükle</string>
