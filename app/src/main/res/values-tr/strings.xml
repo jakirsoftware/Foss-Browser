@@ -59,7 +59,7 @@
     <string name="dialog_content_resubmission">Verileriniz yeniden gönderilsin mi?</string>
     <string name="dialog_content_ssl_error">Sitenin sertifikası güvenilir değil. Yine de devam edilsin mi?</string>
     <string name="dialog_sortName">İsme göre sırala</string>
-    <string name="dialog_sortIcon">İkona göre sırala</string>
+    <string name="dialog_sortIcon">Simgeye göre sırala</string>
     <string name="dialog_sortDate">Tarihe göre sırala</string>
     <!-- Settings -->
     <string name="setting_label">Ayarlar</string>
