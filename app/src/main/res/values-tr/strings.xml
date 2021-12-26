@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Tarayıcısı</string>
+    <string name="app_name">FOSS Internet tarayıcısı</string>
     <string name="app_ok">Tamam</string>
     <string name="app_cancel">İptal et</string>
     <string name="app_done">Tamamlandı</string>
     <string name="app_error">Hata</string>
-    <string name="app_error_activity">Bu adresi açmak için yüklü bir uygulama yok.</string>
+    <string name="app_error_activity">Bu web adresini açmak için yüklü bir uygulama yok.</string>
     <string name="app_warning">Uyarı</string>
     <string name="app_permission">Bu özelliği kullanmak için izin vermelisiniz. Daha sonra uygulamayı yeniden başlatın.</string>
     <string name="list_empty">Liste boş</string>
@@ -30,7 +30,7 @@
     <string name="main_menu_new_tab">Yeni sekme (arka plan)</string>
     <string name="main_menu_new_tabProfile">Yeni sekme (profil ile …)</string>
     <string name="main_menu_new_tabOpen">Yeni sekme (ön plan)</string>
-    <string name="main_omnibox_input_hint">Arayın veya adresi girin</string>
+    <string name="main_omnibox_input_hint">Arayın veya web adresini girin</string>
     <string name="menu_open_with">Bağlantıyı şununla aç…</string>
     <string name="menu_quit">Çıkış yap</string>
     <string name="menu_openFav">Sık kullanılanı aç</string>
