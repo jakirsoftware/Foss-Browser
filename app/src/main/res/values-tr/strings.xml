@@ -68,10 +68,10 @@
     <string name="setting_title_search_engine">Arama Motoru</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
-    <string name="setting_summary_search_engine_startpage">Başlangıç sayfası</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
     <string name="setting_summary_search_engine_bing">Bing</string>
     <string name="setting_summary_search_engine_baidu">Baidu</string>
-    <string name="setting_summary_search_engine_startpage_de">Başlangıç sayfası (de)</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
     <string name="setting_summary_search_engine_searx">Searx</string>
     <string name="setting_summary_search_engine_qwant">Qwant</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
