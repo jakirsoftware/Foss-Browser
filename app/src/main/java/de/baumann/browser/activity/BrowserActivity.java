@@ -1440,6 +1440,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 startActivity(settings);
             }
         });
+
+        Button button_help = dialogView.findViewById(R.id.button_help);
+        button_help.setOnClickListener(view -> {
+            dialog.cancel();
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Fast-Toggle-Dialog");
+            BrowserUnit.intentURL(this, webpage);
+        });
     }
 
     @SuppressLint("ClickableViewAccessibility")
