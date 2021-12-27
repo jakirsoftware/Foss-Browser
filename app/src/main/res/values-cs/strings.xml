@@ -3,7 +3,7 @@
     <!-- App -->
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
-    <string name="app_help">Help</string>
+    <string name="app_help">Nápověda</string>
     <string name="app_cancel">Zrušit</string>
     <string name="app_done">Hotovo</string>
     <string name="app_error">Chyba</string>
