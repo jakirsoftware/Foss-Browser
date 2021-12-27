@@ -3,6 +3,7 @@
     <!-- App -->
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">ΟΚ</string>
+    <string name="app_help">Help</string>
     <string name="app_cancel">Άκυρο</string>
     <string name="app_done">Ολοκληρώθηκε</string>
     <string name="app_error">Σφάλμα</string>
