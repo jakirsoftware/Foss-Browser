@@ -1,6 +1,7 @@
 ### v 8.8 (WIP)
 
 - new: Wiki integrated in settings and menus
+- new: notification when playing audio on background #800
 - new: gestures
 - fix: mailto and other intents not working
 - fix: button "reload " is hidden #803
