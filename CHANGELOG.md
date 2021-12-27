@@ -2,7 +2,7 @@
 
 - new: Wiki integrated in settings
 - new: gestures
-- fix: mailto not working
+- fix: mailto and other intents not working
 - fix: button "reload " is hidden #803
 - fix: play audio in background #800
 
