@@ -2083,18 +2083,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_32 = new GridItem(0, getString(R.string.menu_download),  0);
         GridItem item_33 = new GridItem(0, getString(R.string.setting_label),  0);
         GridItem item_36 = new GridItem(0, getString(R.string.menu_restart),  0);
-        GridItem item_34;
-        if (ninjaWebView.isDesktopMode()) item_34 = new GridItem(0,getString((R.string.menu_mobileView)),0);
-        else item_34 = new GridItem(0,getString((R.string.menu_desktopView)),0);
-
-        GridItem item_35;
-        if (ninjaWebView.isNightMode()) item_35 = new GridItem(0,getString((R.string.menu_dayView)),0);
-        else item_35 = new GridItem(0,getString((R.string.menu_nightView)),0);
+        GridItem item_34 = new GridItem(0,getString((R.string.app_help)),0);
 
         final List<GridItem> gridList_other = new LinkedList<>();
         gridList_other.add(gridList_other.size(), item_31);
         gridList_other.add(gridList_other.size(), item_34);
-        gridList_other.add(gridList_other.size(), item_35);
         gridList_other.add(gridList_other.size(), item_32);
         gridList_other.add(gridList_other.size(), item_33);
         gridList_other.add(gridList_other.size(), item_36);
@@ -2108,16 +2101,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (position == 0) {
                 searchOnSite();
             } else if (position == 1) {
-                ninjaWebView.toggleDesktopMode(true);
+                Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki");
+                BrowserUnit.intentURL(this, webpage);
             } else if (position == 2) {
-                ninjaWebView.toggleNightMode();
-                isNightMode = ninjaWebView.isNightMode();
-            } else if (position == 3) {
                 startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
-            } else if (position == 4) {
+            } else if (position == 3) {
                 Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
                 startActivity(settings);
-            } else if (position == 5) {
+            } else if (position == 4) {
                 saveOpenedTabs();
                 HelperUnit.triggerRebirth(context);
             }
