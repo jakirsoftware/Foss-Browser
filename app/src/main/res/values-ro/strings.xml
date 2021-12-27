@@ -3,6 +3,7 @@
     <!-- App -->
     <string name="app_name">Browserul FOSS</string>
     <string name="app_ok">Confirmă</string>
+    <string name="app_help">Help</string>
     <string name="app_cancel">Anulează</string>
     <string name="app_done">Gata</string>
     <string name="app_error">Eroare</string>

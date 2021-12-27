@@ -3,6 +3,7 @@
     <!-- App -->
     <string name="app_name">FOSS Browser</string>
     <string name="app_ok">OK</string>
+    <string name="app_help">ヘルプ</string>
     <string name="app_cancel">中止</string>
     <string name="app_done">完了</string>
     <string name="app_error">エラー</string>
