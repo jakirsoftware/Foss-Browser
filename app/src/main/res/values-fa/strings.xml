@@ -3,6 +3,7 @@
     <!-- App -->
     <string name="app_name">مرورگر FOSS</string>
     <string name="app_ok">تایید</string>
+    <string name="app_help">Help</string>
     <string name="app_cancel">لغو</string>
     <string name="app_done">انجام شد</string>
     <string name="app_error">خطا</string>
