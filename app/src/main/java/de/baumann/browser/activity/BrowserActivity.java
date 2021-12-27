@@ -1001,7 +1001,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     } else if (item.getItemId() == R.id.menu_filter) {
                         show_dialogFilter();
                     } else if (item.getItemId() == R.id.menu_help) {
-                        Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki");
+                        Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Overview");
                         BrowserUnit.intentURL(this, webpage);
                     }
                     return true;
