@@ -316,51 +316,39 @@ public class NinjaWebView extends WebView implements AlbumController {
         switch (string) {
             case "_images":
                 sp.edit().putBoolean("profileChanged_images", !sp.getBoolean("profileChanged_images", true)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_images),Toast.LENGTH_SHORT).show();
                 break;
             case "_javascript":
                 sp.edit().putBoolean("profileChanged_javascript", !sp.getBoolean("profileChanged_javascript", true)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_javascript),Toast.LENGTH_SHORT).show();
                 break;
             case "_javascriptPopUp":
                 sp.edit().putBoolean("profileChanged_javascriptPopUp", !sp.getBoolean("profileChanged_javascriptPopUp", false)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_javascript_popUp),Toast.LENGTH_SHORT).show();
                 break;
             case "_cookies":
                 sp.edit().putBoolean("profileChanged_cookies", !sp.getBoolean("profileChanged_cookies", false)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_cookie),Toast.LENGTH_SHORT).show();
                 break;
             case "_fingerPrintProtection":
                 sp.edit().putBoolean("profileChanged_fingerPrintProtection", !sp.getBoolean("profileChanged_fingerPrintProtection", true)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_fingerPrint),Toast.LENGTH_SHORT).show();
                 break;
             case "_adBlock":
                 sp.edit().putBoolean("profileChanged_adBlock", !sp.getBoolean("profileChanged_adBlock", true)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_adblock),Toast.LENGTH_SHORT).show();
                 break;
             case "_saveData":
                 sp.edit().putBoolean("profileChanged_saveData", !sp.getBoolean("profileChanged_saveData", true)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_save_data),Toast.LENGTH_SHORT).show();
                 break;
             case "_saveHistory":
                 sp.edit().putBoolean("profileChanged_saveHistory", !sp.getBoolean("profileChanged_saveHistory", true)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_history),Toast.LENGTH_SHORT).show();
                 break;
             case "_location":
                 sp.edit().putBoolean("profileChanged_location", !sp.getBoolean("profileChanged_location", false)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_location),Toast.LENGTH_SHORT).show();
                 break;
             case "_camera":
                 sp.edit().putBoolean("profileChanged_camera", !sp.getBoolean("profileChanged_camera", false)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_camera),Toast.LENGTH_SHORT).show();
                 break;
             case "_microphone":
                 sp.edit().putBoolean("profileChanged_microphone", !sp.getBoolean("profileChanged_microphone", false)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_microphone),Toast.LENGTH_SHORT).show();
                 break;
             case "_dom":
                 sp.edit().putBoolean("profileChanged_dom", !sp.getBoolean("profileChanged_dom", false)).apply();
-                Toast.makeText(this.context,this.context.getString(R.string.setting_title_dom),Toast.LENGTH_SHORT).show();
                 break;
         }
         this.initPreferences("");

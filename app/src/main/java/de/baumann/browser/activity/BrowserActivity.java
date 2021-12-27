@@ -91,6 +91,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import java.util.ArrayList;
@@ -1126,6 +1127,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.reload();
             dialog.cancel();
         });
+        chip_setProfileTrusted.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_profiles_trustedList),Toast.LENGTH_SHORT).show();
+            return true;
+        });
 
         Chip chip_setProfileProtected = dialogView.findViewById(R.id.chip_setProfileProtected);
         chip_setProfileProtected.setChecked(listProtected.isWhite(url));
@@ -1139,6 +1144,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
             ninjaWebView.reload();
             dialog.cancel();
+        });
+        chip_setProfileProtected.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_profiles_protectedList),Toast.LENGTH_SHORT).show();
+            return true;
         });
 
         Chip chip_setProfileStandard = dialogView.findViewById(R.id.chip_setProfileStandard);
@@ -1154,12 +1163,20 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.reload();
             dialog.cancel();
         });
+        chip_setProfileStandard.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_profiles_standardList),Toast.LENGTH_SHORT).show();
+            return true;
+        });
 
         chip_profile_trusted.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileTrusted"));
         chip_profile_trusted.setOnClickListener(v -> {
             sp.edit().putString("profile", "profileTrusted").apply();
             ninjaWebView.reload();
             dialog.cancel();
+        });
+        chip_profile_trusted.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_profiles_trusted),Toast.LENGTH_SHORT).show();
+            return true;
         });
 
         chip_profile_standard.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileStandard"));
@@ -1168,12 +1185,20 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.reload();
             dialog.cancel();
         });
+        chip_profile_standard.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_profiles_standard),Toast.LENGTH_SHORT).show();
+            return true;
+        });
 
         chip_profile_protected.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileProtected"));
         chip_profile_protected.setOnClickListener(v -> {
             sp.edit().putString("profile", "profileProtected").apply();
             ninjaWebView.reload();
             dialog.cancel();
+        });
+        chip_profile_protected.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_profiles_protected),Toast.LENGTH_SHORT).show();
+            return true;
         });
 
         chip_profile_changed.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileChanged"));
@@ -1182,11 +1207,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.reload();
             dialog.cancel();
         });
-
+        chip_profile_changed.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_profiles_changed),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         // CheckBox
 
         Chip chip_image = dialogView.findViewById(R.id.chip_image);
         chip_image.setChecked(ninjaWebView.getBoolean("_images"));
+        chip_image.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_images),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_image.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_images",
@@ -1195,6 +1227,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_javaScript = dialogView.findViewById(R.id.chip_javaScript);
         chip_javaScript.setChecked(ninjaWebView.getBoolean("_javascript"));
+        chip_javaScript.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_javascript),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_javaScript.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_javascript",
@@ -1203,6 +1239,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_javaScriptPopUp = dialogView.findViewById(R.id.chip_javaScriptPopUp);
         chip_javaScriptPopUp.setChecked(ninjaWebView.getBoolean("_javascriptPopUp"));
+        chip_javaScriptPopUp.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_javascript_popUp),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_javaScriptPopUp.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_javascriptPopUp",
@@ -1211,6 +1251,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_cookie = dialogView.findViewById(R.id.chip_cookie);
         chip_cookie.setChecked(ninjaWebView.getBoolean("_cookies"));
+        chip_cookie.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_cookie),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_cookie.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_cookies",
@@ -1219,6 +1263,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
         chip_fingerprint.setChecked(ninjaWebView.getBoolean("_fingerPrintProtection"));
+        chip_fingerprint.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_fingerPrint),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_fingerprint.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_fingerPrintProtection",
@@ -1227,6 +1275,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_adBlock = dialogView.findViewById(R.id.chip_adBlock);
         chip_adBlock.setChecked(ninjaWebView.getBoolean("_adBlock"));
+        chip_adBlock.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_adblock),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_adBlock.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_adBlock",
@@ -1235,6 +1287,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_saveData = dialogView.findViewById(R.id.chip_saveData);
         chip_saveData.setChecked(ninjaWebView.getBoolean("_saveData"));
+        chip_saveData.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_save_data),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_saveData.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_saveData",
@@ -1243,6 +1299,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_history = dialogView.findViewById(R.id.chip_history);
         chip_history.setChecked(ninjaWebView.getBoolean("_saveHistory"));
+        chip_history.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.album_title_history),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_history.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_saveHistory",
@@ -1251,6 +1311,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_location = dialogView.findViewById(R.id.chip_location);
         chip_location.setChecked(ninjaWebView.getBoolean("_location"));
+        chip_location.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_location),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_location.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_location",
@@ -1259,6 +1323,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_microphone = dialogView.findViewById(R.id.chip_microphone);
         chip_microphone.setChecked(ninjaWebView.getBoolean("_microphone"));
+        chip_microphone.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_microphone),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_microphone.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_microphone",
@@ -1267,6 +1335,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_camera = dialogView.findViewById(R.id.chip_camera);
         chip_camera.setChecked(ninjaWebView.getBoolean("_camera"));
+        chip_camera.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_camera),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_camera.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_camera",
@@ -1275,6 +1347,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_dom = dialogView.findViewById(R.id.chip_dom);
         chip_dom.setChecked(ninjaWebView.getBoolean("_dom"));
+        chip_dom.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_dom),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_dom.setOnClickListener(v -> {
             ninjaWebView.setProfileChanged();
             ninjaWebView.putProfileBoolean("_dom",
@@ -1299,6 +1375,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_toggleNightView = dialogView.findViewById(R.id.chip_toggleNightView);
         chip_toggleNightView.setChecked(ninjaWebView.isNightMode());
+        chip_toggleNightView.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.menu_nightView),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_toggleNightView.setOnClickListener(v -> {
             NinjaToast.show(context, R.string.menu_nightView);
             ninjaWebView.toggleNightMode();
@@ -1308,6 +1388,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_toggleDesktop = dialogView.findViewById(R.id.chip_toggleDesktop);
         chip_toggleDesktop.setChecked(ninjaWebView.isDesktopMode());
+        chip_toggleDesktop.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.menu_desktopView),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_toggleDesktop.setOnClickListener(v -> {
             NinjaToast.show(context, R.string.menu_desktopView);
             ninjaWebView.toggleDesktopMode(true);
@@ -1316,6 +1400,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_toggleScreenOn = dialogView.findViewById(R.id.chip_toggleScreenOn);
         chip_toggleScreenOn.setChecked(sp.getBoolean("sp_screenOn", false));
+        chip_toggleScreenOn.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_screenOn),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_toggleScreenOn.setOnClickListener(v -> {
             NinjaToast.show(context, R.string.setting_title_screenOn);
             sp.edit().putBoolean("sp_screenOn", !sp.getBoolean("sp_screenOn", false)).apply();
@@ -1326,6 +1414,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Chip chip_toggleAudioBackground = dialogView.findViewById(R.id.chip_toggleAudioBackground);
         chip_toggleAudioBackground.setChecked(sp.getBoolean("sp_audioBackground", false));
+        chip_toggleAudioBackground.setOnLongClickListener(view -> {
+            Toast.makeText(context,getString(R.string.setting_title_audioBackground),Toast.LENGTH_SHORT).show();
+            return true;
+        });
         chip_toggleAudioBackground.setOnClickListener(v -> {
             NinjaToast.show(context, R.string.setting_title_audioBackground);
             sp.edit().putBoolean("sp_audioBackground", !sp.getBoolean("sp_audioBackground", false)).apply();
