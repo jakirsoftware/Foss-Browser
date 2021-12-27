@@ -3,6 +3,7 @@
     <!-- App -->
     <string name="app_name">المتصفح الحر FOSS Browser</string>
     <string name="app_ok">موافق</string>
+    <string name="app_help">Help</string>
     <string name="app_cancel">إلغاء</string>
     <string name="app_done">تـم</string>
     <string name="app_error">خطأ</string>

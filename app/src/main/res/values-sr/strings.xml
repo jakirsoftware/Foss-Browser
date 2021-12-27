@@ -3,6 +3,7 @@
     <!-- App -->
     <string name="app_name">FOSS прегледач</string>
     <string name="app_ok">У реду</string>
+    <string name="app_help">Help</string>
     <string name="app_cancel">Откажи</string>
     <string name="app_done">Готово</string>
     <string name="app_error">Грешка</string>
