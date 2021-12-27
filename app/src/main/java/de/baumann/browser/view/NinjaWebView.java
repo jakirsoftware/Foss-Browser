@@ -460,7 +460,7 @@ public class NinjaWebView extends WebView implements AlbumController {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     String name = "Audio background";
                     String description = "Play audio on background -> click to open";
-                    int importance = NotificationManager.IMPORTANCE_DEFAULT; //Important for heads-up notification
+                    int importance = NotificationManager.IMPORTANCE_LOW; //Important for heads-up notification
                     NotificationChannel channel = new NotificationChannel("2", name, importance);
                     channel.setDescription(description);
                     channel.setShowBadge(true);
@@ -468,8 +468,9 @@ public class NinjaWebView extends WebView implements AlbumController {
                     NotificationManager notificationManager = this.context.getSystemService(NotificationManager.class);
                     notificationManager.createNotificationChannel(channel);
                 }
-                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this.context, "1")
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this.context, "2")
                         .setSmallIcon(R.drawable.icon_web)
+                        .setAutoCancel(true)
                         .setContentTitle(this.getTitle())
                         .setContentText(this.context.getString(R.string.setting_title_audioBackground))
                         .setContentIntent(pendingIntent); //Set the intent that will fire when the user taps the notification
