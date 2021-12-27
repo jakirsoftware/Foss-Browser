@@ -253,6 +253,14 @@ public class BrowserUnit {
         }
     }
 
+    public void shareLink (Context context, String title, String url) {
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, title);
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, url);
+        context.startActivity(Intent.createChooser(sharingIntent, (context.getString(R.string.menu_share_link))));
+    }
+
     public static void intentURL (Context context, Uri uri) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW);
         browserIntent.setData(uri);

@@ -1,6 +1,7 @@
 package de.baumann.browser.browser;
 
-import android.annotation.SuppressLint;
+import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +17,7 @@ import androidx.annotation.NonNull;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputLayout;
 
+import android.util.Log;
 import android.view.View;
 import android.webkit.HttpAuthHandler;
 import android.webkit.SslErrorHandler;
@@ -27,7 +29,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.io.ByteArrayInputStream;
-import java.net.URISyntaxException;
 import java.util.Objects;
 
 import de.baumann.browser.R;
@@ -445,50 +446,23 @@ public class NinjaWebViewClient extends WebViewClient {
         view.evaluateJavascript("if (navigator.msDoNotTrack === undefined) { Object.defineProperty(navigator, 'msDoNotTrack', { value: 1, writable: false,configurable: false});} else {try { navigator.msDoNotTrack = 1;} catch (e) { console.error('msDoNotTrack is not writable: ', e); }};",null);
     }
 
-    @SuppressLint("QueryPermissionsNeeded")
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
-
         if (ninjaWebView.isBackPressed){
             return false;
         } else {
             // handle the url by implementing your logic
             String url = uri.toString();
-            if (url.startsWith("http")) {
-                ninjaWebView.initPreferences(url);
-                ninjaWebView.loadUrl(url, ninjaWebView.getRequestHeaders());
+            if (url.startsWith("http://") || url.startsWith("https://")) return false;
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                view.getContext().startActivity(intent);
                 return true;
-            } else if (url.startsWith("intent:")) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                Intent chooser = Intent.createChooser(intent, context.getString(R.string.menu_open_with));
-                context.startActivity(chooser);
-                if (intent.resolveActivity(context.getPackageManager()) != null) {
-                    context.startActivity(chooser);
-                } else {
-                    try {
-                        Intent fallback = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
-                        //try to find fallback url
-                        String fallbackUrl = fallback.getStringExtra("browser_fallback_url");
-                        if (fallbackUrl != null) {
-                            this.ninjaWebView.loadUrl(fallbackUrl);
-                            return true;
-                        }
-                    } catch (URISyntaxException e) {
-                        //not an intent uri
-                        return false;
-                    }
-                }
-            } else if (url.startsWith("tel:")) {
-                Intent tel = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
-                context.startActivity(tel);
-                return true;
-            } else if (url.contains("mailto:")) {
-                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+            } catch (Exception e) {
+                Log.i(TAG, "shouldOverrideUrlLoading Exception:" + e);
                 return true;
             }
-            return true;
         }
     }
 
