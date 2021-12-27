@@ -3,6 +3,7 @@
     <!-- App -->
     <string name="app_name">Przeglądarka FOSS</string>
     <string name="app_ok">OK</string>
+    <string name="app_help">Help</string>
     <string name="app_cancel">Anuluj</string>
     <string name="app_done">Gotowe</string>
     <string name="app_error">Błąd</string>
