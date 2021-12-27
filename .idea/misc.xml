@@ -99,6 +99,7 @@
         <entry key="app/src/main/res/menu/menu_bottom_overview.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/menu/menu_help.xml" value="0.178125" />
         <entry key="app/src/main/res/menu/menu_list_bookmark.xml" value="0.178125" />
+        <entry key="app/src/main/res/menu/menu_list_history.xml" value="0.178125" />
         <entry key="app/src/main/res/menu/menu_list_start.xml" value="0.178125" />
         <entry key="app/src/main/res/menu/menu_settings.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_whitelist.xml" value="0.178125" />
