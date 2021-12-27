@@ -3,6 +3,7 @@
     <!-- App -->
     <string name="app_name">FOSS Tarayıcı</string>
     <string name="app_ok">Tamam</string>
+    <string name="app_help">Help</string>
     <string name="app_cancel">İptal et</string>
     <string name="app_done">Tamam</string>
     <string name="app_error">Hata</string>
