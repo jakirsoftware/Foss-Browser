@@ -1,9 +1,19 @@
 package de.baumann.browser.view;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+import static android.content.Context.NOTIFICATION_SERVICE;
+import static androidx.core.app.NotificationCompat.DEFAULT_SOUND;
+import static androidx.core.app.NotificationCompat.DEFAULT_VIBRATE;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.ColorMatrix;
@@ -13,6 +23,7 @@ import android.os.Build;
 
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
@@ -29,6 +40,7 @@ import android.widget.Toast;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import de.baumann.browser.activity.BrowserActivity;
 import de.baumann.browser.browser.*;
 import de.baumann.browser.R;
 import de.baumann.browser.database.FaviconHelper;
@@ -439,8 +451,33 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     @Override
     protected void onWindowVisibilityChanged(int visibility) {
+
         if (sp.getBoolean("sp_audioBackground", false)) {
-            if (visibility != View.GONE) super.onWindowVisibilityChanged(View.VISIBLE);
+            if (visibility == View.GONE) {
+                Intent intentP = new Intent(this.context, BrowserActivity.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this.context, 0, intentP, FLAG_IMMUTABLE);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    String name = "Audio background";
+                    String description = "Play audio on background -> click to open";
+                    int importance = NotificationManager.IMPORTANCE_DEFAULT; //Important for heads-up notification
+                    NotificationChannel channel = new NotificationChannel("2", name, importance);
+                    channel.setDescription(description);
+                    channel.setShowBadge(true);
+                    channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+                    NotificationManager notificationManager = this.context.getSystemService(NotificationManager.class);
+                    notificationManager.createNotificationChannel(channel);
+                }
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this.context, "1")
+                        .setSmallIcon(R.drawable.icon_web)
+                        .setContentTitle(this.getTitle())
+                        .setContentText(this.context.getString(R.string.setting_title_audioBackground))
+                        .setContentIntent(pendingIntent); //Set the intent that will fire when the user taps the notification
+                Notification buildNotification = mBuilder.build();
+                NotificationManager mNotifyMgr = (NotificationManager) this.context.getSystemService(NOTIFICATION_SERVICE);
+                mNotifyMgr.notify(2, buildNotification);
+            }
+            super.onWindowVisibilityChanged(View.VISIBLE);
         } else {
             super.onWindowVisibilityChanged(visibility);
         }
