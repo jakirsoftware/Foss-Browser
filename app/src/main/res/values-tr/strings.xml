@@ -149,8 +149,8 @@
     <string name="setting_gesture_01">Hiçbir şey</string>
     <string name="setting_gesture_02">Geçmişte ileriye git</string>
     <string name="setting_gesture_03">Geçmişte geriye git</string>
-    <string name="setting_gesture_04">En başa git</string>
-    <string name="setting_gesture_05">En sona git</string>
+    <string name="setting_gesture_04">En üste kaydır</string>
+    <string name="setting_gesture_05">En alta kaydır</string>
     <string name="setting_gesture_06">Sol sekmeye geç</string>
     <string name="setting_gesture_07">Sağ sekmeye geç</string>
     <string name="setting_gesture_08">Genel bakışı göster</string>
