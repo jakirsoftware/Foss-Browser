@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.DownloadManager;
 
+import android.app.NotificationManager;
 import android.app.SearchManager;
 import android.content.BroadcastReceiver;
 import android.content.ClipData;
@@ -405,6 +406,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public void onDestroy() {
+
+        NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancel(2);
+        notificationManager.cancel(1);
+
         if (sp.getBoolean("sp_clear_quit", true)) {
             boolean clearCache = sp.getBoolean("sp_clear_cache", true);
             boolean clearCookie = sp.getBoolean("sp_clear_cookie", false);
