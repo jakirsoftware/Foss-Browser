@@ -1,6 +1,7 @@
 package de.baumann.browser.unit;
 
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
+import static android.content.Context.DOWNLOAD_SERVICE;
 import static android.content.Context.NOTIFICATION_SERVICE;
 
 import static androidx.core.app.NotificationCompat.DEFAULT_SOUND;
@@ -174,17 +175,20 @@ public class BrowserUnit {
                     } else BackupUnit.requestPermission(activity);
                 }else {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-                    CookieManager cookieManager = CookieManager.getInstance();
-                    String cookie = cookieManager.getCookie(url);
-                    request.addRequestHeader("List_protected", cookie);
-                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                    request.setTitle(filename);
                     request.setMimeType(mimeType);
-                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
-                    DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-                    assert manager != null;
+                    //------------------------COOKIE!!------------------------
+                    String cookies = CookieManager.getInstance().getCookie(url);
+                    request.addRequestHeader("cookie", cookies);
+                    //------------------------COOKIE!!------------------------
+                    request.setDescription(context.getString(R.string.dialog_title_download));
+                    request.setTitle(URLUtil.guessFileName(url, contentDisposition, mimeType));
+                    request.allowScanningByMediaScanner();
+                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, URLUtil.guessFileName(url, contentDisposition, mimeType));
+                    DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
+                    assert dm != null;
                     if (BackupUnit.checkPermissionStorage(context)) {
-                        manager.enqueue(request);
+                        dm.enqueue(request);
                     }else {
                         BackupUnit.requestPermission(activity);
                     }
