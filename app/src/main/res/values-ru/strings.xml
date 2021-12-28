@@ -121,7 +121,7 @@
     <string name="setting_title_ui">Поведение и интерфейс</string>
     <string name="setting_title_data">Резервное копирование</string>
     <string name="setting_filter">Фильтр закладок</string>
-    <string name="setting_title_fav">Главная</string>
+    <string name="setting_title_fav">Домашняя страница</string>
     <string name="setting_title_reload">Проведите вниз, чтобы перезагрузить</string>
     <string name="setting_title_searchEngine">Пользовательская поисковая система</string>
     <string name="setting_title_userAgent">Произвольный юзер-агент</string>
@@ -183,8 +183,8 @@
     <string name="whitelist_add">Добавить</string>
     <string name="menu_mobileView">Мобильный вид</string>
     <string name="menu_desktopView">Десктопный вид</string>
-    <string name="menu_dayView">Просмотр дня</string>
-    <string name="menu_nightView">Ночные Глаз</string>
+    <string name="menu_dayView">Дневной режим</string>
+    <string name="menu_nightView">Тёмный режим</string>
     <string name="setting_userScript">Пользовательский JavaScript</string>
     <string name="setting_title_camera">Разрешить использование камеры</string>
     <string name="setting_title_microphone">Разрешить использование микрофона</string>
