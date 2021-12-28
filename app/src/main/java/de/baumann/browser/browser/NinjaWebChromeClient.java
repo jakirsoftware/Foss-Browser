@@ -2,7 +2,6 @@ package de.baumann.browser.browser;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -19,7 +18,6 @@ import java.util.Objects;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
-import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
 
 public class NinjaWebChromeClient extends WebChromeClient {

@@ -451,9 +451,10 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     @Override
     protected void onWindowVisibilityChanged(int visibility) {
-
         if (sp.getBoolean("sp_audioBackground", false)) {
+            NotificationManager mNotifyMgr = (NotificationManager) this.context.getSystemService(NOTIFICATION_SERVICE);
             if (visibility == View.GONE) {
+
                 Intent intentP = new Intent(this.context, BrowserActivity.class);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this.context, 0, intentP, FLAG_IMMUTABLE);
 
@@ -475,8 +476,9 @@ public class NinjaWebView extends WebView implements AlbumController {
                         .setContentText(this.context.getString(R.string.setting_title_audioBackground))
                         .setContentIntent(pendingIntent); //Set the intent that will fire when the user taps the notification
                 Notification buildNotification = mBuilder.build();
-                NotificationManager mNotifyMgr = (NotificationManager) this.context.getSystemService(NOTIFICATION_SERVICE);
                 mNotifyMgr.notify(2, buildNotification);
+            } else {
+                mNotifyMgr.cancel(2);
             }
             super.onWindowVisibilityChanged(View.VISIBLE);
         } else {
