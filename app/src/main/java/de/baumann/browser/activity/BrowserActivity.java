@@ -623,7 +623,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         list_search = findViewById(R.id.list_search);
         omnibox_close = findViewById(R.id.omnibox_close);
-        omnibox_close.setOnClickListener(view -> omniBox_text.clearFocus());
+        omnibox_close.setOnClickListener(view -> {
+            if (Objects.requireNonNull(omniBox_text.getText()).length() > 0) omniBox_text.setText("");
+            else omniBox_text.clearFocus();
+        });
 
         progressBar = findViewById(R.id.main_progress_bar);
         bottomAppBar = findViewById(R.id.bottomAppBar);
