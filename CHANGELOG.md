@@ -1,4 +1,4 @@
-### v 8.8 (WIP)
+### v 8.8
 
 - new: Wiki integrated in settings and menus
 - new: notification when playing audio on background #800

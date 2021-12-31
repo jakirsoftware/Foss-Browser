@@ -470,7 +470,7 @@ public class NinjaWebView extends WebView implements AlbumController {
                     notificationManager.createNotificationChannel(channel);
                 }
                 NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this.context, "2")
-                        .setSmallIcon(R.drawable.icon_web)
+                        .setSmallIcon(R.drawable.icon_audio)
                         .setAutoCancel(true)
                         .setContentTitle(this.getTitle())
                         .setContentText(this.context.getString(R.string.setting_title_audioBackground))
