@@ -1967,7 +1967,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Button overflow_settings = dialogView.findViewById(R.id.overflow_settings);
         overflow_settings.setOnClickListener(v -> {
             dialog_overflow.cancel();
-            show_dialogFastToggle();
+            Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
+            startActivity(settings);
         });
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);

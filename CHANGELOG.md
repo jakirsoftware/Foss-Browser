@@ -1,3 +1,7 @@
+### v 8.9 (WIP)
+
+- fix: Settings button does not open settings #823
+
 ### v 8.8
 
 - new: Wiki integrated in settings and menus
