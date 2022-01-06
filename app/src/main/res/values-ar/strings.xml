@@ -77,7 +77,7 @@
     <string name="setting_summary_search_engine_qwant">محرك Qwant</string>
     <string name="setting_summary_search_engine_ecosia">محرك Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">حجم الخط</string>
     <string name="setting_title_dom">تخزين DOM</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
     <string name="setting_title_profiles">Profiles</string>
@@ -87,8 +87,8 @@
     <string name="setting_title_profiles_protectedList">Protected websites</string>
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">موثوق به</string>
-    <string name="setting_title_profiles_standard">Standard</string>
-    <string name="setting_title_profiles_protected">محمى</string>
+    <string name="setting_title_profiles_standard">قياسي</string>
+    <string name="setting_title_profiles_protected">غير موثوق به</string>
     <string name="setting_title_profiles_changed">مخصص</string>
     <string name="setting_title_profiles_active">Profile</string>
     <string name="setting_title_profiles_dataUsage">استخدام البيانات</string>
@@ -196,7 +196,7 @@
     <string name="hint_DRM_Media">السماح بتشغيل مقاطع الفيديو المحمية؟</string>
     <string name="menu_reload">إعادة تحميل</string>
     <string name="menu_restart">إعادة التشغيل مع إعادة تحميل التبويبات</string>
-    <string name="profile_warning">Overwritten by:</string>
+    <string name="profile_warning">تم تخصيصه للموقع:</string>
     <string name="setting_title_screenOn">الإبقاء على الشاشة فى وضع الاستيقاظ</string>
     <string name="setting_title_audioBackground">تشغيل الصوت فى الخلفية</string>
     <!-- License changelog -->
