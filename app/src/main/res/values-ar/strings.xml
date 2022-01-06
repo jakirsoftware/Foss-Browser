@@ -9,7 +9,7 @@
     <string name="app_error">خطأ</string>
     <string name="app_error_activity">لم يتم العثور على اى برنامج مثبت يمكنه فتح هذا الرابط.</string>
     <string name="app_warning">تحذير</string>
-    <string name="app_permission">لاستخدام هذه الميزة يجب اعطاء الصلاحية اولا ، ثم اعادة تشغيل البرنامج..</string>
+    <string name="app_permission">لاستخدام هذه الميزة يجب اعطاء الاذن اولا ، ثم اعادة تشغيل البرنامج.</string>
     <string name="list_empty">القائمة فارغة</string>
     <string name="album_title_bookmarks">العلامات</string>
     <string name="album_title_history">السجل</string>
@@ -127,9 +127,9 @@
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
     <string name="setting_title_fingerPrint">حماية بصمة الإصبع</string>
     <string name="setting_theme">السمة</string>
-    <string name="setting_theme_system">نظام</string>
+    <string name="setting_theme_system">النظام</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">Wallpaper based</string>
+    <string name="setting_theme_wallpaper">بناء على خلفية الشاشة</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
     <string name="setting_title_behavior">السلوك</string>
@@ -140,9 +140,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">شريط الأدوات</string>
     <string name="setting_title_toolbar_buttons">أزرار شريط الأدوات</string>
-    <string name="setting_title_longPress">Long press</string>
-    <string name="setting_title_tabButton">Tab button / menu button</string>
-    <string name="setting_title_overViewButton">Overview</string>
+    <string name="setting_title_longPress">الضغطة المطولة</string>
+    <string name="setting_title_tabButton">زر التبويب / زر القائمة</string>
+    <string name="setting_title_overViewButton">نظرة عامة</string>
     <string name="setting_gesture_up">مرر لأعلى</string>
     <string name="setting_gesture_down">مرر لأسفل</string>
     <string name="setting_gesture_left">مرر لليسار</string>
@@ -161,7 +161,7 @@
     <!-- Data -->
     <string name="title_appData">بيانات التطبيق</string>
     <string name="hint_database">هذا سيحذف البيانات الحالية. أواصل؟</string>
-    <string name="settings_data_restore">يعيد</string>
+    <string name="settings_data_restore">إستعادة</string>
     <!-- Others setting -->
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">أضيف النطاق بنجاح</string>
