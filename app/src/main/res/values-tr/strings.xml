@@ -11,7 +11,7 @@
     <string name="app_warning">Uyarı</string>
     <string name="app_permission">Bu özelliği kullanmak için izin vermelisiniz. Daha sonra uygulamayı yeniden başlatın.</string>
     <string name="list_empty">Liste boş</string>
-    <string name="album_title_bookmarks">Yer imleri</string>
+    <string name="album_title_bookmarks">Yer işaretleri</string>
     <string name="album_title_history">Geçmiş</string>
     <string name="album_title_home">Ana sayfa</string>
     <string name="album_title_tab">Açık sekmeler</string>
@@ -34,18 +34,18 @@
     <string name="main_omnibox_input_hint">Arayın veya URL girin</string>
     <string name="menu_open_with">Bağlantıyı ... ile aç</string>
     <string name="menu_quit">Çıkış yap</string>
-    <string name="menu_openFav">Başlangıç sitesini aç</string>
-    <string name="menu_delete">Tarama verilerini temizle</string>
+    <string name="menu_openFav">Başlangıç sayfasını aç</string>
+    <string name="menu_delete">Sil</string>
     <string name="menu_edit">Düzenle</string>
     <string name="menu_closeTab">Sekmeyi kapat</string>
     <string name="menu_download">İndirilenleri aç</string>
-    <string name="menu_fav">Başlangıç sitesi olarak ayarla</string>
-    <string name="menu_sc">Ana ekranda kısayol</string>
+    <string name="menu_fav">Başlangıç sayfası olarak ayarla</string>
+    <string name="menu_sc">Ana ekrana kısayol ekle</string>
     <string name="menu_sort">… göre sırala</string>
     <string name="menu_filter">... göre filtrele</string>
     <string name="menu_share_link">Bağlantıyı paylaş</string>
     <string name="menu_save_home">Ana sayfaya kaydet</string>
-    <string name="menu_save_bookmark">Yer imi olarak kaydet</string>
+    <string name="menu_save_bookmark">Yer işareti koy</string>
     <string name="menu_save_as">… olarak kaydet</string>
     <string name="menu_save_pdf">PDF olarak kaydet</string>
     <string name="menu_shareClipboard">Panoya kopyala</string>
@@ -79,7 +79,7 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Yazı boyutu</string>
     <string name="setting_title_dom">DOM Depolama</string>
-    <string name="setting_title_save_data">\'Verileri Kaydet\' isteğinde bulun</string>
+    <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
     <string name="setting_title_profiles">Profiller</string>
     <string name="setting_title_profiles_edit">Profilleri düzenle</string>
     <string name="setting_title_profiles_trustedList">Güvenilir web siteleri</string>
@@ -110,18 +110,18 @@
     <!-- browser clear -->
     <string name="data_summary">Tüm dosyalar SD kartınızın \"Documents/browser_backup/\" dizinine aktarılacaktır.</string>
     <string name="clear_title_quit">Uygulama çıkışında temizle</string>
-    <string name="clear_title_cache">Önbelleği Temizle</string>
-    <string name="clear_title_cookie">Çerezleri Temizle</string>
-    <string name="clear_title_history">Tarama geçmişi</string>
+    <string name="clear_title_cache">Önbelleği temizle</string>
+    <string name="clear_title_cookie">Çerezleri temizle</string>
+    <string name="clear_title_history">Geçmişi temizle</string>
     <string name="localData">Cihazda depolanan verileri temizle</string>
     <string name="clear_title_deleteDatabase">Veritabanını sil</string>
-    <string name="clear_summary_deleteDatabase">Tüm veritabanını sil (Başlangıç sayfası, yer imleri, geçmiş ve beyaz listeler).</string>
+    <string name="clear_summary_deleteDatabase">Tüm veritabanını sil (Başlangıç sayfası, yer işaretleri, geçmiş ve beyaz listeler).</string>
     <!-- App setting -->
     <string name="setting_title_app">Uygulama Ayarları</string>
     <string name="setting_title_ui">Davranış/Kullanıcı Arayüzü</string>
     <string name="setting_title_data">Yedekle</string>
-    <string name="setting_filter">Yer imi süzgeci</string>
-    <string name="setting_title_fav">Başlangıç sitesi</string>
+    <string name="setting_filter">Yer işareti filtresi</string>
+    <string name="setting_title_fav">Başlangıç sayfası</string>
     <string name="setting_title_reload">Yeniden yüklemek için aşağı kaydırın</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
