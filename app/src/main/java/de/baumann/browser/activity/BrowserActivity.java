@@ -20,7 +20,6 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -210,10 +209,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     public void onPause(){
         //Save open Tabs in shared preferences
         saveOpenedTabs();
-        if (!sp.getBoolean("sp_audioBackground", false)) {
-            ((AudioManager)getSystemService(Context.AUDIO_SERVICE)).requestAudioFocus(
-                focusChange -> {}, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
-        }
         super.onPause();
     }
 
@@ -680,7 +675,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             }
         });
         omniBox_text.setOnEditorActionListener((v, actionId, event) -> {
-            String query = omniBox_text.getText().toString().trim();
+            String query = Objects.requireNonNull(omniBox_text.getText()).toString().trim();
             ninjaWebView.loadUrl(query);
             return false;
         });
@@ -1701,8 +1696,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             orientationChanged = false;
         }
     }
-
-
 
     @Override
     public synchronized void updateProgress(int progress) {
