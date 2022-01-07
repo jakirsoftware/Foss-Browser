@@ -1465,8 +1465,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.setProfileDefaultValues();
         }
 
-        if (isNightMode) {
-            ninjaWebView.toggleNightMode();
+        if (sp.getBoolean("nightModeOnStart", false)) isNightMode = true;
+        if (isNightMode) {ninjaWebView.toggleNightMode();
             isNightMode = ninjaWebView.isNightMode();
         }
         ninjaWebView.setBrowserController(this);
@@ -1476,9 +1476,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         SwipeTouchListener swipeTouchListener;
         swipeTouchListener = new SwipeTouchListener(context) {
             public void onSwipeBottom() {
-                if (sp.getBoolean("sp_swipeToReload", true)) {
-                    ninjaWebView.reload();
-                }
+                if (sp.getBoolean("sp_swipeToReload", true)) ninjaWebView.reload();
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (animation==null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);

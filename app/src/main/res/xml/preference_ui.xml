@@ -6,16 +6,6 @@
     <PreferenceCategory android:title="@string/setting_title_behavior">
 
         <CheckBoxPreference
-            android:key="hideToolbar"
-            android:defaultValue="true"
-            android:summary="@string/setting_title_hideToolbar"/>
-
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="sp_swipeToReload"
-            android:summary="@string/setting_title_reload"/>
-
-        <CheckBoxPreference
             android:icon="@drawable/icon_screen"
             android:defaultValue="false"
             android:key="sp_screenOn"
@@ -26,6 +16,11 @@
             android:defaultValue="false"
             android:key="sp_audioBackground"
             android:summary="@string/setting_title_audioBackground"/>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="sp_swipeToReload"
+            android:summary="@string/setting_title_reload"/>
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -57,6 +52,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_userInterface">
+
+        <CheckBoxPreference
+            android:key="hideToolbar"
+            android:defaultValue="true"
+            android:summary="@string/setting_title_hideToolbar"/>
+
+        <CheckBoxPreference
+            android:key="nightModeOnStart"
+            android:defaultValue="false"
+            android:summary="@string/menu_nightView"/>
 
         <ListPreference
             android:key="sp_theme"
