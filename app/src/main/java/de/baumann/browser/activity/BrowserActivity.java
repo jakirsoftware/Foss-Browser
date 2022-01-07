@@ -298,23 +298,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initSearchPanel();
         initOverview();
 
-        if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
-            sp.edit().putString("saved_key_ok", "yes")
-                    .putString("setting_gesture_tb_up", "08")
-                    .putString("setting_gesture_tb_down", "01")
-                    .putString("setting_gesture_tb_left", "07")
-                    .putString("setting_gesture_tb_right", "06")
-                    .putString("setting_gesture_nav_up", "04")
-                    .putString("setting_gesture_nav_down", "05")
-                    .putString("setting_gesture_nav_left", "03")
-                    .putString("setting_gesture_nav_right", "02")
-                    .putString("setting_gesture_nav_left", "03")
-                    .putString("setting_gesture_tabButton", "19")
-                    .putString("setting_gesture_overViewButton", "18")
-                    .putBoolean("sp_autofill", true).apply();
-            ninjaWebView.setProfileDefaultValues();
-        }
-
         if (sp.getBoolean("start_tabStart", false)){
             //put showOverview first. May be closed again later depending on intent
             showOverview();
@@ -1464,6 +1447,23 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     @SuppressLint("ClickableViewAccessibility")
     private void setWebView (String title, final String url, final boolean foreground) {
         ninjaWebView = new NinjaWebView(context);
+
+        if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
+            sp.edit().putString("saved_key_ok", "yes")
+                    .putString("setting_gesture_tb_up", "08")
+                    .putString("setting_gesture_tb_down", "01")
+                    .putString("setting_gesture_tb_left", "07")
+                    .putString("setting_gesture_tb_right", "06")
+                    .putString("setting_gesture_nav_up", "04")
+                    .putString("setting_gesture_nav_down", "05")
+                    .putString("setting_gesture_nav_left", "03")
+                    .putString("setting_gesture_nav_right", "02")
+                    .putString("setting_gesture_nav_left", "03")
+                    .putString("setting_gesture_tabButton", "19")
+                    .putString("setting_gesture_overViewButton", "18")
+                    .putBoolean("sp_autofill", true).apply();
+            ninjaWebView.setProfileDefaultValues();
+        }
 
         if (isNightMode) {
             ninjaWebView.toggleNightMode();
