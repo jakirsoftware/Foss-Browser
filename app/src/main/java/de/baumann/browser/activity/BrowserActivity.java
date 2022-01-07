@@ -2054,7 +2054,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             } else if (position == 3) {
                 printPDF();
             } else if (position == 4) {
-                HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getUrl());
+                HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getOriginalUrl(),ninjaWebView.getFavicon());
             } else if (position == 5) {
                 HelperUnit.saveAs(dialog_overflow, activity, url);
             }

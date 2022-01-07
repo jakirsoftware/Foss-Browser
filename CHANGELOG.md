@@ -1,5 +1,7 @@
 ### v 8.9 (WIP)
 
+- fix: Shortcut on the home screen #830
+- fix: crash on first start #829 #820
 - fix: Settings button does not open settings #823
 
 ### v 8.8

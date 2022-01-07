@@ -30,6 +30,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
+import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
@@ -66,6 +67,8 @@ import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 
 import static android.content.Context.DOWNLOAD_SERVICE;
+import static android.graphics.drawable.Icon.createWithBitmap;
+import static android.graphics.drawable.Icon.createWithResource;
 
 public class HelperUnit {
 
@@ -177,7 +180,8 @@ public class HelperUnit {
         }
     }
 
-    public static void createShortcut (Context context, String title, String url) {
+    public static void createShortcut (Context context, String title, String url, Bitmap bitmap) {
+        Icon icon;
         try {
             Intent i = new Intent();
             i.setAction(Intent.ACTION_VIEW);
@@ -186,18 +190,24 @@ public class HelperUnit {
                 Intent installer = new Intent();
                 installer.putExtra("android.intent.extra.shortcut.INTENT", i);
                 installer.putExtra("android.intent.extra.shortcut.NAME", title);
-                installer.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context.getApplicationContext(), R.mipmap.ic_launcher));
+                installer.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context.getApplicationContext(), R.drawable.icon_bookmark));
                 installer.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
                 context.sendBroadcast(installer);
             } else {
                 ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
                 assert shortcutManager != null;
+                if (bitmap != null){
+                    icon=createWithBitmap(bitmap);
+                }else{
+                    icon=createWithResource(context, R.drawable.icon_bookmark);
+                }
                 if (shortcutManager.isRequestPinShortcutSupported()) {
                     ShortcutInfo pinShortcutInfo =
                             new ShortcutInfo.Builder(context, url)
                                     .setShortLabel(title)
                                     .setLongLabel(title)
-                                    .setIcon(Icon.createWithResource(context, R.mipmap.ic_launcher))
+                                    //.setIcon(Icon.createWithResource(context, R.mipmap.ic_launcher))
+                                    .setIcon(icon)
                                     .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                                     .build();
                     shortcutManager.requestPinShortcut(pinShortcutInfo, null);
