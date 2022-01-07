@@ -78,8 +78,8 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Yazı boyutu</string>
-    <string name="setting_title_dom">DOM Depolama</string>
-    <string name="setting_title_save_data">\'Veri Kaydetme\' İsteği</string>
+    <string name="setting_title_dom">DOM depolama</string>
+    <string name="setting_title_save_data">\'Veri kaydetme\' isteği</string>
     <string name="setting_title_profiles">Profiller</string>
     <string name="setting_title_profiles_edit">Profilleri düzenle</string>
     <string name="setting_title_profiles_trustedList">Güvenilir web siteleri</string>
@@ -100,7 +100,7 @@
     <string name="setting_summary_cookie_delete">Etkinleştirilirse, güvenilir web sitelerinin çerezleri de dahil olmak üzere tüm çerezler silinecektir.</string>
     <string name="setting_title_javascript_popUp">Açılır pencereler</string>
     <string name="setting_title_javascript">JavaScript</string>
-    <string name="setting_title_adblock">Reklam Engelleyici</string>
+    <string name="setting_title_adblock">Reklam engelleyici</string>
     <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için reklam engelleyiciyi etkinleştirin. Bu özellik etkinleştirildiğinde siteler ayrıca daha hızlı yüklenir.</string>
     <string name="setting_title_adblockHost">Engellenen içerik</string>
     <string name="setting_title_location">Konum</string>
