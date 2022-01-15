@@ -3,13 +3,13 @@
     <!-- App -->
     <string name="app_name">المتصفح الحر FOSS Browser</string>
     <string name="app_ok">موافق</string>
-    <string name="app_help">المساعدة</string>
+    <string name="app_help">مساعدة</string>
     <string name="app_cancel">إلغاء</string>
     <string name="app_done">تـم</string>
     <string name="app_error">خطأ</string>
-    <string name="app_error_activity">لم يتم العثور على اى برنامج مثبت يمكنه فتح هذا الرابط.</string>
+    <string name="app_error_activity">لا يوجد تطبيق مثبت لفتح هذا الرابط.</string>
     <string name="app_warning">تحذير</string>
-    <string name="app_permission">لاستخدام هذه الميزة يجب اعطاء الاذن اولا ، ثم اعادة تشغيل البرنامج.</string>
+    <string name="app_permission">لاستخدام هذه الميزة، يجب أن تمنح الإذن. بعد ذلك أعد تشغيل التطبيق.</string>
     <string name="list_empty">القائمة فارغة</string>
     <string name="album_title_bookmarks">العلامات</string>
     <string name="album_title_history">السجل</string>
@@ -29,7 +29,7 @@
     <string name="color_grey">رمادي</string>
     <!-- Menu -->
     <string name="main_menu_new_tab">علامة تبويب جديدة (الخلفية)</string>
-    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
+    <string name="main_menu_new_tabProfile">علامة تبويب جديدة (مع الملف الشخصي …)</string>
     <string name="main_menu_new_tabOpen">علامة تبويب جديدة (الواجهة)</string>
     <string name="main_omnibox_input_hint">ابحث أو أدخل رابطا</string>
     <string name="menu_open_with">افتح الرابط بواسطة…</string>
@@ -80,25 +80,25 @@
     <string name="setting_title_font">حجم الخط</string>
     <string name="setting_title_dom">تخزين DOM</string>
     <string name="setting_title_save_data">اطلب \'حفظ البيانات\'</string>
-    <string name="setting_title_profiles">Profiles</string>
-    <string name="setting_title_profiles_edit">Edit profiles</string>
-    <string name="setting_title_profiles_trustedList">Trusted websites</string>
-    <string name="setting_title_profiles_standardList">Standard websites</string>
-    <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_startApp">Profile on app start</string>
-    <string name="setting_title_profiles_trusted">موثوق به</string>
+    <string name="setting_title_profiles">ملفات شخصية</string>
+    <string name="setting_title_profiles_edit">حرّر الملفات الشخصية</string>
+    <string name="setting_title_profiles_trustedList">المواقع الموثوقة</string>
+    <string name="setting_title_profiles_standardList">المواقع القياسية</string>
+    <string name="setting_title_profiles_protectedList">المواقع المحمية</string>
+    <string name="setting_title_profiles_startApp">الملف الشخصي عند بدء التطبيق</string>
+    <string name="setting_title_profiles_trusted">موثوق</string>
     <string name="setting_title_profiles_standard">قياسي</string>
-    <string name="setting_title_profiles_protected">غير موثوق به</string>
+    <string name="setting_title_profiles_protected">محمي</string>
     <string name="setting_title_profiles_changed">مخصص</string>
-    <string name="setting_title_profiles_active">Profile</string>
+    <string name="setting_title_profiles_active">ملف شخصي</string>
     <string name="setting_title_profiles_dataUsage">استخدام البيانات</string>
-    <string name="setting_title_profiles_privacy">الخصوصة</string>
+    <string name="setting_title_profiles_privacy">الخصوصية</string>
     <string name="setting_title_profiles_Security">الأمان</string>
     <!-- browser start -->
     <string name="setting_title_images">الصور</string>
     <string name="setting_title_cookie">الكعكات</string>
     <string name="setting_summary_cookie_delete">إذا فُعّل، ستحذف جميع الكعكات، حتى الخاصة بالمواقع الموثوقة.</string>
-    <string name="setting_title_javascript_popUp">النوافذ المنبثقة</string>
+    <string name="setting_title_javascript_popUp">نوافذ منبثقة</string>
     <string name="setting_title_javascript">جافا سكريبت</string>
     <string name="setting_title_adblock">مانع الاعلانات</string>
     <string name="setting_summary_adblock">مكن مانع الاعلانات لمنع الإعلانات المزعجة. تمكينه يسرع تحميل المواقع.</string>
@@ -127,9 +127,9 @@
     <string name="setting_title_userAgent">وكيل مستخدم مخصص</string>
     <string name="setting_title_fingerPrint">حماية بصمة الإصبع</string>
     <string name="setting_theme">السمة</string>
-    <string name="setting_theme_system">النظام</string>
+    <string name="setting_theme_system">نظام</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">بناء على خلفية الشاشة</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">أخفِ شريط الأدوات</string>
     <string name="setting_title_behavior">السلوك</string>
@@ -140,9 +140,9 @@
     <!-- gestures -->
     <string name="setting_title_toolbar">شريط الأدوات</string>
     <string name="setting_title_toolbar_buttons">أزرار شريط الأدوات</string>
-    <string name="setting_title_longPress">الضغطة المطولة</string>
-    <string name="setting_title_tabButton">زر التبويب / زر القائمة</string>
-    <string name="setting_title_overViewButton">نظرة عامة</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">مرر لأعلى</string>
     <string name="setting_gesture_down">مرر لأسفل</string>
     <string name="setting_gesture_left">مرر لليسار</string>
@@ -161,7 +161,7 @@
     <!-- Data -->
     <string name="title_appData">بيانات التطبيق</string>
     <string name="hint_database">هذا سيحذف البيانات الحالية. أواصل؟</string>
-    <string name="settings_data_restore">إستعادة</string>
+    <string name="settings_data_restore">يعيد</string>
     <!-- Others setting -->
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">أضيف النطاق بنجاح</string>
@@ -173,7 +173,7 @@
     <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>
     <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>
     <string name="toast_quit">أتريد إنهاء المتصفح الحر\"FOSS Browser\"؟</string>
-    <string name="toast_quit_TAB">هل تريد غلق هذا التبويب؟</string>
+    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
     <string name="toast_downloadComplete">اكتمل التحميل. أفتح مدير الملفات؟</string>
     <string name="toast_unsecured">يستخدم الموقع اتصالا غير آمن (\"http\"). أجرب اتصالا آمنا (\"https\")؟</string>
     <string name="toast_backup">اعمل نسخا احتياطيا للبيانات؟ هذا سيستبدل النسخ الاحتياطي القديم.</string>
@@ -186,18 +186,18 @@
     <string name="menu_dayView">عرض يومي</string>
     <string name="menu_nightView">عرض ليلي</string>
     <string name="setting_userScript">شفرة جافاسكريت مخصصة</string>
-    <string name="setting_title_camera">السماح باستخدام الكاميرا</string>
-    <string name="setting_title_microphone">السماح باستخدام الميكروفون</string>
-    <string name="setting_title_tabsReload">إعادة تحميل التبويبات</string>
-    <string name="setting_title_tabsRestore">استعادة التبويبات</string>
-    <string name="setting_title_userInterface">واجهة المستخد</string>
-    <string name="setting_summary_tabsReload">إعادة تحميل اخر تبويبات كانت مفتوحة ، عند فتح المتصفح .</string>
-    <string name="setting_summary_tabsRestore">استعادة التبويبات ، عندما يقوم النظام بغلق المتصفح .</string>
-    <string name="hint_DRM_Media">السماح بتشغيل مقاطع الفيديو المحمية؟</string>
-    <string name="menu_reload">إعادة تحميل</string>
-    <string name="menu_restart">إعادة التشغيل مع إعادة تحميل التبويبات</string>
-    <string name="profile_warning">تم تخصيصه للموقع:</string>
-    <string name="setting_title_screenOn">الإبقاء على الشاشة فى وضع الاستيقاظ</string>
-    <string name="setting_title_audioBackground">تشغيل الصوت فى الخلفية</string>
+    <string name="setting_title_camera">Allow camera usage</string>
+    <string name="setting_title_microphone">Allow microphone usage</string>
+    <string name="setting_title_tabsReload">Reload tabs</string>
+    <string name="setting_title_tabsRestore">Restore tabs</string>
+    <string name="setting_title_userInterface">User interface</string>
+    <string name="setting_summary_tabsReload">Reload last opened tabs, when starting FOSS Browser.</string>
+    <string name="setting_summary_tabsRestore">Restore tabs, when FOSS Browser gets killed by the system.</string>
+    <string name="hint_DRM_Media">Allow DRM protected media playback?</string>
+    <string name="menu_reload">Reload</string>
+    <string name="menu_restart">Restart and reload tabs</string>
+    <string name="profile_warning">Overwritten by:</string>
+    <string name="setting_title_screenOn">Keep screen on</string>
+    <string name="setting_title_audioBackground">Play audio on background</string>
     <!-- License changelog -->
 </resources>
