@@ -128,7 +128,7 @@
     <string name="setting_title_fingerPrint">Parmak izi koruması</string>
     <string name="setting_theme">Tema</string>
     <string name="setting_theme_system">Kendiliğinden (aygıt teması)</string>
-    <string name="setting_theme_OLED">Saf siyah gece modu</string>
+    <string name="setting_theme_OLED">Saf siyah görünümü</string>
     <string name="setting_theme_wallpaper">Duvar kağıdı tabanlı</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
