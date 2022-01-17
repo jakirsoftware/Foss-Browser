@@ -1,8 +1,12 @@
 ### v 8.9 (WIP)
 
+- fix: some webpages show half the screen #817
 - fix: Shortcut on the home screen #830
 - fix: crash on first start #829 #820
 - fix: Settings button does not open settings #823
+- fix: cannot connect to some webservices #818
+- fix: default user-agent is now received from installed webview
+- updated: translations
 - new: permanent night mode (optional) #825
 
 ### v 8.8

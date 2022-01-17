@@ -231,7 +231,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.md_theme_light_onBackground));
+
         if (sp.getBoolean("sp_screenOn", false)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        if (sp.getBoolean("nightModeOnStart", false)) isNightMode = true;
 
         HelperUnit.initTheme(context);
         DynamicColors.applyToActivitiesIfAvailable(activity.getApplication());
@@ -1459,8 +1461,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     .putBoolean("sp_autofill", true).apply();
             ninjaWebView.setProfileDefaultValues();
         }
-
-        if (sp.getBoolean("nightModeOnStart", false)) isNightMode = true;
         if (isNightMode) {ninjaWebView.toggleNightMode();
             isNightMode = ninjaWebView.isNightMode();
         }
