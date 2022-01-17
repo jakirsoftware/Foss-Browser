@@ -590,7 +590,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Button button_help = dialog_tabPreview_view.findViewById(R.id.button_help);
         button_help.setOnClickListener(view -> {
             hideTabView();
-            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Fast-Toggle-Dialog");
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Tab-Dialog");
             BrowserUnit.intentURL(this, webpage);
         });
 

@@ -35,11 +35,10 @@
             android:id="@+id/button_help"
             style="@style/Widget.Material3.Button.IconButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
-            android:foregroundGravity="top"
+            android:layout_marginEnd="5dp"
             app:icon="@drawable/icon_help" />
 
     </RelativeLayout>
