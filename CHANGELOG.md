@@ -8,6 +8,7 @@
 - fix: default user-agent is now received from installed webview
 - updated: translations
 - new: permanent night mode (optional) #825
+- new: help button in Tab-Dialog
 
 ### v 8.8
 

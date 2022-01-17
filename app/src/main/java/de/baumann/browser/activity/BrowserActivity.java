@@ -586,6 +586,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialog_tabPreview_view = View.inflate(context, R.layout.dialog_tabs, null);
         tab_container = dialog_tabPreview_view.findViewById(R.id.tab_container);
+
+        Button button_help = dialog_tabPreview_view.findViewById(R.id.button_help);
+        button_help.setOnClickListener(view -> {
+            hideTabView();
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Fast-Toggle-Dialog");
+            BrowserUnit.intentURL(this, webpage);
+        });
+
         builder.setView(dialog_tabPreview_view);
         dialog_tabPreview = builder.create();
         Objects.requireNonNull(dialog_tabPreview.getWindow()).setGravity(Gravity.BOTTOM);

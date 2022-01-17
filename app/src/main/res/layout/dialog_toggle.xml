@@ -25,10 +25,10 @@
                 style="@style/Widget.Material3.Button.IconButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:foregroundGravity="top"
+                android:layout_alignParentEnd="true"
                 android:layout_marginEnd="10dp"
+                android:foregroundGravity="top"
                 app:icon="@drawable/icon_help" />
 
             <com.google.android.material.textview.MaterialTextView
