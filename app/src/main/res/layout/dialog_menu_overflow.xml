@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_toEndOf="@+id/cardView"
-            android:layout_toStartOf="@+id/overflow_settings"
+            android:layout_toStartOf="@+id/overflow_help"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:includeFontPadding="false"
@@ -51,7 +51,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Button
-            android:id="@+id/overflow_settings"
+            android:id="@+id/overflow_help"
             style="@style/Widget.Material3.Button.IconButton"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"

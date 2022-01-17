@@ -1963,8 +1963,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (title.isEmpty()) overflow_title.setText(url);
         else overflow_title.setText(title);
 
-        Button overflow_settings = dialogView.findViewById(R.id.overflow_settings);
-        overflow_settings.setOnClickListener(v -> {
+        Button overflow_help = dialogView.findViewById(R.id.overflow_help);
+        overflow_help.setOnClickListener(v -> {
             dialog_overflow.cancel();
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki");
             BrowserUnit.intentURL(this, webpage);
