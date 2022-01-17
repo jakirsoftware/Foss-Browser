@@ -1966,8 +1966,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         Button overflow_settings = dialogView.findViewById(R.id.overflow_settings);
         overflow_settings.setOnClickListener(v -> {
             dialog_overflow.cancel();
-            Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
-            startActivity(settings);
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki");
+            BrowserUnit.intentURL(this, webpage);
         });
 
         final GridView menu_grid_tab = dialogView.findViewById(R.id.overflow_tab);

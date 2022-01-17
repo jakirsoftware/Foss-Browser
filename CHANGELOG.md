@@ -8,8 +8,7 @@
 - fix: default user-agent is now received from installed webview
 - updated: translations
 - new: permanent night mode (optional) #825
-- new: help button in Tab-Dialog (WIKI entry is in work)
-- new: help button in Filter-Dialog (WIKI entry is in work)
+- new: help buttons in most important UI-elements (WIKI entries are in work)
 
 ### v 8.8
 
