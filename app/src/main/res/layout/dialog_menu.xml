@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_toEndOf="@+id/cardView"
+            android:layout_toStartOf="@+id/button_help"
             android:layout_marginEnd="20dp"
             android:ellipsize="end"
             android:includeFontPadding="false"
@@ -49,6 +50,18 @@
                 android:scaleType="fitCenter" />
 
         </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/button_help"
+            android:visibility="gone"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:foregroundGravity="top"
+            app:icon="@drawable/icon_help" />
 
     </RelativeLayout>
 

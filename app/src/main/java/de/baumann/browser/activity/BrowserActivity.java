@@ -2418,6 +2418,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         CardView cardView = dialogView.findViewById(R.id.cardView);
         cardView.setVisibility(View.GONE);
 
+        Button button_help = dialogView.findViewById(R.id.button_help);
+        button_help.setVisibility(View.VISIBLE);
+        button_help.setOnClickListener(view -> {
+            dialog.cancel();
+            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Filter-Dialog");
+            BrowserUnit.intentURL(this, webpage);
+        });
+
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
         final List<GridItem> gridList = new LinkedList<>();
