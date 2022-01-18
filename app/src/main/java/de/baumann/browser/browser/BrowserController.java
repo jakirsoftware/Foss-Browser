@@ -9,6 +9,7 @@ public interface BrowserController {
     void updateProgress(int progress);
     void showAlbum(AlbumController albumController);
     void removeAlbum(AlbumController albumController);
+    void addAlbum(String title, final String url, final boolean foreground, final boolean profileDialog, String profile);
     void showFileChooser(ValueCallback<Uri[]> filePathCallback);
     void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback);
     void hideTabView ();

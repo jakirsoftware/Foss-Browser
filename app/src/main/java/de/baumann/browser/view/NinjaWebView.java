@@ -523,20 +523,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView, R.drawable.icon_image_broken);
     }
 
-    @Override
-    public synchronized void activate() {
-        requestFocus();
-        foreground = true;
-        album.activate();
-    }
-
-    @Override
-    public synchronized void deactivate() {
-        clearFocus();
-        foreground = false;
-        album.deactivate();
-    }
-
     public synchronized void updateTitle(int progress) {
         if (foreground && !stopped) {
             browserController.updateProgress(progress);

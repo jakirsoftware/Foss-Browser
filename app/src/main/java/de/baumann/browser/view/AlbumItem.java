@@ -45,24 +45,16 @@ class AlbumItem {
         albumClose.setVisibility(View.VISIBLE);
         albumClose.setOnClickListener(view -> {
             browserController.removeAlbum(albumController);
-            if (BrowserContainer.size() == 1) browserController.hideTabView();
         });
         albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
+        albumTitle.setOnClickListener(view -> browserController.showAlbum(albumController));
     }
 
     public void activate() {
         albumTitle.setChecked(true);
-        albumTitle.setOnClickListener(view -> {
-            albumTitle.setChecked(true);
-            browserController.hideTabView();
-        });
     }
 
     void deactivate() {
         albumTitle.setChecked(false);
-        albumTitle.setOnClickListener(view -> {
-            browserController.showAlbum(albumController);
-            browserController.hideTabView();
-        });
     }
 }
