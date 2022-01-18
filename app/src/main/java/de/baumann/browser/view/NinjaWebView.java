@@ -2,8 +2,6 @@ package de.baumann.browser.view;
 
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
 import static android.content.Context.NOTIFICATION_SERVICE;
-import static androidx.core.app.NotificationCompat.DEFAULT_SOUND;
-import static androidx.core.app.NotificationCompat.DEFAULT_VIBRATE;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -35,7 +33,6 @@ import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -568,9 +565,6 @@ public class NinjaWebView extends WebView implements AlbumController {
         super.destroy();
     }
 
-    public boolean isLoadFinish() {
-        return getProgress() >= BrowserUnit.PROGRESS_MAX;
-    }
     public boolean isDesktopMode() {
         return desktopMode;
     }

@@ -5,30 +5,19 @@ import android.webkit.MimeTypeMap;
 
 public class DataURIParser {
 
-    private final String data;
-    private final String mimeType;
     private final String filename;
     private final byte[] imagedata;
-
-    public String getData() {
-        return data;
-    }
 
     public String getFilename() {
         return filename;
     }
-
-    public String getMimeType() {
-        return mimeType;
-    }
-
     public byte[] getImagedata() { return imagedata; }
 
     public DataURIParser(String url) {
         //Log.d("DataURIParse", url);
-        data=url.substring(url.indexOf(",")+1);
+        String data=url.substring(url.indexOf(",")+1);
         //Log.d("DataURIParse", data);
-        mimeType=url.substring(url.indexOf(":")+1,url.indexOf(";"));
+        String mimeType=url.substring(url.indexOf(":")+1,url.indexOf(";"));
         //Log.d("DataURIParse", mimeType);
         String fileType = url.substring(url.indexOf(":") + 1, url.indexOf("/"));
         //Log.d("DataURIParse", fileType);
