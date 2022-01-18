@@ -28,12 +28,12 @@ _More features:_
 ----
 ### Privacy
 
-FOSS Browser uses profiles to protect your privacy. For each profile you can enable or disable: AdBlock, JavaScript, cookies, fingerprint protection and much more. Profiles can also be saved for domains ("github.com" ⇒ Trusted website). This saved domains always overwrite the current profile. So, for example, "github.com" will always open with the trusted profile, even if you are browsing in the protected mode.
+FOSS Browser uses profiles to protect your privacy. For each profile you can enable or disable: AdBlock, JavaScript, cookies, fingerprint protection and much more. Profiles can also be saved for domains ("github.com" ⇒ Trusted website). These saved domains always overwrite the currently used profile. So, for example, "github.com" will always open with the trusted profile, even if you are browsing in the protected mode.
 
 _More privacy features:_
 
-- Build in AdBlock, which updates automatically. You can decide which content to block. AdBlock hosts are taken from [Steven Black - AbBlock hosts](https://github.com/StevenBlack/hosts).
-- Third-part-cookies can not be enabled.
+- Built-in AdBlock, which updates automatically. You can decide which content to block. AdBlock hosts are taken from [Steven Black - AbBlock hosts](https://github.com/StevenBlack/hosts).
+- Third-party cookies can not be enabled.
 - Enable or disable Android-autofill.
 - Delete browser data (on app exit).
 - Choose between different search engines (or set a custom one).
