@@ -32,7 +32,7 @@ FOSS Browser uses profiles to protect your privacy. For each profile you can ena
 
 _More privacy features:_
 
-- Built-in AdBlock, which updates automatically. You can decide which content to block. AdBlock hosts are taken from [Steven Black - AbBlock hosts](https://github.com/StevenBlack/hosts).
+- Built-in AdBlock, which updates automatically. You can decide which content to block. AdBlock hosts are taken from [Steven Black - AdBlock hosts](https://github.com/StevenBlack/hosts).
 - Third-party cookies can not be enabled.
 - Enable or disable Android-autofill.
 - Delete browser data (on app exit).
