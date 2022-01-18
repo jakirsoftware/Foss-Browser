@@ -9,7 +9,6 @@ import android.widget.Button;
 import com.google.android.material.chip.Chip;
 
 import de.baumann.browser.browser.AlbumController;
-import de.baumann.browser.browser.BrowserContainer;
 import de.baumann.browser.browser.BrowserController;
 import de.baumann.browser.R;
 
@@ -29,7 +28,9 @@ class AlbumItem {
     }
 
     private BrowserController browserController;
-    void setBrowserController(BrowserController browserController) { this.browserController = browserController; }
+    void setBrowserController(BrowserController browserController) {
+        this.browserController = browserController;
+    }
 
     AlbumItem(Context context, AlbumController albumController, BrowserController browserController) {
         this.context = context;
@@ -43,18 +44,23 @@ class AlbumItem {
         albumView = LayoutInflater.from(context).inflate(R.layout.item_tab, null, false);
         Button albumClose = albumView.findViewById(R.id.whitelist_item_cancel);
         albumClose.setVisibility(View.VISIBLE);
-        albumClose.setOnClickListener(view -> {
-            browserController.removeAlbum(albumController);
-        });
+        albumClose.setOnClickListener(v -> browserController.removeAlbum(albumController));
         albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
-        albumTitle.setOnClickListener(view -> browserController.showAlbum(albumController));
     }
 
     public void activate() {
         albumTitle.setChecked(true);
+        albumTitle.setOnClickListener(view -> {
+            albumTitle.setChecked(true);
+            browserController.hideTabView();
+        });
     }
 
     void deactivate() {
         albumTitle.setChecked(false);
+        albumTitle.setOnClickListener(view -> {
+            browserController.showAlbum(albumController);
+            browserController.hideTabView();
+        });
     }
 }

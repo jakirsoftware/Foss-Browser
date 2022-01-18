@@ -1,6 +1,7 @@
 package de.baumann.browser.browser;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -15,6 +16,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.util.Objects;
 
 import de.baumann.browser.R;
+import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.view.NinjaWebView;
 
@@ -41,8 +43,19 @@ public class NinjaWebChromeClient extends WebChromeClient {
 
     @Override
     public boolean onCreateWindow(WebView view, boolean dialog, boolean userGesture, android.os.Message resultMsg) {
-        BrowserController browserController = ninjaWebView.getBrowserController();
-        browserController.addAlbum("", resultMsg.toString(),true, false, "");
+        Context context = view.getContext();
+        WebView newWebView = new WebView(context);
+        view.addView(newWebView);
+        WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
+        transport.setWebView(newWebView);
+        resultMsg.sendToTarget();
+        newWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                BrowserUnit.intentURL(context, request.getUrl());
+                return true;
+            }
+        });
         return true;
     }
 

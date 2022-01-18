@@ -185,14 +185,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private boolean searchOnSite;
 
     private ValueCallback<Uri[]> filePathCallback = null;
-    private final AlbumController currentAlbumController;
+    private AlbumController currentAlbumController = null;
 
     private static final int INPUT_FILE_REQUEST_CODE = 1;
     private ValueCallback<Uri[]> mFilePathCallback;
-
-    public BrowserActivity(AlbumController currentAlbumController) {
-        this.currentAlbumController = currentAlbumController;
-    }
 
     // Classes
 
@@ -455,13 +451,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     @Override
-    public synchronized void showAlbum (AlbumController controller) {
+    public synchronized void showAlbum(AlbumController controller) {
+        if (sp.getBoolean("hideToolbar", true)) {
+            ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
+            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
+            animation.start();
+        }
         View av = (View) controller;
-//        if (currentAlbumController != null) {
-//            currentAlbumController.deactivate();
-//        }
-//        currentAlbumController = controller;
-//        currentAlbumController.activate();
+        if (currentAlbumController != null) {
+            currentAlbumController.deactivate();
+        }
+        currentAlbumController = controller;
+        currentAlbumController.activate();
         contentFrame.removeAllViews();
         contentFrame.addView(av);
         updateOmniBox();
@@ -1540,9 +1541,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
 
         if (!foreground) {
-            ninjaWebView.clearFocus();
+            ninjaWebView.deactivate();
         } else {
-            ninjaWebView.requestFocus();
+            ninjaWebView.activate();
             showAlbum(ninjaWebView);
             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
                 ninjaWebView.reload();
@@ -1553,9 +1554,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         updateOmniBox();
     }
 
-    public synchronized void addAlbum(String title, final String url, final boolean foreground, final boolean profileDialog, String profile) {
+    private synchronized void addAlbum(String title, final String url, final boolean foreground, final boolean profileDialog, String profile) {
+
         //restoreProfile from shared preferences if app got killed
         if (!profile.equals("")) sp.edit().putString("profile", profile).apply();
+
+
         if (profileDialog) {
             GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, getString(R.string.setting_title_profiles_trusted),  11);
             GridItem item_02 = new GridItem(R.drawable.icon_profile_standard, getString(R.string.setting_title_profiles_standard),  11);
@@ -1690,7 +1694,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
