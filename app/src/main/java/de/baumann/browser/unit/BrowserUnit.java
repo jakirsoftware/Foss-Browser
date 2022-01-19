@@ -261,8 +261,7 @@ public class BrowserUnit {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW);
         browserIntent.setData(uri);
         browserIntent.setPackage("de.baumann.browser");
-        Intent chooser = Intent.createChooser(browserIntent, context.getString(R.string.menu_open_with));
-        context.startActivity(chooser);
+        context.startActivity(browserIntent);
     }
 
     public static void openInBackground (Activity activity, Intent intent, String url) {
