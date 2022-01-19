@@ -82,8 +82,7 @@
                         android:layout_marginEnd="5dp"
                         android:background="?attr/actionBarItemBackground"
                         android:src="@drawable/icon_profile_standard"
-                        app:fabSize="mini"
-                        app:elevation="1dp"/>
+                        app:fabSize="mini"/>
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/omnibox_overview"
@@ -92,8 +91,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
                         android:background="?attr/actionBarItemBackground"
-                        app:fabSize="mini"
-                        app:elevation="1dp"/>
+                        app:fabSize="mini"/>
 
                     <Button
                         android:id="@+id/omnibox_overflow"
