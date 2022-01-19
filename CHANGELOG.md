@@ -7,6 +7,7 @@
 - fix: cannot connect to some webservices #818
 - fix: default user-agent is now received from installed webview
 - updated: translations
+- new: moved tab-dialog in overview
 - new: permanent night mode (optional) #825
 - new: help buttons in most important UI-elements (WIKI entries are in work)
 
