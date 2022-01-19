@@ -291,7 +291,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         registerReceiver(downloadReceiver, filter);
 
         initOmniBox();
-        initTabDialog();
         initSearchPanel();
         initOverview();
 
@@ -516,8 +515,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
     }
 
+    private void setSelectedTab() {
+        if (overViewTab.equals(getString(R.string.album_title_home))) {
+            bottom_navigation.setSelectedItemId(R.id.page_1);
+        } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
+            bottom_navigation.setSelectedItemId(R.id.page_2);
+        } else if (overViewTab.equals(getString(R.string.album_title_history))) {
+            bottom_navigation.setSelectedItemId(R.id.page_3);
+        }
+    }
+
     private void showOverview() {
-        initOverview();
+        setSelectedTab();
         if (!bottomSheetDialog_OverView.isShowing()) bottomSheetDialog_OverView.show();
     }
 
@@ -528,14 +537,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void hideTabView () {
-        if (dialog_tabPreview != null) {
-            dialog_tabPreview.hide();
+        if (bottomSheetDialog_OverView != null) {
+            bottomSheetDialog_OverView.cancel();
         }
     }
 
     public void showTabView () {
-        HelperUnit.hideSoftKeyboard(omniBox_text, context);
-           dialog_tabPreview.show();
+        bottom_navigation.setSelectedItemId(R.id.page_0);
+        if (!bottomSheetDialog_OverView.isShowing()) bottomSheetDialog_OverView.show();
     }
 
     private void printPDF () {
@@ -580,23 +589,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             hideOverview();
             BrowserUnit.openInBackground(activity, intent, data);
         }
-    }
-
-    private void initTabDialog () {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        View dialog_tabPreview_view = View.inflate(context, R.layout.dialog_tabs, null);
-        tab_container = dialog_tabPreview_view.findViewById(R.id.tab_container);
-
-        Button button_help = dialog_tabPreview_view.findViewById(R.id.button_help);
-        button_help.setOnClickListener(view -> {
-            hideTabView();
-            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Tab-Dialog");
-            BrowserUnit.intentURL(this, webpage);
-        });
-
-        builder.setView(dialog_tabPreview_view);
-        dialog_tabPreview = builder.create();
-        Objects.requireNonNull(dialog_tabPreview.getWindow()).setGravity(Gravity.BOTTOM);
     }
 
     @SuppressLint({"ClickableViewAccessibility", "UnsafeExperimentalUsageError", "UnsafeOptInUsageError"})
@@ -841,9 +833,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         bottomSheetDialog_OverView.setContentView(dialogView);
+        tab_container = dialogView.findViewById(R.id.listOpenedTabs);
 
         NavigationBarView.OnItemSelectedListener navListener = menuItem -> {
             if (menuItem.getItemId() == R.id.page_1) {
+                tab_container.setVisibility(View.GONE);
+                listView.setVisibility(View.VISIBLE);
                 omniBox_overview.setImageResource(R.drawable.icon_web);
                 overViewTab = getString(R.string.album_title_home);
 
@@ -873,6 +868,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     return true;
                 });
             } else if (menuItem.getItemId() == R.id.page_2) {
+                tab_container.setVisibility(View.GONE);
+                listView.setVisibility(View.VISIBLE);
                 omniBox_overview.setImageResource(R.drawable.icon_bookmark);
                 overViewTab = getString(R.string.album_title_bookmarks);
 
@@ -912,6 +909,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     return true;
                 });
             } else if (menuItem.getItemId() == R.id.page_3) {
+                tab_container.setVisibility(View.GONE);
+                listView.setVisibility(View.VISIBLE);
                 omniBox_overview.setImageResource(R.drawable.icon_history);
                 overViewTab = getString(R.string.album_title_history);
 
@@ -1013,6 +1012,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         bottom_navigation.setSelectedItemId(R.id.page_3);
                     }
                 });
+            } else if (menuItem.getItemId() == R.id.page_0) {
+                tab_container.setVisibility(View.VISIBLE);
+                listView.setVisibility(View.GONE);
             }
             return true;
         };
@@ -1023,14 +1025,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             show_dialogFilter();
             return true;
         });
-
-        if (overViewTab.equals(getString(R.string.album_title_home))) {
-            bottom_navigation.setSelectedItemId(R.id.page_1);
-        } else if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
-            bottom_navigation.setSelectedItemId(R.id.page_2);
-        } else if (overViewTab.equals(getString(R.string.album_title_history))) {
-            bottom_navigation.setSelectedItemId(R.id.page_3);
-        }
 
         BottomSheetBehavior<View> mBehavior = BottomSheetBehavior.from((View) dialogView.getParent());
         mBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
@@ -1044,6 +1038,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
         });
+
+        setSelectedTab();
     }
 
     private void initSearchPanel() {
