@@ -65,19 +65,12 @@ public class Settings_Delete extends AppCompatActivity {
                 boolean clearHistory = sp.getBoolean("sp_clear_history", false);
                 boolean clearIndexedDB = sp.getBoolean("sp_clearIndexedDB", false);
 
-                if (clearCache) {
-                    BrowserUnit.clearCache(this);
-                }
-                if (clearCookie) {
-                    BrowserUnit.clearCookie();
-                }
-                if (clearHistory) {
-                    BrowserUnit.clearHistory(this);
-                }
+                if (clearCache) BrowserUnit.clearCache(this);
+                if (clearCookie) BrowserUnit.clearCookie();
+                if (clearHistory) BrowserUnit.clearHistory(this);
                 if (clearIndexedDB) {
                     BrowserUnit.clearIndexedDB(this);
-                    WebStorage.getInstance().deleteAllData();
-                }
+                    WebStorage.getInstance().deleteAllData(); }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
@@ -94,12 +87,10 @@ public class Settings_Delete extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == android.R.id.home) {
-            finish();
-        } if (menuItem.getItemId() == R.id.menu_help) {
+        if (menuItem.getItemId() == android.R.id.home) finish();
+        if (menuItem.getItemId() == R.id.menu_help) {
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Delete");
-            BrowserUnit.intentURL(this, webpage);
-        }
+            BrowserUnit.intentURL(this, webpage); }
         return true;
     }
 }

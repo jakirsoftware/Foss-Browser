@@ -52,7 +52,7 @@ class AlbumItem {
         albumTitle.setChecked(true);
         albumTitle.setOnClickListener(view -> {
             albumTitle.setChecked(true);
-            browserController.hideTabView();
+            browserController.hideOverview();
         });
     }
 
@@ -60,7 +60,7 @@ class AlbumItem {
         albumTitle.setChecked(false);
         albumTitle.setOnClickListener(view -> {
             browserController.showAlbum(albumController);
-            browserController.hideTabView();
+            browserController.hideOverview();
         });
     }
 }

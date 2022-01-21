@@ -53,15 +53,13 @@ public class Settings_Activity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == android.R.id.home) {
-            finish();
-        } else if (menuItem.getItemId() == R.id.menu_info) {
+        if (menuItem.getItemId() == android.R.id.home) finish();
+        else if (menuItem.getItemId() == R.id.menu_info) {
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/blob/master/README.md");
-            BrowserUnit.intentURL(this, webpage);
-        } else if (menuItem.getItemId() == R.id.menu_help) {
+            BrowserUnit.intentURL(this, webpage); }
+        else if (menuItem.getItemId() == R.id.menu_help) {
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Settings-(Main-screen)");
-            BrowserUnit.intentURL(this, webpage);
-        }
+            BrowserUnit.intentURL(this, webpage); }
         return true;
     }
 }

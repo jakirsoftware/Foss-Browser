@@ -69,12 +69,10 @@ public class Settings_Profile extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == android.R.id.home) {
-            finish();
-        } if (menuItem.getItemId() == R.id.menu_help) {
+        if (menuItem.getItemId() == android.R.id.home) finish();
+        if (menuItem.getItemId() == R.id.menu_help) {
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Edit-profiles");
-            BrowserUnit.intentURL(this, webpage);
-        }
+            BrowserUnit.intentURL(this, webpage); }
         return true;
     }
 }

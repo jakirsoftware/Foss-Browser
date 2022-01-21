@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+
+
     <ListView
         android:paddingTop="5dp"
         android:id="@+id/list_search"
@@ -186,5 +188,46 @@
         </RelativeLayout>
 
     </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <RelativeLayout
+        android:background="?attr/colorSurface"
+        android:visibility="gone"
+        android:id="@+id/bottomSheetDialog_OverView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_above="@+id/bottom_navigation"
+            android:paddingTop="5dp"
+            android:id="@+id/list_overView"
+            android:stackFromBottom="true"
+            android:fastScrollEnabled="true"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom_navigation">
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/listOpenedTabs"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stackFromBottom="true"/>
+
+        </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_alignParentBottom="true"
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/menu_bottom_overview" />
+
+    </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
