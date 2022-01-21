@@ -65,7 +65,7 @@
     <!-- Settings -->
     <string name="setting_label">Ayarlar</string>
     <!-- browser setting -->
-    <string name="setting_title_browser">Tarayıcı Ayarları</string>
+    <string name="setting_title_browser">Tarayıcı ayarları</string>
     <string name="setting_title_search_engine">Arama motoru</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -117,7 +117,7 @@
     <string name="clear_title_deleteDatabase">Veritabanını sil</string>
     <string name="clear_summary_deleteDatabase">Tüm veritabanını sil (Başlangıç sayfası, yer işaretleri, geçmiş ve beyaz listeler).</string>
     <!-- App setting -->
-    <string name="setting_title_app">Uygulama Ayarları</string>
+    <string name="setting_title_app">Uygulama ayarları</string>
     <string name="setting_title_ui">Davranış/Kullanıcı Arayüzü</string>
     <string name="setting_title_data">Yedekle</string>
     <string name="setting_filter">Yer işareti filtresi</string>
