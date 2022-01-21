@@ -38,9 +38,9 @@
     <string name="menu_delete">Sil</string>
     <string name="menu_edit">Düzenle</string>
     <string name="menu_closeTab">Sekmeyi kapat</string>
-    <string name="menu_download">İndirilenleri aç</string>
+    <string name="menu_download">İndirilenler</string>
     <string name="menu_fav">Başlangıç sayfası olarak ayarla</string>
-    <string name="menu_sc">Ana ekrana kısayol ekle</string>
+    <string name="menu_sc">Ana ekrana ekle</string>
     <string name="menu_sort">… göre sırala</string>
     <string name="menu_filter">... göre filtrele</string>
     <string name="menu_share_link">Bağlantıyı paylaş</string>
@@ -49,7 +49,7 @@
     <string name="menu_save_as">… olarak kaydet</string>
     <string name="menu_save_pdf">PDF olarak kaydet</string>
     <string name="menu_shareClipboard">Panoya kopyala</string>
-    <string name="menu_other_searchSite">Sitede ara</string>
+    <string name="menu_other_searchSite">Sayfada bul</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Başlık:</string>
     <string name="dialog_URL_hint">URL:</string>
@@ -66,7 +66,7 @@
     <string name="setting_label">Ayarlar</string>
     <!-- browser setting -->
     <string name="setting_title_browser">Tarayıcı Ayarları</string>
-    <string name="setting_title_search_engine">Arama Motoru</string>
+    <string name="setting_title_search_engine">Arama motoru</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
     <string name="setting_summary_search_engine_startpage">StartPage</string>
