@@ -118,7 +118,7 @@
     <string name="clear_summary_deleteDatabase">Tüm veritabanını sil (Başlangıç sayfası, yer işaretleri, geçmiş ve beyaz listeler).</string>
     <!-- App setting -->
     <string name="setting_title_app">Uygulama ayarları</string>
-    <string name="setting_title_ui">Davranış/Kullanıcı Arayüzü</string>
+    <string name="setting_title_ui">Davranış | Kullanıcı arayüzü</string>
     <string name="setting_title_data">Yedekle</string>
     <string name="setting_filter">Yer işareti filtresi</string>
     <string name="setting_title_fav">Başlangıç sayfası</string>
@@ -176,7 +176,7 @@
     <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
-    <string name="toast_backup">Veriler yedeklensin mi? Eski yedek varsa, üzerine yazılacaktır.</string>
+    <string name="toast_backup">Veriler yedeklensin mi? Eski yedek varsa üzerine yazılacaktır.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Temizle</string>
     <string name="whitelist_edit_hint">Alan adı</string>
@@ -196,7 +196,7 @@
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
     <string name="menu_reload">Yeniden yükle</string>
     <string name="menu_restart">Sekmeleri yeniden başlat ve yükle</string>
-    <string name="profile_warning">Üzerine yazan:</string>
+    <string name="profile_warning">Üzerine yazılan:</string>
     <string name="setting_title_screenOn">Ekranı açık tut</string>
     <string name="setting_title_audioBackground">Sesi arka planda oynat</string>
     <!-- License changelog -->
