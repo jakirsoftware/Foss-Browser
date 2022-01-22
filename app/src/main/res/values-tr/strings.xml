@@ -32,7 +32,7 @@
     <string name="main_menu_new_tabProfile">Yeni sekme (… profil)</string>
     <string name="main_menu_new_tabOpen">Yeni sekme (ön plan)</string>
     <string name="main_omnibox_input_hint">Arayın veya URL girin</string>
-    <string name="menu_open_with">Bağlantıyı şununla aç…</string>
+    <string name="menu_open_with">Bağlantıyı şununla aç …</string>
     <string name="menu_quit">Çıkış yap</string>
     <string name="menu_openFav">Başlangıç sayfasını aç</string>
     <string name="menu_delete">Sil</string>
@@ -41,12 +41,12 @@
     <string name="menu_download">İndirilenler</string>
     <string name="menu_fav">Başlangıç sayfası olarak ayarla</string>
     <string name="menu_sc">Ana ekrana ekle</string>
-    <string name="menu_sort">Sırala…</string>
-    <string name="menu_filter">Renge göre filtrele…</string>
+    <string name="menu_sort">Sırala …</string>
+    <string name="menu_filter">Filtrele …</string>
     <string name="menu_share_link">Bağlantıyı paylaş</string>
     <string name="menu_save_home">Ana sayfaya kaydet</string>
     <string name="menu_save_bookmark">Yer işareti koy</string>
-    <string name="menu_save_as">Farklı kaydet…</string>
+    <string name="menu_save_as">Farklı kaydet …</string>
     <string name="menu_save_pdf">PDF olarak kaydet</string>
     <string name="menu_shareClipboard">Panoya kopyala</string>
     <string name="menu_other_searchSite">Sayfada bul</string>
