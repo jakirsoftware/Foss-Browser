@@ -472,19 +472,32 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void showOverview() {
+
         setSelectedTab();
         bottomSheetDialog_OverView.setVisibility(View.VISIBLE);
+        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", 0);
+        animation.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
+        animation.start();
         bottomAppBar.setVisibility(View.GONE);
     }
 
     public void hideOverview () {
-        bottomSheetDialog_OverView.setVisibility(View.GONE);
+
+
+        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", bottomSheetDialog_OverView.getHeight());
+        animation.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
+        animation.start();
         bottomAppBar.setVisibility(View.VISIBLE);
     }
 
     public void showTabView () {
+
+
         bottom_navigation.setSelectedItemId(R.id.page_0);
         bottomSheetDialog_OverView.setVisibility(View.VISIBLE);
+        ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", 0);
+        animation.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
+        animation.start();
         bottomAppBar.setVisibility(View.GONE);
     }
 

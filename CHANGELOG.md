@@ -1,4 +1,4 @@
-### v 8.9 (WIP)
+### v 8.9
 
 - fix: some webpages show half the screen #817
 - fix: Shortcut on the home screen #830
@@ -9,7 +9,7 @@
 - updated: translations
 - new: moved tab-dialog in overview
 - new: permanent night mode (optional) #825
-- new: help buttons in most important UI-elements (WIKI entries are in work)
+- new: help buttons in most important UI-elements
 
 ### v 8.8
 

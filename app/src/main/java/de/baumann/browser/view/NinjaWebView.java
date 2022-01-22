@@ -588,7 +588,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public String getUserAgent(boolean desktopMode){
-        //String mobilePrefix = "Mozilla/5.0 (Linux; Android "+ Build.VERSION.RELEASE + ")";
+        String mobilePrefix = "Mozilla/5.0 (Linux; Android "+ Build.VERSION.RELEASE + ")";
         String desktopPrefix = "Mozilla/5.0 (X11; Linux "+ System.getProperty("os.arch") +")";
 
         String newUserAgent=WebSettings.getDefaultUserAgent(context);
@@ -601,7 +601,11 @@ public class NinjaWebView extends WebView implements AlbumController {
                 e.printStackTrace();
             }
         } else {
-            newUserAgent=WebSettings.getDefaultUserAgent(context);
+            try {
+                newUserAgent=newUserAgent.replace(prefix,mobilePrefix);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         //Override UserAgent if own UserAgent is defined

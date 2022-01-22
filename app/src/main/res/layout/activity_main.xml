@@ -190,6 +190,7 @@
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <RelativeLayout
+        android:animateLayoutChanges="true"
         android:background="?attr/colorSurface"
         android:visibility="gone"
         android:id="@+id/bottomSheetDialog_OverView"
