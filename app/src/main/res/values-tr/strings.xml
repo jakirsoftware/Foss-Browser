@@ -29,10 +29,10 @@
     <string name="color_grey">Gri</string>
     <!-- Menu -->
     <string name="main_menu_new_tab">Yeni sekme (arka plan)</string>
-    <string name="main_menu_new_tabProfile">Yeni sekme (… profil ile)</string>
+    <string name="main_menu_new_tabProfile">Yeni sekme (… profil)</string>
     <string name="main_menu_new_tabOpen">Yeni sekme (ön plan)</string>
     <string name="main_omnibox_input_hint">Arayın veya URL girin</string>
-    <string name="menu_open_with">Bağlantıyı ... ile aç</string>
+    <string name="menu_open_with">Bağlantıyı şununla aç …</string>
     <string name="menu_quit">Çıkış yap</string>
     <string name="menu_openFav">Başlangıç sayfasını aç</string>
     <string name="menu_delete">Sil</string>
@@ -41,12 +41,12 @@
     <string name="menu_download">İndirilenler</string>
     <string name="menu_fav">Başlangıç sayfası olarak ayarla</string>
     <string name="menu_sc">Ana ekrana ekle</string>
-    <string name="menu_sort">… göre sırala</string>
-    <string name="menu_filter">... göre filtrele</string>
+    <string name="menu_sort">Sırala …</string>
+    <string name="menu_filter">Filtrele …</string>
     <string name="menu_share_link">Bağlantıyı paylaş</string>
     <string name="menu_save_home">Ana sayfaya kaydet</string>
     <string name="menu_save_bookmark">Yer işareti koy</string>
-    <string name="menu_save_as">… olarak kaydet</string>
+    <string name="menu_save_as">Farklı kaydet …</string>
     <string name="menu_save_pdf">PDF olarak kaydet</string>
     <string name="menu_shareClipboard">Panoya kopyala</string>
     <string name="menu_other_searchSite">Sayfada bul</string>
@@ -65,7 +65,7 @@
     <!-- Settings -->
     <string name="setting_label">Ayarlar</string>
     <!-- browser setting -->
-    <string name="setting_title_browser">Tarayıcı Ayarları</string>
+    <string name="setting_title_browser">Tarayıcı ayarları</string>
     <string name="setting_title_search_engine">Arama motoru</string>
     <string name="setting_summary_search_engine_google">Google</string>
     <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
@@ -117,8 +117,8 @@
     <string name="clear_title_deleteDatabase">Veritabanını sil</string>
     <string name="clear_summary_deleteDatabase">Tüm veritabanını sil (Başlangıç sayfası, yer işaretleri, geçmiş ve beyaz listeler).</string>
     <!-- App setting -->
-    <string name="setting_title_app">Uygulama Ayarları</string>
-    <string name="setting_title_ui">Davranış/Kullanıcı Arayüzü</string>
+    <string name="setting_title_app">Uygulama ayarları</string>
+    <string name="setting_title_ui">Davranış | Kullanıcı arayüzü</string>
     <string name="setting_title_data">Yedekle</string>
     <string name="setting_filter">Yer işareti filtresi</string>
     <string name="setting_title_fav">Başlangıç sayfası</string>
@@ -176,7 +176,7 @@
     <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
-    <string name="toast_backup">Veriler yedeklensin mi? Eski yedek varsa, üzerine yazılacaktır.</string>
+    <string name="toast_backup">Veriler yedeklensin mi? Eski yedek varsa üzerine yazılacaktır.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Temizle</string>
     <string name="whitelist_edit_hint">Alan adı</string>
@@ -196,7 +196,7 @@
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
     <string name="menu_reload">Yeniden yükle</string>
     <string name="menu_restart">Sekmeleri yeniden başlat ve yükle</string>
-    <string name="profile_warning">Üzerine yazan:</string>
+    <string name="profile_warning">Üzerine yazılan:</string>
     <string name="setting_title_screenOn">Ekranı açık tut</string>
     <string name="setting_title_audioBackground">Sesi arka planda oynat</string>
     <!-- License changelog -->
