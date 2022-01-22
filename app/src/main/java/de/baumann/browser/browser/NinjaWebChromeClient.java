@@ -44,8 +44,19 @@ public class NinjaWebChromeClient extends WebChromeClient {
     @Override
     public boolean onCreateWindow(WebView view, boolean dialog, boolean userGesture, android.os.Message resultMsg) {
         Context context = view.getContext();
-        Uri webpage = Uri.parse(resultMsg.toString());
-        BrowserUnit.intentURL(context, webpage);
+        NinjaWebView newWebView = new NinjaWebView(context);
+        view.addView(newWebView);
+        WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
+        transport.setWebView(newWebView);
+        resultMsg.sendToTarget();
+        newWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                newWebView.initPreferences(request.getUrl().toString());
+                BrowserUnit.intentURL(context, request.getUrl());
+                return true;
+            }
+        });
         return true;
     }
 

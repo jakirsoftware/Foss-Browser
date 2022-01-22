@@ -472,7 +472,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void showOverview() {
-
         setSelectedTab();
         bottomSheetDialog_OverView.setVisibility(View.VISIBLE);
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", 0);
@@ -482,8 +481,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void hideOverview () {
-
-
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", bottomSheetDialog_OverView.getHeight());
         animation.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
         animation.start();
@@ -491,8 +488,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void showTabView () {
-
-
         bottom_navigation.setSelectedItemId(R.id.page_0);
         bottomSheetDialog_OverView.setVisibility(View.VISIBLE);
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", 0);
