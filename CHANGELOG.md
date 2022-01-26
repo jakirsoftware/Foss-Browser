@@ -2,6 +2,7 @@
 
 - fix: popup menu in Overview
 - fix: searchbar not hiding in back pressing #852
+- fix: edit favorites layout not scrolling #854
 
 ### v 8.9
 
