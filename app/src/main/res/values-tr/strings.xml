@@ -48,7 +48,7 @@
     <string name="menu_save_bookmark">Yer işareti koy</string>
     <string name="menu_save_as">Farklı kaydet …</string>
     <string name="menu_save_pdf">PDF olarak kaydet</string>
-    <string name="menu_shareClipboard">Bağlantıyı kopyala</string>
+    <string name="menu_shareClipboard">Panoya kopyala</string>
     <string name="menu_other_searchSite">Sayfada bul</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Başlık:</string>
