@@ -1,3 +1,7 @@
+### v 9.0
+
+- fix: popup menu in Overview
+
 ### v 8.9
 
 - fix: some webpages show half the screen #817
