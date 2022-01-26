@@ -1,6 +1,7 @@
 ### v 9.0
 
 - fix: popup menu in Overview
+- fix: searchbar not hiding in back pressing #852
 
 ### v 8.9
 

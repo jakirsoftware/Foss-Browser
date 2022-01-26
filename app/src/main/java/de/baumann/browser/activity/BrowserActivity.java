@@ -394,7 +394,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             case KeyEvent.KEYCODE_BACK:
                 if (bottomAppBar.getVisibility() == View.GONE) hideOverview();
                 else if (fullscreenHolder != null || customView != null || videoView != null) Log.v(TAG, "FOSS Browser in fullscreen mode");
-                else if (list_search.getVisibility() == View.VISIBLE) omnibox_close.performClick();
+                else if (list_search.getVisibility() == View.VISIBLE) omniBox_text.clearFocus();
                 else if (searchPanel.getVisibility() == View.VISIBLE) {
                     searchOnSite = false;
                     searchBox.setText("");
