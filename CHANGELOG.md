@@ -1,8 +1,9 @@
-### v 9.0 (WIP)
+### v 9.0
 
 - fix: popup menu in Overview
 - fix: searchbar not hiding in back pressing #852
 - fix: edit favorites layout not scrolling #854
+- updated: translations
 
 ### v 8.9
 

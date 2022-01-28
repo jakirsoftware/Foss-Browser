@@ -415,7 +415,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     public synchronized void showAlbum(AlbumController controller) {
         if (sp.getBoolean("hideToolbar", true)) {
             ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-            animation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
+            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
             animation.start(); }
         View av = (View) controller;
         if (currentAlbumController != null) currentAlbumController.deactivate();
@@ -476,14 +476,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         setSelectedTab();
         bottomSheetDialog_OverView.setVisibility(View.VISIBLE);
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", 0);
-        animation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
+        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
         animation.start();
         bottomAppBar.setVisibility(View.GONE);
     }
 
     public void hideOverview () {
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", bottomSheetDialog_OverView.getHeight());
-        animation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
+        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
         animation.start();
         bottomAppBar.setVisibility(View.VISIBLE);
     }
@@ -492,7 +492,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         bottom_navigation.setSelectedItemId(R.id.page_0);
         bottomSheetDialog_OverView.setVisibility(View.VISIBLE);
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", 0);
-        animation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
+        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
         animation.start();
         bottomAppBar.setVisibility(View.GONE);
     }
@@ -1340,14 +1340,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (animation==null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                        animation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
+                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                         animation.start(); } }
             }
             public void onSwipeTop(){
                 if (!ninjaWebView.canScrollVertically(0) && sp.getBoolean("hideToolbar", true)) {
                     if (animation==null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                        animation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
+                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                         animation.start(); } }
             }
         };
@@ -1359,12 +1359,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     if (scrollY > oldScrollY) {
                         if (animation==null || !animation.isRunning()) {
                             animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                            animation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
+                            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                             animation.start(); } }
                     else if (scrollY < oldScrollY) {
                         if (animation==null || !animation.isRunning()) {
                             animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                            animation.setDuration(getResources().getInteger(android.R.integer.config_mediumAnimTime));
+                            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                             animation.start(); }
                     }
                 }
@@ -1377,7 +1377,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         else ninjaWebView.loadUrl(url);
 
         if (currentAlbumController != null) {
-            ninjaWebView.setPredecessor(currentAlbumController);  //save currentAlbumController and use when TAB is closed via Back button
+            ninjaWebView.setPredecessor(currentAlbumController);
+            //save currentAlbumController and use when TAB is closed via Back button
             int index = BrowserContainer.indexOf(currentAlbumController) + 1;
             BrowserContainer.add(ninjaWebView, index); }
         else BrowserContainer.add(ninjaWebView);
