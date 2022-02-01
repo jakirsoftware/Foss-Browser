@@ -283,9 +283,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initOmniBox();
         initSearchPanel();
         initOverview();
-        if (sp.getBoolean("start_tabStart", false)){
-            //put showOverview first. May be closed again later depending on intent
-            showOverview(); }
         dispatchIntent(getIntent());
 
         //restore open Tabs from shared preferences if app got killed
@@ -307,6 +304,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         //if still no open Tab open default page
         if (BrowserContainer.size() < 1) {
+            if (sp.getBoolean("start_tabStart", false))showOverview();
             addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true,false,"");
             getIntent().setAction(""); }
     }

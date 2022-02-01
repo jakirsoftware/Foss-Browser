@@ -8,6 +8,7 @@
 - fix: popup menu in Overview
 - fix: searchbar not hiding in back pressing #852
 - fix: edit favorites layout not scrolling #854
+- fix: open external link shows Overview #858
 - updated: translations
 
 ### v 8.9
