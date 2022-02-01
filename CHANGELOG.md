@@ -1,3 +1,8 @@
+### v 9.1
+
+- fix: removed unnecessary toasts in fastToggle
+- new: switched license to APGL
+
 ### v 9.0
 
 - fix: popup menu in Overview
