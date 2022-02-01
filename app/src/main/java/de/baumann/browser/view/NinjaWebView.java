@@ -55,17 +55,12 @@ public class NinjaWebView extends WebView implements AlbumController {
     public NinjaWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
-
-    public NinjaWebView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
+    public NinjaWebView(Context context, AttributeSet attrs, int defStyleAttr) { super(context, attrs, defStyleAttr); }
 
     @Override
     public void onScrollChanged(int l, int t, int old_l, int old_t) {
         super.onScrollChanged(l, t, old_l, old_t);
-        if (onScrollChangeListener != null) {
-            onScrollChangeListener.onScrollChange(t, old_t);
-        }
+        if (onScrollChangeListener != null) onScrollChangeListener.onScrollChange(t, old_t);
     }
 
     public void setOnScrollChangeListener(OnScrollChangeListener onScrollChangeListener) {
@@ -168,9 +163,7 @@ public class NinjaWebView extends WebView implements AlbumController {
 
         String userAgent = getUserAgent(desktopMode);
         webSettings.setUserAgentString(userAgent);
-        if (android.os.Build.VERSION.SDK_INT >= 26) {
-            webSettings.setSafeBrowsingEnabled(true);
-        }
+        if (android.os.Build.VERSION.SDK_INT >= 26) webSettings.setSafeBrowsingEnabled(true);
         webSettings.setSupportZoom(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
@@ -178,26 +171,15 @@ public class NinjaWebView extends WebView implements AlbumController {
         webSettings.setTextZoom(Integer.parseInt(Objects.requireNonNull(sp.getString("sp_fontSize", "100"))));
 
         if (sp.getBoolean("sp_autofill", true)) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
-            } else {
-                webSettings.setSaveFormData(true);
-            }
-        } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
-            } else {
-                webSettings.setSaveFormData(false);
-            }
-        }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_YES);
+            else webSettings.setSaveFormData(true); }
+        else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) this.setImportantForAutofill(View.IMPORTANT_FOR_AUTOFILL_NO);
+            else webSettings.setSaveFormData(false); }
 
-        if (listTrusted.isWhite(url)) {
-            profile = "profileTrusted";
-        } else if (listStandard.isWhite(url)) {
-            profile = "profileStandard";
-        } else if (listProtected.isWhite(url)) {
-            profile = "profileProtected";
-        }
+        if (listTrusted.isWhite(url)) profile = "profileTrusted";
+        else if (listStandard.isWhite(url)) profile = "profileStandard";
+        else if (listProtected.isWhite(url)) profile = "profileProtected";
 
         webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean(profile + "_saveData",true));
         webSettings.setBlockNetworkImage(!sp.getBoolean(profile + "_images", true));
@@ -218,20 +200,15 @@ public class NinjaWebView extends WebView implements AlbumController {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         profile = sp.getString("profile", "profileStandard");
         String profileOriginal = profile;
-        if (listTrusted.isWhite(url)) {
-            profile = "profileTrusted";
-        } else if (listStandard.isWhite(url)) {
-            profile = "profileStandard";
-        } else if (listProtected.isWhite(url)) {
-            profile = "profileProtected";
-        }
+        if (listTrusted.isWhite(url)) profile = "profileTrusted";
+        else if (listStandard.isWhite(url)) profile = "profileStandard";
+        else if (listProtected.isWhite(url)) profile = "profileProtected";
+        
         CookieManager manager = CookieManager.getInstance();
         if (sp.getBoolean(profile + "_cookies", false)) {
             manager.setAcceptCookie(true);
-            manager.getCookie(url);
-        } else {
-            manager.setAcceptCookie(false);
-        }
+            manager.getCookie(url); }
+        else manager.setAcceptCookie(false);
         profile = profileOriginal;
     }
 
@@ -253,13 +230,9 @@ public class NinjaWebView extends WebView implements AlbumController {
                 break;
         }
 
-        if (listTrusted.isWhite(url)) {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_trusted);
-        } else if (listStandard.isWhite(url)) {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
-        } else if (listProtected.isWhite(url)) {
-            omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
-        }
+        if (listTrusted.isWhite(url)) omniBox_tab.setImageResource(R.drawable.icon_profile_trusted);
+        else if (listStandard.isWhite(url)) omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
+        else if (listProtected.isWhite(url)) omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
     }
 
     public void setProfileDefaultValues() {
@@ -320,7 +293,8 @@ public class NinjaWebView extends WebView implements AlbumController {
                 .putString("profile", "profileChanged").apply();
     }
 
-    public void putProfileBoolean (String string, Chip chip_profile_trusted, Chip chip_profile_standard, Chip chip_profile_protected, Chip chip_profile_changed) {
+    public void putProfileBoolean (String string, TextView dialog_titleProfile, Chip chip_profile_trusted,
+                                   Chip chip_profile_standard, Chip chip_profile_protected, Chip chip_profile_changed) {
         switch (string) {
             case "_images":
                 sp.edit().putBoolean("profileChanged_images", !sp.getBoolean("profileChanged_images", true)).apply();
@@ -361,32 +335,38 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
         this.initPreferences("");
 
+        String textTitle;
         switch (Objects.requireNonNull(profile)) {
             case "profileTrusted":
                 chip_profile_trusted.setChecked(true);
                 chip_profile_standard.setChecked(false);
                 chip_profile_protected.setChecked(false);
                 chip_profile_changed.setChecked(false);
+                textTitle = this.context.getString(R.string.setting_title_profiles_active) + ": " + this.context.getString(R.string.setting_title_profiles_trusted);
                 break;
             case "profileStandard":
                 chip_profile_trusted.setChecked(false);
                 chip_profile_standard.setChecked(true);
                 chip_profile_protected.setChecked(false);
                 chip_profile_changed.setChecked(false);
+                textTitle = this.context.getString(R.string.setting_title_profiles_active) + ": " + this.context.getString(R.string.setting_title_profiles_standard);
                 break;
             case "profileProtected":
                 chip_profile_trusted.setChecked(false);
                 chip_profile_standard.setChecked(false);
                 chip_profile_protected.setChecked(true);
                 chip_profile_changed.setChecked(false);
+                textTitle = this.context.getString(R.string.setting_title_profiles_active) + ": " + this.context.getString(R.string.setting_title_profiles_protected);
                 break;
             default:
                 chip_profile_trusted.setChecked(false);
                 chip_profile_standard.setChecked(false);
                 chip_profile_protected.setChecked(false);
                 chip_profile_changed.setChecked(true);
+                textTitle = this.context.getString(R.string.setting_title_profiles_active) + ": " + this.context.getString(R.string.setting_title_profiles_changed);
                 break;
         }
+        dialog_titleProfile.setText(textTitle);
     }
 
     public boolean getBoolean (String string) {
@@ -433,9 +413,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         requestHeaders.put("X-Requested-With","com.duckduckgo.mobile.android");
 
         profile = sp.getString("profile", "profileStandard");
-        if (sp.getBoolean(profile + "_saveData", false)) {
-            requestHeaders.put("Save-Data", "on");
-        }
+        if (sp.getBoolean(profile + "_saveData", false)) requestHeaders.put("Save-Data", "on");
         return requestHeaders;
     }
 
@@ -457,8 +435,8 @@ public class NinjaWebView extends WebView implements AlbumController {
                     channel.setShowBadge(true);
                     channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
                     NotificationManager notificationManager = this.context.getSystemService(NotificationManager.class);
-                    notificationManager.createNotificationChannel(channel);
-                }
+                    notificationManager.createNotificationChannel(channel); }
+
                 NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this.context, "2")
                         .setSmallIcon(R.drawable.icon_audio)
                         .setAutoCancel(true)
@@ -466,14 +444,10 @@ public class NinjaWebView extends WebView implements AlbumController {
                         .setContentText(this.context.getString(R.string.setting_title_audioBackground))
                         .setContentIntent(pendingIntent); //Set the intent that will fire when the user taps the notification
                 Notification buildNotification = mBuilder.build();
-                mNotifyMgr.notify(2, buildNotification);
-            } else {
-                mNotifyMgr.cancel(2);
-            }
-            super.onWindowVisibilityChanged(View.VISIBLE);
-        } else {
-            super.onWindowVisibilityChanged(visibility);
-        }
+                mNotifyMgr.notify(2, buildNotification); }
+            else mNotifyMgr.cancel(2);
+            super.onWindowVisibilityChanged(View.VISIBLE); }
+        else super.onWindowVisibilityChanged(visibility);
     }
 
     @Override
@@ -531,11 +505,8 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public synchronized void updateTitle(int progress) {
-        if (foreground && !stopped) {
-            browserController.updateProgress(progress);
-        } else if (foreground) {
-            browserController.updateProgress(BrowserUnit.LOADING_STOPPED);
-        }
+        if (foreground && !stopped) browserController.updateProgress(progress);
+        else if (foreground) browserController.updateProgress(BrowserUnit.LOADING_STOPPED);
     }
 
     public synchronized void updateTitle(String title) {
@@ -592,8 +563,8 @@ public class NinjaWebView extends WebView implements AlbumController {
                 newUserAgent=newUserAgent.replace(prefix,desktopPrefix);
             } catch (Exception e) {
                 e.printStackTrace();
-            }
-        } else {
+            } }
+        else {
             try {
                 newUserAgent=newUserAgent.replace(prefix,mobilePrefix);
             } catch (Exception e) {
@@ -604,11 +575,8 @@ public class NinjaWebView extends WebView implements AlbumController {
         //Override UserAgent if own UserAgent is defined
         if (!sp.contains("userAgentSwitch")){  //if new switch_text_preference has never been used initialize the switch
             if (Objects.requireNonNull(sp.getString("sp_userAgent", "")).equals("")) {
-                sp.edit().putBoolean("userAgentSwitch", false).apply();
-            }else{
-                sp.edit().putBoolean("userAgentSwitch", true).apply();
-            }
-        }
+                sp.edit().putBoolean("userAgentSwitch", false).apply(); }
+            else sp.edit().putBoolean("userAgentSwitch", true).apply(); }
 
         String ownUserAgent = sp.getString("sp_userAgent", "");
         assert ownUserAgent != null;
@@ -629,9 +597,8 @@ public class NinjaWebView extends WebView implements AlbumController {
     public void toggleNightMode() {
         nightMode=!nightMode;
         if (nightMode) {
-            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
-                WebSettingsCompat.setForceDark(this.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
-            } else {
+            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) WebSettingsCompat.setForceDark(this.getSettings(), WebSettingsCompat.FORCE_DARK_ON);
+            else {
                 Paint paint = new Paint();
                 ColorMatrix matrix = new ColorMatrix();
                 matrix.set(NEGATIVE_COLOR);
@@ -642,14 +609,10 @@ public class NinjaWebView extends WebView implements AlbumController {
                 ColorMatrixColorFilter filter = new ColorMatrixColorFilter(concat);
                 paint.setColorFilter(filter);
                 // maybe sometime LAYER_TYPE_NONE would better?
-                this.setLayerType(View.LAYER_TYPE_HARDWARE, paint);
-            }
-        } else {
-            if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
-                WebSettingsCompat.setForceDark(this.getSettings(), WebSettingsCompat.FORCE_DARK_OFF);
-            } else {
-                this.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-            }
+                this.setLayerType(View.LAYER_TYPE_HARDWARE, paint); } }
+        else {
+            if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) WebSettingsCompat.setForceDark(this.getSettings(), WebSettingsCompat.FORCE_DARK_OFF);
+            else this.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         }
     }
 
@@ -664,7 +627,6 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public void setFavicon(Bitmap favicon) {
         this.favicon = favicon;
-
         //Save faviconView for existing bookmarks or start site entries
         FaviconHelper faviconHelper = new FaviconHelper(context);
         RecordAction action = new RecordAction(context);
@@ -673,9 +635,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         list = action.listEntries((Activity) context);
         action.close();
         for (Record listItem: list){
-            if(listItem.getURL().equals(getUrl())){
-                if (faviconHelper.getFavicon(listItem.getURL())==null) faviconHelper.addFavicon(this.context, getUrl(),getFavicon());
-            }
+            if(listItem.getURL().equals(getUrl()) && faviconHelper.getFavicon(listItem.getURL())==null) faviconHelper.addFavicon(this.context, getUrl(),getFavicon());
         }
     }
 

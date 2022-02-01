@@ -14,29 +14,26 @@ import android.view.View;
 import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import de.baumann.browser.unit.HelperUnit;
+
 
 public class FaviconHelper extends SQLiteOpenHelper {
+
     // Database Version
     private static final int DATABASE_VERSION = 1;
-
     // Database Name
     private static final String DATABASE_NAME = "favicon.db";
-
     // Table Name
     private static final String TABLE_FAVICON = "Favicon";
-
     // Column names
     private static final String DOMAIN = "domain";
     private static final String IMAGE = "image";
-
     // create Table statement
     private static final String CREATE_TABLE_FAVICON = "CREATE TABLE " + TABLE_FAVICON + "("+
             DOMAIN + " TEXT," +
@@ -48,19 +45,17 @@ public class FaviconHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         db.execSQL(CREATE_TABLE_FAVICON);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_FAVICON);
         onCreate(db);
     }
 
     public synchronized void addFavicon(Context context, String url, Bitmap bitmap) throws SQLiteException {
-        String domain= Objects.requireNonNull(getDomain(url)).trim();
+        String domain = HelperUnit.domain(url);
         if (bitmap == null) return;
         SQLiteDatabase database = this.getWritableDatabase();
         //first delete existing Favicon for domain if available
@@ -82,29 +77,24 @@ public class FaviconHelper extends SQLiteOpenHelper {
 
     public synchronized Bitmap getFavicon(String url){
         if (url==null) return null;
-        String domain=getDomain(url);
-        if (domain==null) return null;
-
+        String domain=HelperUnit.domain(url);
         SQLiteDatabase database = this.getReadableDatabase();
-
         Cursor cursor;
         cursor = database.query(TABLE_FAVICON,
                 new String[]{DOMAIN,
                         IMAGE},
                 DOMAIN + " = ?",
                 new String[]{domain}, null, null, null, null);
-
         byte[] image;
 
         if (cursor != null && cursor.moveToFirst()){
             image = cursor.getBlob(1);
             cursor.close();
             database.close();
-            return getBitmap(image);
-        }else{
+            return getBitmap(image); }
+        else {
             database.close();
-            return null;
-        }
+            return null;}
     }
     public synchronized List<String> getAllFaviconDomains(){
         SQLiteDatabase database = this.getReadableDatabase();
@@ -134,16 +124,14 @@ public class FaviconHelper extends SQLiteOpenHelper {
             for(String faviconURL:faviconURLs){
                 boolean found=false;
                 for(Record entry:allEntries){
-                    if(Objects.equals(getDomain(entry.getURL()), faviconURL)){
+                    if(Objects.equals(HelperUnit.domain(entry.getURL()), faviconURL)){
                         found=true;
-                        break;
-                    }
+                        break;}
                 }
                 //If there is no entry in StartSite, Bookmarks, or History using this Favicon -> delete it
                 if(!found) {
                     deleteFavicon(faviconURL);
-                    Log.d("Favicon delete", faviconURL);
-                }
+                    Log.d("Favicon delete", faviconURL);}
             }
         });
     }
@@ -158,25 +146,12 @@ public class FaviconHelper extends SQLiteOpenHelper {
         return BitmapFactory.decodeByteArray(byteimage, 0, byteimage.length);
     }
 
-    public static String getDomain(String url){
-        try {
-            return new URI(url).getHost();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public static void setFavicon(Context context, View view, String url, int id, int idImage) {
         ImageView faviconView = view.findViewById(id);
         FaviconHelper faviconHelper = new FaviconHelper(context);
         Bitmap bitmap=faviconHelper.getFavicon(url);
         if (faviconView !=null) {
-            if (bitmap != null) {
-                faviconView.setImageBitmap(bitmap);
-            } else {
-                faviconView.setImageResource(idImage);
-            }
-        }
+            if (bitmap != null) faviconView.setImageBitmap(bitmap);
+            else faviconView.setImageResource(idImage); }
     }
 }

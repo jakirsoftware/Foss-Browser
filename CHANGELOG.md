@@ -1,6 +1,7 @@
 ### v 9.1
 
 - fix: removed unnecessary toasts in fastToggle
+- fix: Browser crash on search with "%" #861
 - new: switched license to APGL
 
 ### v 9.0
