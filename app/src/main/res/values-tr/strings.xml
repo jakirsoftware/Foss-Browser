@@ -85,7 +85,7 @@
     <string name="setting_title_profiles_trustedList">Güvenilir web siteleri</string>
     <string name="setting_title_profiles_standardList">Standart web siteleri</string>
     <string name="setting_title_profiles_protectedList">Korunulan web siteleri</string>
-    <string name="setting_title_profiles_startApp">Uygulama başlangıcında profil</string>
+    <string name="setting_title_profiles_startApp">Uygulama açılışında profil</string>
     <string name="setting_title_profiles_trusted">Güvenilir</string>
     <string name="setting_title_profiles_standard">Standart</string>
     <string name="setting_title_profiles_protected">Korunulan</string>
@@ -105,11 +105,11 @@
     <string name="setting_title_adblockHost">Engellenen içerik</string>
     <string name="setting_title_location">Konum</string>
     <string name="setting_title_history">Geçmiş</string>
-    <string name="setting_title_autofill">Form verisi</string>
-    <string name="setting_summary_autofill">Form verilerinin kaydedilmesini (Android Nougat ve daha eski sürümlerde) veya otomatik doldurma hizmetini (Android Oreo ve daha yeni sürümlerde) etkinleştirin.</string>
+    <string name="setting_title_autofill">Otomatik doldur</string>
+    <string name="setting_summary_autofill">Android Nougat ve altı sürümler için form verilerinin kaydedilmesini veya Android Oreo ve üstü sürümler için otomatik doldurma hizmetini etkinleştirir.</string>
     <!-- browser clear -->
     <string name="data_summary">Tüm dosyalar SD kartınızın \"Documents/browser_backup/\" dizinine aktarılacaktır.</string>
-    <string name="clear_title_quit">Uygulama çıkışında temizle</string>
+    <string name="clear_title_quit">Tarayıcıdan çıkarken temizle</string>
     <string name="clear_title_cache">Önbelleği temizle</string>
     <string name="clear_title_cookie">Çerezleri temizle</string>
     <string name="clear_title_history">Geçmişi temizle</string>
@@ -191,11 +191,11 @@
     <string name="setting_title_tabsReload">Sekmeleri yenile</string>
     <string name="setting_title_tabsRestore">Sekmeleri geri yükle</string>
     <string name="setting_title_userInterface">Kullanıcı arayüzü</string>
-    <string name="setting_summary_tabsReload">FOSS Tarayıcısı başlarken, son açılan sekmeleri yeniden yükle.</string>
+    <string name="setting_summary_tabsReload">FOSS Tarayıcısı başlarken, son açılan sekmeleri yenile.</string>
     <string name="setting_summary_tabsRestore">FOSS Tarayıcısı sistem tarafından durdurulduğunda, sekmeleri geri yükle.</string>
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
     <string name="menu_reload">Yenile</string>
-    <string name="menu_restart">Sekmeleri yeniden başlat ve yükle</string>
+    <string name="menu_restart">Sekmeleri yeniden başlat</string>
     <string name="profile_warning">Üzerine yazılan:</string>
     <string name="setting_title_screenOn">Ekranı açık tut</string>
     <string name="setting_title_audioBackground">Sesi arka planda oynat</string>
