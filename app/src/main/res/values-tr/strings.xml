@@ -97,11 +97,11 @@
     <!-- browser start -->
     <string name="setting_title_images">Resimler</string>
     <string name="setting_title_cookie">Çerezler</string>
-    <string name="setting_summary_cookie_delete">Etkinleştirilirse, güvenilir web sitelerinin çerezleri de dahil olmak üzere tüm çerezler silinecektir.</string>
+    <string name="setting_summary_cookie_delete">Güvenilir web sitelerinin çerezleri de dahil olmak üzere tüm çerezler silinecektir.</string>
     <string name="setting_title_javascript_popUp">Açılır pencereler</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_adblock">Reklam engelleyici</string>
-    <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için reklam engelleyiciyi etkinleştirin. Bu özellik etkinleştirildiğinde siteler ayrıca daha hızlı yüklenir.</string>
+    <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için reklam engelleyiciyi etkinleştirebilirsiniz. Bu özellik etkinleştirildiğinde siteler ayrıca daha hızlı yüklenir.</string>
     <string name="setting_title_adblockHost">Engellenen içerik</string>
     <string name="setting_title_location">Konum</string>
     <string name="setting_title_history">Geçmiş</string>
@@ -115,7 +115,7 @@
     <string name="clear_title_history">Geçmişi temizle</string>
     <string name="localData">Cihazda depolanan verileri temizle</string>
     <string name="clear_title_deleteDatabase">Veritabanını sil</string>
-    <string name="clear_summary_deleteDatabase">Tüm veritabanını sil (Başlangıç sayfası, yer işaretleri, geçmiş ve beyaz listeler).</string>
+    <string name="clear_summary_deleteDatabase">Başlangıç sayfası, yer işaretleri, geçmiş ve beyaz listeler dahil olmak üzere tüm veritabanı silinecektir.</string>
     <!-- App setting -->
     <string name="setting_title_app">Uygulama ayarları</string>
     <string name="setting_title_ui">Davranış | Kullanıcı arayüzü</string>
@@ -133,8 +133,8 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_title_behavior">Davranış</string>
-    <string name="setting_title_confirm_exit">Tarayıcıdan çıkmayı onayla</string>
-    <string name="setting_title_confirm_tab_close">Sekmeyi kapatmayı onayla</string>
+    <string name="setting_title_confirm_exit">Tarayıcıdan çıkarken onayla</string>
+    <string name="setting_title_confirm_tab_close">Sekmeyi kapatırken onayla</string>
     <string name="setting_overView_onStart_title">Başlangıçta göster</string>
     <string name="setting_gestures">Hareketler</string>
     <!-- gestures -->
@@ -160,7 +160,7 @@
     <string name="setting_gesture_11">Hızlı geçişi göster</string>
     <!-- Data -->
     <string name="title_appData">Uygulama verileri</string>
-    <string name="hint_database">Bu işlem, mevcut verileri silecektir. Devam edilsin mi?</string>
+    <string name="hint_database">Bu işlem mevcut verileri silecektir. Devam edilsin mi?</string>
     <string name="settings_data_restore">Geri yükle</string>
     <!-- Others setting -->
     <!-- Toast -->
@@ -171,7 +171,7 @@
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
     <string name="toast_invalid_domain">Geçersiz alan adı</string>
     <string name="toast_webview_forward">Sonraki site yüklenemiyor</string>
-    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
+    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmalısınız. Şimdi kapatılsın mı?</string>
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
@@ -191,8 +191,8 @@
     <string name="setting_title_tabsReload">Sekmeleri yenile</string>
     <string name="setting_title_tabsRestore">Sekmeleri geri yükle</string>
     <string name="setting_title_userInterface">Kullanıcı arayüzü</string>
-    <string name="setting_summary_tabsReload">FOSS Tarayıcısı başlarken, son açılan sekmeleri yenile.</string>
-    <string name="setting_summary_tabsRestore">FOSS Tarayıcısı sistem tarafından durdurulduğunda, sekmeleri geri yükle.</string>
+    <string name="setting_summary_tabsReload">FOSS Tarayıcısı açılırken son açılan sekmeleri yeniler.</string>
+    <string name="setting_summary_tabsRestore">FOSS Tarayıcısı sistem tarafından durdurulduğunda sekmeleri geri yükler.</string>
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
     <string name="menu_reload">Yenile</string>
     <string name="menu_restart">Sekmeleri yeniden başlat</string>
