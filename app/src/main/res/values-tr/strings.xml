@@ -106,7 +106,7 @@
     <string name="setting_title_location">Konum</string>
     <string name="setting_title_history">Geçmiş</string>
     <string name="setting_title_autofill">Otomatik doldur</string>
-    <string name="setting_summary_autofill">Android Nougat ve altı sürümler için form verilerinin kaydedilmesini veya Android Oreo ve üstü sürümler için otomatik doldurma hizmetini etkinleştirir.</string>
+    <string name="setting_summary_autofill">Android Nougat ve altı sürümler için form verilerinin kaydedilmesini, Android Oreo ve üstü sürümler içinse otomatik doldurma hizmetini etkinleştirir.</string>
     <!-- browser clear -->
     <string name="data_summary">Tüm dosyalar SD kartınızın \"Documents/browser_backup/\" dizinine aktarılacaktır.</string>
     <string name="clear_title_quit">Tarayıcıdan çıkarken temizle</string>
@@ -186,8 +186,8 @@
     <string name="menu_dayView">Gündüz görünümü</string>
     <string name="menu_nightView">Gece görünümü</string>
     <string name="setting_userScript">Özel JavaScript kodu</string>
-    <string name="setting_title_camera">Kamera kullanımına izin ver</string>
-    <string name="setting_title_microphone">Mikrofon kullanımına izin ver</string>
+    <string name="setting_title_camera">Kamera</string>
+    <string name="setting_title_microphone">Mikrofon</string>
     <string name="setting_title_tabsReload">Sekmeleri yenile</string>
     <string name="setting_title_tabsRestore">Sekmeleri geri yükle</string>
     <string name="setting_title_userInterface">Kullanıcı arayüzü</string>
