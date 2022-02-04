@@ -45,7 +45,7 @@
     <string name="menu_filter">Filtrele …</string>
     <string name="menu_share_link">Bağlantıyı paylaş</string>
     <string name="menu_save_home">Ana sayfaya kaydet</string>
-    <string name="menu_save_bookmark">Yer işareti koy</string>
+    <string name="menu_save_bookmark">Yer işareti ekle</string>
     <string name="menu_save_as">Farklı kaydet …</string>
     <string name="menu_save_pdf">PDF olarak kaydet</string>
     <string name="menu_shareClipboard">Panoya kopyala</string>
