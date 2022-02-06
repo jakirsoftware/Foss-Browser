@@ -108,7 +108,7 @@
     <string name="setting_title_autofill">Otomatik doldur</string>
     <string name="setting_summary_autofill">Android Nougat ve altı sürümler için form verilerinin kaydedilmesini, Android Oreo ve üstü sürümler içinse otomatik doldurma hizmetini etkinleştirir.</string>
     <!-- browser clear -->
-    <string name="data_summary">Verileriniz cihazınızın \"Documents/browser_backup/\" dizinine kopyalanacaktır.</string>
+    <string name="data_summary">Tüm dosyalar cihazın \"Documents/browser_backup/\" dizinine aktarılacaktır.</string>
     <string name="clear_title_quit">Tarayıcıdan çıkarken temizle</string>
     <string name="clear_title_cache">Önbelleği temizle</string>
     <string name="clear_title_cookie">Çerezleri temizle</string>
@@ -176,7 +176,7 @@
     <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
-    <string name="toast_backup">Verileriniz yedeklensin mi? Eski yedeğiniz varsa üzerine yazılacaktır.</string>
+    <string name="toast_backup">Veriler yedeklensin mi? Eski yedek varsa üzerine yazılacaktır.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Temizle</string>
     <string name="whitelist_edit_hint">Alan adı</string>
