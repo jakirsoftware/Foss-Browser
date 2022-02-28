@@ -54,6 +54,34 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/privacy_redirect">
+
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_youTube_string"
+            app:editTextSwitchKey="sp_youTube_switch"
+            android:title="@string/privacy_redirect_youTube"
+            android:defaultValue="https://invidious.snopyta.org/"/>
+
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_twitter_string"
+            app:editTextSwitchKey="sp_twitter_switch"
+            android:title="@string/privacy_redirect_twitter"
+            android:defaultValue="https://nitter.net/" />
+
+        <de.baumann.browser.preferences.EditTextSwitchPreference
+            android:selectable="true"
+            app:useSimpleSummaryProvider="true"
+            android:key="sp_instagram_string"
+            app:editTextSwitchKey="sp_instagram_switch"
+            android:title="@string/privacy_redirect_inst"
+            android:defaultValue="https://bibliogram.pussthecat.org/" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/setting_userScript">
 
         <de.baumann.browser.preferences.EditTextSwitchPreference

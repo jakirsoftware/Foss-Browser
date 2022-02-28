@@ -44,6 +44,7 @@ import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
+import de.baumann.browser.unit.HelperUnit;
 
 import java.util.HashMap;
 import java.util.List;
@@ -470,6 +471,19 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     @Override
     public synchronized void loadUrl(String url) {
+
+        if (sp.getBoolean("sp_youTube_switch", false) && HelperUnit.domain(url).contains("youtube.") || HelperUnit.domain(url).contains("youtu.be")) {
+            String substr =url.substring(url.indexOf("watch?v=") + 8);
+            url = sp.getString("sp_youTube_string", "https://invidious.snopyta.org/") + substr; }
+
+        if (sp.getBoolean("sp_twitter_switch", false) && HelperUnit.domain(url).contains("twitter.com")) {
+            String substr =url.substring(url.indexOf("twitter.com") + 12);
+            url = sp.getString("sp_twitter_string","https://nitter.net/") + substr; }
+
+        if (sp.getBoolean("sp_instagram_switch", false) && HelperUnit.domain(url).contains("instagram.com")) {
+            String substr =url.substring(url.indexOf("instagram.com") + 14);
+            url = sp.getString("sp_instagram_string", "https://bibliogram.pussthecat.org/") + substr; }
+
         initPreferences(BrowserUnit.queryWrapper(context, url.trim()));
         InputMethodManager imm = (InputMethodManager) this.context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(this.getWindowToken(), 0);

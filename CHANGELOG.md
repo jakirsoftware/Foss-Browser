@@ -1,8 +1,9 @@
-### v 9.1
+### v 9.1 (WIP)
 
 - fix: removed unnecessary toasts in fastToggle
 - fix: Browser crash on search with "%" #861
 - new: switched license to APGL
+- new: redirect YouTube/Instagram/Twitter links
 
 ### v 9.0
 
