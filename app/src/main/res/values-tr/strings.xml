@@ -45,7 +45,7 @@
     <string name="menu_filter">Filtrele …</string>
     <string name="menu_share_link">Bağlantıyı paylaş</string>
     <string name="menu_save_home">Ana sayfaya kaydet</string>
-    <string name="menu_save_bookmark">Yer işareti koy</string>
+    <string name="menu_save_bookmark">Yer işareti ekle</string>
     <string name="menu_save_as">Farklı kaydet …</string>
     <string name="menu_save_pdf">PDF olarak kaydet</string>
     <string name="menu_shareClipboard">Panoya kopyala</string>
@@ -85,7 +85,7 @@
     <string name="setting_title_profiles_trustedList">Güvenilir web siteleri</string>
     <string name="setting_title_profiles_standardList">Standart web siteleri</string>
     <string name="setting_title_profiles_protectedList">Korunulan web siteleri</string>
-    <string name="setting_title_profiles_startApp">Uygulama başlangıcında profil</string>
+    <string name="setting_title_profiles_startApp">Uygulama açılışında profil</string>
     <string name="setting_title_profiles_trusted">Güvenilir</string>
     <string name="setting_title_profiles_standard">Standart</string>
     <string name="setting_title_profiles_protected">Korunulan</string>
@@ -97,32 +97,32 @@
     <!-- browser start -->
     <string name="setting_title_images">Resimler</string>
     <string name="setting_title_cookie">Çerezler</string>
-    <string name="setting_summary_cookie_delete">Etkinleştirilirse, güvenilir web sitelerinin çerezleri de dahil olmak üzere tüm çerezler silinecektir.</string>
+    <string name="setting_summary_cookie_delete">Güvenilir web sitelerinin çerezleri de dahil olmak üzere tüm çerezler silinecektir.</string>
     <string name="setting_title_javascript_popUp">Açılır pencereler</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_adblock">Reklam engelleyici</string>
-    <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için reklam engelleyiciyi etkinleştirin. Bu özellik etkinleştirildiğinde siteler ayrıca daha hızlı yüklenir.</string>
+    <string name="setting_summary_adblock">Can sıkıcı reklamları engellemek için reklam engelleyiciyi etkinleştirebilirsiniz. Bu özellik etkinleştirildiğinde siteler ayrıca daha hızlı yüklenir.</string>
     <string name="setting_title_adblockHost">Engellenen içerik</string>
     <string name="setting_title_location">Konum</string>
     <string name="setting_title_history">Geçmiş</string>
-    <string name="setting_title_autofill">Form verisi</string>
-    <string name="setting_summary_autofill">Form verilerinin kaydedilmesini (Android Nougat ve daha eski sürümlerde) veya otomatik doldurma hizmetini (Android Oreo ve daha yeni sürümlerde) etkinleştirin.</string>
+    <string name="setting_title_autofill">Otomatik doldur</string>
+    <string name="setting_summary_autofill">Android Nougat ve altı sürümler için form verilerinin kaydedilmesini, Android Oreo ve üstü sürümler içinse otomatik doldurma hizmetini etkinleştirir.</string>
     <!-- browser clear -->
-    <string name="data_summary">Tüm dosyalar SD kartınızın \"Documents/browser_backup/\" dizinine aktarılacaktır.</string>
-    <string name="clear_title_quit">Uygulama çıkışında temizle</string>
+    <string name="data_summary">Tüm dosyalar cihazın \"Documents/browser_backup/\" dizinine aktarılacaktır.</string>
+    <string name="clear_title_quit">Tarayıcıdan çıkarken temizle</string>
     <string name="clear_title_cache">Önbelleği temizle</string>
     <string name="clear_title_cookie">Çerezleri temizle</string>
     <string name="clear_title_history">Geçmişi temizle</string>
     <string name="localData">Cihazda depolanan verileri temizle</string>
     <string name="clear_title_deleteDatabase">Veritabanını sil</string>
-    <string name="clear_summary_deleteDatabase">Tüm veritabanını sil (Başlangıç sayfası, yer işaretleri, geçmiş ve beyaz listeler).</string>
+    <string name="clear_summary_deleteDatabase">Başlangıç sayfası, yer işaretleri, geçmiş ve beyaz listeler dahil olmak üzere tüm veritabanı silinecektir.</string>
     <!-- App setting -->
     <string name="setting_title_app">Uygulama ayarları</string>
     <string name="setting_title_ui">Davranış | Kullanıcı arayüzü</string>
     <string name="setting_title_data">Yedekle</string>
     <string name="setting_filter">Yer işareti filtresi</string>
     <string name="setting_title_fav">Başlangıç sayfası</string>
-    <string name="setting_title_reload">Yeniden yüklemek için aşağı kaydır</string>
+    <string name="setting_title_reload">Yenilemek için aşağı kaydır</string>
     <string name="setting_title_searchEngine">Özel arama motoru</string>
     <string name="setting_title_userAgent">Özel kullanıcı aracısı</string>
     <string name="setting_title_fingerPrint">Parmak izi koruması</string>
@@ -133,8 +133,8 @@
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Araç çubuğunu gizle</string>
     <string name="setting_title_behavior">Davranış</string>
-    <string name="setting_title_confirm_exit">Tarayıcıdan çıkmayı onayla</string>
-    <string name="setting_title_confirm_tab_close">Sekmeyi kapatmayı onayla</string>
+    <string name="setting_title_confirm_exit">Tarayıcıdan çıkarken onayla</string>
+    <string name="setting_title_confirm_tab_close">Sekmeyi kapatırken onayla</string>
     <string name="setting_overView_onStart_title">Başlangıçta göster</string>
     <string name="setting_gestures">Hareketler</string>
     <!-- gestures -->
@@ -160,7 +160,7 @@
     <string name="setting_gesture_11">Hızlı geçişi göster</string>
     <!-- Data -->
     <string name="title_appData">Uygulama verileri</string>
-    <string name="hint_database">Bu işlem, mevcut verileri silecektir. Devam edilsin mi?</string>
+    <string name="hint_database">Bu işlem mevcut verileri silecektir. Devam edilsin mi?</string>
     <string name="settings_data_restore">Geri yükle</string>
     <!-- Others setting -->
     <!-- Toast -->
@@ -171,7 +171,7 @@
     <string name="toast_input_empty">Hiçbir şey girmediniz</string>
     <string name="toast_invalid_domain">Geçersiz alan adı</string>
     <string name="toast_webview_forward">Sonraki site yüklenemiyor</string>
-    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmanız gerekir. Şimdi kapatılsın mı?</string>
+    <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmalısınız. Şimdi kapatılsın mı?</string>
     <string name="toast_quit">\"FOSS Tarayıcı\"sından çıkmak istiyor musunuz?</string>
     <string name="toast_quit_TAB">Sekmeyi kapatmak istiyor musunuz?</string>
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
@@ -186,16 +186,16 @@
     <string name="menu_dayView">Gündüz görünümü</string>
     <string name="menu_nightView">Gece görünümü</string>
     <string name="setting_userScript">Özel JavaScript kodu</string>
-    <string name="setting_title_camera">Kamera kullanımına izin ver</string>
-    <string name="setting_title_microphone">Mikrofon kullanımına izin ver</string>
-    <string name="setting_title_tabsReload">Sekmeleri yeniden yükle</string>
+    <string name="setting_title_camera">Kamera</string>
+    <string name="setting_title_microphone">Mikrofon</string>
+    <string name="setting_title_tabsReload">Sekmeleri yenile</string>
     <string name="setting_title_tabsRestore">Sekmeleri geri yükle</string>
     <string name="setting_title_userInterface">Kullanıcı arayüzü</string>
-    <string name="setting_summary_tabsReload">FOSS Tarayıcısı başlarken, son açılan sekmeleri yeniden yükle.</string>
-    <string name="setting_summary_tabsRestore">FOSS Tarayıcısı sistem tarafından durdurulduğunda, sekmeleri geri yükle.</string>
+    <string name="setting_summary_tabsReload">FOSS Tarayıcısı açılırken son açılan sekmeleri yeniler.</string>
+    <string name="setting_summary_tabsRestore">FOSS Tarayıcısı sistem tarafından durdurulduğunda sekmeleri geri yükler.</string>
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
-    <string name="menu_reload">Yeniden yükle</string>
-    <string name="menu_restart">Sekmeleri yeniden başlat ve yükle</string>
+    <string name="menu_reload">Yenile</string>
+    <string name="menu_restart">Sekmeleri yeniden başlat</string>
     <string name="profile_warning">Üzerine yazılan:</string>
     <string name="setting_title_screenOn">Ekranı açık tut</string>
     <string name="setting_title_audioBackground">Sesi arka planda oynat</string>
