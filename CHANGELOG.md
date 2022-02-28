@@ -2,6 +2,7 @@
 
 - fix: removed unnecessary toasts in fastToggle
 - fix: Browser crash on search with "%" #861
+- fix: progressbar visible when searching
 - new: switched license to APGL
 - new: redirect YouTube/Instagram/Twitter links
 - new: show number of tabs in overview

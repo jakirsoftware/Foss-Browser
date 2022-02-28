@@ -616,6 +616,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (omniBox_text.hasFocus()) {
                 omnibox_close.setVisibility(View.VISIBLE);
                 list_search.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
                 omnibox_overflow.setVisibility(View.GONE);
                 omniBox_overview.setVisibility(View.GONE);
                 omniBox_tab.setVisibility(View.GONE);
