@@ -4,6 +4,7 @@
 - fix: Browser crash on search with "%" #861
 - new: switched license to APGL
 - new: redirect YouTube/Instagram/Twitter links
+- new: show number of tabs in overview
 
 ### v 9.0
 

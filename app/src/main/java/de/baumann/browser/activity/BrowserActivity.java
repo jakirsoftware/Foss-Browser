@@ -180,6 +180,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private long filterBy;
 
     private boolean searchOnSite;
+    private int colorSecondary;
 
     private ValueCallback<Uri[]> filePathCallback = null;
     private AlbumController currentAlbumController = null;
@@ -228,6 +229,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         HelperUnit.initTheme(context);
         DynamicColors.applyToActivitiesIfAvailable(activity.getApplication());
+
+        TypedValue typedValue = new TypedValue();
+        Resources.Theme theme = context.getTheme();
+        theme.resolveAttribute(R.attr.colorSecondary, typedValue, true);
+        colorSecondary = typedValue.data;
 
         OrientationEventListener mOrientationListener = new OrientationEventListener(getApplicationContext()) {
             @Override
@@ -563,17 +569,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         progressBar = findViewById(R.id.main_progress_bar);
         bottomAppBar = findViewById(R.id.bottomAppBar);
 
-        TypedValue typedValue = new TypedValue();
-        Resources.Theme theme = context.getTheme();
-        theme.resolveAttribute(R.attr.colorSecondary, typedValue, true);
-        int color = typedValue.data;
-
         badgeDrawable = BadgeDrawable.create(context);
         badgeDrawable.setBadgeGravity(BadgeDrawable.TOP_END);
         badgeDrawable.setVerticalOffset(20);
         badgeDrawable.setHorizontalOffset(20);
         badgeDrawable.setNumber(BrowserContainer.size());
-        badgeDrawable.setBackgroundColor(color);
+        badgeDrawable.setBackgroundColor(colorSecondary);
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
 
         Button omnibox_overflow = findViewById(R.id.omnibox_overflow);
@@ -1476,6 +1477,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @SuppressLint({"UnsafeExperimentalUsageError", "UnsafeOptInUsageError"})
     private void updateOmniBox() {
+
+        BadgeDrawable badge = bottom_navigation.getOrCreateBadge(R.id.page_0);
+        badge.setVisible(true);
+        badge.setNumber(BrowserContainer.size());
+        badge.setBackgroundColor(colorSecondary);
+
 
         badgeDrawable.setNumber(BrowserContainer.size());
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
