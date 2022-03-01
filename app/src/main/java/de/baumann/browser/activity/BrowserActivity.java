@@ -967,19 +967,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
         builder.setView(dialogView);
-        FaviconHelper.setFavicon(context, dialogView, ninjaWebView.getUrl(), R.id.menu_icon, R.drawable.icon_image_broken);
 
         Chip chip_profile_standard = dialogView.findViewById(R.id.chip_profile_standard);
         Chip chip_profile_trusted = dialogView.findViewById(R.id.chip_profile_trusted);
         Chip chip_profile_changed = dialogView.findViewById(R.id.chip_profile_changed);
         Chip chip_profile_protected = dialogView.findViewById(R.id.chip_profile_protected);
 
-        TextView dialog_title = dialogView.findViewById(R.id.dialog_title);
-        dialog_title.setText(HelperUnit.domain(url));
-
-        TextView dialog_warning = dialogView.findViewById(R.id.dialog_warning);
-        String warning = getString(R.string.profile_warning) + " " + HelperUnit.domain(url);
-        dialog_warning.setText(warning);
+        TextView dialog_warning = dialogView.findViewById(R.id.dialog_titleDomain);
+        dialog_warning.setText(HelperUnit.domain(url));
 
         TextView dialog_titleProfile = dialogView.findViewById(R.id.dialog_titleProfile);
         ninjaWebView.putProfileBoolean("", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
@@ -1216,7 +1211,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         if (listTrusted.isWhite(url) || listStandard.isWhite(url) || listProtected.isWhite(url)) {
-            dialog_warning.setVisibility(View.VISIBLE);
+
+            TypedValue typedValue = new TypedValue();
+            Resources.Theme theme = context.getTheme();
+            theme.resolveAttribute(R.attr.colorError, typedValue, true);
+            int color = typedValue.data;
+
+            dialog_warning.setTextColor(color);
             chip_image.setEnabled(false);
             chip_adBlock.setEnabled(false);
             chip_saveData.setEnabled(false);
@@ -1483,8 +1484,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         badge.setVisible(true);
         badge.setNumber(BrowserContainer.size());
         badge.setBackgroundColor(colorSecondary);
-
-
+        
         badgeDrawable.setNumber(BrowserContainer.size());
         BadgeUtils.attachBadgeDrawable(badgeDrawable, omniBox_tab, findViewById(R.id.layout));
         omniBox_text.clearFocus();
