@@ -4,6 +4,7 @@
 - fix: Browser crash on search with "%" #861
 - fix: progressbar visible when searching
 - fix: UI of FastToggleDialog #872
+- fix: UI of edit/save as dialog #873
 - new: switched license to APGL
 - new: redirect YouTube/Instagram/Twitter links
 - new: show number of tabs in overview

@@ -1,47 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingEnd="20dp"
-    android:paddingStart="20dp"
-    android:paddingTop="20dp"
-    tools:ignore="Autofill">
+    tools:ignore="ContentDescription">
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp" >
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        tools:ignore="Autofill">
 
-        <EditText
-            android:textCursorDrawable="@null"
-            android:id="@+id/dialog_edit_1"
-            android:selectAllOnFocus="true"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:hint="@string/dialog_title_hint" />
+            android:layout_marginBottom="8dp" >
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:textCursorDrawable="@null"
+                android:id="@+id/dialog_edit_1"
+                android:selectAllOnFocus="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:hint="@string/dialog_title_hint" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" >
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:textCursorDrawable="@null"
-            android:id="@+id/dialog_edit_2"
-            android:selectAllOnFocus="true"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:imeOptions="actionDone"
-            android:inputType="text"
-            android:hint="@string/dialog_extension_hint" />
+            android:layout_marginTop="8dp" >
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:textCursorDrawable="@null"
+                android:id="@+id/dialog_edit_2"
+                android:selectAllOnFocus="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:hint="@string/dialog_extension_hint" />
 
-</LinearLayout >
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="end" >
+
+            <Button
+                android:id="@+id/ib_cancel"
+                style="@style/Widget.Material3.Button.TextButton.Dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_cancel" />
+
+            <Button
+                android:id="@+id/ib_ok"
+                style="@style/Widget.Material3.Button.TextButton.Dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_ok" />
+
+        </LinearLayout>
+
+    </LinearLayout >
+
+</ScrollView>

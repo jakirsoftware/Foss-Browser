@@ -2135,8 +2135,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     builderSubMenu.setView(dialogViewSubMenu);
                     builderSubMenu.setTitle(getString(R.string.menu_edit));
                     builderSubMenu.setIcon(R.drawable.icon_alert);
-                    builderSubMenu.setMessage(url);
-                    builderSubMenu.setPositiveButton(R.string.app_ok, (dialog3, whichButton) -> {
+                    dialogSubMenu = builderSubMenu.create();
+
+                    Button ib_cancel = dialogViewSubMenu.findViewById(R.id.ib_cancel);
+                    ib_cancel.setOnClickListener(view1 -> dialogSubMenu.cancel());
+                    Button ib_ok = dialogViewSubMenu.findViewById(R.id.ib_ok);
+                    ib_ok.setOnClickListener(view12 -> {
                         if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
                             RecordAction action = new RecordAction(context);
                             action.open(true);
@@ -2154,9 +2158,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, counter, STARTSITE_ITEM,chip_desktopMode.isChecked(),chip_nightMode.isChecked(),0));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_1); }
+                        dialogSubMenu.cancel();
                     });
-                    builderSubMenu.setNegativeButton(R.string.app_cancel, (dialog3, whichButton) -> builderSubMenu.setCancelable(true));
-                    dialogSubMenu = builderSubMenu.create();
+
                     dialogSubMenu.show();
                     HelperUnit.setupDialog(context, dialogSubMenu);
                     break;

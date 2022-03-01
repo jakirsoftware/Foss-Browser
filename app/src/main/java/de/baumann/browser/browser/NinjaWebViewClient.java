@@ -25,6 +25,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -549,15 +550,19 @@ public class NinjaWebViewClient extends WebViewClient {
         builder.setTitle("HttpAuthRequest");
         builder.setIcon(R.drawable.icon_alert);
         builder.setMessage(view.getUrl());
-        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+
+        AlertDialog dialog = builder.create();
+
+        Button ib_cancel = dialogView.findViewById(R.id.ib_cancel);
+        ib_cancel.setOnClickListener(view1 -> dialog.cancel());
+        Button ib_ok = dialogView.findViewById(R.id.ib_ok);
+        ib_ok.setOnClickListener(view12 -> {
             String user = pass_userNameET.getText().toString().trim();
             String pass = pass_userPWET.getText().toString().trim();
             handler.proceed(user, pass);
             dialog.cancel();
         });
-        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
 
-        AlertDialog dialog = builder.create();
         dialog.show();
         HelperUnit.setupDialog(context, dialog);
         dialog.setOnCancelListener(dialog1 -> {
