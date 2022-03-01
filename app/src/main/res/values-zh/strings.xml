@@ -79,6 +79,10 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">字体大小</string>
     <string name="setting_title_dom">DOM 存储</string>
+    <string name="privacy_redirect">重定向</string>
+    <string name="privacy_redirect_twitter">Twitter</string>
+    <string name="privacy_redirect_youTube">YouTube</string>
+    <string name="privacy_redirect_inst">Instagram</string>
     <string name="setting_title_save_data">请求“保存数据”</string>
     <string name="setting_title_profiles">配置文件</string>
     <string name="setting_title_profiles_edit">编辑配置文件</string>

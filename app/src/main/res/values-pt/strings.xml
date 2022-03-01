@@ -79,6 +79,10 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Tamanho da fonte</string>
     <string name="setting_title_dom">Armazenamento DOM</string>
+    <string name="privacy_redirect">Redirect</string>
+    <string name="privacy_redirect_twitter">Twitter</string>
+    <string name="privacy_redirect_youTube">YouTube</string>
+    <string name="privacy_redirect_inst">Instagram</string>
     <string name="setting_title_save_data">Solicitar \'Save Data\'</string>
     <string name="setting_title_profiles">Perfis</string>
     <string name="setting_title_profiles_edit">Editar Perfis</string>
