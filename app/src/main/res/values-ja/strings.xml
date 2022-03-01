@@ -79,7 +79,7 @@
     <string name="setting_summary_search_engine_metager">MetaGer</string>
     <string name="setting_title_font">フォントサイズ</string>
     <string name="setting_title_dom">ウェブストレージ</string>
-    <string name="privacy_redirect">Redirect</string>
+    <string name="privacy_redirect">リダイレクト</string>
     <string name="privacy_redirect_twitter">Twitter</string>
     <string name="privacy_redirect_youTube">YouTube</string>
     <string name="privacy_redirect_inst">Instagram</string>
