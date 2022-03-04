@@ -417,10 +417,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @Override
     public synchronized void showAlbum(AlbumController controller) {
-        if (sp.getBoolean("hideToolbar", true)) {
-            ObjectAnimator animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
-            animation.start(); }
         View av = (View) controller;
         if (currentAlbumController != null) currentAlbumController.deactivate();
         currentAlbumController = controller;
@@ -732,6 +728,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 break;
             case "23":
                 sp.edit().putBoolean("sp_audioBackground", !sp.getBoolean("sp_audioBackground", false)).apply();
+                break;
+            case "24":
+                copyLink(ninjaWebView.getUrl());
                 break;
         }
     }
@@ -1634,9 +1633,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab),  0);
         GridItem item_03 = new GridItem(0, getString(R.string.main_menu_new_tabProfile),  0);
         GridItem item_04 = new GridItem(0, getString(R.string.menu_share_link),  0);
-        GridItem item_05 = new GridItem(0, getString(R.string.menu_open_with),  0);
-        GridItem item_06 = new GridItem(0, getString(R.string.menu_save_as),  0);
-        GridItem item_07 = new GridItem(0, getString(R.string.menu_save_home),  0);
+        GridItem item_05 = new GridItem(0, getString(R.string.menu_shareClipboard),  0);
+        GridItem item_06 = new GridItem(0, getString(R.string.menu_open_with),  0);
+        GridItem item_07 = new GridItem(0, getString(R.string.menu_save_as),  0);
+        GridItem item_08 = new GridItem(0, getString(R.string.menu_save_home),  0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1668,19 +1668,30 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     shareLink("", url);
                     break;
                 case 4:
-                    BrowserUnit.intentURL(context, Uri.parse(url));
+                    copyLink(url);
                     break;
                 case 5:
+                    BrowserUnit.intentURL(context, Uri.parse(url));
+                    break;
+                case 6:
                     if (url.startsWith("data:")) {
                         DataURIParser dataURIParser= new DataURIParser(url);
                         HelperUnit.saveDataURI(dialog, activity, dataURIParser); }
                     else HelperUnit.saveAs(dialog, activity, url);
                     break;
-                case 6:
+                case 7:
                     save_atHome(title, url);
                     break;
             }
         });
+    }
+
+    private void copyLink (String url) {
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("text", url);
+        Objects.requireNonNull(clipboard).setPrimaryClip(clip);
+        String text = getString(R.string.toast_copy_successful) + ": " + url;
+        NinjaToast.show(this, text);
     }
 
     private void shareLink (String title, String url) {
@@ -1871,10 +1882,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog_overflow.cancel();
             if (position == 0) shareLink(title, url);
             else if (position == 1) {
-                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("text", url);
-                Objects.requireNonNull(clipboard).setPrimaryClip(clip);
-                NinjaToast.show(this, R.string.toast_copy_successful); }
+                copyLink(url);
+            }
             else if (position == 2) {
                 BrowserUnit.intentURL(context, Uri.parse(url));
             }

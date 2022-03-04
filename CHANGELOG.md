@@ -5,6 +5,8 @@
 - fix: progressbar visible when searching
 - fix: UI of FastToggleDialog #872
 - fix: UI of edit/save as dialog #873
+- new: gesture to copy link to clipboard #868
+- new: copy link to clipboard in context menu #878
 - new: switched license to APGL
 - new: redirect YouTube/Instagram/Twitter links
 - new: show number of tabs in overview

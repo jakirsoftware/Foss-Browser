@@ -56,6 +56,7 @@
         <item>@string/menu_desktopView</item>
         <item>@string/setting_title_screenOn</item>
         <item>@string/setting_title_audioBackground</item>
+        <item>@string/menu_shareClipboard</item>
     </string-array>
 
     <string-array name="setting_values_gestures">
@@ -82,6 +83,7 @@
         <item>21</item>
         <item>22</item>
         <item>23</item>
+        <item>24</item>
     </string-array>
 
     <!-- Start tab -->
