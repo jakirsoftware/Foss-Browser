@@ -1498,11 +1498,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             progressBar.setVisibility(View.GONE);
             ninjaWebView.setProfileIcon(omniBox_tab);
             ninjaWebView.initCookieManager(url);
+            listTrusted = new List_trusted(context);
 
             if (Objects.requireNonNull(ninjaWebView.getTitle()).isEmpty()) omniBox_text.setText(url);
             else omniBox_text.setText(ninjaWebView.getTitle());
 
-            if (url.startsWith("https://")) omniBox_tab.setOnClickListener(v -> showTabView());
+            if (url.startsWith("https://") || url.contains("about:blank") || listTrusted.isWhite(url)) omniBox_tab.setOnClickListener(v -> showTabView());
             else if (url.isEmpty()){
                 omniBox_tab.setOnClickListener(v -> showTabView());
                 omniBox_text.setText(""); }
