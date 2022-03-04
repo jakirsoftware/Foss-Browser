@@ -153,7 +153,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         setDownloadListener(downloadListener);
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
+    @SuppressLint({"SetJavaScriptEnabled", "JavascriptInterface"})
     @TargetApi(Build.VERSION_CODES.O)
     public synchronized void initPreferences(String url) {
 

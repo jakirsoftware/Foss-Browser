@@ -1651,6 +1651,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         gridList.add(gridList.size(), item_05);
         gridList.add(gridList.size(), item_06);
         gridList.add(gridList.size(), item_07);
+        gridList.add(gridList.size(), item_08);
 
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
         GridAdapter gridAdapter = new GridAdapter(context, gridList);
