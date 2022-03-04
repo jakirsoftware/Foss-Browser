@@ -551,7 +551,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_tab.setOnClickListener(v -> showTabView());
         omniBox_tab.setOnLongClickListener(view -> {
             performGesture("setting_gesture_tabButton");
-            return false;
+            return true;
         });
         omniBox_overview = findViewById(R.id.omnibox_overview);
 
@@ -577,7 +577,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omnibox_overflow.setOnClickListener(v -> showOverflow());
         omnibox_overflow.setOnLongClickListener(v -> {
             performGesture("setting_gesture_tabButton");
-            return false;
+            return true;
         });
         omnibox_overflow.setOnTouchListener(new SwipeTouchListener(context) {
             public void onSwipeTop() { performGesture("setting_gesture_nav_up"); }
@@ -638,7 +638,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         omniBox_overview.setOnClickListener(v -> showOverview());
         omniBox_overview.setOnLongClickListener(v -> {
             performGesture("setting_gesture_overViewButton");
-            return false;
+            return true;
         });
     }
 
@@ -961,343 +961,346 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         listProtected = new List_protected(context);
         ninjaWebView = (NinjaWebView) currentAlbumController;
         String url = ninjaWebView.getUrl();
-        assert url != null;
 
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
-        builder.setView(dialogView);
+        if (url != null) {
 
-        Chip chip_profile_standard = dialogView.findViewById(R.id.chip_profile_standard);
-        Chip chip_profile_trusted = dialogView.findViewById(R.id.chip_profile_trusted);
-        Chip chip_profile_changed = dialogView.findViewById(R.id.chip_profile_changed);
-        Chip chip_profile_protected = dialogView.findViewById(R.id.chip_profile_protected);
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            View dialogView = View.inflate(context, R.layout.dialog_toggle, null);
+            builder.setView(dialogView);
 
-        TextView dialog_warning = dialogView.findViewById(R.id.dialog_titleDomain);
-        dialog_warning.setText(HelperUnit.domain(url));
+            Chip chip_profile_standard = dialogView.findViewById(R.id.chip_profile_standard);
+            Chip chip_profile_trusted = dialogView.findViewById(R.id.chip_profile_trusted);
+            Chip chip_profile_changed = dialogView.findViewById(R.id.chip_profile_changed);
+            Chip chip_profile_protected = dialogView.findViewById(R.id.chip_profile_protected);
 
-        TextView dialog_titleProfile = dialogView.findViewById(R.id.dialog_titleProfile);
-        ninjaWebView.putProfileBoolean("", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            TextView dialog_warning = dialogView.findViewById(R.id.dialog_titleDomain);
+            dialog_warning.setText(HelperUnit.domain(url));
 
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            TextView dialog_titleProfile = dialogView.findViewById(R.id.dialog_titleProfile);
+            ninjaWebView.putProfileBoolean("", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
 
-        //ProfileControl
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
-        Chip chip_setProfileTrusted = dialogView.findViewById(R.id.chip_setProfileTrusted);
-        chip_setProfileTrusted.setChecked(listTrusted.isWhite(url));
-        chip_setProfileTrusted.setOnClickListener(v -> {
-            if (listTrusted.isWhite(ninjaWebView.getUrl())) listTrusted.removeDomain(HelperUnit.domain(url));
-            else {
-                listTrusted.addDomain(HelperUnit.domain(url));
-                listStandard.removeDomain(HelperUnit.domain(url));
-                listProtected.removeDomain(HelperUnit.domain(url)); }
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-        chip_setProfileTrusted.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_profiles_trustedList),Toast.LENGTH_SHORT).show();
-            return true;
-        });
+            //ProfileControl
 
-        Chip chip_setProfileProtected = dialogView.findViewById(R.id.chip_setProfileProtected);
-        chip_setProfileProtected.setChecked(listProtected.isWhite(url));
-        chip_setProfileProtected.setOnClickListener(v -> {
-            if (listProtected.isWhite(ninjaWebView.getUrl())) listProtected.removeDomain(HelperUnit.domain(url));
-            else {
-                listProtected.addDomain(HelperUnit.domain(url));
-                listTrusted.removeDomain(HelperUnit.domain(url));
-                listStandard.removeDomain(HelperUnit.domain(url)); }
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-        chip_setProfileProtected.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_profiles_protectedList),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-
-        Chip chip_setProfileStandard = dialogView.findViewById(R.id.chip_setProfileStandard);
-        chip_setProfileStandard.setChecked(listStandard.isWhite(url));
-        chip_setProfileStandard.setOnClickListener(v -> {
-            if (listStandard.isWhite(ninjaWebView.getUrl())) listStandard.removeDomain(HelperUnit.domain(url));
-            else {
-                listStandard.addDomain(HelperUnit.domain(url));
-                listTrusted.removeDomain(HelperUnit.domain(url));
-                listProtected.removeDomain(HelperUnit.domain(url)); }
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-        chip_setProfileStandard.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_profiles_standardList),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-
-        chip_profile_trusted.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileTrusted"));
-        chip_profile_trusted.setOnClickListener(v -> {
-            sp.edit().putString("profile", "profileTrusted").apply();
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-        chip_profile_trusted.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_profiles_trusted),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-
-        chip_profile_standard.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileStandard"));
-        chip_profile_standard.setOnClickListener(v -> {
-            sp.edit().putString("profile", "profileStandard").apply();
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-        chip_profile_standard.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_profiles_standard),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-
-        chip_profile_protected.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileProtected"));
-        chip_profile_protected.setOnClickListener(v -> {
-            sp.edit().putString("profile", "profileProtected").apply();
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-        chip_profile_protected.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_profiles_protected),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-
-        chip_profile_changed.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileChanged"));
-        chip_profile_changed.setOnClickListener(v -> {
-            sp.edit().putString("profile", "profileChanged").apply();
-            ninjaWebView.reload();
-            dialog.cancel();
-        });
-        chip_profile_changed.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_profiles_changed),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        // CheckBox
-
-        Chip chip_image = dialogView.findViewById(R.id.chip_image);
-        chip_image.setChecked(ninjaWebView.getBoolean("_images"));
-        chip_image.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_images),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_image.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_images", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_javaScript = dialogView.findViewById(R.id.chip_javaScript);
-        chip_javaScript.setChecked(ninjaWebView.getBoolean("_javascript"));
-        chip_javaScript.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_javascript),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_javaScript.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_javascript", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_javaScriptPopUp = dialogView.findViewById(R.id.chip_javaScriptPopUp);
-        chip_javaScriptPopUp.setChecked(ninjaWebView.getBoolean("_javascriptPopUp"));
-        chip_javaScriptPopUp.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_javascript_popUp),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_javaScriptPopUp.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_javascriptPopUp", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_cookie = dialogView.findViewById(R.id.chip_cookie);
-        chip_cookie.setChecked(ninjaWebView.getBoolean("_cookies"));
-        chip_cookie.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_cookie),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_cookie.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_cookies", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
-        chip_fingerprint.setChecked(ninjaWebView.getBoolean("_fingerPrintProtection"));
-        chip_fingerprint.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_fingerPrint),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_fingerprint.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_fingerPrintProtection", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_adBlock = dialogView.findViewById(R.id.chip_adBlock);
-        chip_adBlock.setChecked(ninjaWebView.getBoolean("_adBlock"));
-        chip_adBlock.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_adblock),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_adBlock.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_adBlock", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_saveData = dialogView.findViewById(R.id.chip_saveData);
-        chip_saveData.setChecked(ninjaWebView.getBoolean("_saveData"));
-        chip_saveData.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_save_data),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_saveData.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_saveData", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_history = dialogView.findViewById(R.id.chip_history);
-        chip_history.setChecked(ninjaWebView.getBoolean("_saveHistory"));
-        chip_history.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.album_title_history),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_history.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_saveHistory", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_location = dialogView.findViewById(R.id.chip_location);
-        chip_location.setChecked(ninjaWebView.getBoolean("_location"));
-        chip_location.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_location),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_location.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_location", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_microphone = dialogView.findViewById(R.id.chip_microphone);
-        chip_microphone.setChecked(ninjaWebView.getBoolean("_microphone"));
-        chip_microphone.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_microphone),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_microphone.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_microphone", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_camera = dialogView.findViewById(R.id.chip_camera);
-        chip_camera.setChecked(ninjaWebView.getBoolean("_camera"));
-        chip_camera.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_camera),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_camera.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_camera", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        Chip chip_dom = dialogView.findViewById(R.id.chip_dom);
-        chip_dom.setChecked(ninjaWebView.getBoolean("_dom"));
-        chip_dom.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_dom),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_dom.setOnClickListener(v -> {
-            ninjaWebView.setProfileChanged();
-            ninjaWebView.putProfileBoolean("_dom", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
-        });
-
-        if (listTrusted.isWhite(url) || listStandard.isWhite(url) || listProtected.isWhite(url)) {
-
-            TypedValue typedValue = new TypedValue();
-            Resources.Theme theme = context.getTheme();
-            theme.resolveAttribute(R.attr.colorError, typedValue, true);
-            int color = typedValue.data;
-
-            dialog_warning.setTextColor(color);
-            chip_image.setEnabled(false);
-            chip_adBlock.setEnabled(false);
-            chip_saveData.setEnabled(false);
-            chip_location.setEnabled(false);
-            chip_camera.setEnabled(false);
-            chip_microphone.setEnabled(false);
-            chip_history.setEnabled(false);
-            chip_fingerprint.setEnabled(false);
-            chip_cookie.setEnabled(false);
-            chip_javaScript.setEnabled(false);
-            chip_javaScriptPopUp.setEnabled(false);
-            chip_dom.setEnabled(false); }
-
-        Chip chip_toggleNightView = dialogView.findViewById(R.id.chip_toggleNightView);
-        chip_toggleNightView.setChecked(ninjaWebView.isNightMode());
-        chip_toggleNightView.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.menu_nightView),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_toggleNightView.setOnClickListener(v -> {
-            ninjaWebView.toggleNightMode();
-            isNightMode = ninjaWebView.isNightMode();
-            dialog.cancel();
-        });
-
-        Chip chip_toggleDesktop = dialogView.findViewById(R.id.chip_toggleDesktop);
-        chip_toggleDesktop.setChecked(ninjaWebView.isDesktopMode());
-        chip_toggleDesktop.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.menu_desktopView),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_toggleDesktop.setOnClickListener(v -> {
-            ninjaWebView.toggleDesktopMode(true);
-            dialog.cancel();
-        });
-
-        Chip chip_toggleScreenOn = dialogView.findViewById(R.id.chip_toggleScreenOn);
-        chip_toggleScreenOn.setChecked(sp.getBoolean("sp_screenOn", false));
-        chip_toggleScreenOn.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_screenOn),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_toggleScreenOn.setOnClickListener(v -> {
-            sp.edit().putBoolean("sp_screenOn", !sp.getBoolean("sp_screenOn", false)).apply();
-            saveOpenedTabs();
-            HelperUnit.triggerRebirth(context);
-            dialog.cancel();
-        });
-
-        Chip chip_toggleAudioBackground = dialogView.findViewById(R.id.chip_toggleAudioBackground);
-        chip_toggleAudioBackground.setChecked(sp.getBoolean("sp_audioBackground", false));
-        chip_toggleAudioBackground.setOnLongClickListener(view -> {
-            Toast.makeText(context,getString(R.string.setting_title_audioBackground),Toast.LENGTH_SHORT).show();
-            return true;
-        });
-        chip_toggleAudioBackground.setOnClickListener(v -> {
-            sp.edit().putBoolean("sp_audioBackground", !sp.getBoolean("sp_audioBackground", false)).apply();
-            dialog.cancel();
-        });
-
-        Button ib_reload = dialogView.findViewById(R.id.ib_reload);
-        ib_reload.setOnClickListener(view -> {
-            if (ninjaWebView != null) {
+            Chip chip_setProfileTrusted = dialogView.findViewById(R.id.chip_setProfileTrusted);
+            chip_setProfileTrusted.setChecked(listTrusted.isWhite(url));
+            chip_setProfileTrusted.setOnClickListener(v -> {
+                if (listTrusted.isWhite(ninjaWebView.getUrl())) listTrusted.removeDomain(HelperUnit.domain(url));
+                else {
+                    listTrusted.addDomain(HelperUnit.domain(url));
+                    listStandard.removeDomain(HelperUnit.domain(url));
+                    listProtected.removeDomain(HelperUnit.domain(url)); }
+                ninjaWebView.reload();
                 dialog.cancel();
-                ninjaWebView.reload(); }
-        });
+            });
+            chip_setProfileTrusted.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_profiles_trustedList),Toast.LENGTH_SHORT).show();
+                return true;
+            });
 
-        Button ib_settings = dialogView.findViewById(R.id.ib_settings);
-        ib_settings.setOnClickListener(view -> {
-            if (ninjaWebView != null) {
+            Chip chip_setProfileProtected = dialogView.findViewById(R.id.chip_setProfileProtected);
+            chip_setProfileProtected.setChecked(listProtected.isWhite(url));
+            chip_setProfileProtected.setOnClickListener(v -> {
+                if (listProtected.isWhite(ninjaWebView.getUrl())) listProtected.removeDomain(HelperUnit.domain(url));
+                else {
+                    listProtected.addDomain(HelperUnit.domain(url));
+                    listTrusted.removeDomain(HelperUnit.domain(url));
+                    listStandard.removeDomain(HelperUnit.domain(url)); }
+                ninjaWebView.reload();
                 dialog.cancel();
-                Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
-                startActivity(settings); }
-        });
+            });
+            chip_setProfileProtected.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_profiles_protectedList),Toast.LENGTH_SHORT).show();
+                return true;
+            });
 
-        Button button_help = dialogView.findViewById(R.id.button_help);
-        button_help.setOnClickListener(view -> {
-            dialog.cancel();
-            Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Fast-Toggle-Dialog");
-            BrowserUnit.intentURL(this, webpage);
-        });
+            Chip chip_setProfileStandard = dialogView.findViewById(R.id.chip_setProfileStandard);
+            chip_setProfileStandard.setChecked(listStandard.isWhite(url));
+            chip_setProfileStandard.setOnClickListener(v -> {
+                if (listStandard.isWhite(ninjaWebView.getUrl())) listStandard.removeDomain(HelperUnit.domain(url));
+                else {
+                    listStandard.addDomain(HelperUnit.domain(url));
+                    listTrusted.removeDomain(HelperUnit.domain(url));
+                    listProtected.removeDomain(HelperUnit.domain(url)); }
+                ninjaWebView.reload();
+                dialog.cancel();
+            });
+            chip_setProfileStandard.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_profiles_standardList),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+
+            chip_profile_trusted.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileTrusted"));
+            chip_profile_trusted.setOnClickListener(v -> {
+                sp.edit().putString("profile", "profileTrusted").apply();
+                ninjaWebView.reload();
+                dialog.cancel();
+            });
+            chip_profile_trusted.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_profiles_trusted),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+
+            chip_profile_standard.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileStandard"));
+            chip_profile_standard.setOnClickListener(v -> {
+                sp.edit().putString("profile", "profileStandard").apply();
+                ninjaWebView.reload();
+                dialog.cancel();
+            });
+            chip_profile_standard.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_profiles_standard),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+
+            chip_profile_protected.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileProtected"));
+            chip_profile_protected.setOnClickListener(v -> {
+                sp.edit().putString("profile", "profileProtected").apply();
+                ninjaWebView.reload();
+                dialog.cancel();
+            });
+            chip_profile_protected.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_profiles_protected),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+
+            chip_profile_changed.setChecked(Objects.equals(sp.getString("profile", "profileTrusted"), "profileChanged"));
+            chip_profile_changed.setOnClickListener(v -> {
+                sp.edit().putString("profile", "profileChanged").apply();
+                ninjaWebView.reload();
+                dialog.cancel();
+            });
+            chip_profile_changed.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_profiles_changed),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            // CheckBox
+
+            Chip chip_image = dialogView.findViewById(R.id.chip_image);
+            chip_image.setChecked(ninjaWebView.getBoolean("_images"));
+            chip_image.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_images),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_image.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_images", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_javaScript = dialogView.findViewById(R.id.chip_javaScript);
+            chip_javaScript.setChecked(ninjaWebView.getBoolean("_javascript"));
+            chip_javaScript.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_javascript),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_javaScript.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_javascript", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_javaScriptPopUp = dialogView.findViewById(R.id.chip_javaScriptPopUp);
+            chip_javaScriptPopUp.setChecked(ninjaWebView.getBoolean("_javascriptPopUp"));
+            chip_javaScriptPopUp.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_javascript_popUp),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_javaScriptPopUp.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_javascriptPopUp", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_cookie = dialogView.findViewById(R.id.chip_cookie);
+            chip_cookie.setChecked(ninjaWebView.getBoolean("_cookies"));
+            chip_cookie.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_cookie),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_cookie.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_cookies", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_fingerprint = dialogView.findViewById(R.id.chip_Fingerprint);
+            chip_fingerprint.setChecked(ninjaWebView.getBoolean("_fingerPrintProtection"));
+            chip_fingerprint.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_fingerPrint),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_fingerprint.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_fingerPrintProtection", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_adBlock = dialogView.findViewById(R.id.chip_adBlock);
+            chip_adBlock.setChecked(ninjaWebView.getBoolean("_adBlock"));
+            chip_adBlock.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_adblock),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_adBlock.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_adBlock", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_saveData = dialogView.findViewById(R.id.chip_saveData);
+            chip_saveData.setChecked(ninjaWebView.getBoolean("_saveData"));
+            chip_saveData.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_save_data),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_saveData.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_saveData", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_history = dialogView.findViewById(R.id.chip_history);
+            chip_history.setChecked(ninjaWebView.getBoolean("_saveHistory"));
+            chip_history.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.album_title_history),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_history.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_saveHistory", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_location = dialogView.findViewById(R.id.chip_location);
+            chip_location.setChecked(ninjaWebView.getBoolean("_location"));
+            chip_location.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_location),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_location.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_location", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_microphone = dialogView.findViewById(R.id.chip_microphone);
+            chip_microphone.setChecked(ninjaWebView.getBoolean("_microphone"));
+            chip_microphone.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_microphone),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_microphone.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_microphone", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_camera = dialogView.findViewById(R.id.chip_camera);
+            chip_camera.setChecked(ninjaWebView.getBoolean("_camera"));
+            chip_camera.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_camera),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_camera.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_camera", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            Chip chip_dom = dialogView.findViewById(R.id.chip_dom);
+            chip_dom.setChecked(ninjaWebView.getBoolean("_dom"));
+            chip_dom.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_dom),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_dom.setOnClickListener(v -> {
+                ninjaWebView.setProfileChanged();
+                ninjaWebView.putProfileBoolean("_dom", dialog_titleProfile, chip_profile_trusted, chip_profile_standard, chip_profile_protected, chip_profile_changed);
+            });
+
+            if (listTrusted.isWhite(url) || listStandard.isWhite(url) || listProtected.isWhite(url)) {
+
+                TypedValue typedValue = new TypedValue();
+                Resources.Theme theme = context.getTheme();
+                theme.resolveAttribute(R.attr.colorError, typedValue, true);
+                int color = typedValue.data;
+
+                dialog_warning.setTextColor(color);
+                chip_image.setEnabled(false);
+                chip_adBlock.setEnabled(false);
+                chip_saveData.setEnabled(false);
+                chip_location.setEnabled(false);
+                chip_camera.setEnabled(false);
+                chip_microphone.setEnabled(false);
+                chip_history.setEnabled(false);
+                chip_fingerprint.setEnabled(false);
+                chip_cookie.setEnabled(false);
+                chip_javaScript.setEnabled(false);
+                chip_javaScriptPopUp.setEnabled(false);
+                chip_dom.setEnabled(false); }
+
+            Chip chip_toggleNightView = dialogView.findViewById(R.id.chip_toggleNightView);
+            chip_toggleNightView.setChecked(ninjaWebView.isNightMode());
+            chip_toggleNightView.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.menu_nightView),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_toggleNightView.setOnClickListener(v -> {
+                ninjaWebView.toggleNightMode();
+                isNightMode = ninjaWebView.isNightMode();
+                dialog.cancel();
+            });
+
+            Chip chip_toggleDesktop = dialogView.findViewById(R.id.chip_toggleDesktop);
+            chip_toggleDesktop.setChecked(ninjaWebView.isDesktopMode());
+            chip_toggleDesktop.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.menu_desktopView),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_toggleDesktop.setOnClickListener(v -> {
+                ninjaWebView.toggleDesktopMode(true);
+                dialog.cancel();
+            });
+
+            Chip chip_toggleScreenOn = dialogView.findViewById(R.id.chip_toggleScreenOn);
+            chip_toggleScreenOn.setChecked(sp.getBoolean("sp_screenOn", false));
+            chip_toggleScreenOn.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_screenOn),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_toggleScreenOn.setOnClickListener(v -> {
+                sp.edit().putBoolean("sp_screenOn", !sp.getBoolean("sp_screenOn", false)).apply();
+                saveOpenedTabs();
+                HelperUnit.triggerRebirth(context);
+                dialog.cancel();
+            });
+
+            Chip chip_toggleAudioBackground = dialogView.findViewById(R.id.chip_toggleAudioBackground);
+            chip_toggleAudioBackground.setChecked(sp.getBoolean("sp_audioBackground", false));
+            chip_toggleAudioBackground.setOnLongClickListener(view -> {
+                Toast.makeText(context,getString(R.string.setting_title_audioBackground),Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_toggleAudioBackground.setOnClickListener(v -> {
+                sp.edit().putBoolean("sp_audioBackground", !sp.getBoolean("sp_audioBackground", false)).apply();
+                dialog.cancel();
+            });
+
+            Button ib_reload = dialogView.findViewById(R.id.ib_reload);
+            ib_reload.setOnClickListener(view -> {
+                if (ninjaWebView != null) {
+                    dialog.cancel();
+                    ninjaWebView.reload(); }
+            });
+
+            Button ib_settings = dialogView.findViewById(R.id.ib_settings);
+            ib_settings.setOnClickListener(view -> {
+                if (ninjaWebView != null) {
+                    dialog.cancel();
+                    Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
+                    startActivity(settings); }
+            });
+
+            Button button_help = dialogView.findViewById(R.id.button_help);
+            button_help.setOnClickListener(view -> {
+                dialog.cancel();
+                Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Fast-Toggle-Dialog");
+                BrowserUnit.intentURL(this, webpage);
+            }); }
+        else {
+            NinjaToast.show(context, getString(R.string.app_error)); }
     }
 
     @SuppressLint("ClickableViewAccessibility")
