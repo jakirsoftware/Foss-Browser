@@ -227,8 +227,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (sp.getBoolean("sp_screenOn", false)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         if (sp.getBoolean("nightModeOnStart", false)) isNightMode = true;
 
-        HelperUnit.initTheme(context);
-        DynamicColors.applyToActivitiesIfAvailable(activity.getApplication());
+        HelperUnit.initTheme(activity);
 
         TypedValue typedValue = new TypedValue();
         Resources.Theme theme = context.getTheme();

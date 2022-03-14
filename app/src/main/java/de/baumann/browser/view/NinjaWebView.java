@@ -182,6 +182,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         else if (listStandard.isWhite(url)) profile = "profileStandard";
         else if (listProtected.isWhite(url)) profile = "profileProtected";
 
+        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
         webSettings.setMediaPlaybackRequiresUserGesture(sp.getBoolean(profile + "_saveData",true));
         webSettings.setBlockNetworkImage(!sp.getBoolean(profile + "_images", true));
         webSettings.setGeolocationEnabled(sp.getBoolean(profile + "_location", false));

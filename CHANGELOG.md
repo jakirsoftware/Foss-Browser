@@ -29,6 +29,7 @@
 - fix: default user-agent is now received from installed webview
 - fix: long press actions on toolbar buttons #866
 - fix: https warning #863
+- fix: Images not displayed #881
 - updated: translations
 - new: moved tab-dialog in overview
 - new: permanent night mode (optional) #825

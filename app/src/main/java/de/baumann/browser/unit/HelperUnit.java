@@ -39,6 +39,7 @@ import android.os.Build;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import android.os.Environment;
@@ -246,8 +247,9 @@ public class HelperUnit {
         }
     }
 
-    public static void initTheme(Context context) {
+    public static void initTheme(Activity context) {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
+        //DynamicColors.applyToActivitiesIfAvailable(context.getApplication());
         switch (Objects.requireNonNull(sp.getString("sp_theme", "1"))) {
             case "2":
                 context.setTheme(R.style.AppTheme_day);
