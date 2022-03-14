@@ -5,6 +5,8 @@
 - fix: progressbar visible when searching
 - fix: UI of FastToggleDialog #872
 - fix: UI of edit/save as dialog #873
+- fix: https warning #863
+- fix: Images not displayed #881
 - new: gesture to copy link to clipboard #868
 - new: copy link to clipboard in context menu #878
 - new: switched license to APGL
