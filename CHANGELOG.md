@@ -1,4 +1,4 @@
-### v 9.1 (WIP)
+### v 9.1
 
 - fix: removed unnecessary toasts in fastToggle
 - fix: Browser crash on search with "%" #861
