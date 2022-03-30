@@ -179,7 +179,7 @@
     <string name="toast_quit">Apakah Anda ingin keluar \"FOSS Browser\"?</string>
     <string name="toast_quit_TAB">Apakah Anda ingin menutup TAB?</string>
     <string name="toast_downloadComplete">Unduh selesai. Buka manager file?</string>
-    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
+    <string name="toast_unsecured">Situs web menggunakan koneksi yang tidak aman (\"http\"). Coba koneksi aman (\"https\")?</string>
     <string name="toast_backup">Cadangkan data? Ini akan menghapus cadangan lama.</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Bersihkan</string>
