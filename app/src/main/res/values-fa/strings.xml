@@ -3,13 +3,13 @@
     <!-- App -->
     <string name="app_name">مرورگر FOSS</string>
     <string name="app_ok">تایید</string>
-    <string name="app_help">Help</string>
+    <string name="app_help">راهنما</string>
     <string name="app_cancel">لغو</string>
     <string name="app_done">انجام شد</string>
     <string name="app_error">خطا</string>
-    <string name="app_error_activity">No app installed to open this url.</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
+    <string name="app_error_activity">برنامه ای برای بازکردن این نشانی یافت نشد.</string>
+    <string name="app_warning">هشدار</string>
+    <string name="app_permission">برای استفاده از این قابلیت باید اجازه دسترسی بدهید و سپس برنامه را مجدد باز کنید.</string>
     <string name="list_empty">لیست خالی می باشد</string>
     <string name="album_title_bookmarks">نشانک ها</string>
     <string name="album_title_history">تاریخچه</string>
@@ -29,7 +29,7 @@
     <string name="color_grey">خاکستری</string>
     <!-- Menu -->
     <string name="main_menu_new_tab">زبانه جدید (پیش زمینه)</string>
-    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
+    <string name="main_menu_new_tabProfile">برگه جدید (با نمایه...)</string>
     <string name="main_menu_new_tabOpen">زبانه جدید (پس زمینه)</string>
     <string name="main_omnibox_input_hint">جستجو یا آدرس را وارد نمایید</string>
     <string name="menu_open_with">باز کردن لینک با…</string>
@@ -77,14 +77,14 @@
     <string name="setting_summary_search_engine_qwant">کوانت</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_font">اندازه قلم</string>
     <string name="setting_title_dom">ذخیره سازی DOM</string>
-    <string name="privacy_redirect">Redirect</string>
-    <string name="privacy_redirect_twitter">Twitter</string>
-    <string name="privacy_redirect_youTube">YouTube</string>
-    <string name="privacy_redirect_inst">Instagram</string>
+    <string name="privacy_redirect">هدایت</string>
+    <string name="privacy_redirect_twitter">توییتر</string>
+    <string name="privacy_redirect_youTube">یوتیوب</string>
+    <string name="privacy_redirect_inst">اینستاگرام</string>
     <string name="setting_title_save_data">درخواست صرفه جویی در مصرف شبکه</string>
-    <string name="setting_title_profiles">Profiles</string>
+    <string name="setting_title_profiles">نمایه‌ ها</string>
     <string name="setting_title_profiles_edit">Edit profiles</string>
     <string name="setting_title_profiles_trustedList">Trusted websites</string>
     <string name="setting_title_profiles_standardList">Standard websites</string>
