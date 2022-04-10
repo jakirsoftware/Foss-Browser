@@ -2,21 +2,20 @@ package de.baumann.browser.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
-
 import java.util.Objects;
 
-import de.baumann.browser.fragment.Fragment_settings_Backup;
 import de.baumann.browser.R;
+import de.baumann.browser.fragment.Fragment_settings_Backup;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 
@@ -56,7 +55,8 @@ public class Settings_Backup extends AppCompatActivity {
         if (menuItem.getItemId() == android.R.id.home) finish();
         if (menuItem.getItemId() == R.id.menu_help) {
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Backup");
-            BrowserUnit.intentURL(this, webpage); }
+            BrowserUnit.intentURL(this, webpage);
+        }
         return true;
     }
 }

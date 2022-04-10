@@ -1,15 +1,22 @@
 package de.baumann.browser.browser;
 
 import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.RecordUnit;
 
 public class List_protected {
 
-    private final Context context;
     private static final List<String> listProtected = new ArrayList<>();
+    private final Context context;
+
+    public List_protected(Context context) {
+        this.context = context;
+        loadDomains(context);
+    }
 
     private synchronized static void loadDomains(Context context) {
         RecordAction action = new RecordAction(context);
@@ -17,11 +24,6 @@ public class List_protected {
         listProtected.clear();
         listProtected.addAll(action.listDomains(RecordUnit.TABLE_PROTECTED));
         action.close();
-    }
-
-    public List_protected(Context context) {
-        this.context = context;
-        loadDomains(context);
     }
 
     public boolean isWhite(String url) {

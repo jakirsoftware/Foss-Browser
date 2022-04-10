@@ -1,9 +1,9 @@
 package de.baumann.browser.browser;
 
-import de.baumann.browser.view.NinjaWebView;
-
 import java.util.LinkedList;
 import java.util.List;
+
+import de.baumann.browser.view.NinjaWebView;
 
 public class BrowserContainer {
     private static final List<AlbumController> list = new LinkedList<>();
@@ -15,7 +15,10 @@ public class BrowserContainer {
     public synchronized static void add(AlbumController controller) {
         list.add(controller);
     }
-    public synchronized static void add(AlbumController controller, int index) { list.add(index, controller); }
+
+    public synchronized static void add(AlbumController controller, int index) {
+        list.add(index, controller);
+    }
 
     public synchronized static void remove(AlbumController controller) {
         ((NinjaWebView) controller).destroy();

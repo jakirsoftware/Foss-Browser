@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorSurface"
-    android:fitsSystemWindows="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:fitsSystemWindows="true">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/view3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/view3">
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -28,9 +27,9 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <FrameLayout
                     android:id="@+id/content_frame"
@@ -40,34 +39,34 @@
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_margin="20dp" >
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal">
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.Material3.Button"
                         android:id="@+id/ib_backup"
-                        android:layout_height="wrap_content"
+                        style="@style/Widget.Material3.Button"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
-                        android:text="@string/setting_title_data"
-                        android:textAllCaps="true"
+                        android:layout_weight="1"
                         android:ellipsize="end"
                         android:includeFontPadding="false"
-                        android:maxLines="1"/>
+                        android:maxLines="1"
+                        android:text="@string/setting_title_data"
+                        android:textAllCaps="true" />
 
                     <com.google.android.material.button.MaterialButton
-                        style="@style/Widget.Material3.Button"
                         android:id="@+id/ib_restore"
-                        android:layout_height="wrap_content"
+                        style="@style/Widget.Material3.Button"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="@string/settings_data_restore"
-                        android:textAllCaps="true"
+                        android:layout_weight="1"
                         android:ellipsize="end"
                         android:includeFontPadding="false"
-                        android:maxLines="1"/>
+                        android:maxLines="1"
+                        android:text="@string/settings_data_restore"
+                        android:textAllCaps="true" />
 
                 </LinearLayout>
 

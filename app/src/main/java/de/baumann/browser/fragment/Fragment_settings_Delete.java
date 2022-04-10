@@ -5,11 +5,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import de.baumann.browser.R;
 import de.baumann.browser.unit.HelperUnit;
@@ -37,6 +37,7 @@ public class Fragment_settings_Delete extends PreferenceFragmentCompat {
                 dialog.cancel();
                 activity.deleteDatabase("Ninja4.db");
                 activity.deleteDatabase("faviconView.db");
+                assert sp != null;
                 sp.edit().putInt("restart_changed", 1).apply();
                 activity.finish();
             });

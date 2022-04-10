@@ -10,8 +10,13 @@ import de.baumann.browser.unit.RecordUnit;
 
 public class List_standard {
 
-    private final Context context;
     private static final List<String> listStandard = new ArrayList<>();
+    private final Context context;
+
+    public List_standard(Context context) {
+        this.context = context;
+        loadDomains(context);
+    }
 
     private synchronized static void loadDomains(Context context) {
         RecordAction action = new RecordAction(context);
@@ -19,11 +24,6 @@ public class List_standard {
         listStandard.clear();
         listStandard.addAll(action.listDomains(RecordUnit.TABLE_STANDARD));
         action.close();
-    }
-
-    public List_standard(Context context) {
-        this.context = context;
-        loadDomains(context);
     }
 
     public boolean isWhite(String url) {

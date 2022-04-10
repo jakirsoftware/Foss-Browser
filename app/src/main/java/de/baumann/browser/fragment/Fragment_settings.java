@@ -11,13 +11,15 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
 
-import de.baumann.browser.activity.Settings_Delete;
+import java.util.Objects;
+
+import de.baumann.browser.R;
 import de.baumann.browser.activity.Settings_Backup;
+import de.baumann.browser.activity.Settings_Delete;
 import de.baumann.browser.activity.Settings_Filter;
 import de.baumann.browser.activity.Settings_Gesture;
 import de.baumann.browser.activity.Settings_PrivacyActivity;
 import de.baumann.browser.activity.Settings_UI;
-import de.baumann.browser.R;
 
 public class Fragment_settings extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -32,9 +34,9 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         Preference settings_filter = findPreference("settings_filter");
         assert settings_filter != null;
         settings_filter.setOnPreferenceClickListener(preference -> {
-           Intent intent = new Intent(getActivity(), Settings_Filter.class);
-           requireActivity().startActivity(intent);
-           return false;
+            Intent intent = new Intent(getActivity(), Settings_Filter.class);
+            requireActivity().startActivity(intent);
+            return false;
         });
 
         Preference settings_data = findPreference("settings_data");
@@ -96,10 +98,10 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password")) {
+            if (Objects.requireNonNull(p.getTitle()).toString().toLowerCase().contains("password")) {
                 p.setSummary("******");
             } else {
-                if (p.getSummaryProvider()==null)   p.setSummary(editTextPref.getText());
+                if (p.getSummaryProvider() == null) p.setSummary(editTextPref.getText());
             }
         }
     }
@@ -119,12 +121,12 @@ public class Fragment_settings extends PreferenceFragmentCompat implements Share
     @Override
     public void onResume() {
         super.onResume();
-        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences()).registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences()).unregisterOnSharedPreferenceChangeListener(this);
     }
 }

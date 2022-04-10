@@ -3,8 +3,12 @@ package de.baumann.browser.activity;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
+import android.webkit.WebStorage;
+import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,17 +17,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
-import android.webkit.WebStorage;
-import android.widget.Button;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Objects;
 
-import de.baumann.browser.fragment.Fragment_settings_Delete;
 import de.baumann.browser.R;
+import de.baumann.browser.fragment.Fragment_settings_Delete;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 
@@ -70,7 +69,8 @@ public class Settings_Delete extends AppCompatActivity {
                 if (clearHistory) BrowserUnit.clearHistory(this);
                 if (clearIndexedDB) {
                     BrowserUnit.clearIndexedDB(this);
-                    WebStorage.getInstance().deleteAllData(); }
+                    WebStorage.getInstance().deleteAllData();
+                }
             });
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
@@ -90,7 +90,8 @@ public class Settings_Delete extends AppCompatActivity {
         if (menuItem.getItemId() == android.R.id.home) finish();
         if (menuItem.getItemId() == R.id.menu_help) {
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Delete");
-            BrowserUnit.intentURL(this, webpage); }
+            BrowserUnit.intentURL(this, webpage);
+        }
         return true;
     }
 }

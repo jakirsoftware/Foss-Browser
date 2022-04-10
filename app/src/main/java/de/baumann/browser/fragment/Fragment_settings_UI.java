@@ -10,6 +10,8 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
 
+import java.util.Objects;
+
 import de.baumann.browser.R;
 
 public class Fragment_settings_UI extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -37,12 +39,11 @@ public class Fragment_settings_UI extends PreferenceFragmentCompat implements Sh
     private void updatePrefSummary(Preference p) {
         if (p instanceof ListPreference) {
             ListPreference listPref = (ListPreference) p;
-            if (p.getSummaryProvider()==null)   p.setSummary(listPref.getEntry());
+            if (p.getSummaryProvider() == null) p.setSummary(listPref.getEntry());
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password"))
-            {
+            if (Objects.requireNonNull(p.getTitle()).toString().toLowerCase().contains("password")) {
                 p.setSummary("******");
             } else {
                 p.setSummary(editTextPref.getText());
@@ -53,7 +54,7 @@ public class Fragment_settings_UI extends PreferenceFragmentCompat implements Sh
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sp, String key) {
         if (key.equals("sp_exit") || key.equals("sp_toggle") || key.equals("sp_add") || key.equals("sp_theme")
-                || key.equals("nav_position")  || key.equals("sp_hideOmni") || key.equals("start_tab") || key.equals("sp_hideSB")
+                || key.equals("nav_position") || key.equals("sp_hideOmni") || key.equals("start_tab") || key.equals("sp_hideSB")
                 || key.equals("overView_place") || key.equals("overView_hide") || key.equals("hideToolbar")) {
             sp.edit().putInt("restart_changed", 1).apply();
         }
@@ -63,12 +64,12 @@ public class Fragment_settings_UI extends PreferenceFragmentCompat implements Sh
     @Override
     public void onResume() {
         super.onResume();
-        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences()).registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences()).unregisterOnSharedPreferenceChangeListener(this);
     }
 }

@@ -8,9 +8,9 @@ import android.widget.Button;
 
 import com.google.android.material.chip.Chip;
 
+import de.baumann.browser.R;
 import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BrowserController;
-import de.baumann.browser.R;
 
 class AlbumItem {
 
@@ -18,25 +18,26 @@ class AlbumItem {
     private final AlbumController albumController;
 
     private View albumView;
-    View getAlbumView() {
-        return albumView;
-    }
-
     private Chip albumTitle;
-    void setAlbumTitle(String title) {
-        albumTitle.setText(title);
-    }
-
     private BrowserController browserController;
-    void setBrowserController(BrowserController browserController) {
-        this.browserController = browserController;
-    }
 
     AlbumItem(Context context, AlbumController albumController, BrowserController browserController) {
         this.context = context;
         this.albumController = albumController;
         this.browserController = browserController;
         initUI();
+    }
+
+    View getAlbumView() {
+        return albumView;
+    }
+
+    void setAlbumTitle(String title) {
+        albumTitle.setText(title);
+    }
+
+    void setBrowserController(BrowserController browserController) {
+        this.browserController = browserController;
     }
 
     @SuppressLint("InflateParams")

@@ -4,38 +4,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <CheckBoxPreference
-        android:key="sp_autofill"
         android:defaultValue="true"
-        android:title="@string/setting_title_autofill"
-        android:summary="@string/setting_summary_autofill"/>
+        android:key="sp_autofill"
+        android:summary="@string/setting_summary_autofill"
+        android:title="@string/setting_title_autofill" />
 
     <PreferenceCategory android:title="@string/setting_title_profiles">
 
         <ListPreference
-            android:key="profile_toStart"
             android:defaultValue="profileStandard"
-            android:title="@string/setting_title_profiles_startApp"
             android:entries="@array/profileToStart_entries"
-            android:entryValues="@array/profileToStart_values"/>
+            android:entryValues="@array/profileToStart_values"
+            android:key="profile_toStart"
+            android:title="@string/setting_title_profiles_startApp" />
 
         <Preference
             android:key="settings_profile"
             android:summary="@string/setting_title_profiles_edit" />
 
         <Preference
-            android:key="edit_trusted"
             android:icon="@drawable/icon_profile_trusted"
-            android:summary="@string/setting_title_profiles_trustedList"/>
+            android:key="edit_trusted"
+            android:summary="@string/setting_title_profiles_trustedList" />
 
         <Preference
-            android:key="edit_standard"
             android:icon="@drawable/icon_profile_standard"
-            android:summary="@string/setting_title_profiles_standardList"/>
+            android:key="edit_standard"
+            android:summary="@string/setting_title_profiles_standardList" />
 
         <Preference
-            android:key="edit_protected"
             android:icon="@drawable/icon_profile_protected"
-            android:summary="@string/setting_title_profiles_protectedList"/>
+            android:key="edit_protected"
+            android:summary="@string/setting_title_profiles_protectedList" />
 
     </PreferenceCategory>
 
@@ -43,67 +43,67 @@
 
         <Preference
             android:key="sp_ad_block"
-            android:summary="@string/setting_summary_adblock"/>
+            android:summary="@string/setting_summary_adblock" />
 
         <ListPreference
-            android:key="ab_hosts"
             android:defaultValue="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-            android:title="@string/setting_title_adblockHost"
             android:entries="@array/setting_entries_adBlock"
-            android:entryValues="@array/setting_values_adBlock"/>
+            android:entryValues="@array/setting_values_adBlock"
+            android:key="ab_hosts"
+            android:title="@string/setting_title_adblockHost" />
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/privacy_redirect">
 
         <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
+            android:defaultValue="https://invidious.snopyta.org/"
             android:key="sp_youTube_string"
-            app:editTextSwitchKey="sp_youTube_switch"
+            android:selectable="true"
             android:title="@string/privacy_redirect_youTube"
-            android:defaultValue="https://invidious.snopyta.org/"/>
+            app:editTextSwitchKey="sp_youTube_switch"
+            app:useSimpleSummaryProvider="true" />
 
         <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
+            android:defaultValue="https://nitter.net/"
             android:key="sp_twitter_string"
-            app:editTextSwitchKey="sp_twitter_switch"
+            android:selectable="true"
             android:title="@string/privacy_redirect_twitter"
-            android:defaultValue="https://nitter.net/" />
+            app:editTextSwitchKey="sp_twitter_switch"
+            app:useSimpleSummaryProvider="true" />
 
         <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
+            android:defaultValue="https://bibliogram.pussthecat.org/"
             android:key="sp_instagram_string"
-            app:editTextSwitchKey="sp_instagram_switch"
+            android:selectable="true"
             android:title="@string/privacy_redirect_inst"
-            android:defaultValue="https://bibliogram.pussthecat.org/" />
+            app:editTextSwitchKey="sp_instagram_switch"
+            app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_userScript">
 
         <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
             android:key="sp_onPageStarted"
+            android:selectable="true"
+            android:title="onPageStarted"
             app:editTextSwitchKey="onPageStarted"
-            android:title="onPageStarted" />
+            app:useSimpleSummaryProvider="true" />
 
         <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
             android:key="sp_onPageFinished"
+            android:selectable="true"
+            android:title="onPageFinished"
             app:editTextSwitchKey="onPageFinished"
-            android:title="onPageFinished" />
+            app:useSimpleSummaryProvider="true" />
 
         <de.baumann.browser.preferences.EditTextSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
             android:key="sp_onLoadResource"
+            android:selectable="true"
+            android:title="onLoadResource"
             app:editTextSwitchKey="onLoadResource"
-            android:title="onLoadResource" />
+            app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
 

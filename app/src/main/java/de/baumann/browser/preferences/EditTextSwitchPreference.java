@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.preference.EditTextPreference;
 import androidx.preference.PreferenceManager;
@@ -18,38 +19,36 @@ public class EditTextSwitchPreference extends EditTextPreference {
 
     private String EditTextSwitchKey;
     private boolean EditTextSwitchKeyDefaultValue;
-    private boolean switchAttached=false;
+    private boolean switchAttached = false;
 
     public EditTextSwitchPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        EditTextSwitchKey=null;
-        EditTextSwitchKeyDefaultValue=false;
+        EditTextSwitchKey = null;
+        EditTextSwitchKeyDefaultValue = false;
         TypedArray valueArray;
-        if(attrs != null)
-        {
+        if (attrs != null) {
             valueArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextSwitchPreference, 0, 0);
             EditTextSwitchKey = valueArray.getString(R.styleable.EditTextSwitchPreference_editTextSwitchKey);
-            EditTextSwitchKeyDefaultValue = valueArray.getBoolean(R.styleable.EditTextSwitchPreference_editTextSwitchKeyDefaultValue,false);
+            EditTextSwitchKeyDefaultValue = valueArray.getBoolean(R.styleable.EditTextSwitchPreference_editTextSwitchKeyDefaultValue, false);
             valueArray.recycle();
         }
     }
 
     @Override
-    public void onBindViewHolder(PreferenceViewHolder holder) {
+    public void onBindViewHolder(@NonNull PreferenceViewHolder holder) {
         final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         final ViewGroup rootView;
         final SwitchCompat onOffSwitch;
         final CompoundButton.OnCheckedChangeListener checkedChangeListener;
         super.onBindViewHolder(holder);
-        rootView = (ViewGroup)holder.itemView;
-        if (!switchAttached&&(EditTextSwitchKey!=null)){
-            onOffSwitch=new SwitchCompat(getContext());
+        rootView = (ViewGroup) holder.itemView;
+        if (!switchAttached && (EditTextSwitchKey != null)) {
+            onOffSwitch = new SwitchCompat(getContext());
             rootView.addView(onOffSwitch);
-            switchAttached=true;
-            onOffSwitch.setChecked(sp.getBoolean(EditTextSwitchKey,EditTextSwitchKeyDefaultValue));
+            switchAttached = true;
+            onOffSwitch.setChecked(sp.getBoolean(EditTextSwitchKey, EditTextSwitchKeyDefaultValue));
             checkedChangeListener = (buttonView, isChecked) -> {
-                if(EditTextSwitchKey != null)
-                {
+                if (EditTextSwitchKey != null) {
                     sp.edit().putBoolean(EditTextSwitchKey, isChecked).apply();
                 }
             };

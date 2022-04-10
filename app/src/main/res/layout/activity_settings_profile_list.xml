@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="?attr/colorSurface"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:fitsSystemWindows="true">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/view3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/view3">
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -23,51 +22,55 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <LinearLayout android:orientation="vertical"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <EditText android:id="@+id/whitelist_edit"
+            <EditText
+                android:id="@+id/whitelist_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:hint="@string/whitelist_edit_hint"
-                android:textCursorDrawable="@null"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:imeOptions="actionDone"
+                android:importantForAutofill="no"
                 android:inputType="textMultiLine"
                 android:selectAllOnFocus="true"
-                android:importantForAutofill="no" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textCursorDrawable="@null" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/whitelist_add"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="@string/whitelist_add"
-                android:textAllCaps="true"
                 android:ellipsize="end"
                 android:includeFontPadding="false"
-                android:maxLines="1"/>
+                android:maxLines="1"
+                android:text="@string/whitelist_add"
+                android:textAllCaps="true" />
 
         </LinearLayout>
 
-        <ListView android:id="@+id/whitelist"
+        <ListView
+            android:id="@+id/whitelist"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:drawSelectorOnTop="true"/>
+            android:drawSelectorOnTop="true" />
 
-        <TextView android:id="@+id/whitelist_empty"
+        <TextView
+            android:id="@+id/whitelist_empty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
             android:layout_gravity="center|top"
+            android:layout_margin="20dp"
             android:gravity="center"
             android:text="@string/list_empty"
             android:textAllCaps="false"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
     </LinearLayout>
 

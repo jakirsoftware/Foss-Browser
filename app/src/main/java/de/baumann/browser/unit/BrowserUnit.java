@@ -3,7 +3,6 @@ package de.baumann.browser.unit;
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
 import static android.content.Context.DOWNLOAD_SERVICE;
 import static android.content.Context.NOTIFICATION_SERVICE;
-
 import static androidx.core.app.NotificationCompat.DEFAULT_SOUND;
 import static androidx.core.app.NotificationCompat.DEFAULT_VIBRATE;
 
@@ -20,14 +19,14 @@ import android.content.pm.ShortcutManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.core.app.NotificationCompat;
-import androidx.preference.PreferenceManager;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.NotificationCompat;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -37,17 +36,19 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
+import de.baumann.browser.R;
 import de.baumann.browser.activity.BrowserActivity;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.database.RecordAction;
-import de.baumann.browser.R;
 
 public class BrowserUnit {
 
     public static final int PROGRESS_MAX = 100;
     public static final int LOADING_STOPPED = 101;  //Must be > PROGRESS_MAX !
     public static final String MIME_TYPE_TEXT_PLAIN = "text/plain";
-
+    public static final String URL_ENCODING = "UTF-8";
+    public static final String URL_SCHEME_ABOUT = "about:";
+    public static final String URL_SCHEME_MAIL_TO = "mailto:";
     private static final String SEARCH_ENGINE_GOOGLE = "https://www.google.com/search?q=";
     private static final String SEARCH_ENGINE_DUCKDUCKGO = "https://duckduckgo.com/?q=";
     private static final String SEARCH_ENGINE_STARTPAGE = "https://startpage.com/do/search?query=";
@@ -56,14 +57,9 @@ public class BrowserUnit {
     private static final String SEARCH_ENGINE_QWANT = "https://www.qwant.com/?q=";
     private static final String SEARCH_ENGINE_ECOSIA = "https://www.ecosia.org/search?q=";
     private static final String SEARCH_ENGINE_Metager = "https://metager.org/meta/meta.ger3?eingabe=";
-
     private static final String SEARCH_ENGINE_STARTPAGE_DE = "https://startpage.com/do/search?lui=deu&language=deutsch&query=";
     private static final String SEARCH_ENGINE_SEARX = "https://searx.be/?q=";
-
-    public static final String URL_ENCODING = "UTF-8";
     private static final String URL_ABOUT_BLANK = "about:blank";
-    public static final String URL_SCHEME_ABOUT = "about:";
-    public static final String URL_SCHEME_MAIL_TO = "mailto:";
     private static final String URL_SCHEME_FILE = "file://";
     private static final String URL_SCHEME_HTTPS = "https://";
     private static final String URL_SCHEME_HTTP = "http://";
@@ -118,15 +114,15 @@ public class BrowserUnit {
         assert customSearchEngine != null;
 
         //Override UserAgent if own UserAgent is defined
-        if (!sp.contains("searchEngineSwitch")){  //if new switch_text_preference has never been used initialize the switch
+        if (!sp.contains("searchEngineSwitch")) {  //if new switch_text_preference has never been used initialize the switch
             if (customSearchEngine.equals("")) {
                 sp.edit().putBoolean("searchEngineSwitch", false).apply();
-            }else{
+            } else {
                 sp.edit().putBoolean("searchEngineSwitch", true).apply();
             }
         }
 
-        if (sp.getBoolean("searchEngineSwitch",false)){  //if new switch_text_preference has never been used initialize the switch
+        if (sp.getBoolean("searchEngineSwitch", false)) {  //if new switch_text_preference has never been used initialize the switch
             return customSearchEngine + query;
         } else {
             final int i = Integer.parseInt(Objects.requireNonNull(sp.getString("sp_search_engine", "0")));
@@ -173,7 +169,7 @@ public class BrowserUnit {
                         FileOutputStream fos = new FileOutputStream(file);
                         fos.write(dataURIParser.getImagedata());
                     } else BackupUnit.requestPermission(activity);
-                }else {
+                } else {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                     request.setMimeType(mimeType);
                     //------------------------COOKIE!!------------------------
@@ -189,14 +185,14 @@ public class BrowserUnit {
                     assert dm != null;
                     if (BackupUnit.checkPermissionStorage(context)) {
                         dm.enqueue(request);
-                    }else {
+                    } else {
                         BackupUnit.requestPermission(activity);
                     }
                 }
             } catch (Exception e) {
-            System.out.println("Error Downloading File: " + e.toString());
-            Toast.makeText(context, context.getString(R.string.app_error)+e.toString().substring(e.toString().indexOf(":")),Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+                System.out.println("Error Downloading File: " + e);
+                Toast.makeText(context, context.getString(R.string.app_error) + e.toString().substring(e.toString().indexOf(":")), Toast.LENGTH_LONG).show();
+                e.printStackTrace();
             }
         });
         builder.setNeutralButton(R.string.menu_share_link, (dialog, whichButton) -> {
@@ -232,10 +228,11 @@ public class BrowserUnit {
     public static void clearCookie() {
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.flush();
-        cookieManager.removeAllCookies(value -> {});
+        cookieManager.removeAllCookies(value -> {
+        });
     }
 
-    public static void clearBookmark (Context context) {
+    public static void clearBookmark(Context context) {
         RecordAction action = new RecordAction(context);
         action.open(true);
         action.clearTable(RecordUnit.TABLE_BOOKMARK);
@@ -257,7 +254,7 @@ public class BrowserUnit {
         }
     }
 
-    public static void intentURL (Context context, Uri uri) {
+    public static void intentURL(Context context, Uri uri) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW);
         browserIntent.setData(uri);
         browserIntent.setPackage("de.baumann.browser");
@@ -265,7 +262,7 @@ public class BrowserUnit {
         context.startActivity(chooser);
     }
 
-    public static void openInBackground (Activity activity, Intent intent, String url) {
+    public static void openInBackground(Activity activity, Intent intent, String url) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(activity);
         if (sp.getBoolean("sp_tabBackground", false) && !Objects.equals(intent.getPackage(), "de.baumann.browser")) {
 
@@ -297,24 +294,24 @@ public class BrowserUnit {
             NotificationManager mNotifyMgr = (NotificationManager) activity.getSystemService(NOTIFICATION_SERVICE);
             mNotifyMgr.notify(1, buildNotification);
 
-            activity.moveTaskToBack (true);
+            activity.moveTaskToBack(true);
         }
     }
 
-    public static void clearIndexedDB (Context context) {
+    public static void clearIndexedDB(Context context) {
         File data = Environment.getDataDirectory();
 
         String blob_storage = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//blob_storage";
-        String databases = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//databases";
+        String databases = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//databases";
         String indexedDB = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//IndexedDB";
-        String localStorage = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//Local Storage";
+        String localStorage = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//Local Storage";
         String serviceWorker = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//Service Worker";
-        String sessionStorage = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//Session Storage";
+        String sessionStorage = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//Session Storage";
         String shared_proto_db = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//shared_proto_db";
-        String VideoDecodeStats = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//VideoDecodeStats";
+        String VideoDecodeStats = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//VideoDecodeStats";
         String QuotaManager = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//QuotaManager";
-        String QuotaManager_journal = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//QuotaManager-journal";
-        String webData = "//data//" + context.getPackageName()  + "//app_webview//" + "//Default//" + "//Web Data";
+        String QuotaManager_journal = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//QuotaManager-journal";
+        String webData = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//Web Data";
         String WebDataJournal = "//data//" + context.getPackageName() + "//app_webview//" + "//Default//" + "//Web Data-journal";
 
         final File blob_storage_file = new File(data, blob_storage);

@@ -24,14 +24,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-import de.baumann.browser.activity.Settings_Profile;
-import de.baumann.browser.activity.ProfilesList;
 import de.baumann.browser.R;
+import de.baumann.browser.activity.ProfilesList;
+import de.baumann.browser.activity.Settings_Profile;
 import de.baumann.browser.browser.AdBlock;
 import de.baumann.browser.view.GridAdapter;
 import de.baumann.browser.view.GridItem;
 
-public class Fragment_settings_Privacy extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class Fragment_settings_Privacy extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -44,15 +44,15 @@ public class Fragment_settings_Privacy extends PreferenceFragmentCompat implemen
 
         Preference sp_ad_block = findPreference("sp_ad_block");
         assert sp_ad_block != null;
-        sp_ad_block.setSummary(getString(R.string.setting_summary_adblock)+"\n\n"+AdBlock.getHostsDate(getContext()));
+        sp_ad_block.setSummary(getString(R.string.setting_summary_adblock) + "\n\n" + AdBlock.getHostsDate(getContext()));
 
         Preference settings_profile = findPreference("settings_profile");
         assert settings_profile != null;
         settings_profile.setOnPreferenceClickListener(preference -> {
 
-            GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, getString(R.string.setting_title_profiles_trusted),  11);
-            GridItem item_02 = new GridItem(R.drawable.icon_profile_standard, getString(R.string.setting_title_profiles_standard),  11);
-            GridItem item_03 = new GridItem(R.drawable.icon_profile_protected,  getString(R.string.setting_title_profiles_protected),  11);
+            GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, getString(R.string.setting_title_profiles_trusted), 11);
+            GridItem item_02 = new GridItem(R.drawable.icon_profile_standard, getString(R.string.setting_title_profiles_standard), 11);
+            GridItem item_03 = new GridItem(R.drawable.icon_profile_protected, getString(R.string.setting_title_profiles_protected), 11);
 
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             View dialogView = View.inflate(context, R.layout.dialog_menu, null);
@@ -140,10 +140,10 @@ public class Fragment_settings_Privacy extends PreferenceFragmentCompat implemen
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password")) {
+            if (Objects.requireNonNull(p.getTitle()).toString().toLowerCase().contains("password")) {
                 p.setSummary("******");
             } else {
-                if (p.getSummaryProvider()==null)   p.setSummary(editTextPref.getText());
+                if (p.getSummaryProvider() == null) p.setSummary(editTextPref.getText());
             }
         }
     }
@@ -159,12 +159,12 @@ public class Fragment_settings_Privacy extends PreferenceFragmentCompat implemen
     @Override
     public void onResume() {
         super.onResume();
-        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences()).registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences()).unregisterOnSharedPreferenceChangeListener(this);
     }
 }

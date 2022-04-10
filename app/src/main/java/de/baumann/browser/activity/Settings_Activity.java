@@ -2,21 +2,20 @@ package de.baumann.browser.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
-
 import java.util.Objects;
 
-import de.baumann.browser.fragment.Fragment_settings;
 import de.baumann.browser.R;
+import de.baumann.browser.fragment.Fragment_settings;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 
@@ -56,10 +55,11 @@ public class Settings_Activity extends AppCompatActivity {
         if (menuItem.getItemId() == android.R.id.home) finish();
         else if (menuItem.getItemId() == R.id.menu_info) {
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/blob/master/README.md");
-            BrowserUnit.intentURL(this, webpage); }
-        else if (menuItem.getItemId() == R.id.menu_help) {
+            BrowserUnit.intentURL(this, webpage);
+        } else if (menuItem.getItemId() == R.id.menu_help) {
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Settings-(Main-screen)");
-            BrowserUnit.intentURL(this, webpage); }
+            BrowserUnit.intentURL(this, webpage);
+        }
         return true;
     }
 }
