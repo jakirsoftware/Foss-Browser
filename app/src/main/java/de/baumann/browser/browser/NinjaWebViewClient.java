@@ -461,6 +461,9 @@ public class NinjaWebViewClient extends WebViewClient {
                 Intent intent;
                 if (url.startsWith("intent:")) {
                     intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
+                    intent.addCategory("android.intent.category.BROWSABLE");
+                    intent.setComponent(null);
+                    intent.setSelector(null);
                 } else {
                     intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 }
