@@ -1,3 +1,11 @@
+### v 9.2 (WIP)
+
+- fix: no password field on webserver authentication #891
+- fix: some swiping issues #899 by Lakjdf
+- fix: support for intent scheme URLs again #898 by Lakjdf
+- fix: refactored code to make it much more readable #896 by T8RIN
+- updated translations: *Now 21 languages are fully supported!*
+
 ### v 9.1
 
 - fix: removed unnecessary toasts in fastToggle
