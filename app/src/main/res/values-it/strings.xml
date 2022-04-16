@@ -79,7 +79,7 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Dimensione testo</string>
     <string name="setting_title_dom">Archivio DOM</string>
-    <string name="privacy_redirect">Redirect</string>
+    <string name="privacy_redirect">Reindirizzamento</string>
     <string name="privacy_redirect_twitter">Twitter</string>
     <string name="privacy_redirect_youTube">YouTube</string>
     <string name="privacy_redirect_inst">Instagram</string>
