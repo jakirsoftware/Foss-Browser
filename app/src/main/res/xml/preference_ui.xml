@@ -6,87 +6,87 @@
     <PreferenceCategory android:title="@string/setting_title_behavior">
 
         <CheckBoxPreference
-            android:icon="@drawable/icon_screen"
             android:defaultValue="false"
+            android:icon="@drawable/icon_screen"
             android:key="sp_screenOn"
-            android:summary="@string/setting_title_screenOn"/>
+            android:summary="@string/setting_title_screenOn" />
 
         <CheckBoxPreference
-            android:icon="@drawable/icon_audio"
             android:defaultValue="false"
+            android:icon="@drawable/icon_audio"
             android:key="sp_audioBackground"
-            android:summary="@string/setting_title_audioBackground"/>
+            android:summary="@string/setting_title_audioBackground" />
 
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="sp_swipeToReload"
-            android:summary="@string/setting_title_reload"/>
+            android:summary="@string/setting_title_reload" />
 
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="sp_tabBackground"
-            android:summary="@string/main_menu_new_tab"/>
+            android:summary="@string/main_menu_new_tab" />
 
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="sp_close_browser_confirm"
-            android:summary="@string/setting_title_confirm_exit"/>
+            android:summary="@string/setting_title_confirm_exit" />
 
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="sp_close_tab_confirm"
-            android:summary="@string/setting_title_confirm_tab_close"/>
+            android:summary="@string/setting_title_confirm_tab_close" />
 
         <CheckBoxPreference
-            android:key="sp_reloadTabs"
             android:defaultValue="false"
-            android:title="@string/setting_title_tabsReload"
-            android:summary="@string/setting_summary_tabsReload"/>
+            android:key="sp_reloadTabs"
+            android:summary="@string/setting_summary_tabsReload"
+            android:title="@string/setting_title_tabsReload" />
 
         <CheckBoxPreference
-            android:key="sp_restoreTabs"
             android:defaultValue="true"
-            android:title="@string/setting_title_tabsRestore"
-            android:summary="@string/setting_summary_tabsRestore"/>
+            android:key="sp_restoreTabs"
+            android:summary="@string/setting_summary_tabsRestore"
+            android:title="@string/setting_title_tabsRestore" />
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_userInterface">
 
         <CheckBoxPreference
-            android:key="hideToolbar"
             android:defaultValue="true"
-            android:summary="@string/setting_title_hideToolbar"/>
+            android:key="hideToolbar"
+            android:summary="@string/setting_title_hideToolbar" />
 
         <CheckBoxPreference
-            android:key="nightModeOnStart"
             android:defaultValue="false"
-            android:summary="@string/menu_nightView"/>
+            android:key="nightModeOnStart"
+            android:summary="@string/menu_nightView" />
 
         <ListPreference
-            android:key="sp_theme"
             android:defaultValue="1"
-            android:title="@string/setting_theme"
             android:entries="@array/setting_entries_theme"
-            android:entryValues="@array/setting_values_theme"/>
+            android:entryValues="@array/setting_values_theme"
+            android:key="sp_theme"
+            android:title="@string/setting_theme" />
 
         <ListPreference
-            android:key="sp_fontSize"
             android:defaultValue="100"
-            android:title="@string/setting_title_font"
             android:entries="@array/setting_entries_font"
-            android:entryValues="@array/setting_values_font"/>
+            android:entryValues="@array/setting_values_font"
+            android:key="sp_fontSize"
+            android:title="@string/setting_title_font" />
 
         <de.baumann.browser.preferences.ListSwitchPreference
-            android:selectable="true"
-            app:useSimpleSummaryProvider="true"
+            android:defaultValue="3"
+            android:entries="@array/setting_entries_tab"
+            android:entryValues="@array/setting_values_tab"
             android:key="start_tab"
+            android:selectable="true"
+            android:title="@string/setting_overView_onStart_title"
             app:listSwitchKey="start_tabStart"
             app:listSwitchKeyDefaultValue="false"
-            android:defaultValue="3"
-            android:title="@string/setting_overView_onStart_title"
-            android:entries="@array/setting_entries_tab"
-            android:entryValues="@array/setting_values_tab" />
+            app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
 

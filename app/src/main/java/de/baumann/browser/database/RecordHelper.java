@@ -27,7 +27,7 @@ class RecordHelper extends SQLiteOpenHelper {
     // UPGRADE ATTENTION!!!
     @Override
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
-        switch(oldVersion) {
+        switch (oldVersion) {
             case 1:
                 database.execSQL(RecordUnit.CREATE_BOOKMARK);
             case 2:

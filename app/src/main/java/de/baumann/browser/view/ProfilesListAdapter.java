@@ -1,13 +1,13 @@
 package de.baumann.browser.view;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import java.util.List;
 
@@ -18,15 +18,11 @@ public class ProfilesListAdapter extends ArrayAdapter<String> {
     private final int layoutResId;
     private final List<String> list;
 
-    public ProfilesListAdapter(Context context, List<String> list){
+    public ProfilesListAdapter(Context context, List<String> list) {
         super(context, R.layout.item_icon_right, list);
         this.context = context;
         this.layoutResId = R.layout.item_icon_right;
         this.list = list;
-    }
-
-    private static class Holder {
-        TextView domain;
     }
 
     @SuppressWarnings("NullableProblems")
@@ -45,5 +41,9 @@ public class ProfilesListAdapter extends ArrayAdapter<String> {
         }
         holder.domain.setText(list.get(position));
         return view;
+    }
+
+    private static class Holder {
+        TextView domain;
     }
 }

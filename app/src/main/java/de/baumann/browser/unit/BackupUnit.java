@@ -19,6 +19,11 @@
 
 package de.baumann.browser.unit;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.os.Build.VERSION.SDK_INT;
+import static android.os.Environment.DIRECTORY_DOCUMENTS;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -56,20 +61,15 @@ import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.view.NinjaToast;
 
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-import static android.os.Build.VERSION.SDK_INT;
-import static android.os.Environment.DIRECTORY_DOCUMENTS;
-
 public class BackupUnit {
 
+    public static final int PERMISSION_REQUEST_CODE = 123;
     private static final String BOOKMARK_TYPE = "<DT><A HREF=\"{url}\" ADD_DATE=\"{time}\">{title}</A>";
     private static final String BOOKMARK_TITLE = "{title}";
     private static final String BOOKMARK_URL = "{url}";
     private static final String BOOKMARK_TIME = "{time}";
-    public static final int PERMISSION_REQUEST_CODE = 123;
 
-    public static boolean checkPermissionStorage (Context context) {
+    public static boolean checkPermissionStorage(Context context) {
         if (SDK_INT >= Build.VERSION_CODES.R) {
             return Environment.isExternalStorageManager();
         } else {
@@ -90,7 +90,7 @@ public class BackupUnit {
                 try {
                     Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
                     intent.addCategory("android.intent.category.DEFAULT");
-                    intent.setData(Uri.parse(String.format("package:%s",activity.getPackageName())));
+                    intent.setData(Uri.parse(String.format("package:%s", activity.getPackageName())));
                     activity.startActivity(intent);
                 } catch (Exception e) {
                     Intent intent = new Intent();
@@ -102,12 +102,13 @@ public class BackupUnit {
                 ActivityCompat.requestPermissions(activity, new String[]{WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
             }
         });
-        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());AlertDialog dialog = builder.create();
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+        AlertDialog dialog = builder.create();
         dialog.show();
         HelperUnit.setupDialog(activity, dialog);
     }
 
-    public static void makeBackupDir () {
+    public static void makeBackupDir() {
         File backupDir = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//");
         boolean wasSuccessful = backupDir.mkdirs();
         if (!wasSuccessful) {
@@ -167,7 +168,7 @@ public class BackupUnit {
         });
     }
 
-    public static void exportList (Context context, int i) {
+    public static void exportList(Context context, int i) {
         RecordAction action = new RecordAction(context);
         List<String> list;
         String filename;
@@ -203,7 +204,7 @@ public class BackupUnit {
         }
     }
 
-    public static void importList (Context context, int i) {
+    public static void importList(Context context, int i) {
         try {
             String filename;
             List_trusted js = null;
@@ -309,16 +310,17 @@ public class BackupUnit {
                 String title = getBookmarkTitle(line);
                 String url = getBookmarkURL(line);
                 long date = getBookmarkDate(line);
-                if (date >123) date=11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for List_trusted + 64 for List_standard Content
+                if (date > 123)
+                    date = 11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for List_trusted + 64 for List_standard Content
                 if (title.trim().isEmpty() || url.trim().isEmpty()) {
                     continue;
                 }
                 Record record = new Record();
                 record.setTitle(title);
                 record.setURL(url);
-                record.setIconColor(date&15);
-                record.setDesktopMode((date&16)==16);
-                record.setNightMode(!((date&32)==32));
+                record.setIconColor(date & 15);
+                record.setDesktopMode((date & 16) == 16);
+                record.setNightMode(!((date & 32) == 32));
 
                 if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
                     list.add(record);
@@ -330,15 +332,16 @@ public class BackupUnit {
                 action.addBookmark(record);
             }
             action.close();
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
         list.size();
     }
 
     private static long getBookmarkDate(String line) {
         for (String string : line.split(" +")) {
             if (string.startsWith("ADD_DATE=\"")) {
-                int index= string.indexOf("\">");
-                return Long.parseLong(string.substring(10,index));
+                int index = string.indexOf("\">");
+                return Long.parseLong(string.substring(10, index));
             }
         }
         return 0;

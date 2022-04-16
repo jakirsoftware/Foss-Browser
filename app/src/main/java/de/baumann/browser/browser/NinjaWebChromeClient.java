@@ -6,7 +6,13 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.View;
-import android.webkit.*;
+import android.webkit.GeolocationPermissions;
+import android.webkit.PermissionRequest;
+import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
@@ -80,20 +86,20 @@ public class NinjaWebChromeClient extends WebChromeClient {
 
     @Override
     public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
-        Activity activity =  (Activity) ninjaWebView.getContext();
+        Activity activity = (Activity) ninjaWebView.getContext();
         HelperUnit.grantPermissionsLoc(activity);
         callback.invoke(origin, true, false);
         super.onGeolocationPermissionsShowPrompt(origin, callback);
     }
 
     @Override
-    public void onPermissionRequest(final PermissionRequest request){
+    public void onPermissionRequest(final PermissionRequest request) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(ninjaWebView.getContext());
-        Activity activity =  (Activity) ninjaWebView.getContext();
+        Activity activity = (Activity) ninjaWebView.getContext();
         String[] resources = request.getResources();
         for (String resource : resources) {
             if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)) {
-                if (sp.getBoolean(ninjaWebView.getProfile()+"_camera", false)) {
+                if (sp.getBoolean(ninjaWebView.getProfile() + "_camera", false)) {
                     HelperUnit.grantPermissionsCamera(activity);
                     if (ninjaWebView.getSettings().getMediaPlaybackRequiresUserGesture()) {
                         ninjaWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);  //fix conflict with save data option. Temporarily switch off setMediaPlaybackRequiresUserGesture
@@ -101,8 +107,8 @@ public class NinjaWebChromeClient extends WebChromeClient {
                     }
                     request.grant(request.getResources());
                 }
-            } else if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)){
-                if (sp.getBoolean(ninjaWebView.getProfile()+"_microphone", false)) {
+            } else if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)) {
+                if (sp.getBoolean(ninjaWebView.getProfile() + "_microphone", false)) {
                     HelperUnit.grantPermissionsMic(activity);
                     request.grant(request.getResources());
                 }

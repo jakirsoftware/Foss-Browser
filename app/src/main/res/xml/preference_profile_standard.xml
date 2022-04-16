@@ -1,88 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    
+
     <PreferenceCategory android:title="@string/setting_title_profiles_dataUsage">
 
         <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/icon_image"
             android:key="profileStandard_images"
-            android:defaultValue="true"
-            android:summary="@string/setting_title_images"
-            android:icon="@drawable/icon_image"/>
+            android:summary="@string/setting_title_images" />
 
         <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/icon_adblock"
             android:key="profileStandard_adBlock"
-            android:defaultValue="true"
-            android:summary="@string/setting_title_adblock"
-            android:icon="@drawable/icon_adblock"/>
+            android:summary="@string/setting_title_adblock" />
 
         <CheckBoxPreference
-            android:key="profileStandard_saveData"
             android:defaultValue="true"
-            android:summary="@string/setting_title_save_data"
-            android:icon="@drawable/icon_savedata"/>
+            android:icon="@drawable/icon_savedata"
+            android:key="profileStandard_saveData"
+            android:summary="@string/setting_title_save_data" />
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_profiles_privacy">
 
         <CheckBoxPreference
+            android:defaultValue="false"
+            android:icon="@drawable/icon_location"
             android:key="profileStandard_location"
-            android:defaultValue="false"
-            android:summary="@string/setting_title_location"
-            android:icon="@drawable/icon_location"/>
+            android:summary="@string/setting_title_location" />
 
         <CheckBoxPreference
+            android:defaultValue="false"
+            android:icon="@drawable/icon_camera"
             android:key="profileStandard_camera"
-            android:defaultValue="false"
-            android:summary="@string/setting_title_camera"
-            android:icon="@drawable/icon_camera"/>
+            android:summary="@string/setting_title_camera" />
 
         <CheckBoxPreference
+            android:defaultValue="false"
+            android:icon="@drawable/icon_microphone"
             android:key="profileStandard_microphone"
-            android:defaultValue="false"
-            android:summary="@string/setting_title_microphone"
-            android:icon="@drawable/icon_microphone"/>
+            android:summary="@string/setting_title_microphone" />
 
         <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/icon_history"
             android:key="profileStandard_saveHistory"
-            android:defaultValue="true"
-            android:summary="@string/setting_title_history"
-            android:icon="@drawable/icon_history"/>
+            android:summary="@string/setting_title_history" />
 
         <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/icon_fingerprint"
             android:key="profileStandard_fingerPrintProtection"
-            android:defaultValue="true"
-            android:summary="@string/setting_title_fingerPrint"
-            android:icon="@drawable/icon_fingerprint"/>
+            android:summary="@string/setting_title_fingerPrint" />
 
         <CheckBoxPreference
-            android:key="profileStandard_cookies"
             android:defaultValue="false"
-            android:summary="@string/setting_title_cookie"
-            android:icon="@drawable/icon_cookie"/>
+            android:icon="@drawable/icon_cookie"
+            android:key="profileStandard_cookies"
+            android:summary="@string/setting_title_cookie" />
 
         <CheckBoxPreference
-            android:key="profileStandard_dom"
             android:defaultValue="true"
-            android:summary="@string/setting_title_dom"
-            android:icon="@drawable/icon_dom"/>
+            android:icon="@drawable/icon_dom"
+            android:key="profileStandard_dom"
+            android:summary="@string/setting_title_dom" />
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_profiles_Security">
 
         <CheckBoxPreference
-            android:key="profileStandard_javascript"
             android:defaultValue="true"
-            android:summary="@string/setting_title_javascript"
-            android:icon="@drawable/icon_java"/>
+            android:icon="@drawable/icon_java"
+            android:key="profileStandard_javascript"
+            android:summary="@string/setting_title_javascript" />
 
         <CheckBoxPreference
-            android:key="profileStandard_javascriptPopUp"
             android:defaultValue="false"
-            android:summary="@string/setting_title_javascript_popUp"
-            android:icon="@drawable/icon_popup"/>
+            android:icon="@drawable/icon_popup"
+            android:key="profileStandard_javascriptPopUp"
+            android:summary="@string/setting_title_javascript_popUp" />
 
     </PreferenceCategory>
 

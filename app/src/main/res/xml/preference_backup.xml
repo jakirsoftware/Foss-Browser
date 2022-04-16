@@ -5,33 +5,33 @@
     <Preference android:summary="@string/data_summary" />
 
     <CheckBoxPreference
+        android:defaultValue="true"
         android:key="database"
-        android:defaultValue="true"
-        android:summary="@string/title_appData"/>
+        android:summary="@string/title_appData" />
 
     <CheckBoxPreference
+        android:defaultValue="true"
         android:key="settings"
-        android:defaultValue="true"
-        android:summary="@string/setting_label"/>
+        android:summary="@string/setting_label" />
 
     <CheckBoxPreference
+        android:defaultValue="true"
         android:key="bookmark"
-        android:defaultValue="true"
-        android:summary="@string/album_title_bookmarks"/>
+        android:summary="@string/album_title_bookmarks" />
 
     <CheckBoxPreference
+        android:defaultValue="true"
         android:key="java"
-        android:defaultValue="true"
-        android:summary="@string/setting_title_profiles_trustedList"/>
+        android:summary="@string/setting_title_profiles_trustedList" />
 
     <CheckBoxPreference
+        android:defaultValue="true"
         android:key="dom"
-        android:defaultValue="true"
-        android:summary="@string/setting_title_profiles_standardList"/>
+        android:summary="@string/setting_title_profiles_standardList" />
 
     <CheckBoxPreference
-        android:key="cookie"
         android:defaultValue="true"
-        android:summary="@string/setting_title_profiles_protectedList"/>
+        android:key="cookie"
+        android:summary="@string/setting_title_profiles_protectedList" />
 
 </PreferenceScreen>

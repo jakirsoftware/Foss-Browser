@@ -9,6 +9,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.21875" />
+        <entry key="..\:/Users/malik/AndroidStudioProjects/browser-t8rin/app/src/main/res/layout/activity_main.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/drawable/Icon_alert.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/bg_chip_state_list.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/circle_lime_big.xml" value="0.10260416666666666" />
@@ -168,7 +169,7 @@
       </value>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

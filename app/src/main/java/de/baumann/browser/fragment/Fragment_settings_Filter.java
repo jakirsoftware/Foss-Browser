@@ -1,4 +1,5 @@
 package de.baumann.browser.fragment;
+
 import android.os.Bundle;
 
 import androidx.preference.PreferenceFragmentCompat;

@@ -28,17 +28,17 @@
     <string name="color_brown">Коричневый</string>
     <string name="color_grey">Серый</string>
     <!-- Menu -->
-    <string name="main_menu_new_tab">Новая вкладка (фон)</string>
-    <string name="main_menu_new_tabProfile">Новая вкладка (с профилем ...)</string>
+    <string name="main_menu_new_tab">Новая фоновая вкладка</string>
+    <string name="main_menu_new_tabProfile">Новая вкладка с профилем</string>
     <string name="main_menu_new_tabOpen">Новая вкладка</string>
     <string name="main_omnibox_input_hint">Поиск или ввод URL-адреса</string>
-    <string name="menu_open_with">Открыть ссылку с …</string>
+    <string name="menu_open_with">Открыть ссылку с помощью</string>
     <string name="menu_quit">Выход</string>
     <string name="menu_openFav">Открыть главную</string>
     <string name="menu_delete">Удалить</string>
     <string name="menu_edit">Изменить</string>
     <string name="menu_closeTab">Закрыть вкладку</string>
-    <string name="menu_download">Открытые загрузки</string>
+    <string name="menu_download">Загрузки</string>
     <string name="menu_fav">Сохранить как стартовую страницу</string>
     <string name="menu_sc">Ярлык на главном экране</string>
     <string name="menu_sort">Сортировка по…</string>
@@ -46,9 +46,9 @@
     <string name="menu_share_link">Поделиться ссылкой</string>
     <string name="menu_save_home">Сохранить на главной</string>
     <string name="menu_save_bookmark">Сохранить как закладку</string>
-    <string name="menu_save_as">Сохранить как …</string>
+    <string name="menu_save_as">Сохранить как</string>
     <string name="menu_save_pdf">Сохранить в PDF</string>
-    <string name="menu_shareClipboard">Копировать в буфер</string>
+    <string name="menu_shareClipboard">Копировать в буфер обмена</string>
     <string name="menu_other_searchSite">Поиск по сайту</string>
     <!-- Dialog -->
     <string name="dialog_title_hint">Заголовок:</string>
@@ -58,7 +58,7 @@
     <string name="dialog_sign_in_password">Пароль</string>
     <string name="dialog_title_download">Загрузить файл?</string>
     <string name="dialog_content_resubmission">Повторно отправить данные?</string>
-    <string name="dialog_content_ssl_error">Сертификат сайта не является доверенным. Всё равно продолжить?</string>
+    <string name="dialog_content_ssl_error">Сертификат сайта не является проверенным. Всё равно продолжить?</string>
     <string name="dialog_sortName">Сортировать по названию</string>
     <string name="dialog_sortIcon">Сортировать по значку</string>
     <string name="dialog_sortDate">Сортировать по дате</string>
@@ -78,8 +78,8 @@
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Размер шрифта</string>
-    <string name="setting_title_dom">Хранилище DOM</string>
-    <string name="privacy_redirect">Redirect</string>
+    <string name="setting_title_dom">DOM</string>
+    <string name="privacy_redirect">Перенаправление</string>
     <string name="privacy_redirect_twitter">Twitter</string>
     <string name="privacy_redirect_youTube">YouTube</string>
     <string name="privacy_redirect_inst">Instagram</string>
@@ -101,19 +101,19 @@
     <!-- browser start -->
     <string name="setting_title_images">Изображения</string>
     <string name="setting_title_cookie">Куки</string>
-    <string name="setting_summary_cookie_delete">Если включено, все cookies будут удалены. Также файлы cookie надежных веб-сайтов.</string>
+    <string name="setting_summary_cookie_delete">Если включено, все файлы куки будут удалены</string>
     <string name="setting_title_javascript_popUp">Всплывающие окна</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Включите AdBlock, чтобы заблокировать раздражающую рекламу. Сайты загружаются быстрее при включении.</string>
-    <string name="setting_title_adblockHost">Блокированное содержимое</string>
+    <string name="setting_title_adblockHost">Заблокированное содержимое</string>
     <string name="setting_title_location">Местоположение</string>
     <string name="setting_title_history">История</string>
     <string name="setting_title_autofill">Данные формы:</string>
     <string name="setting_summary_autofill">Включить сохранение данных форм (Android Nougat и ниже) или службы автозаполнения (Android Oreo и выше).</string>
     <!-- browser clear -->
     <string name="data_summary">Все файлы будут экспортированы в каталог «Documents / browser_backup /» вашей SD-карты.</string>
-    <string name="clear_title_quit">Очистить при выходе из приложения</string>
+    <string name="clear_title_quit">Очистить данные при выходе из приложения</string>
     <string name="clear_title_cache">Очистить кэш</string>
     <string name="clear_title_cookie">Очистить куки</string>
     <string name="clear_title_history">Очистить историю</string>
@@ -168,16 +168,16 @@
     <string name="settings_data_restore">Восстановить</string>
     <!-- Others setting -->
     <!-- Toast -->
-    <string name="toast_add_whitelist_successful">Успешно добавлен домен</string>
-    <string name="toast_copy_successful">Успешно скопировано</string>
+    <string name="toast_add_whitelist_successful">Сайт успешно добавлен в бнлый список</string>
+    <string name="toast_copy_successful">Успешно скопировано в буфер обмена</string>
     <string name="toast_delete_successful">Успешно удалено</string>
     <string name="toast_domain_already_exists">Домен уже существует</string>
     <string name="toast_input_empty">Вы ничего не ввели</string>
     <string name="toast_invalid_domain">Неверный домен</string>
     <string name="toast_webview_forward">Не удается загрузить следующий сайт</string>
-    <string name="toast_restart">Чтобы применить изменения, необходимо перезапустить \"FOSS Browser\". Закрыть сейчас?</string>
+    <string name="toast_restart">Чтобы применить изменения, необходимо перезапустить \"FOSS Browser\". Сделать это прямо сейчас?</string>
     <string name="toast_quit">Хотите выйти из \"FOSS Browser\"?</string>
-    <string name="toast_quit_TAB">Вы хотите закрыть ВКЛАДКУ?</string>
+    <string name="toast_quit_TAB">Вы хотите закрыть вкладку?</string>
     <string name="toast_downloadComplete">Загрузка завершена. Открыть файловый менеджер?</string>
     <string name="toast_unsecured">Сайт использует незащищенное соединение (\"http\"). Попробовать безопасное соединение (\"https\")?</string>
     <string name="toast_backup">Сохранить данные? Это перезапишет старую резервную копию.</string>
@@ -185,10 +185,10 @@
     <string name="whitelist_menu_clear">Очистить</string>
     <string name="whitelist_edit_hint">Домен</string>
     <string name="whitelist_add">Добавить</string>
-    <string name="menu_mobileView">Мобильный вид</string>
-    <string name="menu_desktopView">Десктопный вид</string>
-    <string name="menu_dayView">Дневной режим</string>
-    <string name="menu_nightView">Тёмный режим</string>
+    <string name="menu_mobileView">Мобильная версия</string>
+    <string name="menu_desktopView">Версия для ПК</string>
+    <string name="menu_dayView">Светлая тема</string>
+    <string name="menu_nightView">Тёмная тема</string>
     <string name="setting_userScript">Пользовательский JavaScript</string>
     <string name="setting_title_camera">Разрешить использование камеры</string>
     <string name="setting_title_microphone">Разрешить использование микрофона</string>

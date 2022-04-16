@@ -19,6 +19,10 @@
 
 package de.baumann.browser.unit;
 
+import static android.content.Context.DOWNLOAD_SERVICE;
+import static android.graphics.drawable.Icon.createWithBitmap;
+import static android.graphics.drawable.Icon.createWithResource;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
@@ -35,13 +39,6 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.preference.PreferenceManager;
-
-import com.google.android.material.color.DynamicColors;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
 import android.os.Environment;
 import android.os.Handler;
 import android.util.TypedValue;
@@ -54,8 +51,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import java.io.File;
+import androidx.appcompat.app.AlertDialog;
+import androidx.preference.PreferenceManager;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
+import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -67,10 +68,6 @@ import de.baumann.browser.R;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
-
-import static android.content.Context.DOWNLOAD_SERVICE;
-import static android.graphics.drawable.Icon.createWithBitmap;
-import static android.graphics.drawable.Icon.createWithResource;
 
 public class HelperUnit {
 
@@ -94,7 +91,7 @@ public class HelperUnit {
         }
     }
 
-    public static void grantPermissionsCamera (final Activity activity) {
+    public static void grantPermissionsCamera(final Activity activity) {
         int camera = activity.checkSelfPermission(Manifest.permission.CAMERA);
         if (camera != PackageManager.PERMISSION_GRANTED) {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
@@ -109,7 +106,7 @@ public class HelperUnit {
         }
     }
 
-    public static void grantPermissionsMic (final Activity activity) {
+    public static void grantPermissionsMic(final Activity activity) {
         int mic = activity.checkSelfPermission(Manifest.permission.RECORD_AUDIO);
         if (mic != PackageManager.PERMISSION_GRANTED) {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
@@ -137,7 +134,7 @@ public class HelperUnit {
             editTitle.setText(HelperUnit.fileName(url));
 
             String extension = filename.substring(filename.lastIndexOf("."));
-            if(extension.length() <= 8) {
+            if (extension.length() <= 8) {
                 editExtension.setText(extension);
             }
 
@@ -174,7 +171,7 @@ public class HelperUnit {
                         dm.enqueue(request);
                         hideSoftKeyboard(editExtension, activity);
                         dialogToCancel.cancel();
-                    }else {
+                    } else {
                         BackupUnit.requestPermission(activity);
                     }
                 }
@@ -188,7 +185,7 @@ public class HelperUnit {
         }
     }
 
-    public static void createShortcut (Context context, String title, String url, Bitmap bitmap) {
+    public static void createShortcut(Context context, String title, String url, Bitmap bitmap) {
         Icon icon;
         try {
             Intent i = new Intent();
@@ -204,10 +201,10 @@ public class HelperUnit {
             } else {
                 ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
                 assert shortcutManager != null;
-                if (bitmap != null){
-                    icon=createWithBitmap(bitmap);
-                }else{
-                    icon=createWithResource(context, R.drawable.icon_bookmark);
+                if (bitmap != null) {
+                    icon = createWithBitmap(bitmap);
+                } else {
+                    icon = createWithResource(context, R.drawable.icon_bookmark);
                 }
                 if (shortcutManager.isRequestPinShortcutSupported()) {
                     ShortcutInfo pinShortcutInfo =
@@ -228,17 +225,17 @@ public class HelperUnit {
         }
     }
 
-    public static String fileName (String url) {
+    public static String fileName(String url) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.getDefault());
         String currentTime = sdf.format(new Date());
         String domain = Objects.requireNonNull(Uri.parse(url).getHost()).replace("www.", "").trim();
         return domain.replace(".", "_").trim() + "_" + currentTime.trim();
     }
 
-    public static String domain (String url) {
-        if(url == null){
+    public static String domain(String url) {
+        if (url == null) {
             return "";
-        }else {
+        } else {
             try {
                 return Objects.requireNonNull(Uri.parse(url).getHost()).replace("www.", "").trim();
             } catch (Exception e) {
@@ -269,35 +266,57 @@ public class HelperUnit {
         }
     }
 
-    public static void addFilterItems (Activity activity, List<GridItem> gridList) {
-        GridItem item_01 = new GridItem(R.drawable.circle_red_big, sp.getString("icon_01", activity.getResources().getString(R.string.color_red)),  11);
-        GridItem item_02 = new GridItem(R.drawable.circle_pink_big, sp.getString("icon_02", activity.getResources().getString(R.string.color_pink)),  10);
-        GridItem item_03 = new GridItem(R.drawable.circle_purple_big, sp.getString("icon_03", activity.getResources().getString(R.string.color_purple)),  9);
-        GridItem item_04 = new GridItem(R.drawable.circle_blue_big, sp.getString("icon_04", activity.getResources().getString(R.string.color_blue)),  8);
-        GridItem item_05 = new GridItem(R.drawable.circle_teal_big, sp.getString("icon_05", activity.getResources().getString(R.string.color_teal)),  7);
-        GridItem item_06 = new GridItem(R.drawable.circle_green_big, sp.getString("icon_06", activity.getResources().getString(R.string.color_green)),  6);
-        GridItem item_07 = new GridItem(R.drawable.circle_lime_big, sp.getString("icon_07", activity.getResources().getString(R.string.color_lime)),  5);
-        GridItem item_08 = new GridItem(R.drawable.circle_yellow_big, sp.getString("icon_08", activity.getResources().getString(R.string.color_yellow)),  4);
-        GridItem item_09 = new GridItem(R.drawable.circle_orange_big, sp.getString("icon_09", activity.getResources().getString(R.string.color_orange)),  3);
-        GridItem item_10 = new GridItem(R.drawable.circle_brown_big, sp.getString("icon_10", activity.getResources().getString(R.string.color_brown)),  2);
-        GridItem item_11 = new GridItem(R.drawable.circle_grey_big, sp.getString("icon_11", activity.getResources().getString(R.string.color_grey)),  1);
+    public static void addFilterItems(Activity activity, List<GridItem> gridList) {
+        GridItem item_01 = new GridItem(R.drawable.circle_red_big, sp.getString("icon_01", activity.getResources().getString(R.string.color_red)), 11);
+        GridItem item_02 = new GridItem(R.drawable.circle_pink_big, sp.getString("icon_02", activity.getResources().getString(R.string.color_pink)), 10);
+        GridItem item_03 = new GridItem(R.drawable.circle_purple_big, sp.getString("icon_03", activity.getResources().getString(R.string.color_purple)), 9);
+        GridItem item_04 = new GridItem(R.drawable.circle_blue_big, sp.getString("icon_04", activity.getResources().getString(R.string.color_blue)), 8);
+        GridItem item_05 = new GridItem(R.drawable.circle_teal_big, sp.getString("icon_05", activity.getResources().getString(R.string.color_teal)), 7);
+        GridItem item_06 = new GridItem(R.drawable.circle_green_big, sp.getString("icon_06", activity.getResources().getString(R.string.color_green)), 6);
+        GridItem item_07 = new GridItem(R.drawable.circle_lime_big, sp.getString("icon_07", activity.getResources().getString(R.string.color_lime)), 5);
+        GridItem item_08 = new GridItem(R.drawable.circle_yellow_big, sp.getString("icon_08", activity.getResources().getString(R.string.color_yellow)), 4);
+        GridItem item_09 = new GridItem(R.drawable.circle_orange_big, sp.getString("icon_09", activity.getResources().getString(R.string.color_orange)), 3);
+        GridItem item_10 = new GridItem(R.drawable.circle_brown_big, sp.getString("icon_10", activity.getResources().getString(R.string.color_brown)), 2);
+        GridItem item_11 = new GridItem(R.drawable.circle_grey_big, sp.getString("icon_11", activity.getResources().getString(R.string.color_grey)), 1);
 
-        if (sp.getBoolean("filter_01", true)){ gridList.add(gridList.size(), item_01); }
-        if (sp.getBoolean("filter_02", true)){ gridList.add(gridList.size(), item_02); }
-        if (sp.getBoolean("filter_03", true)){ gridList.add(gridList.size(), item_03); }
-        if (sp.getBoolean("filter_04", true)){ gridList.add(gridList.size(), item_04); }
-        if (sp.getBoolean("filter_05", true)){ gridList.add(gridList.size(), item_05); }
-        if (sp.getBoolean("filter_06", true)){ gridList.add(gridList.size(), item_06); }
-        if (sp.getBoolean("filter_07", true)){ gridList.add(gridList.size(), item_07); }
-        if (sp.getBoolean("filter_08", true)){ gridList.add(gridList.size(), item_08); }
-        if (sp.getBoolean("filter_09", true)){ gridList.add(gridList.size(), item_09); }
-        if (sp.getBoolean("filter_10", true)){ gridList.add(gridList.size(), item_10); }
-        if (sp.getBoolean("filter_11", true)){ gridList.add(gridList.size(), item_11); }
+        if (sp.getBoolean("filter_01", true)) {
+            gridList.add(gridList.size(), item_01);
+        }
+        if (sp.getBoolean("filter_02", true)) {
+            gridList.add(gridList.size(), item_02);
+        }
+        if (sp.getBoolean("filter_03", true)) {
+            gridList.add(gridList.size(), item_03);
+        }
+        if (sp.getBoolean("filter_04", true)) {
+            gridList.add(gridList.size(), item_04);
+        }
+        if (sp.getBoolean("filter_05", true)) {
+            gridList.add(gridList.size(), item_05);
+        }
+        if (sp.getBoolean("filter_06", true)) {
+            gridList.add(gridList.size(), item_06);
+        }
+        if (sp.getBoolean("filter_07", true)) {
+            gridList.add(gridList.size(), item_07);
+        }
+        if (sp.getBoolean("filter_08", true)) {
+            gridList.add(gridList.size(), item_08);
+        }
+        if (sp.getBoolean("filter_09", true)) {
+            gridList.add(gridList.size(), item_09);
+        }
+        if (sp.getBoolean("filter_10", true)) {
+            gridList.add(gridList.size(), item_10);
+        }
+        if (sp.getBoolean("filter_11", true)) {
+            gridList.add(gridList.size(), item_11);
+        }
     }
 
 
-    public static void setFilterIcons (ImageView ib_icon, long newIcon) {
-        newIcon=newIcon&15;
+    public static void setFilterIcons(ImageView ib_icon, long newIcon) {
+        newIcon = newIcon & 15;
         if (newIcon == 11) {
             ib_icon.setImageResource(R.drawable.circle_red_big);
         } else if (newIcon == 10) {
@@ -326,7 +345,7 @@ public class HelperUnit {
     public static void saveDataURI(AlertDialog dialogToCancel, Activity activity, DataURIParser dataUriParser) {
 
         byte[] imagedata = dataUriParser.getImagedata();
-        String filename=dataUriParser.getFilename();
+        String filename = dataUriParser.getFilename();
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
         View dialogView = View.inflate(activity, R.layout.dialog_edit_extension, null);
@@ -334,10 +353,10 @@ public class HelperUnit {
         final EditText editTitle = dialogView.findViewById(R.id.dialog_edit_1);
         final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_2);
 
-        editTitle.setText(filename.substring(0,filename.indexOf(".")));
+        editTitle.setText(filename.substring(0, filename.indexOf(".")));
 
         String extension = filename.substring(filename.lastIndexOf("."));
-        if(extension.length() <= 8) {
+        if (extension.length() <= 8) {
             editExtension.setText(extension);
         }
 
@@ -370,14 +389,15 @@ public class HelperUnit {
             } else {
                 if (BackupUnit.checkPermissionStorage(activity)) {
                     File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename1);
-                    try {FileOutputStream fos = new FileOutputStream(file);
+                    try {
+                        FileOutputStream fos = new FileOutputStream(file);
                         fos.write(imagedata);
-                    }catch (Exception e){
-                        System.out.println("Error Downloading File: " + e.toString());
+                    } catch (Exception e) {
+                        System.out.println("Error Downloading File: " + e);
                         e.printStackTrace();
                     }
                     dialogToCancel.cancel();
-                }else {
+                } else {
                     BackupUnit.requestPermission(activity);
                 }
             }
@@ -389,7 +409,7 @@ public class HelperUnit {
         HelperUnit.setupDialog(activity, dialog);
     }
 
-    public static void showSoftKeyboard(View view, Activity context){
+    public static void showSoftKeyboard(View view, Activity context) {
         assert view != null;
         final Handler handler = new Handler();
         handler.postDelayed(() -> {
@@ -400,13 +420,13 @@ public class HelperUnit {
         }, 50);
     }
 
-    public static void hideSoftKeyboard(View view, Context context){
+    public static void hideSoftKeyboard(View view, Context context) {
         assert view != null;
-        InputMethodManager imm =(InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public static void setupDialog (Context context, Dialog dialog){
+    public static void setupDialog(Context context, Dialog dialog) {
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(R.attr.colorError, typedValue, true);
         int color = typedValue.data;
