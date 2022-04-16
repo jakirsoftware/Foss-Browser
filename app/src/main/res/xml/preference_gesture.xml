@@ -5,84 +5,84 @@
     <PreferenceCategory android:title="@string/setting_title_longPress">
 
         <ListPreference
-            android:title="@string/setting_title_overViewButton"
-            android:icon="@drawable/icon_bookmark"
-            android:key="setting_gesture_overViewButton"
             android:defaultValue="18"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:icon="@drawable/icon_bookmark"
+            android:key="setting_gesture_overViewButton"
+            android:title="@string/setting_title_overViewButton" />
 
         <ListPreference
-            android:title="@string/setting_title_tabButton"
-            android:icon="@drawable/icon_profile_standard"
-            android:key="setting_gesture_tabButton"
             android:defaultValue="19"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:icon="@drawable/icon_profile_standard"
+            android:key="setting_gesture_tabButton"
+            android:title="@string/setting_title_tabButton" />
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_toolbar">
 
         <ListPreference
-            android:title="@string/setting_gesture_up"
-            android:key="setting_gesture_tb_up"
             android:defaultValue="08"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:key="setting_gesture_tb_up"
+            android:title="@string/setting_gesture_up" />
 
         <ListPreference
-            android:title="@string/setting_gesture_down"
-            android:key="setting_gesture_tb_down"
             android:defaultValue="01"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:key="setting_gesture_tb_down"
+            android:title="@string/setting_gesture_down" />
 
         <ListPreference
-            android:title="@string/setting_gesture_left"
-            android:key="setting_gesture_tb_left"
             android:defaultValue="07"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:key="setting_gesture_tb_left"
+            android:title="@string/setting_gesture_left" />
 
         <ListPreference
-            android:title="@string/setting_gesture_right"
-            android:key="setting_gesture_tb_right"
             android:defaultValue="06"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:key="setting_gesture_tb_right"
+            android:title="@string/setting_gesture_right" />
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/setting_title_toolbar_buttons">
 
         <ListPreference
-            android:title="@string/setting_gesture_up"
-            android:key="setting_gesture_nav_up"
             android:defaultValue="04"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:key="setting_gesture_nav_up"
+            android:title="@string/setting_gesture_up" />
 
         <ListPreference
-            android:title="@string/setting_gesture_down"
-            android:key="setting_gesture_nav_down"
             android:defaultValue="05"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:key="setting_gesture_nav_down"
+            android:title="@string/setting_gesture_down" />
 
         <ListPreference
-            android:title="@string/setting_gesture_left"
-            android:key="setting_gesture_nav_left"
             android:defaultValue="03"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:key="setting_gesture_nav_left"
+            android:title="@string/setting_gesture_left" />
 
         <ListPreference
-            android:title="@string/setting_gesture_right"
-            android:key="setting_gesture_nav_right"
             android:defaultValue="02"
             android:entries="@array/setting_entries_gestures"
-            android:entryValues="@array/setting_values_gestures" />
+            android:entryValues="@array/setting_values_gestures"
+            android:key="setting_gesture_nav_right"
+            android:title="@string/setting_gesture_right" />
 
     </PreferenceCategory>
 

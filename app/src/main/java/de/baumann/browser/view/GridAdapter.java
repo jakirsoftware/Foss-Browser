@@ -13,13 +13,7 @@ import java.util.List;
 import de.baumann.browser.R;
 
 public class GridAdapter extends BaseAdapter {
-    private static class Holder {
-        TextView title;
-        ImageView icon;
-    }
-
     private final List<GridItem> list;
-
     private final Context context;
 
     public GridAdapter(Context context, List<GridItem> list) {
@@ -45,7 +39,7 @@ public class GridAdapter extends BaseAdapter {
         GridItem item = list.get(position);
         holder.title.setText(item.getTitle());
         holder.icon.setImageResource(item.getIcon());
-        if (item.getIcon()!=0) holder.icon.setVisibility(View.VISIBLE);
+        if (item.getIcon() != 0) holder.icon.setVisibility(View.VISIBLE);
 
         return view;
     }
@@ -64,5 +58,10 @@ public class GridAdapter extends BaseAdapter {
     @Override
     public long getItemId(int arg0) {
         return arg0;
+    }
+
+    private static class Holder {
+        TextView title;
+        ImageView icon;
     }
 }

@@ -3,16 +3,6 @@ package de.baumann.browser.activity;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-import androidx.preference.PreferenceManager;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,19 +13,28 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import java.util.List;
 import java.util.Objects;
 
+import de.baumann.browser.R;
 import de.baumann.browser.browser.List_protected;
 import de.baumann.browser.browser.List_standard;
 import de.baumann.browser.browser.List_trusted;
 import de.baumann.browser.database.RecordAction;
-import de.baumann.browser.R;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
-import de.baumann.browser.view.ProfilesListAdapter;
 import de.baumann.browser.view.NinjaToast;
+import de.baumann.browser.view.ProfilesListAdapter;
 
 public class ProfilesList extends AppCompatActivity {
 
@@ -105,9 +104,9 @@ public class ProfilesList extends AppCompatActivity {
         listView.setEmptyView(findViewById(R.id.whitelist_empty));
 
         //noinspection NullableProblems
-        adapter = new ProfilesListAdapter(this, list){
+        adapter = new ProfilesListAdapter(this, list) {
             @Override
-            public View getView (final int position, View convertView, @NonNull ViewGroup parent) {
+            public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
                 View v = super.getView(position, convertView, parent);
                 Button whitelist_item_cancel = v.findViewById(R.id.whitelist_item_cancel);
                 whitelist_item_cancel.setOnClickListener(v1 -> {
@@ -147,15 +146,15 @@ public class ProfilesList extends AppCompatActivity {
             EditText editText = findViewById(R.id.whitelist_edit);
             String domain = editText.getText().toString().trim();
             if (domain.isEmpty()) {
-                NinjaToast.show(ProfilesList.this, R.string.toast_input_empty); }
-            else if (!BrowserUnit.isURL(domain)) {
-                NinjaToast.show(ProfilesList.this, R.string.toast_invalid_domain); }
-            else {
+                NinjaToast.show(ProfilesList.this, R.string.toast_input_empty);
+            } else if (!BrowserUnit.isURL(domain)) {
+                NinjaToast.show(ProfilesList.this, R.string.toast_invalid_domain);
+            } else {
                 RecordAction action1 = new RecordAction(ProfilesList.this);
                 action1.open(true);
                 if (action1.checkDomain(domain, RecordUnit.TABLE_PROTECTED)) {
-                    NinjaToast.show(ProfilesList.this, R.string.toast_domain_already_exists); }
-                else {
+                    NinjaToast.show(ProfilesList.this, R.string.toast_domain_already_exists);
+                } else {
                     switch (listToLoad) {
                         case "protected":
                             listProtected.addDomain(domain.trim());
@@ -209,8 +208,8 @@ public class ProfilesList extends AppCompatActivity {
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            HelperUnit.setupDialog(this, dialog); }
-        else if (menuItem.getItemId() == R.id.menu_help) {
+            HelperUnit.setupDialog(this, dialog);
+        } else if (menuItem.getItemId() == R.id.menu_help) {
             Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki/Profile-list");
             BrowserUnit.intentURL(this, webpage);
         }

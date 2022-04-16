@@ -13,7 +13,7 @@ public class SwipeTouchListener implements OnTouchListener {
 
     private final GestureDetector gestureDetector;
 
-    public SwipeTouchListener(Context ctx){
+    public SwipeTouchListener(Context ctx) {
         gestureDetector = new GestureDetector(ctx, new GestureListener());
     }
 
@@ -21,6 +21,19 @@ public class SwipeTouchListener implements OnTouchListener {
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         return gestureDetector.onTouchEvent(event);
+    }
+
+    // ↓ do not remove, needed for swipe listener of the "navigation button"
+    public void onSwipeRight() {
+    }
+
+    public void onSwipeLeft() {
+    }
+
+    public void onSwipeTop() {
+    }
+
+    public void onSwipeBottom() {
     }
 
     private final class GestureListener extends GestureDetector.SimpleOnGestureListener {
@@ -35,7 +48,9 @@ public class SwipeTouchListener implements OnTouchListener {
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            if (e1!=null && e2!=null) {
+          
+            boolean result = false;
+            if (e1 != null && e2 != null) {
                 try {
                     float diffY = e2.getY() - e1.getY();
                     float diffX = e2.getX() - e1.getX();
@@ -60,18 +75,5 @@ public class SwipeTouchListener implements OnTouchListener {
             }
             return super.onFling(e1, e2, velocityX, velocityY);
         }
-    }
-
-    // ↓ do not remove, needed for swipe listener of the "navigation button"
-    public void onSwipeRight() {
-    }
-
-    public void onSwipeLeft() {
-    }
-
-    public void onSwipeTop() {
-    }
-
-    public void onSwipeBottom() {
     }
 }

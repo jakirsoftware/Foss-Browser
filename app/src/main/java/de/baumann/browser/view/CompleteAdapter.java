@@ -29,114 +29,11 @@ import de.baumann.browser.database.Record;
 
 
 public class CompleteAdapter extends BaseAdapter implements Filterable {
-    private class CompleteFilter extends Filter {
-        @Override
-        protected FilterResults performFiltering(CharSequence prefix) {
-            if (prefix == null) {
-                return new FilterResults();
-            }
-
-            List<CompleteItem> workList = new ArrayList<>();
-            for (CompleteItem item : originalList) {
-                if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) || item.getURL().contains(prefix)) {
-                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) ) {
-                        item.setIndex(item.getTitle().indexOf(prefix.toString()));
-                    } else if (item.getURL().contains(prefix)) {
-                        item.setIndex(item.getURL().indexOf(prefix.toString()));
-                    }
-                    workList.add(item);
-                }
-            }
-
-            workList.sort(Comparator.comparingInt(CompleteItem::getIndex));
-
-            FilterResults results = new FilterResults();
-            results.values = workList;
-            results.count =workList.size();
-
-            return results;
-        }
-
-        @SuppressWarnings("unchecked")
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            count = results.count;
-            if (results.count > 0) {
-                // The API returned at least one result, update the data.
-                resultList = (List<CompleteItem>) results.values;
-                notifyDataSetChanged();
-            } else {
-                // The API did not return any results, invalidate the data set.
-                notifyDataSetInvalidated();
-            }
-        }
-    }
-
-    private static class CompleteItem {
-        private final String title;
-        private final int type;
-
-        private int getType(){return this.type;}
-
-        String getTitle() {
-            return title;
-        }
-
-        private final String url;
-
-        String getURL() {
-            return url;
-        }
-
-        private int index = Integer.MAX_VALUE;
-
-        int getIndex() {
-            return index;
-        }
-
-        void setIndex(int index) {
-            this.index = index;
-        }
-
-        private CompleteItem(String title, String url, int type) {
-            this.title = title;
-            this.url = url;
-            this.type=type;
-        }
-
-        @Override
-        public boolean equals(Object object) {
-            if (!(object instanceof CompleteItem)) {
-                return false;
-            }
-
-            CompleteItem item = (CompleteItem) object;
-            return item.getTitle().equals(title) && item.getURL().equals(url);
-        }
-
-        @Override
-        public int hashCode() {
-            if (title == null || url == null) {
-                return 0;
-            }
-
-            return title.hashCode() & url.hashCode();
-        }
-    }
-
-    private static class Holder {
-        private ImageView iconView;
-        private ImageView favicon;
-        private TextView titleView;
-        private TextView urlView;
-        private CardView cardView;
-    }
-
     private final Context context;
     private final int layoutResId;
     private final List<CompleteItem> originalList;
-    private List<CompleteItem> resultList;
     private final CompleteFilter filter = new CompleteFilter();
+    private List<CompleteItem> resultList;
     private int count;
 
     public CompleteAdapter(Context context, int layoutResId, List<Record> recordList) {
@@ -197,8 +94,8 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
             holder.titleView = view.findViewById(R.id.record_item_title);
             holder.urlView = view.findViewById(R.id.record_item_time);
             holder.iconView = view.findViewById(R.id.record_item_icon);
-            holder.favicon=view.findViewById(R.id.record_item_favicon);
-            holder.cardView=view.findViewById(R.id.cardView);
+            holder.favicon = view.findViewById(R.id.record_item_favicon);
+            holder.cardView = view.findViewById(R.id.cardView);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -209,14 +106,15 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.urlView.setVisibility(View.GONE);
         holder.urlView.setText(item.url);
 
-        if (item.getType()==STARTSITE_ITEM) {  //Item from start page
+        if (item.getType() == STARTSITE_ITEM) {  //Item from start page
             holder.iconView.setImageResource(R.drawable.icon_web);
-        } else if (item.getType()==HISTORY_ITEM){  //Item from history
+        } else if (item.getType() == HISTORY_ITEM) {  //Item from history
             holder.iconView.setImageResource(R.drawable.icon_history);
-        } else if (item.getType()==BOOKMARK_ITEM) holder.iconView.setImageResource(R.drawable.icon_bookmark);  //Item from bookmarks
+        } else if (item.getType() == BOOKMARK_ITEM)
+            holder.iconView.setImageResource(R.drawable.icon_bookmark);  //Item from bookmarks
 
         FaviconHelper faviconHelper = new FaviconHelper(context);
-        Bitmap bitmap=faviconHelper.getFavicon(item.url);
+        Bitmap bitmap = faviconHelper.getFavicon(item.url);
 
         if (bitmap != null) {
             holder.favicon.setImageBitmap(bitmap);
@@ -228,5 +126,108 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         holder.cardView.setVisibility(View.VISIBLE);
 
         return view;
+    }
+
+    private static class CompleteItem {
+        private final String title;
+        private final int type;
+        private final String url;
+        private int index = Integer.MAX_VALUE;
+
+        private CompleteItem(String title, String url, int type) {
+            this.title = title;
+            this.url = url;
+            this.type = type;
+        }
+
+        private int getType() {
+            return this.type;
+        }
+
+        String getTitle() {
+            return title;
+        }
+
+        String getURL() {
+            return url;
+        }
+
+        int getIndex() {
+            return index;
+        }
+
+        void setIndex(int index) {
+            this.index = index;
+        }
+
+        @Override
+        public boolean equals(Object object) {
+            if (!(object instanceof CompleteItem)) {
+                return false;
+            }
+
+            CompleteItem item = (CompleteItem) object;
+            return item.getTitle().equals(title) && item.getURL().equals(url);
+        }
+
+        @Override
+        public int hashCode() {
+            if (title == null || url == null) {
+                return 0;
+            }
+
+            return title.hashCode() & url.hashCode();
+        }
+    }
+
+    private static class Holder {
+        private ImageView iconView;
+        private ImageView favicon;
+        private TextView titleView;
+        private TextView urlView;
+        private CardView cardView;
+    }
+
+    private class CompleteFilter extends Filter {
+        @Override
+        protected FilterResults performFiltering(CharSequence prefix) {
+            if (prefix == null) {
+                return new FilterResults();
+            }
+
+            List<CompleteItem> workList = new ArrayList<>();
+            for (CompleteItem item : originalList) {
+                if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix) || item.getURL().contains(prefix)) {
+                    if (item.getTitle().contains(prefix) || item.getTitle().toLowerCase().contains(prefix)) {
+                        item.setIndex(item.getTitle().indexOf(prefix.toString()));
+                    } else if (item.getURL().contains(prefix)) {
+                        item.setIndex(item.getURL().indexOf(prefix.toString()));
+                    }
+                    workList.add(item);
+                }
+            }
+
+            workList.sort(Comparator.comparingInt(CompleteItem::getIndex));
+
+            FilterResults results = new FilterResults();
+            results.values = workList;
+            results.count = workList.size();
+
+            return results;
+        }
+
+        @SuppressWarnings("unchecked")
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            count = results.count;
+            if (results.count > 0) {
+                // The API returned at least one result, update the data.
+                resultList = (List<CompleteItem>) results.values;
+                notifyDataSetChanged();
+            } else {
+                // The API did not return any results, invalidate the data set.
+                notifyDataSetInvalidated();
+            }
+        }
     }
 }

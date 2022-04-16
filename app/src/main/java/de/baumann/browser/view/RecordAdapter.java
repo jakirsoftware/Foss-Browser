@@ -1,9 +1,6 @@
 package de.baumann.browser.view;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +8,17 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import de.baumann.browser.database.FaviconHelper;
-import de.baumann.browser.database.Record;
-import de.baumann.browser.R;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
+
+import de.baumann.browser.R;
+import de.baumann.browser.database.FaviconHelper;
+import de.baumann.browser.database.Record;
 
 public class RecordAdapter extends ArrayAdapter<Record> {
     private final Context context;
@@ -29,14 +30,6 @@ public class RecordAdapter extends ArrayAdapter<Record> {
         this.context = context;
         this.layoutResId = R.layout.item_icon_left;
         this.list = list;
-    }
-
-    private static class Holder {
-        TextView title;
-        TextView time;
-        ImageView icon;
-        ImageView favicon;
-        CardView cardView;
     }
 
     @SuppressWarnings("NullableProblems")
@@ -51,8 +44,8 @@ public class RecordAdapter extends ArrayAdapter<Record> {
             holder.title = view.findViewById(R.id.record_item_title);
             holder.time = view.findViewById(R.id.record_item_time);
             holder.icon = view.findViewById(R.id.record_item_icon);
-            holder.favicon=view.findViewById(R.id.record_item_favicon);
-            holder.cardView=view.findViewById(R.id.cardView);
+            holder.favicon = view.findViewById(R.id.record_item_favicon);
+            holder.cardView = view.findViewById(R.id.cardView);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -92,14 +85,22 @@ public class RecordAdapter extends ArrayAdapter<Record> {
 
         holder.cardView.setVisibility(View.VISIBLE);
         FaviconHelper faviconHelper = new FaviconHelper(context);
-        Bitmap bitmap=faviconHelper.getFavicon(record.getURL());
+        Bitmap bitmap = faviconHelper.getFavicon(record.getURL());
 
-        if (bitmap != null){
+        if (bitmap != null) {
             holder.favicon.setImageBitmap(bitmap);
-        }else {
+        } else {
             holder.favicon.setImageResource(R.drawable.icon_image_broken);
         }
 
         return view;
+    }
+
+    private static class Holder {
+        TextView title;
+        TextView time;
+        ImageView icon;
+        ImageView favicon;
+        CardView cardView;
     }
 }
