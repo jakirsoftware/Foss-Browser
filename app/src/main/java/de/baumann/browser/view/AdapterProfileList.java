@@ -13,15 +13,15 @@ import java.util.List;
 
 import de.baumann.browser.R;
 
-public class ProfilesListAdapter extends ArrayAdapter<String> {
+public class AdapterProfileList extends ArrayAdapter<String> {
     private final Context context;
     private final int layoutResId;
     private final List<String> list;
 
-    public ProfilesListAdapter(Context context, List<String> list) {
-        super(context, R.layout.item_icon_right, list);
+    public AdapterProfileList(Context context, List<String> list) {
+        super(context, R.layout.item_list, list);
         this.context = context;
-        this.layoutResId = R.layout.item_icon_right;
+        this.layoutResId = R.layout.item_list;
         this.list = list;
     }
 
@@ -34,7 +34,7 @@ public class ProfilesListAdapter extends ArrayAdapter<String> {
         if (view == null) {
             view = LayoutInflater.from(context).inflate(layoutResId, parent, false);
             holder = new Holder();
-            holder.domain = view.findViewById(R.id.whitelist_item_domain);
+            holder.domain = view.findViewById(R.id.titleView);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();

@@ -2,26 +2,29 @@ package de.baumann.browser.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-import com.google.android.material.chip.Chip;
+import com.google.android.material.card.MaterialCardView;
 
 import de.baumann.browser.R;
 import de.baumann.browser.browser.AlbumController;
 import de.baumann.browser.browser.BrowserController;
 
-class AlbumItem {
+class AdapterTabs {
 
     private final Context context;
     private final AlbumController albumController;
 
     private View albumView;
-    private Chip albumTitle;
+    private TextView albumTitle;
     private BrowserController browserController;
+    private MaterialCardView albumCardView;
 
-    AlbumItem(Context context, AlbumController albumController, BrowserController browserController) {
+    AdapterTabs(Context context, AlbumController albumController, BrowserController browserController) {
         this.context = context;
         this.albumController = albumController;
         this.browserController = browserController;
@@ -42,23 +45,30 @@ class AlbumItem {
 
     @SuppressLint("InflateParams")
     private void initUI() {
-        albumView = LayoutInflater.from(context).inflate(R.layout.item_tab, null, false);
-        Button albumClose = albumView.findViewById(R.id.whitelist_item_cancel);
+        albumView = LayoutInflater.from(context).inflate(R.layout.item_list, null, false);
+        Button albumClose = albumView.findViewById(R.id.cancelButton);
         albumClose.setVisibility(View.VISIBLE);
         albumClose.setOnClickListener(v -> browserController.removeAlbum(albumController));
-        albumTitle = albumView.findViewById(R.id.whitelist_item_domain);
+        albumTitle = albumView.findViewById(R.id.titleView);
+        albumCardView = albumView.findViewById(R.id.albumCardView);
     }
 
     public void activate() {
-        albumTitle.setChecked(true);
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(R.attr.colorSecondaryContainer, typedValue, true);
+        int color = typedValue.data;
+        albumCardView.setCardBackgroundColor(color);
         albumTitle.setOnClickListener(view -> {
-            albumTitle.setChecked(true);
+            albumCardView.setCardBackgroundColor(color);
             browserController.hideOverview();
         });
     }
 
     void deactivate() {
-        albumTitle.setChecked(false);
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(R.attr.colorSurfaceVariant, typedValue, true);
+        int color = typedValue.data;
+        albumCardView.setCardBackgroundColor(color);
         albumTitle.setOnClickListener(view -> {
             browserController.showAlbum(albumController);
             browserController.hideOverview();

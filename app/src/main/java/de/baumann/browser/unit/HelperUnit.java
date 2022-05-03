@@ -52,8 +52,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.preference.PreferenceManager;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.File;
@@ -267,78 +269,52 @@ public class HelperUnit {
     }
 
     public static void addFilterItems(Activity activity, List<GridItem> gridList) {
-        GridItem item_01 = new GridItem(R.drawable.circle_red_big, sp.getString("icon_01", activity.getResources().getString(R.string.color_red)), 11);
-        GridItem item_02 = new GridItem(R.drawable.circle_pink_big, sp.getString("icon_02", activity.getResources().getString(R.string.color_pink)), 10);
-        GridItem item_03 = new GridItem(R.drawable.circle_purple_big, sp.getString("icon_03", activity.getResources().getString(R.string.color_purple)), 9);
-        GridItem item_04 = new GridItem(R.drawable.circle_blue_big, sp.getString("icon_04", activity.getResources().getString(R.string.color_blue)), 8);
-        GridItem item_05 = new GridItem(R.drawable.circle_teal_big, sp.getString("icon_05", activity.getResources().getString(R.string.color_teal)), 7);
-        GridItem item_06 = new GridItem(R.drawable.circle_green_big, sp.getString("icon_06", activity.getResources().getString(R.string.color_green)), 6);
-        GridItem item_07 = new GridItem(R.drawable.circle_lime_big, sp.getString("icon_07", activity.getResources().getString(R.string.color_lime)), 5);
-        GridItem item_08 = new GridItem(R.drawable.circle_yellow_big, sp.getString("icon_08", activity.getResources().getString(R.string.color_yellow)), 4);
-        GridItem item_09 = new GridItem(R.drawable.circle_orange_big, sp.getString("icon_09", activity.getResources().getString(R.string.color_orange)), 3);
-        GridItem item_10 = new GridItem(R.drawable.circle_brown_big, sp.getString("icon_10", activity.getResources().getString(R.string.color_brown)), 2);
-        GridItem item_11 = new GridItem(R.drawable.circle_grey_big, sp.getString("icon_11", activity.getResources().getString(R.string.color_grey)), 1);
+        GridItem item_01 = new GridItem(sp.getString("icon_01", activity.getResources().getString(R.string.color_red)), 11);
+        GridItem item_02 = new GridItem(sp.getString("icon_02", activity.getResources().getString(R.string.color_pink)), 10);
+        GridItem item_03 = new GridItem(sp.getString("icon_03", activity.getResources().getString(R.string.color_purple)), 9);
+        GridItem item_04 = new GridItem(sp.getString("icon_04", activity.getResources().getString(R.string.color_blue)), 8);
+        GridItem item_05 = new GridItem(sp.getString("icon_05", activity.getResources().getString(R.string.color_teal)), 7);
+        GridItem item_06 = new GridItem(sp.getString("icon_06", activity.getResources().getString(R.string.color_green)), 6);
+        GridItem item_07 = new GridItem(sp.getString("icon_07", activity.getResources().getString(R.string.color_lime)), 5);
+        GridItem item_08 = new GridItem(sp.getString("icon_08", activity.getResources().getString(R.string.color_yellow)), 4);
+        GridItem item_09 = new GridItem(sp.getString("icon_09", activity.getResources().getString(R.string.color_orange)), 3);
+        GridItem item_10 = new GridItem(sp.getString("icon_10", activity.getResources().getString(R.string.color_brown)), 2);
+        GridItem item_11 = new GridItem(sp.getString("icon_11", activity.getResources().getString(R.string.color_grey)), 1);
+        GridItem item_12 = new GridItem(sp.getString("icon_12", activity.getResources().getString(R.string.setting_theme_system)), 0);
 
-        if (sp.getBoolean("filter_01", true)) {
-            gridList.add(gridList.size(), item_01);
-        }
-        if (sp.getBoolean("filter_02", true)) {
-            gridList.add(gridList.size(), item_02);
-        }
-        if (sp.getBoolean("filter_03", true)) {
-            gridList.add(gridList.size(), item_03);
-        }
-        if (sp.getBoolean("filter_04", true)) {
-            gridList.add(gridList.size(), item_04);
-        }
-        if (sp.getBoolean("filter_05", true)) {
-            gridList.add(gridList.size(), item_05);
-        }
-        if (sp.getBoolean("filter_06", true)) {
-            gridList.add(gridList.size(), item_06);
-        }
-        if (sp.getBoolean("filter_07", true)) {
-            gridList.add(gridList.size(), item_07);
-        }
-        if (sp.getBoolean("filter_08", true)) {
-            gridList.add(gridList.size(), item_08);
-        }
-        if (sp.getBoolean("filter_09", true)) {
-            gridList.add(gridList.size(), item_09);
-        }
-        if (sp.getBoolean("filter_10", true)) {
-            gridList.add(gridList.size(), item_10);
-        }
-        if (sp.getBoolean("filter_11", true)) {
-            gridList.add(gridList.size(), item_11);
-        }
+        if (sp.getBoolean("filter_01", true)) gridList.add(gridList.size(), item_01);
+        if (sp.getBoolean("filter_02", true)) gridList.add(gridList.size(), item_02);
+        if (sp.getBoolean("filter_03", true)) gridList.add(gridList.size(), item_03);
+        if (sp.getBoolean("filter_04", true)) gridList.add(gridList.size(), item_04);
+        if (sp.getBoolean("filter_05", true)) gridList.add(gridList.size(), item_05);
+        if (sp.getBoolean("filter_06", true)) gridList.add(gridList.size(), item_06);
+        if (sp.getBoolean("filter_07", true)) gridList.add(gridList.size(), item_07);
+        if (sp.getBoolean("filter_08", true)) gridList.add(gridList.size(), item_08);
+        if (sp.getBoolean("filter_09", true)) gridList.add(gridList.size(), item_09);
+        if (sp.getBoolean("filter_10", true)) gridList.add(gridList.size(), item_10);
+        if (sp.getBoolean("filter_11", true)) gridList.add(gridList.size(), item_11);
+        if (sp.getBoolean("filter_12", true)) gridList.add(gridList.size(), item_12);
     }
 
 
-    public static void setFilterIcons(ImageView ib_icon, long newIcon) {
+    public static void setFilterIcons(Context context, MaterialCardView ib_icon, long newIcon) {
         newIcon = newIcon & 15;
-        if (newIcon == 11) {
-            ib_icon.setImageResource(R.drawable.circle_red_big);
-        } else if (newIcon == 10) {
-            ib_icon.setImageResource(R.drawable.circle_pink_big);
-        } else if (newIcon == 9) {
-            ib_icon.setImageResource(R.drawable.circle_purple_big);
-        } else if (newIcon == 8) {
-            ib_icon.setImageResource(R.drawable.circle_blue_big);
-        } else if (newIcon == 7) {
-            ib_icon.setImageResource(R.drawable.circle_teal_big);
-        } else if (newIcon == 6) {
-            ib_icon.setImageResource(R.drawable.circle_green_big);
-        } else if (newIcon == 5) {
-            ib_icon.setImageResource(R.drawable.circle_lime_big);
-        } else if (newIcon == 4) {
-            ib_icon.setImageResource(R.drawable.circle_yellow_big);
-        } else if (newIcon == 3) {
-            ib_icon.setImageResource(R.drawable.circle_orange_big);
-        } else if (newIcon == 2) {
-            ib_icon.setImageResource(R.drawable.circle_brown_big);
-        } else if (newIcon == 1) {
-            ib_icon.setImageResource(R.drawable.circle_grey_big);
+        if (newIcon == 11) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.red, null));
+        else if (newIcon == 10) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.pink, null));
+        else if (newIcon == 9) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.purple, null));
+        else if (newIcon == 8) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.blue, null));
+        else if (newIcon == 7) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.teal, null));
+        else if (newIcon == 6) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.green, null));
+        else if (newIcon == 5) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.lime, null));
+        else if (newIcon == 4) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.yellow, null));
+        else if (newIcon == 3) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.orange, null));
+        else if (newIcon == 2) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.brown, null));
+        else if (newIcon == 1) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.grey, null));
+        else if (newIcon == 0) {
+            TypedValue typedValue = new TypedValue();
+            context.getTheme().resolveAttribute(R.attr.colorSurfaceVariant, typedValue, true);
+            int color = typedValue.data;
+            ib_icon.setCardBackgroundColor(color);
         }
     }
 

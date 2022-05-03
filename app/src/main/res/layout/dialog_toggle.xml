@@ -139,7 +139,7 @@
                         app:chipIcon="@drawable/icon_image"
                         app:chipIconEnabled="true"
                         app:textEndPadding="0dp"
-                        app:textStartPadding="0dp" />
+                        app:textStartPadding="0dp"/>
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_adBlock"

@@ -28,7 +28,7 @@ import de.baumann.browser.database.FaviconHelper;
 import de.baumann.browser.database.Record;
 
 
-public class CompleteAdapter extends BaseAdapter implements Filterable {
+public class AdapterSearch extends BaseAdapter implements Filterable {
     private final Context context;
     private final int layoutResId;
     private final List<CompleteItem> originalList;
@@ -36,7 +36,7 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
     private List<CompleteItem> resultList;
     private int count;
 
-    public CompleteAdapter(Context context, int layoutResId, List<Record> recordList) {
+    public AdapterSearch(Context context, int layoutResId, List<Record> recordList) {
         this.context = context;
         this.layoutResId = layoutResId;
         this.originalList = new ArrayList<>();
@@ -91,11 +91,10 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         if (view == null) {
             view = LayoutInflater.from(context).inflate(layoutResId, null, false);
             holder = new Holder();
-            holder.titleView = view.findViewById(R.id.record_item_title);
-            holder.urlView = view.findViewById(R.id.record_item_time);
-            holder.iconView = view.findViewById(R.id.record_item_icon);
-            holder.favicon = view.findViewById(R.id.record_item_favicon);
-            holder.cardView = view.findViewById(R.id.cardView);
+            holder.titleView = view.findViewById(R.id.titleView);
+            holder.urlView = view.findViewById(R.id.dateView);
+            holder.iconView = view.findViewById(R.id.iconView);
+            holder.favicon = view.findViewById(R.id.faviconView);
             view.setTag(holder);
         } else {
             holder = (Holder) view.getTag();
@@ -103,8 +102,9 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
 
         CompleteItem item = resultList.get(position);
         holder.titleView.setText(item.title);
-        holder.urlView.setVisibility(View.GONE);
+        holder.titleView.setPadding(0,0,100,0);
         holder.urlView.setText(item.url);
+        holder.iconView.setVisibility(View.VISIBLE);
 
         if (item.getType() == STARTSITE_ITEM) {  //Item from start page
             holder.iconView.setImageResource(R.drawable.icon_web);
@@ -121,9 +121,6 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         } else {
             holder.favicon.setImageResource(R.drawable.icon_image_broken);
         }
-
-        holder.iconView.setVisibility(View.VISIBLE);
-        holder.cardView.setVisibility(View.VISIBLE);
 
         return view;
     }
@@ -185,7 +182,6 @@ public class CompleteAdapter extends BaseAdapter implements Filterable {
         private ImageView favicon;
         private TextView titleView;
         private TextView urlView;
-        private CardView cardView;
     }
 
     private class CompleteFilter extends Filter {

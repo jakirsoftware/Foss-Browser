@@ -84,6 +84,7 @@ import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -114,12 +115,12 @@ import de.baumann.browser.database.RecordAction;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
-import de.baumann.browser.view.CompleteAdapter;
+import de.baumann.browser.view.AdapterSearch;
 import de.baumann.browser.view.GridAdapter;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
-import de.baumann.browser.view.RecordAdapter;
+import de.baumann.browser.view.AdapterRecord;
 import de.baumann.browser.view.SwipeTouchListener;
 
 public class BrowserActivity extends AppCompatActivity implements BrowserController {
@@ -127,7 +128,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     // Menus
 
     private static final int INPUT_FILE_REQUEST_CODE = 1;
-    private RecordAdapter adapter;
+    private AdapterRecord adapter;
     private RelativeLayout omniBox;
     private ImageButton omniBox_overview;
 
@@ -424,13 +425,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     public void initSearch() {
         RecordAction action = new RecordAction(this);
         List<Record> list = action.listEntries(activity);
-        CompleteAdapter adapter = new CompleteAdapter(this, R.layout.item_icon_left, list);
+        AdapterSearch adapter = new AdapterSearch(this, R.layout.item_list, list);
         list_search.setAdapter(adapter);
         list_search.setTextFilterEnabled(true);
         adapter.notifyDataSetChanged();
         list_search.setOnItemClickListener((parent, view, position, id) -> {
             omniBox_text.clearFocus();
-            String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
+            String url = ((TextView) view.findViewById(R.id.dateView)).getText().toString();
             for (Record record : list) {
                 if (record.getURL().equals(url)) {
                     if ((record.getType() == BOOKMARK_ITEM) || (record.getType() == STARTSITE_ITEM)) {
@@ -447,19 +448,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.loadUrl(url);
         });
         list_search.setOnItemLongClickListener((adapterView, view, i, l) -> {
-            String title = ((TextView) view.findViewById(R.id.record_item_title)).getText().toString();
-            String url = ((TextView) view.findViewById(R.id.record_item_time)).getText().toString();
+            TextView titleView = adapterView.findViewById(R.id.titleView);
+            String title = titleView.getText().toString();
+            String url = ((TextView) view.findViewById(R.id.dateView)).getText().toString();
             showContextMenuLink(title, url, SRC_ANCHOR_TYPE);
+            omnibox_close.performClick();
             omnibox_close.performClick();
             return true;
         });
         omniBox_text.addTextChangedListener(new TextWatcher() {
-            public void afterTextChanged(Editable s) {
-            }
-
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
+            public void afterTextChanged(Editable s) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 adapter.getFilter().filter(s);
             }
@@ -807,7 +806,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 final List<Record> list = action.listStartSite(activity);
                 action.close();
 
-                adapter = new RecordAdapter(context, list);
+                adapter = new AdapterRecord(context, list);
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
@@ -840,18 +839,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 final List<Record> list;
                 list = action.listBookmark(activity, filter, filterBy);
                 action.close();
-
-                adapter = new RecordAdapter(context, list) {
-                    @SuppressWarnings("NullableProblems")
-                    @Override
-                    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
-                        View v = super.getView(position, convertView, parent);
-                        ImageView record_item_icon = v.findViewById(R.id.record_item_icon);
-                        record_item_icon.setVisibility(View.VISIBLE);
-                        return v;
-                    }
-                };
-
+                adapter = new AdapterRecord(context, list);
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 filter = false;
@@ -884,12 +872,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 list = action.listHistory();
                 action.close();
                 //noinspection NullableProblems
-                adapter = new RecordAdapter(context, list) {
+                adapter = new AdapterRecord(context, list) {
                     @Override
                     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
                         View v = super.getView(position, convertView, parent);
-                        TextView record_item_time = v.findViewById(R.id.record_item_time);
+                        TextView record_item_time = v.findViewById(R.id.dateView);
                         record_item_time.setVisibility(View.VISIBLE);
+                        TextView record_item_title = v.findViewById(R.id.titleView);
+                        record_item_title.setPadding(0,0,150,0);
                         return v;
                     }
                 };
@@ -1492,9 +1482,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         //restoreProfile from shared preferences if app got killed
         if (!profile.equals("")) sp.edit().putString("profile", profile).apply();
         if (profileDialog) {
-            GridItem item_01 = new GridItem(R.drawable.icon_profile_trusted, getString(R.string.setting_title_profiles_trusted), 11);
-            GridItem item_02 = new GridItem(R.drawable.icon_profile_standard, getString(R.string.setting_title_profiles_standard), 11);
-            GridItem item_03 = new GridItem(R.drawable.icon_profile_protected, getString(R.string.setting_title_profiles_protected), 11);
+            GridItem item_01 = new GridItem(getString(R.string.setting_title_profiles_trusted), 0);
+            GridItem item_02 = new GridItem(getString(R.string.setting_title_profiles_standard), 0);
+            GridItem item_03 = new GridItem(getString(R.string.setting_title_profiles_protected), 0);
 
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             View dialogView = View.inflate(context, R.layout.dialog_menu, null);
@@ -1529,7 +1519,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 dialog.cancel();
                 setWebView(title, url, foreground);
             });
-        } else setWebView(title, url, foreground);
+        }
+        else setWebView(title, url, foreground);
     }
 
     private void closeTabConfirmation(final Runnable okAction) {
@@ -1738,14 +1729,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
-        GridItem item_01 = new GridItem(0, getString(R.string.main_menu_new_tabOpen), 0);
-        GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab), 0);
-        GridItem item_03 = new GridItem(0, getString(R.string.main_menu_new_tabProfile), 0);
-        GridItem item_04 = new GridItem(0, getString(R.string.menu_share_link), 0);
-        GridItem item_05 = new GridItem(0, getString(R.string.menu_shareClipboard), 0);
-        GridItem item_06 = new GridItem(0, getString(R.string.menu_open_with), 0);
-        GridItem item_07 = new GridItem(0, getString(R.string.menu_save_as), 0);
-        GridItem item_08 = new GridItem(0, getString(R.string.menu_save_home), 0);
+        GridItem item_01 = new GridItem( getString(R.string.main_menu_new_tabOpen), 0);
+        GridItem item_02 = new GridItem( getString(R.string.main_menu_new_tab), 0);
+        GridItem item_03 = new GridItem( getString(R.string.main_menu_new_tabProfile), 0);
+        GridItem item_04 = new GridItem( getString(R.string.menu_share_link), 0);
+        GridItem item_05 = new GridItem( getString(R.string.menu_shareClipboard), 0);
+        GridItem item_06 = new GridItem( getString(R.string.menu_open_with), 0);
+        GridItem item_07 = new GridItem( getString(R.string.menu_save_as), 0);
+        GridItem item_08 = new GridItem( getString(R.string.menu_save_home), 0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -1827,7 +1818,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_BOOKMARK))
             NinjaToast.show(this, R.string.app_error);
         else {
-            long value = 11;  //default red icon
+            long value = 0;  //default red icon
             action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 0, 0, 2, ninjaWebView.isDesktopMode(), ninjaWebView.isNightMode(), value));
             NinjaToast.show(this, R.string.app_done);
         }
@@ -1913,12 +1904,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         // Tab
 
-        GridItem item_01 = new GridItem(0, getString(R.string.menu_openFav), 0);
-        GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tabOpen), 0);
-        GridItem item_03 = new GridItem(0, getString(R.string.main_menu_new_tabProfile), 0);
-        GridItem item_04 = new GridItem(0, getString(R.string.menu_reload), 0);
-        GridItem item_05 = new GridItem(0, getString(R.string.menu_closeTab), 0);
-        GridItem item_06 = new GridItem(0, getString(R.string.menu_quit), 0);
+        GridItem item_01 = new GridItem( getString(R.string.menu_openFav), 0);
+        GridItem item_02 = new GridItem( getString(R.string.main_menu_new_tabOpen), 0);
+        GridItem item_03 = new GridItem( getString(R.string.main_menu_new_tabProfile), 0);
+        GridItem item_04 = new GridItem( getString(R.string.menu_reload), 0);
+        GridItem item_05 = new GridItem( getString(R.string.menu_closeTab), 0);
+        GridItem item_06 = new GridItem( getString(R.string.menu_quit), 0);
 
         final List<GridItem> gridList_tab = new LinkedList<>();
 
@@ -1947,12 +1938,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         // Save
-        GridItem item_21 = new GridItem(0, getString(R.string.menu_fav), 0);
-        GridItem item_22 = new GridItem(0, getString(R.string.menu_save_home), 0);
-        GridItem item_23 = new GridItem(0, getString(R.string.menu_save_bookmark), 0);
-        GridItem item_24 = new GridItem(0, getString(R.string.menu_save_pdf), 0);
-        GridItem item_25 = new GridItem(0, getString(R.string.menu_sc), 0);
-        GridItem item_26 = new GridItem(0, getString(R.string.menu_save_as), 0);
+        GridItem item_21 = new GridItem( getString(R.string.menu_fav), 0);
+        GridItem item_22 = new GridItem( getString(R.string.menu_save_home), 0);
+        GridItem item_23 = new GridItem( getString(R.string.menu_save_bookmark), 0);
+        GridItem item_24 = new GridItem( getString(R.string.menu_save_pdf), 0);
+        GridItem item_25 = new GridItem( getString(R.string.menu_sc), 0);
+        GridItem item_26 = new GridItem( getString(R.string.menu_save_as), 0);
 
         final List<GridItem> gridList_save = new LinkedList<>();
         gridList_save.add(gridList_save.size(), item_21);
@@ -1984,9 +1975,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         // Share
-        GridItem item_11 = new GridItem(0, getString(R.string.menu_share_link), 0);
-        GridItem item_12 = new GridItem(0, getString(R.string.menu_shareClipboard), 0);
-        GridItem item_13 = new GridItem(0, getString(R.string.menu_open_with), 0);
+        GridItem item_11 = new GridItem( getString(R.string.menu_share_link), 0);
+        GridItem item_12 = new GridItem( getString(R.string.menu_shareClipboard), 0);
+        GridItem item_13 = new GridItem( getString(R.string.menu_open_with), 0);
 
         final List<GridItem> gridList_share = new LinkedList<>();
         gridList_share.add(gridList_share.size(), item_11);
@@ -2008,11 +1999,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
 
         // Other
-        GridItem item_31 = new GridItem(0, getString(R.string.menu_other_searchSite), 0);
-        GridItem item_32 = new GridItem(0, getString(R.string.menu_download), 0);
-        GridItem item_33 = new GridItem(0, getString(R.string.setting_label), 0);
-        GridItem item_36 = new GridItem(0, getString(R.string.menu_restart), 0);
-        GridItem item_34 = new GridItem(0, getString((R.string.app_help)), 0);
+        GridItem item_31 = new GridItem( getString(R.string.menu_other_searchSite), 0);
+        GridItem item_32 = new GridItem( getString(R.string.menu_download), 0);
+        GridItem item_33 = new GridItem( getString(R.string.setting_label), 0);
+        GridItem item_36 = new GridItem( getString(R.string.menu_restart), 0);
+        GridItem item_34 = new GridItem( getString((R.string.app_help)), 0);
 
         final List<GridItem> gridList_other = new LinkedList<>();
         gridList_other.add(gridList_other.size(), item_31);
@@ -2149,7 +2140,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     private void showContextMenuList(final String title, final String url,
-                                     final RecordAdapter adapterRecord, final List<Record> recordList, final int location) {
+                                     final AdapterRecord adapterRecord, final List<Record> recordList, final int location) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_menu, null);
@@ -2163,12 +2154,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         dialog.show();
         Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
 
-        GridItem item_01 = new GridItem(0, getString(R.string.main_menu_new_tabOpen), 0);
-        GridItem item_02 = new GridItem(0, getString(R.string.main_menu_new_tab), 0);
-        GridItem item_03 = new GridItem(0, getString(R.string.main_menu_new_tabProfile), 0);
-        GridItem item_04 = new GridItem(0, getString(R.string.menu_share_link), 0);
-        GridItem item_05 = new GridItem(0, getString(R.string.menu_delete), 0);
-        GridItem item_06 = new GridItem(0, getString(R.string.menu_edit), 0);
+        GridItem item_01 = new GridItem( getString(R.string.main_menu_new_tabOpen), 0);
+        GridItem item_02 = new GridItem( getString(R.string.main_menu_new_tab), 0);
+        GridItem item_03 = new GridItem( getString(R.string.main_menu_new_tabProfile), 0);
+        GridItem item_04 = new GridItem( getString(R.string.menu_share_link), 0);
+        GridItem item_05 = new GridItem( getString(R.string.menu_delete), 0);
+        GridItem item_06 = new GridItem( getString(R.string.menu_edit), 0);
 
         final List<GridItem> gridList = new LinkedList<>();
 
@@ -2260,7 +2251,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     Chip chip_nightMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_nightMode);
                     chip_nightMode.setChecked(!recordList.get(location).getNightMode());
 
-                    ImageView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
+                    MaterialCardView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
                     if (!overViewTab.equals(getString(R.string.album_title_bookmarks)))
                         ib_icon.setVisibility(View.GONE);
                     ib_icon.setOnClickListener(v -> {
@@ -2274,20 +2265,23 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         CardView cardView = dialogViewFilter.findViewById(R.id.cardView);
                         cardView.setVisibility(View.GONE);
                         Objects.requireNonNull(dialogFilter.getWindow()).setGravity(Gravity.BOTTOM);
-                        GridView menu_grid2 = dialogViewFilter.findViewById(R.id.menu_grid);
-                        final List<GridItem> gridList2 = new LinkedList<>();
-                        HelperUnit.addFilterItems(activity, gridList2);
-                        GridAdapter gridAdapter2 = new GridAdapter(context, gridList2);
-                        menu_grid2.setAdapter(gridAdapter2);
-                        gridAdapter2.notifyDataSetChanged();
-                        menu_grid2.setOnItemClickListener((parent2, view2, position2, id2) -> {
-                            newIcon = gridList2.get(position2).getData();
-                            HelperUnit.setFilterIcons(ib_icon, newIcon);
+                        GridView menuEditFilter = dialogViewFilter.findViewById(R.id.menu_grid);
+                        final List<GridItem> menuEditFilterList = new LinkedList<>();
+                        HelperUnit.addFilterItems(activity, menuEditFilterList);
+                        GridAdapter menuEditFilterAdapter = new GridAdapter(context, menuEditFilterList);
+                        menuEditFilter.setNumColumns(2);
+                        menuEditFilter.setHorizontalSpacing(30);
+                        menuEditFilter.setVerticalSpacing(30);
+                        menuEditFilter.setAdapter(menuEditFilterAdapter);
+                        menuEditFilterAdapter.notifyDataSetChanged();
+                        menuEditFilter.setOnItemClickListener((parent2, view2, position2, id2) -> {
+                            newIcon = menuEditFilterList.get(position2).getData();
+                            HelperUnit.setFilterIcons(context, ib_icon, newIcon);
                             dialogFilter.cancel();
                         });
                     });
                     newIcon = recordList.get(location).getIconColor();
-                    HelperUnit.setFilterIcons(ib_icon, newIcon);
+                    HelperUnit.setFilterIcons(context, ib_icon, newIcon);
 
                     builderSubMenu.setView(dialogViewSubMenu);
                     builderSubMenu.setTitle(getString(R.string.menu_edit));
@@ -2371,7 +2365,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
         final List<GridItem> gridList = new LinkedList<>();
         HelperUnit.addFilterItems(activity, gridList);
+
         GridAdapter gridAdapter = new GridAdapter(context, gridList);
+        menu_grid.setNumColumns(2);
+        menu_grid.setHorizontalSpacing(30);
+        menu_grid.setVerticalSpacing(30);
         menu_grid.setAdapter(gridAdapter);
         gridAdapter.notifyDataSetChanged();
         menu_grid.setOnItemClickListener((parent, view, position, id) -> {

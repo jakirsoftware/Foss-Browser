@@ -12,10 +12,18 @@
         <entry key="..\:/Users/malik/AndroidStudioProjects/browser-t8rin/app/src/main/res/layout/activity_main.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/drawable/Icon_alert.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/bg_chip_state_list.xml" value="0.10260416666666666" />
+        <entry key="app/src/main/res/drawable/circle_blue_big.xml" value="0.1255" />
+        <entry key="app/src/main/res/drawable/circle_brown_big.xml" value="0.1255" />
+        <entry key="app/src/main/res/drawable/circle_green_big.xml" value="0.1255" />
+        <entry key="app/src/main/res/drawable/circle_grey_big.xml" value="0.1255" />
         <entry key="app/src/main/res/drawable/circle_lime_big.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/circle_lime_big_2.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/circle_orange_big.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/circle_orange_big_2.xml" value="0.20307692307692307" />
+        <entry key="app/src/main/res/drawable/circle_pink_big.xml" value="0.1255" />
+        <entry key="app/src/main/res/drawable/circle_purple_big.xml" value="0.1255" />
+        <entry key="app/src/main/res/drawable/circle_red_big.xml" value="0.1255" />
+        <entry key="app/src/main/res/drawable/circle_teal_big.xml" value="0.1255" />
         <entry key="app/src/main/res/drawable/circle_yellow.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/circle_yellow_big.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/circle_yellow_gib_2.xml" value="0.10260416666666666" />
@@ -80,12 +88,13 @@
         <entry key="app/src/main/res/drawable/icon_web.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_web_light.xml" value="0.10260416666666666" />
         <entry key="app/src/main/res/drawable/zz.xml" value="0.20625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.17346014492753623" />
         <entry key="app/src/main/res/layout/activity_settings_backup.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_settings_delete.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_settings_profile_list.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_settings_whitelist.xml" value="0.18840579710144928" />
+        <entry key="app/src/main/res/layout/colors.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/dialog_edit_extension.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_edit_title.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_menu.xml" value="0.1" />
@@ -94,8 +103,11 @@
         <entry key="app/src/main/res/layout/dialog_search.xml" value="0.17980072463768115" />
         <entry key="app/src/main/res/layout/dialog_tabs.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_toggle.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/eee.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/item_icon_left.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_icon_right.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_list.xml" value="0.16802536231884058" />
+        <entry key="app/src/main/res/layout/item_menu.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/item_tab.xml" value="0.1539855072463768" />
         <entry key="app/src/main/res/menu/menu_bottom_overview.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/menu/menu_help.xml" value="0.178125" />
@@ -169,7 +181,7 @@
       </value>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

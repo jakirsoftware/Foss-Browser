@@ -4,8 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SwitchCompat;
@@ -36,14 +40,16 @@ public class ListSwitchPreference extends ListPreference {
 
     @Override
     public void onBindViewHolder(@NonNull PreferenceViewHolder holder) {
+
         final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         final ViewGroup rootView;
-        final SwitchCompat onOffSwitch;
+        final CheckBox onOffSwitch;
         final CompoundButton.OnCheckedChangeListener checkedChangeListener;
         super.onBindViewHolder(holder);
+
         rootView = (ViewGroup) holder.itemView;
         if (!switchAttached && (ListSwitchKey != null)) {
-            onOffSwitch = new SwitchCompat(getContext());
+            onOffSwitch = new CheckBox(getContext());
             rootView.addView(onOffSwitch);
             switchAttached = true;
             onOffSwitch.setChecked(sp.getBoolean(ListSwitchKey, ListSwitchKeyDefaultValue));

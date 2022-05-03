@@ -20,6 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.List;
@@ -34,11 +35,11 @@ import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
 import de.baumann.browser.view.NinjaToast;
-import de.baumann.browser.view.ProfilesListAdapter;
+import de.baumann.browser.view.AdapterProfileList;
 
 public class ProfilesList extends AppCompatActivity {
 
-    private ProfilesListAdapter adapter;
+    private AdapterProfileList adapter;
     private List<String> list;
     private List_protected listProtected;
     private List_standard listStandard;
@@ -104,12 +105,15 @@ public class ProfilesList extends AppCompatActivity {
         listView.setEmptyView(findViewById(R.id.whitelist_empty));
 
         //noinspection NullableProblems
-        adapter = new ProfilesListAdapter(this, list) {
+        adapter = new AdapterProfileList(this, list) {
             @Override
             public View getView(final int position, View convertView, @NonNull ViewGroup parent) {
                 View v = super.getView(position, convertView, parent);
-                Button whitelist_item_cancel = v.findViewById(R.id.whitelist_item_cancel);
-                whitelist_item_cancel.setOnClickListener(v1 -> {
+                Button deleteEntry = v.findViewById(R.id.cancelButton);
+                deleteEntry.setVisibility(View.VISIBLE);
+                MaterialCardView cardView = v.findViewById(R.id.cardView);
+                cardView.setVisibility(View.GONE);
+                deleteEntry.setOnClickListener(v1 -> {
                     MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ProfilesList.this);
                     builder.setIcon(R.drawable.icon_alert);
                     builder.setTitle(R.string.menu_delete);

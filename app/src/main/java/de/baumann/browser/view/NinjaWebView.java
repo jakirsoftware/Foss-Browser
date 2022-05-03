@@ -28,7 +28,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 import androidx.webkit.WebSettingsCompat;
@@ -76,7 +75,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     private boolean desktopMode;
     private boolean nightMode;
     private boolean stopped;
-    private AlbumItem album;
+    private AdapterTabs album;
     private AlbumController predecessor = null;
     private NinjaWebViewClient webViewClient;
     private NinjaWebChromeClient webChromeClient;
@@ -117,7 +116,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.listTrusted = new List_trusted(this.context);
         this.listStandard = new List_standard(this.context);
         this.listProtected = new List_protected(this.context);
-        this.album = new AlbumItem(this.context, this, this.browserController);
+        this.album = new AdapterTabs(this.context, this, this.browserController);
         this.webViewClient = new NinjaWebViewClient(this);
         this.webChromeClient = new NinjaWebChromeClient(this);
         this.downloadListener = new NinjaDownloadListener(this.context);
@@ -514,8 +513,8 @@ public class NinjaWebView extends WebView implements AlbumController {
 
     public void setAlbumTitle(String title, String url) {
         album.setAlbumTitle(title);
-        CardView cardView = getAlbumView().findViewById(R.id.cardView);
-        cardView.setVisibility(VISIBLE);
+        //CardView cardView = getAlbumView().findViewById(R.id.cardView);
+        //cardView.setVisibility(VISIBLE);
         FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView, R.drawable.icon_image_broken);
     }
 
@@ -543,8 +542,8 @@ public class NinjaWebView extends WebView implements AlbumController {
     }
 
     public synchronized void updateFavicon(String url) {
-        CardView cardView = getAlbumView().findViewById(R.id.cardView);
-        cardView.setVisibility(VISIBLE);
+        //CardView cardView = getAlbumView().findViewById(R.id.cardView);
+        //cardView.setVisibility(VISIBLE);
         FaviconHelper.setFavicon(context, getAlbumView(), url, R.id.faviconView, R.drawable.icon_image_broken);
     }
 

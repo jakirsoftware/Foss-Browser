@@ -79,9 +79,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginEnd="5dp"
-                        android:background="?attr/actionBarItemBackground"
                         android:src="@drawable/icon_profile_standard"
-                        app:fabSize="mini" />
+                        app:fabSize="mini"
+                        app:backgroundTint="?attr/colorSurfaceVariant"/>
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/omnibox_overview"
@@ -89,8 +89,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
-                        android:background="?attr/actionBarItemBackground"
-                        app:fabSize="mini" />
+                        app:fabSize="mini"
+                        app:backgroundTint="?attr/colorSurfaceVariant" />
 
                     <Button
                         android:id="@+id/omnibox_overflow"
@@ -204,6 +204,7 @@
             android:divider="@null"
             android:fastScrollEnabled="true"
             android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:stackFromBottom="true" />
 
         <ScrollView
@@ -217,7 +218,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:stackFromBottom="true"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
 
         </ScrollView>
 

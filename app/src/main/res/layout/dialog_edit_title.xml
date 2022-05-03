@@ -98,16 +98,11 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ImageView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/edit_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
-                android:background="?attr/actionBarItemBackground"
-                android:contentDescription="@null"
-                android:gravity="center_vertical"
-                android:scaleType="fitCenter"
-                android:src="@drawable/circle_red_big" />
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="10dp" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/edit_bookmark_nightMode"

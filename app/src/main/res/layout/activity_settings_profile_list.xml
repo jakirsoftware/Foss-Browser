@@ -59,7 +59,7 @@
             android:id="@+id/whitelist"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:drawSelectorOnTop="true" />
+            android:divider="@null" />
 
         <TextView
             android:id="@+id/whitelist_empty"
