@@ -10,7 +10,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.preference.EditTextPreference;
 import androidx.preference.PreferenceManager;
@@ -47,53 +46,62 @@ public class EditTextSwitchPreference extends EditTextPreference {
         super.onBindViewHolder(holder);
         rootView = (ViewGroup) holder.itemView;
 
-
-        //holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.red, null));
-
         if (!switchAttached && (EditTextSwitchKey != null)) {
             onOffSwitch = new CheckBox(context);
             rootView.addView(onOffSwitch);
             switchAttached = true;
             onOffSwitch.setChecked(sp.getBoolean(EditTextSwitchKey, EditTextSwitchKeyDefaultValue));
-
-            if (EditTextSwitchKey.equals("filter_01")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.red, null));
-            } else if (EditTextSwitchKey.equals("filter_02")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.pink, null));
-            } else if (EditTextSwitchKey.equals("filter_03")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.purple, null));
-            } else if (EditTextSwitchKey.equals("filter_04")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.blue, null));
-            } else if (EditTextSwitchKey.equals("filter_05")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.teal, null));
-            } else if (EditTextSwitchKey.equals("filter_06")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.green, null));
-            } else if (EditTextSwitchKey.equals("filter_07")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.lime, null));
-            } else if (EditTextSwitchKey.equals("filter_08")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.yellow, null));
-            } else if (EditTextSwitchKey.equals("filter_09")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.orange, null));
-            } else if (EditTextSwitchKey.equals("filter_10")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.brown, null));
-            } else if (EditTextSwitchKey.equals("filter_11")) {
-                holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.grey, null));
-            } else if (EditTextSwitchKey.equals("filter_12")) {
-                TypedValue typedValue = new TypedValue();
-                context.getTheme().resolveAttribute(R.attr.colorSurfaceVariant, typedValue, true);
-                int color = typedValue.data;
-                holder.itemView.setBackgroundColor(color);
-            }
-
             checkedChangeListener = (buttonView, isChecked) -> {
                 if (EditTextSwitchKey != null) {
                     sp.edit().putBoolean(EditTextSwitchKey, isChecked).apply();
                 }
             };
-
-
             onOffSwitch.setOnCheckedChangeListener(checkedChangeListener);
             checkedChangeListener.onCheckedChanged(onOffSwitch, onOffSwitch.isChecked());
+        }
+
+        if ((EditTextSwitchKey != null)) {
+            switch (EditTextSwitchKey) {
+                case "filter_01":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.red, null));
+                    break;
+                case "filter_02":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.pink, null));
+                    break;
+                case "filter_03":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.purple, null));
+                    break;
+                case "filter_04":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.blue, null));
+                    break;
+                case "filter_05":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.teal, null));
+                    break;
+                case "filter_06":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.green, null));
+                    break;
+                case "filter_07":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.lime, null));
+                    break;
+                case "filter_08":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.yellow, null));
+                    break;
+                case "filter_09":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.orange, null));
+                    break;
+                case "filter_10":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.brown, null));
+                    break;
+                case "filter_11":
+                    holder.itemView.setBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.grey, null));
+                    break;
+                case "filter_12":
+                    TypedValue typedValue = new TypedValue();
+                    context.getTheme().resolveAttribute(R.attr.colorSurfaceVariant, typedValue, true);
+                    int color = typedValue.data;
+                    holder.itemView.setBackgroundColor(color);
+                    break;
+            }
         }
     }
 }

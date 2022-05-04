@@ -587,15 +587,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onSwipeTop() {
                 performGesture("setting_gesture_nav_up");
             }
-
             public void onSwipeBottom() {
                 performGesture("setting_gesture_nav_down");
             }
-
             public void onSwipeRight() {
                 performGesture("setting_gesture_nav_right");
             }
-
             public void onSwipeLeft() {
                 performGesture("setting_gesture_nav_left");
             }
@@ -604,15 +601,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onSwipeTop() {
                 performGesture("setting_gesture_nav_up");
             }
-
             public void onSwipeBottom() {
                 performGesture("setting_gesture_nav_down");
             }
-
             public void onSwipeRight() {
                 performGesture("setting_gesture_nav_right");
             }
-
             public void onSwipeLeft() {
                 performGesture("setting_gesture_nav_left");
             }
@@ -621,15 +615,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onSwipeTop() {
                 performGesture("setting_gesture_nav_up");
             }
-
             public void onSwipeBottom() {
                 performGesture("setting_gesture_nav_down");
             }
-
             public void onSwipeRight() {
                 performGesture("setting_gesture_nav_right");
             }
-
             public void onSwipeLeft() {
                 performGesture("setting_gesture_nav_left");
             }
@@ -638,15 +629,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onSwipeTop() {
                 performGesture("setting_gesture_tb_up");
             }
-
             public void onSwipeBottom() {
                 performGesture("setting_gesture_tb_down");
             }
-
             public void onSwipeRight() {
                 performGesture("setting_gesture_tb_right");
             }
-
             public void onSwipeLeft() {
                 performGesture("setting_gesture_tb_left");
             }
@@ -1282,25 +1270,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             });
 
             if (listTrusted.isWhite(url) || listStandard.isWhite(url) || listProtected.isWhite(url)) {
-
                 TypedValue typedValue = new TypedValue();
                 Resources.Theme theme = context.getTheme();
                 theme.resolveAttribute(R.attr.colorError, typedValue, true);
                 int color = typedValue.data;
-
+                MaterialCardView cardView = dialogView.findViewById(R.id.editProfile);
+                cardView.setVisibility(View.GONE);
                 dialog_warning.setTextColor(color);
-                chip_image.setEnabled(false);
-                chip_adBlock.setEnabled(false);
-                chip_saveData.setEnabled(false);
-                chip_location.setEnabled(false);
-                chip_camera.setEnabled(false);
-                chip_microphone.setEnabled(false);
-                chip_history.setEnabled(false);
-                chip_fingerprint.setEnabled(false);
-                chip_cookie.setEnabled(false);
-                chip_javaScript.setEnabled(false);
-                chip_javaScriptPopUp.setEnabled(false);
-                chip_dom.setEnabled(false);
             }
 
             Chip chip_toggleNightView = dialogView.findViewById(R.id.chip_toggleNightView);
@@ -1485,6 +1461,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             GridItem item_01 = new GridItem(getString(R.string.setting_title_profiles_trusted), 0);
             GridItem item_02 = new GridItem(getString(R.string.setting_title_profiles_standard), 0);
             GridItem item_03 = new GridItem(getString(R.string.setting_title_profiles_protected), 0);
+            GridItem item_04 = new GridItem(getString(R.string.setting_title_profiles_changed), 0);
 
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
             View dialogView = View.inflate(context, R.layout.dialog_menu, null);
@@ -1501,6 +1478,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             gridList.add(gridList.size(), item_01);
             gridList.add(gridList.size(), item_02);
             gridList.add(gridList.size(), item_03);
+            gridList.add(gridList.size(), item_04);
             GridAdapter gridAdapter = new GridAdapter(context, gridList);
             menu_grid.setAdapter(gridAdapter);
             gridAdapter.notifyDataSetChanged();
@@ -1514,6 +1492,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         break;
                     case 2:
                         sp.edit().putString("profile", "profileProtected").apply();
+                        break;
+                    case 3:
+                        sp.edit().putString("profile", "profileChanged").apply();
                         break;
                 }
                 dialog.cancel();
@@ -2084,7 +2065,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onSwipeRight() {
                 tabLayout.selectTab(tab_other);
             }
-
             public void onSwipeLeft() {
                 tabLayout.selectTab(tab_share);
             }
@@ -2093,7 +2073,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onSwipeRight() {
                 tabLayout.selectTab(tab_tab);
             }
-
             public void onSwipeLeft() {
                 tabLayout.selectTab(tab_save);
             }
@@ -2102,7 +2081,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onSwipeRight() {
                 tabLayout.selectTab(tab_share);
             }
-
             public void onSwipeLeft() {
                 tabLayout.selectTab(tab_other);
             }
@@ -2111,7 +2089,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             public void onSwipeRight() {
                 tabLayout.selectTab(tab_save);
             }
-
             public void onSwipeLeft() {
                 tabLayout.selectTab(tab_tab);
             }

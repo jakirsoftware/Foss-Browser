@@ -58,7 +58,7 @@ public class GridAdapter extends BaseAdapter {
                 TypedValue typedValue = new TypedValue();
                 context.getTheme().resolveAttribute(R.attr.colorSurfaceVariant, typedValue, true);
                 int color = typedValue.data;
-                holder.cardView.setBackgroundColor(color);}
+                holder.cardView.setCardBackgroundColor(color);}
             else {
                 TypedValue typedValue = new TypedValue();
                 context.getTheme().resolveAttribute(android.R.color.transparent, typedValue, true);

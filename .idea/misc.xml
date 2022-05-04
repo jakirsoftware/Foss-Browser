@@ -11,7 +11,9 @@
         <entry key="../../../../../layout/custom_preview.xml" value="0.21875" />
         <entry key="..\:/Users/malik/AndroidStudioProjects/browser-t8rin/app/src/main/res/layout/activity_main.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/drawable/Icon_alert.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/bg_chip_icon_state.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_chip_state_list.xml" value="0.10260416666666666" />
+        <entry key="app/src/main/res/drawable/bg_chip_state_list_light.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/circle_blue_big.xml" value="0.1255" />
         <entry key="app/src/main/res/drawable/circle_brown_big.xml" value="0.1255" />
         <entry key="app/src/main/res/drawable/circle_green_big.xml" value="0.1255" />
