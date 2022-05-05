@@ -15,8 +15,6 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;

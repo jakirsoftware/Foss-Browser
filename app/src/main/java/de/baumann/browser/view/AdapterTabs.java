@@ -1,7 +1,5 @@
 package de.baumann.browser.view;
 
-import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.TypedValue;

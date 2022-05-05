@@ -123,11 +123,11 @@ public class AdBlock {
             try {
                 URL url = new URL(hostURL);
                 Log.d("browser", "Download AdBlock hosts");
-                URLConnection ucon = url.openConnection();
-                ucon.setReadTimeout(5000);
-                ucon.setConnectTimeout(10000);
+                URLConnection connection = url.openConnection();
+                connection.setReadTimeout(5000);
+                connection.setConnectTimeout(10000);
 
-                InputStream is = ucon.getInputStream();
+                InputStream is = connection.getInputStream();
                 BufferedInputStream inStream = new BufferedInputStream(is, 1024 * 5);
 
                 File tempfile = new File(context.getDir("filesdir", Context.MODE_PRIVATE) + "/temp.txt");

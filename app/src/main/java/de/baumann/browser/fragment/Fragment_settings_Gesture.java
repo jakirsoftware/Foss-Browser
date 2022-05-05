@@ -11,6 +11,8 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
 
+import java.util.Objects;
+
 import de.baumann.browser.R;
 
 public class Fragment_settings_Gesture extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -44,7 +46,7 @@ public class Fragment_settings_Gesture extends PreferenceFragmentCompat implemen
         }
         if (p instanceof EditTextPreference) {
             EditTextPreference editTextPref = (EditTextPreference) p;
-            if (p.getTitle().toString().toLowerCase().contains("password")) {
+            if (Objects.requireNonNull(p.getTitle()).toString().toLowerCase().contains("password")) {
                 p.setSummary("******");
             } else {
                 p.setSummary(editTextPref.getText());
@@ -55,13 +57,13 @@ public class Fragment_settings_Gesture extends PreferenceFragmentCompat implemen
     @Override
     public void onResume() {
         super.onResume();
-        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences()).registerOnSharedPreferenceChangeListener(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+        Objects.requireNonNull(getPreferenceScreen().getSharedPreferences()).unregisterOnSharedPreferenceChangeListener(this);
     }
 
     @Override
