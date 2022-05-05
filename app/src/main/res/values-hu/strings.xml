@@ -7,7 +7,6 @@
     <string name="app_cancel">Mégse</string>
     <string name="app_done">Kész</string>
     <string name="app_error">Hiba</string>
-    <string name="app_error_activity">Nincs telepített alkalmazás az url megnyitásához.</string>
     <string name="app_warning">Figyelmeztetés</string>
     <string name="app_permission">A funkció használatához engedélyt kell adnia. Ezt követően indítsa újra az alkalmazást.</string>
     <string name="list_empty">A lista üres</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">Törlés</string>
     <string name="whitelist_edit_hint">Tartomány</string>
     <string name="whitelist_add">Hozzáad</string>
-    <string name="menu_mobileView">Mobil nézet</string>
     <string name="menu_desktopView">Asztali nézet</string>
     <string name="menu_dayView">Napi nézet</string>
     <string name="menu_nightView">Éjszakai nézet</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">DRM-védett média lejátszásának engedélyezése?</string>
     <string name="menu_reload">Újratöltés</string>
     <string name="menu_restart">Újraindítás és a lapok újratöltése</string>
-    <string name="profile_warning">Felülírva:</string>
     <string name="setting_title_screenOn">Kijelző ébrentartása</string>
     <string name="setting_title_audioBackground">Hang lejátszása a háttérben</string>
     <!-- License changelog -->
