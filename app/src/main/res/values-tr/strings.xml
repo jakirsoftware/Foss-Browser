@@ -7,7 +7,6 @@
     <string name="app_cancel">İptal et</string>
     <string name="app_done">Tamam</string>
     <string name="app_error">Hata</string>
-    <string name="app_error_activity">Bu URL açmak için kurulu bir uygulama yok.</string>
     <string name="app_warning">Uyarı</string>
     <string name="app_permission">Bu özelliği kullanmak için izin vermelisiniz. Daha sonra uygulamayı yeniden başlatın.</string>
     <string name="list_empty">Liste boş</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">Temizle</string>
     <string name="whitelist_edit_hint">Alan adı</string>
     <string name="whitelist_add">Ekle</string>
-    <string name="menu_mobileView">Mobil görünüm</string>
     <string name="menu_desktopView">Masaüstü görünümü</string>
     <string name="menu_dayView">Gündüz görünümü</string>
     <string name="menu_nightView">Gece görünümü</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">DRM korumalı medya oynatmaya izin verilsin mi?</string>
     <string name="menu_reload">Yenile</string>
     <string name="menu_restart">Sekmeleri yeniden başlat</string>
-    <string name="profile_warning">Üzerine yazılan:</string>
     <string name="setting_title_screenOn">Ekranı açık tut</string>
     <string name="setting_title_audioBackground">Sesi arka planda oynat</string>
     <!-- License changelog -->
