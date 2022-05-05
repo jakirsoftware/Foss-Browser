@@ -20,7 +20,5 @@ public interface BrowserController {
 
     void onHideCustomView();
 
-    void showContextMenuTabs (final String title, final String url);
-
     String getUrl ();
 }

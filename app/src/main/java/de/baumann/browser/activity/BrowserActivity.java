@@ -2133,29 +2133,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         sp.edit().putString("openTabsProfile", TextUtils.join("‚‗‚", openTabsProfile)).apply();
     }
 
-    public void showContextMenuTabs (final String title, final String url) {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        View dialogView = View.inflate(context, R.layout.dialog_menu, null);
-        TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
-        menuTitle.setText(title);
-        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon, R.drawable.icon_image_broken);
-        builder.setView(dialogView);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-        GridItem item_01 = new GridItem( getString(R.string.menu_share_link), 0);
-        final List<GridItem> gridList = new LinkedList<>();
-        gridList.add(gridList.size(), item_01);
-        GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
-        GridAdapter gridAdapter = new GridAdapter(context, gridList);
-        menu_grid.setAdapter(gridAdapter);
-        gridAdapter.notifyDataSetChanged();
-        menu_grid.setOnItemClickListener((parent, view, position, id) -> {
-            dialog.cancel();
-            shareLink(title, url);
-        });
-    }
-
     private void showContextMenuList(final String title, final String url,
                                      final AdapterRecord adapterRecord, final List<Record> recordList, final int location) {
 

@@ -50,11 +50,6 @@ class AdapterTabs {
         albumCardView = albumView.findViewById(R.id.albumCardView);
         albumTitle = albumView.findViewById(R.id.titleView);
 
-        albumTitle.setOnLongClickListener(view -> {
-            browserController.showContextMenuTabs (albumTitle.getText().toString(), browserController.getUrl());
-            return false;
-        });
-
         Button albumClose = albumView.findViewById(R.id.cancelButton);
         albumClose.setVisibility(View.VISIBLE);
         albumClose.setOnClickListener(view -> {
