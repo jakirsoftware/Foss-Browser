@@ -202,7 +202,20 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         if (sp.getBoolean("sp_screenOn", false))
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        if (sp.getBoolean("nightModeOnStart", false)) isNightMode = true;
+        if (Objects.equals(sp.getString("nightMode", "2"), "3")) isNightMode = true;
+        if (Objects.equals(sp.getString("nightMode", "2"), "2")) isNightMode = false;
+        if (Objects.equals(sp.getString("nightMode", "2"), "1")) {
+            int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            switch (nightModeFlags) {
+                case Configuration.UI_MODE_NIGHT_YES:
+                case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                    isNightMode = true;
+                    break;
+                case Configuration.UI_MODE_NIGHT_NO:
+                    isNightMode = false;
+                    break;
+            }
+        }
 
         HelperUnit.initTheme(activity);
 
@@ -463,6 +476,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 adapter.getFilter().filter(s);
             }
         });
+    }
+
+    public String getUrl () {
+        return ninjaWebView.getUrl();
     }
 
     private void setSelectedTab() {
@@ -2114,6 +2131,29 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         }
         sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit().putString("openTabsProfile", TextUtils.join("‚‗‚", openTabsProfile)).apply();
+    }
+
+    public void showContextMenuTabs (final String title, final String url) {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        View dialogView = View.inflate(context, R.layout.dialog_menu, null);
+        TextView menuTitle = dialogView.findViewById(R.id.menuTitle);
+        menuTitle.setText(title);
+        FaviconHelper.setFavicon(context, dialogView, url, R.id.menu_icon, R.drawable.icon_image_broken);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        GridItem item_01 = new GridItem( getString(R.string.menu_share_link), 0);
+        final List<GridItem> gridList = new LinkedList<>();
+        gridList.add(gridList.size(), item_01);
+        GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
+        GridAdapter gridAdapter = new GridAdapter(context, gridList);
+        menu_grid.setAdapter(gridAdapter);
+        gridAdapter.notifyDataSetChanged();
+        menu_grid.setOnItemClickListener((parent, view, position, id) -> {
+            dialog.cancel();
+            shareLink(title, url);
+        });
     }
 
     private void showContextMenuList(final String title, final String url,

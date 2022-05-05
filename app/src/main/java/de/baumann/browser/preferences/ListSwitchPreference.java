@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -49,7 +50,15 @@ public class ListSwitchPreference extends ListPreference {
 
         rootView = (ViewGroup) holder.itemView;
         if (!switchAttached && (ListSwitchKey != null)) {
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(0,0,25,0);
+
             onOffSwitch = new CheckBox(getContext());
+            onOffSwitch.setLayoutParams(params);
             rootView.addView(onOffSwitch);
             switchAttached = true;
             onOffSwitch.setChecked(sp.getBoolean(ListSwitchKey, ListSwitchKeyDefaultValue));

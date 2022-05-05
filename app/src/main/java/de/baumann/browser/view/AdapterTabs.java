@@ -1,5 +1,7 @@
 package de.baumann.browser.view;
 
+import static android.webkit.WebView.HitTestResult.SRC_ANCHOR_TYPE;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.TypedValue;
@@ -12,6 +14,7 @@ import com.google.android.material.card.MaterialCardView;
 
 import de.baumann.browser.R;
 import de.baumann.browser.browser.AlbumController;
+import de.baumann.browser.browser.BrowserContainer;
 import de.baumann.browser.browser.BrowserController;
 
 class AdapterTabs {
@@ -46,11 +49,20 @@ class AdapterTabs {
     @SuppressLint("InflateParams")
     private void initUI() {
         albumView = LayoutInflater.from(context).inflate(R.layout.item_list, null, false);
+        albumCardView = albumView.findViewById(R.id.albumCardView);
+        albumTitle = albumView.findViewById(R.id.titleView);
+
+        albumTitle.setOnLongClickListener(view -> {
+            browserController.showContextMenuTabs (albumTitle.getText().toString(), browserController.getUrl());
+            return false;
+        });
+
         Button albumClose = albumView.findViewById(R.id.cancelButton);
         albumClose.setVisibility(View.VISIBLE);
-        albumClose.setOnClickListener(v -> browserController.removeAlbum(albumController));
-        albumTitle = albumView.findViewById(R.id.titleView);
-        albumCardView = albumView.findViewById(R.id.albumCardView);
+        albumClose.setOnClickListener(view -> {
+            browserController.removeAlbum(albumController);
+            if (BrowserContainer.size() < 2) { browserController.hideOverview();}
+        });
     }
 
     public void activate() {

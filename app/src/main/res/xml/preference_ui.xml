@@ -53,10 +53,23 @@
             android:key="hideToolbar"
             android:summary="@string/setting_title_hideToolbar" />
 
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="nightModeOnStart"
-            android:summary="@string/menu_nightView" />
+        <de.baumann.browser.preferences.ListSwitchPreference
+            android:defaultValue="3"
+            android:entries="@array/setting_entries_tab"
+            android:entryValues="@array/setting_values_tab"
+            android:key="start_tab"
+            android:selectable="true"
+            android:title="@string/setting_overView_onStart_title"
+            app:listSwitchKey="start_tabStart"
+            app:listSwitchKeyDefaultValue="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:defaultValue="2"
+            android:entries="@array/setting_entries_night"
+            android:entryValues="@array/setting_values_night"
+            android:key="nightMode"
+            android:title="@string/menu_nightView"/>
 
         <ListPreference
             android:defaultValue="1"
@@ -71,17 +84,6 @@
             android:entryValues="@array/setting_values_font"
             android:key="sp_fontSize"
             android:title="@string/setting_title_font" />
-
-        <de.baumann.browser.preferences.ListSwitchPreference
-            android:defaultValue="3"
-            android:entries="@array/setting_entries_tab"
-            android:entryValues="@array/setting_values_tab"
-            android:key="start_tab"
-            android:selectable="true"
-            android:title="@string/setting_overView_onStart_title"
-            app:listSwitchKey="start_tabStart"
-            app:listSwitchKeyDefaultValue="false"
-            app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
 
