@@ -1718,7 +1718,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     addAlbum(getString(R.string.app_name), url, true, true, "");
                     break;
                 case 3:
-                    shareLink("", url);
+                    shareLink(HelperUnit.domain(url), url);
                     break;
                 case 4:
                     copyLink(url);
@@ -2147,7 +2147,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     hideOverview();
                     break;
                 case 3:
-                    shareLink("", url);
+                    shareLink(title, url);
                     break;
                 case 4:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
