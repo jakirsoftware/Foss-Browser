@@ -34,6 +34,11 @@
 
         <CheckBoxPreference
             android:defaultValue="false"
+            android:key="sp_tabBackground"
+            android:summary="@string/main_menu_new_tab" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
             android:key="sp_reloadTabs"
             android:summary="@string/setting_summary_tabsReload"
             android:title="@string/setting_title_tabsReload" />
