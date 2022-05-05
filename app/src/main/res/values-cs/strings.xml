@@ -7,7 +7,6 @@
     <string name="app_cancel">Zrušit</string>
     <string name="app_done">Hotovo</string>
     <string name="app_error">Chyba</string>
-    <string name="app_error_activity">Pro otevření této URL není nainstalována žádná aplikace.</string>
     <string name="app_warning">Varování</string>
     <string name="app_permission">Chcete-li použít tuto funkci, musíte udělit oprávnění. Poté aplikaci restartujte.</string>
     <string name="list_empty">Seznam je prázdný</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">Vymazat</string>
     <string name="whitelist_edit_hint">Doména</string>
     <string name="whitelist_add">Přidat</string>
-    <string name="menu_mobileView">Mobilní zobrazení</string>
     <string name="menu_desktopView">Zobrazení pro PC</string>
     <string name="menu_dayView">Denní přehled</string>
     <string name="menu_nightView">Noční zobrazení</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">Povolit přehrávání médií chráněných DRM?</string>
     <string name="menu_reload">Obnovit</string>
     <string name="menu_restart">Restartování a opětovné načtení karet</string>
-    <string name="profile_warning">Přepsáno:</string>
     <string name="setting_title_screenOn">Nechat obrazovku zapnutou</string>
     <string name="setting_title_audioBackground">Přehrát zvuk na pozadí</string>
     <!-- License changelog -->
