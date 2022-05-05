@@ -7,7 +7,6 @@
     <string name="app_cancel">Отмена</string>
     <string name="app_done">Готово</string>
     <string name="app_error">Ошибка</string>
-    <string name="app_error_activity">Не установлено приложение для открытия этого url.</string>
     <string name="app_warning">Предупреждение</string>
     <string name="app_permission">Для использования этой функции необходимо предоставить разрешение. После этого перезапустите приложение.</string>
     <string name="list_empty">Список пуст</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">Очистить</string>
     <string name="whitelist_edit_hint">Домен</string>
     <string name="whitelist_add">Добавить</string>
-    <string name="menu_mobileView">Мобильный вид</string>
     <string name="menu_desktopView">Десктопный вид</string>
     <string name="menu_dayView">Дневной режим</string>
     <string name="menu_nightView">Тёмный режим</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">Разрешить воспроизведение медиафайлов, защищенных DRM?</string>
     <string name="menu_reload">Перезагрузка</string>
     <string name="menu_restart">Перезапуск и перезагрузка вкладок</string>
-    <string name="profile_warning">Перезаписано:</string>
     <string name="setting_title_screenOn">Не отключать экран</string>
     <string name="setting_title_audioBackground">Воспроизведение аудио в фоне</string>
     <!-- License changelog -->
