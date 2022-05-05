@@ -7,7 +7,6 @@
     <string name="app_cancel">Cancelar</string>
     <string name="app_done">Listo</string>
     <string name="app_error">Error</string>
-    <string name="app_error_activity">Ninguna aplicación instalada para abrir esta URL.</string>
     <string name="app_warning">Advertencia</string>
     <string name="app_permission">Para utilizar esta función debes conceder el permiso. Después de eso, reinicie la aplicación.</string>
     <string name="list_empty">La lista está vacía</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">Limpiar</string>
     <string name="whitelist_edit_hint">Dominio</string>
     <string name="whitelist_add">Añadir</string>
-    <string name="menu_mobileView">Vista móvil</string>
     <string name="menu_desktopView">Vista escritorio</string>
     <string name="menu_dayView">Vista día</string>
     <string name="menu_nightView">Vista nocturna</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">¿Desea permitir reproducción multimedia protegida por DRM?</string>
     <string name="menu_reload">Recargar</string>
     <string name="menu_restart">Reiniciar y recargar pestañas</string>
-    <string name="profile_warning">Escrito por:</string>
     <string name="setting_title_screenOn">Mantener pantalla encendida</string>
     <string name="setting_title_audioBackground">Reproducir audio en segundo plano</string>
     <!-- License changelog -->
