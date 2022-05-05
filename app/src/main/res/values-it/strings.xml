@@ -7,7 +7,6 @@
     <string name="app_cancel">Annulla</string>
     <string name="app_done">Fatti</string>
     <string name="app_error">Error</string>
-    <string name="app_error_activity">Nessuna app installata per aprire questo url.</string>
     <string name="app_warning">Attenzione</string>
     <string name="app_permission">Per utilizzare questa funzionalità è necessario concedere il permesso. Dopo aver riavviato l\'app.</string>
     <string name="list_empty">Elenco vuoto</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">Elimina</string>
     <string name="whitelist_edit_hint">Dominio</string>
     <string name="whitelist_add">Aggiungi</string>
-    <string name="menu_mobileView">Vista mobile</string>
     <string name="menu_desktopView">Vista desktop</string>
     <string name="menu_dayView">Vista giorno</string>
     <string name="menu_nightView">Vista notturna</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">Consentire la riproduzione di supporti protetti da DRM?</string>
     <string name="menu_reload">Ricarica</string>
     <string name="menu_restart">Riavvia e ricarica le schede</string>
-    <string name="profile_warning">Sovrascritto da:</string>
     <string name="setting_title_screenOn">Mantieni il display acceso</string>
     <string name="setting_title_audioBackground">Riproduci audio in sottofondo</string>
     <!-- License changelog -->
