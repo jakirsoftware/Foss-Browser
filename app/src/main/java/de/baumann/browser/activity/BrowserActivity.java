@@ -200,8 +200,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.md_theme_light_onBackground));
 
-        if (sp.getBoolean("sp_screenOn", false))
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        if (sp.getBoolean("sp_screenOn", false)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         if (Objects.equals(sp.getString("nightMode", "2"), "3")) isNightMode = true;
         if (Objects.equals(sp.getString("nightMode", "2"), "2")) isNightMode = false;
         if (Objects.equals(sp.getString("nightMode", "2"), "1")) {

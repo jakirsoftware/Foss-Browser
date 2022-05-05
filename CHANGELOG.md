@@ -4,6 +4,7 @@
 - fix: some swiping issues #899 by Lakjdf
 - fix: support for intent scheme URLs again #898 by Lakjdf
 - fix: refactored code to make it much more readable #896 by T8RIN
+- fix: share link
 - updated: layout and user experience
 - updated: settings for night view
 - updated: settings for gestures

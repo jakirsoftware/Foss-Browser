@@ -213,7 +213,6 @@ public class HelperUnit {
                             new ShortcutInfo.Builder(context, url)
                                     .setShortLabel(title)
                                     .setLongLabel(title)
-                                    //.setIcon(Icon.createWithResource(context, R.mipmap.ic_launcher))
                                     .setIcon(icon)
                                     .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                                     .build();
@@ -248,7 +247,6 @@ public class HelperUnit {
 
     public static void initTheme(Activity context) {
         sp = PreferenceManager.getDefaultSharedPreferences(context);
-        //DynamicColors.applyToActivitiesIfAvailable(context.getApplication());
         switch (Objects.requireNonNull(sp.getString("sp_theme", "1"))) {
             case "2":
                 context.setTheme(R.style.AppTheme_day);
@@ -296,7 +294,6 @@ public class HelperUnit {
         if (sp.getBoolean("filter_12", true)) gridList.add(gridList.size(), item_12);
     }
 
-
     public static void setFilterIcons(Context context, MaterialCardView ib_icon, long newIcon) {
         newIcon = newIcon & 15;
         if (newIcon == 11) ib_icon.setCardBackgroundColor(ResourcesCompat.getColor(context.getResources(), R.color.red, null));
@@ -342,7 +339,6 @@ public class HelperUnit {
         builder.setIcon(R.drawable.icon_alert);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
-
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> builder.setCancelable(true));
 
@@ -379,7 +375,6 @@ public class HelperUnit {
             }
             dialog.cancel();
         });
-
 
         dialog.show();
         HelperUnit.setupDialog(activity, dialog);
