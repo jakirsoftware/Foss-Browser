@@ -7,7 +7,6 @@
     <string name="app_cancel">لغو</string>
     <string name="app_done">انجام شد</string>
     <string name="app_error">خطا</string>
-    <string name="app_error_activity">برنامه ای برای بازکردن این نشانی یافت نشد.</string>
     <string name="app_warning">هشدار</string>
     <string name="app_permission">برای استفاده از این قابلیت باید اجازه دسترسی بدهید و سپس برنامه را مجدد باز کنید.</string>
     <string name="list_empty">لیست خالی می باشد</string>
@@ -186,7 +185,6 @@
     <string name="whitelist_menu_clear">پاک کن</string>
     <string name="whitelist_edit_hint">دامنه</string>
     <string name="whitelist_add">افزودن</string>
-    <string name="menu_mobileView">نمای موبايل</string>
     <string name="menu_desktopView">DesktopPC نماي</string>
     <string name="menu_dayView">روز</string>
     <string name="menu_nightView">دید شب</string>
@@ -201,7 +199,6 @@
     <string name="hint_DRM_Media">اجازه پخش رسانه محافظت شده DRM؟ </string>
     <string name="menu_reload">بازخوانی</string>
     <string name="menu_restart">شروع مجدد و بازخوانی برگه ها</string>
-    <string name="profile_warning">رونویسی توسط:</string>
     <string name="setting_title_screenOn">روشن نگه داشتن صفحه نمایش</string>
     <string name="setting_title_audioBackground">پخش صدا در پس زمینه</string>
     <!-- License changelog -->
