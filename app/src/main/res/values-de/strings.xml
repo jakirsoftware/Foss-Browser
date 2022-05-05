@@ -7,7 +7,6 @@
     <string name="app_cancel">Abbrechen</string>
     <string name="app_done">Fertig</string>
     <string name="app_error">Fehler</string>
-    <string name="app_error_activity">Keine App installiert, um diese Url zu öffnen.</string>
     <string name="app_warning">Warnung</string>
     <string name="app_permission">Um diese Funktion nutzen zu können, müssen Sie die Berechtigung erteilen. Danach starten Sie die App neu.</string>
     <string name="list_empty">Liste ist leer</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">Löschen</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Hinzufügen</string>
-    <string name="menu_mobileView">Mobile-Ansicht</string>
     <string name="menu_desktopView">Desktop-Ansicht</string>
     <string name="menu_dayView">Tages-Ansicht</string>
     <string name="menu_nightView">Nacht-Ansicht</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">DRM-geschützte Medienwiedergabe erlauben?</string>
     <string name="menu_reload">Neu laden</string>
     <string name="menu_restart">Neu starten und Tabs neu laden</string>
-    <string name="profile_warning">Überschrieben von:</string>
     <string name="setting_title_screenOn">Bildschirm nicht ausschalten</string>
     <string name="setting_title_audioBackground">Audio im Hintergrund abspielen</string>
     <!-- License changelog -->

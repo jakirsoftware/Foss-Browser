@@ -7,7 +7,6 @@
     <string name="app_cancel">取消</string>
     <string name="app_done">完成</string>
     <string name="app_error">错误</string>
-    <string name="app_error_activity">未安装用于打开此 url 的程序</string>
     <string name="app_warning">警告</string>
     <string name="app_permission">要使用此功能，您必须授予权限，然后重启应用程序。</string>
     <string name="list_empty">列表为空</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">清除</string>
     <string name="whitelist_edit_hint">域名</string>
     <string name="whitelist_add">添加</string>
-    <string name="menu_mobileView">移动设备视图</string>
     <string name="menu_desktopView">桌面端网页</string>
     <string name="menu_dayView">日间模式</string>
     <string name="menu_nightView">夜间模式</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">允许 DRM 保护的媒体播放？</string>
     <string name="menu_reload">重载</string>
     <string name="menu_restart">重新启动并重新加载标签</string>
-    <string name="profile_warning">由下列配置文件覆盖：</string>
     <string name="setting_title_screenOn">保持屏幕开启</string>
     <string name="setting_title_audioBackground">在后台播放音频</string>
     <!-- License changelog -->

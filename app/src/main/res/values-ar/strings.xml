@@ -7,7 +7,6 @@
     <string name="app_cancel">إلغاء</string>
     <string name="app_done">تـم</string>
     <string name="app_error">خطأ</string>
-    <string name="app_error_activity">لا يوجد تطبيق مثبت لفتح هذا الرابط.</string>
     <string name="app_warning">تحذير</string>
     <string name="app_permission">لاستخدام هذه الميزة، يجب أن تمنح الإذن. بعد ذلك أعد تشغيل التطبيق.</string>
     <string name="list_empty">القائمة فارغة</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">إفراغ</string>
     <string name="whitelist_edit_hint">النطاق</string>
     <string name="whitelist_add">أضف</string>
-    <string name="menu_mobileView">عرض الهاتف</string>
     <string name="menu_desktopView">عرض سطح المكتب</string>
     <string name="menu_dayView">عرض يومي</string>
     <string name="menu_nightView">عرض ليلي</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">السماح بتشغيل الوسائط محمية الحقوق الرقمية DRM؟</string>
     <string name="menu_reload">إعادة تحميل</string>
     <string name="menu_restart">إعادة تشغيل وإعادة تحميل علامات التبويب</string>
-    <string name="profile_warning">مكتوب عليه من قبَل:</string>
     <string name="setting_title_screenOn">إبقاء الشاشة مشتغلة</string>
     <string name="setting_title_audioBackground">شغل الصوت في الخلفية</string>
     <!-- License changelog -->

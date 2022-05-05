@@ -7,7 +7,6 @@
     <string name="app_cancel">Batal</string>
     <string name="app_done">Selesai</string>
     <string name="app_error">Kesalahan</string>
-    <string name="app_error_activity">Tidak ada aplikasi yang terpasang untuk membuka url ini.</string>
     <string name="app_warning">Peringatan</string>
     <string name="app_permission">Untuk menggunakan fitur ini Anda harus memberikan izin. Setelah itu mulai ulang aplikasi.</string>
     <string name="list_empty">Daftar kosong</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">Bersihkan</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Tambah</string>
-    <string name="menu_mobileView">Tampilan seluler</string>
     <string name="menu_desktopView">Tampilan desktop</string>
     <string name="menu_dayView">Tampilan terang</string>
     <string name="menu_nightView">Tampilan malam</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">Izinkan pemutaran media yang dilindungi DRM?</string>
     <string name="menu_reload">Muat ulang</string>
     <string name="menu_restart">Mulai ulang dan muat ulang tab</string>
-    <string name="profile_warning">Ditimpa dengan:</string>
     <string name="setting_title_screenOn">Biarkan layar tetap menyala</string>
     <string name="setting_title_audioBackground">Putar suara di latar belakang</string>
     <!-- License changelog -->

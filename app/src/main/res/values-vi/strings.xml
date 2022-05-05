@@ -7,7 +7,6 @@
     <string name="app_cancel">Hủy</string>
     <string name="app_done">Xong</string>
     <string name="app_error">Lỗi</string>
-    <string name="app_error_activity">Không có ứng dụng nào có thể mở url này.</string>
     <string name="app_warning">Cảnh báo</string>
     <string name="app_permission">Để sử dụng tính năng này bạn phải cấp quyền. Sau đó, khởi động lại ứng dụng.</string>
     <string name="list_empty">Danh sách trống</string>
@@ -185,7 +184,6 @@
     <string name="whitelist_menu_clear">Xoá</string>
     <string name="whitelist_edit_hint">Miền</string>
     <string name="whitelist_add">Thêm</string>
-    <string name="menu_mobileView">Xem kiểu di động</string>
     <string name="menu_desktopView">Xem kiểu Máy tính</string>
     <string name="menu_dayView">Dạng hiển thị theo Ngày</string>
     <string name="menu_nightView">viễn cảnh buổi đêm</string>
@@ -200,7 +198,6 @@
     <string name="hint_DRM_Media">Cho phép phát phương tiện có DRM bảo vệ?</string>
     <string name="menu_reload">Tải lại</string>
     <string name="menu_restart">Khởi động lại và tải lại các tab</string>
-    <string name="profile_warning">Bị ghi đè bởi:</string>
     <string name="setting_title_screenOn">Giữ màn hình bật</string>
     <string name="setting_title_audioBackground">Phát âm thanh trong nền</string>
     <!-- License changelog -->
