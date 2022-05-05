@@ -6,6 +6,7 @@
 - fix: refactored code to make it much more readable #896 by T8RIN
 - updated: layout and user experience
 - updated: settings for night view
+- updated: settings for gestures
 - updated translations: *Now 21 languages are fully supported!*
 
 ### v 9.1

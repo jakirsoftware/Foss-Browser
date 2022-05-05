@@ -69,7 +69,8 @@
             android:entries="@array/setting_entries_night"
             android:entryValues="@array/setting_values_night"
             android:key="nightMode"
-            android:title="@string/menu_nightView"/>
+            android:title="@string/menu_nightView"
+            android:icon="@drawable/icon_night"/>
 
         <ListPreference
             android:defaultValue="1"

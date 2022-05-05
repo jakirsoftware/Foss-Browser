@@ -596,66 +596,20 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         Button omnibox_overflow = findViewById(R.id.omnibox_overflow);
         omnibox_overflow.setOnClickListener(v -> showOverflow());
-        omnibox_overflow.setOnLongClickListener(v -> {
-            performGesture("setting_gesture_tabButton");
-            return true;
-        });
-        omnibox_overflow.setOnTouchListener(new SwipeTouchListener(context) {
-            public void onSwipeTop() {
-                performGesture("setting_gesture_nav_up");
-            }
-            public void onSwipeBottom() {
-                performGesture("setting_gesture_nav_down");
-            }
-            public void onSwipeRight() {
-                performGesture("setting_gesture_nav_right");
-            }
-            public void onSwipeLeft() {
-                performGesture("setting_gesture_nav_left");
-            }
-        });
+
         omniBox_overview.setOnTouchListener(new SwipeTouchListener(context) {
-            public void onSwipeTop() {
-                performGesture("setting_gesture_nav_up");
-            }
-            public void onSwipeBottom() {
-                performGesture("setting_gesture_nav_down");
-            }
-            public void onSwipeRight() {
-                performGesture("setting_gesture_nav_right");
-            }
-            public void onSwipeLeft() {
-                performGesture("setting_gesture_nav_left");
-            }
+            public void onSwipeTop() { performGesture("setting_gesture_tb_up"); }
+            public void onSwipeBottom() { performGesture("setting_gesture_tb_down"); }
+            public void onSwipeRight() { performGesture("setting_gesture_tb_right"); }
+            public void onSwipeLeft() { performGesture("setting_gesture_tb_left"); }
         });
         omniBox_tab.setOnTouchListener(new SwipeTouchListener(context) {
-            public void onSwipeTop() {
-                performGesture("setting_gesture_nav_up");
-            }
-            public void onSwipeBottom() {
-                performGesture("setting_gesture_nav_down");
-            }
-            public void onSwipeRight() {
-                performGesture("setting_gesture_nav_right");
-            }
-            public void onSwipeLeft() {
-                performGesture("setting_gesture_nav_left");
-            }
+            public void onSwipeTop() { performGesture("setting_gesture_nav_up"); }
+            public void onSwipeBottom() { performGesture("setting_gesture_nav_down"); }
+            public void onSwipeRight() { performGesture("setting_gesture_nav_right"); }
+            public void onSwipeLeft() { performGesture("setting_gesture_nav_left"); }
         });
-        omniBox_text.setOnTouchListener(new SwipeTouchListener(context) {
-            public void onSwipeTop() {
-                performGesture("setting_gesture_tb_up");
-            }
-            public void onSwipeBottom() {
-                performGesture("setting_gesture_tb_down");
-            }
-            public void onSwipeRight() {
-                performGesture("setting_gesture_tb_right");
-            }
-            public void onSwipeLeft() {
-                performGesture("setting_gesture_tb_left");
-            }
-        });
+
         omniBox_text.setOnEditorActionListener((v, actionId, event) -> {
             String query = Objects.requireNonNull(omniBox_text.getText()).toString().trim();
             ninjaWebView.loadUrl(query);
