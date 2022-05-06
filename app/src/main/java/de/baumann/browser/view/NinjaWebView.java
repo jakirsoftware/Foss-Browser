@@ -87,7 +87,7 @@ public class NinjaWebView extends WebView implements AlbumController {
     private Bitmap favicon;
     private SharedPreferences sp;
     private boolean foreground;
-    private BrowserController browserController = null;
+    private static BrowserController browserController = null;
 
     public NinjaWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -116,7 +116,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.listTrusted = new List_trusted(this.context);
         this.listStandard = new List_standard(this.context);
         this.listProtected = new List_protected(this.context);
-        this.album = new AdapterTabs(this.context, this, this.browserController);
+        this.album = new AdapterTabs(this.context, this, browserController);
         this.webViewClient = new NinjaWebViewClient(this);
         this.webChromeClient = new NinjaWebChromeClient(this);
         this.downloadListener = new NinjaDownloadListener(this.context);
@@ -142,12 +142,12 @@ public class NinjaWebView extends WebView implements AlbumController {
         return foreground;
     }
 
-    public BrowserController getBrowserController() {
+    public static BrowserController getBrowserController() {
         return browserController;
     }
 
     public void setBrowserController(BrowserController browserController) {
-        this.browserController = browserController;
+        NinjaWebView.browserController = browserController;
         this.album.setBrowserController(browserController);
     }
 

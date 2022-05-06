@@ -1921,7 +1921,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 action.close();
             } else if (position == 3) printPDF();
             else if (position == 4)
-                HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getOriginalUrl(), ninjaWebView.getFavicon());
+                HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getOriginalUrl());
             else if (position == 5) HelperUnit.saveAs(dialog_overflow, activity, url);
         });
 
@@ -2063,6 +2063,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 tabLayout.selectTab(tab_tab);
             }
         });
+    }
+
+    public Bitmap favicon () {
+        return ninjaWebView.getFavicon();
     }
 
     private void saveOpenedTabs() {

@@ -21,7 +21,6 @@ package de.baumann.browser.unit;
 
 import static android.content.Context.DOWNLOAD_SERVICE;
 import static android.graphics.drawable.Icon.createWithBitmap;
-import static android.graphics.drawable.Icon.createWithResource;
 
 import android.Manifest;
 import android.app.Activity;
@@ -34,7 +33,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
-import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
@@ -67,9 +65,12 @@ import java.util.Locale;
 import java.util.Objects;
 
 import de.baumann.browser.R;
+import de.baumann.browser.activity.BrowserActivity;
+import de.baumann.browser.browser.BrowserController;
 import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.view.GridItem;
 import de.baumann.browser.view.NinjaToast;
+import de.baumann.browser.view.NinjaWebView;
 
 public class HelperUnit {
 
@@ -187,40 +188,38 @@ public class HelperUnit {
         }
     }
 
-    public static void createShortcut(Context context, String title, String url, Bitmap bitmap) {
+    public static void createShortcut(Context context, String title, String url) {
+
         Icon icon;
+        BrowserController browserController = NinjaWebView.getBrowserController();
+        icon = createWithBitmap(browserController.favicon());
+
         try {
             Intent i = new Intent();
             i.setAction(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) { // code for adding shortcut on pre oreo device
+            i.setPackage("de.baumann.browser");
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+                // code for adding shortcut on pre oreo device
                 Intent installer = new Intent();
                 installer.putExtra("android.intent.extra.shortcut.INTENT", i);
                 installer.putExtra("android.intent.extra.shortcut.NAME", title);
                 installer.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(context.getApplicationContext(), R.drawable.icon_bookmark));
                 installer.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
-                context.sendBroadcast(installer);
-            } else {
+                context.sendBroadcast(installer); }
+            else {
                 ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
                 assert shortcutManager != null;
-                if (bitmap != null) {
-                    icon = createWithBitmap(bitmap);
-                } else {
-                    icon = createWithResource(context, R.drawable.icon_bookmark);
-                }
                 if (shortcutManager.isRequestPinShortcutSupported()) {
                     ShortcutInfo pinShortcutInfo =
                             new ShortcutInfo.Builder(context, url)
                                     .setShortLabel(title)
                                     .setLongLabel(title)
                                     .setIcon(icon)
-                                    .setIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                                    .setIntent(new Intent(context, BrowserActivity.class).setAction(Intent.ACTION_VIEW).setData(Uri.parse(url)))
                                     .build();
-                    shortcutManager.requestPinShortcut(pinShortcutInfo, null);
-                } else {
-                    System.out.println("failed_to_add");
-                }
-            }
+                    shortcutManager.requestPinShortcut(pinShortcutInfo, null); }
+                else { System.out.println("failed_to_add"); }}
         } catch (Exception e) {
             System.out.println("failed_to_add");
         }
@@ -235,14 +234,13 @@ public class HelperUnit {
 
     public static String domain(String url) {
         if (url == null) {
-            return "";
-        } else {
+            return ""; }
+        else {
             try {
                 return Objects.requireNonNull(Uri.parse(url).getHost()).replace("www.", "").trim();
             } catch (Exception e) {
                 return "";
-            }
-        }
+            }}
     }
 
     public static void initTheme(Activity context) {

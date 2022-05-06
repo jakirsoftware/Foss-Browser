@@ -1,5 +1,6 @@
 package de.baumann.browser.browser;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.View;
 import android.webkit.ValueCallback;
@@ -21,4 +22,6 @@ public interface BrowserController {
     void onHideCustomView();
 
     String getUrl ();
+
+    Bitmap favicon ();
 }

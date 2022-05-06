@@ -80,6 +80,7 @@
                         android:layout_gravity="center"
                         android:layout_marginEnd="5dp"
                         android:src="@drawable/icon_profile_standard"
+                        app:elevation="3dp"
                         app:fabSize="mini"
                         app:backgroundTint="?attr/colorSurfaceVariant"/>
 
@@ -89,6 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
+                        app:elevation="3dp"
                         app:fabSize="mini"
                         app:backgroundTint="?attr/colorSurfaceVariant" />
 
