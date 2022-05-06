@@ -36,8 +36,7 @@
             android:id="@+id/edit_URL_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:visibility="gone">
+            android:paddingTop="8dp">
 
             <EditText
                 android:id="@+id/edit_URL"
@@ -45,8 +44,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/dialog_URL_hint"
                 android:imeOptions="actionDone"
-                android:inputType="textUri"
-                android:visibility="gone" />
+                android:inputType="textUri" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -57,8 +55,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/edit_userName_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone">
+                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/edit_userName"
@@ -73,8 +70,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/edit_PW_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone">
+                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/edit_PW"

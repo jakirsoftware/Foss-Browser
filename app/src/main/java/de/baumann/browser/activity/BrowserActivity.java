@@ -2181,20 +2181,21 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
                     View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
 
+                    LinearLayout icons_layout = dialogViewSubMenu.findViewById(R.id.icons_layout);
                     TextInputLayout edit_title_layout = dialogViewSubMenu.findViewById(R.id.edit_title_layout);
+                    TextInputLayout edit_URL_layout = dialogViewSubMenu.findViewById(R.id.edit_URL_layout);
                     TextInputLayout edit_userName_layout = dialogViewSubMenu.findViewById(R.id.edit_userName_layout);
                     TextInputLayout edit_PW_layout = dialogViewSubMenu.findViewById(R.id.edit_PW_layout);
+                    icons_layout.setVisibility(View.VISIBLE);
                     edit_title_layout.setVisibility(View.VISIBLE);
+                    edit_URL_layout.setVisibility(View.VISIBLE);
                     edit_userName_layout.setVisibility(View.GONE);
                     edit_PW_layout.setVisibility(View.GONE);
 
                     EditText edit_title = dialogViewSubMenu.findViewById(R.id.edit_title);
-                    edit_title.setText(title);
-
-                    TextInputLayout edit_URL_layout = dialogViewSubMenu.findViewById(R.id.edit_URL_layout);
-                    edit_URL_layout.setVisibility(View.VISIBLE);
                     EditText edit_URL = dialogViewSubMenu.findViewById(R.id.edit_URL);
-                    edit_URL.setVisibility(View.VISIBLE);
+
+                    edit_title.setText(title);
                     edit_URL.setText(url);
 
                     Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);

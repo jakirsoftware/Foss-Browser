@@ -6,6 +6,7 @@
 - fix: refactored code to make it much more readable #896 by T8RIN
 - fix: share link
 - fix: Home-screen links improvment #906
+- fix: no password field on authentication dialog #891
 - updated: layout and user experience
 - updated: settings for night view
 - updated: settings for gestures

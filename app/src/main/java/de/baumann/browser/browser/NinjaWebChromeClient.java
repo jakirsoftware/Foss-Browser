@@ -68,19 +68,19 @@ public class NinjaWebChromeClient extends WebChromeClient {
 
     @Override
     public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
-        ninjaWebView.getBrowserController().onShowCustomView(view, callback);
+        NinjaWebView.getBrowserController().onShowCustomView(view, callback);
         super.onShowCustomView(view, callback);
     }
 
     @Override
     public void onHideCustomView() {
-        ninjaWebView.getBrowserController().onHideCustomView();
+        NinjaWebView.getBrowserController().onHideCustomView();
         super.onHideCustomView();
     }
 
     @Override
     public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams) {
-        ninjaWebView.getBrowserController().showFileChooser(filePathCallback);
+        NinjaWebView.getBrowserController().showFileChooser(filePathCallback);
         return true;
     }
 

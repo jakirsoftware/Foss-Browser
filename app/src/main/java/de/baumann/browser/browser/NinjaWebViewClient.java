@@ -543,16 +543,14 @@ public class NinjaWebViewClient extends WebViewClient {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         View dialogView = View.inflate(context, R.layout.dialog_edit_title, null);
 
+        LinearLayout icons_layout = dialogView.findViewById(R.id.icons_layout);
         TextInputLayout edit_title_layout = dialogView.findViewById(R.id.edit_title_layout);
         TextInputLayout edit_URL_layout = dialogView.findViewById(R.id.edit_URL_layout);
-        edit_title_layout.setVisibility(View.GONE);
-        edit_URL_layout.setVisibility(View.GONE);
-
-        LinearLayout icons_layout = dialogView.findViewById(R.id.icons_layout);
-        icons_layout.setVisibility(View.GONE);
-
         TextInputLayout edit_userName_layout = dialogView.findViewById(R.id.edit_userName_layout);
         TextInputLayout edit_PW_layout = dialogView.findViewById(R.id.edit_PW_layout);
+        icons_layout.setVisibility(View.GONE);
+        edit_title_layout.setVisibility(View.GONE);
+        edit_URL_layout.setVisibility(View.GONE);
         edit_userName_layout.setVisibility(View.VISIBLE);
         edit_PW_layout.setVisibility(View.VISIBLE);
 
