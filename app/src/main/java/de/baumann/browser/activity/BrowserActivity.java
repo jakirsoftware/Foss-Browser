@@ -494,14 +494,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         setSelectedTab();
         bottomSheetDialog_OverView.setVisibility(View.VISIBLE);
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", 0);
-        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
         animation.start();
         bottomAppBar.setVisibility(View.GONE);
     }
 
     public void hideOverview() {
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", bottomSheetDialog_OverView.getHeight());
-        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
         animation.start();
         bottomAppBar.setVisibility(View.VISIBLE);
     }
@@ -510,7 +508,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         bottom_navigation.setSelectedItemId(R.id.page_0);
         bottomSheetDialog_OverView.setVisibility(View.VISIBLE);
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", 0);
-        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
         animation.start();
         bottomAppBar.setVisibility(View.GONE);
     }
@@ -1330,20 +1327,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         if (Objects.requireNonNull(sp.getString("saved_key_ok", "no")).equals("no")) {
             sp.edit().putString("saved_key_ok", "yes")
-                    .putString("setting_gesture_tb_up", "08")
-                    .putString("setting_gesture_tb_down", "01")
-                    .putString("setting_gesture_tb_left", "07")
-                    .putString("setting_gesture_tb_right", "06")
-                    .putString("setting_gesture_nav_up", "04")
-                    .putString("setting_gesture_nav_down", "05")
-                    .putString("setting_gesture_nav_left", "03")
-                    .putString("setting_gesture_nav_right", "02")
-                    .putString("setting_gesture_nav_left", "03")
+                    .putString("setting_gesture_tb_up", "04")
+                    .putString("setting_gesture_tb_down", "05")
+                    .putString("setting_gesture_tb_left", "03")
+                    .putString("setting_gesture_tb_right", "02")
+                    .putString("setting_gesture_nav_up", "16")
+                    .putString("setting_gesture_nav_down", "10")
+                    .putString("setting_gesture_nav_left", "07")
+                    .putString("setting_gesture_nav_right", "06")
                     .putString("setting_gesture_tabButton", "19")
                     .putString("setting_gesture_overViewButton", "18")
                     .putBoolean("sp_autofill", true)
-                    .putString("setting_gesture_tabButton", "19")
-                    .putString("setting_gesture_overViewButton", "18")
                     .apply();
             ninjaWebView.setProfileDefaultValues();
         }
@@ -1362,7 +1356,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (animation == null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                         animation.start();
                     }
                 }
@@ -1372,7 +1365,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (!ninjaWebView.canScrollVertically(0) && sp.getBoolean("hideToolbar", true)) {
                     if (animation == null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                        animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                         animation.start();
                     }
                 }
@@ -1386,13 +1378,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     if (scrollY > oldScrollY) {
                         if (animation == null || !animation.isRunning()) {
                             animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                             animation.start();
                         }
                     } else if (scrollY < oldScrollY) {
                         if (animation == null || !animation.isRunning()) {
                             animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                            animation.setDuration(getResources().getInteger(android.R.integer.config_shortAnimTime));
                             animation.start();
                         }
                     }
