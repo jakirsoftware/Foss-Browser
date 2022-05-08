@@ -240,10 +240,8 @@ public class NinjaWebView extends WebView implements AlbumController {
         }
 
         if (listTrusted.isWhite(url)) omniBox_tab.setImageResource(R.drawable.icon_profile_trusted);
-        else if (listStandard.isWhite(url))
-            omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
-        else if (listProtected.isWhite(url))
-            omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
+        else if (listStandard.isWhite(url)) omniBox_tab.setImageResource(R.drawable.icon_profile_standard);
+        else if (listProtected.isWhite(url)) omniBox_tab.setImageResource(R.drawable.icon_profile_protected);
     }
 
     public void setProfileDefaultValues() {

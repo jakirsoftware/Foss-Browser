@@ -39,12 +39,9 @@ public class NinjaWebChromeClient extends WebChromeClient {
     public void onProgressChanged(WebView view, int progress) {
         super.onProgressChanged(view, progress);
         ninjaWebView.updateTitle(progress);
-        if (Objects.requireNonNull(view.getTitle()).isEmpty()) {
-            ninjaWebView.updateTitle(view.getUrl());
-        } else {
-            ninjaWebView.updateTitle(view.getTitle());
-        }
         ninjaWebView.updateFavicon(view.getUrl());
+        if (Objects.requireNonNull(view.getTitle()).isEmpty()) ninjaWebView.updateTitle(view.getUrl());
+        else ninjaWebView.updateTitle(view.getTitle());
     }
 
     @Override
@@ -99,19 +96,17 @@ public class NinjaWebChromeClient extends WebChromeClient {
         String[] resources = request.getResources();
         for (String resource : resources) {
             if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)) {
-                if (sp.getBoolean(ninjaWebView.getProfile() + "_camera", false)) {
+                if (sp.getBoolean(ninjaWebView.getProfile() + "_camera", false))
                     HelperUnit.grantPermissionsCamera(activity);
-                    if (ninjaWebView.getSettings().getMediaPlaybackRequiresUserGesture()) {
-                        ninjaWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);  //fix conflict with save data option. Temporarily switch off setMediaPlaybackRequiresUserGesture
+                    if (ninjaWebView.getSettings().getMediaPlaybackRequiresUserGesture())
+                        ninjaWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+                        //fix conflict with save data option. Temporarily switch off setMediaPlaybackRequiresUserGesture
                         ninjaWebView.reloadWithoutInit();
-                    }
                     request.grant(request.getResources());
-                }
             } else if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)) {
-                if (sp.getBoolean(ninjaWebView.getProfile() + "_microphone", false)) {
+                if (sp.getBoolean(ninjaWebView.getProfile() + "_microphone", false))
                     HelperUnit.grantPermissionsMic(activity);
                     request.grant(request.getResources());
-                }
             } else if (PermissionRequest.RESOURCE_PROTECTED_MEDIA_ID.equals(resource)) {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(ninjaWebView.getContext());
                 builder.setIcon(R.drawable.icon_alert);

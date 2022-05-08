@@ -175,6 +175,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     private AlbumController currentAlbumController = null;
     private ValueCallback<Uri[]> mFilePathCallback;
 
+    public Bitmap favicon () { return ninjaWebView.getFavicon(); }
+
     // Classes
 
     @Override
@@ -1356,37 +1358,26 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (animation == null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                        animation.start();
-                    }
-                }
-            }
+                        animation.start(); }}}
 
             public void onSwipeTop() {
                 if (!ninjaWebView.canScrollVertically(0) && sp.getBoolean("hideToolbar", true)) {
                     if (animation == null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                        animation.start();
-                    }
-                }
-            }
+                        animation.start(); }}}
         };
 
-        ninjaWebView.setOnTouchListener(swipeTouchListener);
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (scrollY > oldScrollY) {
                         if (animation == null || !animation.isRunning()) {
                             animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", bottomAppBar.getHeight());
-                            animation.start();
-                        }
-                    } else if (scrollY < oldScrollY) {
+                            animation.start(); }}
+                    else if (scrollY < oldScrollY) {
                         if (animation == null || !animation.isRunning()) {
                             animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
-                            animation.start();
-                        }
-                    }
-                }
+                            animation.start(); }}}
             }
             if (scrollY == 0) ninjaWebView.setOnTouchListener(swipeTouchListener);
             else ninjaWebView.setOnTouchListener(null);
@@ -1567,12 +1558,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         if (!orientationChanged) {
             saveOpenedTabs();
             HelperUnit.triggerRebirth(context);
-        } else orientationChanged = false;
+        }
+        else orientationChanged = false;
     }
 
     @Override
     public synchronized void updateProgress(int progress) {
-        progressBar.setOnClickListener(v -> ninjaWebView.stopLoading());
         progressBar.setProgressCompat(progress, true);
         if (progress != BrowserUnit.LOADING_STOPPED) updateOmniBox();
         if (progress < BrowserUnit.PROGRESS_MAX) progressBar.setVisibility(View.VISIBLE);
@@ -1621,11 +1612,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         setCustomFullscreen(true);
 
         if (view instanceof FrameLayout) {
-            if (((FrameLayout) view).getFocusedChild() instanceof VideoView) {
+            if (((FrameLayout) view).getFocusedChild() instanceof VideoView)
                 videoView = (VideoView) ((FrameLayout) view).getFocusedChild();
                 videoView.setOnErrorListener(new VideoCompletionListener());
                 videoView.setOnCompletionListener(new VideoCompletionListener());
-            }
         }
     }
 
@@ -1661,8 +1651,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             FaviconHelper faviconHelper = new FaviconHelper(context);
             Bitmap bitmap = faviconHelper.getFavicon(url);
             if (bitmap != null) menu_icon.setImageBitmap(bitmap);
-            else menu_icon.setImageResource(R.drawable.icon_link);
-        } else if (type == IMAGE_TYPE) menu_icon.setImageResource(R.drawable.icon_image_favicon);
+            else menu_icon.setImageResource(R.drawable.icon_link); }
+        else if (type == IMAGE_TYPE) menu_icon.setImageResource(R.drawable.icon_image_favicon);
         else menu_icon.setImageResource(R.drawable.icon_link);
 
         builder.setView(dialogView);
@@ -1761,8 +1751,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         else {
             long value = 0;  //default red icon
             action.addBookmark(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), 0, 0, 2, ninjaWebView.isDesktopMode(), ninjaWebView.isNightMode(), value));
-            NinjaToast.show(this, R.string.app_done);
-        }
+            NinjaToast.show(this, R.string.app_done); }
         action.close();
     }
 
@@ -1782,8 +1771,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 Message msg = backgroundHandler.obtainMessage();
                 ninjaWebView.requestFocusNodeHref(msg);
                 String url = (String) msg.getData().get("url");
-                showContextMenuLink(HelperUnit.domain(url), url, SRC_ANCHOR_TYPE);
-            } else if (result.getType() == IMAGE_TYPE)
+                showContextMenuLink(HelperUnit.domain(url), url, SRC_ANCHOR_TYPE); }
+            else if (result.getType() == IMAGE_TYPE)
                 showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), IMAGE_TYPE);
             else showContextMenuLink(HelperUnit.domain(result.getExtra()), result.getExtra(), 0);
         }
@@ -1800,8 +1789,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
             AlertDialog dialog = builder.create();
             dialog.show();
-            HelperUnit.setupDialog(context, dialog);
-        }
+            HelperUnit.setupDialog(context, dialog);}
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -1903,15 +1891,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             RecordAction action = new RecordAction(context);
             if (position == 0) {
                 sp.edit().putString("favoriteURL", url).apply();
-                NinjaToast.show(this, R.string.app_done);
-            } else if (position == 1) {
-                save_atHome(title, url);
-            } else if (position == 2) {
+                NinjaToast.show(this, R.string.app_done); }
+            else if (position == 1) save_atHome(title, url);
+            else if (position == 2) {
                 saveBookmark();
-                action.close();
-            } else if (position == 3) printPDF();
-            else if (position == 4)
-                HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getOriginalUrl());
+                action.close(); }
+            else if (position == 3) printPDF();
+            else if (position == 4) HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getOriginalUrl());
             else if (position == 5) HelperUnit.saveAs(dialog_overflow, activity, url);
         });
 
@@ -1932,11 +1918,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         menu_grid_share.setOnItemClickListener((parent, view12, position, id) -> {
             dialog_overflow.cancel();
             if (position == 0) shareLink(title, url);
-            else if (position == 1) {
-                copyLink(url);
-            } else if (position == 2) {
-                BrowserUnit.intentURL(context, Uri.parse(url));
-            }
+            else if (position == 1) copyLink(url);
+            else if (position == 2) BrowserUnit.intentURL(context, Uri.parse(url));
         });
 
         // Other
@@ -1962,20 +1945,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (position == 0) searchOnSite();
             else if (position == 1) {
                 Uri webpage = Uri.parse("https://github.com/scoute-dich/browser/wiki");
-                BrowserUnit.intentURL(this, webpage);
-            } else if (position == 2)
-                startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
+                BrowserUnit.intentURL(this, webpage); }
+            else if (position == 2) startActivity(new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS));
             else if (position == 3) {
                 Intent settings = new Intent(BrowserActivity.this, Settings_Activity.class);
-                startActivity(settings);
-            } else if (position == 4) {
+                startActivity(settings); }
+            else if (position == 4) {
                 saveOpenedTabs();
-                HelperUnit.triggerRebirth(context);
-            }
+                HelperUnit.triggerRebirth(context);}
         });
 
         TabLayout tabLayout = dialogView.findViewById(R.id.tabLayout);
-
         TabLayout.Tab tab_tab = tabLayout.newTab().setIcon(R.drawable.icon_tab);
         TabLayout.Tab tab_share = tabLayout.newTab().setIcon(R.drawable.icon_menu_share);
         TabLayout.Tab tab_save = tabLayout.newTab().setIcon(R.drawable.icon_menu_save);
@@ -1994,32 +1974,28 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     menu_grid_tab.setVisibility(View.VISIBLE);
                     menu_grid_share.setVisibility(View.GONE);
                     menu_grid_save.setVisibility(View.GONE);
-                    menu_grid_other.setVisibility(View.GONE);
-                } else if (tab.getPosition() == 1) {
+                    menu_grid_other.setVisibility(View.GONE); }
+                else if (tab.getPosition() == 1) {
                     menu_grid_tab.setVisibility(View.GONE);
                     menu_grid_share.setVisibility(View.VISIBLE);
                     menu_grid_save.setVisibility(View.GONE);
-                    menu_grid_other.setVisibility(View.GONE);
-                } else if (tab.getPosition() == 2) {
+                    menu_grid_other.setVisibility(View.GONE); }
+                else if (tab.getPosition() == 2) {
                     menu_grid_tab.setVisibility(View.GONE);
                     menu_grid_share.setVisibility(View.GONE);
                     menu_grid_save.setVisibility(View.VISIBLE);
-                    menu_grid_other.setVisibility(View.GONE);
-                } else if (tab.getPosition() == 3) {
+                    menu_grid_other.setVisibility(View.GONE); }
+                else if (tab.getPosition() == 3) {
                     menu_grid_tab.setVisibility(View.GONE);
                     menu_grid_share.setVisibility(View.GONE);
                     menu_grid_save.setVisibility(View.GONE);
-                    menu_grid_other.setVisibility(View.VISIBLE);
-                }
-            }
+                    menu_grid_other.setVisibility(View.VISIBLE); }}
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
+            public void onTabUnselected(TabLayout.Tab tab) { }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
+            public void onTabReselected(TabLayout.Tab tab) { }
         });
         menu_grid_tab.setOnTouchListener(new SwipeTouchListener(context) {
             public void onSwipeRight() {
@@ -2053,10 +2029,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 tabLayout.selectTab(tab_tab);
             }
         });
-    }
-
-    public Bitmap favicon () {
-        return ninjaWebView.getFavicon();
     }
 
     private void saveOpenedTabs() {

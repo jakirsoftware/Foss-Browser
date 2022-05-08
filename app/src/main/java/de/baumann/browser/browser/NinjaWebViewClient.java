@@ -60,26 +60,19 @@ public class NinjaWebViewClient extends WebViewClient {
         super.onPageFinished(view, url);
         ninjaWebView.isBackPressed = false;
 
-        if (ninjaWebView.isForeground()) {
-            ninjaWebView.invalidate();
-        } else {
-            ninjaWebView.postInvalidate();
-        }
+        if (ninjaWebView.isForeground()) ninjaWebView.invalidate();
+        else ninjaWebView.postInvalidate();
 
-        if (sp.getBoolean("onPageFinished", false)) {
+        if (sp.getBoolean("onPageFinished", false))
             view.evaluateJavascript(Objects.requireNonNull(sp.getString("sp_onPageFinished", "")), null);
-        }
 
-        if (ninjaWebView.isSaveData()) {
+        if (ninjaWebView.isSaveData())
             view.evaluateJavascript("var links=document.getElementsByTagName('video'); for(let i=0;i<links.length;i++){links[i].pause()};", null);
-        }
 
         if (ninjaWebView.isHistory()) {
             RecordAction action = new RecordAction(ninjaWebView.getContext());
             action.open(true);
-            if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY)) {
-                action.deleteURL(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY);
-            }
+            if (action.checkUrl(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY)) action.deleteURL(ninjaWebView.getUrl(), RecordUnit.TABLE_HISTORY);
             action.addHistory(new Record(ninjaWebView.getTitle(), ninjaWebView.getUrl(), System.currentTimeMillis(), 0, 0, ninjaWebView.isDesktopMode(), ninjaWebView.isNightMode(), 0));
             action.close();
         }
@@ -91,12 +84,10 @@ public class NinjaWebViewClient extends WebViewClient {
         ninjaWebView.resetFavicon();
         super.onPageStarted(view, url, favicon);
 
-        if (sp.getBoolean("onPageStarted", false)) {
+        if (sp.getBoolean("onPageStarted", false))
             view.evaluateJavascript(Objects.requireNonNull(sp.getString("sp_onPageStarted", "")), null);
-        }
 
         if (ninjaWebView.isFingerPrintProtection()) {
-
             //Block WebRTC requests which can reveal local IP address
             //Tested with https://diafygi.github.io/webrtc-ips/
             view.evaluateJavascript("['createOffer', 'createAnswer','setLocalDescription', 'setRemoteDescription'].forEach(function(method) {\n" +
@@ -400,24 +391,20 @@ public class NinjaWebViewClient extends WebViewClient {
                     "Object.defineProperty(navigator, 'keyboard',{value:null});" +
                     "Object.defineProperty(navigator, 'sendBeacon',{value:null});", null);
 
-            if (!ninjaWebView.isCamera()) {
-                view.evaluateJavascript("" +
-                        "Object.defineProperty(navigator, 'mediaDevices',{value:null});", null);
-            }
+            if (!ninjaWebView.isCamera())
+                view.evaluateJavascript("" + "Object.defineProperty(navigator, 'mediaDevices',{value:null});", null);
         }
     }
 
     @Override
     public void onLoadResource(WebView view, String url) {
 
-        if (sp.getBoolean("onLoadResource", false)) {
+        if (sp.getBoolean("onLoadResource", false))
             view.evaluateJavascript(Objects.requireNonNull(sp.getString("sp_onLoadResource", "")), null);
-        }
 
-        if (ninjaWebView.isFingerPrintProtection()) {
+        if (ninjaWebView.isFingerPrintProtection())
             view.evaluateJavascript("var test=document.querySelector(\"a[ping]\"); if(test!==null){test.removeAttribute('ping')};", null);
             //do not allow ping on http only pages (tested with http://tests.caniuse.com)
-        }
 
         if (view.getSettings().getUseWideViewPort() && (view.getWidth() < 1300))
             view.evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content', 'width=1200px');", null);
@@ -450,9 +437,8 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
-        if (ninjaWebView.isBackPressed) {
-            return false;
-        } else {
+        if (ninjaWebView.isBackPressed) return false;
+        else {
             // handle the url by implementing your logic
             String url = uri.toString();
             if (url.startsWith("http://") || url.startsWith("https://")) return false;
@@ -477,13 +463,12 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-        if (ninjaWebView.isAdBlock() && adBlock.isAd(request.getUrl().toString())) {
+        if (ninjaWebView.isAdBlock() && adBlock.isAd(request.getUrl().toString()))
             return new WebResourceResponse(
                     BrowserUnit.MIME_TYPE_TEXT_PLAIN,
                     BrowserUnit.URL_ENCODING,
                     new ByteArrayInputStream("".getBytes())
             );
-        }
         return super.shouldInterceptRequest(view, request);
     }
 
