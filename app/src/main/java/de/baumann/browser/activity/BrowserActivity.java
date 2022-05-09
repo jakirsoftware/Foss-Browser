@@ -90,7 +90,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
-import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -1381,8 +1380,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
                             animation.start(); }}}
             }
-            //if (scrollY == 0) ninjaWebView.setOnTouchListener(swipeTouchListener);
-            //else ninjaWebView.setOnTouchListener(null);
         });
 
         if (url.isEmpty()) ninjaWebView.loadUrl("about:blank");
