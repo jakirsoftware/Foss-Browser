@@ -18,7 +18,8 @@
         android:background="?attr/colorSurface"
         android:divider="@null"
         android:fastScrollEnabled="true"
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:stackFromBottom="true"
         android:visibility="gone" />
 
@@ -205,8 +206,8 @@
             android:layout_above="@+id/bottom_navigation"
             android:divider="@null"
             android:fastScrollEnabled="true"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:stackFromBottom="true" />
 
         <ScrollView
@@ -221,8 +222,8 @@
                 android:orientation="vertical"
                 android:stackFromBottom="true"
                 android:visibility="gone"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp" />
 
         </ScrollView>
 

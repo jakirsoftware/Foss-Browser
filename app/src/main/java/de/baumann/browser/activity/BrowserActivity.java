@@ -90,6 +90,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -1367,6 +1368,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         animation.start(); }}}
         };
 
+        ninjaWebView.setOnTouchListener(swipeTouchListener);
         ninjaWebView.setOnScrollChangeListener((scrollY, oldScrollY) -> {
             if (!searchOnSite) {
                 if (sp.getBoolean("hideToolbar", true)) {
@@ -1379,8 +1381,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
                             animation.start(); }}}
             }
-            if (scrollY == 0) ninjaWebView.setOnTouchListener(swipeTouchListener);
-            else ninjaWebView.setOnTouchListener(null);
+            //if (scrollY == 0) ninjaWebView.setOnTouchListener(swipeTouchListener);
+            //else ninjaWebView.setOnTouchListener(null);
         });
 
         if (url.isEmpty()) ninjaWebView.loadUrl("about:blank");
@@ -1390,15 +1392,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             ninjaWebView.setPredecessor(currentAlbumController);
             //save currentAlbumController and use when TAB is closed via Back button
             int index = BrowserContainer.indexOf(currentAlbumController) + 1;
-            BrowserContainer.add(ninjaWebView, index);
-        } else BrowserContainer.add(ninjaWebView);
+            BrowserContainer.add(ninjaWebView, index); }
+        else BrowserContainer.add(ninjaWebView);
 
         if (!foreground) ninjaWebView.deactivate();
         else {
             ninjaWebView.activate();
             showAlbum(ninjaWebView);
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) ninjaWebView.reload();
-        }
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) ninjaWebView.reload(); }
         View albumView = ninjaWebView.getAlbumView();
         tab_container.addView(albumView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         updateOmniBox();
@@ -1652,7 +1653,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             Bitmap bitmap = faviconHelper.getFavicon(url);
             if (bitmap != null) menu_icon.setImageBitmap(bitmap);
             else menu_icon.setImageResource(R.drawable.icon_link); }
-        else if (type == IMAGE_TYPE) menu_icon.setImageResource(R.drawable.icon_image_favicon);
+        else if (type == IMAGE_TYPE) menu_icon.setImageResource(R.drawable.icon_image);
         else menu_icon.setImageResource(R.drawable.icon_link);
 
         builder.setView(dialogView);
@@ -2178,14 +2179,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                         menuTitleFilter.setText(R.string.menu_filter);
                         CardView cardView = dialogViewFilter.findViewById(R.id.cardView);
                         cardView.setVisibility(View.GONE);
+
+
+
                         Objects.requireNonNull(dialogFilter.getWindow()).setGravity(Gravity.BOTTOM);
                         GridView menuEditFilter = dialogViewFilter.findViewById(R.id.menu_grid);
                         final List<GridItem> menuEditFilterList = new LinkedList<>();
                         HelperUnit.addFilterItems(activity, menuEditFilterList);
                         GridAdapter menuEditFilterAdapter = new GridAdapter(context, menuEditFilterList);
                         menuEditFilter.setNumColumns(2);
-                        menuEditFilter.setHorizontalSpacing(30);
-                        menuEditFilter.setVerticalSpacing(30);
+                        menuEditFilter.setHorizontalSpacing(20);
+                        menuEditFilter.setVerticalSpacing(20);
                         menuEditFilter.setAdapter(menuEditFilterAdapter);
                         menuEditFilterAdapter.notifyDataSetChanged();
                         menuEditFilter.setOnItemClickListener((parent2, view2, position2, id2) -> {
@@ -2193,6 +2197,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             HelperUnit.setFilterIcons(context, ib_icon, newIcon);
                             dialogFilter.cancel();
                         });
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.WRAP_CONTENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT
+                        );
+                        params.setMargins(60,40,60,20);
+                        menuEditFilter.setLayoutParams(params);
+
                     });
                     newIcon = recordList.get(location).getIconColor();
                     HelperUnit.setFilterIcons(context, ib_icon, newIcon);
@@ -2282,8 +2293,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         GridAdapter gridAdapter = new GridAdapter(context, gridList);
         menu_grid.setNumColumns(2);
-        menu_grid.setHorizontalSpacing(30);
-        menu_grid.setVerticalSpacing(30);
+        menu_grid.setHorizontalSpacing(20);
+        menu_grid.setVerticalSpacing(20);
         menu_grid.setAdapter(gridAdapter);
         gridAdapter.notifyDataSetChanged();
         menu_grid.setOnItemClickListener((parent, view, position, id) -> {
@@ -2292,6 +2303,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             dialog.cancel();
             bottom_navigation.setSelectedItemId(R.id.page_2);
         });
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        params.setMargins(60,40,60,20);
+        menu_grid.setLayoutParams(params);
     }
 
     private void setCustomFullscreen(boolean fullscreen) {

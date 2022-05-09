@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 
@@ -13,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceViewHolder;
+
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import de.baumann.browser.R;
 
@@ -40,7 +41,7 @@ public class ListSwitchPreference extends ListPreference {
 
         final SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         final ViewGroup rootView;
-        final CheckBox onOffSwitch;
+        final SwitchMaterial onOffSwitch;
         final CompoundButton.OnCheckedChangeListener checkedChangeListener;
         super.onBindViewHolder(holder);
 
@@ -51,9 +52,9 @@ public class ListSwitchPreference extends ListPreference {
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
             );
-            params.setMargins(0,0,25,0);
+            params.setMargins(10,0,10,0);
 
-            onOffSwitch = new CheckBox(getContext());
+            onOffSwitch = new SwitchMaterial(getContext());
             onOffSwitch.setLayoutParams(params);
             rootView.addView(onOffSwitch);
             switchAttached = true;
