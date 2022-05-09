@@ -1,5 +1,6 @@
 ### v 9.2 (WIP)
 
+- fix: crash when sharing links #883
 - fix: no password field on webserver authentication #891
 - fix: some swiping issues #899 by Lakjdf
 - fix: support for intent scheme URLs again #898 by Lakjdf

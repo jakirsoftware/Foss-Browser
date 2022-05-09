@@ -167,9 +167,9 @@ public class BrowserUnit {
                     if (BackupUnit.checkPermissionStorage(context)) {
                         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
                         FileOutputStream fos = new FileOutputStream(file);
-                        fos.write(dataURIParser.getImagedata());
-                    } else BackupUnit.requestPermission(activity);
-                } else {
+                        fos.write(dataURIParser.getImagedata()); }
+                    else BackupUnit.requestPermission(activity); }
+                else {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
                     request.setMimeType(mimeType);
                     //------------------------COOKIE!!------------------------
@@ -183,23 +183,23 @@ public class BrowserUnit {
                     request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, URLUtil.guessFileName(url, contentDisposition, mimeType));
                     DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
                     assert dm != null;
-                    if (BackupUnit.checkPermissionStorage(context)) {
-                        dm.enqueue(request);
-                    } else {
-                        BackupUnit.requestPermission(activity);
-                    }
-                }
-            } catch (Exception e) {
+                    if (BackupUnit.checkPermissionStorage(context)) dm.enqueue(request);
+                    else BackupUnit.requestPermission(activity); }}
+            catch (Exception e) {
                 System.out.println("Error Downloading File: " + e);
                 Toast.makeText(context, context.getString(R.string.app_error) + e.toString().substring(e.toString().indexOf(":")), Toast.LENGTH_LONG).show();
-                e.printStackTrace();
-            }
+                e.printStackTrace();}
         });
         builder.setNeutralButton(R.string.menu_share_link, (dialog, whichButton) -> {
-            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-            sharingIntent.setType("text/plain");
-            sharingIntent.putExtra(Intent.EXTRA_TEXT, url);
-            context.startActivity(Intent.createChooser(sharingIntent, (context.getString(R.string.menu_share_link))));
+            try {
+                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, url);
+                context.startActivity(Intent.createChooser(sharingIntent, (context.getString(R.string.menu_share_link)))); }
+            catch (Exception e) {
+                System.out.println("Error Downloading File: " + e);
+                Toast.makeText(context, context.getString(R.string.app_error) + e.toString().substring(e.toString().indexOf(":")), Toast.LENGTH_LONG).show();
+                e.printStackTrace();}
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
@@ -217,12 +217,9 @@ public class BrowserUnit {
     public static void clearCache(Context context) {
         try {
             File dir = context.getCacheDir();
-            if (dir != null && dir.isDirectory()) {
-                deleteDir(dir);
-            }
-        } catch (Exception exception) {
-            Log.w("browser", "Error clearing cache");
-        }
+            if (dir != null && dir.isDirectory()) deleteDir(dir); }
+        catch (Exception exception) {
+            Log.w("browser", "Error clearing cache"); }
     }
 
     public static void clearCookie() {
@@ -239,8 +236,7 @@ public class BrowserUnit {
         action.close();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
-            Objects.requireNonNull(shortcutManager).removeAllDynamicShortcuts();
-        }
+            Objects.requireNonNull(shortcutManager).removeAllDynamicShortcuts(); }
     }
 
     public static void clearHistory(Context context) {
@@ -250,8 +246,7 @@ public class BrowserUnit {
         action.close();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             ShortcutManager shortcutManager = context.getSystemService(ShortcutManager.class);
-            Objects.requireNonNull(shortcutManager).removeAllDynamicShortcuts();
-        }
+            Objects.requireNonNull(shortcutManager).removeAllDynamicShortcuts(); }
     }
 
     public static void intentURL(Context context, Uri uri) {
@@ -278,8 +273,7 @@ public class BrowserUnit {
                 channel.setShowBadge(true);
                 channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
                 NotificationManager notificationManager = activity.getSystemService(NotificationManager.class);
-                notificationManager.createNotificationChannel(channel);
-            }
+                notificationManager.createNotificationChannel(channel); }
 
             NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(activity, "1")
                     .setSmallIcon(R.drawable.icon_web)
