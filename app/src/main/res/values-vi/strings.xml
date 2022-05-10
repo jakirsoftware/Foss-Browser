@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Hiện khi khởi động</string>
     <string name="setting_gestures">Cử chỉ</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Thanh công cụ</string>
-    <string name="setting_title_toolbar_buttons">Nút trên thanh công cụ</string>
     <string name="setting_title_longPress">Nhấn giữ</string>
-    <string name="setting_title_tabButton">Nút tab / nút menu</string>
     <string name="setting_title_overViewButton">Tổng quan</string>
     <string name="setting_gesture_up">Vuốt lên</string>
     <string name="setting_gesture_down">Vuốt xuống</string>
