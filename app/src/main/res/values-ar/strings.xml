@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">أَظهر عند البداية</string>
     <string name="setting_gestures">إيماءات</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">شريط الأدوات</string>
-    <string name="setting_title_toolbar_buttons">أزرار شريط الأدوات</string>
     <string name="setting_title_longPress">ضغط مطوّل</string>
-    <string name="setting_title_tabButton">زر التبويب / زر القائمة</string>
     <string name="setting_title_overViewButton">نظرة عامة</string>
     <string name="setting_gesture_up">مرر لأعلى</string>
     <string name="setting_gesture_down">مرر لأسفل</string>
