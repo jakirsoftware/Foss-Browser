@@ -112,6 +112,7 @@
         <entry key="app/src/main/res/layout/item_list.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/item_menu.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/item_tab.xml" value="0.1539855072463768" />
+        <entry key="app/src/main/res/menu/menu_bottom_overflow.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/menu/menu_bottom_overview.xml" value="0.19010416666666666" />
         <entry key="app/src/main/res/menu/menu_help.xml" value="0.178125" />
         <entry key="app/src/main/res/menu/menu_list_bookmark.xml" value="0.178125" />
@@ -132,6 +133,7 @@
         <entry key="app/src/main/res/xml/preference_profile_default.xml" value="0.1" />
         <entry key="app/src/main/res/xml/preference_profile_protected.xml" value="0.13632246376811594" />
         <entry key="app/src/main/res/xml/preference_profile_standard.xml" value="0.1" />
+        <entry key="app/src/main/res/xml/preference_profile_trusted.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/xml/preference_setting.xml" value="0.2297872340425532" />
         <entry key="app/src/main/res/xml/preference_start.xml" value="0.25" />
         <entry key="app/src/main/res/xml/preference_ui.xml" value="0.15319148936170213" />

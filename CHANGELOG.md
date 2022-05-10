@@ -11,6 +11,7 @@
 - updated: layout and user experience
 - updated: settings for night view
 - updated: settings for gestures
+- updated: settings for editing profiles #909
 - updated translations: *Now 21 languages are fully supported!*
 
 ### v 9.1

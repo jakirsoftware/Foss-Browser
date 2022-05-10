@@ -12,12 +12,6 @@
 
         <CheckBoxPreference
             android:defaultValue="true"
-            android:icon="@drawable/icon_adblock"
-            android:key="profileTrusted_adBlock"
-            android:summary="@string/setting_title_adblock" />
-
-        <CheckBoxPreference
-            android:defaultValue="true"
             android:icon="@drawable/icon_savedata"
             android:key="profileTrusted_saveData"
             android:summary="@string/setting_title_save_data" />
@@ -51,12 +45,6 @@
             android:summary="@string/setting_title_history" />
 
         <CheckBoxPreference
-            android:defaultValue="false"
-            android:icon="@drawable/icon_fingerprint"
-            android:key="profileTrusted_fingerPrintProtection"
-            android:summary="@string/setting_title_fingerPrint" />
-
-        <CheckBoxPreference
             android:defaultValue="true"
             android:icon="@drawable/icon_cookie"
             android:key="profileTrusted_cookies"
@@ -67,10 +55,6 @@
             android:icon="@drawable/icon_dom"
             android:key="profileTrusted_dom"
             android:summary="@string/setting_title_dom" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_profiles_Security">
 
         <CheckBoxPreference
             android:defaultValue="true"
@@ -83,6 +67,22 @@
             android:icon="@drawable/icon_popup"
             android:key="profileTrusted_javascriptPopUp"
             android:summary="@string/setting_title_javascript_popUp" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_title_profiles_Security">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/icon_adblock"
+            android:key="profileTrusted_adBlock"
+            android:summary="@string/setting_title_adblock" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:icon="@drawable/icon_fingerprint"
+            android:key="profileTrusted_fingerPrintProtection"
+            android:summary="@string/setting_title_fingerPrint" />
 
     </PreferenceCategory>
 

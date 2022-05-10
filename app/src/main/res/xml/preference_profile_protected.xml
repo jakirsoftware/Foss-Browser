@@ -10,11 +10,6 @@
             android:key="profileProtected_images"
             android:summary="@string/setting_title_images" />
 
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:icon="@drawable/icon_adblock"
-            android:key="profileProtected_adBlock"
-            android:summary="@string/setting_title_adblock" />
 
         <CheckBoxPreference
             android:defaultValue="true"
@@ -51,12 +46,6 @@
             android:summary="@string/setting_title_history" />
 
         <CheckBoxPreference
-            android:defaultValue="true"
-            android:icon="@drawable/icon_fingerprint"
-            android:key="profileProtected_fingerPrintProtection"
-            android:summary="@string/setting_title_fingerPrint" />
-
-        <CheckBoxPreference
             android:defaultValue="false"
             android:icon="@drawable/icon_cookie"
             android:key="profileProtected_cookies"
@@ -68,9 +57,6 @@
             android:key="profileProtected_dom"
             android:summary="@string/setting_title_dom" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="@string/setting_title_profiles_Security">
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -83,6 +69,24 @@
             android:icon="@drawable/icon_popup"
             android:key="profileProtected_javascriptPopUp"
             android:summary="@string/setting_title_javascript_popUp" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_title_profiles_Security">
+
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/icon_adblock"
+            android:key="profileProtected_adBlock"
+            android:summary="@string/setting_title_adblock" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/icon_fingerprint"
+            android:key="profileProtected_fingerPrintProtection"
+            android:summary="@string/setting_title_fingerPrint" />
+
 
     </PreferenceCategory>
 

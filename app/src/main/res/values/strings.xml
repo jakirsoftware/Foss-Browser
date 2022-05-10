@@ -180,10 +180,7 @@
     <string name="setting_gestures">Gestures</string>
 
     <!-- gestures -->
-    <string name="setting_title_toolbar">Toolbar</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_title_longPress">Long press</string>
-    <string name="setting_title_tabButton">Tab button / menu button</string>
     <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Swipe up</string>
     <string name="setting_gesture_down">Swipe down</string>

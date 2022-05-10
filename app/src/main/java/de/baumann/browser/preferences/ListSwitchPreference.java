@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 
@@ -16,6 +17,7 @@ import androidx.preference.PreferenceViewHolder;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import de.baumann.browser.R;
+import de.baumann.browser.unit.HelperUnit;
 
 public class ListSwitchPreference extends ListPreference {
 
@@ -52,7 +54,7 @@ public class ListSwitchPreference extends ListPreference {
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
             );
-            params.setMargins(10,0,10,0);
+            params.setMargins(0, 0, HelperUnit.convertDpToPixel(5f, getContext()),0);
 
             onOffSwitch = new SwitchMaterial(getContext());
             onOffSwitch.setLayoutParams(params);

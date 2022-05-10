@@ -81,7 +81,7 @@
                         android:layout_gravity="center"
                         android:layout_marginEnd="5dp"
                         android:src="@drawable/icon_profile_standard"
-                        app:elevation="3dp"
+                        app:elevation="2dp"
                         app:fabSize="mini"
                         app:backgroundTint="?attr/colorSurfaceVariant"/>
 
@@ -91,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginStart="5dp"
-                        app:elevation="3dp"
+                        app:elevation="2dp"
                         app:fabSize="mini"
                         app:backgroundTint="?attr/colorSurfaceVariant" />
 
@@ -223,7 +223,7 @@
                 android:stackFromBottom="true"
                 android:visibility="gone"
                 android:paddingTop="10dp"
-                android:paddingBottom="10dp" />
+                android:paddingBottom="10dp"/>
 
         </ScrollView>
 

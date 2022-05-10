@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:ignore="ContentDescription">
+    tools:ignore="ContentDescription"
+    android:background="?attr/colorSurface">
 
     <com.google.android.material.card.MaterialCardView
         style="@style/Widget.Material3.CardView.Filled"
@@ -62,27 +63,15 @@
                 android:layout_toStartOf="@id/overflow_help"
                 android:layout_toEndOf="@id/cardView"
                 android:ellipsize="end"
+                android:gravity="center_vertical"
                 android:includeFontPadding="false"
                 android:maxLines="1"
-                android:gravity="center_vertical"
-                android:textStyle="bold"
-                android:textAppearance="?attr/textAppearanceBodyLarge" />
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorSurface" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/colorPrimary" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -93,26 +82,43 @@
             android:id="@+id/overflow_tab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numColumns="1" />
+            android:numColumns="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp" />
 
         <GridView
             android:id="@+id/overflow_share"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numColumns="1" />
+            android:numColumns="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp" />
 
         <GridView
             android:id="@+id/overflow_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numColumns="1" />
+            android:numColumns="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp" />
 
         <GridView
             android:id="@+id/overflow_other"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numColumns="1" />
+            android:numColumns="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp" />
 
     </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:backgroundTint="?attr/colorSurface"
+        app:menu="@menu/menu_bottom_overflow" />
 
 </LinearLayout>

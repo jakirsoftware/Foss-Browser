@@ -70,13 +70,11 @@ public class BackupUnit {
     private static final String BOOKMARK_TIME = "{time}";
 
     public static boolean checkPermissionStorage(Context context) {
-        if (SDK_INT >= Build.VERSION_CODES.R) {
-            return Environment.isExternalStorageManager();
-        } else {
+        if (SDK_INT >= Build.VERSION_CODES.R) return Environment.isExternalStorageManager();
+        else {
             int result = ContextCompat.checkSelfPermission(context, READ_EXTERNAL_STORAGE);
             int result1 = ContextCompat.checkSelfPermission(context, WRITE_EXTERNAL_STORAGE);
-            return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
-        }
+            return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED; }
     }
 
     public static void requestPermission(Activity activity) {
@@ -91,16 +89,14 @@ public class BackupUnit {
                     Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
                     intent.addCategory("android.intent.category.DEFAULT");
                     intent.setData(Uri.parse(String.format("package:%s", activity.getPackageName())));
-                    activity.startActivity(intent);
-                } catch (Exception e) {
+                    activity.startActivity(intent); }
+                catch (Exception e) {
                     Intent intent = new Intent();
                     intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    activity.startActivity(intent);
-                }
-            } else {
+                    activity.startActivity(intent); }}
+            else {
                 //below android 11
-                ActivityCompat.requestPermissions(activity, new String[]{WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
-            }
+                ActivityCompat.requestPermissions(activity, new String[]{WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE); }
         });
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
@@ -111,9 +107,7 @@ public class BackupUnit {
     public static void makeBackupDir() {
         File backupDir = new File(Environment.getExternalStoragePublicDirectory(DIRECTORY_DOCUMENTS), "browser_backup//");
         boolean wasSuccessful = backupDir.mkdirs();
-        if (!wasSuccessful) {
-            System.out.println("was not successful.");
-        }
+        if (!wasSuccessful) System.out.println("was not successful.");
     }
 
     public static void backupData(Activity context, int i) {
@@ -197,30 +191,27 @@ public class BackupUnit {
             }
             writer.close();
             String wasSuccessful = file.getAbsolutePath();
-            if (wasSuccessful.isEmpty()) {
-                System.out.println("was not successful.");
-            }
-        } catch (Exception ignored) {
-        }
+            if (wasSuccessful.isEmpty()) System.out.println("was not successful."); }
+        catch (Exception ignored) { }
     }
 
     public static void importList(Context context, int i) {
         try {
             String filename;
-            List_trusted js = null;
-            List_protected cookie = null;
-            List_standard DOM = null;
+            List_trusted listTrusted = null;
+            List_protected listProtected = null;
+            List_standard listStandard = null;
             switch (i) {
                 case 1:
-                    js = new List_trusted(context);
+                    listTrusted = new List_trusted(context);
                     filename = "list_trusted.txt";
                     break;
                 case 3:
-                    DOM = new List_standard(context);
+                    listStandard = new List_standard(context);
                     filename = "list_standard.txt";
                     break;
                 default:
-                    cookie = new List_protected(context);
+                    listProtected = new List_protected(context);
                     filename = "list_protected.txt";
                     break;
             }
@@ -230,13 +221,13 @@ public class BackupUnit {
 
             switch (i) {
                 case 1:
-                    js.clearDomains();
+                    listTrusted.clearDomains();
                     break;
                 case 3:
-                    DOM.clearDomains();
+                    listStandard.clearDomains();
                     break;
                 default:
-                    cookie.clearDomains();
+                    listProtected.clearDomains();
                     break;
             }
 
@@ -245,25 +236,19 @@ public class BackupUnit {
             while ((line = reader.readLine()) != null) {
                 switch (i) {
                     case 1:
-                        if (!action.checkDomain(line, RecordUnit.TABLE_TRUSTED)) {
-                            js.addDomain(line);
-                        }
+                        if (!action.checkDomain(line, RecordUnit.TABLE_TRUSTED)) listTrusted.addDomain(line);
                         break;
                     case 3:
-                        if (!action.checkDomain(line, RecordUnit.TABLE_STANDARD)) {
-                            DOM.addDomain(line);
-                        }
+                        if (!action.checkDomain(line, RecordUnit.TABLE_STANDARD)) listStandard.addDomain(line);
                         break;
                     default:
-                        if (!action.checkDomain(line, RecordUnit.TABLE_PROTECTED)) {
-                            cookie.addDomain(line);
-                        }
+                        if (!action.checkDomain(line, RecordUnit.TABLE_PROTECTED)) listProtected.addDomain(line);
                         break;
                 }
             }
             reader.close();
-            action.close();
-        } catch (Exception e) {
+            action.close(); }
+        catch (Exception e) {
             Log.w("browser", "Error reading file", e);
         }
     }
@@ -287,10 +272,8 @@ public class BackupUnit {
             writer.close();
             String wasSuccessful = file.getAbsolutePath();
             if (wasSuccessful.isEmpty()) {
-                System.out.println("was not successful.");
-            }
-        } catch (Exception ignored) {
-        }
+                System.out.println("was not successful."); } }
+        catch (Exception ignored) { }
     }
 
     public static void importBookmarks(Context context) {
@@ -305,16 +288,15 @@ public class BackupUnit {
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
                 if (!((line.startsWith("<dt><a ") && line.endsWith("</a>")) || (line.startsWith("<DT><A ") && line.endsWith("</A>")))) {
-                    continue;
-                }
+                    continue; }
                 String title = getBookmarkTitle(line);
                 String url = getBookmarkURL(line);
                 long date = getBookmarkDate(line);
                 if (date > 123)
-                    date = 11;  //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for List_trusted + 64 for List_standard Content
+                    date = 11;
+                //if no color defined yet set it red (123 is max: 11 for color + 16 for desktop mode + 32 for List_trusted + 64 for List_standard Content
                 if (title.trim().isEmpty() || url.trim().isEmpty()) {
-                    continue;
-                }
+                    continue; }
                 Record record = new Record();
                 record.setTitle(title);
                 record.setURL(url);
@@ -322,18 +304,15 @@ public class BackupUnit {
                 record.setDesktopMode((date & 16) == 16);
                 record.setNightMode(!((date & 32) == 32));
 
-                if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) {
-                    list.add(record);
-                }
+                if (!action.checkUrl(url, RecordUnit.TABLE_BOOKMARK)) list.add(record);
             }
             reader.close();
             list.sort(Comparator.comparing(Record::getTitle));
             for (Record record : list) {
                 action.addBookmark(record);
             }
-            action.close();
-        } catch (Exception ignored) {
-        }
+            action.close(); }
+        catch (Exception ignored) { }
         list.size();
     }
 
@@ -341,23 +320,22 @@ public class BackupUnit {
         for (String string : line.split(" +")) {
             if (string.startsWith("ADD_DATE=\"")) {
                 int index = string.indexOf("\">");
-                return Long.parseLong(string.substring(10, index));
-            }
+                return Long.parseLong(string.substring(10, index)); }
         }
         return 0;
     }
 
     private static String getBookmarkTitle(String line) {
-        line = line.substring(0, line.length() - 4); // Remove last </a>
+        // Remove last </a>
+        line = line.substring(0, line.length() - 4);
         int index = line.lastIndexOf(">");
         return line.substring(index + 1);
     }
 
     private static String getBookmarkURL(String line) {
+        // Remove href=\" and \"
         for (String string : line.split(" +")) {
-            if (string.startsWith("href=\"") || string.startsWith("HREF=\"")) {
-                return string.substring(6, string.length() - 1); // Remove href=\" and \"
-            }
+            if (string.startsWith("href=\"") || string.startsWith("HREF=\"")) return string.substring(6, string.length() - 1);
         }
         return "";
     }
