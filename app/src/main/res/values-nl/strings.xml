@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Toon bij start</string>
     <string name="setting_gestures">Vingerbewegingen</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Werkbalk</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_title_longPress">Long press</string>
-    <string name="setting_title_tabButton">Tab button / menu button</string>
     <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Veeg omhoog</string>
     <string name="setting_gesture_down">Omlaag vegen</string>
