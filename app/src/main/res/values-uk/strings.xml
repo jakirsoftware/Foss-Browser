@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Показувати при запуску</string>
     <string name="setting_gestures">Жести</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Панель інструментів</string>
-    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
     <string name="setting_title_longPress">Long press</string>
-    <string name="setting_title_tabButton">Tab button / menu button</string>
     <string name="setting_title_overViewButton">Overview</string>
     <string name="setting_gesture_up">Проведіть вгору</string>
     <string name="setting_gesture_down">Проведіть вниз</string>

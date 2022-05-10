@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Mostrar ao iniciar</string>
     <string name="setting_gestures">Gestos</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Barra de ferramentas</string>
-    <string name="setting_title_toolbar_buttons">Botões da barra de ferramentas</string>
     <string name="setting_title_longPress">Pressão longa</string>
-    <string name="setting_title_tabButton">Botão Tab / botão de menu</string>
     <string name="setting_title_overViewButton">Vista global</string>
     <string name="setting_gesture_up">Deslizar para cima</string>
     <string name="setting_gesture_down">Deslizar para baixo</string>

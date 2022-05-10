@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">نمایش در آغاز</string>
     <string name="setting_gestures">اشارات انگشت</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">نوار ابزار</string>
-    <string name="setting_title_toolbar_buttons">گزینه های نوار ابزار</string>
     <string name="setting_title_longPress">نگه داشتن</string>
-    <string name="setting_title_tabButton">دکمه برگه / دکمه فهرست</string>
     <string name="setting_title_overViewButton">نگاه اجمالی</string>
     <string name="setting_gesture_up">کشیدن به بالا</string>
     <string name="setting_gesture_down">کشیدن به پایین</string>

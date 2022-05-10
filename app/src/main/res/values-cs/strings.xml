@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Zobrazit při spuštění</string>
     <string name="setting_gestures">Gesta</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Panel nástrojů</string>
-    <string name="setting_title_toolbar_buttons">Tlačítka na panelu nástrojů</string>
     <string name="setting_title_longPress">Dlouhé stisknutí</string>
-    <string name="setting_title_tabButton">Tlačítko záložky / menu</string>
     <string name="setting_title_overViewButton">Přehled</string>
     <string name="setting_gesture_up">Přejetí nahoru</string>
     <string name="setting_gesture_down">Přejetí dolů</string>

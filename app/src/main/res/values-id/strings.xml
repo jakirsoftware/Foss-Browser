@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Tampilkan saat mulai</string>
     <string name="setting_gestures">Gestur</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Toolbar</string>
-    <string name="setting_title_toolbar_buttons">Tombol-tombol toolbar</string>
     <string name="setting_title_longPress">Tekan lama</string>
-    <string name="setting_title_tabButton">Tombol tab / tombol menu</string>
     <string name="setting_title_overViewButton">Ringkasan</string>
     <string name="setting_gesture_up">Geser ke atas</string>
     <string name="setting_gesture_down">Geser ke bawah</string>

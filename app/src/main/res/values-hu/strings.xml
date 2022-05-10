@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Mutassa indításkor</string>
     <string name="setting_gestures">Kézmozdulatok</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Eszköztár</string>
-    <string name="setting_title_toolbar_buttons">Eszköztár gomb</string>
     <string name="setting_title_longPress">Hosszú érintés</string>
-    <string name="setting_title_tabButton">Tab gomb / menü gomb</string>
     <string name="setting_title_overViewButton">Áttekintés</string>
     <string name="setting_gesture_up">Csúsztatás felfelé</string>
     <string name="setting_gesture_down">Csúsztatás lefelé</string>

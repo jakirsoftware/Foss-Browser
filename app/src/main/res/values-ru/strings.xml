@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Показывать при запуске</string>
     <string name="setting_gestures">Жесты</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Панель инструментов</string>
-    <string name="setting_title_toolbar_buttons">Кнопки панели инструментов</string>
     <string name="setting_title_longPress">Удержание нажатия</string>
-    <string name="setting_title_tabButton">Кнопка вкладки / кнопка меню</string>
     <string name="setting_title_overViewButton">Обзор</string>
     <string name="setting_gesture_up">Свайп вверх</string>
     <string name="setting_gesture_down">Свайп вниз</string>

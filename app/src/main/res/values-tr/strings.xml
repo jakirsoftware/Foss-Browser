@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Başlangıçta göster</string>
     <string name="setting_gestures">Hareketler</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Araç çubuğu</string>
-    <string name="setting_title_toolbar_buttons">Araç çubuğu düğmeleri</string>
     <string name="setting_title_longPress">Uzun dokunma</string>
-    <string name="setting_title_tabButton">Sekme düğmesi / menü düğmesi</string>
     <string name="setting_title_overViewButton">Genel bakış</string>
     <string name="setting_gesture_up">Yukarı kaydır</string>
     <string name="setting_gesture_down">Aşağı kaydır</string>

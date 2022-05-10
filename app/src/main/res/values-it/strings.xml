@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Mostra all\'avvio</string>
     <string name="setting_gestures">Gesti</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Barra degli Strumenti</string>
-    <string name="setting_title_toolbar_buttons">Pulsanti barra strumenti</string>
     <string name="setting_title_longPress">Premere a lungo</string>
-    <string name="setting_title_tabButton">Pulsante / menu scheda</string>
     <string name="setting_title_overViewButton">Panoramica</string>
     <string name="setting_gesture_up">Scorri verso l\'alto</string>
     <string name="setting_gesture_down">Scorri verso il basso</string>
