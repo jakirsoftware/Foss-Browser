@@ -1,4 +1,4 @@
-### v 9.2 (WIP)
+### v 9.2
 
 - fix: crash when sharing links #883
 - fix: no password field on webserver authentication #891

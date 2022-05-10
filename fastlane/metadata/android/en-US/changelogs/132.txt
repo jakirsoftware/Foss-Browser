@@ -1,0 +1,15 @@
+### v 9.2
+
+- fix: crash when sharing links #883
+- fix: no password field on webserver authentication #891
+- fix: some swiping issues #899 by Lakjdf
+- fix: support for intent scheme URLs again #898 by Lakjdf
+- fix: refactored code to make it much more readable #896 by T8RIN
+- fix: share link
+- fix: Home-screen links improvment #906
+- fix: no password field on authentication dialog #891
+- updated: layout and user experience
+- updated: settings for night view
+- updated: settings for gestures
+- updated: settings for editing profiles #909
+- updated translations: *Now 21 languages are fully supported!*
