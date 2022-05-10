@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">開始時に表示</string>
     <string name="setting_gestures">ジェスチャー</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">ツールバー</string>
-    <string name="setting_title_toolbar_buttons">ツールバーのボタン</string>
     <string name="setting_title_longPress">長押し</string>
-    <string name="setting_title_tabButton">タブボタン/メニューボタン</string>
     <string name="setting_title_overViewButton">一覧画面</string>
     <string name="setting_gesture_up">上スワイプ</string>
     <string name="setting_gesture_down">下スワイプ</string>
