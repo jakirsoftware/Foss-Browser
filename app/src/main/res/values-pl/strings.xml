@@ -141,10 +141,7 @@
     <string name="setting_overView_onStart_title">Wysuwaj na starcie</string>
     <string name="setting_gestures">Gesty</string>
     <!-- gestures -->
-    <string name="setting_title_toolbar">Pasek narzędziowy</string>
-    <string name="setting_title_toolbar_buttons">Przyciski paska narzędzi</string>
     <string name="setting_title_longPress">Długie naciśnięcie</string>
-    <string name="setting_title_tabButton">Przycisk tabulatora / przycisk menu</string>
     <string name="setting_title_overViewButton">Wszechgląd</string>
     <string name="setting_gesture_up">Pociagniecie w górę</string>
     <string name="setting_gesture_down">Pociągnięcie w doł</string>
