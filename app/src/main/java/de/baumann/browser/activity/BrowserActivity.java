@@ -993,6 +993,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void hideOverview() {
+        bottomSheetDialog_OverView.setVisibility(View.GONE);
         ObjectAnimator animation = ObjectAnimator.ofFloat(bottomSheetDialog_OverView, "translationY", bottomSheetDialog_OverView.getHeight());
         animation.start();
         bottomAppBar.setVisibility(View.VISIBLE);

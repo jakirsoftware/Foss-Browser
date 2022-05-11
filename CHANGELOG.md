@@ -1,3 +1,7 @@
+### v 9.3 (WIP)
+
+- fix: Half screen after orientation change #919
+
 ### v 9.2
 
 - fix: crash when sharing links #883
