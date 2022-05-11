@@ -6,8 +6,11 @@ import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Environment;
+import android.util.Base64;
+import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.DownloadListener;
 import android.webkit.URLUtil;
@@ -19,10 +22,13 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BackupUnit;
 import de.baumann.browser.unit.HelperUnit;
+import de.baumann.browser.view.NinjaToast;
 
 public class NinjaDownloadListener implements DownloadListener {
     private final Context context;
@@ -42,7 +48,8 @@ public class NinjaDownloadListener implements DownloadListener {
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             try {
                 Activity activity = (Activity) context;
-                String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
+                String filename = URLUtil.guessFileName(url, contentDisposition, mimeType);
+                // Maybe unexpected filename.
 
                 if (url.startsWith("data:")) {
                     DataURIParser dataURIParser = new DataURIParser(url);
@@ -59,10 +66,10 @@ public class NinjaDownloadListener implements DownloadListener {
                     request.addRequestHeader("cookie", cookies);
                     //------------------------COOKIE!!------------------------
                     request.setDescription(context.getString(R.string.dialog_title_download));
-                    request.setTitle(URLUtil.guessFileName(url, contentDisposition, mimeType));
+                    request.setTitle(filename);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, URLUtil.guessFileName(url, contentDisposition, mimeType));
+                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
                     DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
                     assert dm != null;
                     if (BackupUnit.checkPermissionStorage(context)) dm.enqueue(request);
