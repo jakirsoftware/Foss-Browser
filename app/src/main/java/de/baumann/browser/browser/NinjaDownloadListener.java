@@ -23,6 +23,7 @@ import java.io.FileOutputStream;
 import de.baumann.browser.R;
 import de.baumann.browser.unit.BackupUnit;
 import de.baumann.browser.unit.HelperUnit;
+import de.baumann.browser.view.NinjaToast;
 
 public class NinjaDownloadListener implements DownloadListener {
     private final Context context;
@@ -34,7 +35,10 @@ public class NinjaDownloadListener implements DownloadListener {
 
     @Override
     public void onDownloadStart(final String url, String userAgent, final String contentDisposition, final String mimeType, long contentLength) {
-        String text = context.getString(R.string.dialog_title_download) + " - " + URLUtil.guessFileName(url, contentDisposition, mimeType);
+
+        String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
+        String text = context.getString(R.string.dialog_title_download) + " - " + filename;
+
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
         builder.setTitle(R.string.app_warning);
         builder.setMessage(text);
@@ -42,8 +46,6 @@ public class NinjaDownloadListener implements DownloadListener {
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             try {
                 Activity activity = (Activity) context;
-                String filename = URLUtil.guessFileName(url, contentDisposition, mimeType);
-                // Maybe unexpected filename.
 
                 if (url.startsWith("data:")) {
                     DataURIParser dataURIParser = new DataURIParser(url);
@@ -60,10 +62,10 @@ public class NinjaDownloadListener implements DownloadListener {
                     request.addRequestHeader("cookie", cookies);
                     //------------------------COOKIE!!------------------------
                     request.setDescription(context.getString(R.string.dialog_title_download));
-                    request.setTitle(filename);
+                    request.setTitle(URLUtil.guessFileName(url, contentDisposition, mimeType));
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, filename);
+                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, URLUtil.guessFileName(url, contentDisposition, mimeType));
                     DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
                     assert dm != null;
                     if (BackupUnit.checkPermissionStorage(context)) dm.enqueue(request);
