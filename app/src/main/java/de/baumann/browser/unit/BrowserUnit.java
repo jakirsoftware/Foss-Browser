@@ -1,13 +1,11 @@
 package de.baumann.browser.unit;
 
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
-import static android.content.Context.DOWNLOAD_SERVICE;
 import static android.content.Context.NOTIFICATION_SERVICE;
 import static androidx.core.app.NotificationCompat.DEFAULT_SOUND;
 import static androidx.core.app.NotificationCompat.DEFAULT_VIBRATE;
 
 import android.app.Activity;
-import android.app.DownloadManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -21,24 +19,17 @@ import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
 import android.webkit.CookieManager;
-import android.webkit.URLUtil;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-
 import java.io.File;
-import java.io.FileOutputStream;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
 import de.baumann.browser.R;
 import de.baumann.browser.activity.BrowserActivity;
-import de.baumann.browser.browser.DataURIParser;
 import de.baumann.browser.database.RecordAction;
 
 public class BrowserUnit {
@@ -149,62 +140,6 @@ public class BrowserUnit {
                     return SEARCH_ENGINE_STARTPAGE + query;
             }
         }
-    }
-
-    public static void download(final Context context, final String url, final String contentDisposition, final String mimeType) {
-
-        String text = context.getString(R.string.dialog_title_download) + " - " + URLUtil.guessFileName(url, contentDisposition, mimeType);
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        builder.setTitle(R.string.app_warning);
-        builder.setMessage(text);
-        builder.setIcon(R.drawable.icon_alert);
-        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-            try {
-                Activity activity = (Activity) context;
-                String filename = URLUtil.guessFileName(url, contentDisposition, mimeType); // Maybe unexpected filename.
-                if (url.startsWith("data:")) {
-                    DataURIParser dataURIParser = new DataURIParser(url);
-                    if (BackupUnit.checkPermissionStorage(context)) {
-                        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename);
-                        FileOutputStream fos = new FileOutputStream(file);
-                        fos.write(dataURIParser.getImagedata()); }
-                    else BackupUnit.requestPermission(activity); }
-                else {
-                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
-                    request.setMimeType(mimeType);
-                    //------------------------COOKIE!!------------------------
-                    String cookies = CookieManager.getInstance().getCookie(url);
-                    request.addRequestHeader("cookie", cookies);
-                    //------------------------COOKIE!!------------------------
-                    request.setDescription(context.getString(R.string.dialog_title_download));
-                    request.setTitle(URLUtil.guessFileName(url, contentDisposition, mimeType));
-                    request.allowScanningByMediaScanner();
-                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, URLUtil.guessFileName(url, contentDisposition, mimeType));
-                    DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
-                    assert dm != null;
-                    if (BackupUnit.checkPermissionStorage(context)) dm.enqueue(request);
-                    else BackupUnit.requestPermission(activity); }}
-            catch (Exception e) {
-                System.out.println("Error Downloading File: " + e);
-                Toast.makeText(context, context.getString(R.string.app_error) + e.toString().substring(e.toString().indexOf(":")), Toast.LENGTH_LONG).show();
-                e.printStackTrace();}
-        });
-        builder.setNeutralButton(R.string.menu_share_link, (dialog, whichButton) -> {
-            try {
-                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                sharingIntent.putExtra(Intent.EXTRA_TEXT, url);
-                context.startActivity(Intent.createChooser(sharingIntent, (context.getString(R.string.menu_share_link)))); }
-            catch (Exception e) {
-                System.out.println("Error Downloading File: " + e);
-                Toast.makeText(context, context.getString(R.string.app_error) + e.toString().substring(e.toString().indexOf(":")), Toast.LENGTH_LONG).show();
-                e.printStackTrace();}
-        });
-        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        HelperUnit.setupDialog(context, dialog);
     }
 
     public static void clearHome(Context context) {

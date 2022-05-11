@@ -42,8 +42,7 @@
         <!-- BrowserActivity -->
         <activity
             android:name="de.baumann.browser.activity.BrowserActivity"
-            android:configChanges="orientation|screenSize|uiMode"
-            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:configChanges="orientation|uiMode"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme">
