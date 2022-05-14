@@ -1,6 +1,7 @@
 ### v 9.3 (WIP)
 
 - fix: Half screen after orientation change #919
+- fix: not all menu items accessible in landscape orientation
 
 ### v 9.2
 

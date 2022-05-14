@@ -32,7 +32,7 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
-        android:resizeableActivity="false"
+        android:resizeableActivity="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
@@ -42,7 +42,7 @@
         <!-- BrowserActivity -->
         <activity
             android:name="de.baumann.browser.activity.BrowserActivity"
-            android:configChanges="orientation|uiMode"
+            android:configChanges="orientation|uiMode|screenSize|smallestScreenSize|screenLayout"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme">

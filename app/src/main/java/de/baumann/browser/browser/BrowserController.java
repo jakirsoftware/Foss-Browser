@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.view.View;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 
 public interface BrowserController {
     void updateProgress(int progress);

@@ -120,6 +120,7 @@ public class NinjaWebView extends WebView implements AlbumController {
         this.webViewClient = new NinjaWebViewClient(this);
         this.webChromeClient = new NinjaWebChromeClient(this);
         this.downloadListener = new NinjaDownloadListener(this.context);
+
         initWebView();
         initAlbum();
     }
@@ -203,6 +204,10 @@ public class NinjaWebView extends WebView implements AlbumController {
         camera = sp.getBoolean(profile + "_camera", true);
         initCookieManager(url);
         profile = profileOriginal;
+
+        webSettings.setAllowFileAccess(true);
+        webSettings.setAllowFileAccessFromFileURLs(true);
+        webSettings.setAllowUniversalAccessFromFileURLs(true);
     }
 
     public synchronized void initCookieManager(String url) {
