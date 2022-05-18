@@ -1,7 +1,9 @@
-### v 9.3 (WIP)
+### v 9.3
 
 - fix: Half screen after orientation change #919
 - fix: not all menu items accessible in landscape orientation
+- fix: Download dialog does not decode multibyte file name #917
+- fix: File name is not shown in the download prompt #916
 
 ### v 9.2
 
