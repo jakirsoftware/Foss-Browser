@@ -537,10 +537,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         setCustomFullscreen(true);
 
         if (view instanceof FrameLayout) {
-            if (((FrameLayout) view).getFocusedChild() instanceof VideoView)
+            if (((FrameLayout) view).getFocusedChild() instanceof VideoView) {
                 videoView = (VideoView) ((FrameLayout) view).getFocusedChild();
                 videoView.setOnErrorListener(new VideoCompletionListener());
                 videoView.setOnCompletionListener(new VideoCompletionListener());
+            }
         }
     }
 
@@ -2217,6 +2218,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
                             animation.start(); }}}
             }
+            if (scrollY == 0) ninjaWebView.setOnTouchListener(swipeTouchListener);
+            else ninjaWebView.setOnTouchListener(null);
         });
 
         if (url.isEmpty()) ninjaWebView.loadUrl("about:blank");
