@@ -151,9 +151,7 @@ public class HelperUnit {
 
             builder.setView(dialogView);
             builder.setTitle(R.string.menu_save_as);
-            builder.setIcon(R.drawable.icon_alert);
             builder.setMessage(url);
-
             AlertDialog dialog = builder.create();
 
             Button ib_cancel = dialogView.findViewById(R.id.editCancel);
@@ -343,12 +341,6 @@ public class HelperUnit {
         builder.setView(dialogView);
         builder.setTitle(R.string.menu_save_as);
         builder.setMessage(dataUriParser.toString());
-        builder.setIcon(R.drawable.icon_alert);
-        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
-
-        });
-        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> builder.setCancelable(true));
-
         AlertDialog dialog = builder.create();
 
         Button ib_cancel = dialogView.findViewById(R.id.editCancel);

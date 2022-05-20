@@ -1562,7 +1562,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                     builderSubMenu.setView(dialogViewSubMenu);
                     builderSubMenu.setTitle(getString(R.string.menu_edit));
-                    builderSubMenu.setIcon(R.drawable.icon_alert);
                     dialogSubMenu = builderSubMenu.create();
 
                     Button ib_cancel = dialogViewSubMenu.findViewById(R.id.editCancel);
