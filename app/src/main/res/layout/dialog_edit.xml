@@ -23,13 +23,14 @@
             android:layout_height="wrap_content"
             android:paddingBottom="8dp">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/dialog_title_hint"
                 android:imeOptions="actionNext"
                 android:inputType="text" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -38,13 +39,14 @@
             android:layout_height="wrap_content"
             android:paddingTop="8dp">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/dialog_URL_hint"
                 android:imeOptions="actionDone"
                 android:inputType="textUri" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout

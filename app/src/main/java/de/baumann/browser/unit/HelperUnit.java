@@ -56,6 +56,7 @@ import androidx.preference.PreferenceManager;
 
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -131,6 +132,12 @@ public class HelperUnit {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
 
             View dialogView = View.inflate(activity, R.layout.dialog_edit, null);
+
+            TextInputLayout editTopLayout = dialogView.findViewById(R.id.editTopLayout);
+            editTopLayout.setHint(activity.getString(R.string.dialog_title_hint));
+            TextInputLayout editBottomLayout = dialogView.findViewById(R.id.editBottomLayout);
+            editBottomLayout.setHint(activity.getString(R.string.dialog_extension_hint));
+
             EditText editTop = dialogView.findViewById(R.id.editTop);
             EditText editBottom = dialogView.findViewById(R.id.editBottom);
             editTop.setHint(activity.getString(R.string.dialog_title_hint));
