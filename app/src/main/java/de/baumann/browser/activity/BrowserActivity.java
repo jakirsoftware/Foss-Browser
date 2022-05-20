@@ -1406,31 +1406,23 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     break;
                 case 5:
                     builderSubMenu = new MaterialAlertDialogBuilder(context);
-                    View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit_title, null);
 
-                    LinearLayout icons_layout = dialogViewSubMenu.findViewById(R.id.icons_layout);
-                    TextInputLayout edit_title_layout = dialogViewSubMenu.findViewById(R.id.edit_title_layout);
-                    TextInputLayout edit_URL_layout = dialogViewSubMenu.findViewById(R.id.edit_URL_layout);
-                    TextInputLayout edit_userName_layout = dialogViewSubMenu.findViewById(R.id.edit_userName_layout);
-                    TextInputLayout edit_PW_layout = dialogViewSubMenu.findViewById(R.id.edit_PW_layout);
-                    icons_layout.setVisibility(View.VISIBLE);
-                    edit_title_layout.setVisibility(View.VISIBLE);
-                    edit_URL_layout.setVisibility(View.VISIBLE);
-                    edit_userName_layout.setVisibility(View.GONE);
-                    edit_PW_layout.setVisibility(View.GONE);
+                    View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit, null);
+                    LinearLayout editButtonsLayout = dialogViewSubMenu.findViewById(R.id.editButtonsLayout);
+                    editButtonsLayout.setVisibility(View.VISIBLE);
+                    EditText editTop = dialogViewSubMenu.findViewById(R.id.editTop);
+                    EditText editBottom = dialogViewSubMenu.findViewById(R.id.editBottom);
+                    editTop.setText(title);
+                    editTop.setHint(getString(R.string.dialog_title_hint));
+                    editBottom.setText(url);
+                    editBottom.setHint(getString(R.string.dialog_URL_hint));
 
-                    EditText edit_title = dialogViewSubMenu.findViewById(R.id.edit_title);
-                    EditText edit_URL = dialogViewSubMenu.findViewById(R.id.edit_URL);
-
-                    edit_title.setText(title);
-                    edit_URL.setText(url);
-
-                    Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_desktopMode);
+                    Chip chip_desktopMode = dialogViewSubMenu.findViewById(R.id.editDesktopMode);
                     chip_desktopMode.setChecked(recordList.get(location).getDesktopMode());
-                    Chip chip_nightMode = dialogViewSubMenu.findViewById(R.id.edit_bookmark_nightMode);
+                    Chip chip_nightMode = dialogViewSubMenu.findViewById(R.id.editNightMode);
                     chip_nightMode.setChecked(!recordList.get(location).getNightMode());
 
-                    MaterialCardView ib_icon = dialogViewSubMenu.findViewById(R.id.edit_icon);
+                    MaterialCardView ib_icon = dialogViewSubMenu.findViewById(R.id.editIcon);
                     if (!overViewTab.equals(getString(R.string.album_title_bookmarks))) ib_icon.setVisibility(View.GONE);
                     ib_icon.setOnClickListener(v -> {
                         MaterialAlertDialogBuilder builderFilter = new MaterialAlertDialogBuilder(context);
@@ -1476,15 +1468,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     builderSubMenu.setIcon(R.drawable.icon_alert);
                     dialogSubMenu = builderSubMenu.create();
 
-                    Button ib_cancel = dialogViewSubMenu.findViewById(R.id.ib_cancel);
+                    Button ib_cancel = dialogViewSubMenu.findViewById(R.id.editCancel);
                     ib_cancel.setOnClickListener(view1 -> dialogSubMenu.cancel());
-                    Button ib_ok = dialogViewSubMenu.findViewById(R.id.ib_ok);
+                    Button ib_ok = dialogViewSubMenu.findViewById(R.id.editOK);
                     ib_ok.setOnClickListener(view12 -> {
                         if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
                             RecordAction action = new RecordAction(context);
                             action.open(true);
                             action.deleteURL(url, RecordUnit.TABLE_BOOKMARK);
-                            action.addBookmark(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, 0, BOOKMARK_ITEM, chip_desktopMode.isChecked(), chip_nightMode.isChecked(), newIcon));
+                            action.addBookmark(new Record(editTop.getText().toString(), editBottom.getText().toString(), 0, 0, BOOKMARK_ITEM, chip_desktopMode.isChecked(), chip_nightMode.isChecked(), newIcon));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_2); }
                         else {
@@ -1494,7 +1486,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             int counter = sp.getInt("counter", 0);
                             counter = counter + 1;
                             sp.edit().putInt("counter", counter).apply();
-                            action.addStartSite(new Record(edit_title.getText().toString(), edit_URL.getText().toString(), 0, counter, STARTSITE_ITEM, chip_desktopMode.isChecked(), chip_nightMode.isChecked(), 0));
+                            action.addStartSite(new Record(editTop.getText().toString(), editBottom.getText().toString(), 0, counter, STARTSITE_ITEM, chip_desktopMode.isChecked(), chip_nightMode.isChecked(), 0));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_1); }
                         dialogSubMenu.cancel();

@@ -129,18 +129,18 @@ public class HelperUnit {
 
         try {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-            View dialogView = View.inflate(activity, R.layout.dialog_edit_extension, null);
 
-            final EditText editTitle = dialogView.findViewById(R.id.dialog_edit_1);
-            final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_2);
+            View dialogView = View.inflate(activity, R.layout.dialog_edit, null);
+            EditText editTop = dialogView.findViewById(R.id.editTop);
+            EditText editBottom = dialogView.findViewById(R.id.editBottom);
+            editTop.setHint(activity.getString(R.string.dialog_title_hint));
+            editBottom.setHint(activity.getString(R.string.dialog_extension_hint));
 
             String filename = URLUtil.guessFileName(url, null, null);
-            editTitle.setText(HelperUnit.fileName(url));
+            editTop.setText(HelperUnit.fileName(url));
 
             String extension = filename.substring(filename.lastIndexOf("."));
-            if (extension.length() <= 8) {
-                editExtension.setText(extension);
-            }
+            if (extension.length() <= 8) editBottom.setText(extension);
 
             builder.setView(dialogView);
             builder.setTitle(R.string.menu_save_as);
@@ -149,16 +149,16 @@ public class HelperUnit {
 
             AlertDialog dialog = builder.create();
 
-            Button ib_cancel = dialogView.findViewById(R.id.ib_cancel);
+            Button ib_cancel = dialogView.findViewById(R.id.editCancel);
             ib_cancel.setOnClickListener(view -> {
-                hideSoftKeyboard(editExtension, activity);
+                hideSoftKeyboard(editBottom, activity);
                 dialog.cancel();
             });
-            Button ib_ok = dialogView.findViewById(R.id.ib_ok);
+            Button ib_ok = dialogView.findViewById(R.id.editOK);
             ib_ok.setOnClickListener(view12 -> {
 
-                String title = editTitle.getText().toString().trim();
-                String extension1 = editExtension.getText().toString().trim();
+                String title = editTop.getText().toString().trim();
+                String extension1 = editBottom.getText().toString().trim();
                 String filename1 = title + extension1;
 
                 if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {
@@ -173,7 +173,7 @@ public class HelperUnit {
                         DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
                         assert dm != null;
                         dm.enqueue(request);
-                        hideSoftKeyboard(editExtension, activity);
+                        hideSoftKeyboard(editBottom, activity);
                         dialogToCancel.cancel();
                     } else {
                         BackupUnit.requestPermission(activity);
@@ -181,7 +181,6 @@ public class HelperUnit {
                 }
                 dialog.cancel();
             });
-
             dialog.show();
             HelperUnit.setupDialog(activity, dialog);
         } catch (Exception e) {
@@ -320,16 +319,18 @@ public class HelperUnit {
         String filename = dataUriParser.getFilename();
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
-        View dialogView = View.inflate(activity, R.layout.dialog_edit_extension, null);
 
-        final EditText editTitle = dialogView.findViewById(R.id.dialog_edit_1);
-        final EditText editExtension = dialogView.findViewById(R.id.dialog_edit_2);
+        View dialogView = View.inflate(activity, R.layout.dialog_edit, null);
+        EditText editTop = dialogView.findViewById(R.id.editTop);
+        EditText editBottom = dialogView.findViewById(R.id.editBottom);
+        editTop.setHint(activity.getString(R.string.dialog_title_hint));
+        editBottom.setHint(activity.getString(R.string.dialog_extension_hint));
 
-        editTitle.setText(filename.substring(0, filename.indexOf(".")));
+        editTop.setText(filename.substring(0, filename.indexOf(".")));
 
         String extension = filename.substring(filename.lastIndexOf("."));
         if (extension.length() <= 8) {
-            editExtension.setText(extension);
+            editBottom.setText(extension);
         }
 
         builder.setView(dialogView);
@@ -343,16 +344,16 @@ public class HelperUnit {
 
         AlertDialog dialog = builder.create();
 
-        Button ib_cancel = dialogView.findViewById(R.id.ib_cancel);
+        Button ib_cancel = dialogView.findViewById(R.id.editCancel);
         ib_cancel.setOnClickListener(view -> {
-            hideSoftKeyboard(editExtension, activity);
+            hideSoftKeyboard(editBottom, activity);
             dialog.cancel();
         });
-        Button ib_ok = dialogView.findViewById(R.id.ib_ok);
+        Button ib_ok = dialogView.findViewById(R.id.editOK);
         ib_ok.setOnClickListener(view12 -> {
 
-            String title = editTitle.getText().toString().trim();
-            String extension1 = editExtension.getText().toString().trim();
+            String title = editTop.getText().toString().trim();
+            String extension1 = editBottom.getText().toString().trim();
             String filename1 = title + extension1;
 
             if (title.isEmpty() || extension1.isEmpty() || !extension1.startsWith(".")) {

@@ -526,21 +526,14 @@ public class NinjaWebViewClient extends WebViewClient {
     public void onReceivedHttpAuthRequest(WebView view, @NonNull final HttpAuthHandler handler, String host, String realm) {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        View dialogView = View.inflate(context, R.layout.dialog_edit_title, null);
 
-        LinearLayout icons_layout = dialogView.findViewById(R.id.icons_layout);
-        TextInputLayout edit_title_layout = dialogView.findViewById(R.id.edit_title_layout);
-        TextInputLayout edit_URL_layout = dialogView.findViewById(R.id.edit_URL_layout);
-        TextInputLayout edit_userName_layout = dialogView.findViewById(R.id.edit_userName_layout);
-        TextInputLayout edit_PW_layout = dialogView.findViewById(R.id.edit_PW_layout);
-        icons_layout.setVisibility(View.GONE);
-        edit_title_layout.setVisibility(View.GONE);
-        edit_URL_layout.setVisibility(View.GONE);
-        edit_userName_layout.setVisibility(View.VISIBLE);
-        edit_PW_layout.setVisibility(View.VISIBLE);
-
-        EditText pass_userNameET = dialogView.findViewById(R.id.edit_userName);
-        EditText pass_userPWET = dialogView.findViewById(R.id.edit_PW);
+        View dialogView = View.inflate(context, R.layout.dialog_edit, null);
+        EditText editTop = dialogView.findViewById(R.id.editTop);
+        EditText editBottom = dialogView.findViewById(R.id.editBottom);
+        editTop.setText("");
+        editTop.setHint(this.context.getString(R.string.dialog_sign_in_username));
+        editBottom.setText("");
+        editBottom.setHint(this.context.getString(R.string.dialog_sign_in_password));
 
         builder.setView(dialogView);
         builder.setTitle("HttpAuthRequest");
@@ -549,12 +542,12 @@ public class NinjaWebViewClient extends WebViewClient {
 
         AlertDialog dialog = builder.create();
 
-        Button ib_cancel = dialogView.findViewById(R.id.ib_cancel);
+        Button ib_cancel = dialogView.findViewById(R.id.editCancel);
         ib_cancel.setOnClickListener(view1 -> dialog.cancel());
-        Button ib_ok = dialogView.findViewById(R.id.ib_ok);
+        Button ib_ok = dialogView.findViewById(R.id.editOK);
         ib_ok.setOnClickListener(view12 -> {
-            String user = pass_userNameET.getText().toString().trim();
-            String pass = pass_userPWET.getText().toString().trim();
+            String user = editTop.getText().toString().trim();
+            String pass = editBottom.getText().toString().trim();
             handler.proceed(user, pass);
             dialog.cancel();
         });
