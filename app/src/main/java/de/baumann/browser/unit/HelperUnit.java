@@ -46,7 +46,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -153,14 +152,10 @@ public class HelperUnit {
             builder.setTitle(R.string.menu_save_as);
             builder.setMessage(url);
             AlertDialog dialog = builder.create();
+            dialog.show();
+            HelperUnit.setupDialog(activity, dialog);
 
-            Button ib_cancel = dialogView.findViewById(R.id.editCancel);
-            ib_cancel.setOnClickListener(view -> {
-                hideSoftKeyboard(editBottom, activity);
-                dialog.cancel();
-            });
-            Button ib_ok = dialogView.findViewById(R.id.editOK);
-            ib_ok.setOnClickListener(view12 -> {
+            builder.setPositiveButton(R.string.app_ok, (dial, whichButton) -> {
 
                 String title = editTop.getText().toString().trim();
                 String extension1 = editBottom.getText().toString().trim();
@@ -186,8 +181,7 @@ public class HelperUnit {
                 }
                 dialog.cancel();
             });
-            dialog.show();
-            HelperUnit.setupDialog(activity, dialog);
+            builder.setNegativeButton(R.string.app_cancel, (dial, whichButton) -> dialog.cancel());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -342,14 +336,10 @@ public class HelperUnit {
         builder.setTitle(R.string.menu_save_as);
         builder.setMessage(dataUriParser.toString());
         AlertDialog dialog = builder.create();
+        dialog.show();
+        HelperUnit.setupDialog(activity, dialog);
 
-        Button ib_cancel = dialogView.findViewById(R.id.editCancel);
-        ib_cancel.setOnClickListener(view -> {
-            hideSoftKeyboard(editBottom, activity);
-            dialog.cancel();
-        });
-        Button ib_ok = dialogView.findViewById(R.id.editOK);
-        ib_ok.setOnClickListener(view12 -> {
+        builder.setPositiveButton(R.string.app_ok, (dial, whichButton) -> {
 
             String title = editTop.getText().toString().trim();
             String extension1 = editBottom.getText().toString().trim();
@@ -374,9 +364,7 @@ public class HelperUnit {
             }
             dialog.cancel();
         });
-
-        dialog.show();
-        HelperUnit.setupDialog(activity, dialog);
+        builder.setNegativeButton(R.string.app_cancel, (dial, whichButton) -> dialog.cancel());
     }
 
     public static void showSoftKeyboard(View view, Activity context) {

@@ -1,6 +1,9 @@
+### v 9.4 (WIP)
+
+- new: "post on website" in sharing menu
+
 ### v 9.3.1
 
-- new: post on website in sharing menu
 - fix: Half screen after orientation change #919
 - fix: not all menu items accessible in landscape orientation
 - fix: Download dialog does not decode multibyte file name #917

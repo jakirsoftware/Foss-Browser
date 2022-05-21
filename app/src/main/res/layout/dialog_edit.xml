@@ -88,30 +88,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="end"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/editCancel"
-                style="@style/Widget.Material3.Button.TextButton.Dialog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_cancel" />
-
-            <Button
-                android:id="@+id/editOK"
-                style="@style/Widget.Material3.Button.TextButton.Dialog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_ok" />
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </ScrollView>

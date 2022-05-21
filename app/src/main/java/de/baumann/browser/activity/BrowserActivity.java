@@ -1155,51 +1155,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         menu_grid_share.setOnItemClickListener((parent, view12, position, id) -> {
             dialog_overflow.cancel();
             if (position == 0) shareLink(title, url);
-            else if (position == 1) {
-
-                String urlForPosting = sp.getString("urlForPosting", "");
-                assert urlForPosting != null;
-
-                MaterialAlertDialogBuilder builderSubMenu = new MaterialAlertDialogBuilder(context);
-                View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit, null);
-
-                TextInputLayout editTopLayout = dialogViewSubMenu.findViewById(R.id.editTopLayout);
-                editTopLayout.setHint(getString(R.string.dialog_URL_hint));
-                editTopLayout.setHelperText(getString(R.string.dialog_postOnWebsiteHint));
-                TextInputLayout editBottomLayout = dialogViewSubMenu.findViewById(R.id.editBottomLayout);
-                editBottomLayout.setHint(getString(R.string.menu_shareClipboard));
-
-                EditText editTop = dialogViewSubMenu.findViewById(R.id.editTop);
-                EditText editBottom = dialogViewSubMenu.findViewById(R.id.editBottom);
-
-                if (urlForPosting.isEmpty()) editTop.setText("");
-                else editTop.setText(urlForPosting);
-                editTop.setHint(getString(R.string.dialog_URL_hint));
-
-                editBottom.setText(url);
-                editBottom.setHint(getString(R.string.menu_shareClipboard));
-
-                builderSubMenu.setView(dialogViewSubMenu);
-                builderSubMenu.setTitle(getString(R.string.dialog_postOnWebsite));
-                Dialog dialogSubMenu = builderSubMenu.create();
-
-                Button ib_cancel = dialogViewSubMenu.findViewById(R.id.editCancel);
-                ib_cancel.setOnClickListener(view1 -> dialogSubMenu.cancel());
-                Button ib_ok = dialogViewSubMenu.findViewById(R.id.editOK);
-                ib_ok.setOnClickListener(view -> {
-                    String shareTop = editTop.getText().toString().trim();
-                    String shareBottom = editBottom.getText().toString().trim();
-                    sp.edit().putString("urlForPosting", shareTop).apply();
-                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                    ClipData clip = ClipData.newPlainText("text", shareBottom);
-                    Objects.requireNonNull(clipboard).setPrimaryClip(clip);
-                    String text = getString(R.string.toast_copy_successful) + ": " + shareBottom;
-                    NinjaToast.show(this, text);
-                    addAlbum("", shareTop, true, false, "");
-                    dialogSubMenu.cancel();
-                });
-                dialogSubMenu.show();
-                HelperUnit.setupDialog(context, dialogSubMenu); }
+            else if (position == 1) postLink(url);
             else if (position == 2) copyLink(url);
             else if (position == 3) BrowserUnit.intentURL(context, Uri.parse(url));
         });
@@ -1519,12 +1475,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                     builderSubMenu.setView(dialogViewSubMenu);
                     builderSubMenu.setTitle(getString(R.string.menu_edit));
-                    dialogSubMenu = builderSubMenu.create();
-
-                    Button ib_cancel = dialogViewSubMenu.findViewById(R.id.editCancel);
-                    ib_cancel.setOnClickListener(view1 -> dialogSubMenu.cancel());
-                    Button ib_ok = dialogViewSubMenu.findViewById(R.id.editOK);
-                    ib_ok.setOnClickListener(view12 -> {
+                    builderSubMenu.setPositiveButton(R.string.app_ok, (dial, whichButton) -> {
                         if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
                             RecordAction action = new RecordAction(context);
                             action.open(true);
@@ -1542,8 +1493,10 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             action.addStartSite(new Record(editTop.getText().toString(), editBottom.getText().toString(), 0, counter, STARTSITE_ITEM, chip_desktopMode.isChecked(), chip_nightMode.isChecked(), 0));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_1); }
-                        dialogSubMenu.cancel();
+                        dial.cancel();
                     });
+                    builderSubMenu.setNegativeButton(R.string.app_cancel, (dial, whichButton) -> dialog.cancel());
+                    dialogSubMenu = builderSubMenu.create();
                     dialogSubMenu.show();
                     HelperUnit.setupDialog(context, dialogSubMenu);
                     break;
@@ -2045,6 +1998,48 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         context.startActivity(Intent.createChooser(sharingIntent, (context.getString(R.string.menu_share_link))));
     }
 
+    private void postLink(String data) {
+        String urlForPosting = sp.getString("urlForPosting", "");
+        assert urlForPosting != null;
+
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit, null);
+
+        TextInputLayout editTopLayout = dialogViewSubMenu.findViewById(R.id.editTopLayout);
+        editTopLayout.setHint(getString(R.string.dialog_URL_hint));
+        editTopLayout.setHelperText(getString(R.string.dialog_postOnWebsiteHint));
+        TextInputLayout editBottomLayout = dialogViewSubMenu.findViewById(R.id.editBottomLayout);
+        editBottomLayout.setHint(getString(R.string.menu_shareClipboard));
+
+        EditText editTop = dialogViewSubMenu.findViewById(R.id.editTop);
+        EditText editBottom = dialogViewSubMenu.findViewById(R.id.editBottom);
+        if (urlForPosting.isEmpty()) editTop.setText("");
+        else editTop.setText(urlForPosting);
+        editTop.setHint(getString(R.string.dialog_URL_hint));
+        editBottom.setText(data);
+        editBottom.setHint(getString(R.string.menu_shareClipboard));
+
+        builder.setView(dialogViewSubMenu);
+        builder.setTitle(getString(R.string.dialog_postOnWebsite));
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+            String shareTop = editTop.getText().toString().trim();
+            String shareBottom = editBottom.getText().toString().trim();
+            sp.edit().putString("urlForPosting", shareTop).apply();
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("text", shareBottom);
+            Objects.requireNonNull(clipboard).setPrimaryClip(clip);
+            String text = getString(R.string.toast_copy_successful) + ": " + shareBottom;
+            NinjaToast.show(this, text);
+            addAlbum("", shareTop, true, false, "");
+            dialog.cancel();
+        });
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+
+        Dialog dialog = builder.create();
+        dialog.show();
+        HelperUnit.setupDialog(context, dialog);
+    }
+
     private void searchOnSite() {
         searchOnSite = true;
         omniBox.setVisibility(View.GONE);
@@ -2174,36 +2169,80 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void dispatchIntent(Intent intent) {
+
         String action = intent.getAction();
         String url = intent.getStringExtra(Intent.EXTRA_TEXT);
+        String data = "";
 
-        if ("".equals(action)) Log.i(TAG, "resumed FOSS browser");
+        if ("".equals(action)) {
+            Log.i(TAG, "resumed FOSS browser");
+            return; }
+        else if (filePathCallback != null) {
+            filePathCallback = null;
+            getIntent().setAction("");
+            return; }
+        else if (url != null && Intent.ACTION_SEND.equals(action)) {
+            data = url;
+            receiveIntent(data);
+            return;}
         else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_PROCESS_TEXT)) {
             CharSequence text = getIntent().getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
             assert text != null;
-            addAlbum(null, text.toString(), true, false, "");
-            getIntent().setAction("");
-            hideOverview();
-            BrowserUnit.openInBackground(activity, intent, text.toString()); }
+            data = text.toString();
+            receiveIntent(data);
+            return;}
+
         else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
-            addAlbum(null, Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)), true, false, "");
-            getIntent().setAction("");
-            hideOverview();
-            BrowserUnit.openInBackground(activity, intent, intent.getStringExtra(SearchManager.QUERY)); }
-        else if (filePathCallback != null) {
-            filePathCallback = null;
-            getIntent().setAction(""); }
-        else if (url != null && Intent.ACTION_SEND.equals(action)) {
-            addAlbum(getString(R.string.app_name), url, true, false, "");
-            getIntent().setAction("");
-            hideOverview();
-            BrowserUnit.openInBackground(activity, intent, url); }
+            data = Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)); }
         else if (Intent.ACTION_VIEW.equals(action)) {
-            String data = Objects.requireNonNull(getIntent().getData()).toString();
-            addAlbum(getString(R.string.app_name), data, true, false, "");
+            data = Objects.requireNonNull(getIntent().getData()).toString(); }
+
+        if (!data.isEmpty()) {
+            addAlbum(null, data, true, false, "");
             getIntent().setAction("");
             hideOverview();
-            BrowserUnit.openInBackground(activity, intent, data); }
+            BrowserUnit.openInBackground(activity, intent, data);
+        }
+    }
+
+    private void receiveIntent (String data) {
+
+        GridItem item_01 = new GridItem(getString(R.string.dialog_postOnWebsite), 0);
+        GridItem item_02 = new GridItem(getString(R.string.main_menu_new_tabOpen), 0);
+
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+        View dialogView = View.inflate(context, R.layout.dialog_menu, null);
+        builder.setView(dialogView);
+        AlertDialog dialog = builder.create();
+        FaviconHelper.setFavicon(context, dialogView, data, R.id.menu_icon, R.drawable.icon_link);
+        TextView dialog_title = dialogView.findViewById(R.id.menuTitle);
+        dialog_title.setText(data);
+        dialog.show();
+
+        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+        GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
+        int orientation = this.getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) menu_grid.setNumColumns(1);
+        else menu_grid.setNumColumns(2);
+        final List<GridItem> gridList = new LinkedList<>();
+        gridList.add(gridList.size(), item_01);
+        gridList.add(gridList.size(), item_02);
+        GridAdapter gridAdapter = new GridAdapter(context, gridList);
+        menu_grid.setAdapter(gridAdapter);
+        gridAdapter.notifyDataSetChanged();
+        menu_grid.setOnItemClickListener((parent, view, position, id) -> {
+            switch (position) {
+                case 0:
+                    postLink(data);
+                    break;
+                case 1:
+                    addAlbum(null, data, true, false, "");
+                    getIntent().setAction("");
+                    hideOverview();
+                    break;
+            }
+            dialog.cancel();
+        });
     }
 
     @SuppressLint("ClickableViewAccessibility")

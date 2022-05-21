@@ -541,22 +541,19 @@ public class NinjaWebViewClient extends WebViewClient {
         builder.setMessage(view.getUrl());
 
         AlertDialog dialog = builder.create();
-
-        Button ib_cancel = dialogView.findViewById(R.id.editCancel);
-        ib_cancel.setOnClickListener(view1 -> dialog.cancel());
-        Button ib_ok = dialogView.findViewById(R.id.editOK);
-        ib_ok.setOnClickListener(view12 -> {
-            String user = editTop.getText().toString().trim();
-            String pass = editBottom.getText().toString().trim();
-            handler.proceed(user, pass);
-            dialog.cancel();
-        });
-
         dialog.show();
         HelperUnit.setupDialog(context, dialog);
         dialog.setOnCancelListener(dialog1 -> {
             handler.cancel();
             dialog1.cancel();
         });
+
+        builder.setPositiveButton(R.string.app_ok, (dialogSubMenu, whichButton) -> {
+            String user = editTop.getText().toString().trim();
+            String pass = editBottom.getText().toString().trim();
+            handler.proceed(user, pass);
+            dialog.cancel();
+        });
+        builder.setNegativeButton(R.string.app_cancel, (dialogSubMenu, whichButton) -> dialog.cancel());
     }
 }
