@@ -23,6 +23,6 @@
         android:id="@+id/page_3"
         android:enabled="true"
         android:icon="@drawable/icon_dots"
-        android:title="٩(̾●̮̮̃̾•̃̾)۶" />
+        android:title="@string/menu_more" />
 
 </menu>

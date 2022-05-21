@@ -1138,17 +1138,15 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         // Share
         GridItem item_11 = new GridItem( getString(R.string.menu_share_link), 0);
-        GridItem item_12 = new GridItem( "Edit and share", 0);
-        GridItem item_13 = new GridItem( "Post on website", 0);
-        GridItem item_14 = new GridItem( getString(R.string.menu_shareClipboard), 0);
-        GridItem item_15 = new GridItem( getString(R.string.menu_open_with), 0);
+        GridItem item_12 = new GridItem( getString(R.string.dialog_postOnWebsite), 0);
+        GridItem item_13 = new GridItem( getString(R.string.menu_shareClipboard), 0);
+        GridItem item_14 = new GridItem( getString(R.string.menu_open_with), 0);
 
         final List<GridItem> gridList_share = new LinkedList<>();
         gridList_share.add(gridList_share.size(), item_11);
         gridList_share.add(gridList_share.size(), item_12);
         gridList_share.add(gridList_share.size(), item_13);
         gridList_share.add(gridList_share.size(), item_14);
-        gridList_share.add(gridList_share.size(), item_15);
 
         GridAdapter gridAdapter_share = new GridAdapter(context, gridList_share);
         menu_grid_share.setAdapter(gridAdapter_share);
@@ -1159,66 +1157,30 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             if (position == 0) shareLink(title, url);
             else if (position == 1) {
 
-                MaterialAlertDialogBuilder builderSubMenu = new MaterialAlertDialogBuilder(context);
-                View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit, null);
-
-                TextInputLayout editTopLayout = dialogViewSubMenu.findViewById(R.id.editTopLayout);
-                editTopLayout.setHint(getString(R.string.dialog_title_hint));
-                TextInputLayout editBottomLayout = dialogViewSubMenu.findViewById(R.id.editBottomLayout);
-                editBottomLayout.setHint("Text to share:");
-
-                EditText editTop = dialogViewSubMenu.findViewById(R.id.editTop);
-                EditText editBottom = dialogViewSubMenu.findViewById(R.id.editBottom);
-                editTop.setText(title);
-                editTop.setHint(getString(R.string.dialog_title_hint));
-                editBottom.setText(url);
-                editBottom.setHint("Text to share:");
-
-                builderSubMenu.setView(dialogViewSubMenu);
-                builderSubMenu.setTitle("Edit and share");
-                Dialog dialogSubMenu = builderSubMenu.create();
-
-                Button ib_cancel = dialogViewSubMenu.findViewById(R.id.editCancel);
-                ib_cancel.setOnClickListener(view1 -> dialogSubMenu.cancel());
-                Button ib_ok = dialogViewSubMenu.findViewById(R.id.editOK);
-                ib_ok.setOnClickListener(view -> {
-                    String shareTop = editTop.getText().toString().trim();
-                    String shareBottom = editBottom.getText().toString().trim();
-                    shareLink(shareTop, shareBottom);
-                    dialogSubMenu.cancel();
-                });
-                dialogSubMenu.show();
-                HelperUnit.setupDialog(context, dialogSubMenu);
-
-
-            }
-            else if (position == 2) {
-
-                MaterialAlertDialogBuilder builderSubMenu = new MaterialAlertDialogBuilder(context);
-                View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit, null);
-
-                TextInputLayout editTopLayout = dialogViewSubMenu.findViewById(R.id.editTopLayout);
-                editTopLayout.setHint("This url will be remembered.");
-                TextInputLayout editBottomLayout = dialogViewSubMenu.findViewById(R.id.editBottomLayout);
-                editBottomLayout.setHint("Text to share:");
-
-                EditText editTop = dialogViewSubMenu.findViewById(R.id.editTop);
-                EditText editBottom = dialogViewSubMenu.findViewById(R.id.editBottom);
-
                 String urlForPosting = sp.getString("urlForPosting", "");
                 assert urlForPosting != null;
-                if (urlForPosting.isEmpty()) {
-                    editTop.setText("");
-                } else {
-                    editTop.setText(urlForPosting);
-                }
-                editTop.setHint("This url will be remembered.");
+
+                MaterialAlertDialogBuilder builderSubMenu = new MaterialAlertDialogBuilder(context);
+                View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit, null);
+
+                TextInputLayout editTopLayout = dialogViewSubMenu.findViewById(R.id.editTopLayout);
+                editTopLayout.setHint(getString(R.string.dialog_URL_hint));
+                editTopLayout.setHelperText(getString(R.string.dialog_postOnWebsiteHint));
+                TextInputLayout editBottomLayout = dialogViewSubMenu.findViewById(R.id.editBottomLayout);
+                editBottomLayout.setHint(getString(R.string.menu_shareClipboard));
+
+                EditText editTop = dialogViewSubMenu.findViewById(R.id.editTop);
+                EditText editBottom = dialogViewSubMenu.findViewById(R.id.editBottom);
+
+                if (urlForPosting.isEmpty()) editTop.setText("");
+                else editTop.setText(urlForPosting);
+                editTop.setHint(getString(R.string.dialog_URL_hint));
 
                 editBottom.setText(url);
-                editBottom.setHint("Text to share:");
+                editBottom.setHint(getString(R.string.menu_shareClipboard));
 
                 builderSubMenu.setView(dialogViewSubMenu);
-                builderSubMenu.setTitle("Post on website");
+                builderSubMenu.setTitle(getString(R.string.dialog_postOnWebsite));
                 Dialog dialogSubMenu = builderSubMenu.create();
 
                 Button ib_cancel = dialogViewSubMenu.findViewById(R.id.editCancel);
@@ -1227,9 +1189,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 ib_ok.setOnClickListener(view -> {
                     String shareTop = editTop.getText().toString().trim();
                     String shareBottom = editBottom.getText().toString().trim();
-
                     sp.edit().putString("urlForPosting", shareTop).apply();
-
                     ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                     ClipData clip = ClipData.newPlainText("text", shareBottom);
                     Objects.requireNonNull(clipboard).setPrimaryClip(clip);
@@ -1239,12 +1199,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                     dialogSubMenu.cancel();
                 });
                 dialogSubMenu.show();
-                HelperUnit.setupDialog(context, dialogSubMenu);
-
-
-            }
-            else if (position == 3) copyLink(url);
-            else if (position == 4) BrowserUnit.intentURL(context, Uri.parse(url));
+                HelperUnit.setupDialog(context, dialogSubMenu); }
+            else if (position == 2) copyLink(url);
+            else if (position == 3) BrowserUnit.intentURL(context, Uri.parse(url));
         });
 
         // Other
