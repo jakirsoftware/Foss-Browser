@@ -177,15 +177,15 @@
     <string name="toast_downloadComplete">Descarga terminada. Abrir gestor de ficheiros?</string>
     <string name="toast_unsecured">O site utiliza uma ligação insegura (\"http\"). Deseja estabelecer uma ligação segura (\"https\")?</string>
     <string name="toast_backup">Criar backup dos dados? Os dados antigos serão substituídos.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">Url para abrir. Será guardada para a próxima utilização.</string>
+    <string name="dialog_postOnWebsite">Publicar no website</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Limpar</string>
     <string name="whitelist_edit_hint">Domínio</string>
     <string name="whitelist_add">Adicionar</string>
     <string name="menu_desktopView">Vista \'desktop\'</string>
     <string name="menu_dayView">Modo diurno</string>
-    <string name="menu_more">More</string>
+    <string name="menu_more">Mais</string>
     <string name="menu_nightView">Modo noturno</string>
     <string name="setting_userScript">JavaScript personalizado</string>
     <string name="setting_title_camera">Permitir o uso da câmara</string>
