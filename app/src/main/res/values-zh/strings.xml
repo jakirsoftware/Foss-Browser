@@ -177,15 +177,15 @@
     <string name="toast_downloadComplete">下载完成。打开文件管理器？</string>
     <string name="toast_unsecured">网站使用不安全的连接 (\"http://\")。尝试安全连接 (\"https://\")？</string>
     <string name="toast_backup">备份数据？这将覆盖旧的备份。</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">打开的网址。将被保存起来供下次使用。</string>
+    <string name="dialog_postOnWebsite">在网站上发布</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">清除</string>
     <string name="whitelist_edit_hint">域名</string>
     <string name="whitelist_add">添加</string>
     <string name="menu_desktopView">桌面端网页</string>
     <string name="menu_dayView">日间模式</string>
-    <string name="menu_more">More</string>
+    <string name="menu_more">更多</string>
     <string name="menu_nightView">夜间模式</string>
     <string name="setting_userScript">自定义 JavaScript 代码</string>
     <string name="setting_title_camera">允许相机使用</string>
