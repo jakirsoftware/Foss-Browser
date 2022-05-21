@@ -177,12 +177,15 @@
     <string name="toast_downloadComplete">Download vollständig. Dateimanager öffnen?</string>
     <string name="toast_unsecured">Diese Website benutzt eine ungesicherte Verbindung (\"http\"). Möchtest du eine sichere Verbindung (\"https\") versuchen?</string>
     <string name="toast_backup">Daten sichern? Das überschreibt die alte Sicherung.</string>
+    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
+    <string name="dialog_postOnWebsite">Post on website</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Löschen</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Hinzufügen</string>
     <string name="menu_desktopView">Desktop-Ansicht</string>
     <string name="menu_dayView">Tages-Ansicht</string>
+    <string name="menu_more">More</string>
     <string name="menu_nightView">Nacht-Ansicht</string>
     <string name="setting_userScript">Individualisierter JavaScript-Code</string>
     <string name="setting_title_camera">Kameranutzung erlauben</string>
