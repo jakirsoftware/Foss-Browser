@@ -177,15 +177,15 @@
     <string name="toast_downloadComplete">اكتمل التحميل. أفتح مدير الملفات؟</string>
     <string name="toast_unsecured">يستخدم الموقع اتصالا غير آمن (\"http\"). أجرب اتصالا آمنا (\"https\")؟</string>
     <string name="toast_backup">اعمل نسخا احتياطيا للبيانات؟ هذا سيستبدل النسخ الاحتياطي القديم.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">الرابط للفتح. سيتم حفظه للاستخدام التالي.</string>
+    <string name="dialog_postOnWebsite">نشر على الموقع</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">إفراغ</string>
     <string name="whitelist_edit_hint">النطاق</string>
     <string name="whitelist_add">أضف</string>
     <string name="menu_desktopView">عرض سطح المكتب</string>
     <string name="menu_dayView">عرض يومي</string>
-    <string name="menu_more">More</string>
+    <string name="menu_more">المزيد</string>
     <string name="menu_nightView">عرض ليلي</string>
     <string name="setting_userScript">شفرة جافاسكريت مخصصة</string>
     <string name="setting_title_camera">السماح باستخدام الكاميرا</string>
