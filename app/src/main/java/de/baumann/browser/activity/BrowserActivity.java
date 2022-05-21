@@ -71,7 +71,6 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
@@ -300,7 +299,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initOmniBox();
         initSearchPanel();
         initOverview();
-        dispatchIntent(getIntent());
 
         //restore open Tabs from shared preferences if app got killed
         if (sp.getBoolean("sp_restoreTabs", false)
@@ -320,12 +318,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             sp.edit().putBoolean("restoreOnRestart", false).apply();
         }
 
-        //if still no open Tab open default page
-        if (BrowserContainer.size() < 1) {
-            if (sp.getBoolean("start_tabStart", false)) showOverview();
-            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true, false, "");
-            getIntent().setAction("");
-        }
+        dispatchIntent(getIntent());
     }
 
     @Override
@@ -775,7 +768,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         setSelectedTab();
     }
 
-    @SuppressLint({"ClickableViewAccessibility", "UnsafeExperimentalUsageError", "UnsafeOptInUsageError"})
+    @SuppressLint({"ClickableViewAccessibility", "UnsafeOptInUsageError"})
     private void initOmniBox() {
 
         omniBox = findViewById(R.id.omniBox);
@@ -863,8 +856,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         });
     }
 
-
-    @SuppressLint({"UnsafeExperimentalUsageError", "UnsafeOptInUsageError"})
+    @SuppressLint({"UnsafeOptInUsageError"})
     private void updateOmniBox() {
 
         BadgeDrawable badge = bottom_navigation.getOrCreateBadge(R.id.page_0);
@@ -2167,7 +2159,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             HelperUnit.setupDialog(context, dialog); }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private void dispatchIntent(Intent intent) {
 
         String action = intent.getAction();
@@ -2182,16 +2173,50 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             getIntent().setAction("");
             return; }
         else if (url != null && Intent.ACTION_SEND.equals(action)) {
-            data = url;
-            receiveIntent(data);
+            getIntent().setAction("");
+            hideOverview();
+
+            GridItem item_01 = new GridItem(getString(R.string.dialog_postOnWebsite), 0);
+            GridItem item_02 = new GridItem(getString(R.string.main_menu_new_tabOpen), 0);
+
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
+            View dialogView = View.inflate(context, R.layout.dialog_menu, null);
+            builder.setView(dialogView);
+            AlertDialog dialog = builder.create();
+            FaviconHelper.setFavicon(context, dialogView, data, R.id.menu_icon, R.drawable.icon_link);
+            TextView dialog_title = dialogView.findViewById(R.id.menuTitle);
+            dialog_title.setText(data);
+            dialog.show();
+
+            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
+            GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
+            int orientation = this.getResources().getConfiguration().orientation;
+            if (orientation == Configuration.ORIENTATION_PORTRAIT) menu_grid.setNumColumns(1);
+            else menu_grid.setNumColumns(2);
+            final List<GridItem> gridList = new LinkedList<>();
+            gridList.add(gridList.size(), item_01);
+            gridList.add(gridList.size(), item_02);
+            GridAdapter gridAdapter = new GridAdapter(context, gridList);
+            menu_grid.setAdapter(gridAdapter);
+            gridAdapter.notifyDataSetChanged();
+            menu_grid.setOnItemClickListener((parent, view, position, id) -> {
+                switch (position) {
+                    case 0:
+                        postLink(url);
+                        break;
+                    case 1:
+                        addAlbum(null, url, true, false, "");
+                        getIntent().setAction("");
+                        hideOverview();
+                        break;
+                }
+                dialog.cancel();
+            });
             return;}
         else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_PROCESS_TEXT)) {
             CharSequence text = getIntent().getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
             assert text != null;
-            data = text.toString();
-            receiveIntent(data);
-            return;}
-
+            data = text.toString();}
         else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_WEB_SEARCH)) {
             data = Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)); }
         else if (Intent.ACTION_VIEW.equals(action)) {
@@ -2203,46 +2228,13 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             hideOverview();
             BrowserUnit.openInBackground(activity, intent, data);
         }
-    }
 
-    private void receiveIntent (String data) {
-
-        GridItem item_01 = new GridItem(getString(R.string.dialog_postOnWebsite), 0);
-        GridItem item_02 = new GridItem(getString(R.string.main_menu_new_tabOpen), 0);
-
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-        View dialogView = View.inflate(context, R.layout.dialog_menu, null);
-        builder.setView(dialogView);
-        AlertDialog dialog = builder.create();
-        FaviconHelper.setFavicon(context, dialogView, data, R.id.menu_icon, R.drawable.icon_link);
-        TextView dialog_title = dialogView.findViewById(R.id.menuTitle);
-        dialog_title.setText(data);
-        dialog.show();
-
-        Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-        GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
-        int orientation = this.getResources().getConfiguration().orientation;
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) menu_grid.setNumColumns(1);
-        else menu_grid.setNumColumns(2);
-        final List<GridItem> gridList = new LinkedList<>();
-        gridList.add(gridList.size(), item_01);
-        gridList.add(gridList.size(), item_02);
-        GridAdapter gridAdapter = new GridAdapter(context, gridList);
-        menu_grid.setAdapter(gridAdapter);
-        gridAdapter.notifyDataSetChanged();
-        menu_grid.setOnItemClickListener((parent, view, position, id) -> {
-            switch (position) {
-                case 0:
-                    postLink(data);
-                    break;
-                case 1:
-                    addAlbum(null, data, true, false, "");
-                    getIntent().setAction("");
-                    hideOverview();
-                    break;
-            }
-            dialog.cancel();
-        });
+        //if still no open Tab open default page
+        if (BrowserContainer.size() < 1) {
+            if (sp.getBoolean("start_tabStart", false)) showOverview();
+            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true, false, "");
+            getIntent().setAction("");
+        }
     }
 
     @SuppressLint("ClickableViewAccessibility")
