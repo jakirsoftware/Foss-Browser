@@ -177,15 +177,15 @@
     <string name="toast_downloadComplete">Stahování dokončeno. Otevřít správce souborů?</string>
     <string name="toast_unsecured">Stránka používá nezabezpečené připojení („http“). Chcete zkusit zabezpečné připojení („https“)?</string>
     <string name="toast_backup">Zálohovat data? Tato akce přepíše starou zálohu.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">Url pro otevření. Uloží se pro další použití.</string>
+    <string name="dialog_postOnWebsite">Příspěvek na webových stránkách</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Vymazat</string>
     <string name="whitelist_edit_hint">Doména</string>
     <string name="whitelist_add">Přidat</string>
     <string name="menu_desktopView">Zobrazení pro PC</string>
     <string name="menu_dayView">Denní přehled</string>
-    <string name="menu_more">More</string>
+    <string name="menu_more">Více na</string>
     <string name="menu_nightView">Noční zobrazení</string>
     <string name="setting_userScript">Vlastní kód JavaScript</string>
     <string name="setting_title_camera">Povolit používání kamery</string>
