@@ -177,15 +177,15 @@
     <string name="toast_downloadComplete">Téléchargement terminé. Ouvrir le gestionnaire de fichiers?</string>
     <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée (\"http\"). Essayez une connexion sécurisée (\"https\") ?</string>
     <string name="toast_backup">Sauvegarder les données ? Cela écrasera l\'ancienne sauvegarde.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">Url à ouvrir. Sera sauvegardé pour la prochaine utilisation.</string>
+    <string name="dialog_postOnWebsite">Voir sur le site</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Effacer</string>
     <string name="whitelist_edit_hint">Domaine</string>
     <string name="whitelist_add">Ajouter</string>
     <string name="menu_desktopView">Vue bureau</string>
     <string name="menu_dayView">Vue Jour</string>
-    <string name="menu_more">More</string>
+    <string name="menu_more">Plus</string>
     <string name="menu_nightView">Vue nocturne</string>
     <string name="setting_userScript">Scripts JavaScript personnalisés</string>
     <string name="setting_title_camera">Autoriser l\'utilisation de la caméra</string>
