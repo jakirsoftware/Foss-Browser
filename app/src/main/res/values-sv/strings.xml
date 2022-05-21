@@ -177,12 +177,15 @@
     <string name="toast_downloadComplete">Hämtning slutförd. Öppna filhanterare?</string>
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Säkerhetskopiera data? Detta skriver över den gamla säkerhetskopian.</string>
+    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
+    <string name="dialog_postOnWebsite">Post on website</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Clear</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Add</string>
     <string name="menu_desktopView">Desktop view</string>
     <string name="menu_dayView">Day view</string>
+    <string name="menu_more">More</string>
     <string name="menu_nightView">Night view</string>
     <string name="setting_userScript">Custom JavaScript code</string>
     <string name="setting_title_camera">Allow camera usage</string>
