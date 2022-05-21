@@ -177,15 +177,15 @@
     <string name="toast_downloadComplete">Befejezve a letöltés. Megnyitja a fájlkezelőt?</string>
     <string name="toast_unsecured">A weboldal nem biztonságos kapcsolatot használ (\"http\"). Megpróbálja a biztonságos kapcsolatot (\"https\")?</string>
     <string name="toast_backup">Biztonsági másolat az adatokról? Ez felülírja a régi biztonsági másolatot.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">Url megnyitásához. A következő használatra el lesz mentve.</string>
+    <string name="dialog_postOnWebsite">Közzététel a weboldalon</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Törlés</string>
     <string name="whitelist_edit_hint">Tartomány</string>
     <string name="whitelist_add">Hozzáad</string>
     <string name="menu_desktopView">Asztali nézet</string>
     <string name="menu_dayView">Napi nézet</string>
-    <string name="menu_more">More</string>
+    <string name="menu_more">További</string>
     <string name="menu_nightView">Éjszakai nézet</string>
     <string name="setting_userScript">Egyéni JavaScript kód</string>
     <string name="setting_title_camera">Kamera használatának engedélyezése</string>
