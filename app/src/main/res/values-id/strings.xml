@@ -177,15 +177,15 @@
     <string name="toast_downloadComplete">Unduh selesai. Buka manager file?</string>
     <string name="toast_unsecured">Situs web menggunakan koneksi yang tidak aman (\"http\"). Coba koneksi aman (\"https\")?</string>
     <string name="toast_backup">Cadangkan data? Ini akan menghapus cadangan lama.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">Url untuk membuka. Akan disimpan untuk penggunaan berikutnya.</string>
+    <string name="dialog_postOnWebsite">Posting di situs web</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Bersihkan</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Tambah</string>
     <string name="menu_desktopView">Tampilan desktop</string>
     <string name="menu_dayView">Tampilan terang</string>
-    <string name="menu_more">More</string>
+    <string name="menu_more">Lebih</string>
     <string name="menu_nightView">Tampilan malam</string>
     <string name="setting_userScript">Kode JavaScript Kustom</string>
     <string name="setting_title_camera">Izinkan penggunaan kamera</string>
