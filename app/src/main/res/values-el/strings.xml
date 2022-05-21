@@ -177,15 +177,15 @@
     <string name="toast_downloadComplete">Η λήψη ολοκληρώθηκε. Άνοιγμα διαχειριστή αρχείων;</string>
     <string name="toast_unsecured">Η ιστοσελίδα χρησιμοποιεί μια μη ασφαλή σύνδεση (\"http\"). Δοκιμάστε μια ασφαλή σύνδεση (\"https\");</string>
     <string name="toast_backup">Αντίγραφο ασφαλείας δεδομένων? Αυτό θα αντικαταστήσει το παλιό αντίγραφο ασφαλείας.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">Url για άνοιγμα. Θα αποθηκευτεί για επόμενη χρήση.</string>
+    <string name="dialog_postOnWebsite">Δημοσίευση στον ιστότοπο</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Εκκαθάριση</string>
     <string name="whitelist_edit_hint">Domain</string>
     <string name="whitelist_add">Προσθήκη</string>
     <string name="menu_desktopView">Προβολή για υπολογιστή</string>
     <string name="menu_dayView">Προβολή ημέρας</string>
-    <string name="menu_more">More</string>
+    <string name="menu_more">Περισσότερα</string>
     <string name="menu_nightView">Νυχτερινή προβολή</string>
     <string name="setting_userScript">Προσαρμοσμένος κώδικας JavaScript</string>
     <string name="setting_title_camera">Να επιτρέπεται η χρήση κάμερας</string>
