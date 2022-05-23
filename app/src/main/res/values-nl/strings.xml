@@ -3,17 +3,17 @@
     <!-- App -->
     <string name="app_name">FOSS-browser</string>
     <string name="app_ok">Oké</string>
-    <string name="app_help">Help</string>
+    <string name="app_help">Hulp</string>
     <string name="app_cancel">Annuleren</string>
-    <string name="app_done">Done</string>
-    <string name="app_error">Error</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
-    <string name="list_empty">List is empty</string>
+    <string name="app_done">Voltooid</string>
+    <string name="app_error">Foutmelding</string>
+    <string name="app_warning">Waarschuwing</string>
+    <string name="app_permission">Om deze functie te gebruiken moet u toestemming verlenen. Daarna moet u de app opnieuw starten.</string>
+    <string name="list_empty">Lijst is leeg</string>
     <string name="album_title_bookmarks">Bladwijzers</string>
     <string name="album_title_history">Geschiedenis</string>
     <string name="album_title_home">Startpagina</string>
-    <string name="album_title_tab">Opened Tabs</string>
+    <string name="album_title_tab">Geopende Tabbladen</string>
     <string name="search_hint">Zoeken</string>
     <string name="color_red">Rood</string>
     <string name="color_pink">Roze</string>
@@ -28,7 +28,7 @@
     <string name="color_grey">Grijs</string>
     <!-- Menu -->
     <string name="main_menu_new_tab">Nieuw tabblad (achtergrond)</string>
-    <string name="main_menu_new_tabProfile">New tab (with profile …)</string>
+    <string name="main_menu_new_tabProfile">Nieuw tabblad (met profiel …)</string>
     <string name="main_menu_new_tabOpen">Nieuw tabblad (voorgrond)</string>
     <string name="main_omnibox_input_hint">Zoek, of typ een URL</string>
     <string name="menu_open_with">Link openen met…</string>
@@ -55,8 +55,8 @@
     <string name="dialog_extension_hint">Extensie (bijv.: \".jpg\"):</string>
     <string name="dialog_sign_in_username">Gebruikersnaam</string>
     <string name="dialog_sign_in_password">Wachtwoord</string>
-    <string name="dialog_title_download">Download the file?</string>
-    <string name="dialog_content_resubmission">Resubmit your data?</string>
+    <string name="dialog_title_download">Bestand downloaden?</string>
+    <string name="dialog_content_resubmission">Uw gegevens opnieuw verzenden?</string>
     <string name="dialog_content_ssl_error">Het certificaat van deze website is onvertrouwd. Wil je tóch doorgaan?</string>
     <string name="dialog_sortName">Sorteren op naam</string>
     <string name="dialog_sortIcon">Sorteren op pictogram</string>
@@ -76,27 +76,27 @@
     <string name="setting_summary_search_engine_qwant">Aantal</string>
     <string name="setting_summary_search_engine_ecosia">Ecosia</string>
     <string name="setting_summary_search_engine_metager">Metager</string>
-    <string name="setting_title_font">Font size</string>
-    <string name="setting_title_dom">DOM Storage</string>
-    <string name="privacy_redirect">Redirect</string>
+    <string name="setting_title_font">Lettertypegrootte</string>
+    <string name="setting_title_dom">DOM Opslag</string>
+    <string name="privacy_redirect">Doorverwijzen</string>
     <string name="privacy_redirect_twitter">Twitter</string>
     <string name="privacy_redirect_youTube">YouTube</string>
     <string name="privacy_redirect_inst">Instagram</string>
     <string name="setting_title_save_data">Verzoek \'Gegevens opslaan\'</string>
-    <string name="setting_title_profiles">Profiles</string>
-    <string name="setting_title_profiles_edit">Edit profiles</string>
-    <string name="setting_title_profiles_trustedList">Trusted websites</string>
-    <string name="setting_title_profiles_standardList">Standard websites</string>
-    <string name="setting_title_profiles_protectedList">Protected websites</string>
-    <string name="setting_title_profiles_startApp">Profile on app start</string>
-    <string name="setting_title_profiles_trusted">Trusted</string>
-    <string name="setting_title_profiles_standard">Standard</string>
-    <string name="setting_title_profiles_protected">Protected</string>
-    <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_active">Profile</string>
-    <string name="setting_title_profiles_dataUsage">Data usage</string>
+    <string name="setting_title_profiles">Profielen</string>
+    <string name="setting_title_profiles_edit">Profielen bewerken</string>
+    <string name="setting_title_profiles_trustedList">Vertrouwde websites</string>
+    <string name="setting_title_profiles_standardList">Standaard websites</string>
+    <string name="setting_title_profiles_protectedList">Beschermde websites</string>
+    <string name="setting_title_profiles_startApp">Profiel bij starten app</string>
+    <string name="setting_title_profiles_trusted">Vertrouwd</string>
+    <string name="setting_title_profiles_standard">Standaard</string>
+    <string name="setting_title_profiles_protected">Beschermd</string>
+    <string name="setting_title_profiles_changed">Aangepast</string>
+    <string name="setting_title_profiles_active">Profiel</string>
+    <string name="setting_title_profiles_dataUsage">Gegevensgebruik</string>
     <string name="setting_title_profiles_privacy">Privacy</string>
-    <string name="setting_title_profiles_Security">Security</string>
+    <string name="setting_title_profiles_Security">Beveiliging</string>
     <!-- browser start -->
     <string name="setting_title_images">Afbeeldingen</string>
     <string name="setting_title_cookie">Koekjes</string>
@@ -105,18 +105,18 @@
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_adblock">Advertentieblokkering</string>
     <string name="setting_summary_adblock">Schakel advertentieblokkering in om vervelende reclame te blokkeren. Websites laden hierdoor ook sneller.</string>
-    <string name="setting_title_adblockHost">Blocked content</string>
+    <string name="setting_title_adblockHost">Geblokkeerde inhoud</string>
     <string name="setting_title_location">Locatie</string>
     <string name="setting_title_history">Geschiedenis</string>
-    <string name="setting_title_autofill">Form Data</string>
-    <string name="setting_summary_autofill">Enable the saving of form data (Android Nougat and below) or autofill service (Android Oreo and above).</string>
+    <string name="setting_title_autofill">Formuliergegevens</string>
+    <string name="setting_summary_autofill">Schakel het opslaan van formuliergegevens in (Android Nougat en hieronder) of autofill service (Android Oreo en hoger).</string>
     <!-- browser clear -->
-    <string name="data_summary">All files will be exported to the \"Documents/browser_backup/\" directory of your SD-card.</string>
-    <string name="clear_title_quit">Clear on application exit</string>
+    <string name="data_summary">Alle bestanden worden geëxporteerd naar de map \"Documents/browser_backup/\" van uw SD-card.</string>
+    <string name="clear_title_quit">Wissen bij afsluiten van toepassing</string>
     <string name="clear_title_cache">Cache leegmaken</string>
     <string name="clear_title_cookie">Cookies wissen</string>
     <string name="clear_title_history">Geschiedenis wissen</string>
-    <string name="localData">Clear on device stored data</string>
+    <string name="localData">Wissen op apparaat opgeslagen gegevens</string>
     <string name="clear_title_deleteDatabase">Databank verwijderen</string>
     <string name="clear_summary_deleteDatabase">Verwijder de gehele databank (startpagina, bladwijzers, geschiedenis en alle witte lijsten).</string>
     <!-- App setting -->
@@ -125,24 +125,24 @@
     <string name="setting_title_data">Back-up</string>
     <string name="setting_filter">Bladwijzer filter</string>
     <string name="setting_title_fav">Favoriete</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
+    <string name="setting_title_reload">Veeg omlaag om te herladen</string>
     <string name="setting_title_searchEngine">Aangepaste zoekmachine</string>
     <string name="setting_title_userAgent">Aangepaste user agent</string>
-    <string name="setting_title_fingerPrint">Fingerprint protection</string>
-    <string name="setting_theme">Theme</string>
-    <string name="setting_theme_system">System</string>
+    <string name="setting_title_fingerPrint">Vingerafdruk bescherming</string>
+    <string name="setting_theme">Thema</string>
+    <string name="setting_theme_system">Systeem</string>
     <string name="setting_theme_OLED">OLED</string>
-    <string name="setting_theme_wallpaper">Wallpaper based</string>
+    <string name="setting_theme_wallpaper">Aangepast aan achtergrond</string>
     <!-- App behavior -->
-    <string name="setting_title_hideToolbar">Hide toolbar</string>
+    <string name="setting_title_hideToolbar">Werkbalk verbergen</string>
     <string name="setting_title_behavior">Gedrag</string>
     <string name="setting_title_confirm_exit">Afsluiten bevestigen</string>
     <string name="setting_title_confirm_tab_close">Tabblad sluiten bevestigen</string>
     <string name="setting_overView_onStart_title">Toon bij start</string>
     <string name="setting_gestures">Vingerbewegingen</string>
     <!-- gestures -->
-    <string name="setting_title_longPress">Long press</string>
-    <string name="setting_title_overViewButton">Overview</string>
+    <string name="setting_title_longPress">Lang indrukken</string>
+    <string name="setting_title_overViewButton">Overzicht</string>
     <string name="setting_gesture_up">Veeg omhoog</string>
     <string name="setting_gesture_down">Omlaag vegen</string>
     <string name="setting_gesture_left">Naar links vegen</string>
@@ -157,11 +157,11 @@
     <string name="setting_gesture_08">Overzicht weergeven</string>
     <string name="setting_gesture_09">Nieuw tabblad openen</string>
     <string name="setting_gesture_10">Tabblad sluiten</string>
-    <string name="setting_gesture_11">Show fast toggle</string>
+    <string name="setting_gesture_11">Snelheidsschakelaar weergeven</string>
     <!-- Data -->
     <string name="title_appData">App gegevens</string>
-    <string name="hint_database">This will delete current data. Proceed?</string>
-    <string name="settings_data_restore">Restore</string>
+    <string name="hint_database">Dit zal huidige data verwijderen. Doorgaan?</string>
+    <string name="settings_data_restore">Herstellen</string>
     <!-- Others setting -->
     <!-- Toast -->
     <string name="toast_add_whitelist_successful">Domein toegevoegd</string>
@@ -173,23 +173,23 @@
     <string name="toast_webview_forward">Volgende site kan niet worden geladen</string>
     <string name="toast_restart">\"FOSS-browser\" moet worden herstart om de wijzigingen toe te passen. Wil je nu afsluiten?</string>
     <string name="toast_quit">Wil je \"FOSS-browser\" afsluiten?</string>
-    <string name="toast_quit_TAB">Do you want to close the TAB?</string>
+    <string name="toast_quit_TAB">Wilt u de TAB sluiten?</string>
     <string name="toast_downloadComplete">Downloaden voltooid. Wil je bestandsbeheer openen?</string>
-    <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
+    <string name="toast_unsecured">Deze website gebruikt een onbeveiligde verbinding (\"http\"). Wilt u een beveiligde verbinding (\"https\") proberen?</string>
     <string name="toast_backup">Wil je de gegevens back-uppen? Dit overschrijft de oude back-up.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">Url om te openen. Zal worden opgeslagen voor volgend gebruik.</string>
+    <string name="dialog_postOnWebsite">Post op de website</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Wissen</string>
     <string name="whitelist_edit_hint">Domein</string>
     <string name="whitelist_add">Toevoegen</string>
-    <string name="menu_desktopView">Desktop view</string>
-    <string name="menu_dayView">Day view</string>
-    <string name="menu_more">More</string>
-    <string name="menu_nightView">Night view</string>
-    <string name="setting_userScript">Custom JavaScript code</string>
-    <string name="setting_title_camera">Allow camera usage</string>
-    <string name="setting_title_microphone">Allow microphone usage</string>
+    <string name="menu_desktopView">Bureaublad weergave</string>
+    <string name="menu_dayView">Dag-weergave</string>
+    <string name="menu_more">Meer</string>
+    <string name="menu_nightView">Nacht-weergave</string>
+    <string name="setting_userScript">Aangepaste JavaScript-code</string>
+    <string name="setting_title_camera">Camera-gebruik toestaan</string>
+    <string name="setting_title_microphone">Microfoon-gebruik toestaan</string>
     <string name="setting_title_tabsReload">Reload tabs</string>
     <string name="setting_title_tabsRestore">Restore tabs</string>
     <string name="setting_title_userInterface">User interface</string>
