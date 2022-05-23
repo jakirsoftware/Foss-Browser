@@ -167,7 +167,7 @@
     <string name="toast_add_whitelist_successful">Domínio adicionado com sucesso</string>
     <string name="toast_copy_successful">Copiado com sucesso</string>
     <string name="toast_delete_successful">Apagado com sucesso</string>
-    <string name="toast_domain_already_exists">O domínio já existente</string>
+    <string name="toast_domain_already_exists">Domínio já existe</string>
     <string name="toast_input_empty">Você não inseriu nada</string>
     <string name="toast_invalid_domain">Domínio inválido</string>
     <string name="toast_webview_forward">Não foi possível carregar o próximo site</string>
@@ -198,7 +198,7 @@
     <string name="hint_DRM_Media">Permitir a reprodução de mídia protegida por DRM?</string>
     <string name="menu_reload">Recarregar</string>
     <string name="menu_restart">Reiniciar e recarregar abas</string>
-    <string name="setting_title_screenOn">Manter a tela ligada</string>
-    <string name="setting_title_audioBackground">Reproduzir áudio em fundo</string>
+    <string name="setting_title_screenOn">Mantenha a tela ligada</string>
+    <string name="setting_title_audioBackground">Reproduzir áudio em segundo plano</string>
     <!-- License changelog -->
 </resources>
