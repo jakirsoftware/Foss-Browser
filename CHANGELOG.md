@@ -1,6 +1,7 @@
 ### v 9.4 (WIP)
 
 - new: "post on website" in sharing menu
+- removed: swipe to reload -> use gestures instead
 
 ### v 9.3.1
 
