@@ -2247,7 +2247,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         SwipeTouchListener swipeTouchListener;
         swipeTouchListener = new SwipeTouchListener(context) {
             public void onSwipeBottom() {
-                if (sp.getBoolean("sp_swipeToReload", true)) ninjaWebView.reload();
                 if (sp.getBoolean("hideToolbar", true)) {
                     if (animation == null || !animation.isRunning()) {
                         animation = ObjectAnimator.ofFloat(bottomAppBar, "translationY", 0);
