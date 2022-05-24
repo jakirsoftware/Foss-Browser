@@ -1,16 +1,20 @@
 package de.baumann.browser.browser;
 
+import static android.content.Context.DOWNLOAD_SERVICE;
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.net.http.SslError;
+import android.os.Environment;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.webkit.CookieManager;
 import android.webkit.HttpAuthHandler;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceRequest;
@@ -34,9 +38,11 @@ import java.util.Objects;
 import de.baumann.browser.R;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
+import de.baumann.browser.unit.BackupUnit;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
+import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
 
 public class NinjaWebViewClient extends WebViewClient {
@@ -548,12 +554,18 @@ public class NinjaWebViewClient extends WebViewClient {
             dialog1.cancel();
         });
 
-        builder.setPositiveButton(R.string.app_ok, (dialogSubMenu, whichButton) -> {
+        Button ib_cancel = dialogView.findViewById(R.id.editCancel);
+        ib_cancel.setOnClickListener(v -> {
+            HelperUnit.hideSoftKeyboard(editBottom, context);
+            dialog.cancel();
+        });
+        Button ib_ok = dialogView.findViewById(R.id.editOK);
+        ib_ok.setOnClickListener(v -> {
+            HelperUnit.hideSoftKeyboard(editBottom, context);
             String user = editTop.getText().toString().trim();
             String pass = editBottom.getText().toString().trim();
             handler.proceed(user, pass);
             dialog.cancel();
         });
-        builder.setNegativeButton(R.string.app_cancel, (dialogSubMenu, whichButton) -> dialog.cancel());
     }
 }

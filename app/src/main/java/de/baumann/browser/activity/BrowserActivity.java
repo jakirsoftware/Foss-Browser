@@ -1467,7 +1467,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
                     builderSubMenu.setView(dialogViewSubMenu);
                     builderSubMenu.setTitle(getString(R.string.menu_edit));
-                    builderSubMenu.setPositiveButton(R.string.app_ok, (dial, whichButton) -> {
+                    dialogSubMenu = builderSubMenu.create();
+                    dialogSubMenu.show();
+                    HelperUnit.setupDialog(context, dialogSubMenu);
+
+                    Button ib_cancel = dialogViewSubMenu.findViewById(R.id.editCancel);
+                    ib_cancel.setOnClickListener(v -> {
+                        HelperUnit.hideSoftKeyboard(editBottom, context);
+                        dialogSubMenu.cancel();
+                    });
+                    Button ib_ok = dialogViewSubMenu.findViewById(R.id.editOK);
+                    ib_ok.setOnClickListener(v -> {
                         if (overViewTab.equals(getString(R.string.album_title_bookmarks))) {
                             RecordAction action = new RecordAction(context);
                             action.open(true);
@@ -1485,12 +1495,9 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                             action.addStartSite(new Record(editTop.getText().toString(), editBottom.getText().toString(), 0, counter, STARTSITE_ITEM, chip_desktopMode.isChecked(), chip_nightMode.isChecked(), 0));
                             action.close();
                             bottom_navigation.setSelectedItemId(R.id.page_1); }
-                        dial.cancel();
+                        HelperUnit.hideSoftKeyboard(editBottom, context);
+                        dialogSubMenu.cancel();
                     });
-                    builderSubMenu.setNegativeButton(R.string.app_cancel, (dial, whichButton) -> dialog.cancel());
-                    dialogSubMenu = builderSubMenu.create();
-                    dialogSubMenu.show();
-                    HelperUnit.setupDialog(context, dialogSubMenu);
                     break;
             }
         });
@@ -2012,7 +2019,18 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         builder.setView(dialogViewSubMenu);
         builder.setTitle(getString(R.string.dialog_postOnWebsite));
         builder.setMessage(message);
-        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+
+        Dialog dialog = builder.create();
+        dialog.show();
+        HelperUnit.setupDialog(context, dialog);
+
+        Button ib_cancel = dialogViewSubMenu.findViewById(R.id.editCancel);
+        ib_cancel.setOnClickListener(v -> {
+            HelperUnit.hideSoftKeyboard(editTop, context);
+            dialog.cancel();
+        });
+        Button ib_ok = dialogViewSubMenu.findViewById(R.id.editOK);
+        ib_ok.setOnClickListener(v -> {
             String shareTop = editTop.getText().toString().trim();
             sp.edit().putString("urlForPosting", shareTop).apply();
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -2021,14 +2039,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             String text = getString(R.string.toast_copy_successful) + ": " + data;
             NinjaToast.show(this, text);
             addAlbum("", shareTop, true, false, "");
+            HelperUnit.hideSoftKeyboard(editTop, context);
             dialog.cancel();
         });
-        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-
-        Dialog dialog = builder.create();
-        dialog.show();
-        HelperUnit.setupDialog(context, dialog);
     }
+
 
     private void searchOnSite() {
         searchOnSite = true;

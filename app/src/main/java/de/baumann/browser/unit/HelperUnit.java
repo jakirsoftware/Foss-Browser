@@ -46,6 +46,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.CookieManager;
 import android.webkit.URLUtil;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -151,7 +152,18 @@ public class HelperUnit {
             builder.setView(dialogView);
             builder.setTitle(R.string.menu_save_as);
             builder.setMessage(url);
-            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            HelperUnit.setupDialog(activity, dialog);
+
+            Button ib_cancel = dialogView.findViewById(R.id.editCancel);
+            ib_cancel.setOnClickListener(view -> {
+                hideSoftKeyboard(editBottom, activity);
+                dialog.cancel();
+            });
+            Button ib_ok = dialogView.findViewById(R.id.editOK);
+            ib_ok.setOnClickListener(view12 -> {
 
                 String title = editTop.getText().toString().trim();
                 String extension1 = editBottom.getText().toString().trim();
@@ -169,18 +181,13 @@ public class HelperUnit {
                         DownloadManager dm = (DownloadManager) activity.getSystemService(DOWNLOAD_SERVICE);
                         assert dm != null;
                         dm.enqueue(request);
-                        hideSoftKeyboard(editBottom, activity);
-                        dialogToCancel.cancel();
                     } else {
                         BackupUnit.requestPermission(activity);
                     }
+                    HelperUnit.hideSoftKeyboard(editBottom, activity);
+                    dialog.cancel();
                 }
-                dialog.cancel();
             });
-            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            HelperUnit.setupDialog(activity, dialog);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -334,7 +341,18 @@ public class HelperUnit {
         builder.setView(dialogView);
         builder.setTitle(R.string.menu_save_as);
         builder.setMessage(dataUriParser.toString());
-        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        HelperUnit.setupDialog(activity, dialog);
+
+        Button ib_cancel = dialogView.findViewById(R.id.editCancel);
+        ib_cancel.setOnClickListener(view -> {
+            hideSoftKeyboard(editBottom, activity);
+            dialog.cancel();
+        });
+        Button ib_ok = dialogView.findViewById(R.id.editOK);
+        ib_ok.setOnClickListener(view12 -> {
 
             String title = editTop.getText().toString().trim();
             String extension1 = editBottom.getText().toString().trim();
@@ -352,18 +370,13 @@ public class HelperUnit {
                         System.out.println("Error Downloading File: " + e);
                         e.printStackTrace();
                     }
-                    dialogToCancel.cancel();
                 } else {
                     BackupUnit.requestPermission(activity);
                 }
+                HelperUnit.hideSoftKeyboard(editBottom, activity);
+                dialog.cancel();
             }
-            dialog.cancel();
         });
-        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        HelperUnit.setupDialog(activity, dialog);
     }
 
     public static void showSoftKeyboard(View view, Activity context) {
