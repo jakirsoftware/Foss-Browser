@@ -2170,47 +2170,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             filePathCallback = null;
             getIntent().setAction("");
             return; }
-        else if (url != null && Intent.ACTION_SEND.equals(action)) {
+        else if ("postLink".equals(action)) {
             getIntent().setAction("");
             hideOverview();
-
-            GridItem item_01 = new GridItem(getString(R.string.dialog_postOnWebsite), 0);
-            GridItem item_02 = new GridItem(getString(R.string.main_menu_new_tabOpen), 0);
-
-            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
-            View dialogView = View.inflate(context, R.layout.dialog_menu, null);
-            builder.setView(dialogView);
-            AlertDialog dialog = builder.create();
-            FaviconHelper.setFavicon(context, dialogView, data, R.id.menu_icon, R.drawable.icon_link);
-            TextView dialog_title = dialogView.findViewById(R.id.menuTitle);
-            dialog_title.setText(url);
-            dialog.show();
-
-            Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);
-            GridView menu_grid = dialogView.findViewById(R.id.menu_grid);
-            int orientation = this.getResources().getConfiguration().orientation;
-            if (orientation == Configuration.ORIENTATION_PORTRAIT) menu_grid.setNumColumns(1);
-            else menu_grid.setNumColumns(2);
-            final List<GridItem> gridList = new LinkedList<>();
-            gridList.add(gridList.size(), item_01);
-            gridList.add(gridList.size(), item_02);
-            GridAdapter gridAdapter = new GridAdapter(context, gridList);
-            menu_grid.setAdapter(gridAdapter);
-            gridAdapter.notifyDataSetChanged();
-            menu_grid.setOnItemClickListener((parent, view, position, id) -> {
-                switch (position) {
-                    case 0:
-                        postLink(url);
-                        break;
-                    case 1:
-                        addAlbum(null, url, true, false, "");
-                        getIntent().setAction("");
-                        hideOverview();
-                        break;
-                }
-                dialog.cancel();
-            });
-            return;}
+            postLink(url);
+            return; }
         else if (intent.getAction() != null && intent.getAction().equals(Intent.ACTION_PROCESS_TEXT)) {
             CharSequence text = getIntent().getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
             assert text != null;
@@ -2219,6 +2183,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             data = Objects.requireNonNull(intent.getStringExtra(SearchManager.QUERY)); }
         else if (Intent.ACTION_VIEW.equals(action)) {
             data = Objects.requireNonNull(getIntent().getData()).toString(); }
+        else if (url != null && Intent.ACTION_SEND.equals(action)) {
+            data = url; }
 
         if (!data.isEmpty()) {
             addAlbum(null, data, true, false, "");

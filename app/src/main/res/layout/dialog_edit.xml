@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/dialog_URL_hint"
                 android:imeOptions="actionDone"
-                android:inputType="textUri" />
+                android:inputType="textMultiLine" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
