@@ -1992,6 +1992,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
     private void postLink(String data) {
         String urlForPosting = sp.getString("urlForPosting", "");
+        String message = getString(R.string.menu_shareClipboard) + ": " + data;
         assert urlForPosting != null;
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context);
@@ -2001,26 +2002,23 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         editTopLayout.setHint(getString(R.string.dialog_URL_hint));
         editTopLayout.setHelperText(getString(R.string.dialog_postOnWebsiteHint));
         TextInputLayout editBottomLayout = dialogViewSubMenu.findViewById(R.id.editBottomLayout);
-        editBottomLayout.setHint(getString(R.string.menu_shareClipboard));
+        editBottomLayout.setVisibility(View.GONE);
 
         EditText editTop = dialogViewSubMenu.findViewById(R.id.editTop);
-        EditText editBottom = dialogViewSubMenu.findViewById(R.id.editBottom);
         if (urlForPosting.isEmpty()) editTop.setText("");
         else editTop.setText(urlForPosting);
         editTop.setHint(getString(R.string.dialog_URL_hint));
-        editBottom.setText(data);
-        editBottom.setHint(getString(R.string.menu_shareClipboard));
 
         builder.setView(dialogViewSubMenu);
         builder.setTitle(getString(R.string.dialog_postOnWebsite));
+        builder.setMessage(message);
         builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
             String shareTop = editTop.getText().toString().trim();
-            String shareBottom = editBottom.getText().toString().trim();
             sp.edit().putString("urlForPosting", shareTop).apply();
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("text", shareBottom);
+            ClipData clip = ClipData.newPlainText("text", data);
             Objects.requireNonNull(clipboard).setPrimaryClip(clip);
-            String text = getString(R.string.toast_copy_successful) + ": " + shareBottom;
+            String text = getString(R.string.toast_copy_successful) + ": " + data;
             NinjaToast.show(this, text);
             addAlbum("", shareTop, true, false, "");
             dialog.cancel();
@@ -2185,7 +2183,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             AlertDialog dialog = builder.create();
             FaviconHelper.setFavicon(context, dialogView, data, R.id.menu_icon, R.drawable.icon_link);
             TextView dialog_title = dialogView.findViewById(R.id.menuTitle);
-            dialog_title.setText(data);
+            dialog_title.setText(url);
             dialog.show();
 
             Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);

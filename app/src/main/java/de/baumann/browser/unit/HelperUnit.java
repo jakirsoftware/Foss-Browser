@@ -151,11 +151,7 @@ public class HelperUnit {
             builder.setView(dialogView);
             builder.setTitle(R.string.menu_save_as);
             builder.setMessage(url);
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            HelperUnit.setupDialog(activity, dialog);
-
-            builder.setPositiveButton(R.string.app_ok, (dial, whichButton) -> {
+            builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
                 String title = editTop.getText().toString().trim();
                 String extension1 = editBottom.getText().toString().trim();
@@ -181,7 +177,10 @@ public class HelperUnit {
                 }
                 dialog.cancel();
             });
-            builder.setNegativeButton(R.string.app_cancel, (dial, whichButton) -> dialog.cancel());
+            builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+            HelperUnit.setupDialog(activity, dialog);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -335,11 +334,7 @@ public class HelperUnit {
         builder.setView(dialogView);
         builder.setTitle(R.string.menu_save_as);
         builder.setMessage(dataUriParser.toString());
-        AlertDialog dialog = builder.create();
-        dialog.show();
-        HelperUnit.setupDialog(activity, dialog);
-
-        builder.setPositiveButton(R.string.app_ok, (dial, whichButton) -> {
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> {
 
             String title = editTop.getText().toString().trim();
             String extension1 = editBottom.getText().toString().trim();
@@ -364,7 +359,11 @@ public class HelperUnit {
             }
             dialog.cancel();
         });
-        builder.setNegativeButton(R.string.app_cancel, (dial, whichButton) -> dialog.cancel());
+        builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        HelperUnit.setupDialog(activity, dialog);
     }
 
     public static void showSoftKeyboard(View view, Activity context) {
