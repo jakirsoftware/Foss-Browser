@@ -177,12 +177,15 @@
     <string name="toast_downloadComplete">Pobieranie ukończone. Otworzyć katalog pobierania?</string>
     <string name="toast_unsecured">Ta witryna używa nieszyfrowanego połączenia (\"http\"). Spróbować przejść na szyfrowane (\"https\")?</string>
     <string name="toast_backup">Dokonać nowej kopii bezpieczeństwa danych? Nadpisze ona poprzednią kopię.</string>
+    <string name="dialog_postOnWebsiteHint">Adres Url do otwarcia. Zostanie zachowany do następnego użycia.</string>
+    <string name="dialog_postOnWebsite">Umieść na stronie internetowej</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Wymaż</string>
     <string name="whitelist_edit_hint">Adres</string>
     <string name="whitelist_add">Dodaj</string>
     <string name="menu_desktopView">Widok pulpitu</string>
     <string name="menu_dayView">Widok Dnia</string>
+    <string name="menu_more">Więcej</string>
     <string name="menu_nightView">Widok nocny</string>
     <string name="setting_userScript">Własny kod JavaScript</string>
     <string name="setting_title_camera">Zezwolenie na użycie kamery</string>

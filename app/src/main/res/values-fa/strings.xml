@@ -178,12 +178,15 @@
     <string name="toast_unsecured">        وبسایت مورد نظر از ارتباط نا امن (http) استفاده می کند.آیامایل به انتقال به نسخه امن (https) وبسایت هستید؟
     </string>
     <string name="toast_backup">این پشتیبان گیری  روی نسخه ی قبلی بازنویسی خواهد شد،در هرحال انجام شود؟</string>
+    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
+    <string name="dialog_postOnWebsite">Post on website</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">پاک کن</string>
     <string name="whitelist_edit_hint">دامنه</string>
     <string name="whitelist_add">افزودن</string>
     <string name="menu_desktopView">DesktopPC نماي</string>
     <string name="menu_dayView">روز</string>
+    <string name="menu_more">More</string>
     <string name="menu_nightView">دید شب</string>
     <string name="setting_userScript">فایل‌های جاوا اسکریپت سفارشی</string>
     <string name="setting_title_camera">اجازه استفاده دوربین</string>

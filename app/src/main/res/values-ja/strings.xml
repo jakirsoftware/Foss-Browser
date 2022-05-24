@@ -177,12 +177,15 @@
     <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
     <string name="toast_unsecured">ウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
     <string name="toast_backup">データをバックアップしますか? これにより古いバックアップは上書きされます。</string>
+    <string name="dialog_postOnWebsiteHint">開くためのURL。次回の使用時に保存されます。</string>
+    <string name="dialog_postOnWebsite">ウェブサイトに掲載</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">消去</string>
     <string name="whitelist_edit_hint">ドメイン</string>
     <string name="whitelist_add">追加</string>
     <string name="menu_desktopView">デスクトップ表示</string>
     <string name="menu_dayView">明るい時での表示</string>
+    <string name="menu_more">もっと見る</string>
     <string name="menu_nightView">暗い時での表示</string>
     <string name="setting_userScript">カスタム JavaScript コード</string>
     <string name="setting_title_camera">カメラの使用を許可</string>
