@@ -177,12 +177,15 @@
     <string name="toast_downloadComplete">Download completato. Aprire File Manager?</string>
     <string name="toast_unsecured">Il sito web utilizza una connessione non protetta (\"http\"). Provare una connessione sicura (\"&lt;unk&gt; \")?</string>
     <string name="toast_backup">Effettuare il backup dei dati? Questo sovrascriverà il backup precedente.</string>
+    <string name="dialog_postOnWebsiteHint">Url da aprire. Sarà salvato per il prossimo utilizzo.</string>
+    <string name="dialog_postOnWebsite">Pubblica sul sito web</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Elimina</string>
     <string name="whitelist_edit_hint">Dominio</string>
     <string name="whitelist_add">Aggiungi</string>
     <string name="menu_desktopView">Vista desktop</string>
     <string name="menu_dayView">Vista giorno</string>
+    <string name="menu_more">Altro</string>
     <string name="menu_nightView">Vista notturna</string>
     <string name="setting_userScript">Codice JavaScript personalizzato</string>
     <string name="setting_title_camera">Consenti l\'utilizzo della fotocamera</string>

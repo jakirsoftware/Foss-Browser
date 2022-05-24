@@ -177,12 +177,15 @@
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
     <string name="toast_backup">Veriler yedeklensin mi? Eski yedek varsa üzerine yazılacaktır.</string>
+    <string name="dialog_postOnWebsiteHint">Açılacak URL\'yi seçin. Bir sonraki kullanım için kaydedilecektir.</string>
+    <string name="dialog_postOnWebsite">Web sitesinde yayınla</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Temizle</string>
     <string name="whitelist_edit_hint">Alan adı</string>
     <string name="whitelist_add">Ekle</string>
     <string name="menu_desktopView">Masaüstü görünümü</string>
     <string name="menu_dayView">Gündüz görünümü</string>
+    <string name="menu_more">Daha Fazla</string>
     <string name="menu_nightView">Gece görünümü</string>
     <string name="setting_userScript">Özel JavaScript kodu</string>
     <string name="setting_title_camera">Kamera</string>
