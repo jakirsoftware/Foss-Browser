@@ -177,15 +177,15 @@
     <string name="toast_downloadComplete">Tải xuống hoàn tất. Mở trình quản lý tệp?</string>
     <string name="toast_unsecured">Trang web sử dụng kết nối không bảo mật (\"http\"). Thử kết nối bảo mật (\"https\")?</string>
     <string name="toast_backup">Sao lưu dữ liệu? Việc này sẽ ghi đè lên bản sao lưu cũ.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
-    <string name="dialog_postOnWebsite">Post on website</string>
+    <string name="dialog_postOnWebsiteHint">Url để mở. Sẽ được lưu lại để sử dụng lần sau.</string>
+    <string name="dialog_postOnWebsite">Đăng trên trang web</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Xoá</string>
     <string name="whitelist_edit_hint">Miền</string>
     <string name="whitelist_add">Thêm</string>
     <string name="menu_desktopView">Xem kiểu Máy tính</string>
     <string name="menu_dayView">Dạng hiển thị theo Ngày</string>
-    <string name="menu_more">More</string>
+    <string name="menu_more">Hơn</string>
     <string name="menu_nightView">viễn cảnh buổi đêm</string>
     <string name="setting_userScript">Mã JavaScript tuỳ chỉnh</string>
     <string name="setting_title_camera">Cho phép sử dụng máy ảnh</string>
