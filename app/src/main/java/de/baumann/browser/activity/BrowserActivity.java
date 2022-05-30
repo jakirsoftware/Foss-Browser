@@ -2006,12 +2006,12 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         View dialogViewSubMenu = View.inflate(context, R.layout.dialog_edit, null);
 
         TextInputLayout editTopLayout = dialogViewSubMenu.findViewById(R.id.editTopLayout);
-        editTopLayout.setHint(getString(R.string.dialog_URL_hint));
-        editTopLayout.setHelperText(getString(R.string.dialog_postOnWebsiteHint));
+        editTopLayout.setVisibility(View.GONE);
         TextInputLayout editBottomLayout = dialogViewSubMenu.findViewById(R.id.editBottomLayout);
-        editBottomLayout.setVisibility(View.GONE);
+        editBottomLayout.setHint(getString(R.string.dialog_URL_hint));
+        editBottomLayout.setHelperText(getString(R.string.dialog_postOnWebsiteHint));
 
-        EditText editTop = dialogViewSubMenu.findViewById(R.id.editTop);
+        EditText editTop = dialogViewSubMenu.findViewById(R.id.editBottom);
         if (urlForPosting.isEmpty()) editTop.setText("");
         else editTop.setText(urlForPosting);
         editTop.setHint(getString(R.string.dialog_URL_hint));
