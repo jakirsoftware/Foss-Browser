@@ -44,6 +44,7 @@
             android:name="de.baumann.browser.activity.BrowserActivity"
             android:configChanges="orientation|uiMode|screenSize|smallestScreenSize|screenLayout"
             android:exported="true"
+            android:grantUriPermissions="true"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme">
 
