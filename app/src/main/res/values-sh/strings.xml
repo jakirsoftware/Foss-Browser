@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">FOSS Browser</string>
-    <string name="app_ok">OK</string>
-    <string name="app_help">Help</string>
-    <string name="app_cancel">Cancel</string>
-    <string name="app_done">Done</string>
-    <string name="app_error">Error</string>
-    <string name="app_warning">Warning</string>
-    <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
-    <string name="list_empty">List is empty</string>
-    <string name="album_title_bookmarks">Bookmarks</string>
-    <string name="album_title_history">History</string>
-    <string name="album_title_home">Home</string>
+    <string name="app_name">FOSS Pregledač</string>
+    <string name="app_ok">Uredu</string>
+    <string name="app_help">Pomoć</string>
+    <string name="app_cancel">Otkaži</string>
+    <string name="app_done">Gotovo</string>
+    <string name="app_error">Greška</string>
+    <string name="app_warning">Upozorenje</string>
+    <string name="app_permission">Da biste koristili ovaj dodatak, morate dati dozvolu. Poslije toga ponovo pokrenite aplikaciju.</string>
+    <string name="list_empty">Spisak je prazan</string>
+    <string name="album_title_bookmarks">Bilješke</string>
+    <string name="album_title_history">Povijest</string>
+    <string name="album_title_home">Početna stranica</string>
     <string name="album_title_tab">Opened Tabs</string>
     <string name="search_hint">Search</string>
     <string name="color_red">Red</string>
