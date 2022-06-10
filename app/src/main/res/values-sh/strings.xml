@@ -116,17 +116,17 @@
     <string name="clear_title_cache">Očisti Skladište</string>
     <string name="clear_title_cookie">Očisti Kekse</string>
     <string name="clear_title_history">Očisti Povijest</string>
-    <string name="localData">Clear on device stored data</string>
-    <string name="clear_title_deleteDatabase">Delete database</string>
-    <string name="clear_summary_deleteDatabase">Delete the whole database (Startpage, bookmarks, history and all whitelists).</string>
+    <string name="localData">Očistite pohranjene podatke na uređaju</string>
+    <string name="clear_title_deleteDatabase">Izbrišite bazu podataka</string>
+    <string name="clear_summary_deleteDatabase">Izbrišite cijelu bazu podataka (početnu stranicu, obilježivače, povijest i sve bijele liste).</string>
     <!-- App setting -->
-    <string name="setting_title_app">App Settings</string>
-    <string name="setting_title_ui">Behavior/UI</string>
-    <string name="setting_title_data">Backup</string>
-    <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_title_fav">Favorite</string>
-    <string name="setting_title_reload">Swipe down to reload</string>
-    <string name="setting_title_searchEngine">Custom search engine</string>
+    <string name="setting_title_app">Postavke Aplikacije</string>
+    <string name="setting_title_ui">Ponašanje/UI</string>
+    <string name="setting_title_data">Sigurnosna kopija</string>
+    <string name="setting_filter">Filter za bilješke</string>
+    <string name="setting_title_fav">Omiljena</string>
+    <string name="setting_title_reload">Prevucite prema dolje za ponovno učitavanje</string>
+    <string name="setting_title_searchEngine">Prilagođeni pretraživački stroj</string>
     <string name="setting_title_userAgent">Custom user agent</string>
     <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <string name="setting_theme">Theme</string>
