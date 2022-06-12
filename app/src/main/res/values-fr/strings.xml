@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Copié avec succès</string>
     <string name="toast_delete_successful">Supprimé avec succès</string>
     <string name="toast_domain_already_exists">Le domaine existe déjà</string>
-    <string name="toast_input_empty">Vous n\'avez rien saisi</string>
+    <string name="toast_input_empty">You didn\'t input anything.</string>
     <string name="toast_invalid_domain">Domaine non valide</string>
     <string name="toast_webview_forward">Impossible de charger le site suivant</string>
     <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Téléchargement terminé. Ouvrir le gestionnaire de fichiers?</string>
     <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée (\"http\"). Essayez une connexion sécurisée (\"https\") ?</string>
     <string name="toast_backup">Sauvegarder les données ? Cela écrasera l\'ancienne sauvegarde.</string>
-    <string name="dialog_postOnWebsiteHint">Url à ouvrir. Sera sauvegardé pour la prochaine utilisation.</string>
+    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
     <string name="dialog_postOnWebsite">Voir sur le site</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Effacer</string>
