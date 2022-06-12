@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Sikeresen másolva</string>
     <string name="toast_delete_successful">Sikeresen törölve</string>
     <string name="toast_domain_already_exists">A domain már létezik</string>
-    <string name="toast_input_empty">Nem írt be semmit</string>
+    <string name="toast_input_empty">You didn\'t input anything.</string>
     <string name="toast_invalid_domain">Érvénytelen tartomány</string>
     <string name="toast_webview_forward">Nem tölthető be a következő oldal</string>
     <string name="toast_restart">A változások alkalmazásához újra kell indítania a \"FOSS Browser\"-t. Bezárja most?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Befejezve a letöltés. Megnyitja a fájlkezelőt?</string>
     <string name="toast_unsecured">A weboldal nem biztonságos kapcsolatot használ (\"http\"). Megpróbálja a biztonságos kapcsolatot (\"https\")?</string>
     <string name="toast_backup">Biztonsági másolat az adatokról? Ez felülírja a régi biztonsági másolatot.</string>
-    <string name="dialog_postOnWebsiteHint">Url megnyitásához. A következő használatra el lesz mentve.</string>
+    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
     <string name="dialog_postOnWebsite">Közzététel a weboldalon</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Törlés</string>
