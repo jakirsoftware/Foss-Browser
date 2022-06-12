@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Başarıyla kopyalandı</string>
     <string name="toast_delete_successful">Başarıyla silindi</string>
     <string name="toast_domain_already_exists">Alan adı zaten mevcut</string>
-    <string name="toast_input_empty">You didn\'t input anything.</string>
+    <string name="toast_input_empty">Hiçbir şey girmediniz.</string>
     <string name="toast_invalid_domain">Geçersiz alan adı</string>
     <string name="toast_webview_forward">Sonraki site yüklenemiyor</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmalısınız. Şimdi kapatılsın mı?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">İndirme tamamlandı. Dosya yöneticisi açılsın mı?</string>
     <string name="toast_unsecured">Web sitesi güvenli olmayan bir bağlantı (\"http\") kullanıyor. Güvenli bir bağlantı (\"https\") denensin mi?</string>
     <string name="toast_backup">Veriler yedeklensin mi? Eski yedek varsa üzerine yazılacaktır.</string>
-    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
+    <string name="dialog_postOnWebsiteHint">Açılacak URL\'yi seçin. Bir sonraki kullanım için kaydedilecektir.</string>
     <string name="dialog_postOnWebsite">Web sitesinde yayınla</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Temizle</string>
