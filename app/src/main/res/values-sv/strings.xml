@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Successfully copied</string>
     <string name="toast_delete_successful">Successfully deleted</string>
     <string name="toast_domain_already_exists">Domain already exists</string>
-    <string name="toast_input_empty">You haven\'t input anything</string>
+    <string name="toast_input_empty">You didn\'t input anything.</string>
     <string name="toast_invalid_domain">Invalid domain</string>
     <string name="toast_webview_forward">Can\'t load next site</string>
     <string name="toast_restart">Du måste starta om \"FOSS Browser\" för att tillämpa ändringar. Stäng nu?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Hämtning slutförd. Öppna filhanterare?</string>
     <string name="toast_unsecured">Website uses an unsecured connection (\"http\"). Try a secure connection (\"https\")?</string>
     <string name="toast_backup">Säkerhetskopiera data? Detta skriver över den gamla säkerhetskopian.</string>
-    <string name="dialog_postOnWebsiteHint">Url to open. Will be saved for next use.</string>
+    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
     <string name="dialog_postOnWebsite">Post on website</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Clear</string>
