@@ -444,6 +444,10 @@ public class NinjaWebViewClient extends WebViewClient {
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
         if (ninjaWebView.isBackPressed) return false;
+        else if (sp.getBoolean("sp_newTabAlways", false)) {
+            BrowserUnit.intentURL(this.context, uri);
+            return false;
+        }
         else {
             // handle the url by implementing your logic
             String url = uri.toString();
