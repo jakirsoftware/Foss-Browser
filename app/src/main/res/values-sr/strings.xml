@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Успешно копирано</string>
     <string name="toast_delete_successful">Успешно избрисано</string>
     <string name="toast_domain_already_exists">Домен већ постоји</string>
-    <string name="toast_input_empty">Нисте ништа унели</string>
+    <string name="toast_input_empty">You didn\'t input anything.</string>
     <string name="toast_invalid_domain">Неважећи домен</string>
     <string name="toast_webview_forward">Није могуће учитати следећу страницу</string>
     <string name="toast_restart">Морате поново покренути „ФОСС претраживач“ да бисте применили промене. Затвори сада?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Скидање је завршено. Отворити менаџер датотека?</string>
     <string name="toast_unsecured">Веб страница користи небезбедну везу („хттп“). Зелите ли покушати са безбедном везом („хттпс“)?</string>
     <string name="toast_backup">Сигурносно копирајте податке? Ово ће преписати стару резервну копију.</string>
-    <string name="dialog_postOnWebsiteHint">Урл за отварање. Биће сачуван за следећу употребу.</string>
+    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
     <string name="dialog_postOnWebsite">Објавите на веб страници</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Очистити</string>
