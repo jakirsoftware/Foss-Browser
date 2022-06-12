@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">正常にコピーされました</string>
     <string name="toast_delete_successful">正常に削除されました</string>
     <string name="toast_domain_already_exists">ドメインは既に存在します</string>
-    <string name="toast_input_empty">You didn\'t input anything.</string>
+    <string name="toast_input_empty">何も入力していません.</string>
     <string name="toast_invalid_domain">無効なドメイン</string>
     <string name="toast_webview_forward">次のサイトを読み込めません</string>
     <string name="toast_restart">変更を適用するには \"FOSS Browser\" を再起動する必要があります。今すぐ閉じますか?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャーを開きますか?</string>
     <string name="toast_unsecured">ウェブサイトは安全でない接続 (\"http\") を使用しています。安全な接続を試してみますか (\"https\")?</string>
     <string name="toast_backup">データをバックアップしますか? これにより古いバックアップは上書きされます。</string>
-    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
+    <string name="dialog_postOnWebsiteHint">開くためのURL。次回の使用時に保存されます。</string>
     <string name="dialog_postOnWebsite">ウェブサイトに掲載</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">消去</string>
