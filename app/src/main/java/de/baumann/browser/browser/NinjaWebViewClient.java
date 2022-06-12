@@ -520,7 +520,7 @@ public class NinjaWebViewClient extends WebViewClient {
         builder.setIcon(R.drawable.icon_alert);
         builder.setTitle(R.string.app_warning);
         builder.setMessage(text);
-        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> handler.cancel());
+        builder.setPositiveButton(R.string.app_ok, (dialog, whichButton) -> handler.proceed());
         builder.setNegativeButton(R.string.app_cancel, (dialog, whichButton) -> dialog.cancel());
         AlertDialog dialog = builder.create();
         dialog.show();
