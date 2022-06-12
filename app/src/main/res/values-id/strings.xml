@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Berhasil disalin</string>
     <string name="toast_delete_successful">Berhasil dihapus</string>
     <string name="toast_domain_already_exists">Domain ini sudah ada</string>
-    <string name="toast_input_empty">Anda belum memasukkan apa pun</string>
+    <string name="toast_input_empty">Anda belum memasukkan apa pun.</string>
     <string name="toast_invalid_domain">Domain tidak valid</string>
     <string name="toast_webview_forward">Tidak bisa memuat situs selanjutnya</string>
     <string name="toast_restart">Anda harus memulai ulang \"FOSS Browser\" untuk mengaplikasikan perubahan. Tutup sekarang?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Unduh selesai. Buka manager file?</string>
     <string name="toast_unsecured">Situs web menggunakan koneksi yang tidak aman (\"http\"). Coba koneksi aman (\"https\")?</string>
     <string name="toast_backup">Cadangkan data? Ini akan menghapus cadangan lama.</string>
-    <string name="dialog_postOnWebsiteHint">Url untuk membuka. Akan disimpan untuk penggunaan berikutnya.</string>
+    <string name="dialog_postOnWebsiteHint">URL untuk membuka. Akan disimpan untuk penggunaan berikutnya.</string>
     <string name="dialog_postOnWebsite">Posting di situs web</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Bersihkan</string>

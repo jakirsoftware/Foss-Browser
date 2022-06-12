@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Αντιγράφτηκε με επιτυχία</string>
     <string name="toast_delete_successful">Διαγράφηκε με επιτυχία</string>
     <string name="toast_domain_already_exists">Ο domain υπάρχει ήδη</string>
-    <string name="toast_input_empty">Δεν έχετε εισάγει τίποτα</string>
+    <string name="toast_input_empty">Δεν έχετε εισάγει τίποτα.</string>
     <string name="toast_invalid_domain">Μη έγκυρο domain</string>
     <string name="toast_webview_forward">Αδυναμία φόρτωσης επόμενης ιστοσελίδας</string>
     <string name="toast_restart">Πρέπει να επανεκκινήσετε το \"FOSS Browser\" για να εφαρμόσετε τις αλλαγές. Κλείσιμο τώρα;</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Η λήψη ολοκληρώθηκε. Άνοιγμα διαχειριστή αρχείων;</string>
     <string name="toast_unsecured">Η ιστοσελίδα χρησιμοποιεί μια μη ασφαλή σύνδεση (\"http\"). Δοκιμάστε μια ασφαλή σύνδεση (\"https\");</string>
     <string name="toast_backup">Αντίγραφο ασφαλείας δεδομένων? Αυτό θα αντικαταστήσει το παλιό αντίγραφο ασφαλείας.</string>
-    <string name="dialog_postOnWebsiteHint">Url για άνοιγμα. Θα αποθηκευτεί για επόμενη χρήση.</string>
+    <string name="dialog_postOnWebsiteHint">URL για άνοιγμα. Θα αποθηκευτεί για επόμενη χρήση.</string>
     <string name="dialog_postOnWebsite">Δημοσίευση στον ιστότοπο</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Εκκαθάριση</string>

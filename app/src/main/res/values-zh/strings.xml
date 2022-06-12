@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">复制成功</string>
     <string name="toast_delete_successful">删除成功</string>
     <string name="toast_domain_already_exists">域名已存在</string>
-    <string name="toast_input_empty">您没有输入任何内容</string>
+    <string name="toast_input_empty">您没有输入任何内容.</string>
     <string name="toast_invalid_domain">无效域名</string>
     <string name="toast_webview_forward">无法加载下一个网站</string>
     <string name="toast_restart">您必须重启“FOSS浏览器”才能应用更改。现在关闭吗？</string>

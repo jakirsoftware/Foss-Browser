@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Copiado com sucesso</string>
     <string name="toast_delete_successful">Apagado com sucesso</string>
     <string name="toast_domain_already_exists">Domínio já existe</string>
-    <string name="toast_input_empty">Não introduziu dados</string>
+    <string name="toast_input_empty">Não introduziu dados.</string>
     <string name="toast_invalid_domain">Domínio inválido</string>
     <string name="toast_webview_forward">Não foi possível carregar o site</string>
     <string name="toast_restart">Tem que reiniciar a aplicação para aplicar as alterações. Fechar agora?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Descarga terminada. Abrir gestor de ficheiros?</string>
     <string name="toast_unsecured">O site utiliza uma ligação insegura (\"http\"). Deseja estabelecer uma ligação segura (\"https\")?</string>
     <string name="toast_backup">Criar backup dos dados? Os dados antigos serão substituídos.</string>
-    <string name="dialog_postOnWebsiteHint">Url para abrir. Será guardada para a próxima utilização.</string>
+    <string name="dialog_postOnWebsiteHint">URL para abrir. Será guardada para a próxima utilização.</string>
     <string name="dialog_postOnWebsite">Publicar no website</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Limpar</string>

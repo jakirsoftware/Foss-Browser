@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">کپی با موفقیت انجام شد</string>
     <string name="toast_delete_successful">با موفقیت حذف شد</string>
     <string name="toast_domain_already_exists">دامنه از قبل موجود می باشد</string>
-    <string name="toast_input_empty">فیلد خالی می باشد</string>
+    <string name="toast_input_empty">فیلد خالی می باشد.</string>
     <string name="toast_invalid_domain">دامنه نامعتبر</string>
     <string name="toast_webview_forward">خطا در بارگذاری صفحه بعدی</string>
     <string name="toast_restart">جهت اعمال تغییرات نیاز به راه اندازی مجدد  \"FOSS Browser\" می باشد،انجام شود؟</string>

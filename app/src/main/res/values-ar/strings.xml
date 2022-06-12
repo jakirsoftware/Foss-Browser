@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">نُسخ بنجاح</string>
     <string name="toast_delete_successful">حُذف بنجاح</string>
     <string name="toast_domain_already_exists">النطاق موجود مسبقا</string>
-    <string name="toast_input_empty">لم تُدخل أي شيء</string>
+    <string name="toast_input_empty">لم تُدخل أي شيء.</string>
     <string name="toast_invalid_domain">نطاق غير سليم</string>
     <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>
     <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>

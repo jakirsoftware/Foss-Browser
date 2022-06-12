@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Успешно скопировано</string>
     <string name="toast_delete_successful">Успешно удалено</string>
     <string name="toast_domain_already_exists">Домен уже существует</string>
-    <string name="toast_input_empty">Вы ничего не ввели</string>
+    <string name="toast_input_empty">Вы ничего не ввели.</string>
     <string name="toast_invalid_domain">Неверный домен</string>
     <string name="toast_webview_forward">Не удается загрузить следующий сайт</string>
     <string name="toast_restart">Чтобы применить изменения, необходимо перезапустить \"FOSS Browser\". Закрыть сейчас?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Загрузка завершена. Открыть файловый менеджер?</string>
     <string name="toast_unsecured">Сайт использует незащищенное соединение (\"http\"). Попробовать безопасное соединение (\"https\")?</string>
     <string name="toast_backup">Сохранить данные? Это перезапишет старую резервную копию.</string>
-    <string name="dialog_postOnWebsiteHint">Url для открытия. Будет сохранен для следующего использования.</string>
+    <string name="dialog_postOnWebsiteHint">URL для открытия. Будет сохранен для следующего использования.</string>
     <string name="dialog_postOnWebsite">Разместить на сайте</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Очистить</string>

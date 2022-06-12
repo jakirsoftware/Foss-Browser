@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Başarıyla kopyalandı</string>
     <string name="toast_delete_successful">Başarıyla silindi</string>
     <string name="toast_domain_already_exists">Alan adı zaten mevcut</string>
-    <string name="toast_input_empty">Hiçbir şey girmediniz</string>
+    <string name="toast_input_empty">Hiçbir şey girmediniz.</string>
     <string name="toast_invalid_domain">Geçersiz alan adı</string>
     <string name="toast_webview_forward">Sonraki site yüklenemiyor</string>
     <string name="toast_restart">Değişiklikleri uygulamak için \"FOSS Tarayıcı\"sını yeniden başlatmalısınız. Şimdi kapatılsın mı?</string>
