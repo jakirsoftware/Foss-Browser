@@ -446,8 +446,7 @@ public class NinjaWebViewClient extends WebViewClient {
         if (ninjaWebView.isBackPressed) return false;
         else if (sp.getBoolean("sp_newTabAlways", false)) {
             BrowserUnit.intentURL(this.context, uri);
-            return false;
-        }
+            return true; }
         else {
             // handle the url by implementing your logic
             String url = uri.toString();
