@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Uspješno kopirano</string>
     <string name="toast_delete_successful">Uspješno izbrisano</string>
     <string name="toast_domain_already_exists">Domena već postoji</string>
-    <string name="toast_input_empty">You didn\'t input anything.</string>
+    <string name="toast_input_empty">Niste ništa unijeli.</string>
     <string name="toast_invalid_domain">Nevažeća domena</string>
     <string name="toast_webview_forward">Nije moguće učitati sljedeću stranicu</string>
     <string name="toast_restart">Morate ponovo pokrenuti \"FOSS Preglednik\" da biste primijenili promjene. Zatvoriti sada?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Preuzimanje je završeno. Otvoriti upravitelj datoteka?</string>
     <string name="toast_unsecured">Web stranica koristi nezaštićenu vezu (\"http\"). Želite li isprobati sigurnu vezu (\"https\")?</string>
     <string name="toast_backup">Sigurnosno kopirajte podatke? Ovo će prepisati staru sigurnosnu kopiju.</string>
-    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
+    <string name="dialog_postOnWebsiteHint">URL za otvaranje. Biće sačuvan za sljedeću upotrebu.</string>
     <string name="dialog_postOnWebsite">Objavite na web stranici</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Očistiti</string>
