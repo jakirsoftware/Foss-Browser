@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">کپی با موفقیت انجام شد</string>
     <string name="toast_delete_successful">با موفقیت حذف شد</string>
     <string name="toast_domain_already_exists">دامنه از قبل موجود می باشد</string>
-    <string name="toast_input_empty">فیلد خالی می باشد</string>
+    <string name="toast_input_empty">You didn\'t input anything.</string>
     <string name="toast_invalid_domain">دامنه نامعتبر</string>
     <string name="toast_webview_forward">خطا در بارگذاری صفحه بعدی</string>
     <string name="toast_restart">جهت اعمال تغییرات نیاز به راه اندازی مجدد  \"FOSS Browser\" می باشد،انجام شود؟</string>
@@ -178,7 +178,7 @@
     <string name="toast_unsecured">        وبسایت مورد نظر از ارتباط نا امن (http) استفاده می کند.آیامایل به انتقال به نسخه امن (https) وبسایت هستید؟
     </string>
     <string name="toast_backup">این پشتیبان گیری  روی نسخه ی قبلی بازنویسی خواهد شد،در هرحال انجام شود؟</string>
-    <string name="dialog_postOnWebsiteHint">آدرس اینترنتی برای باز کردن برای استفاده بعدی ذخیره می شود.</string>
+    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
     <string name="dialog_postOnWebsite">در وب سایت ارسال کنید</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">پاک کن</string>
