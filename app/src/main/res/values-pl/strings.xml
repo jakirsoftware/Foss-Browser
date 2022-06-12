@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Kopiowanie zakończone</string>
     <string name="toast_delete_successful">Usuwanie zakończone</string>
     <string name="toast_domain_already_exists">Ten adres witryny już istnieje</string>
-    <string name="toast_input_empty">You didn\'t input anything.</string>
+    <string name="toast_input_empty">Nie wprowadziłeś niczego.</string>
     <string name="toast_invalid_domain">Niewłaściwy adres</string>
     <string name="toast_webview_forward">Nie można załadować kolejnej strony</string>
     <string name="toast_restart">Musisz uruchomić ponownie \"FOSS Browser\”, aby zachować te zmiany. Zamknąć teraz?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Pobieranie ukończone. Otworzyć katalog pobierania?</string>
     <string name="toast_unsecured">Ta witryna używa nieszyfrowanego połączenia (\"http\"). Spróbować przejść na szyfrowane (\"https\")?</string>
     <string name="toast_backup">Dokonać nowej kopii bezpieczeństwa danych? Nadpisze ona poprzednią kopię.</string>
-    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
+    <string name="dialog_postOnWebsiteHint">Adres URL do otwarcia. Zostanie zachowany do następnego użycia.</string>
     <string name="dialog_postOnWebsite">Umieść na stronie internetowej</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Wymaż</string>
