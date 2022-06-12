@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">Gekopieerd</string>
     <string name="toast_delete_successful">Verwijderd</string>
     <string name="toast_domain_already_exists">Domein is al aanwezig</string>
-    <string name="toast_input_empty">Je hebt niks ingevoerd</string>
+    <string name="toast_input_empty">You didn\'t input anything.</string>
     <string name="toast_invalid_domain">Ongeldig domein</string>
     <string name="toast_webview_forward">Volgende site kan niet worden geladen</string>
     <string name="toast_restart">\"FOSS-browser\" moet worden herstart om de wijzigingen toe te passen. Wil je nu afsluiten?</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">Downloaden voltooid. Wil je bestandsbeheer openen?</string>
     <string name="toast_unsecured">Deze website gebruikt een onbeveiligde verbinding (\"http\"). Wilt u een beveiligde verbinding (\"https\") proberen?</string>
     <string name="toast_backup">Wil je de gegevens back-uppen? Dit overschrijft de oude back-up.</string>
-    <string name="dialog_postOnWebsiteHint">Url om te openen. Zal worden opgeslagen voor volgend gebruik.</string>
+    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
     <string name="dialog_postOnWebsite">Post op de website</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">Wissen</string>
