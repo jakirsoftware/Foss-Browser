@@ -168,7 +168,7 @@
     <string name="toast_copy_successful">نُسخ بنجاح</string>
     <string name="toast_delete_successful">حُذف بنجاح</string>
     <string name="toast_domain_already_exists">النطاق موجود مسبقا</string>
-    <string name="toast_input_empty">You didn\'t input anything.</string>
+    <string name="toast_input_empty">لم تُدخل أي شيء.</string>
     <string name="toast_invalid_domain">نطاق غير سليم</string>
     <string name="toast_webview_forward">لا يمكن تحميل الموقع التالي</string>
     <string name="toast_restart">يجب عليك إعادة تشغيل المتصفح الحر\"FOSS Browser\" لتطبيق التغييرات. أغلق الآن؟</string>
@@ -177,7 +177,7 @@
     <string name="toast_downloadComplete">اكتمل التحميل. أفتح مدير الملفات؟</string>
     <string name="toast_unsecured">يستخدم الموقع اتصالا غير آمن (\"http\"). أجرب اتصالا آمنا (\"https\")؟</string>
     <string name="toast_backup">اعمل نسخا احتياطيا للبيانات؟ هذا سيستبدل النسخ الاحتياطي القديم.</string>
-    <string name="dialog_postOnWebsiteHint">URL to open. Will be saved for next use.</string>
+    <string name="dialog_postOnWebsiteHint">الرابط للفتح. سيتم حفظه للاستخدام التالي.</string>
     <string name="dialog_postOnWebsite">نشر على الموقع</string>
     <!-- Whitelist -->
     <string name="whitelist_menu_clear">إفراغ</string>
