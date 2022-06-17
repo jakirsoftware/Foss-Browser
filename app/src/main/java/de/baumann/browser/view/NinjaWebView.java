@@ -486,20 +486,8 @@ public class NinjaWebView extends WebView implements AlbumController {
     @Override
     public synchronized void loadUrl(@NonNull String url) {
 
-        if (sp.getBoolean("sp_youTube_switch", false) && HelperUnit.domain(url).contains("youtube.") || HelperUnit.domain(url).contains("youtu.be")) {
-            String substring = url.substring(url.indexOf("watch?v=") + 8);
-            url = sp.getString("sp_youTube_string", "https://invidious.snopyta.org/") + substring;
-        }
 
-        if (sp.getBoolean("sp_twitter_switch", false) && HelperUnit.domain(url).contains("twitter.com")) {
-            String substring = url.substring(url.indexOf("twitter.com") + 12);
-            url = sp.getString("sp_twitter_string", "https://nitter.net/") + substring;
-        }
-
-        if (sp.getBoolean("sp_instagram_switch", false) && HelperUnit.domain(url).contains("instagram.com")) {
-            String substring = url.substring(url.indexOf("instagram.com") + 14);
-            url = sp.getString("sp_instagram_string", "https://bibliogram.pussthecat.org/") + substring;
-        }
+        BrowserUnit.redirectURL(this, sp, url);
 
         initPreferences(BrowserUnit.queryWrapper(context, url.trim()));
         InputMethodManager imm = (InputMethodManager) this.context.getSystemService(Context.INPUT_METHOD_SERVICE);

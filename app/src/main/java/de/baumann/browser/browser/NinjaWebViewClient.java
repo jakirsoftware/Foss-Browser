@@ -86,6 +86,8 @@ public class NinjaWebViewClient extends WebViewClient {
 
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
+
+        BrowserUnit.redirectURL(view, sp, url);
         ninjaWebView.setStopped(false);
         ninjaWebView.resetFavicon();
         super.onPageStarted(view, url, favicon);
@@ -443,11 +445,17 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
+        String url = uri.toString();
+
+
+
         if (ninjaWebView.isBackPressed) return false;
+
         else {
             // handle the url by implementing your logic
-            String url = uri.toString();
+
             if (url.startsWith("http://") || url.startsWith("https://")) return false;
+
             try {
                 Intent intent;
                 if (url.startsWith("intent:")) {

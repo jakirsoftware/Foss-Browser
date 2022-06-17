@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.baumann.browser.database.RecordAction;
+import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
 
 public class List_standard {
@@ -28,7 +29,7 @@ public class List_standard {
 
     public boolean isWhite(String url) {
         for (String domain : listStandard) {
-            if (url != null && url.contains(domain)) {
+            if (url != null && HelperUnit.domain(url).equals(domain)) {
                 return true;
             }
         }
