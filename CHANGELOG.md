@@ -2,7 +2,6 @@
 
 - new: "post on website" in sharing menu
 - new: Serbo-Croation translation
-- new: open links in new tab (foreground)
 - updated: translations
 - fix: Restored functionality to proceed according to user selection #941
 - removed: swipe to reload -> use gestures instead
