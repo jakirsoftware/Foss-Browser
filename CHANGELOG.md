@@ -2,8 +2,9 @@
 
 - new: "post on website" in sharing menu
 - new: Serbo-Croation translation
-- updated: translations
+- new: Support app split screen #937
 - fix: Restored functionality to proceed according to user selection #941
+- updated: translations
 - removed: swipe to reload -> use gestures instead
 
 ### v 9.3.1
