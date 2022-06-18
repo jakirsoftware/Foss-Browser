@@ -140,19 +140,46 @@
 
                 </LinearLayout>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/dialog_titleProfile"
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:ellipsize="end"
-                    android:gravity="center_vertical"
-                    android:includeFontPadding="false"
-                    android:maxLines="1"
-                    android:textAppearance="?attr/textAppearanceTitleMedium"
-                    android:textStyle="bold" />
+                    android:layout_height="?android:attr/listPreferredItemHeightSmall"
+                    android:minHeight="?android:attr/listPreferredItemHeightSmall"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/ib_settings"
+                            style="@style/Widget.Material3.Button.IconButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:gravity="center_vertical"
+                            app:icon="@drawable/icon_settings"/>
+
+                        <TextView
+                            android:id="@+id/dialog_titleProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toStartOf="@id/ib_settings"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:textAppearance="?attr/textAppearanceBodyLarge"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/editProfile"
@@ -160,8 +187,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="10dp"
                     app:cardBackgroundColor="?attr/colorSurfaceVariant">
 
                     <LinearLayout
@@ -352,14 +379,15 @@
 
                     </LinearLayout>
 
-
                 </com.google.android.material.card.MaterialCardView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_margin="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:orientation="horizontal">
 
                     <com.google.android.material.chip.Chip
@@ -414,12 +442,18 @@
                         app:chipBackgroundColor="@drawable/bg_chip_state_list"
                         app:chipIconTint="@drawable/bg_chip_icon_state" />
 
-                    <Button
-                        android:id="@+id/ib_reload"
-                        style="@style/Widget.Material3.Button.IconButton"
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_toggleRedirect"
+                        style="@style/Widget.Material3.Chip.Suggestion"
                         android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        app:chipIcon="@drawable/icon_redirect"
+                        app:chipIconEnabled="true"
+                        app:textEndPadding="0dp"
+                        app:textStartPadding="0dp"
                         android:layout_height="wrap_content"
-                        app:icon="@drawable/icon_refresh" />
+                        app:chipBackgroundColor="@drawable/bg_chip_state_list"
+                        app:chipIconTint="@drawable/bg_chip_icon_state" />
 
                 </LinearLayout>
 
@@ -487,11 +521,11 @@
                 app:chipIconTint="@drawable/bg_chip_icon_state" />
 
             <Button
-                android:id="@+id/ib_settings"
+                android:id="@+id/ib_reload"
                 style="@style/Widget.Material3.Button.IconButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:icon="@drawable/icon_settings" />
+                app:icon="@drawable/icon_refresh" />
 
         </LinearLayout>
 

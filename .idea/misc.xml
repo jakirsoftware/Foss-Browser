@@ -82,6 +82,7 @@
         <entry key="app/src/main/res/drawable/icon_profile_trusted.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_trusted_light.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_profile_trusted_red.xml" value="0.20625" />
+        <entry key="app/src/main/res/drawable/icon_redirect.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/icon_refresh.xml" value="0.20307692307692307" />
         <entry key="app/src/main/res/drawable/icon_restore.xml" value="0.20625" />
         <entry key="app/src/main/res/drawable/icon_savedata.xml" value="0.20625" />

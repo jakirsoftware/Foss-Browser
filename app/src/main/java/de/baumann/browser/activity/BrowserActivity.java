@@ -1831,6 +1831,17 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 dialog.cancel();
             });
 
+            Chip chip_toggleRedirect = dialogView.findViewById(R.id.chip_toggleRedirect);
+            //chip_toggleRedirect.setChecked(sp.getBoolean("sp_audioBackground", false));
+            chip_toggleRedirect.setOnLongClickListener(view -> {
+                Toast.makeText(context, getString(R.string.privacy_redirect), Toast.LENGTH_SHORT).show();
+                return true;
+            });
+            chip_toggleRedirect.setOnClickListener(v -> {
+                //sp.edit().putBoolean("sp_audioBackground", !sp.getBoolean("sp_audioBackground", false)).apply();
+                dialog.cancel();
+            });
+
             Button ib_reload = dialogView.findViewById(R.id.ib_reload);
             ib_reload.setOnClickListener(view -> {
                 if (ninjaWebView != null) {
