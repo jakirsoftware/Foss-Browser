@@ -1958,22 +1958,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
     }
 
     public void goBack_skipRedirects() {
-
-        WebBackForwardList list = ninjaWebView.copyBackForwardList();
-        if (list.getSize() > 1) {
-            String lastUrl = list.getItemAtIndex(list.getCurrentIndex()-1).getUrl();
-            if ((sp.getBoolean("sp_youTube_switch", false) && lastUrl.contains("youtube.")) ||
-                    (sp.getBoolean("sp_twitter_switch", false) && lastUrl.contains("twitter.")) ||
-                            (sp.getBoolean("sp_instagram_switch", false) && lastUrl.contains("instagram.")))  {
-                if (list.getSize() > 2) {
-                    ninjaWebView.setIsBackPressed(true);
-                    ninjaWebView.loadUrl(list.getItemAtIndex(list.getCurrentIndex()-2).getUrl());
-                }
-                else removeAlbum(currentAlbumController);
-                return;
-            }
-        }
-
         if (ninjaWebView.canGoBack()) {
             ninjaWebView.setIsBackPressed(true);
             ninjaWebView.goBack(); }

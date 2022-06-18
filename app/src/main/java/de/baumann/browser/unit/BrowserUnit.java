@@ -19,7 +19,6 @@ import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
 import android.webkit.CookieManager;
-import android.webkit.WebBackForwardList;
 import android.webkit.WebView;
 
 import androidx.core.app.NotificationCompat;
@@ -194,23 +193,34 @@ public class BrowserUnit {
         context.startActivity(chooser);
     }
 
-    public static void redirectURL (WebView ninjaWebView, SharedPreferences sp, String url) {
+    public static String redirectURL (WebView ninjaWebView, SharedPreferences sp, String url) {
+
         String domain = HelperUnit.domain(url);
-        if (sp.getBoolean("sp_youTube_switch", false) && domain.contains("youtube.")) {
+
+        if (sp.getBoolean("sp_youTube_switch", false) &&
+                (domain.contains("youtube.") || domain.contains("youtu."))) {
             ninjaWebView.stopLoading();
             String substring = url.substring(url.indexOf("watch?v=") + 8);
             url = sp.getString("sp_youTube_string", "https://invidious.snopyta.org/") + substring;
-            ninjaWebView.loadUrl(url); }
+            return url;
+        }
+
         else if (sp.getBoolean("sp_twitter_switch", false) && domain.contains("twitter.")) {
             ninjaWebView.stopLoading();
             String substring = url.substring(url.indexOf("twitter.com") + 12);
             url = sp.getString("sp_twitter_string", "https://nitter.net/") + substring;
-            ninjaWebView.loadUrl(url); }
-        else if (sp.getBoolean("sp_instagram_switch", false) && domain.contains("instagram.")) {
+            return url;
+        }
+
+        else if (sp.getBoolean("sp_instagram_switch", false) && domain.contains("instagram.com")) {
             ninjaWebView.stopLoading();
             String substring = url.substring(url.indexOf("instagram.com") + 14);
             url = sp.getString("sp_instagram_string", "https://bibliogram.pussthecat.org/") + substring;
-            ninjaWebView.loadUrl(url); }
+            return url;
+        }
+        else {
+            return url;
+        }
     }
 
     public static void openInBackground(Activity activity, Intent intent, String url) {

@@ -1,20 +1,16 @@
 package de.baumann.browser.browser;
 
-import static android.content.Context.DOWNLOAD_SERVICE;
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
-import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.net.http.SslError;
-import android.os.Environment;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
-import android.webkit.CookieManager;
 import android.webkit.HttpAuthHandler;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceRequest;
@@ -23,14 +19,12 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.ByteArrayInputStream;
 import java.util.Objects;
@@ -38,11 +32,9 @@ import java.util.Objects;
 import de.baumann.browser.R;
 import de.baumann.browser.database.Record;
 import de.baumann.browser.database.RecordAction;
-import de.baumann.browser.unit.BackupUnit;
 import de.baumann.browser.unit.BrowserUnit;
 import de.baumann.browser.unit.HelperUnit;
 import de.baumann.browser.unit.RecordUnit;
-import de.baumann.browser.view.NinjaToast;
 import de.baumann.browser.view.NinjaWebView;
 
 public class NinjaWebViewClient extends WebViewClient {
@@ -87,10 +79,10 @@ public class NinjaWebViewClient extends WebViewClient {
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
 
-        BrowserUnit.redirectURL(view, sp, url);
+        String urlToLoad = BrowserUnit.redirectURL(view, sp, url);
         ninjaWebView.setStopped(false);
         ninjaWebView.resetFavicon();
-        super.onPageStarted(view, url, favicon);
+        super.onPageStarted(view, urlToLoad, favicon);
 
         if (sp.getBoolean("onPageStarted", false))
             view.evaluateJavascript(Objects.requireNonNull(sp.getString("sp_onPageStarted", "")), null);
@@ -446,9 +438,6 @@ public class NinjaWebViewClient extends WebViewClient {
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         final Uri uri = request.getUrl();
         String url = uri.toString();
-
-
-
         if (ninjaWebView.isBackPressed) return false;
 
         else {
