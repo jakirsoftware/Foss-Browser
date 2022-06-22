@@ -196,8 +196,9 @@ public class BrowserUnit {
     public static String redirectURL (WebView ninjaWebView, SharedPreferences sp, String url) {
 
         String domain = HelperUnit.domain(url);
+        boolean redirect = sp.getBoolean("redirect", false);
 
-        if (sp.getBoolean("sp_youTube_switch", false) &&
+        if (sp.getBoolean("sp_youTube_switch", false) && redirect &&
                 (domain.contains("youtube.") || domain.contains("youtu."))) {
             ninjaWebView.stopLoading();
             String substring = url.substring(url.indexOf("watch?v=") + 8);
@@ -205,14 +206,14 @@ public class BrowserUnit {
             return url;
         }
 
-        else if (sp.getBoolean("sp_twitter_switch", false) && domain.contains("twitter.")) {
+        else if (sp.getBoolean("sp_twitter_switch", false) && redirect && domain.contains("twitter.")) {
             ninjaWebView.stopLoading();
             String substring = url.substring(url.indexOf("twitter.com") + 12);
             url = sp.getString("sp_twitter_string", "https://nitter.net/") + substring;
             return url;
         }
 
-        else if (sp.getBoolean("sp_instagram_switch", false) && domain.contains("instagram.com")) {
+        else if (sp.getBoolean("sp_instagram_switch", false) && redirect && domain.contains("instagram.com")) {
             ninjaWebView.stopLoading();
             String substring = url.substring(url.indexOf("instagram.com") + 14);
             url = sp.getString("sp_instagram_string", "https://bibliogram.pussthecat.org/") + substring;

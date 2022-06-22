@@ -255,7 +255,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
 
         sp.edit()
                 .putInt("restart_changed", 0)
-                .putBoolean("pdf_create", false)
+                .putBoolean("pdf_create", false).putBoolean("redirect", sp.getBoolean("sp_youTube_switch", false) || sp.getBoolean("sp_twitter_switch", false) || sp.getBoolean("sp_instagram_switch", false))
                 .putString("profile", sp.getString("profile_toStart", "profileStandard")).apply();
 
         switch (Objects.requireNonNull(sp.getString("start_tab", "3"))) {
@@ -1132,7 +1132,7 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 action.close(); }
             else if (position == 3) printPDF();
             else if (position == 4) HelperUnit.createShortcut(context, ninjaWebView.getTitle(), ninjaWebView.getOriginalUrl());
-            else if (position == 5) HelperUnit.saveAs(dialog_overflow, activity, url); });
+            else if (position == 5) HelperUnit.saveAs(activity, url); });
 
         // Share
         GridItem item_11 = new GridItem( getString(R.string.menu_share_link), 0);
@@ -1311,8 +1311,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
                 case 6:
                     if (url.startsWith("data:")) {
                         DataURIParser dataURIParser = new DataURIParser(url);
-                        HelperUnit.saveDataURI(dialog, activity, dataURIParser);
-                    } else HelperUnit.saveAs(dialog, activity, url);
+                        HelperUnit.saveDataURI(activity, dataURIParser);
+                    } else HelperUnit.saveAs(activity, url);
                     break;
                 case 7:
                     save_atHome(title, url);
@@ -1832,13 +1832,14 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             });
 
             Chip chip_toggleRedirect = dialogView.findViewById(R.id.chip_toggleRedirect);
-            //chip_toggleRedirect.setChecked(sp.getBoolean("sp_audioBackground", false));
+            chip_toggleRedirect.setChecked(sp.getBoolean("redirect", false));
             chip_toggleRedirect.setOnLongClickListener(view -> {
                 Toast.makeText(context, getString(R.string.privacy_redirect), Toast.LENGTH_SHORT).show();
                 return true;
             });
             chip_toggleRedirect.setOnClickListener(v -> {
-                //sp.edit().putBoolean("sp_audioBackground", !sp.getBoolean("sp_audioBackground", false)).apply();
+                if (sp.getBoolean("redirect", false)) sp.edit().putBoolean("redirect", false).apply();
+                else sp.edit().putBoolean("redirect", true).apply();
                 dialog.cancel();
             });
 

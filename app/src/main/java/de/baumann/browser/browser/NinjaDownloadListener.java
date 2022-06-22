@@ -132,9 +132,8 @@ public class NinjaDownloadListener implements DownloadListener {
                     dialog.cancel();
                     break;
                 case 2:
-
                     Activity activity = (Activity) context;
-                    HelperUnit.saveAs(dialog, activity, url);
+                    HelperUnit.saveAs(activity, url);
                     dialog.cancel();
                     break;
             }

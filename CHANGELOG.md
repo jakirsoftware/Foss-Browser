@@ -5,6 +5,7 @@
 - new: Support app split screen #937
 - fix: Restored functionality to proceed according to user selection #941
 - updated: translations
+- updated: build libraries
 - removed: swipe to reload -> use gestures instead
 
 ### v 9.3.1

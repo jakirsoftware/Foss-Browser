@@ -126,7 +126,7 @@ public class HelperUnit {
         }
     }
 
-    public static void saveAs(AlertDialog dialogToCancel, final Activity activity, final String url) {
+    public static void saveAs(final Activity activity, final String url) {
 
         try {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activity);
@@ -318,7 +318,7 @@ public class HelperUnit {
         }
     }
 
-    public static void saveDataURI(AlertDialog dialogToCancel, Activity activity, DataURIParser dataUriParser) {
+    public static void saveDataURI(Activity activity, DataURIParser dataUriParser) {
 
         byte[] imagedata = dataUriParser.getImagedata();
         String filename = dataUriParser.getFilename();
