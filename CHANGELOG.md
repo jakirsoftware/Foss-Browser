@@ -1,4 +1,4 @@
-### v 9.4 (WIP)
+### v 9.4
 
 - new: "post on website" in sharing menu
 - new: Serbo-Croation translation
