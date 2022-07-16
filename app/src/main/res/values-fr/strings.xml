@@ -35,7 +35,7 @@
     <string name="menu_quit">Quitter</string>
     <string name="menu_openFav">Ouvrir l\'Accueil</string>
     <string name="menu_delete">Effacer</string>
-    <string name="menu_edit">Éditer</string>
+    <string name="menu_edit">Modifier</string>
     <string name="menu_closeTab">Fermer l\'onglet</string>
     <string name="menu_download">Ouvrir les téléchargements</string>
     <string name="menu_fav">Marquer comme favori</string>
@@ -50,14 +50,14 @@
     <string name="menu_shareClipboard">Copier dans le presse-papiers</string>
     <string name="menu_other_searchSite">Rechercher sur le site</string>
     <!-- Dialog -->
-    <string name="dialog_title_hint">Titre:</string>
-    <string name="dialog_URL_hint">URL:</string>
-    <string name="dialog_extension_hint">Extension (par exemple: \".jpg\"):</string>
+    <string name="dialog_title_hint">Titre :</string>
+    <string name="dialog_URL_hint">URL :</string>
+    <string name="dialog_extension_hint">Extension (par exemple : .jpg) :</string>
     <string name="dialog_sign_in_username">Nom d\'utilisateur</string>
     <string name="dialog_sign_in_password">Mot de passe</string>
-    <string name="dialog_title_download">Télécharger le fichier?</string>
-    <string name="dialog_content_resubmission">Soumettre vos données à nouveau?</string>
-    <string name="dialog_content_ssl_error">Le certificat de ce site n\'est pas fiable. Continuez quand même?</string>
+    <string name="dialog_title_download">Télécharger le fichier ?</string>
+    <string name="dialog_content_resubmission">Soumettre vos données à nouveau ?</string>
+    <string name="dialog_content_ssl_error">Le certificat de ce site n\'est pas fiable. Continuer quand même ?</string>
     <string name="dialog_sortName">Trier par nom</string>
     <string name="dialog_sortIcon">Trier par icône</string>
     <string name="dialog_sortDate">Trier par date</string>
@@ -171,12 +171,12 @@
     <string name="toast_input_empty">Vous n\'avez rien saisi.</string>
     <string name="toast_invalid_domain">Domaine non valide</string>
     <string name="toast_webview_forward">Impossible de charger le site suivant</string>
-    <string name="toast_restart">Vous devez redémarrer \"FOSS Browser\" pour appliquer les modifications. Fermer maintenant?</string>
-    <string name="toast_quit">Voulez-vous quitter \"FOSS Browser\"?</string>
-    <string name="toast_quit_TAB">Voulez-vous fermer l\'onglet?</string>
-    <string name="toast_downloadComplete">Téléchargement terminé. Ouvrir le gestionnaire de fichiers?</string>
-    <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée (\"http\"). Essayez une connexion sécurisée (\"https\") ?</string>
-    <string name="toast_backup">Sauvegarder les données ? Cela écrasera l\'ancienne sauvegarde.</string>
+    <string name="toast_restart">Vous devez redémarrer FOSS Browser pour appliquer les modifications. Fermer maintenant ?</string>
+    <string name="toast_quit">Voulez-vous quitter FOSS Browser ?</string>
+    <string name="toast_quit_TAB">Voulez-vous fermer l\'onglet ?</string>
+    <string name="toast_downloadComplete">Téléchargement terminé. Ouvrir le gestionnaire de fichiers ?</string>
+    <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée (\"http\"). Essayez une connexion sécurisée (\"https\") ?</string>
+    <string name="toast_backup">Sauvegarder les données ? Ceci écrasera l\'ancienne sauvegarde.</string>
     <string name="dialog_postOnWebsiteHint">URL à ouvrir. Sera sauvegardé pour la prochaine utilisation.</string>
     <string name="dialog_postOnWebsite">Voir sur le site</string>
     <!-- Whitelist -->
@@ -195,7 +195,7 @@
     <string name="setting_title_userInterface">Interface utilisateur</string>
     <string name="setting_summary_tabsReload">Recharger les derniers onglets ouverts lors du démarrage de FOSS Browser.</string>
     <string name="setting_summary_tabsRestore">Restaurer les onglets quand FOSS Browser est tué par le système.</string>
-    <string name="hint_DRM_Media">Autoriser la lecture des médias protégés par le DRM ?</string>
+    <string name="hint_DRM_Media">Autoriser la lecture des médias protégés par le DRM ?</string>
     <string name="menu_reload">Recharger</string>
     <string name="menu_restart">Redémarrer et recharger les onglets</string>
     <string name="setting_title_screenOn">Garder l\'écran allumé</string>
