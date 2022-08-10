@@ -300,6 +300,8 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
         initSearchPanel();
         initOverview();
 
+        dispatchIntent(getIntent());
+
         //restore open Tabs from shared preferences if app got killed
         if (sp.getBoolean("sp_restoreTabs", false)
                 || sp.getBoolean("sp_reloadTabs", false)
@@ -318,7 +320,11 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             sp.edit().putBoolean("restoreOnRestart", false).apply();
         }
 
-        dispatchIntent(getIntent());
+        //if still no open Tab open default page
+        if (BrowserContainer.size() < 1) {
+            if (sp.getBoolean("start_tabStart", false)) showOverview();
+            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true, false, "");
+        }
     }
 
     @Override
@@ -2224,13 +2230,6 @@ public class BrowserActivity extends AppCompatActivity implements BrowserControl
             getIntent().setAction("");
             hideOverview();
             BrowserUnit.openInBackground(activity, intent, data);
-        }
-
-        //if still no open Tab open default page
-        if (BrowserContainer.size() < 1) {
-            if (sp.getBoolean("start_tabStart", false)) showOverview();
-            addAlbum(getString(R.string.app_name), Objects.requireNonNull(sp.getString("favoriteURL", "https://github.com/scoute-dich/browser/blob/master/README.md")), true, false, "");
-            getIntent().setAction("");
         }
     }
 
