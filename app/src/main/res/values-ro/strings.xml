@@ -3,11 +3,11 @@
     <!-- App -->
     <string name="app_name">Browserul FOSS</string>
     <string name="app_ok">Confirmă</string>
-    <string name="app_help">Help</string>
+    <string name="app_help">Ajutor</string>
     <string name="app_cancel">Anulează</string>
     <string name="app_done">Gata</string>
     <string name="app_error">Eroare</string>
-    <string name="app_warning">Warning</string>
+    <string name="app_warning">Atenţie</string>
     <string name="app_permission">To use this feature you must grant permission. After that restart the app.</string>
     <string name="list_empty">Lista este goală</string>
     <string name="album_title_bookmarks">Marcaje</string>
@@ -53,12 +53,12 @@
     <string name="dialog_title_hint">Title:</string>
     <string name="dialog_URL_hint">URL:</string>
     <string name="dialog_extension_hint">Extension (for example: \".jpg\"):</string>
-    <string name="dialog_sign_in_username">Username</string>
-    <string name="dialog_sign_in_password">Password</string>
+    <string name="dialog_sign_in_username">Nume utilizator</string>
+    <string name="dialog_sign_in_password">Parolă</string>
     <string name="dialog_title_download">Download the file?</string>
-    <string name="dialog_content_resubmission">Resubmit your data?</string>
+    <string name="dialog_content_resubmission">Retrimiteți datele?</string>
     <string name="dialog_content_ssl_error">The certificate of the site is not trusted. Proceed anyway?</string>
-    <string name="dialog_sortName">Sort by name</string>
+    <string name="dialog_sortName">Sortează după nume</string>
     <string name="dialog_sortIcon">Sort by icon</string>
     <string name="dialog_sortDate">Sort by date</string>
     <!-- Settings -->
@@ -78,7 +78,7 @@
     <string name="setting_summary_search_engine_metager">Metager</string>
     <string name="setting_title_font">Font size</string>
     <string name="setting_title_dom">DOM Storage</string>
-    <string name="privacy_redirect">Redirect</string>
+    <string name="privacy_redirect">Redirecționare</string>
     <string name="privacy_redirect_twitter">Twitter</string>
     <string name="privacy_redirect_youTube">YouTube</string>
     <string name="privacy_redirect_inst">Instagram</string>
@@ -91,21 +91,21 @@
     <string name="setting_title_profiles_startApp">Profile on app start</string>
     <string name="setting_title_profiles_trusted">Trusted</string>
     <string name="setting_title_profiles_standard">Standard</string>
-    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_protected">Protejat</string>
     <string name="setting_title_profiles_changed">Custom</string>
-    <string name="setting_title_profiles_active">Profile</string>
-    <string name="setting_title_profiles_dataUsage">Data usage</string>
-    <string name="setting_title_profiles_privacy">Privacy</string>
-    <string name="setting_title_profiles_Security">Security</string>
+    <string name="setting_title_profiles_active">Profil</string>
+    <string name="setting_title_profiles_dataUsage">Utilizarea datelor</string>
+    <string name="setting_title_profiles_privacy">Confidențialitate</string>
+    <string name="setting_title_profiles_Security">Securitate</string>
     <!-- browser start -->
     <string name="setting_title_images">Imagini</string>
-    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_title_cookie">Cookie-uri</string>
     <string name="setting_summary_cookie_delete">If enabled, all cookies will be deleted. Also the Cookies of trusted websites.</string>
     <string name="setting_title_javascript_popUp">Popups</string>
     <string name="setting_title_javascript">JavaScript</string>
     <string name="setting_title_adblock">AdBlock</string>
     <string name="setting_summary_adblock">Enable AdBlock to block annoying ads. Sites also load faster when enabled.</string>
-    <string name="setting_title_adblockHost">Blocked content</string>
+    <string name="setting_title_adblockHost">Conținut Blocat</string>
     <string name="setting_title_location">Location</string>
     <string name="setting_title_history">History</string>
     <string name="setting_title_autofill">Form Data</string>
@@ -124,18 +124,18 @@
     <string name="setting_title_ui">Behavior/UI</string>
     <string name="setting_title_data">Backup</string>
     <string name="setting_filter">Bookmark filter</string>
-    <string name="setting_title_fav">Favorite</string>
+    <string name="setting_title_fav">Favorit</string>
     <string name="setting_title_reload">Swipe down to reload</string>
     <string name="setting_title_searchEngine">Custom search engine</string>
     <string name="setting_title_userAgent">Custom user agent</string>
     <string name="setting_title_fingerPrint">Fingerprint protection</string>
     <string name="setting_theme">Theme</string>
-    <string name="setting_theme_system">System</string>
+    <string name="setting_theme_system">Sistem</string>
     <string name="setting_theme_OLED">OLED</string>
     <string name="setting_theme_wallpaper">Wallpaper based</string>
     <!-- App behavior -->
     <string name="setting_title_hideToolbar">Hide toolbar</string>
-    <string name="setting_title_behavior">Behavior</string>
+    <string name="setting_title_behavior">Comportament</string>
     <string name="setting_title_confirm_exit">Confirm browser exit</string>
     <string name="setting_title_confirm_tab_close">Confirm tab close</string>
     <string name="setting_overView_onStart_title">Show on start</string>
